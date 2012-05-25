@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>Test</name>
+  <gain>1</gain>
+  <GraphicalBlock>
+    <EntrySinus>
+      <entries />
+      <name>EntrySinus</name>
+      <gain>1</gain>
+      <period>1</period>
+      <shift>0</shift>
+    </EntrySinus>
+    <Position>
+      <X>137</X>
+      <Y>128</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries />
+      <name>Genou D</name>
+      <gain>1</gain>
+      <servo_name>Genou D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>311</X>
+      <Y>139</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>EntrySinus</SourceName>
+    <TargetName>Genou D</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <filename>NewMove.graphics.xml</filename>
+  <Frequency>100</Frequency>
+  <SmoothStart>0</SmoothStart>
+  <SmoothStop>0</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>

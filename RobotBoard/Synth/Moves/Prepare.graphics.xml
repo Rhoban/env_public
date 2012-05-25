@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>Prepare</name>
+  <gain>1</gain>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant</name>
+      <gain>1</gain>
+      <constants>
+        <float>1</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>111</X>
+      <Y>131</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <WritablePinBlock>
+      <entries />
+      <name>WritablePinBlock</name>
+      <gain>1</gain>
+      <pin_sensor_name>Fan</pin_sensor_name>
+    </WritablePinBlock>
+    <Position>
+      <X>324</X>
+      <Y>134</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Constant</SourceName>
+    <TargetName>WritablePinBlock</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <filename>NewMove.graphics.xml</filename>
+  <Frequency>100</Frequency>
+  <SmoothStart>0</SmoothStart>
+  <SmoothStop>0</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>

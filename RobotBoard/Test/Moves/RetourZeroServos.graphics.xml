@@ -1,0 +1,541 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>RetourZeroServos</name>
+  <gain>1</gain>
+  <gainString>1</gainString>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries />
+      <name>Cuisse D</name>
+      <gain>1</gain>
+      <gainString>1</gainString>
+      <servo_id>36</servo_id>
+      <servo_name>Cuisse D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+      <ref_angle>-3.808</ref_angle>
+    </BlockServo>
+    <Position>
+      <X>85.169537216690514</X>
+      <Y>54.540198225225566</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries />
+      <name>Cuisse G</name>
+      <gain>1</gain>
+      <gainString>1</gainString>
+      <servo_id>12</servo_id>
+      <servo_name>Cuisse G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+      <ref_angle>-4.394</ref_angle>
+    </BlockServo>
+    <Position>
+      <X>148.76953721669025</X>
+      <Y>0.3401982252255209</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries />
+      <name>Cheville D</name>
+      <gain>1</gain>
+      <gainString>1</gainString>
+      <servo_id>37</servo_id>
+      <servo_name>Cheville D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+      <ref_angle>3.222</ref_angle>
+    </BlockServo>
+    <Position>
+      <X>12.961115663635894</X>
+      <Y>197.95302087328133</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries />
+      <name>Cheville G</name>
+      <gain>1</gain>
+      <gainString>1</gainString>
+      <servo_id>32</servo_id>
+      <servo_name>Cheville G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+      <ref_angle>-8.789</ref_angle>
+    </BlockServo>
+    <Position>
+      <X>43.612025618912526</X>
+      <Y>121.37426507439217</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries />
+      <name>Genou D</name>
+      <gain>1</gain>
+      <gainString>1</gainString>
+      <servo_id>6</servo_id>
+      <servo_name>Genou D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+      <ref_angle>-4.98</ref_angle>
+    </BlockServo>
+    <Position>
+      <X>58.073146213479617</X>
+      <Y>340.18824326895253</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries />
+      <name>Genou G</name>
+      <gain>1</gain>
+      <gainString>1</gainString>
+      <servo_id>39</servo_id>
+      <servo_name>Genou G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+      <ref_angle>6.152</ref_angle>
+    </BlockServo>
+    <Position>
+      <X>45.247691473630596</X>
+      <Y>282.78824326895256</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain1</name>
+          <output_idx>0</output_idx>
+        </BlockPredecessor>
+      </entries>
+      <name>Cuisse G1</name>
+      <gain>1</gain>
+      <gainString>1</gainString>
+      <servo_id>12</servo_id>
+      <servo_name>Cuisse G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+      <ref_angle>-4.394</ref_angle>
+    </BlockServo>
+    <Position>
+      <X>701.533277211209</X>
+      <Y>38.786342842377522</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain1</name>
+          <output_idx>1</output_idx>
+        </BlockPredecessor>
+      </entries>
+      <name>Cuisse D1</name>
+      <gain>1</gain>
+      <gainString>1</gainString>
+      <servo_id>36</servo_id>
+      <servo_name>Cuisse D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+      <ref_angle>-3.808</ref_angle>
+    </BlockServo>
+    <Position>
+      <X>690.53327721120968</X>
+      <Y>162.18634284237749</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain1</name>
+          <output_idx>2</output_idx>
+        </BlockPredecessor>
+      </entries>
+      <name>Cheville G1</name>
+      <gain>1</gain>
+      <gainString>1</gainString>
+      <servo_id>32</servo_id>
+      <servo_name>Cheville G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+      <ref_angle>-8.789</ref_angle>
+    </BlockServo>
+    <Position>
+      <X>701.33327721120963</X>
+      <Y>218.9863428423775</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain1</name>
+          <output_idx>3</output_idx>
+        </BlockPredecessor>
+      </entries>
+      <name>Cheville D1</name>
+      <gain>1</gain>
+      <gainString>1</gainString>
+      <servo_id>37</servo_id>
+      <servo_name>Cheville D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+      <ref_angle>3.222</ref_angle>
+    </BlockServo>
+    <Position>
+      <X>699.33327721120941</X>
+      <Y>283.78634284237751</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain1</name>
+          <output_idx>4</output_idx>
+        </BlockPredecessor>
+      </entries>
+      <name>Genou G1</name>
+      <gain>1</gain>
+      <gainString>1</gainString>
+      <servo_id>39</servo_id>
+      <servo_name>Genou G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+      <ref_angle>6.152</ref_angle>
+    </BlockServo>
+    <Position>
+      <X>700.13327721120891</X>
+      <Y>333.38634284237742</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain1</name>
+          <output_idx>5</output_idx>
+        </BlockPredecessor>
+      </entries>
+      <name>Genou D1</name>
+      <gain>1</gain>
+      <gainString>1</gainString>
+      <servo_id>6</servo_id>
+      <servo_name>Genou D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+      <ref_angle>-4.98</ref_angle>
+    </BlockServo>
+    <Position>
+      <X>694.53327721120945</X>
+      <Y>415.78634284237751</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries />
+      <name>Bassin</name>
+      <gain>1</gain>
+      <gainString>1</gainString>
+      <servo_id>14</servo_id>
+      <servo_name>Bassin Long</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+      <ref_angle>-18.75</ref_angle>
+    </BlockServo>
+    <Position>
+      <X>165.53327721120945</X>
+      <Y>415.78634284237751</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain1</name>
+          <output_idx>6</output_idx>
+        </BlockPredecessor>
+      </entries>
+      <name>BlockBassin</name>
+      <gain>1</gain>
+      <gainString>1</gainString>
+      <servo_id>14</servo_id>
+      <servo_name>Bassin Long</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+      <ref_angle>-18.75</ref_angle>
+    </BlockServo>
+    <Position>
+      <X>640.93327721120943</X>
+      <Y>446.78634284237762</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>VariationBoundBlock</name>
+          <output_idx>0</output_idx>
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>VariationBoundBlock</name>
+          <output_idx>1</output_idx>
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>VariationBoundBlock</name>
+          <output_idx>2</output_idx>
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>VariationBoundBlock</name>
+          <output_idx>3</output_idx>
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>VariationBoundBlock</name>
+          <output_idx>4</output_idx>
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>VariationBoundBlock</name>
+          <output_idx>5</output_idx>
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>VariationBoundBlock</name>
+          <output_idx>6</output_idx>
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain1</name>
+      <gain>1</gain>
+      <gainString>1</gainString>
+      <gains>
+        <float>-1</float>
+        <float>-1</float>
+        <float>-1</float>
+        <float>-1</float>
+        <float>-1</float>
+        <float>-1</float>
+        <float>-1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>503.1789579919112</X>
+      <Y>156.03841867142239</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-0.29199999570846558</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain1</SourceName>
+    <TargetName>Cuisse G1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0.58600002527236938</output_value>
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain1</SourceName>
+    <TargetName>Cuisse D1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0.58600002527236938</output_value>
+    <SourceIndex>2</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain1</SourceName>
+    <TargetName>Cheville G1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0.777999997138977</output_value>
+    <SourceIndex>3</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain1</SourceName>
+    <TargetName>Cheville D1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-1.565000057220459</output_value>
+    <SourceIndex>4</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain1</SourceName>
+    <TargetName>Genou G1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>1.1720000505447388</output_value>
+    <SourceIndex>5</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain1</SourceName>
+    <TargetName>Genou D1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <SourceIndex>6</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain1</SourceName>
+    <TargetName>BlockBassin</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <VariationBoundBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Cuisse G</name>
+          <output_idx>0</output_idx>
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Cuisse D</name>
+          <output_idx>0</output_idx>
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Cheville G</name>
+          <output_idx>0</output_idx>
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Cheville D</name>
+          <output_idx>0</output_idx>
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Genou G</name>
+          <output_idx>0</output_idx>
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Genou D</name>
+          <output_idx>0</output_idx>
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Bassin</name>
+          <output_idx>0</output_idx>
+        </BlockPredecessor>
+      </entries>
+      <name>VariationBoundBlock</name>
+      <gain>1</gain>
+      <gainString>1</gainString>
+      <min_value>
+        <float>-1</float>
+        <float>-1</float>
+        <float>-1</float>
+        <float>-1</float>
+        <float>-1</float>
+        <float>-1</float>
+        <float>-1</float>
+      </min_value>
+      <max_value>
+        <float>1</float>
+        <float>1</float>
+        <float>1</float>
+        <float>1</float>
+        <float>1</float>
+        <float>1</float>
+        <float>1</float>
+      </max_value>
+      <discount_factor>0</discount_factor>
+    </VariationBoundBlock>
+    <Position>
+      <X>233.29753924995885</X>
+      <Y>186.20279817058622</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0.29199999570846558</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>VariationBoundBlock</SourceName>
+    <TargetName>BlockGain1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-0.58600002527236938</output_value>
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>VariationBoundBlock</SourceName>
+    <TargetName>BlockGain1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-0.58600002527236938</output_value>
+    <SourceIndex>2</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>VariationBoundBlock</SourceName>
+    <TargetName>BlockGain1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-0.777999997138977</output_value>
+    <SourceIndex>3</SourceIndex>
+    <TargetIndex>3</TargetIndex>
+    <SourceName>VariationBoundBlock</SourceName>
+    <TargetName>BlockGain1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>1.565000057220459</output_value>
+    <SourceIndex>4</SourceIndex>
+    <TargetIndex>4</TargetIndex>
+    <SourceName>VariationBoundBlock</SourceName>
+    <TargetName>BlockGain1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-1.1720000505447388</output_value>
+    <SourceIndex>5</SourceIndex>
+    <TargetIndex>5</TargetIndex>
+    <SourceName>VariationBoundBlock</SourceName>
+    <TargetName>BlockGain1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0.29199999570846558</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Cuisse G</SourceName>
+    <TargetName>VariationBoundBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-0.58600002527236938</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>Cuisse D</SourceName>
+    <TargetName>VariationBoundBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-0.58600002527236938</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>Cheville G</SourceName>
+    <TargetName>VariationBoundBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-0.878000020980835</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>3</TargetIndex>
+    <SourceName>Cheville D</SourceName>
+    <TargetName>VariationBoundBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>1.7580000162124634</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>4</TargetIndex>
+    <SourceName>Genou G</SourceName>
+    <TargetName>VariationBoundBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-1.1720000505447388</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>5</TargetIndex>
+    <SourceName>Genou D</SourceName>
+    <TargetName>VariationBoundBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>6</TargetIndex>
+    <SourceName>Bassin</SourceName>
+    <TargetName>VariationBoundBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <SourceIndex>6</SourceIndex>
+    <TargetIndex>6</TargetIndex>
+    <SourceName>VariationBoundBlock</SourceName>
+    <TargetName>BlockGain1</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <filename>RetourZeroServos.graphics.xml</filename>
+  <Frequency>10</Frequency>
+</GraphicalMotorPrimitive>

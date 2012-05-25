@@ -1,0 +1,551 @@
+<?xml version="1.0"?>
+<RobotSpecification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <joints>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>5</Longueur>
+      <Angle>0</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName />
+      <TargetName>Plexus</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>0</X>
+        <Y>-1</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>5</Longueur>
+      <Angle>10</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Plexus</SourceName>
+      <TargetName>Epaule D Long</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>5</Longueur>
+      <Angle>10</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Plexus</SourceName>
+      <TargetName>Epaule G Long</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>5</Longueur>
+      <Angle>-3.8079986572265625</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>1</Z>
+      </AxeRotation>
+      <SourceName>Bassin Lat</SourceName>
+      <TargetName>Bassin Long</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>5</Longueur>
+      <Angle>-18.457000732421875</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Bassin Long</SourceName>
+      <TargetName>Hanche G Rot</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>0</X>
+        <Y>-1</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>5</Longueur>
+      <Angle>-18.457000732421875</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Bassin Long</SourceName>
+      <TargetName>Hanche D Rot</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>0</X>
+        <Y>-1</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>3</Longueur>
+      <Angle>1.7579994201660156</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Hanche G Rot</SourceName>
+      <TargetName>Hanche G Lat</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>3</Longueur>
+      <Angle>-5.8590011596679688</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Hanche D Rot</SourceName>
+      <TargetName>Hanche D Lat</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>0</Longueur>
+      <Angle>-3.2229995727539062</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Hanche G Lat</SourceName>
+      <TargetName>Cuisse G</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>0</Longueur>
+      <Angle>-2.6359996795654297</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Hanche D Lat</SourceName>
+      <TargetName>Cuisse D</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>8</Longueur>
+      <Angle>-17.871000289916992</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Cuisse G</SourceName>
+      <TargetName>Genou G</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>12</Longueur>
+      <Angle>-18.016999065876007</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Genou G</SourceName>
+      <TargetName>Cheville G</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>8</Longueur>
+      <Angle>10.546998977661133</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>-1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Cuisse D</SourceName>
+      <TargetName>Genou D</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>12</Longueur>
+      <Angle>4.7599998712539673</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>-1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Genou D</SourceName>
+      <TargetName>Cheville D</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>1</Longueur>
+      <Angle>-53.319999694824219</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>-1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Cheville G</SourceName>
+      <TargetName>Pied G</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>1</Longueur>
+      <Angle>91.697999715805054</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Cheville D</SourceName>
+      <TargetName>Pied D</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>2</Longueur>
+      <Angle>-1.9770001173019409</Angle>
+      <AxeRotation>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Epaule D Long</SourceName>
+      <TargetName>Epaule D Lat</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>2</Longueur>
+      <Angle>-0.878000020980835</Angle>
+      <AxeRotation>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Epaule G Long</SourceName>
+      <TargetName>Epaule G Lat</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>10</Longueur>
+      <Angle>-56.031001150608063</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>1</Z>
+      </AxeRotation>
+      <SourceName>Epaule D Lat</SourceName>
+      <TargetName>Coude D</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>10</Longueur>
+      <Angle>75.951000213623047</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>1</Z>
+      </AxeRotation>
+      <SourceName>Epaule G Lat</SourceName>
+      <TargetName>Coude G</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>5</Longueur>
+      <Angle>10</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Coude G</SourceName>
+      <TargetName>Main G</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>5</Longueur>
+      <Angle>10</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>-1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Coude D</SourceName>
+      <TargetName>Main D</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>1</Z>
+      </Direction>
+      <Longueur>5</Longueur>
+      <Angle>-9.9609994888305664</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>-1</Z>
+      </AxeRotation>
+      <SourceName>Pied G</SourceName>
+      <TargetName>Orteils G</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>1</Z>
+      </Direction>
+      <Longueur>5</Longueur>
+      <Angle>-4.6870002746582031</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>-1</Z>
+      </AxeRotation>
+      <SourceName>Pied D</SourceName>
+      <TargetName>Orteils D</TargetName>
+      <Thickness>1.2</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>1</Z>
+      </Direction>
+      <Longueur>0</Longueur>
+      <Angle>-0.29300117492675781</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>1</Z>
+      </AxeRotation>
+      <SourceName>Buste Lat</SourceName>
+      <TargetName>Buste Long</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>-1</Z>
+      </Direction>
+      <Longueur>5</Longueur>
+      <Angle>9.667999267578125</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Buste Long</SourceName>
+      <TargetName>Bassin Rot</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>5</Longueur>
+      <Angle>10</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>1</Z>
+      </AxeRotation>
+      <SourceName>Plexus</SourceName>
+      <TargetName>Buste Lat</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>5</Longueur>
+      <Angle>15</Angle>
+      <AxeRotation>
+        <X>-1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Bassin Rot</SourceName>
+      <TargetName>Bassin Lat</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>-1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>2</Longueur>
+      <Angle>0</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Plexus</SourceName>
+      <TargetName>Cou</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>1</Longueur>
+      <Angle>-2.5639999508857727</Angle>
+      <AxeRotation>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Cou</SourceName>
+      <TargetName>Tete arriere</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+    <Joint>
+      <Direction>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>1</Z>
+      </Direction>
+      <Longueur>2</Longueur>
+      <Angle>13.402999699115753</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName>Tete arriere</SourceName>
+      <TargetName>Tete avant</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+  </joints>
+  <nombrils>
+    <Joint>
+      <Direction>
+        <X>1</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </Direction>
+      <Longueur>5</Longueur>
+      <Angle>0</Angle>
+      <AxeRotation>
+        <X>0</X>
+        <Y>1</Y>
+        <Z>0</Z>
+      </AxeRotation>
+      <SourceName />
+      <TargetName>Plexus</TargetName>
+      <Thickness>1</Thickness>
+    </Joint>
+  </nombrils>
+</RobotSpecification>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>TestAcc</name>
+  <gain>1</gain>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>AccelerometerBlock</name>
+          <output_idx>1</output_idx>
+        </BlockPredecessor>
+      </entries>
+      <name>Epaule D Long</name>
+      <gain>1</gain>
+      <servo_name>Epaule D Long</servo_name>
+      <servo_id>130</servo_id>
+      <ref_angle>-0.293001175</ref_angle>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>345</X>
+      <Y>202</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <AccelerometerBlock>
+      <entries />
+      <name>AccelerometerBlock</name>
+      <gain>1</gain>
+    </AccelerometerBlock>
+    <Position>
+      <X>94</X>
+      <Y>211</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>AccelerometerBlock</SourceName>
+    <TargetName>Epaule D Long</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <filename>C:\Users\Rhoban\Desktop\rhoban\code\trunk\bipede\AcrobanIHM\RobotBoard\RobotBoard\Environments\AcrobanPousseur\Moves\TestAcc.graphics.xml</filename>
+  <Frequency>100</Frequency>
+</GraphicalMotorPrimitive>
