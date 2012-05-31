@@ -5,8 +5,8 @@
     <frequency>1000</frequency>
     <usart_id>1</usart_id>
     <write_frequency>50</write_frequency>
-    <total_writes>173743</total_writes>
-    <total_reads>1112300</total_reads>
+    <total_writes>14866</total_writes>
+    <total_reads>819144</total_reads>
     <MaxPingId>253</MaxPingId>
   </dynamixel_config>
   <pwm_config>
@@ -18,7 +18,7 @@
         <name>Gyro_x</name>
         <frequency>100</frequency>
         <can>0</can>
-        <zero>430.333344</zero>
+        <zero>431.708344</zero>
         <max>1000</max>
         <min>0</min>
       </AnalogicSensorParameter>
@@ -26,7 +26,7 @@
         <name>Gyro_y</name>
         <frequency>100</frequency>
         <can>1</can>
-        <zero>399.178558</zero>
+        <zero>394.821442</zero>
         <max>1000</max>
         <min>0</min>
       </AnalogicSensorParameter>
@@ -34,7 +34,7 @@
         <name>Acc_x</name>
         <frequency>100</frequency>
         <can>2</can>
-        <zero>517.3571</zero>
+        <zero>512.6087</zero>
         <max>1000</max>
         <min>0</min>
       </AnalogicSensorParameter>
@@ -42,7 +42,7 @@
         <name>Acc_y</name>
         <frequency>100</frequency>
         <can>3</can>
-        <zero>515.5833</zero>
+        <zero>505.300964</zero>
         <max>1000</max>
         <min>0</min>
       </AnalogicSensorParameter>
@@ -87,5 +87,5 @@
   <pins_config>
     <pins />
   </pins_config>
-  <EnableMonitoring>true</EnableMonitoring>
+  <EnableMonitoring>false</EnableMonitoring>
 </LowLevelConfig>
