@@ -617,4 +617,20 @@
     <ParametersPattern />
     <AnswerPattern>string </AnswerPattern>
   </CommandSpecification>
+  <CommandSpecification>
+    <Name>KinectGetValues</Name>
+    <Description>get kinect values</Description>
+    <Destination>low_level</Destination>
+    <CommandIndex>56</CommandIndex>
+    <ParametersPattern />
+    <AnswerPattern>int[] </AnswerPattern>
+  </CommandSpecification>
+  <CommandSpecification>
+    <Name>KinectSetValues</Name>
+    <Description>set kinect values</Description>
+    <Destination>low_level</Destination>
+    <CommandIndex>57</CommandIndex>
+    <ParametersPattern>int[] </ParametersPattern>
+    <AnswerPattern>string </AnswerPattern>
+  </CommandSpecification>
 </ArrayOfCommandSpecification>
