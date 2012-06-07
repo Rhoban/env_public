@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>Kinect</name>
+  <gain>1</gain>
+  <gainMin>-200</gainMin>
+  <gainMax>20</gainMax>
+  <GraphicalBlock>
+    <KinectBlock>
+      <entries />
+      <name>KinectBlock</name>
+      <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
+    </KinectBlock>
+    <Position>
+      <X>130</X>
+      <Y>151</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries />
+      <name>BlockGain</name>
+      <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
+      <gains />
+    </BlockGain>
+    <Position>
+      <X>316</X>
+      <Y>197</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries />
+      <name>BlockGain1</name>
+      <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
+      <gains />
+    </BlockGain>
+    <Position>
+      <X>302</X>
+      <Y>105</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <Block xsi:type="EmptyBlock">
+      <entries />
+      <name>EmptyBlock</name>
+      <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
+    </Block>
+    <Position>
+      <X>458</X>
+      <Y>160</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>KinectBlock</SourceName>
+    <TargetName>BlockGain1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain1</SourceName>
+    <TargetName>EmptyBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>KinectBlock</SourceName>
+    <TargetName>BlockGain</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockGain</SourceName>
+    <TargetName>EmptyBlock</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <filename>C:\Users\Nivtitif\Documents\GitRepo\Environments\RobotBoard\AcrobanAncien\Moves\Kinect.graphics.graphics.xml</filename>
+  <Frequency>1</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>
