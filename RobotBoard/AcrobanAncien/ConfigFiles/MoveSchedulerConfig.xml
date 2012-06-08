@@ -7,8 +7,8 @@
         <frequency>1000</frequency>
         <usart_id>1</usart_id>
         <write_frequency>50</write_frequency>
-        <total_writes>2533</total_writes>
-        <total_reads>119595</total_reads>
+        <total_writes>14866</total_writes>
+        <total_reads>819144</total_reads>
         <MaxPingId>253</MaxPingId>
       </dynamixel_config>
       <pwm_config>
@@ -20,7 +20,7 @@
             <name>Gyro_x</name>
             <frequency>100</frequency>
             <can>0</can>
-            <zero>430.333344</zero>
+            <zero>431.708344</zero>
             <max>1000</max>
             <min>0</min>
           </AnalogicSensorParameter>
@@ -28,7 +28,7 @@
             <name>Gyro_y</name>
             <frequency>100</frequency>
             <can>1</can>
-            <zero>399.178558</zero>
+            <zero>394.821442</zero>
             <max>1000</max>
             <min>0</min>
           </AnalogicSensorParameter>
@@ -36,7 +36,7 @@
             <name>Acc_x</name>
             <frequency>100</frequency>
             <can>2</can>
-            <zero>517.3571</zero>
+            <zero>512.6087</zero>
             <max>1000</max>
             <min>0</min>
           </AnalogicSensorParameter>
@@ -44,7 +44,7 @@
             <name>Acc_y</name>
             <frequency>100</frequency>
             <can>3</can>
-            <zero>515.5833</zero>
+            <zero>505.300964</zero>
             <max>1000</max>
             <min>0</min>
           </AnalogicSensorParameter>
@@ -54,6 +54,7 @@
         <joypads>
           <JoypadSensorParameter>
             <name>Joypad</name>
+            <Enabled>false</Enabled>
             <min>
               <double>-100</double>
               <double>-100</double>
@@ -80,16 +81,75 @@
             </zero>
           </JoypadSensorParameter>
         </joypads>
-        <JoypadEnabled>false</JoypadEnabled>
       </joypad_config>
+      <EnableMonitoring>false</EnableMonitoring>
       <kinect_config>
-        <kinects />
-        <KinectEnabled>false</KinectEnabled>
+        <kinects>
+          <KinectSensorParameter>
+            <name>Kinect</name>
+            <min>
+              <float>0</float>
+              <float>0</float>
+              <float>0</float>
+              <float>0</float>
+              <float>0</float>
+              <float>0</float>
+              <float>0</float>
+              <float>0</float>
+              <float>0</float>
+              <float>0</float>
+              <float>0</float>
+              <float>0</float>
+              <float>0</float>
+              <float>0</float>
+              <float>0</float>
+              <float>0</float>
+            </min>
+            <max>
+              <float>180</float>
+              <float>180</float>
+              <float>180</float>
+              <float>180</float>
+              <float>180</float>
+              <float>180</float>
+              <float>180</float>
+              <float>180</float>
+              <float>180</float>
+              <float>180</float>
+              <float>180</float>
+              <float>180</float>
+              <float>180</float>
+              <float>180</float>
+              <float>180</float>
+              <float>180</float>
+            </max>
+            <zero>
+              <float>90</float>
+              <float>90</float>
+              <float>90</float>
+              <float>90</float>
+              <float>90</float>
+              <float>90</float>
+              <float>90</float>
+              <float>90</float>
+              <float>90</float>
+              <float>90</float>
+              <float>90</float>
+              <float>90</float>
+              <float>90</float>
+              <float>90</float>
+              <float>90</float>
+              <float>90</float>
+            </zero>
+            <Enabled>true</Enabled>
+            <Ip>127.0.0.1</Ip>
+            <Frequency>10</Frequency>
+          </KinectSensorParameter>
+        </kinects>
       </kinect_config>
       <pins_config>
         <pins />
       </pins_config>
-      <EnableMonitoring>true</EnableMonitoring>
     </LowLevelConfig>
     <Servos>
       <ServoConfig>
@@ -214,30 +274,6 @@
       </ServoConfig>
       <ServoConfig>
         <Type>RX64</Type>
-        <Id>32</Id>
-        <Name>Cheville G</Name>
-        <TargetAngle>-46.289</TargetAngle>
-        <ActualAngle>-46.875</ActualAngle>
-        <IniAngle>0</IniAngle>
-        <MinAngle>-180</MinAngle>
-        <MaxAngle>180</MaxAngle>
-        <MaxSpeed>1023</MaxSpeed>
-        <MaxTorque>1023</MaxTorque>
-        <SmoothFactor>0</SmoothFactor>
-        <Bounce>100</Bounce>
-        <Punch>1</Punch>
-        <Inverse>false</Inverse>
-        <ZeroAngle>-46.289</ZeroAngle>
-        <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>0</ActualSpeed>
-        <MaxLoad>1000</MaxLoad>
-        <ActualLoad>-96</ActualLoad>
-        <Voltage>13.6</Voltage>
-        <Temperature>40</Temperature>
-        <Diagnostic />
-      </ServoConfig>
-      <ServoConfig>
-        <Type>RX64</Type>
         <Id>37</Id>
         <Name>Cheville D</Name>
         <TargetAngle>18.457</TargetAngle>
@@ -258,6 +294,30 @@
         <ActualLoad>128</ActualLoad>
         <Voltage>13.7</Voltage>
         <Temperature>45</Temperature>
+        <Diagnostic />
+      </ServoConfig>
+      <ServoConfig>
+        <Type>RX64</Type>
+        <Id>32</Id>
+        <Name>Cheville G</Name>
+        <TargetAngle>-46.289</TargetAngle>
+        <ActualAngle>-46.875</ActualAngle>
+        <IniAngle>0</IniAngle>
+        <MinAngle>-180</MinAngle>
+        <MaxAngle>180</MaxAngle>
+        <MaxSpeed>1023</MaxSpeed>
+        <MaxTorque>1023</MaxTorque>
+        <SmoothFactor>0</SmoothFactor>
+        <Bounce>100</Bounce>
+        <Punch>1</Punch>
+        <Inverse>false</Inverse>
+        <ZeroAngle>-46.289</ZeroAngle>
+        <TargetSpeed>200</TargetSpeed>
+        <ActualSpeed>0</ActualSpeed>
+        <MaxLoad>1000</MaxLoad>
+        <ActualLoad>-96</ActualLoad>
+        <Voltage>13.6</Voltage>
+        <Temperature>40</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
@@ -670,30 +730,6 @@
       </ServoConfig>
       <ServoConfig>
         <Type>RX64</Type>
-        <Id>17</Id>
-        <Name>Pied G</Name>
-        <TargetAngle>-0.878</TargetAngle>
-        <ActualAngle>-1.757</ActualAngle>
-        <IniAngle>0</IniAngle>
-        <MinAngle>-180</MinAngle>
-        <MaxAngle>180</MaxAngle>
-        <MaxSpeed>1023</MaxSpeed>
-        <MaxTorque>1023</MaxTorque>
-        <SmoothFactor>0</SmoothFactor>
-        <Bounce>100</Bounce>
-        <Punch>1</Punch>
-        <Inverse>false</Inverse>
-        <ZeroAngle>-0.878</ZeroAngle>
-        <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>0</ActualSpeed>
-        <MaxLoad>1000</MaxLoad>
-        <ActualLoad>-96</ActualLoad>
-        <Voltage>13.3</Voltage>
-        <Temperature>41</Temperature>
-        <Diagnostic />
-      </ServoConfig>
-      <ServoConfig>
-        <Type>RX64</Type>
         <Id>38</Id>
         <Name>Pied D</Name>
         <TargetAngle>-0.878</TargetAngle>
@@ -714,6 +750,30 @@
         <ActualLoad>96</ActualLoad>
         <Voltage>13.9</Voltage>
         <Temperature>37</Temperature>
+        <Diagnostic />
+      </ServoConfig>
+      <ServoConfig>
+        <Type>RX64</Type>
+        <Id>17</Id>
+        <Name>Pied G</Name>
+        <TargetAngle>-0.878</TargetAngle>
+        <ActualAngle>-1.757</ActualAngle>
+        <IniAngle>0</IniAngle>
+        <MinAngle>-180</MinAngle>
+        <MaxAngle>180</MaxAngle>
+        <MaxSpeed>1023</MaxSpeed>
+        <MaxTorque>1023</MaxTorque>
+        <SmoothFactor>0</SmoothFactor>
+        <Bounce>100</Bounce>
+        <Punch>1</Punch>
+        <Inverse>false</Inverse>
+        <ZeroAngle>-0.878</ZeroAngle>
+        <TargetSpeed>200</TargetSpeed>
+        <ActualSpeed>0</ActualSpeed>
+        <MaxLoad>1000</MaxLoad>
+        <ActualLoad>-96</ActualLoad>
+        <Voltage>13.3</Voltage>
+        <Temperature>41</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
@@ -774,5 +834,6 @@
     <gyroy_sensor>Gyro_y</gyroy_sensor>
     <compass_sensor />
     <joypad_sensor>Joypad</joypad_sensor>
+    <kinect_sensor>Kinect</kinect_sensor>
   </SensorsConfig>
 </MoveSchedulerConfig>
