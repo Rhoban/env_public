@@ -5,8 +5,8 @@
     <frequency>1000</frequency>
     <usart_id>1</usart_id>
     <write_frequency>50</write_frequency>
-    <total_writes>173743</total_writes>
-    <total_reads>1112300</total_reads>
+    <total_writes>14866</total_writes>
+    <total_reads>819144</total_reads>
     <MaxPingId>253</MaxPingId>
   </dynamixel_config>
   <pwm_config>
@@ -18,7 +18,7 @@
         <name>Gyro_x</name>
         <frequency>100</frequency>
         <can>0</can>
-        <zero>430.333344</zero>
+        <zero>431.708344</zero>
         <max>1000</max>
         <min>0</min>
       </AnalogicSensorParameter>
@@ -26,7 +26,7 @@
         <name>Gyro_y</name>
         <frequency>100</frequency>
         <can>1</can>
-        <zero>399.178558</zero>
+        <zero>394.821442</zero>
         <max>1000</max>
         <min>0</min>
       </AnalogicSensorParameter>
@@ -34,7 +34,7 @@
         <name>Acc_x</name>
         <frequency>100</frequency>
         <can>2</can>
-        <zero>517.3571</zero>
+        <zero>512.6087</zero>
         <max>1000</max>
         <min>0</min>
       </AnalogicSensorParameter>
@@ -42,7 +42,7 @@
         <name>Acc_y</name>
         <frequency>100</frequency>
         <can>3</can>
-        <zero>515.5833</zero>
+        <zero>505.300964</zero>
         <max>1000</max>
         <min>0</min>
       </AnalogicSensorParameter>
@@ -52,6 +52,7 @@
     <joypads>
       <JoypadSensorParameter>
         <name>Joypad</name>
+        <Enabled>false</Enabled>
         <min>
           <double>-100</double>
           <double>-100</double>
@@ -78,14 +79,73 @@
         </zero>
       </JoypadSensorParameter>
     </joypads>
-    <JoypadEnabled>false</JoypadEnabled>
   </joypad_config>
+  <EnableMonitoring>false</EnableMonitoring>
   <kinect_config>
-    <kinects />
-    <KinectEnabled>false</KinectEnabled>
+    <kinects>
+      <KinectSensorParameter>
+        <name>Kinect</name>
+        <min>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+        </min>
+        <max>
+          <float>180</float>
+          <float>180</float>
+          <float>180</float>
+          <float>180</float>
+          <float>180</float>
+          <float>180</float>
+          <float>180</float>
+          <float>180</float>
+          <float>180</float>
+          <float>180</float>
+          <float>180</float>
+          <float>180</float>
+          <float>180</float>
+          <float>180</float>
+          <float>180</float>
+          <float>180</float>
+        </max>
+        <zero>
+          <float>25.5574532</float>
+          <float>93.46535</float>
+          <float>5.84356</float>
+          <float>21.5005016</float>
+          <float>10.7430487</float>
+          <float>73.09854</float>
+          <float>5.33827734</float>
+          <float>9.641273</float>
+          <float>2.50694871</float>
+          <float>21.63601</float>
+          <float>86.88964</float>
+          <float>45.3680649</float>
+          <float>1.41459322</float>
+          <float>12.6808462</float>
+          <float>90.89329</float>
+          <float>45.4629936</float>
+        </zero>
+        <Enabled>true</Enabled>
+        <Ip>192.168.16.101</Ip>
+        <Frequency>1</Frequency>
+      </KinectSensorParameter>
+    </kinects>
   </kinect_config>
   <pins_config>
     <pins />
   </pins_config>
-  <EnableMonitoring>true</EnableMonitoring>
 </LowLevelConfig>
