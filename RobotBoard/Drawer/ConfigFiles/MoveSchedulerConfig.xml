@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <MoveSchedulerConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Filename>C:\Users\Hugo\Documents\GitHub\Environments\RobotBoard\Drawer\ConfigFiles\MoveSchedulerConfig.xml</Filename>
   <ServosConfig>
     <LowLevelConfig>
+      <Filename>Rhoban.LowLevel.LowLevelConfig.xml</Filename>
       <dynamixel_config>
         <device_name>Dynamixel </device_name>
         <frequency>1000</frequency>
@@ -71,6 +73,7 @@
         <joypads>
           <JoypadSensorParameter>
             <name>Joypad</name>
+            <Enabled>false</Enabled>
             <min>
               <double>0</double>
               <double>65535</double>
@@ -97,11 +100,9 @@
             </zero>
           </JoypadSensorParameter>
         </joypads>
-        <JoypadEnabled>false</JoypadEnabled>
       </joypad_config>
       <kinect_config>
         <kinects />
-        <KinectEnabled>false</KinectEnabled>
       </kinect_config>
       <pins_config>
         <pins>
@@ -114,61 +115,12 @@
           </PinConfigParameter>
         </pins>
       </pins_config>
-      <EnableMonitoring>true</EnableMonitoring>
     </LowLevelConfig>
     <Servos>
       <ServoConfig>
-        <Type>EX106p</Type>
-        <Id>1</Id>
-        <Name>GEpauleLong</Name>
-        <TargetAngle>-75.146</TargetAngle>
-        <ActualAngle>-75.146</ActualAngle>
-        <IniAngle>-62.9150047</IniAngle>
-        <MinAngle>-180</MinAngle>
-        <MaxAngle>180</MaxAngle>
-        <MaxSpeed>1023</MaxSpeed>
-        <MaxTorque>1023</MaxTorque>
-        <SmoothFactor>0</SmoothFactor>
-        <Bounce>50</Bounce>
-        <Punch>1</Punch>
-        <Inverse>false</Inverse>
-        <ZeroAngle>-12.231</ZeroAngle>
-        <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>0</ActualSpeed>
-        <MaxLoad>1000</MaxLoad>
-        <ActualLoad>0</ActualLoad>
-        <Voltage>12.3</Voltage>
-        <Temperature>38</Temperature>
-        <Diagnostic />
-      </ServoConfig>
-      <ServoConfig>
         <Type>PWM</Type>
-        <Id>237</Id>
-        <Name>DDoigt4</Name>
-        <TargetAngle>0</TargetAngle>
-        <ActualAngle>0</ActualAngle>
-        <IniAngle>0</IniAngle>
-        <MinAngle>-180</MinAngle>
-        <MaxAngle>180</MaxAngle>
-        <MaxSpeed>1023</MaxSpeed>
-        <MaxTorque>1023</MaxTorque>
-        <SmoothFactor>0</SmoothFactor>
-        <Bounce>50</Bounce>
-        <Punch>1</Punch>
-        <Inverse>false</Inverse>
-        <ZeroAngle>0</ZeroAngle>
-        <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>0</ActualSpeed>
-        <MaxLoad>1000</MaxLoad>
-        <ActualLoad>0</ActualLoad>
-        <Voltage>0</Voltage>
-        <Temperature>0</Temperature>
-        <Diagnostic />
-      </ServoConfig>
-      <ServoConfig>
-        <Type>PWM</Type>
-        <Id>236</Id>
-        <Name>DDoigt3</Name>
+        <Id>234</Id>
+        <Name>DDoigt1</Name>
         <TargetAngle>0</TargetAngle>
         <ActualAngle>0</ActualAngle>
         <IniAngle>0</IniAngle>
@@ -215,8 +167,8 @@
       </ServoConfig>
       <ServoConfig>
         <Type>PWM</Type>
-        <Id>234</Id>
-        <Name>DDoigt1</Name>
+        <Id>236</Id>
+        <Name>DDoigt3</Name>
         <TargetAngle>0</TargetAngle>
         <ActualAngle>0</ActualAngle>
         <IniAngle>0</IniAngle>
@@ -239,8 +191,8 @@
       </ServoConfig>
       <ServoConfig>
         <Type>PWM</Type>
-        <Id>233</Id>
-        <Name>GDoigt4</Name>
+        <Id>237</Id>
+        <Name>DDoigt4</Name>
         <TargetAngle>0</TargetAngle>
         <ActualAngle>0</ActualAngle>
         <IniAngle>0</IniAngle>
@@ -262,9 +214,57 @@
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
+        <Type>RX64</Type>
+        <Id>4</Id>
+        <Name>GCoude</Name>
+        <TargetAngle>40.722</TargetAngle>
+        <ActualAngle>-29.0039063</ActualAngle>
+        <IniAngle>0</IniAngle>
+        <MinAngle>-180</MinAngle>
+        <MaxAngle>180</MaxAngle>
+        <MaxSpeed>1023</MaxSpeed>
+        <MaxTorque>1023</MaxTorque>
+        <SmoothFactor>0</SmoothFactor>
+        <Bounce>50</Bounce>
+        <Punch>1</Punch>
+        <Inverse>false</Inverse>
+        <ZeroAngle>-29.0039063</ZeroAngle>
+        <TargetSpeed>200</TargetSpeed>
+        <ActualSpeed>-11</ActualSpeed>
+        <MaxLoad>1000</MaxLoad>
+        <ActualLoad>-56</ActualLoad>
+        <Voltage>12.3</Voltage>
+        <Temperature>31</Temperature>
+        <Diagnostic />
+      </ServoConfig>
+      <ServoConfig>
+        <Type>RX64</Type>
+        <Id>5</Id>
+        <Name>GCoudeRot</Name>
+        <TargetAngle>-24.609</TargetAngle>
+        <ActualAngle>4.6875</ActualAngle>
+        <IniAngle>0</IniAngle>
+        <MinAngle>-180</MinAngle>
+        <MaxAngle>180</MaxAngle>
+        <MaxSpeed>1023</MaxSpeed>
+        <MaxTorque>1023</MaxTorque>
+        <SmoothFactor>0</SmoothFactor>
+        <Bounce>50</Bounce>
+        <Punch>1</Punch>
+        <Inverse>false</Inverse>
+        <ZeroAngle>4.6875</ZeroAngle>
+        <TargetSpeed>200</TargetSpeed>
+        <ActualSpeed>-2</ActualSpeed>
+        <MaxLoad>1000</MaxLoad>
+        <ActualLoad>-693</ActualLoad>
+        <Voltage>12.1</Voltage>
+        <Temperature>30</Temperature>
+        <Diagnostic />
+      </ServoConfig>
+      <ServoConfig>
         <Type>PWM</Type>
-        <Id>232</Id>
-        <Name>GDoigt3</Name>
+        <Id>230</Id>
+        <Name>GDoigt1</Name>
         <TargetAngle>0</TargetAngle>
         <ActualAngle>0</ActualAngle>
         <IniAngle>0</IniAngle>
@@ -311,8 +311,8 @@
       </ServoConfig>
       <ServoConfig>
         <Type>PWM</Type>
-        <Id>230</Id>
-        <Name>GDoigt1</Name>
+        <Id>232</Id>
+        <Name>GDoigt3</Name>
         <TargetAngle>0</TargetAngle>
         <ActualAngle>0</ActualAngle>
         <IniAngle>0</IniAngle>
@@ -334,12 +334,12 @@
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
-        <Type>MX28</Type>
-        <Id>107</Id>
-        <Name>DPoignetLat</Name>
-        <TargetAngle>29.223</TargetAngle>
-        <ActualAngle>29.663</ActualAngle>
-        <IniAngle>15.967</IniAngle>
+        <Type>PWM</Type>
+        <Id>233</Id>
+        <Name>GDoigt4</Name>
+        <TargetAngle>0</TargetAngle>
+        <ActualAngle>0</ActualAngle>
+        <IniAngle>0</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
         <MaxSpeed>1023</MaxSpeed>
@@ -348,118 +348,22 @@
         <Bounce>50</Bounce>
         <Punch>1</Punch>
         <Inverse>false</Inverse>
-        <ZeroAngle>13.696</ZeroAngle>
-        <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>0</ActualSpeed>
-        <MaxLoad>1000</MaxLoad>
-        <ActualLoad>64</ActualLoad>
-        <Voltage>9.1</Voltage>
-        <Temperature>41</Temperature>
-        <Diagnostic />
-      </ServoConfig>
-      <ServoConfig>
-        <Type>MX28</Type>
-        <Id>106</Id>
-        <Name>DPoignetLong</Name>
-        <TargetAngle>12.597</TargetAngle>
-        <ActualAngle>13.037</ActualAngle>
-        <IniAngle>-6.37200069</IniAngle>
-        <MinAngle>-180</MinAngle>
-        <MaxAngle>180</MaxAngle>
-        <MaxSpeed>1023</MaxSpeed>
-        <MaxTorque>1023</MaxTorque>
-        <SmoothFactor>0</SmoothFactor>
-        <Bounce>50</Bounce>
-        <Punch>1</Punch>
-        <Inverse>false</Inverse>
-        <ZeroAngle>19.409</ZeroAngle>
-        <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>0</ActualSpeed>
-        <MaxLoad>1000</MaxLoad>
-        <ActualLoad>64</ActualLoad>
-        <Voltage>8.6</Voltage>
-        <Temperature>43</Temperature>
-        <Diagnostic />
-      </ServoConfig>
-      <ServoConfig>
-        <Type>RX64</Type>
-        <Id>105</Id>
-        <Name>DCoudeRot</Name>
-        <TargetAngle>43.652</TargetAngle>
-        <ActualAngle>43.652</ActualAngle>
-        <IniAngle>18.75</IniAngle>
-        <MinAngle>-180</MinAngle>
-        <MaxAngle>180</MaxAngle>
-        <MaxSpeed>1023</MaxSpeed>
-        <MaxTorque>1023</MaxTorque>
-        <SmoothFactor>0</SmoothFactor>
-        <Bounce>50</Bounce>
-        <Punch>1</Punch>
-        <Inverse>false</Inverse>
-        <ZeroAngle>24.902</ZeroAngle>
+        <ZeroAngle>0</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
         <ActualLoad>0</ActualLoad>
-        <Voltage>12</Voltage>
-        <Temperature>29</Temperature>
-        <Diagnostic />
-      </ServoConfig>
-      <ServoConfig>
-        <Type>RX64</Type>
-        <Id>104</Id>
-        <Name>DCoude</Name>
-        <TargetAngle>-31.933</TargetAngle>
-        <ActualAngle>-33.398</ActualAngle>
-        <IniAngle>-54.7839966</IniAngle>
-        <MinAngle>-180</MinAngle>
-        <MaxAngle>180</MaxAngle>
-        <MaxSpeed>1023</MaxSpeed>
-        <MaxTorque>1023</MaxTorque>
-        <SmoothFactor>0</SmoothFactor>
-        <Bounce>50</Bounce>
-        <Punch>1</Punch>
-        <Inverse>false</Inverse>
-        <ZeroAngle>21.386</ZeroAngle>
-        <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>0</ActualSpeed>
-        <MaxLoad>1000</MaxLoad>
-        <ActualLoad>-160</ActualLoad>
-        <Voltage>12.3</Voltage>
-        <Temperature>33</Temperature>
-        <Diagnostic />
-      </ServoConfig>
-      <ServoConfig>
-        <Type>RX64</Type>
-        <Id>103</Id>
-        <Name>DEpauleRot</Name>
-        <TargetAngle>-44.824</TargetAngle>
-        <ActualAngle>-46.289</ActualAngle>
-        <IniAngle>-115.429</IniAngle>
-        <MinAngle>-180</MinAngle>
-        <MaxAngle>180</MaxAngle>
-        <MaxSpeed>1023</MaxSpeed>
-        <MaxTorque>1023</MaxTorque>
-        <SmoothFactor>0</SmoothFactor>
-        <Bounce>50</Bounce>
-        <Punch>1</Punch>
-        <Inverse>false</Inverse>
-        <ZeroAngle>69.14</ZeroAngle>
-        <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>0</ActualSpeed>
-        <MaxLoad>1000</MaxLoad>
-        <ActualLoad>-128</ActualLoad>
-        <Voltage>12</Voltage>
-        <Temperature>32</Temperature>
+        <Voltage>0</Voltage>
+        <Temperature>0</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>EX106p</Type>
-        <Id>102</Id>
-        <Name>DEpauleLat</Name>
-        <TargetAngle>-0.585</TargetAngle>
-        <ActualAngle>-0.292</ActualAngle>
-        <IniAngle>-33.983</IniAngle>
+        <Id>2</Id>
+        <Name>GEpauleLat</Name>
+        <TargetAngle>100.488</TargetAngle>
+        <ActualAngle>-35.81543</ActualAngle>
+        <IniAngle>0</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
         <MaxSpeed>1023</MaxSpeed>
@@ -468,22 +372,22 @@
         <Bounce>50</Bounce>
         <Punch>1</Punch>
         <Inverse>false</Inverse>
-        <ZeroAngle>33.691</ZeroAngle>
+        <ZeroAngle>-35.81543</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>0</ActualSpeed>
+        <ActualSpeed>-1</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>16</ActualLoad>
-        <Voltage>12.3</Voltage>
-        <Temperature>49</Temperature>
+        <ActualLoad>-958</ActualLoad>
+        <Voltage>12</Voltage>
+        <Temperature>38</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>EX106p</Type>
-        <Id>101</Id>
-        <Name>DEpauleLong</Name>
-        <TargetAngle>-23.73</TargetAngle>
-        <ActualAngle>-23.583</ActualAngle>
-        <IniAngle>1.68499947</IniAngle>
+        <Id>1</Id>
+        <Name>GEpauleLong</Name>
+        <TargetAngle>-75.146</TargetAngle>
+        <ActualAngle>21.1669922</ActualAngle>
+        <IniAngle>0</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
         <MaxSpeed>1023</MaxSpeed>
@@ -492,108 +396,12 @@
         <Bounce>50</Bounce>
         <Punch>1</Punch>
         <Inverse>false</Inverse>
-        <ZeroAngle>-25.268</ZeroAngle>
+        <ZeroAngle>21.1669922</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>0</ActualLoad>
-        <Voltage>12.3</Voltage>
-        <Temperature>37</Temperature>
-        <Diagnostic />
-      </ServoConfig>
-      <ServoConfig>
-        <Type>MX28</Type>
-        <Id>7</Id>
-        <Name>GPoignetLat</Name>
-        <TargetAngle>-10.8339834</TargetAngle>
-        <ActualAngle>-10.107</ActualAngle>
-        <IniAngle>-48.9250031</IniAngle>
-        <MinAngle>-180</MinAngle>
-        <MaxAngle>180</MaxAngle>
-        <MaxSpeed>1023</MaxSpeed>
-        <MaxTorque>1023</MaxTorque>
-        <SmoothFactor>0</SmoothFactor>
-        <Bounce>50</Bounce>
-        <Punch>1</Punch>
-        <Inverse>false</Inverse>
-        <ZeroAngle>38.818</ZeroAngle>
-        <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>0</ActualSpeed>
-        <MaxLoad>1000</MaxLoad>
-        <ActualLoad>80</ActualLoad>
-        <Voltage>8.2</Voltage>
-        <Temperature>45</Temperature>
-        <Diagnostic />
-      </ServoConfig>
-      <ServoConfig>
-        <Type>MX28</Type>
-        <Id>6</Id>
-        <Name>GPoignetLong</Name>
-        <TargetAngle>52.221</TargetAngle>
-        <ActualAngle>52.221</ActualAngle>
-        <IniAngle>32.08</IniAngle>
-        <MinAngle>-180</MinAngle>
-        <MaxAngle>180</MaxAngle>
-        <MaxSpeed>1023</MaxSpeed>
-        <MaxTorque>1023</MaxTorque>
-        <SmoothFactor>0</SmoothFactor>
-        <Bounce>50</Bounce>
-        <Punch>1</Punch>
-        <Inverse>false</Inverse>
-        <ZeroAngle>20.141</ZeroAngle>
-        <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>0</ActualSpeed>
-        <MaxLoad>1000</MaxLoad>
-        <ActualLoad>8</ActualLoad>
-        <Voltage>9</Voltage>
-        <Temperature>41</Temperature>
-        <Diagnostic />
-      </ServoConfig>
-      <ServoConfig>
-        <Type>RX64</Type>
-        <Id>5</Id>
-        <Name>GCoudeRot</Name>
-        <TargetAngle>-24.609</TargetAngle>
-        <ActualAngle>-23.73</ActualAngle>
-        <IniAngle>-47.46</IniAngle>
-        <MinAngle>-180</MinAngle>
-        <MaxAngle>180</MaxAngle>
-        <MaxSpeed>1023</MaxSpeed>
-        <MaxTorque>1023</MaxTorque>
-        <SmoothFactor>0</SmoothFactor>
-        <Bounce>50</Bounce>
-        <Punch>1</Punch>
-        <Inverse>false</Inverse>
-        <ZeroAngle>23.73</ZeroAngle>
-        <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>0</ActualSpeed>
-        <MaxLoad>1000</MaxLoad>
-        <ActualLoad>96</ActualLoad>
-        <Voltage>12.3</Voltage>
-        <Temperature>33</Temperature>
-        <Diagnostic />
-      </ServoConfig>
-      <ServoConfig>
-        <Type>RX64</Type>
-        <Id>4</Id>
-        <Name>GCoude</Name>
-        <TargetAngle>40.722</TargetAngle>
-        <ActualAngle>40.722</ActualAngle>
-        <IniAngle>60.35</IniAngle>
-        <MinAngle>-180</MinAngle>
-        <MaxAngle>180</MaxAngle>
-        <MaxSpeed>1023</MaxSpeed>
-        <MaxTorque>1023</MaxTorque>
-        <SmoothFactor>0</SmoothFactor>
-        <Bounce>50</Bounce>
-        <Punch>1</Punch>
-        <Inverse>false</Inverse>
-        <ZeroAngle>-19.628</ZeroAngle>
-        <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>0</ActualSpeed>
-        <MaxLoad>1000</MaxLoad>
-        <ActualLoad>64</ActualLoad>
-        <Voltage>12.3</Voltage>
+        <ActualLoad>-989</ActualLoad>
+        <Voltage>12.1</Voltage>
         <Temperature>41</Temperature>
         <Diagnostic />
       </ServoConfig>
@@ -602,8 +410,8 @@
         <Id>3</Id>
         <Name>GEpauleRot</Name>
         <TargetAngle>44.238</TargetAngle>
-        <ActualAngle>42.773</ActualAngle>
-        <IniAngle>-23.437</IniAngle>
+        <ActualAngle>-59.1796875</ActualAngle>
+        <IniAngle>0</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
         <MaxSpeed>1023</MaxSpeed>
@@ -612,22 +420,22 @@
         <Bounce>50</Bounce>
         <Punch>1</Punch>
         <Inverse>false</Inverse>
-        <ZeroAngle>66.21</ZeroAngle>
+        <ZeroAngle>-59.1796875</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>0</ActualSpeed>
+        <ActualSpeed>-8</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>-64</ActualLoad>
-        <Voltage>12.3</Voltage>
-        <Temperature>33</Temperature>
+        <ActualLoad>296</ActualLoad>
+        <Voltage>11.3</Voltage>
+        <Temperature>30</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
-        <Type>EX106p</Type>
-        <Id>2</Id>
-        <Name>GEpauleLat</Name>
-        <TargetAngle>100.488</TargetAngle>
-        <ActualAngle>100.488</ActualAngle>
-        <IniAngle>77.8569946</IniAngle>
+        <Type>MX28</Type>
+        <Id>7</Id>
+        <Name>GPoignetLat</Name>
+        <TargetAngle>-10.8339834</TargetAngle>
+        <ActualAngle>-16.1865234</ActualAngle>
+        <IniAngle>0</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
         <MaxSpeed>1023</MaxSpeed>
@@ -636,13 +444,37 @@
         <Bounce>50</Bounce>
         <Punch>1</Punch>
         <Inverse>false</Inverse>
-        <ZeroAngle>22.631</ZeroAngle>
+        <ZeroAngle>-16.1865234</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
         <ActualLoad>0</ActualLoad>
-        <Voltage>12.6</Voltage>
-        <Temperature>47</Temperature>
+        <Voltage>9.9</Voltage>
+        <Temperature>37</Temperature>
+        <Diagnostic />
+      </ServoConfig>
+      <ServoConfig>
+        <Type>MX28</Type>
+        <Id>6</Id>
+        <Name>GPoignetLong</Name>
+        <TargetAngle>52.221</TargetAngle>
+        <ActualAngle>-22.8515625</ActualAngle>
+        <IniAngle>0</IniAngle>
+        <MinAngle>-180</MinAngle>
+        <MaxAngle>180</MaxAngle>
+        <MaxSpeed>1023</MaxSpeed>
+        <MaxTorque>1023</MaxTorque>
+        <SmoothFactor>0</SmoothFactor>
+        <Bounce>50</Bounce>
+        <Punch>1</Punch>
+        <Inverse>false</Inverse>
+        <ZeroAngle>-22.8515625</ZeroAngle>
+        <TargetSpeed>200</TargetSpeed>
+        <ActualSpeed>0</ActualSpeed>
+        <MaxLoad>1000</MaxLoad>
+        <ActualLoad>0</ActualLoad>
+        <Voltage>9.7</Voltage>
+        <Temperature>38</Temperature>
         <Diagnostic />
       </ServoConfig>
     </Servos>
@@ -655,5 +487,6 @@
     <gyroy_sensor />
     <compass_sensor />
     <joypad_sensor />
+    <kinect_sensor />
   </SensorsConfig>
 </MoveSchedulerConfig>
