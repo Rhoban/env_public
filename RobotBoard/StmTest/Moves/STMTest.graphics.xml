@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>STMTest</name>
+  <gain>1</gain>
+  <gainMin>-2</gainMin>
+  <gainMax>100</gainMax>
+  <GraphicalBlock>
+    <CurrentState>false</CurrentState>
+    <StmStateBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>StmLoopBlock1</name>
+          <output_idx>0</output_idx>
+          <condition>self.i % 20 == 0</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Initial</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop>self.i = self.i + 1
+print(str(self.i))</loop>
+      <enter>self.i = 0</enter>
+      <exit>self.i = 0</exit>
+    </StmStateBlock>
+    <Position>
+      <X>169</X>
+      <Y>221</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CurrentState>true</CurrentState>
+    <StmStateBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Initial</name>
+          <output_idx>0</output_idx>
+          <condition>self.i % 20 == 0</condition>
+          <fire>print("Leaving initial state")</fire>
+        </BlockPredecessor>
+      </entries>
+      <name>StmStateBlock1</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop>self.i = self.i + 1
+print(str(self.i))</loop>
+      <enter>self.i = 0</enter>
+      <exit>self.i = 0</exit>
+    </StmStateBlock>
+    <Position>
+      <X>389</X>
+      <Y>25</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <CurrentState>false</CurrentState>
+    <output_value>0</output_value>
+    <Condition>self.i % 20 == 0</Condition>
+    <Fire>print("Leaving initial state")</Fire>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Initial</SourceName>
+    <TargetName>StmStateBlock1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <CurrentState>false</CurrentState>
+    <StmLoopBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>StmStateBlock1</name>
+          <output_idx>0</output_idx>
+          <condition>self.i % 20 == 0</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>StmLoopBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop>self.i = self.i + 1</loop>
+    </StmLoopBlock>
+    <Position>
+      <X>641</X>
+      <Y>91</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <CurrentState>false</CurrentState>
+    <output_value>0</output_value>
+    <Condition>self.i % 20 == 0</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>StmStateBlock1</SourceName>
+    <TargetName>StmLoopBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <CurrentState>false</CurrentState>
+    <StmLoopBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>StmLoopBlock</name>
+          <output_idx>0</output_idx>
+          <condition>self.i % 20 == 0</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>StmLoopBlock1</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop>self.i = self.i + 1</loop>
+    </StmLoopBlock>
+    <Position>
+      <X>605</X>
+      <Y>253</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <CurrentState>false</CurrentState>
+    <output_value>0</output_value>
+    <Condition>self.i % 20 == 0</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>StmLoopBlock</SourceName>
+    <TargetName>StmLoopBlock1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <CurrentState>false</CurrentState>
+    <output_value>0</output_value>
+    <Condition>self.i % 20 == 0</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>StmLoopBlock1</SourceName>
+    <TargetName>Initial</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+  <MotorPrimitive>
+    <entries />
+    <name>STMTest</name>
+    <gain>1</gain>
+    <gainMin>-2</gainMin>
+    <gainMax>100</gainMax>
+    <StmStateBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>StmLoopBlock1</name>
+          <output_idx>0</output_idx>
+          <condition>self.i % 20 == 0</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Initial</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop>self.i = self.i + 1
+print(str(self.i))</loop>
+      <enter>self.i = 0</enter>
+      <exit>self.i = 0</exit>
+    </StmStateBlock>
+    <StmStateBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Initial</name>
+          <output_idx>0</output_idx>
+          <condition>self.i % 20 == 0</condition>
+          <fire>print("Leaving initial state")</fire>
+        </BlockPredecessor>
+      </entries>
+      <name>StmStateBlock1</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop>self.i = self.i + 1
+print(str(self.i))</loop>
+      <enter>self.i = 0</enter>
+      <exit>self.i = 0</exit>
+    </StmStateBlock>
+    <StmLoopBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>StmStateBlock1</name>
+          <output_idx>0</output_idx>
+          <condition>self.i % 20 == 0</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>StmLoopBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop>self.i = self.i + 1</loop>
+    </StmLoopBlock>
+    <StmLoopBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>StmLoopBlock</name>
+          <output_idx>0</output_idx>
+          <condition>self.i % 20 == 0</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>StmLoopBlock1</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop>self.i = self.i + 1</loop>
+    </StmLoopBlock>
+    <SchemaComments />
+    <frequency>100</frequency>
+  </MotorPrimitive>
+</GraphicalMotorPrimitive>
