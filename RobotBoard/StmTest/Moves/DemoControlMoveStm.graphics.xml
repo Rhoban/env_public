@@ -27,6 +27,9 @@ self.clock = 0</preamble>
       <gain>1</gain>
       <gainMin>-2</gainMin>
       <gainMax>100</gainMax>
+      <Commentaires>When the stm is started the move DemoControlMoveMove is started.
+This move sends its clock values to the attribute 'clock' of the stm.
+When the clock is above 5, the move is topped and restarted</Commentaires>
     </CommentsBlock>
     <Position>
       <X>279</X>
@@ -52,8 +55,8 @@ self.clock = 0</preamble>
       <exit />
     </StmStateBlock>
     <Position>
-      <X>69</X>
-      <Y>225</Y>
+      <X>126</X>
+      <Y>188</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -62,7 +65,7 @@ self.clock = 0</preamble>
         <BlockPredecessor>
           <name>Initial</name>
           <output_idx>0</output_idx>
-          <condition>self.clock &gt; 1</condition>
+          <condition>self.clock &gt; 5</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -76,8 +79,8 @@ sleep(0.5)</enter>
       <exit />
     </StmStateBlock>
     <Position>
-      <X>467</X>
-      <Y>262</Y>
+      <X>538</X>
+      <Y>253</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
