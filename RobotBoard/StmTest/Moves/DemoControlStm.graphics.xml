@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>DemoControlStm</name>
+  <gain>1</gain>
+  <gainMin>-2</gainMin>
+  <gainMax>100</gainMax>
+  <GraphicalBlock>
+    <StmControlBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockPolynome</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>StmControlBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <machine_name>DrunkSailor</machine_name>
+      <refresh_frequency>10</refresh_frequency>
+    </StmControlBlock>
+    <Position>
+      <X>411</X>
+      <Y>172</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmEvalBlock>
+      <entries />
+      <name>StmEvalBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <machine_name>DrunkSailor</machine_name>
+      <refresh_frequency>10</refresh_frequency>
+      <expression>self.state.name == "Cliff" or self.state.name == "Home"</expression>
+    </StmEvalBlock>
+    <Position>
+      <X>27</X>
+      <Y>132</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockPolynome>
+      <entries>
+        <BlockPredecessor>
+          <name>StmEvalBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockPolynome</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <const_coefs>
+        <float>1</float>
+      </const_coefs>
+      <lin_coefs>
+        <float>-2</float>
+      </lin_coefs>
+      <square_coefs>
+        <float>0</float>
+      </square_coefs>
+      <abs_coefs>
+        <float>0</float>
+      </abs_coefs>
+    </BlockPolynome>
+    <Position>
+      <X>209</X>
+      <Y>127</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>1</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>StmEvalBlock</SourceName>
+    <TargetName>BlockPolynome</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockPolynome</SourceName>
+    <TargetName>StmControlBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+    </CommentsBlock>
+    <Position>
+      <X>300</X>
+      <Y>49</Y>
+    </Position>
+  </GraphicalBlock>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>

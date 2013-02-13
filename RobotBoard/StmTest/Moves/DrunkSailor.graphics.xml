@@ -1,0 +1,397 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>DrunkSailor</name>
+  <gain>1</gain>
+  <gainMin>-2</gainMin>
+  <gainMax>100</gainMax>
+  <GraphicalBlock>
+    <StmLoopBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Road1</name>
+          <output_idx>0</output_idx>
+          <condition>randint(-1,1) == -1</condition>
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Path1</name>
+          <output_idx>0</output_idx>
+          <condition>randint(-1,1) == 1</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Initial</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop />
+    </StmLoopBlock>
+    <Position>
+      <X>396</X>
+      <Y>143</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmStateBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Road3</name>
+          <output_idx>0</output_idx>
+          <condition>randint(-1,1) == 1</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Home</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop />
+      <enter>print("Zzzzzzzzz")</enter>
+      <exit />
+    </StmStateBlock>
+    <Position>
+      <X>830</X>
+      <Y>141</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmLoopBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Path3</name>
+          <output_idx>0</output_idx>
+          <condition>randint(-1,1) == -1</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Cliff</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop>print("Aaaah")</loop>
+    </StmLoopBlock>
+    <Position>
+      <X>0</X>
+      <Y>160</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmStateBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Initial</name>
+          <output_idx>0</output_idx>
+          <condition>randint(-1,1) == 1</condition>
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Road2</name>
+          <output_idx>0</output_idx>
+          <condition>randint(-1,1) == -1</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Road1</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop />
+      <enter />
+      <exit />
+    </StmStateBlock>
+    <Position>
+      <X>537</X>
+      <Y>321</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmLoopBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Road1</name>
+          <output_idx>0</output_idx>
+          <condition>randint(-1,1) == 1</condition>
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Road3</name>
+          <output_idx>0</output_idx>
+          <condition>randint(-1,1) == -1</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Road2</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop />
+    </StmLoopBlock>
+    <Position>
+      <X>622</X>
+      <Y>133</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmStateBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Road2</name>
+          <output_idx>0</output_idx>
+          <condition>randint(-1,1) == 1</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Road3</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop />
+      <enter />
+      <exit />
+    </StmStateBlock>
+    <Position>
+      <X>704</X>
+      <Y>309</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmLoopBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Initial</name>
+          <output_idx>0</output_idx>
+          <condition>randint(-1,1) == -1</condition>
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Path2</name>
+          <output_idx>0</output_idx>
+          <condition>randint(-1,1) == 1</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Path1</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop />
+    </StmLoopBlock>
+    <Position>
+      <X>288</X>
+      <Y>300</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmLoopBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Path1</name>
+          <output_idx>0</output_idx>
+          <condition>randint(-1,1) == -1</condition>
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Path3</name>
+          <output_idx>0</output_idx>
+          <condition>randint(-1,1) == 1</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Path2</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop />
+    </StmLoopBlock>
+    <Position>
+      <X>181</X>
+      <Y>141</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmStateBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Path2</name>
+          <output_idx>0</output_idx>
+          <condition>randint(-1,1) == -1</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Path3</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop />
+      <enter />
+      <exit />
+    </StmStateBlock>
+    <Position>
+      <X>87</X>
+      <Y>313</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmPreambleBlock>
+      <entries />
+      <name>StmPreambleBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <preamble>from time import time
+from random import randint
+</preamble>
+    </StmPreambleBlock>
+    <Position>
+      <X>57</X>
+      <Y>35</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+    </CommentsBlock>
+    <Position>
+      <X>341</X>
+      <Y>14</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>randint(-1,1) == 1</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Initial</SourceName>
+    <TargetName>Road1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>randint(-1,1) == 1</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Road1</SourceName>
+    <TargetName>Road2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>randint(-1,1) == 1</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Road2</SourceName>
+    <TargetName>Road3</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>randint(-1,1) == 1</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Road3</SourceName>
+    <TargetName>Home</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>randint(-1,1) == -1</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Initial</SourceName>
+    <TargetName>Path1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>randint(-1,1) == -1</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Path1</SourceName>
+    <TargetName>Path2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>randint(-1,1) == -1</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Path2</SourceName>
+    <TargetName>Path3</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>randint(-1,1) == -1</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Path3</SourceName>
+    <TargetName>Cliff</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>randint(-1,1) == 1</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>Path3</SourceName>
+    <TargetName>Path2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>randint(-1,1) == 1</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>Path2</SourceName>
+    <TargetName>Path1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>randint(-1,1) == -1</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Road1</SourceName>
+    <TargetName>Initial</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>randint(-1,1) == -1</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>Road2</SourceName>
+    <TargetName>Road1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>randint(-1,1) == -1</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>Road3</SourceName>
+    <TargetName>Road2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>randint(-1,1) == 1</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>Path1</SourceName>
+    <TargetName>Initial</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>

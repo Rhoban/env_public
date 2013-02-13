@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>DemoEvalStm</name>
+  <gain>1</gain>
+  <gainMin>-2</gainMin>
+  <gainMax>100</gainMax>
+  <GraphicalBlock>
+    <StmEvalBlock>
+      <entries />
+      <name>StmEvalBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <machine_name>STMTest</machine_name>
+      <refresh_frequency>5</refresh_frequency>
+      <expression>(self.i * 100) &gt; 10000</expression>
+    </StmEvalBlock>
+    <Position>
+      <X>72</X>
+      <Y>97</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockWatch>
+      <entries>
+        <BlockPredecessor>
+          <name>StmEvalBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>StmReadBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>StmReadBlock</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockWatch</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <delay_ms>500</delay_ms>
+    </BlockWatch>
+    <Position>
+      <X>533</X>
+      <Y>112</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>StmEvalBlock</SourceName>
+    <TargetName>BlockWatch</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <StmReadBlock>
+      <entries />
+      <name>StmReadBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <machine_name>STMTest</machine_name>
+      <refresh_frequency>5</refresh_frequency>
+      <attributes>
+        <string>i</string>
+        <string>j</string>
+      </attributes>
+    </StmReadBlock>
+    <Position>
+      <X>112</X>
+      <Y>266</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>StmReadBlock</SourceName>
+    <TargetName>BlockWatch</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <StmWriteBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Constant</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>StmWriteBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <machine_name>STMTest</machine_name>
+      <refresh_frequency>5</refresh_frequency>
+      <attributes>
+        <string>j</string>
+      </attributes>
+    </StmWriteBlock>
+    <Position>
+      <X>573</X>
+      <Y>302</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <constants>
+        <float>12</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>459</X>
+      <Y>301</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>12</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Constant</SourceName>
+    <TargetName>StmWriteBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>StmReadBlock</SourceName>
+    <TargetName>BlockWatch</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+    </CommentsBlock>
+    <Position>
+      <X>51</X>
+      <Y>20</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock1</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+    </CommentsBlock>
+    <Position>
+      <X>54</X>
+      <Y>186</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock2</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+    </CommentsBlock>
+    <Position>
+      <X>554</X>
+      <Y>228</Y>
+    </Position>
+  </GraphicalBlock>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>

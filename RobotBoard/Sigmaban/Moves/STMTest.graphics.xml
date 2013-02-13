@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Filename>NewMove.graphics.xml</Filename>
+  <entries />
+  <name>STMTest</name>
+  <gain>1</gain>
+  <gainMin>-2</gainMin>
+  <gainMax>100</gainMax>
+  <GraphicalBlock>
+    <StmStateBlock>
+      <Filename>Rhoban.Moves.StmStateBlock.xml</Filename>
+      <entries />
+      <name>StmStateBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop>kjhkjh</loop>
+      <enter>khkj</enter>
+      <exit>kjhh</exit>
+    </StmStateBlock>
+    <Position>
+      <X>128</X>
+      <Y>169</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmStateBlock>
+      <Filename>Rhoban.Moves.StmStateBlock.xml</Filename>
+      <entries />
+      <name>StmStateBlock1</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop>mlkmlk</loop>
+      <enter>mlkmlk</enter>
+      <exit />
+    </StmStateBlock>
+    <Position>
+      <X>509</X>
+      <Y>157</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>i &gt;0</Condition>
+    <Fire>bleh</Fire>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>StmStateBlock</SourceName>
+    <TargetName>StmStateBlock1</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+  <MotorPrimitive>
+    <Filename>Rhoban.Moves.MotorPrimitive.xml</Filename>
+    <entries />
+    <name>STMTest</name>
+    <gain>1</gain>
+    <gainMin>-2</gainMin>
+    <gainMax>100</gainMax>
+    <StmStateBlock>
+      <Filename>Rhoban.Moves.StmStateBlock.xml</Filename>
+      <entries />
+      <name>StmStateBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop>kjhkjh</loop>
+      <enter>khkj</enter>
+      <exit>kjhh</exit>
+    </StmStateBlock>
+    <StmStateBlock>
+      <Filename>Rhoban.Moves.StmStateBlock.xml</Filename>
+      <entries>
+        <BlockPredecessor>
+          <name>StmStateBlock</name>
+          <output_idx>0</output_idx>
+          <condition>i &gt;0</condition>
+          <fire>bleh</fire>
+        </BlockPredecessor>
+      </entries>
+      <name>StmStateBlock1</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop>mlkmlk</loop>
+      <enter>mlkmlk</enter>
+      <exit />
+    </StmStateBlock>
+    <SchemaComments />
+    <frequency>100</frequency>
+  </MotorPrimitive>
+</GraphicalMotorPrimitive>
