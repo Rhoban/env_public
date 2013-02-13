@@ -11,13 +11,13 @@
         <BlockPredecessor>
           <name>Road1</name>
           <output_idx>0</output_idx>
-          <condition>randint(-1,1) == -1</condition>
+          <condition>randint(-1,1) &lt; 0</condition>
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
           <name>Path1</name>
           <output_idx>0</output_idx>
-          <condition>randint(-1,1) == 1</condition>
+          <condition>randint(-1,1) &gt; 0</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -25,7 +25,7 @@
       <gain>1</gain>
       <gainMin>-2</gainMin>
       <gainMax>100</gainMax>
-      <loop />
+      <loop>sleep(.5)</loop>
     </StmLoopBlock>
     <Position>
       <X>396</X>
@@ -38,7 +38,7 @@
         <BlockPredecessor>
           <name>Road3</name>
           <output_idx>0</output_idx>
-          <condition>randint(-1,1) == 1</condition>
+          <condition>randint(-1,1) &gt; 0</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -61,7 +61,7 @@
         <BlockPredecessor>
           <name>Path3</name>
           <output_idx>0</output_idx>
-          <condition>randint(-1,1) == -1</condition>
+          <condition>randint(-1,1) &lt;0</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -82,13 +82,13 @@
         <BlockPredecessor>
           <name>Initial</name>
           <output_idx>0</output_idx>
-          <condition>randint(-1,1) == 1</condition>
+          <condition>randint(-1,1) &gt; 0</condition>
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
           <name>Road2</name>
           <output_idx>0</output_idx>
-          <condition>randint(-1,1) == -1</condition>
+          <condition>randint(-1,1) &lt; 0</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -96,7 +96,7 @@
       <gain>1</gain>
       <gainMin>-2</gainMin>
       <gainMax>100</gainMax>
-      <loop />
+      <loop>sleep(.5)</loop>
       <enter />
       <exit />
     </StmStateBlock>
@@ -111,13 +111,13 @@
         <BlockPredecessor>
           <name>Road1</name>
           <output_idx>0</output_idx>
-          <condition>randint(-1,1) == 1</condition>
+          <condition>randint(-1,1) &gt; 0</condition>
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
           <name>Road3</name>
           <output_idx>0</output_idx>
-          <condition>randint(-1,1) == -1</condition>
+          <condition>randint(-1,1) &lt; 0</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -125,7 +125,7 @@
       <gain>1</gain>
       <gainMin>-2</gainMin>
       <gainMax>100</gainMax>
-      <loop />
+      <loop>sleep(.5)</loop>
     </StmLoopBlock>
     <Position>
       <X>622</X>
@@ -138,7 +138,7 @@
         <BlockPredecessor>
           <name>Road2</name>
           <output_idx>0</output_idx>
-          <condition>randint(-1,1) == 1</condition>
+          <condition>randint(-1,1) &gt; 0</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -146,7 +146,7 @@
       <gain>1</gain>
       <gainMin>-2</gainMin>
       <gainMax>100</gainMax>
-      <loop />
+      <loop>sleep(.5)</loop>
       <enter />
       <exit />
     </StmStateBlock>
@@ -161,13 +161,13 @@
         <BlockPredecessor>
           <name>Initial</name>
           <output_idx>0</output_idx>
-          <condition>randint(-1,1) == -1</condition>
+          <condition>randint(-1,1) &lt; 0</condition>
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
           <name>Path2</name>
           <output_idx>0</output_idx>
-          <condition>randint(-1,1) == 1</condition>
+          <condition>randint(-1,1) &gt;0</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -175,7 +175,7 @@
       <gain>1</gain>
       <gainMin>-2</gainMin>
       <gainMax>100</gainMax>
-      <loop />
+      <loop>sleep(.5)</loop>
     </StmLoopBlock>
     <Position>
       <X>288</X>
@@ -188,13 +188,13 @@
         <BlockPredecessor>
           <name>Path1</name>
           <output_idx>0</output_idx>
-          <condition>randint(-1,1) == -1</condition>
+          <condition>randint(-1,1) &lt; 0</condition>
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
           <name>Path3</name>
           <output_idx>0</output_idx>
-          <condition>randint(-1,1) == 1</condition>
+          <condition>randint(-1,1) &gt; 0</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -202,7 +202,7 @@
       <gain>1</gain>
       <gainMin>-2</gainMin>
       <gainMax>100</gainMax>
-      <loop />
+      <loop>sleep(.5)</loop>
     </StmLoopBlock>
     <Position>
       <X>181</X>
@@ -215,7 +215,7 @@
         <BlockPredecessor>
           <name>Path2</name>
           <output_idx>0</output_idx>
-          <condition>randint(-1,1) == -1</condition>
+          <condition>randint(-1,1) &lt; 0</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -223,7 +223,7 @@
       <gain>1</gain>
       <gainMin>-2</gainMin>
       <gainMax>100</gainMax>
-      <loop />
+      <loop>sleep(.5)</loop>
       <enter />
       <exit />
     </StmStateBlock>
@@ -239,7 +239,7 @@
       <gain>1</gain>
       <gainMin>-2</gainMin>
       <gainMax>100</gainMax>
-      <preamble>from time import time
+      <preamble>from time import sleep
 from random import randint
 </preamble>
     </StmPreambleBlock>
@@ -263,7 +263,7 @@ from random import randint
   </GraphicalBlock>
   <GraphicalBlockLink>
     <output_value>0</output_value>
-    <Condition>randint(-1,1) == 1</Condition>
+    <Condition>randint(-1,1) &gt; 0</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
@@ -272,7 +272,7 @@ from random import randint
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
-    <Condition>randint(-1,1) == 1</Condition>
+    <Condition>randint(-1,1) &gt; 0</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
@@ -281,7 +281,7 @@ from random import randint
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
-    <Condition>randint(-1,1) == 1</Condition>
+    <Condition>randint(-1,1) &gt; 0</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
@@ -290,7 +290,7 @@ from random import randint
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
-    <Condition>randint(-1,1) == 1</Condition>
+    <Condition>randint(-1,1) &gt; 0</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
@@ -299,7 +299,7 @@ from random import randint
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
-    <Condition>randint(-1,1) == -1</Condition>
+    <Condition>randint(-1,1) &lt; 0</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
@@ -308,7 +308,7 @@ from random import randint
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
-    <Condition>randint(-1,1) == -1</Condition>
+    <Condition>randint(-1,1) &lt; 0</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
@@ -317,7 +317,7 @@ from random import randint
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
-    <Condition>randint(-1,1) == -1</Condition>
+    <Condition>randint(-1,1) &lt; 0</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
@@ -326,7 +326,7 @@ from random import randint
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
-    <Condition>randint(-1,1) == -1</Condition>
+    <Condition>randint(-1,1) &lt;0</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
@@ -335,7 +335,7 @@ from random import randint
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
-    <Condition>randint(-1,1) == 1</Condition>
+    <Condition>randint(-1,1) &gt; 0</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>1</TargetIndex>
@@ -344,7 +344,7 @@ from random import randint
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
-    <Condition>randint(-1,1) == 1</Condition>
+    <Condition>randint(-1,1) &gt;0</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>1</TargetIndex>
@@ -353,7 +353,7 @@ from random import randint
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
-    <Condition>randint(-1,1) == -1</Condition>
+    <Condition>randint(-1,1) &lt; 0</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
@@ -362,7 +362,7 @@ from random import randint
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
-    <Condition>randint(-1,1) == -1</Condition>
+    <Condition>randint(-1,1) &lt; 0</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>1</TargetIndex>
@@ -371,7 +371,7 @@ from random import randint
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
-    <Condition>randint(-1,1) == -1</Condition>
+    <Condition>randint(-1,1) &lt; 0</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>1</TargetIndex>
@@ -380,7 +380,7 @@ from random import randint
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
-    <Condition>randint(-1,1) == 1</Condition>
+    <Condition>randint(-1,1) &gt; 0</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>1</TargetIndex>

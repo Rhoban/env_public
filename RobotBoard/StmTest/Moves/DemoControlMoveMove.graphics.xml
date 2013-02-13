@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>DemoControlMoveMove</name>
+  <gain>1</gain>
+  <gainMin>-2</gainMin>
+  <gainMax>100</gainMax>
+  <GraphicalBlock>
+    <StmWriteBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>ChronoBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>StmWriteBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <machine_name>DemoControlMoveStm</machine_name>
+      <refresh_frequency>10</refresh_frequency>
+      <attributes>
+        <string>clock</string>
+      </attributes>
+    </StmWriteBlock>
+    <Position>
+      <X>347</X>
+      <Y>147</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <ChronoBlock>
+      <entries />
+      <name>ChronoBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <clock_speeds>
+        <float>1</float>
+      </clock_speeds>
+    </ChronoBlock>
+    <Position>
+      <X>144</X>
+      <Y>143</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>31.822206497192383</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>ChronoBlock</SourceName>
+    <TargetName>StmWriteBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <StmReadBlock>
+      <entries />
+      <name>StmReadBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <machine_name>DemoControlMoveStm</machine_name>
+      <refresh_frequency>10</refresh_frequency>
+      <attributes>
+        <string>clock</string>
+      </attributes>
+    </StmReadBlock>
+    <Position>
+      <X>118</X>
+      <Y>233</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockWatch>
+      <entries>
+        <BlockPredecessor>
+          <name>StmReadBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockWatch</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <delay_ms>500</delay_ms>
+    </BlockWatch>
+    <Position>
+      <X>396</X>
+      <Y>228</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>31.702199935913086</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>StmReadBlock</SourceName>
+    <TargetName>BlockWatch</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>
