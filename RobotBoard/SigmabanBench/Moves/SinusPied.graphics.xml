@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Filename>C:\Users\UX31\Desktop\RhobanGit\Environments\RobotBoard\Sigmaban\Moves\SinusPied.graphics.xml</Filename>
+  <entries />
+  <name>SinusPied</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>30</gainMax>
+  <GraphicalBlock>
+    <EntrySinus>
+      <Filename>Rhoban.Moves.EntrySinus.xml</Filename>
+      <entries />
+      <name>EntrySinus</name>
+      <gain>30</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>30</gainMax>
+      <period>1</period>
+      <shift>0</shift>
+      <smooth_update>true</smooth_update>
+    </EntrySinus>
+    <Position>
+      <X>176</X>
+      <Y>178</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <Filename>Rhoban.Moves.BlockServo.xml</Filename>
+      <entries>
+        <BlockPredecessor>
+          <name>EntrySinus</name>
+          <output_idx>0</output_idx>
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Constant</name>
+          <output_idx>0</output_idx>
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Constant</name>
+          <output_idx>0</output_idx>
+        </BlockPredecessor>
+      </entries>
+      <name>Servo 38</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>30</gainMax>
+      <servo_name>Servo 38</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>435</X>
+      <Y>178</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-28.800329208374023</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>EntrySinus</SourceName>
+    <TargetName>Servo 38</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <filename>C:\Users\UX31\Desktop\RhobanGit\Environments\RobotBoard\Sigmaban\Moves\SinusPied.graphics.xml</filename>
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+  <MotorPrimitive>
+    <Filename>Rhoban.Moves.MotorPrimitive.xml</Filename>
+    <entries />
+    <name>SinusPied</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>30</gainMax>
+    <EntrySinus>
+      <Filename>Rhoban.Moves.EntrySinus.xml</Filename>
+      <entries />
+      <name>EntrySinus</name>
+      <gain>30</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>30</gainMax>
+      <period>1</period>
+      <shift>0</shift>
+      <smooth_update>true</smooth_update>
+    </EntrySinus>
+    <BlockServo>
+      <Filename>Rhoban.Moves.BlockServo.xml</Filename>
+      <entries>
+        <BlockPredecessor>
+          <name>EntrySinus</name>
+          <output_idx>0</output_idx>
+        </BlockPredecessor>
+      </entries>
+      <name>Servo 38</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>30</gainMax>
+      <servo_name>Servo 38</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <SchemaComments />
+    <frequency>100</frequency>
+  </MotorPrimitive>
+</GraphicalMotorPrimitive>

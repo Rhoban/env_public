@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Filename>NewMove.graphics.xml</Filename>
+  <entries />
+  <name>SinusBras</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>40</gainMax>
+  <GraphicalBlock>
+    <EntrySinus>
+      <Filename>Rhoban.Moves.EntrySinus.xml</Filename>
+      <entries />
+      <name>EntrySinus</name>
+      <gain>20</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>40</gainMax>
+      <period>1</period>
+      <shift>0</shift>
+      <smooth_update>true</smooth_update>
+    </EntrySinus>
+    <Position>
+      <X>102</X>
+      <Y>203</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <Constant>
+      <Filename>Rhoban.Moves.Constant.xml</Filename>
+      <entries />
+      <name>Constant</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>40</gainMax>
+      <constants>
+        <float>40</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>109.48666666666668</X>
+      <Y>134</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockAddition>
+      <Filename>Rhoban.Moves.BlockAddition.xml</Filename>
+      <entries />
+      <name>BlockAddition</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>40</gainMax>
+    </BlockAddition>
+    <Position>
+      <X>235</X>
+      <Y>180</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Constant</SourceName>
+    <TargetName>BlockAddition</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>EntrySinus</SourceName>
+    <TargetName>BlockAddition</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <Filename>Rhoban.Moves.BlockServo.xml</Filename>
+      <entries />
+      <name>Coude G</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>40</gainMax>
+      <servo_name>Coude G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>307</X>
+      <Y>180</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockAddition</SourceName>
+    <TargetName>Coude G</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>0</SmoothStart>
+  <SmoothStop>0</SmoothStop>
+  <Duration>0</Duration>
+  <MotorPrimitive>
+    <Filename>Rhoban.Moves.MotorPrimitive.xml</Filename>
+    <entries />
+    <name>SinusBras</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>40</gainMax>
+    <EntrySinus>
+      <Filename>Rhoban.Moves.EntrySinus.xml</Filename>
+      <entries />
+      <name>EntrySinus</name>
+      <gain>20</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>40</gainMax>
+      <period>1</period>
+      <shift>0</shift>
+      <smooth_update>true</smooth_update>
+    </EntrySinus>
+    <Constant>
+      <Filename>Rhoban.Moves.Constant.xml</Filename>
+      <entries />
+      <name>Constant</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>40</gainMax>
+      <constants>
+        <float>40</float>
+      </constants>
+    </Constant>
+    <BlockAddition>
+      <Filename>Rhoban.Moves.BlockAddition.xml</Filename>
+      <entries>
+        <BlockPredecessor>
+          <name>Constant</name>
+          <output_idx>0</output_idx>
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>EntrySinus</name>
+          <output_idx>0</output_idx>
+        </BlockPredecessor>
+      </entries>
+      <name>BlockAddition</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>40</gainMax>
+    </BlockAddition>
+    <BlockServo>
+      <Filename>Rhoban.Moves.BlockServo.xml</Filename>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockAddition</name>
+          <output_idx>0</output_idx>
+        </BlockPredecessor>
+      </entries>
+      <name>Coude G</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>40</gainMax>
+      <servo_name>Coude G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <SchemaComments />
+    <frequency>100</frequency>
+  </MotorPrimitive>
+</GraphicalMotorPrimitive>

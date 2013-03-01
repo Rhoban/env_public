@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Filename>C:\Users\UX31\Desktop\RhobanGit\Environments\RobotBoard\Sigmaban\Moves\NewMove.graphics.xml</Filename>
+  <entries />
+  <name>NewMove</name>
+  <gain>1</gain>
+  <gainMin>-40</gainMin>
+  <gainMax>30</gainMax>
+  <GraphicalBlock>
+    <EntrySinus>
+      <Filename>Rhoban.Moves.EntrySinus.xml</Filename>
+      <entries />
+      <name>EntrySinus</name>
+      <gain>10</gain>
+      <gainMin>-40</gainMin>
+      <gainMax>30</gainMax>
+      <period>1</period>
+      <shift>0</shift>
+      <smooth_update>true</smooth_update>
+    </EntrySinus>
+    <Position>
+      <X>132</X>
+      <Y>215</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <PWMBlock>
+      <Filename>Rhoban.Moves.PWMBlock.xml</Filename>
+      <entries>
+        <BlockPredecessor>
+          <name>EntrySinus</name>
+          <output_idx>0</output_idx>
+        </BlockPredecessor>
+      </entries>
+      <name>PWMBlock</name>
+      <gain>1</gain>
+      <gainMin>-40</gainMin>
+      <gainMax>30</gainMax>
+      <servo_name>Neck</servo_name>
+    </PWMBlock>
+    <Position>
+      <X>335</X>
+      <Y>215</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>EntrySinus</SourceName>
+    <TargetName>PWMBlock</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>0</SmoothStart>
+  <SmoothStop>0</SmoothStop>
+  <Duration>0</Duration>
+  <MotorPrimitive>
+    <Filename>Rhoban.Moves.MotorPrimitive.xml</Filename>
+    <entries />
+    <name>NewMove</name>
+    <gain>1</gain>
+    <gainMin>-40</gainMin>
+    <gainMax>30</gainMax>
+    <EntrySinus>
+      <Filename>Rhoban.Moves.EntrySinus.xml</Filename>
+      <entries />
+      <name>EntrySinus</name>
+      <gain>10</gain>
+      <gainMin>-40</gainMin>
+      <gainMax>30</gainMax>
+      <period>1</period>
+      <shift>0</shift>
+      <smooth_update>true</smooth_update>
+    </EntrySinus>
+    <PWMBlock>
+      <Filename>Rhoban.Moves.PWMBlock.xml</Filename>
+      <entries>
+        <BlockPredecessor>
+          <name>EntrySinus</name>
+          <output_idx>0</output_idx>
+        </BlockPredecessor>
+      </entries>
+      <name>PWMBlock</name>
+      <gain>1</gain>
+      <gainMin>-40</gainMin>
+      <gainMax>30</gainMax>
+      <servo_name>Neck</servo_name>
+    </PWMBlock>
+    <SchemaComments />
+    <frequency>100</frequency>
+  </MotorPrimitive>
+</GraphicalMotorPrimitive>
