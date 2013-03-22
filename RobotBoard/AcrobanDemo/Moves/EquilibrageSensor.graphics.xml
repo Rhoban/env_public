@@ -3,15 +3,19 @@
   <entries />
   <name>EquilibrageSensor</name>
   <gain>1</gain>
+  <gainMin>-200</gainMin>
+  <gainMax>20</gainMax>
   <GraphicalBlock>
     <AccelerometerBlock>
       <entries />
       <name>AccelerometerBlock</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
     </AccelerometerBlock>
     <Position>
-      <X>54.127079403013596</X>
-      <Y>121.20919770935325</Y>
+      <X>77.1270794030136</X>
+      <Y>41.209197709353248</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -32,6 +36,8 @@
       </entries>
       <name>BlockGain</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>-150</float>
         <float>-150</float>
@@ -39,8 +45,8 @@
       </gains>
     </BlockGain>
     <Position>
-      <X>165.66154646667818</X>
-      <Y>117.63997129374769</Y>
+      <X>236.66154646667818</X>
+      <Y>41.209197709353248</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -51,7 +57,7 @@
     <TargetName>BlockGain</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-0.0030000000260770321</output_value>
+    <output_value>0</output_value>
     <SourceIndex>1</SourceIndex>
     <TargetIndex>1</TargetIndex>
     <SourceName>AccelerometerBlock</SourceName>
@@ -67,11 +73,13 @@
       </entries>
       <name>BlockMobileAverage1</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <discount_factor>0.7</discount_factor>
     </BlockMobileAverage>
     <Position>
-      <X>444.72484468404383</X>
-      <Y>76.9694772912488</Y>
+      <X>467.72484468404383</X>
+      <Y>-3.0305227087512066</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -84,13 +92,15 @@
       </entries>
       <name>Tete avant</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <servo_name>Tete avant</servo_name>
       <unit>1</unit>
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>647.94140875674645</X>
-      <Y>51.038874612798537</Y>
+      <X>670.94140875674645</X>
+      <Y>-28.961125387201463</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -107,6 +117,8 @@
       </entries>
       <name>PIDAccY</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <P_coef>0</P_coef>
       <I_coef>10</I_coef>
       <D_coef>0</D_coef>
@@ -115,8 +127,8 @@
       <max_output>20</max_output>
     </PIDBlock>
     <Position>
-      <X>589.11415772852376</X>
-      <Y>50.756868011890788</Y>
+      <X>612.11415772852376</X>
+      <Y>-29.243131988109212</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -138,13 +150,15 @@
       <entries />
       <name>Constant</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <constants>
         <float>0</float>
       </constants>
     </Constant>
     <Position>
-      <X>466.01690755782261</X>
-      <Y>17.923887557255085</Y>
+      <X>489.01690755782261</X>
+      <Y>-62.076112442744915</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -164,13 +178,15 @@
       </entries>
       <name>Epaule D Long1</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <servo_name>Epaule D Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>736.92821671481977</X>
-      <Y>146.89180575640131</Y>
+      <X>759.92821671481977</X>
+      <Y>66.891805756401311</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -183,13 +199,15 @@
       </entries>
       <name>BlockGain1</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>-1</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>736.040052751905</X>
-      <Y>188.417940867169</Y>
+      <X>759.040052751905</X>
+      <Y>108.417940867169</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -202,17 +220,19 @@
       </entries>
       <name>Epaule G Long</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <servo_name>Epaule G Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>786.21182852622633</X>
-      <Y>188.41794086716897</Y>
+      <X>809.21182852622633</X>
+      <Y>108.41794086716897</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>3.2569999694824219</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain1</SourceName>
@@ -228,13 +248,15 @@
       </entries>
       <name>BlockGain2</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>1</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>342.51191857298818</X>
-      <Y>335.4207362019136</Y>
+      <X>365.51191857298818</X>
+      <Y>255.4207362019136</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -247,11 +269,13 @@
       </entries>
       <name>BlockMobileAverage2</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <discount_factor>0.5</discount_factor>
     </BlockMobileAverage>
     <Position>
-      <X>421.63270338976218</X>
-      <Y>335.42073620191354</Y>
+      <X>444.63270338976218</X>
+      <Y>255.42073620191354</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -275,6 +299,8 @@
       </entries>
       <name>PIDAssietteX</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <P_coef>0</P_coef>
       <I_coef>5</I_coef>
       <D_coef>0</D_coef>
@@ -283,8 +309,8 @@
       <max_output>20</max_output>
     </PIDBlock>
     <Position>
-      <X>476.55273397332667</X>
-      <Y>305.96335081249259</Y>
+      <X>503.54024089115592</X>
+      <Y>237.30532614531415</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -299,13 +325,15 @@
       <entries />
       <name>Constant2</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <constants>
         <float>0</float>
       </constants>
     </Constant>
     <Position>
-      <X>374.16269380900394</X>
-      <Y>277.25804239290966</Y>
+      <X>397.16269380900394</X>
+      <Y>197.25804239290966</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -316,7 +344,7 @@
     <TargetName>PIDAssietteX</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-0.018999999389052391</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>1</TargetIndex>
     <SourceName>BlockMobileAverage2</SourceName>
@@ -332,13 +360,15 @@
       </entries>
       <name>Bassin Long1</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <servo_name>Bassin Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>811.35339097681538</X>
-      <Y>279.06630962564037</Y>
+      <X>834.35339097681538</X>
+      <Y>199.06630962564037</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -351,13 +381,15 @@
       </entries>
       <name>BlockGain4</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>-1</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>811.790513695395</X>
-      <Y>318.173403162711</Y>
+      <X>834.790513695395</X>
+      <Y>238.173403162711</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -370,17 +402,19 @@
       </entries>
       <name>Buste Long</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <servo_name>Buste Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>866</X>
-      <Y>318</Y>
+      <X>889</X>
+      <Y>238</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-0.19900000095367432</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain4</SourceName>
@@ -400,10 +434,12 @@
       </entries>
       <name>BlockAddition</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
     </BlockAddition>
     <Position>
-      <X>708.33210274573992</X>
-      <Y>287.88357807124351</Y>
+      <X>731.33210274573992</X>
+      <Y>207.88357807124351</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -416,13 +452,15 @@
       </entries>
       <name>BlockGain5</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>1</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>824.07910836201313</X>
-      <Y>414.512780796739</Y>
+      <X>847.07910836201313</X>
+      <Y>334.512780796739</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -435,13 +473,15 @@
       </entries>
       <name>BlockGain6</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>-1</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>886.404419078468</X>
-      <Y>510.47397348715344</Y>
+      <X>909.404419078468</X>
+      <Y>430.47397348715344</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -452,15 +492,17 @@
           <output_idx>0</output_idx>
         </BlockPredecessor>
       </entries>
-      <name>Bassin Long</name>
+      <name>Bassin Long2</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <servo_name>Bassin Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>884.425837785882</X>
-      <Y>414.512780796739</Y>
+      <X>907.425837785882</X>
+      <Y>334.512780796739</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -473,13 +515,15 @@
       </entries>
       <name>Cuisse G</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <servo_name>Cuisse G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>886.404419078468</X>
-      <Y>473.87021957431494</Y>
+      <X>909.404419078468</X>
+      <Y>393.87021957431494</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -492,17 +536,19 @@
       </entries>
       <name>Cuisse D</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <servo_name>Cuisse D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>945.76185785604412</X>
-      <Y>511.46326413344639</Y>
+      <X>968.76185785604412</X>
+      <Y>431.46326413344639</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-1.628000020980835</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain6</SourceName>
@@ -518,21 +564,23 @@
       </entries>
       <name>BlockGain7</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>-1.5</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>623.25310716454794</X>
-      <Y>460.02015052621391</Y>
+      <X>646.25310716454794</X>
+      <Y>380.02015052621391</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>1.628000020980835</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain5</SourceName>
-    <TargetName>Bassin Long</TargetName>
+    <TargetName>Bassin Long2</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockAddition>
@@ -544,10 +592,12 @@
       </entries>
       <name>BlockAddition1</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
     </BlockAddition>
     <Position>
-      <X>711.29997468461886</X>
-      <Y>461.0094411725068</Y>
+      <X>734.29997468461886</X>
+      <Y>381.0094411725068</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -560,73 +610,75 @@
       </entries>
       <name>BlockGain3</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>0.3</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>624.5797896859757</X>
-      <Y>265.73602201944067</Y>
+      <X>647.5797896859757</X>
+      <Y>185.73602201944067</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-0.32499998807907104</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain3</SourceName>
     <TargetName>BlockAddition</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-1.0850000381469727</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>PIDAssietteX</SourceName>
     <TargetName>BlockGain3</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.19900000095367432</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockAddition</SourceName>
     <TargetName>BlockGain4</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.19900000095367432</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockAddition</SourceName>
     <TargetName>Bassin Long1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>1.628000020980835</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockAddition1</SourceName>
     <TargetName>BlockGain5</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>1.628000020980835</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockAddition1</SourceName>
     <TargetName>Cuisse G</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>1.628000020980835</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockAddition1</SourceName>
     <TargetName>BlockGain6</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>1.628000020980835</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain7</SourceName>
     <TargetName>BlockAddition1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-1.0850000381469727</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>PIDAssietteX</SourceName>
@@ -642,13 +694,15 @@
       </entries>
       <name>Genou D</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <servo_name>Genou D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>821.45804274855641</X>
-      <Y>586.25141859631435</Y>
+      <X>844.45804274855641</X>
+      <Y>506.25141859631435</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -661,13 +715,15 @@
       </entries>
       <name>Genou G</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <servo_name>Genou G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>882.44725649329621</X>
-      <Y>625.23168845713371</Y>
+      <X>905.44725649329621</X>
+      <Y>545.23168845713371</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -680,13 +736,15 @@
       </entries>
       <name>Cheville G</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <servo_name>Cheville G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>821.06010809316149</X>
-      <Y>690.52487111246728</Y>
+      <X>844.06010809316149</X>
+      <Y>610.52487111246728</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -699,13 +757,15 @@
       </entries>
       <name>Cheville D</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <servo_name>Cheville D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>888.29807007900138</X>
-      <Y>731.334405863471</Y>
+      <X>911.29807007900138</X>
+      <Y>651.334405863471</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -718,13 +778,15 @@
       </entries>
       <name>BlockGain8</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>-1</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>820.86182915677352</X>
-      <Y>625.52926924411349</Y>
+      <X>843.86182915677352</X>
+      <Y>545.52926924411349</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -737,24 +799,26 @@
       </entries>
       <name>BlockGain9</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>-1</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>820.86182915677364</X>
-      <Y>732.497099672475</Y>
+      <X>843.86182915677364</X>
+      <Y>652.497099672475</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-0.38199999928474426</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain9</SourceName>
     <TargetName>Cheville D</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-0.31799998879432678</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain8</SourceName>
@@ -770,21 +834,23 @@
       </entries>
       <name>BlockAddition2</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
     </BlockAddition>
     <Position>
-      <X>724.35824300944751</X>
-      <Y>604.60078068204291</Y>
+      <X>747.35824300944751</X>
+      <Y>524.60078068204291</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0.31799998879432678</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockAddition2</SourceName>
     <TargetName>Genou D</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.31799998879432678</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockAddition2</SourceName>
@@ -800,21 +866,23 @@
       </entries>
       <name>BlockAddition3</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
     </BlockAddition>
     <Position>
-      <X>725.52093681845133</X>
-      <Y>708.08052968339246</Y>
+      <X>748.52093681845133</X>
+      <Y>628.08052968339246</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0.38199999928474426</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockAddition3</SourceName>
     <TargetName>Cheville G</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.38199999928474426</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockAddition3</SourceName>
@@ -830,31 +898,33 @@
       </entries>
       <name>BlockGain10</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>3</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>617.63416939841682</X>
-      <Y>171.28647407625633</Y>
+      <X>640.63416939841682</X>
+      <Y>91.286474076256326</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-3.2569999694824219</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain10</SourceName>
     <TargetName>Epaule D Long1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-3.2569999694824219</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain10</SourceName>
     <TargetName>BlockGain1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-1.0850000381469727</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>PIDAssietteX</SourceName>
@@ -870,13 +940,15 @@
       </entries>
       <name>BlockGain11</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>1</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>345.32006127416679</X>
-      <Y>653.433920660208</Y>
+      <X>368.32006127416679</X>
+      <Y>573.433920660208</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -889,6 +961,8 @@
       </entries>
       <name>PIDGyrX</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <P_coef>1</P_coef>
       <I_coef>0</I_coef>
       <D_coef>0</D_coef>
@@ -897,12 +971,12 @@
       <max_output>0</max_output>
     </PIDBlock>
     <Position>
-      <X>431.60315995778831</X>
-      <Y>653.49485986454056</Y>
+      <X>454.60315995778831</X>
+      <Y>573.49485986454056</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>1.0499999523162842</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain11</SourceName>
@@ -918,11 +992,13 @@
       </entries>
       <name>BlockMobileAverage</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <discount_factor>0.5</discount_factor>
     </BlockMobileAverage>
     <Position>
-      <X>629.01735067112531</X>
-      <Y>604.6007806820428</Y>
+      <X>652.01735067112531</X>
+      <Y>524.6007806820428</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -935,24 +1011,26 @@
       </entries>
       <name>BlockGain12</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>0.5</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>574.37074164794069</X>
-      <Y>604.6007806820428</Y>
+      <X>597.37074164794069</X>
+      <Y>524.6007806820428</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0.52499997615814209</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain12</SourceName>
     <TargetName>BlockMobileAverage</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.31799998879432678</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockMobileAverage</SourceName>
@@ -968,13 +1046,15 @@
       </entries>
       <name>BlockGain13</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>0.6</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>574.3707416479408</X>
-      <Y>708.08052968339246</Y>
+      <X>597.3707416479408</X>
+      <Y>628.08052968339246</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -987,50 +1067,52 @@
       </entries>
       <name>BlockMobileAverage3</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <discount_factor>0.5</discount_factor>
     </BlockMobileAverage>
     <Position>
-      <X>627.85465686212137</X>
-      <Y>708.08052968339257</Y>
+      <X>650.85465686212137</X>
+      <Y>628.08052968339257</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0.62999999523162842</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain13</SourceName>
     <TargetName>BlockMobileAverage3</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.38199999928474426</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockMobileAverage3</SourceName>
     <TargetName>BlockAddition3</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>1.0499999523162842</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>PIDGyrX</SourceName>
     <TargetName>BlockGain12</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>1.0499999523162842</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>PIDGyrX</SourceName>
     <TargetName>BlockGain13</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.0070000002160668373</output_value>
+    <output_value>0</output_value>
     <SourceIndex>3</SourceIndex>
     <TargetIndex>2</TargetIndex>
     <SourceName>AccelerometerBlock</SourceName>
     <TargetName>BlockGain</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>1.0499999523162842</output_value>
+    <output_value>0</output_value>
     <SourceIndex>2</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain</SourceName>
@@ -1046,17 +1128,19 @@
       </entries>
       <name>BlockGain14</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>0</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>333.66855768215328</X>
-      <Y>78.378520260908473</Y>
+      <X>365.51191857298818</X>
+      <Y>-3.0305227087512066</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0.44999998807907104</output_value>
+    <output_value>0</output_value>
     <SourceIndex>1</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain</SourceName>
@@ -1079,24 +1163,26 @@
       </entries>
       <name>BlockGain15</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>0.5</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>624.694860848587</X>
-      <Y>317.30532614531415</Y>
+      <X>647.694860848587</X>
+      <Y>237.30532614531415</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>1.0499999523162842</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>PIDGyrX</SourceName>
     <TargetName>BlockGain15</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.52499997615814209</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>1</TargetIndex>
     <SourceName>BlockGain15</SourceName>
@@ -1112,13 +1198,15 @@
       </entries>
       <name>Coude G Long</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <servo_name>Coude G Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>905.64228503975073</X>
-      <Y>201.62109265483502</Y>
+      <X>928.64228503975073</X>
+      <Y>121.62109265483502</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -1129,15 +1217,17 @@
           <output_idx>0</output_idx>
         </BlockPredecessor>
       </entries>
-      <name>Coude D Long</name>
+      <name>Coude D Long1</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <servo_name>Coude D Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>954.11948764528472</X>
-      <Y>233.57197619030069</Y>
+      <X>977.11948764528472</X>
+      <Y>153.57197619030069</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -1150,21 +1240,23 @@
       </entries>
       <name>BlockGain16</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>-1</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>906.74403964442206</X>
-      <Y>233.57197619030066</Y>
+      <X>929.74403964442206</X>
+      <Y>153.57197619030066</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-3.2569999694824219</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain16</SourceName>
-    <TargetName>Coude D Long</TargetName>
+    <TargetName>Coude D Long1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockGain>
@@ -1176,31 +1268,33 @@
       </entries>
       <name>BlockGain17</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>-1</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>738.1755851297238</X>
-      <Y>226.96144856227329</Y>
+      <X>761.1755851297238</X>
+      <Y>146.96144856227329</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>3.2569999694824219</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain17</SourceName>
     <TargetName>Coude G Long</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>3.2569999694824219</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain17</SourceName>
     <TargetName>BlockGain16</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-3.2569999694824219</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain10</SourceName>
@@ -1216,13 +1310,15 @@
       </entries>
       <name>BlockGain18</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <gains>
         <float>0.5</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>739.27733973439513</X>
-      <Y>104.66668744376682</Y>
+      <X>762.27733973439513</X>
+      <Y>24.666687443766818</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -1235,31 +1331,73 @@
       </entries>
       <name>Tete arriere</name>
       <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
       <servo_name>Tete arriere</servo_name>
       <unit>1</unit>
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>841.74051796881952</X>
-      <Y>104.66668744376682</Y>
+      <X>864.74051796881952</X>
+      <Y>24.666687443766818</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-1.628000020980835</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain18</SourceName>
     <TargetName>Tete arriere</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-3.2569999694824219</output_value>
+    <output_value>0</output_value>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain10</SourceName>
     <TargetName>BlockGain18</TargetName>
   </GraphicalBlockLink>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant1</name>
+      <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
+      <constants>
+        <float>-2</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>59.618746069680256</X>
+      <Y>334.512780796739</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries />
+      <name>Bassin Long</name>
+      <gain>1</gain>
+      <gainMin>-200</gainMin>
+      <gainMax>20</gainMax>
+      <servo_name>Bassin Long</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>188.96821313334482</X>
+      <Y>334.512780796739</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Constant1</SourceName>
+    <TargetName>Bassin Long</TargetName>
+  </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
+  <SchemaComments />
   <filename>EquilibrageSensor.graphics.xml</filename>
   <Frequency>100</Frequency>
   <SmoothStart>0</SmoothStart>

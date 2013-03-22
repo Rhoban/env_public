@@ -7,8 +7,8 @@
         <frequency>1000</frequency>
         <usart_id>1</usart_id>
         <write_frequency>50</write_frequency>
-        <total_writes>34893</total_writes>
-        <total_reads>2747023</total_reads>
+        <total_writes>0</total_writes>
+        <total_reads>824</total_reads>
         <MaxPingId>253</MaxPingId>
       </dynamixel_config>
       <pwm_config>
@@ -17,34 +17,34 @@
       <sensors_config>
         <sensors>
           <AnalogicSensorParameter>
-            <name>Can0</name>
+            <name>Acc_x</name>
             <frequency>100</frequency>
             <can>0</can>
-            <zero>421.2034</zero>
+            <zero>503.389</zero>
             <max>1000</max>
             <min>0</min>
           </AnalogicSensorParameter>
           <AnalogicSensorParameter>
-            <name>Can1</name>
+            <name>Acc_y</name>
             <frequency>100</frequency>
             <can>1</can>
-            <zero>418.239136</zero>
+            <zero>504.625</zero>
             <max>1000</max>
             <min>0</min>
           </AnalogicSensorParameter>
           <AnalogicSensorParameter>
-            <name>Can2</name>
+            <name>Acc_z</name>
             <frequency>100</frequency>
             <can>2</can>
-            <zero>443.246155</zero>
+            <zero>402.263</zero>
             <max>1000</max>
             <min>0</min>
           </AnalogicSensorParameter>
           <AnalogicSensorParameter>
-            <name>Can3</name>
+            <name>Gyro_y</name>
             <frequency>100</frequency>
             <can>3</can>
-            <zero>461.9034</zero>
+            <zero>406.25</zero>
             <max>1000</max>
             <min>0</min>
           </AnalogicSensorParameter>
@@ -54,6 +54,7 @@
         <joypads>
           <JoypadSensorParameter>
             <name>Joypad</name>
+            <Enabled>false</Enabled>
             <min>
               <double>-100</double>
               <double>-100</double>
@@ -80,24 +81,22 @@
             </zero>
           </JoypadSensorParameter>
         </joypads>
-        <JoypadEnabled>false</JoypadEnabled>
       </joypad_config>
+      <EnableMonitoring>true</EnableMonitoring>
       <kinect_config>
         <kinects />
-        <KinectEnabled>false</KinectEnabled>
       </kinect_config>
       <pins_config>
         <pins />
       </pins_config>
-      <EnableMonitoring>true</EnableMonitoring>
     </LowLevelConfig>
     <Servos>
       <ServoConfig>
         <Type>RX64</Type>
         <Id>110</Id>
         <Name>Bassin Lat</Name>
-        <TargetAngle>20.8</TargetAngle>
-        <ActualAngle>19.628</ActualAngle>
+        <TargetAngle>-21.386</TargetAngle>
+        <ActualAngle>-21.386</ActualAngle>
         <IniAngle>0</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -107,21 +106,21 @@
         <Bounce>100</Bounce>
         <Punch>1</Punch>
         <Inverse>false</Inverse>
-        <ZeroAngle>20.8</ZeroAngle>
+        <ZeroAngle>-20.8</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
         <ActualLoad>-64</ActualLoad>
-        <Voltage>12</Voltage>
-        <Temperature>38</Temperature>
+        <Voltage>11.7</Voltage>
+        <Temperature>33</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>RX64</Type>
         <Id>14</Id>
         <Name>Bassin Long</Name>
-        <TargetAngle>-4.101</TargetAngle>
-        <ActualAngle>-2.929</ActualAngle>
+        <TargetAngle>-2.929</TargetAngle>
+        <ActualAngle>-2.343</ActualAngle>
         <IniAngle>0.292999744</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -131,21 +130,21 @@
         <Bounce>100</Bounce>
         <Punch>1</Punch>
         <Inverse>false</Inverse>
-        <ZeroAngle>-4.101</ZeroAngle>
+        <ZeroAngle>-3.222</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>96</ActualLoad>
-        <Voltage>12</Voltage>
-        <Temperature>38</Temperature>
+        <ActualLoad>64</ActualLoad>
+        <Voltage>11.7</Voltage>
+        <Temperature>35</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>RX64</Type>
         <Id>112</Id>
         <Name>Buste Lat</Name>
-        <TargetAngle>21.679</TargetAngle>
-        <ActualAngle>21.386</ActualAngle>
+        <TargetAngle>20.8</TargetAngle>
+        <ActualAngle>20.507</ActualAngle>
         <IniAngle>-0.8790016</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -160,16 +159,16 @@
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
         <ActualLoad>0</ActualLoad>
-        <Voltage>12</Voltage>
-        <Temperature>35</Temperature>
+        <Voltage>11.8</Voltage>
+        <Temperature>28</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>RX64</Type>
         <Id>113</Id>
         <Name>Buste Long</Name>
-        <TargetAngle>23.73</TargetAngle>
-        <ActualAngle>24.609</ActualAngle>
+        <TargetAngle>23.437</TargetAngle>
+        <ActualAngle>23.73</ActualAngle>
         <IniAngle>0</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -183,9 +182,9 @@
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>128</ActualLoad>
-        <Voltage>12</Voltage>
-        <Temperature>40</Temperature>
+        <ActualLoad>64</ActualLoad>
+        <Voltage>11.4</Voltage>
+        <Temperature>32</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
@@ -193,7 +192,7 @@
         <Id>111</Id>
         <Name>Buste Rot</Name>
         <TargetAngle>0</TargetAngle>
-        <ActualAngle>-0.292</ActualAngle>
+        <ActualAngle>0</ActualAngle>
         <IniAngle>0</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -208,16 +207,16 @@
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
         <ActualLoad>0</ActualLoad>
-        <Voltage>12</Voltage>
-        <Temperature>32</Temperature>
+        <Voltage>11.7</Voltage>
+        <Temperature>31</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>RX64</Type>
         <Id>32</Id>
         <Name>Cheville D</Name>
-        <TargetAngle>-0.878</TargetAngle>
-        <ActualAngle>0.292</ActualAngle>
+        <TargetAngle>1.171</TargetAngle>
+        <ActualAngle>1.171</ActualAngle>
         <IniAngle>0.878</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -227,21 +226,21 @@
         <Bounce>100</Bounce>
         <Punch>1</Punch>
         <Inverse>false</Inverse>
-        <ZeroAngle>-0.878</ZeroAngle>
+        <ZeroAngle>-0.585</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>128</ActualLoad>
-        <Voltage>12</Voltage>
-        <Temperature>34</Temperature>
+        <ActualLoad>192</ActualLoad>
+        <Voltage>11.8</Voltage>
+        <Temperature>40</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>RX64</Type>
         <Id>37</Id>
         <Name>Cheville G</Name>
-        <TargetAngle>0</TargetAngle>
-        <ActualAngle>0</ActualAngle>
+        <TargetAngle>-0.292</TargetAngle>
+        <ActualAngle>-0.292</ActualAngle>
         <IniAngle>0.292</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -251,20 +250,20 @@
         <Bounce>100</Bounce>
         <Punch>1</Punch>
         <Inverse>false</Inverse>
-        <ZeroAngle>0</ZeroAngle>
+        <ZeroAngle>-4.101</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>0</ActualSpeed>
+        <ActualSpeed>1</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>0</ActualLoad>
-        <Voltage>12</Voltage>
-        <Temperature>38</Temperature>
+        <ActualLoad>379</ActualLoad>
+        <Voltage>11.7</Voltage>
+        <Temperature>39</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>MX28</Type>
         <Id>150</Id>
         <Name>Cou</Name>
-        <TargetAngle>-0.585</TargetAngle>
+        <TargetAngle>-0.146</TargetAngle>
         <ActualAngle>-0.146</ActualAngle>
         <IniAngle>0.80399996</IniAngle>
         <MinAngle>-180</MinAngle>
@@ -288,8 +287,8 @@
         <Type>MX28</Type>
         <Id>133</Id>
         <Name>Coude D Long</Name>
-        <TargetAngle>18.09</TargetAngle>
-        <ActualAngle>18.31</ActualAngle>
+        <TargetAngle>18.017</TargetAngle>
+        <ActualAngle>17.504</ActualAngle>
         <IniAngle>0</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -303,17 +302,17 @@
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>40</ActualLoad>
-        <Voltage>8.7</Voltage>
-        <Temperature>43</Temperature>
+        <ActualLoad>-56</ActualLoad>
+        <Voltage>9.4</Voltage>
+        <Temperature>39</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>MX28</Type>
         <Id>132</Id>
         <Name>Coude D Rot</Name>
-        <TargetAngle>-73.828</TargetAngle>
-        <ActualAngle>-73.974</ActualAngle>
+        <TargetAngle>-73.168</TargetAngle>
+        <ActualAngle>-73.168</ActualAngle>
         <IniAngle>0</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -327,17 +326,17 @@
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>-16</ActualLoad>
-        <Voltage>9.4</Voltage>
-        <Temperature>39</Temperature>
+        <ActualLoad>64</ActualLoad>
+        <Voltage>8.9</Voltage>
+        <Temperature>42</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
-        <Type>MX28</Type>
+        <Type>RX28</Type>
         <Id>123</Id>
         <Name>Coude G Long</Name>
-        <TargetAngle>-21.386</TargetAngle>
-        <ActualAngle>-21.533</ActualAngle>
+        <TargetAngle>-21.093</TargetAngle>
+        <ActualAngle>-20.8</ActualAngle>
         <IniAngle>0.219999313</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -351,17 +350,17 @@
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>-24</ActualLoad>
-        <Voltage>8.9</Voltage>
-        <Temperature>42</Temperature>
+        <ActualLoad>64</ActualLoad>
+        <Voltage>11.4</Voltage>
+        <Temperature>48</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>MX28</Type>
         <Id>122</Id>
         <Name>Coude G Rot</Name>
-        <TargetAngle>72.363</TargetAngle>
-        <ActualAngle>72.29</ActualAngle>
+        <TargetAngle>72.875</TargetAngle>
+        <ActualAngle>72.802</ActualAngle>
         <IniAngle>0</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -375,17 +374,17 @@
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>8</ActualLoad>
-        <Voltage>9.4</Voltage>
-        <Temperature>39</Temperature>
+        <ActualLoad>56</ActualLoad>
+        <Voltage>8.8</Voltage>
+        <Temperature>42</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>RX64</Type>
         <Id>36</Id>
         <Name>Cuisse D</Name>
-        <TargetAngle>24.316</TargetAngle>
-        <ActualAngle>23.144</ActualAngle>
+        <TargetAngle>-21.386</TargetAngle>
+        <ActualAngle>-21.679</ActualAngle>
         <IniAngle>-1.17200089</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -395,21 +394,21 @@
         <Bounce>100</Bounce>
         <Punch>1</Punch>
         <Inverse>false</Inverse>
-        <ZeroAngle>24.316</ZeroAngle>
+        <ZeroAngle>-21.972</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>-64</ActualLoad>
-        <Voltage>12</Voltage>
-        <Temperature>37</Temperature>
+        <ActualLoad>0</ActualLoad>
+        <Voltage>11.7</Voltage>
+        <Temperature>33</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>RX64</Type>
         <Id>12</Id>
         <Name>Cuisse G</Name>
-        <TargetAngle>-22.558</TargetAngle>
-        <ActualAngle>-22.851</ActualAngle>
+        <TargetAngle>21.679</TargetAngle>
+        <ActualAngle>21.972</ActualAngle>
         <IniAngle>-0.585998535</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -419,12 +418,12 @@
         <Bounce>100</Bounce>
         <Punch>1</Punch>
         <Inverse>false</Inverse>
-        <ZeroAngle>-22.558</ZeroAngle>
+        <ZeroAngle>22.265</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
         <ActualLoad>0</ActualLoad>
-        <Voltage>12</Voltage>
+        <Voltage>11.4</Voltage>
         <Temperature>33</Temperature>
         <Diagnostic />
       </ServoConfig>
@@ -432,8 +431,8 @@
         <Type>MX28</Type>
         <Id>131</Id>
         <Name>Epaule D Lat</Name>
-        <TargetAngle>56.616</TargetAngle>
-        <ActualAngle>53.906</ActualAngle>
+        <TargetAngle>15.2870007</TargetAngle>
+        <ActualAngle>13.842</ActualAngle>
         <IniAngle>-3.00300217</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -443,21 +442,21 @@
         <Bounce>50</Bounce>
         <Punch>1</Punch>
         <Inverse>false</Inverse>
-        <ZeroAngle>56.616</ZeroAngle>
+        <ZeroAngle>15.673</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>-288</ActualLoad>
-        <Voltage>8</Voltage>
-        <Temperature>47</Temperature>
+        <ActualLoad>-136</ActualLoad>
+        <Voltage>8.3</Voltage>
+        <Temperature>45</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>MX28</Type>
         <Id>130</Id>
         <Name>Epaule D Long</Name>
-        <TargetAngle>-0.732</TargetAngle>
-        <ActualAngle>-0.219</ActualAngle>
+        <TargetAngle>-75.4164352</TargetAngle>
+        <ActualAngle>-75</ActualAngle>
         <IniAngle>0.44</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -467,21 +466,21 @@
         <Bounce>50</Bounce>
         <Punch>1</Punch>
         <Inverse>false</Inverse>
-        <ZeroAngle>-0.732</ZeroAngle>
+        <ZeroAngle>-75</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
         <ActualLoad>48</ActualLoad>
-        <Voltage>9.1</Voltage>
-        <Temperature>41</Temperature>
+        <Voltage>8.5</Voltage>
+        <Temperature>44</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>MX28</Type>
         <Id>121</Id>
         <Name>Epaule G Lat</Name>
-        <TargetAngle>-60.424</TargetAngle>
-        <ActualAngle>-57.421</ActualAngle>
+        <TargetAngle>-20.727</TargetAngle>
+        <ActualAngle>-19.409</ActualAngle>
         <IniAngle>3.36899948</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -491,21 +490,21 @@
         <Bounce>50</Bounce>
         <Punch>1</Punch>
         <Inverse>false</Inverse>
-        <ZeroAngle>-60.424</ZeroAngle>
+        <ZeroAngle>-20.947</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>320</ActualLoad>
-        <Voltage>7.6</Voltage>
-        <Temperature>49</Temperature>
+        <ActualLoad>168</ActualLoad>
+        <Voltage>8.2</Voltage>
+        <Temperature>45</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>MX28</Type>
         <Id>120</Id>
         <Name>Epaule G Long</Name>
-        <TargetAngle>0</TargetAngle>
-        <ActualAngle>-0.292</ActualAngle>
+        <TargetAngle>72.64937</TargetAngle>
+        <ActualAngle>71.997</ActualAngle>
         <IniAngle>0.585</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -515,21 +514,21 @@
         <Bounce>50</Bounce>
         <Punch>1</Punch>
         <Inverse>false</Inverse>
-        <ZeroAngle>0</ZeroAngle>
+        <ZeroAngle>71.997</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>-32</ActualLoad>
-        <Voltage>9.2</Voltage>
-        <Temperature>40</Temperature>
+        <ActualLoad>-56</ActualLoad>
+        <Voltage>8.9</Voltage>
+        <Temperature>42</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>EX106p</Type>
         <Id>6</Id>
         <Name>Genou D</Name>
-        <TargetAngle>-1.318</TargetAngle>
-        <ActualAngle>-1.611</ActualAngle>
+        <TargetAngle>130.151</TargetAngle>
+        <ActualAngle>130.151</ActualAngle>
         <IniAngle>-0.146000028</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -539,21 +538,21 @@
         <Bounce>100</Bounce>
         <Punch>1</Punch>
         <Inverse>false</Inverse>
-        <ZeroAngle>-1.318</ZeroAngle>
+        <ZeroAngle>130.664</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>-32</ActualLoad>
-        <Voltage>12</Voltage>
-        <Temperature>37</Temperature>
+        <ActualLoad>-40</ActualLoad>
+        <Voltage>11.8</Voltage>
+        <Temperature>39</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>EX106p</Type>
         <Id>39</Id>
         <Name>Genou G</Name>
-        <TargetAngle>0.366</TargetAngle>
-        <ActualAngle>0.073</ActualAngle>
+        <TargetAngle>-83.422</TargetAngle>
+        <ActualAngle>-83.496</ActualAngle>
         <IniAngle>-0.292999983</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -563,70 +562,22 @@
         <Bounce>100</Bounce>
         <Punch>1</Punch>
         <Inverse>false</Inverse>
-        <ZeroAngle>0.366</ZeroAngle>
+        <ZeroAngle>-83.129</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>-16</ActualLoad>
-        <Voltage>12.1</Voltage>
-        <Temperature>39</Temperature>
+        <ActualLoad>-40</ActualLoad>
+        <Voltage>11.7</Voltage>
+        <Temperature>36</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>RX64</Type>
         <Id>35</Id>
         <Name>Hanche D Lat</Name>
-        <TargetAngle>20.507</TargetAngle>
-        <ActualAngle>20.507</ActualAngle>
+        <TargetAngle>-24.609</TargetAngle>
+        <ActualAngle>-24.609</ActualAngle>
         <IniAngle>0</IniAngle>
-        <MinAngle>-180</MinAngle>
-        <MaxAngle>180</MaxAngle>
-        <MaxSpeed>1023</MaxSpeed>
-        <MaxTorque>1023</MaxTorque>
-        <SmoothFactor>0</SmoothFactor>
-        <Bounce>50</Bounce>
-        <Punch>1</Punch>
-        <Inverse>false</Inverse>
-        <ZeroAngle>20.507</ZeroAngle>
-        <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>0</ActualSpeed>
-        <MaxLoad>1000</MaxLoad>
-        <ActualLoad>64</ActualLoad>
-        <Voltage>11.8</Voltage>
-        <Temperature>34</Temperature>
-        <Diagnostic />
-      </ServoConfig>
-      <ServoConfig>
-        <Type>RX64</Type>
-        <Id>102</Id>
-        <Name>Hanche D Rot</Name>
-        <TargetAngle>21.679</TargetAngle>
-        <ActualAngle>21.386</ActualAngle>
-        <IniAngle>-0.8790016</IniAngle>
-        <MinAngle>-180</MinAngle>
-        <MaxAngle>180</MaxAngle>
-        <MaxSpeed>1023</MaxSpeed>
-        <MaxTorque>1023</MaxTorque>
-        <SmoothFactor>0</SmoothFactor>
-        <Bounce>50</Bounce>
-        <Punch>1</Punch>
-        <Inverse>false</Inverse>
-        <ZeroAngle>21.679</ZeroAngle>
-        <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>0</ActualSpeed>
-        <MaxLoad>1000</MaxLoad>
-        <ActualLoad>0</ActualLoad>
-        <Voltage>12</Voltage>
-        <Temperature>34</Temperature>
-        <Diagnostic />
-      </ServoConfig>
-      <ServoConfig>
-        <Type>RX64</Type>
-        <Id>10</Id>
-        <Name>Hanche G Lat</Name>
-        <TargetAngle>-23.437</TargetAngle>
-        <ActualAngle>-24.023</ActualAngle>
-        <IniAngle>-1.171999</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
         <MaxSpeed>1023</MaxSpeed>
@@ -639,17 +590,65 @@
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>-64</ActualLoad>
+        <ActualLoad>-128</ActualLoad>
         <Voltage>11.7</Voltage>
-        <Temperature>33</Temperature>
+        <Temperature>34</Temperature>
+        <Diagnostic />
+      </ServoConfig>
+      <ServoConfig>
+        <Type>RX64</Type>
+        <Id>102</Id>
+        <Name>Hanche D Rot</Name>
+        <TargetAngle>-26.074</TargetAngle>
+        <ActualAngle>-26.074</ActualAngle>
+        <IniAngle>-0.8790016</IniAngle>
+        <MinAngle>-180</MinAngle>
+        <MaxAngle>180</MaxAngle>
+        <MaxSpeed>1023</MaxSpeed>
+        <MaxTorque>1023</MaxTorque>
+        <SmoothFactor>0</SmoothFactor>
+        <Bounce>50</Bounce>
+        <Punch>1</Punch>
+        <Inverse>false</Inverse>
+        <ZeroAngle>-27.246</ZeroAngle>
+        <TargetSpeed>200</TargetSpeed>
+        <ActualSpeed>0</ActualSpeed>
+        <MaxLoad>1000</MaxLoad>
+        <ActualLoad>96</ActualLoad>
+        <Voltage>11.4</Voltage>
+        <Temperature>32</Temperature>
+        <Diagnostic />
+      </ServoConfig>
+      <ServoConfig>
+        <Type>RX64</Type>
+        <Id>10</Id>
+        <Name>Hanche G Lat</Name>
+        <TargetAngle>22.851</TargetAngle>
+        <ActualAngle>22.851</ActualAngle>
+        <IniAngle>-1.171999</IniAngle>
+        <MinAngle>-180</MinAngle>
+        <MaxAngle>180</MaxAngle>
+        <MaxSpeed>1023</MaxSpeed>
+        <MaxTorque>1023</MaxTorque>
+        <SmoothFactor>0</SmoothFactor>
+        <Bounce>50</Bounce>
+        <Punch>1</Punch>
+        <Inverse>false</Inverse>
+        <ZeroAngle>22.265</ZeroAngle>
+        <TargetSpeed>200</TargetSpeed>
+        <ActualSpeed>0</ActualSpeed>
+        <MaxLoad>1000</MaxLoad>
+        <ActualLoad>128</ActualLoad>
+        <Voltage>11.7</Voltage>
+        <Temperature>31</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>RX64</Type>
         <Id>103</Id>
         <Name>Hanche G Rot</Name>
-        <TargetAngle>-25.781</TargetAngle>
-        <ActualAngle>-25.488</ActualAngle>
+        <TargetAngle>23.437</TargetAngle>
+        <ActualAngle>23.144</ActualAngle>
         <IniAngle>0.586000443</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -659,21 +658,21 @@
         <Bounce>50</Bounce>
         <Punch>1</Punch>
         <Inverse>false</Inverse>
-        <ZeroAngle>-25.781</ZeroAngle>
+        <ZeroAngle>23.437</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
         <ActualLoad>0</ActualLoad>
-        <Voltage>12</Voltage>
-        <Temperature>35</Temperature>
+        <Voltage>11.7</Voltage>
+        <Temperature>31</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>RX64</Type>
         <Id>17</Id>
         <Name>Pied D</Name>
-        <TargetAngle>-24.609</TargetAngle>
-        <ActualAngle>-25.195</ActualAngle>
+        <TargetAngle>-25.488</TargetAngle>
+        <ActualAngle>-25.781</ActualAngle>
         <IniAngle>-0.293001175</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -687,17 +686,17 @@
         <TargetSpeed>200</TargetSpeed>
         <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>-64</ActualLoad>
-        <Voltage>12</Voltage>
-        <Temperature>37</Temperature>
+        <ActualLoad>-128</ActualLoad>
+        <Voltage>11.4</Voltage>
+        <Temperature>33</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>RX64</Type>
         <Id>38</Id>
         <Name>Pied G</Name>
-        <TargetAngle>20.8</TargetAngle>
-        <ActualAngle>20.8</ActualAngle>
+        <TargetAngle>21.972</TargetAngle>
+        <ActualAngle>21.679</ActualAngle>
         <IniAngle>-0.8789997</IniAngle>
         <MinAngle>-180</MinAngle>
         <MaxAngle>180</MaxAngle>
@@ -709,18 +708,18 @@
         <Inverse>false</Inverse>
         <ZeroAngle>20.8</ZeroAngle>
         <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>1</ActualSpeed>
+        <ActualSpeed>0</ActualSpeed>
         <MaxLoad>1000</MaxLoad>
-        <ActualLoad>59</ActualLoad>
-        <Voltage>11.8</Voltage>
-        <Temperature>33</Temperature>
+        <ActualLoad>128</ActualLoad>
+        <Voltage>11.4</Voltage>
+        <Temperature>32</Temperature>
         <Diagnostic />
       </ServoConfig>
       <ServoConfig>
         <Type>MX28</Type>
         <Id>151</Id>
         <Name>Tete arriere</Name>
-        <TargetAngle>-0.366</TargetAngle>
+        <TargetAngle>-1.171</TargetAngle>
         <ActualAngle>-1.171</ActualAngle>
         <IniAngle>-0.0730000138</IniAngle>
         <MinAngle>-180</MinAngle>
@@ -744,7 +743,7 @@
         <Type>MX28</Type>
         <Id>152</Id>
         <Name>Tete avant</Name>
-        <TargetAngle>-0.366</TargetAngle>
+        <TargetAngle>0.366</TargetAngle>
         <ActualAngle>0.366</ActualAngle>
         <IniAngle>0</IniAngle>
         <MinAngle>-180</MinAngle>
@@ -774,5 +773,6 @@
     <gyroy_sensor>Can0</gyroy_sensor>
     <compass_sensor />
     <joypad_sensor>Joypad</joypad_sensor>
+    <kinect_sensor />
   </SensorsConfig>
 </MoveSchedulerConfig>
