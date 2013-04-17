@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>StmBallIsClose</name>
+  <gain>1</gain>
+  <gainMin>-2</gainMin>
+  <gainMax>100</gainMax>
+  <GraphicalBlock>
+    <StmPreambleBlock>
+      <entries />
+      <name>StmPreambleBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <preamble>self.radius = 0
+self.radius_threshold = 0.5
+</preamble>
+    </StmPreambleBlock>
+    <Position>
+      <X>24</X>
+      <Y>126</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <Commentaires>This machine dectects whether the ball is close or not,
+depending whether the radius of the ball is greater than radius_threshold </Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>97</X>
+      <Y>25</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmLoopBlock>
+      <entries />
+      <name>Initial</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop />
+    </StmLoopBlock>
+    <Position>
+      <X>208</X>
+      <Y>248</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmLoopBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Initial</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Close</name>
+          <output_idx>0</output_idx>
+          <condition>self.radius &lt; self.radius_threshold</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Far</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop>info = self.connection.VisionGetBallInfo_response(False)
+if info is not None:
+    self.radius = info[3]
+    print('radius is ' + str(self.radius))</loop>
+    </StmLoopBlock>
+    <Position>
+      <X>345</X>
+      <Y>61</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmLoopBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Far</name>
+          <output_idx>0</output_idx>
+          <condition>self.radius &gt; self.radius_threshold</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Close</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <loop>info = self.connection.VisionGetBallInfo_response(False)
+if info is not None:
+    self.radius = info[3]
+    print('radius is ' + str(self.radius))</loop>
+    </StmLoopBlock>
+    <Position>
+      <X>370</X>
+      <Y>340</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Initial</SourceName>
+    <TargetName>Far</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>self.radius &gt; self.radius_threshold</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Far</SourceName>
+    <TargetName>Close</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>self.radius &lt; self.radius_threshold</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>Close</SourceName>
+    <TargetName>Far</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>

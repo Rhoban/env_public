@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>DemoBallDetector</name>
+  <gain>1</gain>
+  <gainMin>-2</gainMin>
+  <gainMax>100</gainMax>
+  <GraphicalBlock>
+    <BallBlock>
+      <entries />
+      <name>BallBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <refresh_frequency>5</refresh_frequency>
+      <clipping>false</clipping>
+    </BallBlock>
+    <Position>
+      <X>79</X>
+      <Y>198</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmWriteBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>BallBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BallBlock</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BallBlock</name>
+          <output_idx>2</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BallBlock</name>
+          <output_idx>3</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>StmWriteBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <machine_name>StmBallLeftRight</machine_name>
+      <refresh_frequency>10</refresh_frequency>
+      <attributes>
+        <string>detected</string>
+        <string>x</string>
+        <string>y</string>
+        <string>radius</string>
+      </attributes>
+    </StmWriteBlock>
+    <Position>
+      <X>382</X>
+      <Y>198</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>1</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BallBlock</SourceName>
+    <TargetName>StmWriteBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-0.012500000186264515</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BallBlock</SourceName>
+    <TargetName>StmWriteBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0.0083333337679505348</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>2</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>BallBlock</SourceName>
+    <TargetName>StmWriteBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0.5916067361831665</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>3</SourceIndex>
+    <TargetIndex>3</TargetIndex>
+    <SourceName>BallBlock</SourceName>
+    <TargetName>StmWriteBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <StmReadBlock>
+      <entries />
+      <name>StmReadBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <machine_name>StmBallLeftRight</machine_name>
+      <refresh_frequency>10</refresh_frequency>
+      <attributes>
+        <string>detected</string>
+        <string>x</string>
+        <string>y</string>
+        <string>radius</string>
+      </attributes>
+    </StmReadBlock>
+    <Position>
+      <X>148</X>
+      <Y>295</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <Block xsi:type="EmptyBlock">
+      <entries>
+        <BlockPredecessor>
+          <name>StmReadBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>StmReadBlock</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>StmReadBlock</name>
+          <output_idx>2</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>StmReadBlock</name>
+          <output_idx>3</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>EmptyBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+    </Block>
+    <Position>
+      <X>452</X>
+      <Y>263</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>1</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>StmReadBlock</SourceName>
+    <TargetName>EmptyBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>StmReadBlock</SourceName>
+    <TargetName>EmptyBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0.0083333337679505348</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>2</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>StmReadBlock</SourceName>
+    <TargetName>EmptyBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0.58914995193481445</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>3</SourceIndex>
+    <TargetIndex>3</TargetIndex>
+    <SourceName>StmReadBlock</SourceName>
+    <TargetName>EmptyBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <Commentaires>This move should be run at the same time than the stm StmBallLeftRight
+ </Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>27</X>
+      <Y>15</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock1</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <Commentaires>The detection status, position and radius
+of the ball are sent to the stm
+thanks to the StmWriteBlock.</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>494</X>
+      <Y>163</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock2</name>
+      <gain>1</gain>
+      <gainMin>-2</gainMin>
+      <gainMax>100</gainMax>
+      <Commentaires>The detection status, position and radius
+of the ball are read back from the stm thanks to the StmReadBlock.</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>98</X>
+      <Y>348</Y>
+    </Position>
+  </GraphicalBlock>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>
