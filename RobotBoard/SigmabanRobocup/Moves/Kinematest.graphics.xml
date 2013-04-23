@@ -1,0 +1,495 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>Kinematest</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <GraphicalBlock>
+    <BlockSigmabanLegKinematic>
+      <entries>
+        <BlockPredecessor>
+          <name>Constant</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Constant</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Constant</name>
+          <output_idx>2</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockSigmabanLegKinematic</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <reverted>true</reverted>
+      <tibia_length>12</tibia_length>
+      <femur_length>12</femur_length>
+    </BlockSigmabanLegKinematic>
+    <Position>
+      <X>269.7623029834167</X>
+      <Y>187.48581275058533</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockSigmabanLegKinematic</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Hanche D Lat</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Hanche D Lat</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>657.27641454287652</X>
+      <Y>72.046497976263282</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockSigmabanLegKinematic</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Cuisse D</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Cuisse D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>657.38976290226333</X>
+      <Y>109.11986408500724</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockSigmabanLegKinematic</name>
+          <output_idx>2</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Genou D</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Genou D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>658.444541325805</X>
+      <Y>145.38720208550333</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockSigmabanLegKinematic</name>
+          <output_idx>3</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Cheville D</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Cheville D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>659.555484029252</X>
+      <Y>182.11002577257563</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockSigmabanLegKinematic</name>
+          <output_idx>4</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Pied D</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Pied D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>659.89246970868533</X>
+      <Y>222.32799896237393</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockSigmabanLegKinematic>
+      <entries>
+        <BlockPredecessor>
+          <name>Constant1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Constant1</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Constant1</name>
+          <output_idx>2</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockSigmabanLegKinematic1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <reverted>false</reverted>
+      <tibia_length>12</tibia_length>
+      <femur_length>12</femur_length>
+    </BlockSigmabanLegKinematic>
+    <Position>
+      <X>287.35182436972383</X>
+      <Y>354.26397334196207</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockSigmabanLegKinematic</SourceName>
+    <TargetName>Hanche D Lat</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockSigmabanLegKinematic</SourceName>
+    <TargetName>Cuisse D</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>2</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockSigmabanLegKinematic</SourceName>
+    <TargetName>Genou D</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>3</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockSigmabanLegKinematic</SourceName>
+    <TargetName>Cheville D</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>4</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockSigmabanLegKinematic</SourceName>
+    <TargetName>Pied D</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockSigmabanLegKinematic1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Hanche G Lat</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Hanche G Lat</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>663.8751635506303</X>
+      <Y>294.65342591614672</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockSigmabanLegKinematic1</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Cuisse G</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Cuisse G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>665.32309193351057</X>
+      <Y>328.67974291383439</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockSigmabanLegKinematic1</name>
+          <output_idx>2</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Genou G</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Genou G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>661.7032709763098</X>
+      <Y>362.70605991152212</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockSigmabanLegKinematic1</name>
+          <output_idx>3</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Cheville G</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Cheville G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>660.25534259342953</X>
+      <Y>402.52409044073119</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockSigmabanLegKinematic1</name>
+          <output_idx>4</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Pied G</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Pied G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>666.771020316391</X>
+      <Y>447.40987031002129</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockSigmabanLegKinematic1</SourceName>
+    <TargetName>Hanche G Lat</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockSigmabanLegKinematic1</SourceName>
+    <TargetName>Cuisse G</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>2</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockSigmabanLegKinematic1</SourceName>
+    <TargetName>Genou G</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>3</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockSigmabanLegKinematic1</SourceName>
+    <TargetName>Cheville G</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>4</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockSigmabanLegKinematic1</SourceName>
+    <TargetName>Pied G</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>0</float>
+        <float>0</float>
+        <float>0</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>103.74008705582156</X>
+      <Y>184.71499902516607</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Constant</SourceName>
+    <TargetName>BlockSigmabanLegKinematic</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>Constant</SourceName>
+    <TargetName>BlockSigmabanLegKinematic</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>2</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>Constant</SourceName>
+    <TargetName>BlockSigmabanLegKinematic</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>0</float>
+        <float>0</float>
+        <float>0</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>118.21937088462485</X>
+      <Y>349.05487048208317</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Constant1</SourceName>
+    <TargetName>BlockSigmabanLegKinematic1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>Constant1</SourceName>
+    <TargetName>BlockSigmabanLegKinematic1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>2</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>Constant1</SourceName>
+    <TargetName>BlockSigmabanLegKinematic1</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>
