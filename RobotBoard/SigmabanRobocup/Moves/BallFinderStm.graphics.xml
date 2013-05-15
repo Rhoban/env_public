@@ -43,9 +43,9 @@ self.chrono = 0</preamble>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>print("ball detected at x=" + str(self.x) + " and y=" + str(self.y) + " isdetected "+ str(self.isBallDetected))</loop>
-      <enter>print("Starting move Trackball")</enter>
-      <exit>print("Stopping move Trackball")</exit>
+      <loop />
+      <enter>self.connection.SchedulerStartMove("TrackBall",0,200)</enter>
+      <exit>self.connection.SchedulerStopMove("TrackBall",200)</exit>
     </StmStateBlock>
     <Position>
       <X>585</X>
@@ -95,9 +95,10 @@ self.chrono = 0</preamble>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>print("Ball not detected " + str(self.isBallDetected) )</loop>
-      <enter>print("Starting move Lookaround")</enter>
-      <exit>print("Stopping move Lookaround")</exit>
+      <loop>
+</loop>
+      <enter>self.connection.SchedulerStartMove("LookAround",0,200)</enter>
+      <exit>self.connection.SchedulerStopMove("LookAround",200)</exit>
     </StmStateBlock>
     <Position>
       <X>481</X>

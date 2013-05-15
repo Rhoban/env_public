@@ -22,26 +22,16 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
-    <BlockServo>
-      <entries>
-        <BlockPredecessor>
-          <name>EntrySinus</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>TeteLat</name>
+    <Block xsi:type="EmptyBlock">
+      <entries />
+      <name>EmptyBlock</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <servo_name>TeteLat</servo_name>
-      <unit>1</unit>
-      <relative>1</relative>
-    </BlockServo>
+    </Block>
     <Position>
-      <X>367</X>
-      <Y>122</Y>
+      <X>392</X>
+      <Y>142</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -51,7 +41,7 @@
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>EntrySinus</SourceName>
-    <TargetName>TeteLat</TargetName>
+    <TargetName>EmptyBlock</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
