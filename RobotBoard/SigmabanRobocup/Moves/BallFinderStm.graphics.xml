@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>BallFinderStm</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <GraphicalBlock>
+    <StmPreambleBlock>
+      <entries />
+      <name>StmPreambleBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <preamble>self.isBallDetected =0
+self.x = 0
+self.y = 0
+self.radius = 0
+self.chrono = 0</preamble>
+    </StmPreambleBlock>
+    <Position>
+      <X>91</X>
+      <Y>45</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmStateBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Initial</name>
+          <output_idx>0</output_idx>
+          <condition>self.isBallDetected &gt; 0.5</condition>
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>LookAround</name>
+          <output_idx>0</output_idx>
+          <condition>self.isBallDetected &gt; 0.5</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>TrackBall</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <loop>print("ball detected at x=" + str(self.x) + " and y=" + str(self.y) + " isdetected "+ str(self.isBallDetected))</loop>
+      <enter>print("Starting move Trackball")</enter>
+      <exit>print("Stopping move Trackball")</exit>
+    </StmStateBlock>
+    <Position>
+      <X>585</X>
+      <Y>43</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmLoopBlock>
+      <entries />
+      <name>Initial</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <loop />
+    </StmLoopBlock>
+    <Position>
+      <X>105</X>
+      <Y>177</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>self.isBallDetected &gt; 0.5</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Initial</SourceName>
+    <TargetName>TrackBall</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <StmStateBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Initial</name>
+          <output_idx>0</output_idx>
+          <condition>self.isBallDetected &lt; 0.5</condition>
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>TrackBall</name>
+          <output_idx>0</output_idx>
+          <condition>self.isBallDetected &lt; 0.5</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>LookAround</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <loop>print("Ball not detected " + str(self.isBallDetected) )</loop>
+      <enter>print("Starting move Lookaround")</enter>
+      <exit>print("Stopping move Lookaround")</exit>
+    </StmStateBlock>
+    <Position>
+      <X>481</X>
+      <Y>374</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>self.isBallDetected &lt; 0.5</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Initial</SourceName>
+    <TargetName>LookAround</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>self.isBallDetected &lt; 0.5</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>TrackBall</SourceName>
+    <TargetName>LookAround</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>self.isBallDetected &gt; 0.5</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>LookAround</SourceName>
+    <TargetName>TrackBall</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>
