@@ -21,29 +21,6 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
-    <BlockServo>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockMobileAverage</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>TeteLat</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <servo_name>TeteLat</servo_name>
-      <unit>1</unit>
-      <relative>1</relative>
-    </BlockServo>
-    <Position>
-      <X>398</X>
-      <Y>83</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
     <BlockMobileAverage>
       <entries>
         <BlockPredecessor>
@@ -73,6 +50,19 @@
     <SourceName>BallBlock</SourceName>
     <TargetName>BlockMobileAverage</TargetName>
   </GraphicalBlockLink>
+  <GraphicalBlock>
+    <Block xsi:type="EmptyBlock">
+      <entries />
+      <name>EmptyBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </Block>
+    <Position>
+      <X>427</X>
+      <Y>116</Y>
+    </Position>
+  </GraphicalBlock>
   <GraphicalBlockLink>
     <output_value>0</output_value>
     <Condition />
@@ -80,7 +70,7 @@
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockMobileAverage</SourceName>
-    <TargetName>TeteLat</TargetName>
+    <TargetName>EmptyBlock</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
