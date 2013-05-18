@@ -30,8 +30,8 @@
       <clipping>true</clipping>
     </BallBlock>
     <Position>
-      <X>-6</X>
-      <Y>84</Y>
+      <X>-10</X>
+      <Y>38</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -62,6 +62,12 @@
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
+          <name>TeteLat</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
           <name>ChronoBlock</name>
           <output_idx>0</output_idx>
           <condition />
@@ -72,13 +78,14 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <machine_name>BallFinderStm</machine_name>
+      <machine_name>StmBallFinder</machine_name>
       <refresh_frequency>20</refresh_frequency>
       <attributes>
         <string>isBallDetected</string>
         <string>x</string>
         <string>y</string>
         <string>radius</string>
+        <string>neck</string>
         <string>chrono</string>
       </attributes>
     </StmWriteBlock>
@@ -88,7 +95,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-0.25119048357009888</output_value>
+    <output_value>0.14200544357299805</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -97,7 +104,7 @@
     <TargetName>StmWriteBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.48452380299568176</output_value>
+    <output_value>0.17168019711971283</output_value>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -106,7 +113,7 @@
     <TargetName>StmWriteBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.0045583723112940788</output_value>
+    <output_value>0.019107917323708534</output_value>
     <Condition />
     <Fire />
     <SourceIndex>3</SourceIndex>
@@ -121,7 +128,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <machine_name>BallFinderStm</machine_name>
+      <machine_name>StmBallFinder</machine_name>
       <refresh_frequency>20</refresh_frequency>
       <attributes>
         <string>x</string>
@@ -177,7 +184,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-0.25119048357009888</output_value>
+    <output_value>0.16114959120750427</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -186,7 +193,7 @@
     <TargetName>BlockGain</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.48452380299568176</output_value>
+    <output_value>0.034118209034204483</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -195,7 +202,7 @@
     <TargetName>BlockGain</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.0045583723112940788</output_value>
+    <output_value>0.018899649381637573</output_value>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -204,7 +211,7 @@
     <TargetName>BlockGain</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>8.69797420501709</output_value>
+    <output_value>408.94357299804688</output_value>
     <Condition />
     <Fire />
     <SourceIndex>3</SourceIndex>
@@ -229,11 +236,11 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>8.7379789352417</output_value>
+    <output_value>409.01522827148438</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>4</TargetIndex>
+    <TargetIndex>5</TargetIndex>
     <SourceName>ChronoBlock</SourceName>
     <TargetName>StmWriteBlock</TargetName>
   </GraphicalBlockLink>
@@ -264,7 +271,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>8.7379789352417</output_value>
+    <output_value>409.01522827148438</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -273,7 +280,7 @@
     <TargetName>BlockAddition</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-8.64798355102539</output_value>
+    <output_value>-408.94357299804688</output_value>
     <Condition />
     <Fire />
     <SourceIndex>3</SourceIndex>
@@ -338,7 +345,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0.089995451271533966</output_value>
+    <output_value>0.071649998426437378</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -347,7 +354,7 @@
     <TargetName>BlockMobileAverage</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.066902786493301392</output_value>
+    <output_value>0.061865124851465225</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -383,7 +390,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
+    <output_value>1</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -392,12 +399,37 @@
     <TargetName>VariationBoundBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>3.5888059139251709</output_value>
+    <output_value>1</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>VariationBoundBlock</SourceName>
+    <TargetName>StmWriteBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries />
+      <name>TeteLat</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>TeteLat</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>-2</X>
+      <Y>125</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-0.78125</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>4</TargetIndex>
+    <SourceName>TeteLat</SourceName>
     <TargetName>StmWriteBlock</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
