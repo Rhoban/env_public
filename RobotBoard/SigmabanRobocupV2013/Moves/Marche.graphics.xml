@@ -1,0 +1,1207 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>Marche</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>AmplitudeBassin</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Bassin Lat1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Bassin Lat</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>514</X>
+      <Y>165</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>AmplitudeSinus</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>AmplitudeBassin</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>13</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>416</X>
+      <Y>165</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-0.99505406618118286</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>AmplitudeBassin</SourceName>
+    <TargetName>Bassin Lat1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>PenchementAvant</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>0</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>274.66100044232689</X>
+      <Y>69.996600265396125</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>PenchementAvant</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Bassin Long1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Bassin Long</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>421</X>
+      <Y>74</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>4</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>PenchementAvant</SourceName>
+    <TargetName>Bassin Long1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>EcartementJambes</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>2</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>282.01359893841544</X>
+      <Y>-37.335599823069245</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>EcartementJambes</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>369</X>
+      <Y>-9</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>6</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>EcartementJambes</SourceName>
+    <TargetName>BlockGain1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Hanche D Lat1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Hanche D Lat</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>431</X>
+      <Y>-13</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-6</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain1</SourceName>
+    <TargetName>Hanche D Lat1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>EcartementJambes</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Hanche G Lat1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Hanche G Lat</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>428</X>
+      <Y>-75</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>6</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>EcartementJambes</SourceName>
+    <TargetName>Hanche G Lat1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>AmplitudeCuisse</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Cuisse G1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Cuisse G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>526</X>
+      <Y>223</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>AmplitudeCuisse</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Cuisse D1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Cuisse D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>530</X>
+      <Y>271</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>AmplitudeSinus</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>AmplitudeCuisse</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>2</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>410.07757880924169</X>
+      <Y>248</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-0.19901081919670105</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>AmplitudeCuisse</SourceName>
+    <TargetName>Cuisse G1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-0.19901081919670105</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>AmplitudeCuisse</SourceName>
+    <TargetName>Cuisse D1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>EntrySinus</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>AmplitudeSinus</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>0.7</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>208.24595275291813</X>
+      <Y>340.37217130662435</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <EntrySinus>
+      <entries />
+      <name>EntrySinus</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <period>0.7</period>
+      <shift>0</shift>
+      <smooth_update>true</smooth_update>
+    </EntrySinus>
+    <Position>
+      <X>92.51403607090414</X>
+      <Y>334.66313799504979</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-0.16584233939647675</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>EntrySinus</SourceName>
+    <TargetName>AmplitudeSinus</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-0.099505409598350525</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>AmplitudeSinus</SourceName>
+    <TargetName>AmplitudeBassin</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-0.099505409598350525</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>AmplitudeSinus</SourceName>
+    <TargetName>AmplitudeCuisse</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>GaucheDroite</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>0</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>297.48033648185827</X>
+      <Y>-157.67459938074242</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>GaucheDroite</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Bassin Lat</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Bassin Lat</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>421.02332011576323</X>
+      <Y>-151.6644001769308</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>3</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>GaucheDroite</SourceName>
+    <TargetName>Bassin Lat</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>AmplitudeSinus</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>40</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>398.76726357227494</X>
+      <Y>349</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Epaule G Long</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Epaule G Long</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>521</X>
+      <Y>331</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Epaule D Long</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Epaule D Long</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>524</X>
+      <Y>387</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-0.099505409598350525</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>AmplitudeSinus</SourceName>
+    <TargetName>BlockGain</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-3.9802162647247314</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain</SourceName>
+    <TargetName>Epaule G Long</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-3.9802162647247314</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain</SourceName>
+    <TargetName>Epaule D Long</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>AmplitudeSinus</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain3</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-4</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>416.74598065167623</X>
+      <Y>487.35042021329127</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-0.099505409598350525</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>AmplitudeSinus</SourceName>
+    <TargetName>BlockGain3</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain3</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Pied G</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Pied G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>553.02305593604081</X>
+      <Y>462.6863090106836</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain3</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Pied D</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Pied D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>554.86789831755766</X>
+      <Y>530.94547712679946</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0.29851621389389038</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain3</SourceName>
+    <TargetName>Pied D</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0.29851621389389038</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain3</SourceName>
+    <TargetName>Pied G</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockMin>
+      <entries>
+        <BlockPredecessor>
+          <name>AmplitudeSinus</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Constant</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockMin</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockMin>
+    <Position>
+      <X>416.64951430428238</X>
+      <Y>603.51305659783577</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>0</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>281.64951430428238</X>
+      <Y>668.51305659783577</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-0.099505409598350525</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>AmplitudeSinus</SourceName>
+    <TargetName>BlockMin</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>Constant</SourceName>
+    <TargetName>BlockMin</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockMin</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>20</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>500.64951430428232</X>
+      <Y>602.51305659783577</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-0.099505409598350525</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMin</SourceName>
+    <TargetName>BlockGain2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain2</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Cuisse G</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Cuisse G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>628.64951430428232</X>
+      <Y>606.51305659783577</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-0.99505406618118286</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain2</SourceName>
+    <TargetName>Cuisse G</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain4</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Genou G</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Genou G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>619.64951430428232</X>
+      <Y>659.51305659783577</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain2</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain4</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>560.64951430428232</X>
+      <Y>661.51305659783577</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-0.99505406618118286</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain2</SourceName>
+    <TargetName>BlockGain4</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0.99505406618118286</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain4</SourceName>
+    <TargetName>Genou G</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockMax>
+      <entries>
+        <BlockPredecessor>
+          <name>AmplitudeSinus</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Constant</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockMax</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockMax>
+    <Position>
+      <X>410.64951430428238</X>
+      <Y>743.51305659783577</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-0.099505409598350525</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>AmplitudeSinus</SourceName>
+    <TargetName>BlockMax</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockMax</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain5</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>30</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>504.64951430428232</X>
+      <Y>743.51305659783577</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMax</SourceName>
+    <TargetName>BlockGain5</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain5</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Cuisse D</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Cuisse D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>621.64951430428232</X>
+      <Y>742.51305659783577</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain6</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Genou D</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Genou D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>623.64951430428232</X>
+      <Y>803.51305659783577</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain5</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain6</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>556.64951430428232</X>
+      <Y>809.51305659783577</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain5</SourceName>
+    <TargetName>Cuisse D</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain5</SourceName>
+    <TargetName>BlockGain6</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain6</SourceName>
+    <TargetName>Genou D</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>Constant</SourceName>
+    <TargetName>BlockMax</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain5</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain7</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-0.3</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>692.64951430428232</X>
+      <Y>710.51305659783577</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain5</SourceName>
+    <TargetName>BlockGain7</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain7</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Cheville D</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Cheville D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>768.64951430428232</X>
+      <Y>709.51305659783577</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain7</SourceName>
+    <TargetName>Cheville D</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain2</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain8</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-0.3</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>692.64951430428232</X>
+      <Y>566.51305659783577</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-0.99505406618118286</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain2</SourceName>
+    <TargetName>BlockGain8</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain8</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Cheville G</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Cheville G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>758.64951430428232</X>
+      <Y>570.51305659783577</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0.099505409598350525</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain8</SourceName>
+    <TargetName>Cheville G</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>AmplitudeSinus</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain9</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-3</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>444</X>
+      <Y>943</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>AmplitudeSinus</SourceName>
+    <TargetName>BlockGain9</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain9</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Hanche D Lat</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Hanche D Lat</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>534</X>
+      <Y>921</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain9</SourceName>
+    <TargetName>Hanche D Lat</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain9</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Hanche G Lat</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Hanche G Lat</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>533</X>
+      <Y>974</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain9</SourceName>
+    <TargetName>Hanche G Lat</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>

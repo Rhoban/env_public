@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>Enquete</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>Constant</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Coude D</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Coude D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>433</X>
+      <Y>111</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>0</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>207</X>
+      <Y>105</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Constant</SourceName>
+    <TargetName>Coude D</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockMobileAverage</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>20</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>435</X>
+      <Y>189</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <JoypadAxisBlock>
+      <entries />
+      <name>JoypadAxisBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </JoypadAxisBlock>
+    <Position>
+      <X>198</X>
+      <Y>219</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockMobileAverage>
+      <entries>
+        <BlockPredecessor>
+          <name>JoypadAxisBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockMobileAverage</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <discount_factor>0.8</discount_factor>
+    </BlockMobileAverage>
+    <Position>
+      <X>314</X>
+      <Y>190</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0.087373159825801849</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>JoypadAxisBlock</SourceName>
+    <TargetName>BlockMobileAverage</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0.087373159825801849</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMobileAverage</SourceName>
+    <TargetName>BlockGain</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockMobileAverage>
+      <entries>
+        <BlockPredecessor>
+          <name>JoypadAxisBlock</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockMobileAverage1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <discount_factor>0.8</discount_factor>
+    </BlockMobileAverage>
+    <Position>
+      <X>319</X>
+      <Y>253</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>TeteAlt</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>TeteAlt</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>539</X>
+      <Y>189</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockMobileAverage1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>20</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>435</X>
+      <Y>252</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>JoypadAxisBlock</SourceName>
+    <TargetName>BlockMobileAverage1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMobileAverage1</SourceName>
+    <TargetName>BlockGain1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries />
+      <name>TeteLat</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>TeteLat</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>540</X>
+      <Y>253</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain</SourceName>
+    <TargetName>TeteAlt</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain1</SourceName>
+    <TargetName>TeteLat</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>
