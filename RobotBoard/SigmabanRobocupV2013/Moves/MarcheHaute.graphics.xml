@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <entries />
   <name>MarcheHaute</name>
@@ -4278,8 +4278,8 @@ Frontale</Commentaires>
       <gainMax>60</gainMax>
     </JoypadAxisBlock>
     <Position>
-      <X>-1025</X>
-      <Y>144</Y>
+      <X>-1119</X>
+      <Y>190</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -4329,15 +4329,6 @@ Frontale</Commentaires>
       <Y>151</Y>
     </Position>
   </GraphicalBlock>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>JoypadAxisBlock</SourceName>
-    <TargetName>BlockMobileAverage6</TargetName>
-  </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
     <Condition />
@@ -4420,15 +4411,6 @@ Frontale</Commentaires>
       <Y>76</Y>
     </Position>
   </GraphicalBlock>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>JoypadAxisBlock</SourceName>
-    <TargetName>BlockGain37</TargetName>
-  </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
     <Condition />
@@ -4982,11 +4964,85 @@ Phauteur = 0,5 </Commentaires>
     <SourceName>BlockMin2</SourceName>
     <TargetName>BlockGain41</TargetName>
   </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockDynamicGain>
+      <entries />
+      <name>BlockDynamicGain4</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockDynamicGain>
+    <Position>
+      <X>-1031</X>
+      <Y>158</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant15</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>0</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>-1081</X>
+      <Y>64</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Constant15</SourceName>
+    <TargetName>BlockDynamicGain4</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>JoypadAxisBlock</SourceName>
+    <TargetName>BlockDynamicGain4</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDynamicGain4</SourceName>
+    <TargetName>BlockMobileAverage6</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>JoypadAxisBlock</SourceName>
+    <TargetName>BlockDynamicGain4</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDynamicGain4</SourceName>
+    <TargetName>BlockGain37</TargetName>
+  </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
   <SchemaComments />
   <Frequency>100</Frequency>
-  <SmoothStart>0</SmoothStart>
+  <SmoothStart>500</SmoothStart>
   <SmoothStop>1000</SmoothStop>
   <Duration>0</Duration>
 </GraphicalMotorPrimitive>
