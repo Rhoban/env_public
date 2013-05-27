@@ -3,10 +3,10 @@
     <ServosConfig>
         <Servos>
             <ServoConfig>
-                <Id>1</Id>
-                <Name>GEpauleLong</Name>
-                <IniAngle>4.39453</IniAngle>
-                <ZeroAngle>19.4824</ZeroAngle>
+                <Id>110</Id>
+                <Name>Bassin Lat</Name>
+                <IniAngle>20</IniAngle>
+                <ZeroAngle>-11.1328</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1023</MaxSpeed>
@@ -18,13 +18,103 @@
                 <unit>1</unit>
             </ServoConfig>
             <ServoConfig>
-                <Id>237</Id>
-                <Name>DDoigt4</Name>
+                <Id>14</Id>
+                <Name>Bassin Long</Name>
+                <IniAngle>20</IniAngle>
+                <ZeroAngle>35</ZeroAngle>
+                <MinAngle>-180</MinAngle>
+                <MaxAngle>180</MaxAngle>
+                <MaxSpeed>1000</MaxSpeed>
+                <MaxTorque>1023</MaxTorque>
+                <SmoothFactor>0</SmoothFactor>
+                <Bounce>50</Bounce>
+                <Punch>1</Punch>
+                <Inverse>0</Inverse>
+                <unit>1</unit>
+            </ServoConfig>
+            <ServoConfig>
+                <Id>37</Id>
+                <Name>Cheville D</Name>
+                <IniAngle>20</IniAngle>
+                <ZeroAngle>7</ZeroAngle>
+                <MinAngle>-180</MinAngle>
+                <MaxAngle>180</MaxAngle>
+                <MaxSpeed>1000</MaxSpeed>
+                <MaxTorque>1023</MaxTorque>
+                <SmoothFactor>0</SmoothFactor>
+                <Bounce>50</Bounce>
+                <Punch>1</Punch>
+                <Inverse>0</Inverse>
+                <unit>1</unit>
+            </ServoConfig>
+            <ServoConfig>
+                <Id>32</Id>
+                <Name>Cheville G</Name>
+                <IniAngle>20</IniAngle>
+                <ZeroAngle>-25.4883</ZeroAngle>
+                <MinAngle>-180</MinAngle>
+                <MaxAngle>180</MaxAngle>
+                <MaxSpeed>1000</MaxSpeed>
+                <MaxTorque>1023</MaxTorque>
+                <SmoothFactor>0</SmoothFactor>
+                <Bounce>50</Bounce>
+                <Punch>1</Punch>
+                <Inverse>0</Inverse>
+                <unit>1</unit>
+            </ServoConfig>
+            <ServoConfig>
+                <Id>132</Id>
+                <Name>Coude D</Name>
+                <IniAngle>20</IniAngle>
+                <ZeroAngle>0</ZeroAngle>
+                <MinAngle>-180</MinAngle>
+                <MaxAngle>180</MaxAngle>
+                <MaxSpeed>1000</MaxSpeed>
+                <MaxTorque>1023</MaxTorque>
+                <SmoothFactor>0</SmoothFactor>
+                <Bounce>50</Bounce>
+                <Punch>1</Punch>
+                <Inverse>0</Inverse>
+                <unit>1</unit>
+            </ServoConfig>
+            <ServoConfig>
+                <Id>122</Id>
+                <Name>Coude G</Name>
+                <IniAngle>20</IniAngle>
+                <ZeroAngle>0</ZeroAngle>
+                <MinAngle>-180</MinAngle>
+                <MaxAngle>180</MaxAngle>
+                <MaxSpeed>1000</MaxSpeed>
+                <MaxTorque>1023</MaxTorque>
+                <SmoothFactor>0</SmoothFactor>
+                <Bounce>50</Bounce>
+                <Punch>1</Punch>
+                <Inverse>0</Inverse>
+                <unit>1</unit>
+            </ServoConfig>
+            <ServoConfig>
+                <Id>36</Id>
+                <Name>Cuisse D</Name>
+                <IniAngle>0</IniAngle>
+                <ZeroAngle>-7</ZeroAngle>
+                <MinAngle>-180</MinAngle>
+                <MaxAngle>180</MaxAngle>
+                <MaxSpeed>1000</MaxSpeed>
+                <MaxTorque>1023</MaxTorque>
+                <SmoothFactor>0</SmoothFactor>
+                <Bounce>50</Bounce>
+                <Punch>1</Punch>
+                <Inverse>0</Inverse>
+                <unit>1</unit>
+            </ServoConfig>
+            <ServoConfig>
+                <Id>12</Id>
+                <Name>Cuisse G</Name>
                 <IniAngle>0</IniAngle>
                 <ZeroAngle>0</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
+                <MaxSpeed>1000</MaxSpeed>
                 <MaxTorque>1023</MaxTorque>
                 <SmoothFactor>0</SmoothFactor>
                 <Bounce>50</Bounce>
@@ -33,13 +123,13 @@
                 <unit>1</unit>
             </ServoConfig>
             <ServoConfig>
-                <Id>236</Id>
-                <Name>DDoigt3</Name>
+                <Id>131</Id>
+                <Name>Epaule D Lat</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>0</ZeroAngle>
+                <ZeroAngle>-24.6094</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
+                <MaxSpeed>1000</MaxSpeed>
                 <MaxTorque>1023</MaxTorque>
                 <SmoothFactor>0</SmoothFactor>
                 <Bounce>50</Bounce>
@@ -48,13 +138,13 @@
                 <unit>1</unit>
             </ServoConfig>
             <ServoConfig>
-                <Id>235</Id>
-                <Name>DDoigt2</Name>
+                <Id>130</Id>
+                <Name>Epaule D Long</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>0</ZeroAngle>
+                <ZeroAngle>30</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
+                <MaxSpeed>1000</MaxSpeed>
                 <MaxTorque>1023</MaxTorque>
                 <SmoothFactor>0</SmoothFactor>
                 <Bounce>50</Bounce>
@@ -63,13 +153,13 @@
                 <unit>1</unit>
             </ServoConfig>
             <ServoConfig>
-                <Id>234</Id>
-                <Name>DDoigt1</Name>
+                <Id>121</Id>
+                <Name>Epaule G Lat</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>0</ZeroAngle>
+                <ZeroAngle>-8</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
+                <MaxSpeed>1000</MaxSpeed>
                 <MaxTorque>1023</MaxTorque>
                 <SmoothFactor>0</SmoothFactor>
                 <Bounce>50</Bounce>
@@ -78,178 +168,13 @@
                 <unit>1</unit>
             </ServoConfig>
             <ServoConfig>
-                <Id>233</Id>
-                <Name>GDoigt4</Name>
+                <Id>120</Id>
+                <Name>Epaule G Long</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>0</ZeroAngle>
+                <ZeroAngle>14</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
-                <Id>232</Id>
-                <Name>GDoigt3</Name>
-                <IniAngle>0</IniAngle>
-                <ZeroAngle>0</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
-                <Id>231</Id>
-                <Name>GDoigt2</Name>
-                <IniAngle>0</IniAngle>
-                <ZeroAngle>0</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
-                <Id>230</Id>
-                <Name>GDoigt1</Name>
-                <IniAngle>0</IniAngle>
-                <ZeroAngle>0</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
-                <Id>107</Id>
-                <Name>DPoignetLat</Name>
-                <IniAngle>0</IniAngle>
-                <ZeroAngle>29.663</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
-                <Id>106</Id>
-                <Name>DPoignetLong</Name>
-                <IniAngle>0</IniAngle>
-                <ZeroAngle>13.037</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
-                <Id>105</Id>
-                <Name>DCoudeRot</Name>
-                <IniAngle>0</IniAngle>
-                <ZeroAngle>43.652</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
-                <Id>104</Id>
-                <Name>DCoude</Name>
-                <IniAngle>0</IniAngle>
-                <ZeroAngle>-33.398</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
-                <Id>103</Id>
-                <Name>DEpauleRot</Name>
-                <IniAngle>0</IniAngle>
-                <ZeroAngle>-46.289</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
-                <Id>102</Id>
-                <Name>DEpauleLat</Name>
-                <IniAngle>0</IniAngle>
-                <ZeroAngle>-0.292</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
-                <Id>101</Id>
-                <Name>DEpauleLong</Name>
-                <IniAngle>0</IniAngle>
-                <ZeroAngle>-23.583</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
-                <Id>7</Id>
-                <Name>GPoignetLat</Name>
-                <IniAngle>1.53809</IniAngle>
-                <ZeroAngle>-13.6963</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
+                <MaxSpeed>1000</MaxSpeed>
                 <MaxTorque>1023</MaxTorque>
                 <SmoothFactor>0</SmoothFactor>
                 <Bounce>50</Bounce>
@@ -259,9 +184,24 @@
             </ServoConfig>
             <ServoConfig>
                 <Id>6</Id>
-                <Name>GPoignetLong</Name>
-                <IniAngle>9.66797</IniAngle>
-                <ZeroAngle>-22.2656</ZeroAngle>
+                <Name>Genou D</Name>
+                <IniAngle>0</IniAngle>
+                <ZeroAngle>25.4883</ZeroAngle>
+                <MinAngle>-180</MinAngle>
+                <MaxAngle>180</MaxAngle>
+                <MaxSpeed>1000</MaxSpeed>
+                <MaxTorque>1023</MaxTorque>
+                <SmoothFactor>0</SmoothFactor>
+                <Bounce>50</Bounce>
+                <Punch>1</Punch>
+                <Inverse>0</Inverse>
+                <unit>1</unit>
+            </ServoConfig>
+            <ServoConfig>
+                <Id>15</Id>
+                <Name>Genou G</Name>
+                <IniAngle>0</IniAngle>
+                <ZeroAngle>-23.1445</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1023</MaxSpeed>
@@ -273,10 +213,100 @@
                 <unit>1</unit>
             </ServoConfig>
             <ServoConfig>
-                <Id>5</Id>
-                <Name>GCoudeRot</Name>
-                <IniAngle>-14.6484</IniAngle>
-                <ZeroAngle>12.3047</ZeroAngle>
+                <Id>35</Id>
+                <Name>Hanche D Lat</Name>
+                <IniAngle>0</IniAngle>
+                <ZeroAngle>-5</ZeroAngle>
+                <MinAngle>-180</MinAngle>
+                <MaxAngle>180</MaxAngle>
+                <MaxSpeed>1000</MaxSpeed>
+                <MaxTorque>1023</MaxTorque>
+                <SmoothFactor>0</SmoothFactor>
+                <Bounce>50</Bounce>
+                <Punch>1</Punch>
+                <Inverse>0</Inverse>
+                <unit>1</unit>
+            </ServoConfig>
+            <ServoConfig>
+                <Id>103</Id>
+                <Name>Hanche D Rot</Name>
+                <IniAngle>0</IniAngle>
+                <ZeroAngle>-24.3164</ZeroAngle>
+                <MinAngle>-180</MinAngle>
+                <MaxAngle>180</MaxAngle>
+                <MaxSpeed>1000</MaxSpeed>
+                <MaxTorque>1023</MaxTorque>
+                <SmoothFactor>0</SmoothFactor>
+                <Bounce>50</Bounce>
+                <Punch>1</Punch>
+                <Inverse>0</Inverse>
+                <unit>1</unit>
+            </ServoConfig>
+            <ServoConfig>
+                <Id>10</Id>
+                <Name>Hanche G Lat</Name>
+                <IniAngle>0</IniAngle>
+                <ZeroAngle>4</ZeroAngle>
+                <MinAngle>-180</MinAngle>
+                <MaxAngle>180</MaxAngle>
+                <MaxSpeed>1000</MaxSpeed>
+                <MaxTorque>1023</MaxTorque>
+                <SmoothFactor>0</SmoothFactor>
+                <Bounce>50</Bounce>
+                <Punch>1</Punch>
+                <Inverse>0</Inverse>
+                <unit>1</unit>
+            </ServoConfig>
+            <ServoConfig>
+                <Id>102</Id>
+                <Name>Hanche G Rot</Name>
+                <IniAngle>0</IniAngle>
+                <ZeroAngle>22</ZeroAngle>
+                <MinAngle>-180</MinAngle>
+                <MaxAngle>180</MaxAngle>
+                <MaxSpeed>1000</MaxSpeed>
+                <MaxTorque>1023</MaxTorque>
+                <SmoothFactor>0</SmoothFactor>
+                <Bounce>50</Bounce>
+                <Punch>1</Punch>
+                <Inverse>0</Inverse>
+                <unit>1</unit>
+            </ServoConfig>
+            <ServoConfig>
+                <Id>38</Id>
+                <Name>Pied D</Name>
+                <IniAngle>0</IniAngle>
+                <ZeroAngle>-2</ZeroAngle>
+                <MinAngle>-180</MinAngle>
+                <MaxAngle>180</MaxAngle>
+                <MaxSpeed>1000</MaxSpeed>
+                <MaxTorque>1023</MaxTorque>
+                <SmoothFactor>0</SmoothFactor>
+                <Bounce>50</Bounce>
+                <Punch>1</Punch>
+                <Inverse>0</Inverse>
+                <unit>1</unit>
+            </ServoConfig>
+            <ServoConfig>
+                <Id>17</Id>
+                <Name>Pied G</Name>
+                <IniAngle>0</IniAngle>
+                <ZeroAngle>-2</ZeroAngle>
+                <MinAngle>-180</MinAngle>
+                <MaxAngle>180</MaxAngle>
+                <MaxSpeed>1000</MaxSpeed>
+                <MaxTorque>1023</MaxTorque>
+                <SmoothFactor>0</SmoothFactor>
+                <Bounce>50</Bounce>
+                <Punch>1</Punch>
+                <Inverse>0</Inverse>
+                <unit>1</unit>
+            </ServoConfig>
+            <ServoConfig>
+                <Id>221</Id>
+                <Name>TeteAlt</Name>
+                <IniAngle>0</IniAngle>
+                <ZeroAngle>29.9479</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1023</MaxSpeed>
@@ -288,40 +318,10 @@
                 <unit>1</unit>
             </ServoConfig>
             <ServoConfig>
-                <Id>4</Id>
-                <Name>GCoude</Name>
-                <IniAngle>83.2031</IniAngle>
-                <ZeroAngle>-25.1953</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
-                <Id>3</Id>
-                <Name>GEpauleRot</Name>
-                <IniAngle>3.80859</IniAngle>
-                <ZeroAngle>-68.2617</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
-                <Id>2</Id>
-                <Name>GEpauleLat</Name>
-                <IniAngle>34.4238</IniAngle>
-                <ZeroAngle>-20.2148</ZeroAngle>
+                <Id>220</Id>
+                <Name>TeteLat</Name>
+                <IniAngle>0</IniAngle>
+                <ZeroAngle>0</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1023</MaxSpeed>
@@ -343,4 +343,5 @@
         <gyroy_sensor />
         <joypad_sensor />
     </SensorsConfig>
+    <autoload_moves />
 </MoveSchedulerConfig>

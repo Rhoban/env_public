@@ -5267,7 +5267,7 @@ Phauteur = 0,5 </Commentaires>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <P_coef>0</P_coef>
-      <I_coef>-3</I_coef>
+      <I_coef>-0.1</I_coef>
       <D_coef>0</D_coef>
       <derivative_discount_factor>0</derivative_discount_factor>
       <min_output>0</min_output>
@@ -5579,11 +5579,59 @@ Phauteur = 0,5 </Commentaires>
     <SourceName>BlockAddition12</SourceName>
     <TargetName>BlockDynamicGain3</TargetName>
   </GraphicalBlockLink>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant17</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>5</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>-732</X>
+      <Y>125</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>Constant17</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Bassin Lat</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <servo_name>Bassin Lat</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>-588</X>
+      <Y>125</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Constant17</SourceName>
+    <TargetName>Bassin Lat</TargetName>
+  </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
   <SchemaComments />
   <Frequency>100</Frequency>
-  <SmoothStart>500</SmoothStart>
+  <SmoothStart>1000</SmoothStart>
   <SmoothStop>1000</SmoothStop>
   <Duration>0</Duration>
 </GraphicalMotorPrimitive>
