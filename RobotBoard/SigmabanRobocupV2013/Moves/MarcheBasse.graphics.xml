@@ -2439,8 +2439,8 @@ Frontale</Commentaires>
       <Commentaires>PARAM: Rotation entre -1 et 1</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>-961.55206920813544</X>
-      <Y>85.0564670671393</Y>
+      <X>-968.55206920813544</X>
+      <Y>49.056467067139295</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -2900,8 +2900,8 @@ Frontale</Commentaires>
       <Commentaires>PARAM: avance entre -1 et 1</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>-218.5810185209159</X>
-      <Y>128.82373063941444</Y>
+      <X>-291.5810185209159</X>
+      <Y>141.82373063941444</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -3061,7 +3061,7 @@ Frontale</Commentaires>
       </constants>
     </Constant>
     <Position>
-      <X>-156.01153516783307</X>
+      <X>-243.01153516783307</X>
       <Y>105.8407796796952</Y>
     </Position>
   </GraphicalBlock>
@@ -3075,7 +3075,7 @@ Frontale</Commentaires>
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>Forward</name>
+          <name>BlockGain48</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -3104,15 +3104,6 @@ Frontale</Commentaires>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>Constant7</SourceName>
-    <TargetName>BlockAddition6</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>Forward</SourceName>
     <TargetName>BlockAddition6</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
@@ -4269,15 +4260,15 @@ Frontale</Commentaires>
       <gainMax>60</gainMax>
     </JoypadAxisBlock>
     <Position>
-      <X>-1025</X>
-      <Y>144</Y>
+      <X>-1128</X>
+      <Y>165</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
     <BlockMobileAverage>
       <entries>
         <BlockPredecessor>
-          <name>JoypadAxisBlock</name>
+          <name>BlockDynamicGain4</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -4298,7 +4289,7 @@ Frontale</Commentaires>
     <BlockDynamicGain>
       <entries>
         <BlockPredecessor>
-          <name>BlockGain36</name>
+          <name>BlockAddition12</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -4320,15 +4311,6 @@ Frontale</Commentaires>
       <Y>151</Y>
     </Position>
   </GraphicalBlock>
-  <GraphicalBlockLink>
-    <output_value>-0.13250935077667236</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>JoypadAxisBlock</SourceName>
-    <TargetName>BlockMobileAverage6</TargetName>
-  </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0.86848187446594238</output_value>
     <Condition />
@@ -4366,8 +4348,8 @@ Frontale</Commentaires>
       </gains>
     </BlockGain>
     <Position>
-      <X>-888</X>
-      <Y>114</Y>
+      <X>-917</X>
+      <Y>153</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -4379,21 +4361,12 @@ Frontale</Commentaires>
     <SourceName>BlockMobileAverage6</SourceName>
     <TargetName>BlockGain36</TargetName>
   </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>-0.066254675388336182</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockGain36</SourceName>
-    <TargetName>BlockDynamicGain3</TargetName>
-  </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockGain>
       <entries>
         <BlockPredecessor>
-          <name>JoypadAxisBlock</name>
-          <output_idx>1</output_idx>
+          <name>BlockDynamicGain4</name>
+          <output_idx>0</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
@@ -4408,18 +4381,9 @@ Frontale</Commentaires>
     </BlockGain>
     <Position>
       <X>-264</X>
-      <Y>76</Y>
+      <Y>72</Y>
     </Position>
   </GraphicalBlock>
-  <GraphicalBlockLink>
-    <output_value>0.025818265974521637</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>JoypadAxisBlock</SourceName>
-    <TargetName>BlockGain37</TargetName>
-  </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0.0051636528223752975</output_value>
     <Condition />
@@ -5411,6 +5375,209 @@ Phauteur = 0,5 </Commentaires>
     <TargetIndex>2</TargetIndex>
     <SourceName>BlockGain47</SourceName>
     <TargetName>BlockAddition10</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockDynamicGain>
+      <entries>
+        <BlockPredecessor>
+          <name>Constant16</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>JoypadAxisBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>JoypadAxisBlock</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockDynamicGain4</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockDynamicGain>
+    <Position>
+      <X>-1031</X>
+      <Y>129</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant16</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>0</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>-1081</X>
+      <Y>109</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Constant16</SourceName>
+    <TargetName>BlockDynamicGain4</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>JoypadAxisBlock</SourceName>
+    <TargetName>BlockDynamicGain4</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDynamicGain4</SourceName>
+    <TargetName>BlockMobileAverage6</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>JoypadAxisBlock</SourceName>
+    <TargetName>BlockDynamicGain4</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDynamicGain4</SourceName>
+    <TargetName>BlockGain37</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>Forward</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain48</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-0.3</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>-156</X>
+      <Y>91</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Forward</SourceName>
+    <TargetName>BlockGain48</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockGain48</SourceName>
+    <TargetName>BlockAddition6</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Rotation</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>-0.3968254</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>-888</X>
+      <Y>70</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockAddition>
+      <entries>
+        <BlockPredecessor>
+          <name>Rotation</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockGain36</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockAddition12</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockAddition>
+    <Position>
+      <X>-865</X>
+      <Y>123</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Rotation</SourceName>
+    <TargetName>BlockAddition12</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockGain36</SourceName>
+    <TargetName>BlockAddition12</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockAddition12</SourceName>
+    <TargetName>BlockDynamicGain3</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
