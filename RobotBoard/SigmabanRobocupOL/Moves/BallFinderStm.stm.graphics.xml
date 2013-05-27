@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>BallFinderStm</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <GraphicalBlock>
+    <StmPreambleBlock>
+      <entries />
+      <name>StmPreambleBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <preamble>from datetime import datetime
+
+x = 0
+y = 0
+isball = False
+radius = 0
+chrono = 0
+
+class BallFinderStmClass:
+    @staticmethod
+    def update(connection):
+        global x
+        global y
+        global isball
+        global radius
+        info = connection.VisionGetBallInfo_response(True)
+        if info:
+            isball = info[0]
+            print(isball)
+            x = info[1]
+            y = info[2]
+            radius = info[3]
+        else:
+            print(str(datetime.now()) + ": No answer")
+</preamble>
+    </StmPreambleBlock>
+    <Position>
+      <X>33</X>
+      <Y>29</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmStateBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Initial</name>
+          <output_idx>0</output_idx>
+          <condition>isball</condition>
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>LookAround</name>
+          <output_idx>0</output_idx>
+          <condition>isball</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>TrackBall</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <loop>BallFinderStmClass.update(self.connection)</loop>
+      <enter>self.connection.SchedulerStartMove("TrackBall",0,50)</enter>
+      <exit>self.connection.SchedulerStopMove("TrackBall",50)</exit>
+    </StmStateBlock>
+    <Position>
+      <X>697</X>
+      <Y>59</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmLoopBlock>
+      <entries />
+      <name>Initial</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <loop />
+    </StmLoopBlock>
+    <Position>
+      <X>401</X>
+      <Y>363</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>isball</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Initial</SourceName>
+    <TargetName>TrackBall</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <StmStateBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Initial</name>
+          <output_idx>0</output_idx>
+          <condition>not isball</condition>
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>TrackBall</name>
+          <output_idx>0</output_idx>
+          <condition>not isball</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>LookAround</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <loop>BallFinderStmClass.update(self.connection)
+print(isball)</loop>
+      <enter>self.connection.SchedulerStartMove("LookAround",0,50)</enter>
+      <exit>self.connection.SchedulerStopMove("LookAround",50)</exit>
+    </StmStateBlock>
+    <Position>
+      <X>695</X>
+      <Y>468</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>not isball</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Initial</SourceName>
+    <TargetName>LookAround</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>not isball</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>TrackBall</SourceName>
+    <TargetName>LookAround</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>isball</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>LookAround</SourceName>
+    <TargetName>TrackBall</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>
