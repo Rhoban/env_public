@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>Test</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <GraphicalBlock>
+    <StmPreambleBlock>
+      <entries />
+      <name>StmPreambleBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <preamble>x = 2
+ffff = 7
+isBallDetected = 0
+
+def funn(x):
+    print("ff")
+
+class Truc:
+    @staticmethod
+    def fun(x):
+        print(x)</preamble>
+    </StmPreambleBlock>
+    <Position>
+      <X>137</X>
+      <Y>115</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmLoopBlock>
+      <entries />
+      <name>Initial</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <loop>print(x)
+Truc.fun(x+1)
+funn(3)</loop>
+    </StmLoopBlock>
+    <Position>
+      <X>331</X>
+      <Y>103</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmLoopBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Initial</name>
+          <output_idx>0</output_idx>
+          <condition>ffff &gt; 8 and isBallDetected &gt; 0</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>StmLoopBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <loop>print(ffff)
+print(isBallDetected)</loop>
+    </StmLoopBlock>
+    <Position>
+      <X>632</X>
+      <Y>197</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>ffff &gt; 8 and isBallDetected &gt; 0</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Initial</SourceName>
+    <TargetName>StmLoopBlock</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>0</SmoothStart>
+  <SmoothStop>0</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>

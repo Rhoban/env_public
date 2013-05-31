@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <entries />
-  <name>BallFinderStm</name>
+  <name>BallFinderStm2</name>
   <gain>1</gain>
   <gainMin>-1</gainMin>
   <gainMax>60</gainMax>
@@ -12,27 +12,8 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <preamble>x = 0
-y = 0
-isball = False
-radius = 0
-chrono = 0
-marche = "MarcheBasse"
-
-class BallFinderStmClass:
-    @staticmethod
-    def update_ballinfo(connection):
-        global x
-        global y
-        global isball
-        global radius
-        info = connection.VisionGetBallInfo_response(True)
-        if info:
-            isball = info[0]
-            x = info[1]
-            y = info[2]
-            radius = info[3]
-</preamble>
+      <preamble>marche = "MarcheBasse"
+smooth = 1000</preamble>
     </StmPreambleBlock>
     <Position>
       <X>-174.05400614146097</X>
@@ -59,14 +40,9 @@ class BallFinderStmClass:
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>BallFinderStmClass.update_ballinfo(self.connection)
-self.connection.SchedulerUpdateConstant("MarcheBasse", "Rotation", [0.8*x]) </loop>
-      <enter>self.connection.SchedulerStartMove("TrackBall",0,20)
-self.connection.SchedulerUpdateConstant(marche, "Forward", [0.8])
-self.connection.SchedulerUpdateConstant(marche, "Rotation", [0])
-
-</enter>
-      <exit>self.connection.SchedulerStopMove("TrackBall",50)
+      <loop />
+      <enter>self.connection.SchedulerStartMove("WalkToBall",0,smooth)</enter>
+      <exit>self.connection.SchedulerStopMove("WalkToBall",smooth)
 </exit>
     </StmStateBlock>
     <Position>
@@ -81,12 +57,15 @@ self.connection.SchedulerUpdateConstant(marche, "Rotation", [0])
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>self.connection.SchedulerStartMove(marche,0,20)
+      <loop>self.connection.SchedulerStartMove("PositionBasse",0,200)
+self.connection.SchedulerStartMove(marche,0,1000)
+self.connection.SchedulerStartMove("TrackBall",0,200)
+
 </loop>
     </StmLoopBlock>
     <Position>
-      <X>221.94088904861798</X>
-      <Y>257.82764211845165</Y>
+      <X>5.9408890486179757</X>
+      <Y>201.82764211845165</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -118,12 +97,9 @@ self.connection.SchedulerUpdateConstant(marche, "Rotation", [0])
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>BallFinderStmClass.update_ballinfo(self.connection)</loop>
-      <enter>self.connection.SchedulerStartMove("LookAround",0,50)
-self.connection.SchedulerUpdateConstant(marche, "Forward", [0])
-self.connection.SchedulerUpdateConstant(marche, "Rotation", [0.3])
-</enter>
-      <exit>self.connection.SchedulerStopMove("LookAround",20)
+      <loop />
+      <enter>self.connection.SchedulerStartMove("TurnAround",0,smooth)</enter>
+      <exit>self.connection.SchedulerStopMove("TurnAround",smooth)
 </exit>
     </StmStateBlock>
     <Position>

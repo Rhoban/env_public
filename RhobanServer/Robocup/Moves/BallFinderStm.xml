@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<MotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>BallFinderStm</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <StmPreambleBlock>
+    <entries />
+    <name>StmPreambleBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <preamble>self.isBallDetected =0
+self.x = 0
+self.y = 0
+self.radius = 0
+self.chrono = 0</preamble>
+  </StmPreambleBlock>
+  <StmStateBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>Initial</name>
+        <output_idx>0</output_idx>
+        <condition>self.isBallDetected &gt; 0.5</condition>
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>LookAround</name>
+        <output_idx>0</output_idx>
+        <condition>self.isBallDetected &gt; 0.5</condition>
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>TrackBall</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <loop />
+    <enter>self.connection.SchedulerStartMove("TrackBall",0,200)</enter>
+    <exit>self.connection.SchedulerStopMove("TrackBall",200)</exit>
+  </StmStateBlock>
+  <StmLoopBlock>
+    <entries />
+    <name>Initial</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <loop />
+  </StmLoopBlock>
+  <StmStateBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>Initial</name>
+        <output_idx>0</output_idx>
+        <condition>self.isBallDetected &lt; 0.5</condition>
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>TrackBall</name>
+        <output_idx>0</output_idx>
+        <condition>self.isBallDetected &lt; 0.5</condition>
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>LookAround</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <loop />
+    <enter>self.connection.SchedulerStartMove("LookAround",0,200)</enter>
+    <exit>self.connection.SchedulerStopMove("LookAround",200)</exit>
+  </StmStateBlock>
+  <SchemaComments />
+  <frequency>100</frequency>
+</MotorPrimitive>
