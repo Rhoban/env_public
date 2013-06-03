@@ -17,14 +17,14 @@
   <BlockMobileAverage>
     <entries>
       <BlockPredecessor>
-        <name>BlockDynamicGain</name>
-        <output_idx>0</output_idx>
+        <name>BallBlock</name>
+        <output_idx>1</output_idx>
         <condition />
         <fire />
       </BlockPredecessor>
       <BlockPredecessor>
-        <name>BlockDynamicGain</name>
-        <output_idx>1</output_idx>
+        <name>BallBlock</name>
+        <output_idx>2</output_idx>
         <condition />
         <fire />
       </BlockPredecessor>
@@ -38,13 +38,13 @@
   <BlockServo>
     <entries>
       <BlockPredecessor>
-        <name>BlockAddition1</name>
-        <output_idx>0</output_idx>
+        <name>BlockDynamicGain1</name>
+        <output_idx>1</output_idx>
         <condition />
         <fire />
       </BlockPredecessor>
     </entries>
-    <name>TeteAlt</name>
+    <name>TeteAlt1</name>
     <gain>1</gain>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
@@ -55,13 +55,13 @@
   <BlockServo>
     <entries>
       <BlockPredecessor>
-        <name>BlockAddition</name>
+        <name>BlockDynamicGain1</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
       </BlockPredecessor>
     </entries>
-    <name>TeteLat</name>
+    <name>TeteLat1</name>
     <gain>1</gain>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
@@ -69,53 +69,6 @@
     <unit>1</unit>
     <relative>1</relative>
   </BlockServo>
-  <VariationBoundBlock>
-    <entries>
-      <BlockPredecessor>
-        <name>BallBlock</name>
-        <output_idx>0</output_idx>
-        <condition />
-        <fire />
-      </BlockPredecessor>
-    </entries>
-    <name>VariationBoundBlock</name>
-    <gain>1</gain>
-    <gainMin>-1</gainMin>
-    <gainMax>60</gainMax>
-    <min_value>
-      <float>-0.25</float>
-    </min_value>
-    <max_value>
-      <float>100</float>
-    </max_value>
-    <discount_factor>0</discount_factor>
-  </VariationBoundBlock>
-  <BlockDynamicGain>
-    <entries>
-      <BlockPredecessor>
-        <name>VariationBoundBlock</name>
-        <output_idx>0</output_idx>
-        <condition />
-        <fire />
-      </BlockPredecessor>
-      <BlockPredecessor>
-        <name>BlockMobileAverage1</name>
-        <output_idx>0</output_idx>
-        <condition />
-        <fire />
-      </BlockPredecessor>
-      <BlockPredecessor>
-        <name>BlockMobileAverage1</name>
-        <output_idx>1</output_idx>
-        <condition />
-        <fire />
-      </BlockPredecessor>
-    </entries>
-    <name>BlockDynamicGain</name>
-    <gain>1</gain>
-    <gainMin>-1</gainMin>
-    <gainMax>60</gainMax>
-  </BlockDynamicGain>
   <CommentsBlock>
     <entries />
     <name>CommentsBlock</name>
@@ -230,7 +183,7 @@
   </BlockGain>
   <EntrySinus>
     <entries />
-    <name>EntrySinus</name>
+    <name>SinusLat</name>
     <gain>1</gain>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
@@ -240,7 +193,7 @@
   </EntrySinus>
   <EntrySinus>
     <entries />
-    <name>EntrySinus1</name>
+    <name>SinusAlt</name>
     <gain>1</gain>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
@@ -251,13 +204,13 @@
   <BlockGain>
     <entries>
       <BlockPredecessor>
-        <name>EntrySinus</name>
+        <name>SinusLat</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
       </BlockPredecessor>
       <BlockPredecessor>
-        <name>EntrySinus1</name>
+        <name>SinusAlt</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
@@ -268,7 +221,7 @@
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
     <gains>
-      <float>0</float>
+      <float>1</float>
       <float>50</float>
     </gains>
   </BlockGain>
@@ -287,12 +240,6 @@
     <entries>
       <BlockPredecessor>
         <name>BlockGain</name>
-        <output_idx>0</output_idx>
-        <condition />
-        <fire />
-      </BlockPredecessor>
-      <BlockPredecessor>
-        <name>BlockGain2</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
@@ -318,12 +265,6 @@
         <fire />
       </BlockPredecessor>
       <BlockPredecessor>
-        <name>BlockGain2</name>
-        <output_idx>1</output_idx>
-        <condition />
-        <fire />
-      </BlockPredecessor>
-      <BlockPredecessor>
         <name>Constant1</name>
         <output_idx>1</output_idx>
         <condition />
@@ -335,27 +276,216 @@
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
   </BlockAddition>
-  <BlockMobileAverage>
+  <BlockPolynome>
     <entries>
       <BlockPredecessor>
-        <name>BallBlock</name>
-        <output_idx>1</output_idx>
-        <condition />
-        <fire />
-      </BlockPredecessor>
-      <BlockPredecessor>
-        <name>BallBlock</name>
-        <output_idx>2</output_idx>
+        <name>BallBlock1</name>
+        <output_idx>0</output_idx>
         <condition />
         <fire />
       </BlockPredecessor>
     </entries>
-    <name>BlockMobileAverage1</name>
+    <name>BlockPolynome</name>
     <gain>1</gain>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
-    <discount_factor>0.9</discount_factor>
-  </BlockMobileAverage>
+    <const_coefs>
+      <float>1</float>
+    </const_coefs>
+    <lin_coefs>
+      <float>-1</float>
+    </lin_coefs>
+    <square_coefs>
+      <float>0</float>
+    </square_coefs>
+    <abs_coefs>
+      <float>0</float>
+    </abs_coefs>
+  </BlockPolynome>
+  <VariationBoundBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>BallBlock1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>VariationBoundBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <min_value>
+      <float>-0.2</float>
+    </min_value>
+    <max_value>
+      <float>1000</float>
+    </max_value>
+    <discount_factor>0</discount_factor>
+  </VariationBoundBlock>
+  <BlockDynamicGain>
+    <entries>
+      <BlockPredecessor>
+        <name>VariationBoundBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>SnapshotBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>SnapshotBlock</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockDynamicGain1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockDynamicGain>
+  <BallBlock>
+    <entries />
+    <name>BallBlock1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <refresh_frequency>5</refresh_frequency>
+    <clipping>true</clipping>
+  </BallBlock>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>The PID regulation when the ball is apparent</Commentaires>
+  </CommentsBlock>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock3</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>When the ball disappears, the head goes slowly back to 0 and then starts to oscillate</Commentaires>
+  </CommentsBlock>
+  <BlockDynamicGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockPolynome1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockGain2</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockGain2</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockDynamicGain</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockDynamicGain>
+  <BlockPolynome>
+    <entries>
+      <BlockPredecessor>
+        <name>VariationBoundBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockPolynome1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <const_coefs>
+      <float>1</float>
+    </const_coefs>
+    <lin_coefs>
+      <float>-1</float>
+    </lin_coefs>
+    <square_coefs>
+      <float>0</float>
+    </square_coefs>
+    <abs_coefs>
+      <float>0</float>
+    </abs_coefs>
+  </BlockPolynome>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockDynamicGain</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>TeteLat</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <servo_name>TeteLat</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockDynamicGain</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>TeteAlt</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <servo_name>TeteAlt</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <SnapshotBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockPolynome</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockAddition</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockAddition1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>SnapshotBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </SnapshotBlock>
   <SchemaComments />
   <frequency>100</frequency>
 </MotorPrimitive>
