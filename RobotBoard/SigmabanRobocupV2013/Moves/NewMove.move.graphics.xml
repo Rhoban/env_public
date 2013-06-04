@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>NewMove</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <GraphicalBlock>
+    <BallBlock>
+      <entries />
+      <name>BallBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <refresh_frequency>5</refresh_frequency>
+      <clipping>true</clipping>
+    </BallBlock>
+    <Position>
+      <X>144</X>
+      <Y>124</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <Block xsi:type="EmptyBlock">
+      <entries />
+      <name>EmptyBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </Block>
+    <Position>
+      <X>414</X>
+      <Y>166</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BallBlock</SourceName>
+    <TargetName>EmptyBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BallBlock</SourceName>
+    <TargetName>EmptyBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>2</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>BallBlock</SourceName>
+    <TargetName>EmptyBlock</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>
