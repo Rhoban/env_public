@@ -18,7 +18,7 @@ fallface = False
 class RobocupStm:
     @staticmethod
     def check_fall(connection):
-        info = connection.SchedulerGetMoveValues(FallDetector,Result)
+        info = connection.SchedulerGetMoveValues("FallDetector","Result")
         if info:
              fallback = info[0]
              fallface = info[1]
@@ -31,18 +31,31 @@ class RobocupStm:
   </GraphicalBlock>
   <GraphicalBlock>
     <StmStateBlock>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>Initial</name>
+          <output_idx>0</output_idx>
+          <condition>not fallback and not fallface</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>WalkToBall</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <loop>RobocupStm.check_fall(self.connection)</loop>
-      <enter>self.connection.SchedulerStartMove("WalkToBall",0,100)</enter>
-      <exit>self.connection.SchedulerStartMove("WalkToBall",0,100)</exit>
+      <enter>self.connection.SchedulerStartMove("MarcheBasse",0,1000)
+self.connection.SchedulerStartMove("TrackBall",0,100)
+self.connection.SchedulerStartMove("WalkToBall",0,100)
+</enter>
+      <exit>self.connection.SchedulerStopMove("WalkToBall",100)
+self.connection.SchedulerStopMove("TrackBall",100)
+self.connection.SchedulerStopMove("MarcheBasse",100)
+</exit>
     </StmStateBlock>
     <Position>
-      <X>466</X>
-      <Y>29</Y>
+      <X>476</X>
+      <Y>83</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -55,8 +68,8 @@ class RobocupStm:
       <loop />
     </StmLoopBlock>
     <Position>
-      <X>1216</X>
-      <Y>353</Y>
+      <X>1082</X>
+      <Y>283</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -74,18 +87,86 @@ class RobocupStm:
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
-    <StmLoopBlock>
+    <StmStateBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>WalkToBall</name>
+          <output_idx>0</output_idx>
+          <condition>fallback</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>FallBack</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <loop />
+      <enter>self.connection.SchedulerStartMove("Relevage",0,100)</enter>
+      <exit>self.connection.SchedulerStopMove("Relevage",100)</exit>
+    </StmStateBlock>
+    <Position>
+      <X>910</X>
+      <Y>401</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmStateBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>WalkToBall</name>
+          <output_idx>0</output_idx>
+          <condition>fallface</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>StmStateBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <loop />
+      <enter>self.connection.SchedulerStartMove("Relevage",0,100)</enter>
+      <exit>self.connection.SchedulerStopMove("Relevage",100)</exit>
+    </StmStateBlock>
+    <Position>
+      <X>838</X>
+      <Y>561</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>fallback</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>WalkToBall</SourceName>
+    <TargetName>FallBack</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>fallface</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>WalkToBall</SourceName>
+    <TargetName>StmStateBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <StmStateBlock>
       <entries />
       <name>Initial</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>self.connection.SchedulerStartMove("FallDetector",0,20)
-RobocupStm.check_fall(self.connection)</loop>
-    </StmLoopBlock>
+      <loop />
+      <enter>self.connection.SchedulerStartMove("PositionBasse",0,20)
+self.connection.SchedulerStartMove("FallDetector",0,20)
+RobocupStm.check_fall(self.connection)
+</enter>
+      <exit />
+    </StmStateBlock>
     <Position>
-      <X>72</X>
-      <Y>291</Y>
+      <X>66</X>
+      <Y>341</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -97,22 +178,6 @@ RobocupStm.check_fall(self.connection)</loop>
     <SourceName>Initial</SourceName>
     <TargetName>WalkToBall</TargetName>
   </GraphicalBlockLink>
-  <GraphicalBlock>
-    <StmStateBlock>
-      <entries />
-      <name>FallBack</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <loop />
-      <enter>self.connection.SchedulerStartMove("Relevage",0,100)</enter>
-      <exit>self.connection.SchedulerStopMove("Relevage",0,100)</exit>
-    </StmStateBlock>
-    <Position>
-      <X>650</X>
-      <Y>333</Y>
-    </Position>
-  </GraphicalBlock>
   <GraphicalBlockLink>
     <output_value>0</output_value>
     <Condition>fallback</Condition>
@@ -122,22 +187,6 @@ RobocupStm.check_fall(self.connection)</loop>
     <SourceName>Initial</SourceName>
     <TargetName>FallBack</TargetName>
   </GraphicalBlockLink>
-  <GraphicalBlock>
-    <StmStateBlock>
-      <entries />
-      <name>StmStateBlock</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <loop />
-      <enter>self.connection.SchedulerStartMove("Relevage",0,100)</enter>
-      <exit>self.connection.SchedulerStopMove("Relevage",0,100)</exit>
-    </StmStateBlock>
-    <Position>
-      <X>558</X>
-      <Y>547</Y>
-    </Position>
-  </GraphicalBlock>
   <GraphicalBlockLink>
     <output_value>0</output_value>
     <Condition>fallface</Condition>
@@ -145,24 +194,6 @@ RobocupStm.check_fall(self.connection)</loop>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>Initial</SourceName>
-    <TargetName>StmStateBlock</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition>fallback</Condition>
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>WalkToBall</SourceName>
-    <TargetName>FallBack</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition>fallface</Condition>
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>WalkToBall</SourceName>
     <TargetName>StmStateBlock</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>

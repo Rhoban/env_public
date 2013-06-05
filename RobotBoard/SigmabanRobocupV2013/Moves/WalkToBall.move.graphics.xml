@@ -53,7 +53,7 @@
     <BlockGain>
       <entries>
         <BlockPredecessor>
-          <name>TeteLat</name>
+          <name>BlockMobileAverage</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -179,7 +179,7 @@
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>BlockDigitalLevel</name>
+          <name>BlockMax</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -306,8 +306,8 @@
       <Commentaires>The robot stops if th eball is out of sight</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>246</X>
-      <Y>489</Y>
+      <X>130</X>
+      <Y>441</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -456,79 +456,15 @@
     <TargetName>VariationBoundBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
-    <ChronoBlock>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockPolynome</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>ChronoBlock</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <clock_speeds />
-    </ChronoBlock>
-    <Position>
-      <X>576</X>
-      <Y>389</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockPolynome>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockDynamicGain</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>BlockPolynome</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <const_coefs>
-        <float>-1</float>
-      </const_coefs>
-      <lin_coefs>
-        <float>1</float>
-      </lin_coefs>
-      <square_coefs>
-        <float>0</float>
-      </square_coefs>
-      <abs_coefs>
-        <float>0</float>
-      </abs_coefs>
-    </BlockPolynome>
-    <Position>
-      <X>496</X>
-      <Y>385</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockDynamicGain</SourceName>
-    <TargetName>BlockPolynome</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockPolynome</SourceName>
-    <TargetName>ChronoBlock</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlock>
     <BlockDigitalLevel>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>BallBlock</name>
+          <output_idx>2</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockDigitalLevel1</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -560,7 +496,20 @@
   </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockMax>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockMax</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -600,7 +549,14 @@
   </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockMobileAverage>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>TeteLat</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockMobileAverage</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
