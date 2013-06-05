@@ -23,8 +23,8 @@
       <block_name>Rotation</block_name>
     </WriteMoveBlock>
     <Position>
-      <X>644</X>
-      <Y>149</Y>
+      <X>1074</X>
+      <Y>141</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -45,15 +45,15 @@
       <block_name>Forward</block_name>
     </WriteMoveBlock>
     <Position>
-      <X>684</X>
-      <Y>235</Y>
+      <X>1114</X>
+      <Y>227</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
     <BlockGain>
       <entries>
         <BlockPredecessor>
-          <name>TeteLat</name>
+          <name>BlockMobileAverage</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -68,8 +68,8 @@
       </gains>
     </BlockGain>
     <Position>
-      <X>186</X>
-      <Y>141</Y>
+      <X>616</X>
+      <Y>133</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -84,19 +84,10 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>47</X>
-      <Y>99</Y>
+      <X>383</X>
+      <Y>75</Y>
     </Position>
   </GraphicalBlock>
-  <GraphicalBlockLink>
-    <output_value>39.1640625</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>TeteLat</SourceName>
-    <TargetName>BlockGain</TargetName>
-  </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockServo>
       <entries />
@@ -109,8 +100,8 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>-35</X>
-      <Y>249</Y>
+      <X>17</X>
+      <Y>244</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -139,8 +130,8 @@
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>99</X>
-      <Y>265</Y>
+      <X>173</X>
+      <Y>243</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -174,8 +165,8 @@
       <discount_factor>0</discount_factor>
     </VariationBoundBlock>
     <Position>
-      <X>363</X>
-      <Y>197</Y>
+      <X>793</X>
+      <Y>189</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -188,7 +179,7 @@
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>BlockDigitalLevel</name>
+          <name>BlockMax</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -206,8 +197,8 @@
       <gainMax>60</gainMax>
     </BlockDynamicGain>
     <Position>
-      <X>257</X>
-      <Y>281</Y>
+      <X>687</X>
+      <Y>273</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -218,15 +209,6 @@
     <TargetIndex>0</TargetIndex>
     <SourceName>TeteAlt</SourceName>
     <TargetName>BlockDigitalLevel</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>1</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>BlockDigitalLevel</SourceName>
-    <TargetName>BlockDynamicGain</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>1</output_value>
@@ -249,8 +231,8 @@
       </constants>
     </Constant>
     <Position>
-      <X>125</X>
-      <Y>193</Y>
+      <X>555</X>
+      <Y>185</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -272,8 +254,8 @@
       <Commentaires>The robot stops if the ball is close</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>19</X>
-      <Y>309</Y>
+      <X>4</X>
+      <Y>187</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -286,8 +268,8 @@
       <Commentaires>The robot rotates towards ball direction</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>77</X>
-      <Y>63</Y>
+      <X>410</X>
+      <Y>27</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -301,8 +283,8 @@
       <clipping>true</clipping>
     </BallBlock>
     <Position>
-      <X>169</X>
-      <Y>385</Y>
+      <X>36</X>
+      <Y>486</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -324,8 +306,8 @@
       <Commentaires>The robot stops if th eball is out of sight</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>117</X>
-      <Y>445</Y>
+      <X>298</X>
+      <Y>441</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -358,8 +340,8 @@
       </max_value>
     </BoundBlock>
     <Position>
-      <X>509</X>
-      <Y>225</Y>
+      <X>939</X>
+      <Y>217</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -426,8 +408,8 @@
       <max_output>1</max_output>
     </PIDBlock>
     <Position>
-      <X>301</X>
-      <Y>153</Y>
+      <X>731</X>
+      <Y>145</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -451,8 +433,8 @@
       </constants>
     </Constant>
     <Position>
-      <X>241</X>
-      <Y>105</Y>
+      <X>671</X>
+      <Y>97</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -474,42 +456,68 @@
     <TargetName>VariationBoundBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
-    <ChronoBlock>
-      <entries />
-      <name>ChronoBlock</name>
+    <BlockDigitalLevel>
+      <entries>
+        <BlockPredecessor>
+          <name>BallBlock</name>
+          <output_idx>2</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockDigitalLevel1</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <clock_speeds />
-    </ChronoBlock>
+      <min_value>
+        <float>-0.5</float>
+      </min_value>
+      <max_value>
+        <float>0.5</float>
+      </max_value>
+      <output_low>0</output_low>
+      <output_medium>1</output_medium>
+      <output_high>1</output_high>
+      <hysteresis>false</hysteresis>
+    </BlockDigitalLevel>
     <Position>
-      <X>447</X>
-      <Y>345</Y>
+      <X>179</X>
+      <Y>303</Y>
     </Position>
   </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>2</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BallBlock</SourceName>
+    <TargetName>BlockDigitalLevel1</TargetName>
+  </GraphicalBlockLink>
   <GraphicalBlock>
-    <BlockPolynome>
-      <entries />
-      <name>BlockPolynome</name>
+    <BlockMax>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockMax</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <const_coefs>
-        <float>-1</float>
-      </const_coefs>
-      <lin_coefs>
-        <float>1</float>
-      </lin_coefs>
-      <square_coefs>
-        <float>0</float>
-      </square_coefs>
-      <abs_coefs>
-        <float>0</float>
-      </abs_coefs>
-    </BlockPolynome>
+    </BlockMax>
     <Position>
-      <X>367</X>
-      <Y>341</Y>
+      <X>276</X>
+      <Y>257</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -518,8 +526,47 @@
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
-    <SourceName>BlockDynamicGain</SourceName>
-    <TargetName>BlockPolynome</TargetName>
+    <SourceName>BlockDigitalLevel</SourceName>
+    <TargetName>BlockMax</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockDigitalLevel1</SourceName>
+    <TargetName>BlockMax</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockMobileAverage>
+      <entries>
+        <BlockPredecessor>
+          <name>TeteLat</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockMobileAverage</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <discount_factor>0.95</discount_factor>
+    </BlockMobileAverage>
+    <Position>
+      <X>509</X>
+      <Y>101</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>TeteLat</SourceName>
+    <TargetName>BlockMobileAverage</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
@@ -527,9 +574,57 @@
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
-    <SourceName>BlockPolynome</SourceName>
-    <TargetName>ChronoBlock</TargetName>
+    <SourceName>BlockMobileAverage</SourceName>
+    <TargetName>BlockGain</TargetName>
   </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries />
+      <name>StillWalking</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>390</X>
+      <Y>255</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMax</SourceName>
+    <TargetName>StillWalking</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>StillWalking</SourceName>
+    <TargetName>BlockDynamicGain</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock3</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>This value turns to zero when the robot is close to the ball</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>283</X>
+      <Y>296</Y>
+    </Position>
+  </GraphicalBlock>
   <hsize>500</hsize>
   <vsize>500</vsize>
   <SchemaComments />
