@@ -23,8 +23,8 @@
       <block_name>Rotation</block_name>
     </WriteMoveBlock>
     <Position>
-      <X>773</X>
-      <Y>193</Y>
+      <X>1074</X>
+      <Y>141</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -45,8 +45,8 @@
       <block_name>Forward</block_name>
     </WriteMoveBlock>
     <Position>
-      <X>813</X>
-      <Y>279</Y>
+      <X>1114</X>
+      <Y>227</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -68,8 +68,8 @@
       </gains>
     </BlockGain>
     <Position>
-      <X>315</X>
-      <Y>185</Y>
+      <X>616</X>
+      <Y>133</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -84,8 +84,8 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>82</X>
-      <Y>127</Y>
+      <X>383</X>
+      <Y>75</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -100,8 +100,8 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>-26</X>
-      <Y>288</Y>
+      <X>17</X>
+      <Y>244</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -130,8 +130,8 @@
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>124</X>
-      <Y>285</Y>
+      <X>173</X>
+      <Y>243</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -165,8 +165,8 @@
       <discount_factor>0</discount_factor>
     </VariationBoundBlock>
     <Position>
-      <X>492</X>
-      <Y>241</Y>
+      <X>793</X>
+      <Y>189</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -197,8 +197,8 @@
       <gainMax>60</gainMax>
     </BlockDynamicGain>
     <Position>
-      <X>386</X>
-      <Y>325</Y>
+      <X>687</X>
+      <Y>273</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -231,8 +231,8 @@
       </constants>
     </Constant>
     <Position>
-      <X>254</X>
-      <Y>237</Y>
+      <X>555</X>
+      <Y>185</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -254,8 +254,8 @@
       <Commentaires>The robot stops if the ball is close</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>-21</X>
-      <Y>240</Y>
+      <X>4</X>
+      <Y>187</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -268,8 +268,8 @@
       <Commentaires>The robot rotates towards ball direction</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>109</X>
-      <Y>79</Y>
+      <X>410</X>
+      <Y>27</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -283,8 +283,8 @@
       <clipping>true</clipping>
     </BallBlock>
     <Position>
-      <X>12</X>
-      <Y>452</Y>
+      <X>36</X>
+      <Y>486</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -306,7 +306,7 @@
       <Commentaires>The robot stops if th eball is out of sight</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>130</X>
+      <X>298</X>
       <Y>441</Y>
     </Position>
   </GraphicalBlock>
@@ -340,8 +340,8 @@
       </max_value>
     </BoundBlock>
     <Position>
-      <X>638</X>
-      <Y>269</Y>
+      <X>939</X>
+      <Y>217</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -408,8 +408,8 @@
       <max_output>1</max_output>
     </PIDBlock>
     <Position>
-      <X>430</X>
-      <Y>197</Y>
+      <X>731</X>
+      <Y>145</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -433,8 +433,8 @@
       </constants>
     </Constant>
     <Position>
-      <X>370</X>
-      <Y>149</Y>
+      <X>671</X>
+      <Y>97</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -481,8 +481,8 @@
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>130</X>
-      <Y>346</Y>
+      <X>179</X>
+      <Y>303</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -516,8 +516,8 @@
       <gainMax>60</gainMax>
     </BlockMax>
     <Position>
-      <X>224</X>
-      <Y>319</Y>
+      <X>276</X>
+      <Y>257</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -538,15 +538,6 @@
     <SourceName>BlockDigitalLevel1</SourceName>
     <TargetName>BlockMax</TargetName>
   </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>BlockMax</SourceName>
-    <TargetName>BlockDynamicGain</TargetName>
-  </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockMobileAverage>
       <entries>
@@ -564,8 +555,8 @@
       <discount_factor>0.95</discount_factor>
     </BlockMobileAverage>
     <Position>
-      <X>208</X>
-      <Y>153</Y>
+      <X>509</X>
+      <Y>101</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -586,6 +577,54 @@
     <SourceName>BlockMobileAverage</SourceName>
     <TargetName>BlockGain</TargetName>
   </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries />
+      <name>StillWalking</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>390</X>
+      <Y>255</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMax</SourceName>
+    <TargetName>StillWalking</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>StillWalking</SourceName>
+    <TargetName>BlockDynamicGain</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock3</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>This value turns to zero when the robot is close to the ball</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>283</X>
+      <Y>296</Y>
+    </Position>
+  </GraphicalBlock>
   <hsize>500</hsize>
   <vsize>500</vsize>
   <SchemaComments />

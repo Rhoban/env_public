@@ -25,8 +25,8 @@ class RobocupStm:
 </preamble>
     </StmPreambleBlock>
     <Position>
-      <X>0</X>
-      <Y>37</Y>
+      <X>-200</X>
+      <Y>102</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -38,12 +38,19 @@ class RobocupStm:
           <condition>not fallback and not fallface</condition>
           <fire />
         </BlockPredecessor>
+        <BlockPredecessor>
+          <name>FallFace</name>
+          <output_idx>0</output_idx>
+          <condition>finished</condition>
+          <fire />
+        </BlockPredecessor>
       </entries>
       <name>WalkToBall</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>RobocupStm.check_fall(self.connection)</loop>
+      <loop>RobocupStm.check_fall(self.connection)
+in_position = ! connection.SchedulerGetMoveValues("WalkToBall","CloseToBall")[0]</loop>
       <enter>self.connection.SchedulerStartMove("MarcheBasse",0,1000)
 self.connection.SchedulerStartMove("TrackBall",0,100)
 self.connection.SchedulerStartMove("WalkToBall",0,100)
@@ -54,8 +61,8 @@ self.connection.SchedulerStopMove("MarcheBasse",100)
 </exit>
     </StmStateBlock>
     <Position>
-      <X>476</X>
-      <Y>83</Y>
+      <X>276</X>
+      <Y>148</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -68,13 +75,20 @@ self.connection.SchedulerStopMove("MarcheBasse",100)
       <loop />
     </StmLoopBlock>
     <Position>
-      <X>1082</X>
-      <Y>283</Y>
+      <X>1065</X>
+      <Y>229</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
     <StmLoopBlock>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>WalkToBall</name>
+          <output_idx>0</output_idx>
+          <condition>in_position</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>Aim</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -82,8 +96,8 @@ self.connection.SchedulerStopMove("MarcheBasse",100)
       <loop />
     </StmLoopBlock>
     <Position>
-      <X>1034</X>
-      <Y>179</Y>
+      <X>834</X>
+      <Y>244</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -105,8 +119,8 @@ self.connection.SchedulerStopMove("MarcheBasse",100)
       <exit>self.connection.SchedulerStopMove("Relevage",100)</exit>
     </StmStateBlock>
     <Position>
-      <X>910</X>
-      <Y>401</Y>
+      <X>710</X>
+      <Y>466</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -119,17 +133,17 @@ self.connection.SchedulerStopMove("MarcheBasse",100)
           <fire />
         </BlockPredecessor>
       </entries>
-      <name>StmStateBlock</name>
+      <name>FallFace</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop />
-      <enter>self.connection.SchedulerStartMove("Relevage",0,100)</enter>
-      <exit>self.connection.SchedulerStopMove("Relevage",100)</exit>
+      <loop>finished = connection.SchedulerGetMoveValues("RelevageAvantRessort","Finished")[0]</loop>
+      <enter>self.connection.SchedulerStartMove("RelevageAvantRessort",0,100)</enter>
+      <exit>self.connection.SchedulerStopMove("RelevageAvantRessort",100)</exit>
     </StmStateBlock>
     <Position>
-      <X>838</X>
-      <Y>561</Y>
+      <X>637</X>
+      <Y>626</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -148,7 +162,7 @@ self.connection.SchedulerStopMove("MarcheBasse",100)
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>WalkToBall</SourceName>
-    <TargetName>StmStateBlock</TargetName>
+    <TargetName>FallFace</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <StmStateBlock>
@@ -165,8 +179,8 @@ RobocupStm.check_fall(self.connection)
       <exit />
     </StmStateBlock>
     <Position>
-      <X>66</X>
-      <Y>341</Y>
+      <X>-134</X>
+      <Y>406</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -194,7 +208,25 @@ RobocupStm.check_fall(self.connection)
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>Initial</SourceName>
-    <TargetName>StmStateBlock</TargetName>
+    <TargetName>FallFace</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>finished</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>FallFace</SourceName>
+    <TargetName>WalkToBall</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition>in_position</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>WalkToBall</SourceName>
+    <TargetName>Aim</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
