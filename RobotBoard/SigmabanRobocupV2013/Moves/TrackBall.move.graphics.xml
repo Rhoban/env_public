@@ -6,31 +6,16 @@
   <gainMin>-1</gainMin>
   <gainMax>60</gainMax>
   <GraphicalBlock>
-    <BallBlock>
-      <entries />
-      <name>BallBlock</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <refresh_frequency>5</refresh_frequency>
-      <clipping>true</clipping>
-    </BallBlock>
-    <Position>
-      <X>302</X>
-      <Y>229</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
     <BlockMobileAverage>
       <entries>
         <BlockPredecessor>
-          <name>BallBlock</name>
+          <name>GoalBlock</name>
           <output_idx>1</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>BallBlock</name>
+          <name>GoalBlock</name>
           <output_idx>2</output_idx>
           <condition />
           <fire />
@@ -66,8 +51,8 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>1724</X>
-      <Y>413</Y>
+      <X>1534</X>
+      <Y>345</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -89,8 +74,8 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>1734</X>
-      <Y>320</Y>
+      <X>1540</X>
+      <Y>274</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -167,7 +152,7 @@
       <entries>
         <BlockPredecessor>
           <name>Constant</name>
-          <output_idx>0</output_idx>
+          <output_idx>1</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
@@ -212,11 +197,12 @@
       <gainMax>60</gainMax>
       <constants>
         <float>0</float>
+        <float>0.5</float>
       </constants>
     </Constant>
     <Position>
-      <X>687</X>
-      <Y>222</Y>
+      <X>613</X>
+      <Y>236</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -232,7 +218,7 @@
     <output_value>0</output_value>
     <Condition />
     <Fire />
-    <SourceIndex>0</SourceIndex>
+    <SourceIndex>1</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>Constant</SourceName>
     <TargetName>PIDBlockAlt</TargetName>
@@ -351,8 +337,8 @@
       </constants>
     </Constant>
     <Position>
-      <X>853</X>
-      <Y>348</Y>
+      <X>899</X>
+      <Y>396</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -414,15 +400,6 @@
     <SourceIndex>0</SourceIndex>
     <TargetIndex>1</TargetIndex>
     <SourceName>Constant1</SourceName>
-    <TargetName>BlockAddition</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>Constant1</SourceName>
     <TargetName>BlockAddition1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
@@ -476,8 +453,8 @@
       <Commentaires>The PID regulation when the ball is apparent</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>731</X>
-      <Y>188</Y>
+      <X>749</X>
+      <Y>106</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -547,15 +524,15 @@
       <gainMax>60</gainMax>
     </SnapshotBlock>
     <Position>
-      <X>1417</X>
-      <Y>347</Y>
+      <X>1237</X>
+      <Y>259</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
     <BlockGain>
       <entries>
         <BlockPredecessor>
-          <name>BallBlock</name>
+          <name>GoalBlock</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -570,8 +547,8 @@
       </gains>
     </BlockGain>
     <Position>
-      <X>1023</X>
-      <Y>220</Y>
+      <X>983</X>
+      <Y>168</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -706,33 +683,6 @@
     <SourceName>BlockGain2</SourceName>
     <TargetName>BlockAddition3</TargetName>
   </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>1</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BallBlock</SourceName>
-    <TargetName>BlockGain3</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0.0023881911765784025</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BallBlock</SourceName>
-    <TargetName>BlockMobileAverage</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>-0.29105696082115173</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>2</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>BallBlock</SourceName>
-    <TargetName>BlockMobileAverage</TargetName>
-  </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockAddition>
       <entries>
@@ -749,8 +699,8 @@
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>1279</X>
-      <Y>330</Y>
+      <X>1209</X>
+      <Y>326</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -778,8 +728,8 @@
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>1283</X>
-      <Y>390</Y>
+      <X>1211</X>
+      <Y>392</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -866,8 +816,8 @@
       </max_value>
     </BoundBlock>
     <Position>
-      <X>1560.2488545236665</X>
-      <Y>369.85152229781056</Y>
+      <X>1362.2488545236665</X>
+      <Y>287.85152229781056</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -916,7 +866,7 @@
       <Commentaires>The content of the pid might get so low (or high) that it takes a lot of time to get back to an acceptable value.</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>421</X>
+      <X>361</X>
       <Y>342</Y>
     </Position>
   </GraphicalBlock>
@@ -937,6 +887,71 @@
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain</SourceName>
     <TargetName>BlockAddition1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <GoalBlock>
+      <entries />
+      <name>GoalBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <refresh_frequency>5</refresh_frequency>
+    </GoalBlock>
+    <Position>
+      <X>410</X>
+      <Y>217</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>GoalBlock</SourceName>
+    <TargetName>BlockGain3</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>GoalBlock</SourceName>
+    <TargetName>BlockMobileAverage</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>2</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>GoalBlock</SourceName>
+    <TargetName>BlockMobileAverage</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <ReadMoveBlock>
+      <entries />
+      <name>ReadMoveBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <move_name>BallRelativeDirection</move_name>
+      <block_name>Direction</block_name>
+    </ReadMoveBlock>
+    <Position>
+      <X>653</X>
+      <Y>411</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>ReadMoveBlock</SourceName>
+    <TargetName>BlockAddition</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
