@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<MotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>GoalTest</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <GoalBlock>
+    <entries />
+    <name>GoalBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <refresh_frequency>5</refresh_frequency>
+  </GoalBlock>
+  <EmptyBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>EmptyBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </EmptyBlock>
+  <EmptyBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>2</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>3</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>4</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>EmptyBlock1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </EmptyBlock>
+  <EmptyBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>5</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>6</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>7</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>EmptyBlock2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </EmptyBlock>
+  <EmptyBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>8</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>9</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>EmptyBlock3</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </EmptyBlock>
+  <EmptyBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>10</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>11</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>EmptyBlock4</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </EmptyBlock>
+  <EmptyBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>14</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>15</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>EmptyBlock5</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </EmptyBlock>
+  <EmptyBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>12</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>13</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>EmptyBlock6</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </EmptyBlock>
+  <SchemaComments />
+  <frequency>100</frequency>
+</MotorPrimitive>

@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<MotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>WalkToShootDirection</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <GoalBlock>
+    <entries />
+    <name>GoalBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <refresh_frequency>5</refresh_frequency>
+  </GoalBlock>
+  <BallBlock>
+    <entries />
+    <name>BallBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <refresh_frequency>5</refresh_frequency>
+    <clipping>true</clipping>
+  </BallBlock>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>3</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BallBlock</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>14</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-0.1</float>
+      <float>-1</float>
+      <float>-1</float>
+      <float>0.1</float>
+    </gains>
+  </BlockGain>
+  <BlockAddition>
+    <entries>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>8</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockGain1</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockGain1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockAddition</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockAddition>
+  <BlockAddition>
+    <entries>
+      <BlockPredecessor>
+        <name>BallBlock</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockGain1</name>
+        <output_idx>2</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockGain1</name>
+        <output_idx>3</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockAddition1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockAddition>
+  <BlockDigitalLevel>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockAddition</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockDigitalLevel</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <min_value>
+      <float>0</float>
+    </min_value>
+    <max_value>
+      <float>0</float>
+    </max_value>
+    <output_low>0</output_low>
+    <output_medium>0</output_medium>
+    <output_high>-10</output_high>
+    <hysteresis>false</hysteresis>
+  </BlockDigitalLevel>
+  <BlockDigitalLevel>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockAddition1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockDigitalLevel1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <min_value>
+      <float>0</float>
+    </min_value>
+    <max_value>
+      <float>0</float>
+    </max_value>
+    <output_low>0</output_low>
+    <output_medium>0</output_medium>
+    <output_high>10</output_high>
+    <hysteresis>false</hysteresis>
+  </BlockDigitalLevel>
+  <BlockAddition>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockDigitalLevel</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockDigitalLevel1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Direction</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockAddition>
+  <EmptyBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>Direction</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>EmptyBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </EmptyBlock>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>Computes the relative direction to the bal that should be followed when planning a shoot</Commentaires>
+  </CommentsBlock>
+  <SchemaComments />
+  <frequency>100</frequency>
+</MotorPrimitive>
