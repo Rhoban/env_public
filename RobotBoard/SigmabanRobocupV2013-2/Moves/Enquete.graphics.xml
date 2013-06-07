@@ -159,11 +159,11 @@
           <fire />
         </BlockPredecessor>
       </entries>
-      <name>TeteAlt</name>
+      <name>Tilt</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <servo_name>TeteAlt</servo_name>
+      <servo_name>Tilt</servo_name>
       <unit>1</unit>
       <relative>1</relative>
     </BlockServo>
@@ -216,11 +216,11 @@
   <GraphicalBlock>
     <BlockServo>
       <entries />
-      <name>TeteLat</name>
+      <name>Pan</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <servo_name>TeteLat</servo_name>
+      <servo_name>Pan</servo_name>
       <unit>1</unit>
       <relative>1</relative>
     </BlockServo>
@@ -236,7 +236,7 @@
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain</SourceName>
-    <TargetName>TeteAlt</TargetName>
+    <TargetName>Tilt</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
@@ -245,7 +245,7 @@
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain1</SourceName>
-    <TargetName>TeteLat</TargetName>
+    <TargetName>Pan</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
