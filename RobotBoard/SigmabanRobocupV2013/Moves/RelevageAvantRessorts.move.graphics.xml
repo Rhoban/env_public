@@ -686,15 +686,38 @@
           <BoundedBool>true</BoundedBool>
           <Recordable>true</Recordable>
         </SplineSequence>
+        <SplineSequence>
+          <Points>
+            <SplinePoint>
+              <left_tangent>0</left_tangent>
+              <right_tangent>0</right_tangent>
+              <x>6.5</x>
+              <y>0</y>
+            </SplinePoint>
+            <SplinePoint>
+              <left_tangent>0</left_tangent>
+              <right_tangent>0</right_tangent>
+              <x>7</x>
+              <y>1</y>
+            </SplinePoint>
+          </Points>
+          <name>Finished</name>
+          <cyclic>0</cyclic>
+          <type>0</type>
+          <bounded>1</bounded>
+          <CyclicBool>false</CyclicBool>
+          <BoundedBool>true</BoundedBool>
+          <Recordable>true</Recordable>
+        </SplineSequence>
       </sequences>
       <shift>0</shift>
-      <speed_factor>0.3</speed_factor>
+      <speed_factor>1</speed_factor>
       <entrytype>0</entrytype>
       <autostart>1</autostart>
     </Spline>
     <Position>
-      <X>-208.45902277238253</X>
-      <Y>174.99384939901211</Y>
+      <X>-203.45902277238253</X>
+      <Y>171.99384939901211</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -1337,11 +1360,36 @@
     <SourceName>Spline</SourceName>
     <TargetName>Pied G</TargetName>
   </GraphicalBlockLink>
+  <GraphicalBlock>
+    <MoveOutput>
+      <entries />
+      <name>MoveOutput</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <labels>
+        <string>Finished</string>
+      </labels>
+    </MoveOutput>
+    <Position>
+      <X>362</X>
+      <Y>617</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>20</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Spline</SourceName>
+    <TargetName>MoveOutput</TargetName>
+  </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
   <SchemaComments />
   <Frequency>100</Frequency>
-  <SmoothStart>0</SmoothStart>
+  <SmoothStart>1000</SmoothStart>
   <SmoothStop>1000</SmoothStop>
   <Duration>0</Duration>
 </GraphicalMotorPrimitive>
