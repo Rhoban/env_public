@@ -40,18 +40,20 @@
       <gainMax>60</gainMax>
       <min_value>
         <float>0</float>
+        <float>0</float>
       </min_value>
       <max_value>
-        <float>1</float>
+        <float>0.03</float>
+        <float>0.03</float>
       </max_value>
-      <output_low>-2</output_low>
-      <output_medium>0</output_medium>
-      <output_high>2</output_high>
+      <output_low>2</output_low>
+      <output_medium>-2</output_medium>
+      <output_high>-2</output_high>
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>244</X>
-      <Y>145</Y>
+      <X>298</X>
+      <Y>149</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -101,7 +103,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
+    <output_value>-2</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -113,13 +115,13 @@
     <BlockGain>
       <entries>
         <BlockPredecessor>
-          <name>AccelerometerBlock</name>
+          <name>BlockMobileAverage</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>AccelerometerBlock</name>
+          <name>BlockMobileAverage</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -131,7 +133,7 @@
       <gainMax>60</gainMax>
       <gains>
         <float>1</float>
-        <float>-1</float>
+        <float>1</float>
       </gains>
     </BlockGain>
     <Position>
@@ -140,7 +142,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
+    <output_value>0.047187082469463348</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -149,7 +151,7 @@
     <TargetName>BlockDigitalLevel</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
+    <output_value>0.047187082469463348</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -158,7 +160,7 @@
     <TargetName>BlockDigitalLevel</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
+    <output_value>-2</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -276,8 +278,8 @@
       </gains>
     </BlockGain>
     <Position>
-      <X>526</X>
-      <Y>163</Y>
+      <X>506</X>
+      <Y>141</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -331,50 +333,6 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
-    <Block xsi:type="EmptyBlock">
-      <entries>
-        <BlockPredecessor>
-          <name>Result</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>Result</name>
-          <output_idx>1</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>EmptyBlock</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-    </Block>
-    <Position>
-      <X>788</X>
-      <Y>133</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>Result</SourceName>
-    <TargetName>EmptyBlock</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>Result</SourceName>
-    <TargetName>EmptyBlock</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlock>
     <CommentsBlock>
       <entries />
       <name>CommentsBlock1</name>
@@ -390,7 +348,14 @@
   </GraphicalBlock>
   <GraphicalBlock>
     <BlockMobileAverage>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>AccelerometerBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockMobileAverage</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -398,12 +363,12 @@
       <discount_factor>0.95</discount_factor>
     </BlockMobileAverage>
     <Position>
-      <X>91</X>
-      <Y>164</Y>
+      <X>61</X>
+      <Y>194</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
+    <output_value>0.04423634335398674</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -412,7 +377,7 @@
     <TargetName>BlockMobileAverage</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
+    <output_value>0.047187082469463348</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -421,13 +386,61 @@
     <TargetName>BlockGain</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
+    <output_value>0.047187082469463348</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>1</TargetIndex>
     <SourceName>BlockMobileAverage</SourceName>
     <TargetName>BlockGain</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <MoveOutput>
+      <entries>
+        <BlockPredecessor>
+          <name>Result</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Result</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>MoveOutput</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <labels>
+        <string>fallface</string>
+        <string>fallback</string>
+      </labels>
+    </MoveOutput>
+    <Position>
+      <X>800</X>
+      <Y>146</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Result</SourceName>
+    <TargetName>MoveOutput</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>Result</SourceName>
+    <TargetName>MoveOutput</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
