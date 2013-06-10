@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <MoveSchedulerConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <autoload_moves />
   <ServosConfig>
     <LowLevelConfig>
       <dynamixel_config>
@@ -462,6 +463,30 @@
       </ServoConfig>
       <ServoConfig>
         <Type>RX28</Type>
+        <Id>141</Id>
+        <Name>Pan</Name>
+        <TargetAngle>-20.5078125</TargetAngle>
+        <ActualAngle>-9.9609375</ActualAngle>
+        <IniAngle>0</IniAngle>
+        <MinAngle>-180</MinAngle>
+        <MaxAngle>180</MaxAngle>
+        <MaxSpeed>1023</MaxSpeed>
+        <MaxTorque>1023</MaxTorque>
+        <SmoothFactor>0</SmoothFactor>
+        <Bounce>50</Bounce>
+        <Punch>1</Punch>
+        <Inverse>false</Inverse>
+        <ZeroAngle>-10</ZeroAngle>
+        <TargetSpeed>200</TargetSpeed>
+        <ActualSpeed>0</ActualSpeed>
+        <MaxLoad>1023</MaxLoad>
+        <ActualLoad>64</ActualLoad>
+        <Voltage>13.4</Voltage>
+        <Temperature>56</Temperature>
+        <Diagnostic />
+      </ServoConfig>
+      <ServoConfig>
+        <Type>RX28</Type>
         <Id>38</Id>
         <Name>Pied D</Name>
         <TargetAngle>-1.171875</TargetAngle>
@@ -558,32 +583,8 @@
       </ServoConfig>
       <ServoConfig>
         <Type>RX28</Type>
-        <Id>141</Id>
-        <Name>TeteAlt</Name>
-        <TargetAngle>-20.5078125</TargetAngle>
-        <ActualAngle>-9.9609375</ActualAngle>
-        <IniAngle>0</IniAngle>
-        <MinAngle>-180</MinAngle>
-        <MaxAngle>180</MaxAngle>
-        <MaxSpeed>1023</MaxSpeed>
-        <MaxTorque>1023</MaxTorque>
-        <SmoothFactor>0</SmoothFactor>
-        <Bounce>50</Bounce>
-        <Punch>1</Punch>
-        <Inverse>false</Inverse>
-        <ZeroAngle>-10</ZeroAngle>
-        <TargetSpeed>200</TargetSpeed>
-        <ActualSpeed>0</ActualSpeed>
-        <MaxLoad>1023</MaxLoad>
-        <ActualLoad>64</ActualLoad>
-        <Voltage>13.4</Voltage>
-        <Temperature>56</Temperature>
-        <Diagnostic />
-      </ServoConfig>
-      <ServoConfig>
-        <Type>RX28</Type>
         <Id>140</Id>
-        <Name>TeteLat</Name>
+        <Name>Tilt</Name>
         <TargetAngle>-20.8007813</TargetAngle>
         <ActualAngle>-21.09375</ActualAngle>
         <IniAngle>0</IniAngle>

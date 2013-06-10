@@ -70,13 +70,13 @@
       </BlockPredecessor>
       <BlockPredecessor>
         <name>BlockGain1</name>
-        <output_idx>1</output_idx>
+        <output_idx>0</output_idx>
         <condition />
         <fire />
       </BlockPredecessor>
       <BlockPredecessor>
         <name>BlockGain1</name>
-        <output_idx>0</output_idx>
+        <output_idx>1</output_idx>
         <condition />
         <fire />
       </BlockPredecessor>
@@ -89,12 +89,6 @@
   <BlockAddition>
     <entries>
       <BlockPredecessor>
-        <name>BallBlock</name>
-        <output_idx>1</output_idx>
-        <condition />
-        <fire />
-      </BlockPredecessor>
-      <BlockPredecessor>
         <name>BlockGain1</name>
         <output_idx>2</output_idx>
         <condition />
@@ -103,6 +97,12 @@
       <BlockPredecessor>
         <name>BlockGain1</name>
         <output_idx>3</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BallBlock</name>
+        <output_idx>1</output_idx>
         <condition />
         <fire />
       </BlockPredecessor>
@@ -163,6 +163,126 @@
   <BlockAddition>
     <entries>
       <BlockPredecessor>
+        <name>SnapshotBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>SnapshotBlock</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>Constant</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Plus</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockAddition>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>Computes the relative direction to the bal that should be followed when planning a shoot
+and both left and right are seen.</Commentaires>
+  </CommentsBlock>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>if the ball is at the left of the bottom left of the goal or inside the goal up to 10% then the player aims 10% at the left of the ball </Commentaires>
+  </CommentsBlock>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>if the ball is at the right of the bottom right
+of the goal or inside the goal up to 10% then the player aims 10% at the right of the ball </Commentaires>
+  </CommentsBlock>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock3</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>This is the block direction to read the direction from</Commentaires>
+  </CommentsBlock>
+  <Constant>
+    <entries />
+    <name>Constant</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <constants>
+      <float>0</float>
+    </constants>
+  </Constant>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock4</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>Correction</Commentaires>
+  </CommentsBlock>
+  <BlockDynamicGain>
+    <entries>
+      <BlockPredecessor>
+        <name>SnapshotBlock1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>Plus</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Direction</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockDynamicGain>
+  <GoalBlock>
+    <entries />
+    <name>GoalBlock1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <refresh_frequency>5</refresh_frequency>
+  </GoalBlock>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock5</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>Both left and right should be detected</Commentaires>
+  </CommentsBlock>
+  <SnapshotBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockMax</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
         <name>BlockDigitalLevel</name>
         <output_idx>0</output_idx>
         <condition />
@@ -175,32 +295,78 @@
         <fire />
       </BlockPredecessor>
     </entries>
-    <name>Direction</name>
+    <name>SnapshotBlock</name>
     <gain>1</gain>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
-  </BlockAddition>
-  <EmptyBlock>
+  </SnapshotBlock>
+  <BlockMax>
     <entries>
       <BlockPredecessor>
-        <name>Direction</name>
+        <name>GoalBlock1</name>
+        <output_idx>5</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock1</name>
+        <output_idx>7</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockMax</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockMax>
+  <BlockMin>
+    <entries>
+      <BlockPredecessor>
+        <name>GoalBlock1</name>
+        <output_idx>5</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock1</name>
+        <output_idx>7</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockMin</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockMin>
+  <SnapshotBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockMin</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockMin</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
       </BlockPredecessor>
     </entries>
-    <name>EmptyBlock</name>
+    <name>SnapshotBlock1</name>
     <gain>1</gain>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
-  </EmptyBlock>
+  </SnapshotBlock>
   <CommentsBlock>
     <entries />
-    <name>CommentsBlock</name>
+    <name>CommentsBlock6</name>
     <gain>1</gain>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
-    <Commentaires>Computes the relative direction to the bal that should be followed when planning a shoot</Commentaires>
+    <Commentaires>As long as the whole goal has never been seen, no corrction is output</Commentaires>
   </CommentsBlock>
   <SchemaComments />
   <frequency>100</frequency>
