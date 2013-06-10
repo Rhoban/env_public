@@ -21,18 +21,20 @@ class RobocupStm:
     def check_fall(connection):
         global fallback
         global fallface
-        info = connection.SchedulerGetMoveValues_response("FallDetector",["Result"])
-        if info:
-             fallback = info[2][0][0] &gt; 0.1
-             fallface = info[2][0][1] &gt; 0.1
+        info = connection.SchedulerGetOutputValues_response("FallDetector",["fallback","fallface"])
+        if info and len(info) &gt;= 1 and len(info[0]) &gt;= 2:
+             fallback = info[0][0] &gt; 0.1
+             fallface = info[0][1] &gt; 0.1
              print(str(fallback) + " " + str(fallface))
+        else:
+            print("Failed to get message " + str(info))
 
     @staticmethod
     def check_releve(connection):
         global releve
-        info = connection.SchedulerGetMoveValues_response("RelevageAvantRessorts",["Finished"])
-        if info:
-             releve = info[2][0][0] &gt; 0.1
+        info = connection.SchedulerGetOutputValues_response("RelevageAvantRessorts",["Finished"])
+        if info and len(info) &gt;= 1 and len(info[0])&gt;=1:
+             releve = info[0][0] &gt; 0.1
 </preamble>
     </StmPreambleBlock>
     <Position>
@@ -52,12 +54,6 @@ class RobocupStm:
         <BlockPredecessor>
           <name>FallFace</name>
           <output_idx>0</output_idx>
-          <condition>not fallface and not fallback</condition>
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>FallBack</name>
-          <output_idx>0</output_idx>
           <condition>releve</condition>
           <fire />
         </BlockPredecessor>
@@ -66,18 +62,17 @@ class RobocupStm:
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>RobocupStm.check_releve(self.connection)</loop>
-      <enter>self.connection.SchedulerStartMove("TrackBallAndGoal",0,100)
+      <loop>RobocupStm.check_fall(self.connection)</loop>
+      <enter>self.connection.SchedulerStartMove("MarcheBasse",0,200)
+self.connection.SchedulerStartMove("TrackBallAndGoal",0,100)
 self.connection.SchedulerStartMove("WalkToBall",0,100)
-</enter>
-      <exit>self.connection.SchedulerStopMove("WalkToBall",50)
-self.connection.SchedulerStopMove("TrackBallAndGoal",50)
-self.connection.SchedulerStopMove("MarcheBasse",50)
-</exit>
+self.connection.SchedulerStartMove("PositionBasse",0,200)
+self.connection.SchedulerStartMove("FallDetector",0,200)</enter>
+      <exit />
     </StmStateBlock>
     <Position>
-      <X>340</X>
-      <Y>146</Y>
+      <X>282</X>
+      <Y>580</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -94,15 +89,14 @@ self.connection.SchedulerStopMove("MarcheBasse",50)
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>RobocupStm.check_releve(self.connection)</loop>
-      <enter>self.connection.SchedulerStopMove("PositionBasse",200)
+      <loop>RobocupStm.check_fall(self.connection)</loop>
+      <enter>self.connection.SchedulerStopMove("",0)
 self.connection.SchedulerStartMove("RetournageFinal",0,200)</enter>
-      <exit>self.connection.SchedulerStartMove("PositionBasse",0,200)
-self.connection.SchedulerStopMove("RelevageAvantRessorts",200)</exit>
+      <exit>self.connection.SchedulerStopMove("RetournageFinal",200)</exit>
     </StmStateBlock>
     <Position>
-      <X>792</X>
-      <Y>374</Y>
+      <X>796</X>
+      <Y>154</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -126,14 +120,14 @@ self.connection.SchedulerStopMove("RelevageAvantRessorts",200)</exit>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <loop>RobocupStm.check_releve(self.connection)</loop>
-      <enter>self.connection.SchedulerStopMove("PositionBasse",200)
-self.connection.SchedulerStartMove("RelevageAvantRessorts",0,200)</enter>
-      <exit>self.connection.SchedulerStartMove("PositionBasse",0,200)
-self.connection.SchedulerStopMove("RelevageAvantRessorts",200)</exit>
+      <enter>self.connection.SchedulerStopMove("",0)
+self.connection.SchedulerStartMove("RelevageAvantRessorts",0,200)
+self.connection.SchedulerStartMove("FallDetector",0,200)</enter>
+      <exit>self.connection.SchedulerStopMove("RelevageAvantRessorts",200)</exit>
     </StmStateBlock>
     <Position>
-      <X>351</X>
-      <Y>634</Y>
+      <X>811</X>
+      <Y>460</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -161,16 +155,15 @@ self.connection.SchedulerStopMove("RelevageAvantRessorts",200)</exit>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop />
-      <enter>self.connection.SchedulerStartMove("PositionBasse",0,20)
-self.connection.SchedulerStartMove("FallDetector",0,20)
-RobocupStm.check_fall(self.connection)
+      <loop>RobocupStm.check_fall(self.connection)
+</loop>
+      <enter>self.connection.SchedulerStartMove("FallDetector",0,20)
 </enter>
       <exit />
     </StmStateBlock>
     <Position>
-      <X>-100</X>
-      <Y>550</Y>
+      <X>256</X>
+      <Y>120</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -202,20 +195,11 @@ RobocupStm.check_fall(self.connection)
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
-    <Condition>not fallface and not fallback</Condition>
+    <Condition>releve</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>1</TargetIndex>
     <SourceName>FallFace</SourceName>
-    <TargetName>WalkToBall</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition>releve</Condition>
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>2</TargetIndex>
-    <SourceName>FallBack</SourceName>
     <TargetName>WalkToBall</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>

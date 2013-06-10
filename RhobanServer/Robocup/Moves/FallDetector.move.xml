@@ -33,13 +33,15 @@
     <gainMax>60</gainMax>
     <min_value>
       <float>0</float>
+      <float>0</float>
     </min_value>
     <max_value>
-      <float>1</float>
+      <float>0.03</float>
+      <float>0.03</float>
     </max_value>
-    <output_low>-2</output_low>
-    <output_medium>0</output_medium>
-    <output_high>2</output_high>
+    <output_low>2</output_low>
+    <output_medium>-2</output_medium>
+    <output_high>-2</output_high>
     <hysteresis>false</hysteresis>
   </BlockDigitalLevel>
   <ChronoBlock>
@@ -97,7 +99,7 @@
     <gainMax>60</gainMax>
     <gains>
       <float>1</float>
-      <float>-1</float>
+      <float>1</float>
     </gains>
   </BlockGain>
   <BlockDigitalLevel>
@@ -186,26 +188,6 @@
     <gainMax>60</gainMax>
     <Commentaires>If the accelerometer is above or below a certain level for a certain time...</Commentaires>
   </CommentsBlock>
-  <EmptyBlock>
-    <entries>
-      <BlockPredecessor>
-        <name>Result</name>
-        <output_idx>0</output_idx>
-        <condition />
-        <fire />
-      </BlockPredecessor>
-      <BlockPredecessor>
-        <name>Result</name>
-        <output_idx>1</output_idx>
-        <condition />
-        <fire />
-      </BlockPredecessor>
-    </entries>
-    <name>EmptyBlock</name>
-    <gain>1</gain>
-    <gainMin>-1</gainMin>
-    <gainMax>60</gainMax>
-  </EmptyBlock>
   <CommentsBlock>
     <entries />
     <name>CommentsBlock1</name>
@@ -229,6 +211,30 @@
     <gainMax>60</gainMax>
     <discount_factor>0.95</discount_factor>
   </BlockMobileAverage>
+  <MoveOutput>
+    <entries>
+      <BlockPredecessor>
+        <name>Result</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>Result</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>MoveOutput</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <labels>
+      <string>fallface</string>
+      <string>fallback</string>
+    </labels>
+  </MoveOutput>
   <SchemaComments />
   <frequency>100</frequency>
 </MotorPrimitive>
