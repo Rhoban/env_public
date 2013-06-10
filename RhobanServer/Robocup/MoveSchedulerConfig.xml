@@ -273,6 +273,21 @@
                 <unit>1</unit>
             </ServoConfig>
             <ServoConfig>
+                <Id>140</Id>
+                <Name>Pan</Name>
+                <IniAngle>0</IniAngle>
+                <ZeroAngle>-21</ZeroAngle>
+                <MinAngle>-180</MinAngle>
+                <MaxAngle>180</MaxAngle>
+                <MaxSpeed>1023</MaxSpeed>
+                <MaxTorque>1023</MaxTorque>
+                <SmoothFactor>0</SmoothFactor>
+                <Bounce>50</Bounce>
+                <Punch>1</Punch>
+                <Inverse>0</Inverse>
+                <unit>1</unit>
+            </ServoConfig>
+            <ServoConfig>
                 <Id>38</Id>
                 <Name>Pied D</Name>
                 <IniAngle>0</IniAngle>
@@ -334,24 +349,9 @@
             </ServoConfig>
             <ServoConfig>
                 <Id>141</Id>
-                <Name>TeteAlt</Name>
+                <Name>Tilt</Name>
                 <IniAngle>0</IniAngle>
                 <ZeroAngle>-20</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
-                <Id>140</Id>
-                <Name>TeteLat</Name>
-                <IniAngle>0</IniAngle>
-                <ZeroAngle>-21</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1023</MaxSpeed>
