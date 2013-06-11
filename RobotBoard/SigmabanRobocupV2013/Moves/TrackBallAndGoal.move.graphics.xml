@@ -185,7 +185,7 @@
     </BallBlock>
     <Position>
       <X>689</X>
-      <Y>149</Y>
+      <Y>119</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -198,8 +198,8 @@
       <refresh_frequency>5</refresh_frequency>
     </GoalBlock>
     <Position>
-      <X>665</X>
-      <Y>201</Y>
+      <X>347</X>
+      <Y>197</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -340,7 +340,7 @@
     <TargetName>MoveBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-0.04374999925494194</output_value>
+    <output_value>0.04374999925494194</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -349,7 +349,7 @@
     <TargetName>MoveBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-0.11666666716337204</output_value>
+    <output_value>-0.79166668653488159</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -393,7 +393,7 @@
         <float>0</float>
       </min_value>
       <max_value>
-        <float>5</float>
+        <float>500</float>
       </max_value>
       <output_low>0</output_low>
       <output_medium>0</output_medium>
@@ -460,16 +460,7 @@
     <TargetName>MultiplexerBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>1</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>2</TargetIndex>
-    <SourceName>GoalBlock</SourceName>
-    <TargetName>MultiplexerBlock</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>-0.04374999925494194</output_value>
+    <output_value>0.04374999925494194</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -478,7 +469,7 @@
     <TargetName>MultiplexerBlock1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.81875002384185791</output_value>
+    <output_value>0.38749998807907104</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -487,7 +478,7 @@
     <TargetName>MultiplexerBlock1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-0.11666666716337204</output_value>
+    <output_value>-0.79166668653488159</output_value>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -496,7 +487,7 @@
     <TargetName>MultiplexerBlock2</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.675000011920929</output_value>
+    <output_value>0.94166666269302368</output_value>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -610,7 +601,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>14.948432922363281</output_value>
+    <output_value>-8.9577932357788086</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -619,7 +610,7 @@
     <TargetName>TeteLat1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-21.75</output_value>
+    <output_value>-31.875</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -635,8 +626,8 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>-80</float>
-        <float>80</float>
+        <float>-10</float>
+        <float>20</float>
       </constants>
     </Constant>
     <Position>
@@ -809,7 +800,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>14.948432922363281</output_value>
+    <output_value>-8.9577932357788086</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -818,7 +809,7 @@
     <TargetName>BlockMax</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-21.75</output_value>
+    <output_value>-31.875</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -827,7 +818,7 @@
     <TargetName>BlockMax1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>14.948432922363281</output_value>
+    <output_value>-8.9577932357788086</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -863,7 +854,7 @@
     <TargetName>BlockMax1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-21.75</output_value>
+    <output_value>-31.875</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -881,7 +872,7 @@
     <TargetName>BlockMin1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>14.948432922363281</output_value>
+    <output_value>-8.9577932357788086</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -890,7 +881,7 @@
     <TargetName>VariationBoundBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-21.75</output_value>
+    <output_value>-31.875</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -920,7 +911,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
+    <output_value>7.439964771270752</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -942,6 +933,15 @@
       <Y>244</Y>
     </Position>
   </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>1</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>GoalBlock</SourceName>
+    <TargetName>MultiplexerBlock</TargetName>
+  </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
   <SchemaComments />

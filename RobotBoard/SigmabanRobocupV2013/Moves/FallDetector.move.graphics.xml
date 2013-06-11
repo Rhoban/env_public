@@ -27,24 +27,16 @@
           <condition />
           <fire />
         </BlockPredecessor>
-        <BlockPredecessor>
-          <name>BlockGain</name>
-          <output_idx>1</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
       </entries>
       <name>BlockDigitalLevel</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <min_value>
-        <float>0</float>
-        <float>0</float>
+        <float>-0.4</float>
       </min_value>
       <max_value>
-        <float>0.03</float>
-        <float>0.03</float>
+        <float>0</float>
       </max_value>
       <output_low>2</output_low>
       <output_medium>-2</output_medium>
@@ -52,8 +44,8 @@
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>298</X>
-      <Y>149</Y>
+      <X>286</X>
+      <Y>143</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -75,16 +67,16 @@
       </clock_speeds>
     </ChronoBlock>
     <Position>
-      <X>394</X>
-      <Y>107</Y>
+      <X>416</X>
+      <Y>117</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
     <ChronoBlock>
       <entries>
         <BlockPredecessor>
-          <name>BlockDigitalLevel</name>
-          <output_idx>1</output_idx>
+          <name>BlockDigitalLevel2</name>
+          <output_idx>0</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
@@ -98,12 +90,12 @@
       </clock_speeds>
     </ChronoBlock>
     <Position>
-      <X>400</X>
+      <X>424</X>
       <Y>191</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-2</output_value>
+    <output_value>2</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -137,36 +129,18 @@
       </gains>
     </BlockGain>
     <Position>
-      <X>164</X>
-      <Y>155</Y>
+      <X>204</X>
+      <Y>179</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0.047187082469463348</output_value>
+    <output_value>-0.48303726315498352</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain</SourceName>
     <TargetName>BlockDigitalLevel</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0.047187082469463348</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>BlockGain</SourceName>
-    <TargetName>BlockDigitalLevel</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>-2</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockDigitalLevel</SourceName>
-    <TargetName>ChronoBlock1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockDigitalLevel>
@@ -190,9 +164,11 @@
       <gainMax>60</gainMax>
       <min_value>
         <float>0</float>
+        <float>0</float>
       </min_value>
       <max_value>
-        <float>1</float>
+        <float>0.5</float>
+        <float>0.5</float>
       </max_value>
       <output_low>0</output_low>
       <output_medium>0</output_medium>
@@ -200,8 +176,8 @@
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>588</X>
-      <Y>147</Y>
+      <X>632</X>
+      <Y>161</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -230,12 +206,12 @@
       </gains>
     </BlockGain>
     <Position>
-      <X>690</X>
-      <Y>143</Y>
+      <X>762</X>
+      <Y>151</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
+    <output_value>1</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -278,12 +254,12 @@
       </gains>
     </BlockGain>
     <Position>
-      <X>506</X>
-      <Y>141</Y>
+      <X>562</X>
+      <Y>143</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
+    <output_value>44.618270874023438</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -301,7 +277,7 @@
     <TargetName>BlockGain2</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
+    <output_value>44.618270874023438</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -368,7 +344,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0.04423634335398674</output_value>
+    <output_value>-0.48865106701850891</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -377,7 +353,7 @@
     <TargetName>BlockMobileAverage</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.047187082469463348</output_value>
+    <output_value>-0.48303726315498352</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -386,7 +362,7 @@
     <TargetName>BlockGain</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.047187082469463348</output_value>
+    <output_value>-0.48303726315498352</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -420,12 +396,12 @@
       </labels>
     </MoveOutput>
     <Position>
-      <X>800</X>
-      <Y>146</Y>
+      <X>864</X>
+      <Y>150</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
+    <output_value>1</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -441,6 +417,54 @@
     <TargetIndex>1</TargetIndex>
     <SourceName>Result</SourceName>
     <TargetName>MoveOutput</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockDigitalLevel>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockDigitalLevel2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <min_value>
+        <float>0</float>
+      </min_value>
+      <max_value>
+        <float>0.4</float>
+      </max_value>
+      <output_low>-2</output_low>
+      <output_medium>-2</output_medium>
+      <output_high>2</output_high>
+      <hysteresis>false</hysteresis>
+    </BlockDigitalLevel>
+    <Position>
+      <X>308</X>
+      <Y>225</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-0.48303726315498352</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain</SourceName>
+    <TargetName>BlockDigitalLevel2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-2</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDigitalLevel2</SourceName>
+    <TargetName>ChronoBlock1</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>

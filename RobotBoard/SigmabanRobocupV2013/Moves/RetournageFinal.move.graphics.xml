@@ -55,6 +55,12 @@
               <x>4</x>
               <y>0</y>
             </SplinePoint>
+            <SplinePoint>
+              <left_tangent>0</left_tangent>
+              <right_tangent>0</right_tangent>
+              <x>5</x>
+              <y>0</y>
+            </SplinePoint>
           </Points>
           <name>Bassin Long</name>
           <cyclic>0</cyclic>
@@ -98,6 +104,12 @@
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>4</x>
+              <y>0</y>
+            </SplinePoint>
+            <SplinePoint>
+              <left_tangent>0</left_tangent>
+              <right_tangent>0</right_tangent>
+              <x>5</x>
               <y>0</y>
             </SplinePoint>
           </Points>
@@ -153,6 +165,12 @@
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>4</x>
+              <y>0</y>
+            </SplinePoint>
+            <SplinePoint>
+              <left_tangent>0</left_tangent>
+              <right_tangent>0</right_tangent>
+              <x>5</x>
               <y>0</y>
             </SplinePoint>
           </Points>
@@ -214,6 +232,12 @@
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>4</x>
+              <y>0</y>
+            </SplinePoint>
+            <SplinePoint>
+              <left_tangent>0</left_tangent>
+              <right_tangent>0</right_tangent>
+              <x>5</x>
               <y>0</y>
             </SplinePoint>
           </Points>
@@ -325,6 +349,12 @@
               <x>4</x>
               <y>0</y>
             </SplinePoint>
+            <SplinePoint>
+              <left_tangent>0</left_tangent>
+              <right_tangent>0</right_tangent>
+              <x>5</x>
+              <y>0</y>
+            </SplinePoint>
           </Points>
           <name>Genou G</name>
           <cyclic>0</cyclic>
@@ -347,6 +377,12 @@
               <right_tangent>0</right_tangent>
               <x>4</x>
               <y>30</y>
+            </SplinePoint>
+            <SplinePoint>
+              <left_tangent>0</left_tangent>
+              <right_tangent>0</right_tangent>
+              <x>5</x>
+              <y>0</y>
             </SplinePoint>
             <SplinePoint>
               <left_tangent>0</left_tangent>
@@ -1089,7 +1125,14 @@
   </GraphicalBlockLink>
   <GraphicalBlock>
     <MoveOutput>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>Spline</name>
+          <output_idx>20</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>MoveOutput</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>

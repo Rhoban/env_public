@@ -22,12 +22,38 @@
         <condition />
         <fire />
       </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BallBlock</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
     </entries>
     <name>EmptyBlock</name>
     <gain>1</gain>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
   </EmptyBlock>
+  <GoalBlock>
+    <entries />
+    <name>GoalBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <refresh_frequency>5</refresh_frequency>
+  </GoalBlock>
   <SchemaComments />
   <frequency>100</frequency>
 </MotorPrimitive>

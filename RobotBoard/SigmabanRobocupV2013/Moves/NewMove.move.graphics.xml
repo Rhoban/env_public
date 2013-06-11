@@ -16,25 +16,38 @@
       <clipping>true</clipping>
     </BallBlock>
     <Position>
-      <X>144</X>
-      <Y>124</Y>
+      <X>97</X>
+      <Y>96</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
     <Block xsi:type="EmptyBlock">
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>BallBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BallBlock</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>EmptyBlock</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
     </Block>
     <Position>
-      <X>414</X>
-      <Y>166</Y>
+      <X>263</X>
+      <Y>142</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
+    <output_value>1</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -43,7 +56,7 @@
     <TargetName>EmptyBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
+    <output_value>0.61874997615814209</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -51,13 +64,36 @@
     <SourceName>BallBlock</SourceName>
     <TargetName>EmptyBlock</TargetName>
   </GraphicalBlockLink>
+  <GraphicalBlock>
+    <GoalBlock>
+      <entries />
+      <name>GoalBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <refresh_frequency>5</refresh_frequency>
+    </GoalBlock>
+    <Position>
+      <X>123</X>
+      <Y>242</Y>
+    </Position>
+  </GraphicalBlock>
   <GraphicalBlockLink>
     <output_value>0</output_value>
     <Condition />
     <Fire />
-    <SourceIndex>2</SourceIndex>
+    <SourceIndex>0</SourceIndex>
     <TargetIndex>2</TargetIndex>
-    <SourceName>BallBlock</SourceName>
+    <SourceName>GoalBlock</SourceName>
+    <TargetName>EmptyBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>3</TargetIndex>
+    <SourceName>GoalBlock</SourceName>
     <TargetName>EmptyBlock</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>

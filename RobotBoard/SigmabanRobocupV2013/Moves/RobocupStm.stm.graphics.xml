@@ -34,7 +34,7 @@ class RobocupStm:
         global releve
         info = connection.SchedulerGetOutputValues_response("RelevageAvantRessorts",["Finished"])
         if info and len(info) &gt;= 1 and len(info[0])&gt;=1:
-             releve = info[0][0] &gt; 0.1
+            releve = info[0][0] &gt; 0.1
 </preamble>
     </StmPreambleBlock>
     <Position>
@@ -65,14 +65,14 @@ class RobocupStm:
       <loop>RobocupStm.check_fall(self.connection)</loop>
       <enter>self.connection.SchedulerStartMove("MarcheBasse",0,200)
 self.connection.SchedulerStartMove("TrackBallAndGoal",0,100)
-self.connection.SchedulerStartMove("WalkToBall",0,100)
-self.connection.SchedulerStartMove("PositionBasse",0,200)
-self.connection.SchedulerStartMove("FallDetector",0,200)</enter>
-      <exit />
+self.connection.SchedulerStartMove("PositionBasse",0,200)</enter>
+      <exit>self.connection.SchedulerStopMove("MarcheBasse",200)
+self.connection.SchedulerStopMove("TrackBallAndGoal",200)
+self.connection.SchedulerStopMove("PositionBasse",200)</exit>
     </StmStateBlock>
     <Position>
-      <X>282</X>
-      <Y>580</Y>
+      <X>207.70181104221712</X>
+      <Y>692.72828669456715</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -90,13 +90,12 @@ self.connection.SchedulerStartMove("FallDetector",0,200)</enter>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <loop>RobocupStm.check_fall(self.connection)</loop>
-      <enter>self.connection.SchedulerStopMove("",0)
-self.connection.SchedulerStartMove("RetournageFinal",0,200)</enter>
+      <enter>self.connection.SchedulerStartMove("RetournageFinal",0,200)</enter>
       <exit>self.connection.SchedulerStopMove("RetournageFinal",200)</exit>
     </StmStateBlock>
     <Position>
-      <X>796</X>
-      <Y>154</Y>
+      <X>778.06595438950058</X>
+      <Y>102.75986968428757</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -120,9 +119,8 @@ self.connection.SchedulerStartMove("RetournageFinal",0,200)</enter>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <loop>RobocupStm.check_releve(self.connection)</loop>
-      <enter>self.connection.SchedulerStopMove("",0)
-self.connection.SchedulerStartMove("RelevageAvantRessorts",0,200)
-self.connection.SchedulerStartMove("FallDetector",0,200)</enter>
+      <enter>releve = False
+self.connection.SchedulerStartMove("RelevageAvantRessorts",0,200)</enter>
       <exit>self.connection.SchedulerStopMove("RelevageAvantRessorts",200)</exit>
     </StmStateBlock>
     <Position>
