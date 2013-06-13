@@ -1,0 +1,476 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>FallDetector</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <GraphicalBlock>
+    <AccelerometerBlock>
+      <entries />
+      <name>AccelerometerBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </AccelerometerBlock>
+    <Position>
+      <X>16</X>
+      <Y>159</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockDigitalLevel>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockDigitalLevel</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <min_value>
+        <float>-0.4</float>
+      </min_value>
+      <max_value>
+        <float>0</float>
+      </max_value>
+      <output_low>2</output_low>
+      <output_medium>-2</output_medium>
+      <output_high>-2</output_high>
+      <hysteresis>false</hysteresis>
+    </BlockDigitalLevel>
+    <Position>
+      <X>286</X>
+      <Y>143</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <ChronoBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>ChronoBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <clock_speeds>
+        <float>1</float>
+      </clock_speeds>
+    </ChronoBlock>
+    <Position>
+      <X>416</X>
+      <Y>117</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <ChronoBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel2</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>ChronoBlock1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <clock_speeds>
+        <float>1</float>
+      </clock_speeds>
+    </ChronoBlock>
+    <Position>
+      <X>424</X>
+      <Y>191</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>2</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDigitalLevel</SourceName>
+    <TargetName>ChronoBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockMobileAverage</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockMobileAverage</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>1</float>
+        <float>1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>204</X>
+      <Y>179</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-0.48303726315498352</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain</SourceName>
+    <TargetName>BlockDigitalLevel</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockDigitalLevel>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain2</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockGain2</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockDigitalLevel1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <min_value>
+        <float>0</float>
+        <float>0</float>
+      </min_value>
+      <max_value>
+        <float>0.5</float>
+        <float>0.5</float>
+      </max_value>
+      <output_low>0</output_low>
+      <output_medium>0</output_medium>
+      <output_high>1</output_high>
+      <hysteresis>false</hysteresis>
+    </BlockDigitalLevel>
+    <Position>
+      <X>632</X>
+      <Y>161</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel1</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Result</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>1</float>
+        <float>1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>762</X>
+      <Y>151</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>1</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDigitalLevel1</SourceName>
+    <TargetName>Result</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockDigitalLevel1</SourceName>
+    <TargetName>Result</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>ChronoBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>ChronoBlock1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>1</float>
+        <float>1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>562</X>
+      <Y>143</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>44.618270874023438</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>ChronoBlock</SourceName>
+    <TargetName>BlockGain2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>ChronoBlock1</SourceName>
+    <TargetName>BlockGain2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>44.618270874023438</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain2</SourceName>
+    <TargetName>BlockDigitalLevel1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockGain2</SourceName>
+    <TargetName>BlockDigitalLevel1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>If the accelerometer is above or below a certain level for a certain time...</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>58</X>
+      <Y>53</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>... then the first or second output of the "result" block is +1</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>556</X>
+      <Y>71</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockMobileAverage>
+      <entries>
+        <BlockPredecessor>
+          <name>AccelerometerBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockMobileAverage</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <discount_factor>0.95</discount_factor>
+    </BlockMobileAverage>
+    <Position>
+      <X>61</X>
+      <Y>194</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-0.48865106701850891</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>AccelerometerBlock</SourceName>
+    <TargetName>BlockMobileAverage</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-0.48303726315498352</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMobileAverage</SourceName>
+    <TargetName>BlockGain</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-0.48303726315498352</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockMobileAverage</SourceName>
+    <TargetName>BlockGain</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <MoveOutput>
+      <entries>
+        <BlockPredecessor>
+          <name>Result</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Result</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>MoveOutput</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <labels>
+        <string>fallface</string>
+        <string>fallback</string>
+      </labels>
+    </MoveOutput>
+    <Position>
+      <X>864</X>
+      <Y>150</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>1</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Result</SourceName>
+    <TargetName>MoveOutput</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>Result</SourceName>
+    <TargetName>MoveOutput</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockDigitalLevel>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockDigitalLevel2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <min_value>
+        <float>0</float>
+      </min_value>
+      <max_value>
+        <float>0.4</float>
+      </max_value>
+      <output_low>-2</output_low>
+      <output_medium>-2</output_medium>
+      <output_high>2</output_high>
+      <hysteresis>false</hysteresis>
+    </BlockDigitalLevel>
+    <Position>
+      <X>308</X>
+      <Y>225</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-0.48303726315498352</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain</SourceName>
+    <TargetName>BlockDigitalLevel2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-2</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDigitalLevel2</SourceName>
+    <TargetName>ChronoBlock1</TargetName>
+  </GraphicalBlockLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>NewMove</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <GraphicalBlock>
+    <StmPreambleBlock>
+      <entries />
+      <name>StmPreambleBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <preamble>fallback = False
+fallface = False
+releve = False
+
+class RobocupStm:
+    @staticmethod
+    def check_fall(connection):
+        global fallback
+        global fallface
+        info = connection.SchedulerGetOutputValues_response("FallDetector",["fallback","fallface"])
+        if info and len(info) &gt;= 1 and len(info[0]) &gt;= 2:
+             fallback = info[0][0] &gt; 0.1
+             fallface = info[0][1] &gt; 0.1
+             print(str(fallback) + " " + str(fallface))
+        else:
+            print("Failed to get message " + str(info))
+
+</preamble>
+    </StmPreambleBlock>
+    <Position>
+      <X>50</X>
+      <Y>57</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmLoopBlock>
+      <entries />
+      <name>Initial</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <loop>RobocupStm.check_fall(self.connection)</loop>
+    </StmLoopBlock>
+    <Position>
+      <X>628</X>
+      <Y>201</Y>
+    </Position>
+  </GraphicalBlock>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>0</SmoothStart>
+  <SmoothStop>0</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>
