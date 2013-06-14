@@ -120,7 +120,7 @@
   <MultiplexerBlock>
     <entries>
       <BlockPredecessor>
-        <name>BlockDigitalLevel</name>
+        <name>VariationBoundBlock1</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
@@ -132,7 +132,7 @@
         <fire />
       </BlockPredecessor>
       <BlockPredecessor>
-        <name>GoalBlock</name>
+        <name>BlockDigitalLevel1</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
@@ -163,7 +163,7 @@
   <MultiplexerBlock>
     <entries>
       <BlockPredecessor>
-        <name>BlockDigitalLevel</name>
+        <name>VariationBoundBlock1</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
@@ -189,7 +189,7 @@
   <MultiplexerBlock>
     <entries>
       <BlockPredecessor>
-        <name>BlockDigitalLevel</name>
+        <name>VariationBoundBlock1</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
@@ -215,7 +215,7 @@
   <MultiplexerBlock>
     <entries>
       <BlockPredecessor>
-        <name>BlockDigitalLevel</name>
+        <name>VariationBoundBlock1</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
@@ -241,7 +241,7 @@
   <MultiplexerBlock>
     <entries>
       <BlockPredecessor>
-        <name>BlockDigitalLevel</name>
+        <name>VariationBoundBlock1</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
@@ -285,7 +285,7 @@
     </max_value>
     <output_low>0</output_low>
     <output_medium>0</output_medium>
-    <output_high>1</output_high>
+    <output_high>1.5</output_high>
     <hysteresis>false</hysteresis>
   </BlockDigitalLevel>
   <Constant>
@@ -306,7 +306,7 @@
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
     <constants>
-      <float>-55</float>
+      <float>-70</float>
       <float>0</float>
     </constants>
   </Constant>
@@ -347,7 +347,7 @@
     <gainMax>60</gainMax>
     <constants>
       <float>-10</float>
-      <float>20</float>
+      <float>10</float>
     </constants>
   </Constant>
   <CommentsBlock>
@@ -464,8 +464,10 @@
     <inputs />
     <outputs>
       <string>goal_age</string>
+      <string>ball_tilt</string>
     </outputs>
     <default_outputs>
+      <float>0</float>
       <float>0</float>
     </default_outputs>
   </MoveBlock>
@@ -475,8 +477,123 @@
     <gain>1</gain>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
-    <Commentaires>Track the goal if not seen for 5 secs</Commentaires>
+    <Commentaires>Track the goal if not seen for 5 secs and the ball is far away</Commentaires>
   </CommentsBlock>
+  <BlockAddition>
+    <entries>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>5</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>6</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>7</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockAddition</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockAddition>
+  <BlockDigitalLevel>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockAddition</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockDigitalLevel1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <min_value>
+      <float>0</float>
+    </min_value>
+    <max_value>
+      <float>1.99</float>
+    </max_value>
+    <output_low>0</output_low>
+    <output_medium>0</output_medium>
+    <output_high>1</output_high>
+    <hysteresis>false</hysteresis>
+  </BlockDigitalLevel>
+  <VariationBoundBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockMin2</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>VariationBoundBlock1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <min_value>
+      <float>-0.5</float>
+    </min_value>
+    <max_value>
+      <float>10000</float>
+    </max_value>
+    <discount_factor>0</discount_factor>
+  </VariationBoundBlock>
+  <BlockDigitalLevel>
+    <entries>
+      <BlockPredecessor>
+        <name>MoveBlock1</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockDigitalLevel2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <min_value>
+      <float>-50</float>
+    </min_value>
+    <max_value>
+      <float>0</float>
+    </max_value>
+    <output_low>0</output_low>
+    <output_medium>1</output_medium>
+    <output_high>1</output_high>
+    <hysteresis>false</hysteresis>
+  </BlockDigitalLevel>
+  <BlockMin>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockDigitalLevel</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockDigitalLevel2</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockMin2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockMin>
   <SchemaComments />
   <frequency>100</frequency>
 </MotorPrimitive>
