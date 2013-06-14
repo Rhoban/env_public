@@ -1,0 +1,100 @@
+[16:43:44] [LowLevelComponent.cpp:87] [cll] Creating low level component 
+[0m[16:43:44] [Server.cpp:307] [server] Registering component LowLevel
+[0m[16:43:44] [LowLevelComponent.cpp:66] [cll] Loading low level adapter for mode serial
+[0mLoading sensor config
+[16:43:44] [AnalogicSensorConfigDevice.cpp:24] [adapter] Loadding AnalogicSensor Acc_x
+[0m[16:43:44] [AnalogicSensorConfigDevice.cpp:24] [adapter] Loadding AnalogicSensor Acc_y
+[0m[16:43:44] [AnalogicSensorConfigDevice.cpp:24] [adapter] Loadding AnalogicSensor Gyro_x
+[0m[16:43:44] [AnalogicSensorConfigDevice.cpp:24] [adapter] Loadding AnalogicSensor Gyro_y
+[0mLoading pwm config
+Loading dynamixel config (f=0)
+[16:43:44] [DynamixelDevice.cpp:1304] [dyna] Setting port for DynamixelSerialDevice
+[0m[16:43:44] [DynamixelDevice.cpp:1713] [dyna] Running a serial scan...
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 6 present, type 64
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 10 present, type 28
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 12 present, type 28
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 14 present, type 64
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 15 present, type 64
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 17 present, type 28
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 32 present, type 28
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 35 present, type 28
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 36 present, type 28
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 37 present, type 28
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 38 present, type 28
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 102 present, type 28
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 103 present, type 28
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 110 present, type 64
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 120 present, type 28
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 121 present, type 28
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 122 present, type 28
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 130 present, type 28
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 131 present, type 28
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 132 present, type 28
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 140 present, type 28
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 141 present, type 28
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 220 present, type 200
+[0m[16:43:45] [DynamixelDevice.cpp:1748] [dyna] Servo 221 present, type 200
+[0m[16:43:45] [DynamixelDevice.cpp:1741] [dyna] Sensors 240 present
+[0m[16:43:45] [DynamixelDevice.cpp:1757] [dyna] Found 24 servos
+[0m[16:43:45] [DynamixelDevice.cpp:1041] [dyna] Servo 221 linked to Pwm device TeteAlt
+[0m[16:43:45] [DynamixelDevice.cpp:1041] [dyna] Servo 220 linked to Pwm device TeteLat
+[0mLoading joypad config
+Loading kinect config
+Loading pins config, 0 pins to configure
+[16:43:45] [MoveScheduler.cpp:221] [mp] Loading servos config file...
+[0m[16:43:45] [MoveScheduler.cpp:234] [mp] Loading MoveBlocksConnector
+[0mTM CAUTION: Registering timer 'MoveScheduler' (146689328) with frequency 50Hz ...
+TM CAUTION: Asynchronously registering 1 timers
+TM CAUTION: Asynchronously registering new timer 'MoveScheduler' (146689328)
+TM CAUTION: Done: registered timer 'MoveScheduler' (146689328
+[16:43:45] [Server.cpp:307] [server] Registering component Scheduler
+[0m[ type ../../../RhobanCode/Robots/RhobanServer/build_vision/RhobanServer --help|-h|-?|--? for getting help ]
+Loading Hough parameters from file ./HoughParameters.xml
+Loading Color parameters from file ./ColorsParameters.xml
+Loading Algo parameters from file ./DetectAlgoParameters.xml
+Loading preprocessing parameters from file ./PreProcessingParameters.xml
+TM CAUTION: Registering timer 'SlowTimedThread' (146877844) with frequency 1Hz ...
+TM CAUTION: Asynchronously registering 1 timers
+TM CAUTION: Asynchronously registering new timer 'SlowTimedThread' (146877844)
+TM CAUTION: Done: registered timer 'SlowTimedThread' (146877844
+Initialisation of webcam 0 [image 320 x 240].
+TM CAUTION: TM Freq shoud be updated 
+TM CAUTION: Registering timer 'SlowTimedThread' (146839860) with frequency 1Hz ...
+TM CAUTION: Asynchronously registering 1 timers
+TM CAUTION: Asynchronously registering new timer 'SlowTimedThread' (146839860)
+TM CAUTION: Done: registered timer 'SlowTimedThread' (146839860
+TM CAUTION: TM Freq shoud be updated 
+TM CAUTION: Registering timer 'SlowTimedThread' (146838620) with frequency 1Hz ...
+TM CAUTION: Asynchronously registering 1 timers
+TM CAUTION: Asynchronously registering new timer 'SlowTimedThread' (146838620)
+TM CAUTION: Done: registered timer 'SlowTimedThread' (146838620
+TM CAUTION: TM Freq shoud be updated 
+TM CAUTION: Registering timer 'SlowTimedThread' (146904380) with frequency 1Hz ...
+TM CAUTION: Asynchronously registering 1 timers
+TM CAUTION: Asynchronously registering new timer 'SlowTimedThread' (146904380)
+TM CAUTION: Done: registered timer 'SlowTimedThread' (146904380
+TM CAUTION: TM Freq shoud be updated 
+TM CAUTION: Registering timer 'SlowTimedThread' (146876280) with frequency 1Hz ...
+TM CAUTION: Asynchronously registering 1 timers
+TM CAUTION: Asynchronously registering new timer 'SlowTimedThread' (146876280)
+TM CAUTION: Done: registered timer 'SlowTimedThread' (146876280
+TM CAUTION: Registering timer 'SlowTimedThread' (146877120) with frequency 1Hz ...
+TM CAUTION: Asynchronously registering 1 timers
+TM CAUTION: Asynchronously registering new timer 'SlowTimedThread' (146877120)
+TM CAUTION: Done: registered timer 'SlowTimedThread' (146877120
+TM CAUTION: TM Freq shoud be updated 
+[16:43:46] [Server.cpp:307] [server] Registering component Vision
+[0mTM CAUTION: Registering timer 'SlowTimedThread' (146694652) with frequency 1Hz ...
+TM CAUTION: Asynchronously registering 1 timers
+TM CAUTION: Asynchronously registering new timer 'SlowTimedThread' (146694652)
+TM CAUTION: Done: registered timer 'SlowTimedThread' (146694652
+Localisation : Initializing loc loop at 0Hz
+TM CAUTION: TM Freq shoud be updated 
+[16:43:46] [Server.cpp:307] [server] Registering component Localisation
+[0mFailed to start stm spawner:
+	Could not find node with path 'python_cmd' or 'server.python_cmd' in yaml file'
+[16:43:46] [main.cpp:60] [server] Registered signal handler
+[0m[16:43:46] [Server.cpp:307] [server] Registering component Server
+[0m[16:43:46] [main.cpp:39] [server] Shutdown...
+[0m[16:43:46] [main.cpp:43] [server] ...done.
+[0m

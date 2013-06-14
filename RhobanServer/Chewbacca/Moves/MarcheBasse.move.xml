@@ -684,12 +684,15 @@
     <gain>1</gain>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
+    <correct_update>false</correct_update>
     <P_coef>1</P_coef>
     <I_coef>0.12</I_coef>
     <D_coef>0</D_coef>
-    <derivative_discount_factor>0.9</derivative_discount_factor>
+    <integral_discount>0.95</integral_discount>
     <min_output>-10</min_output>
     <max_output>10</max_output>
+    <min_integral_output>0</min_integral_output>
+    <max_integral_output>0</max_integral_output>
   </PIDBlock>
   <Constant>
     <entries />
@@ -1718,7 +1721,7 @@ Frontale</Commentaires>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
     <constants>
-      <float>0</float>
+      <float>0.2</float>
     </constants>
   </Constant>
   <BlockAddition>
@@ -2832,12 +2835,15 @@ Phauteur = 0,5 </Commentaires>
     <gain>1</gain>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
+    <correct_update>false</correct_update>
     <P_coef>0</P_coef>
     <I_coef>-0.1</I_coef>
     <D_coef>0</D_coef>
-    <derivative_discount_factor>0</derivative_discount_factor>
+    <integral_discount>0.95</integral_discount>
     <min_output>-10</min_output>
     <max_output>10</max_output>
+    <min_integral_output>0</min_integral_output>
+    <max_integral_output>0</max_integral_output>
   </PIDBlock>
   <Constant>
     <entries />
@@ -2934,7 +2940,7 @@ Phauteur = 0,5 </Commentaires>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
     <constants>
-      <float>-0.1</float>
+      <float>0</float>
     </constants>
   </Constant>
   <BlockAddition>
@@ -2964,7 +2970,7 @@ Phauteur = 0,5 </Commentaires>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
     <constants>
-      <float>4</float>
+      <float>0</float>
     </constants>
   </Constant>
   <BlockServo>
@@ -3007,7 +3013,7 @@ Phauteur = 0,5 </Commentaires>
   <BlockMobileAverage>
     <entries>
       <BlockPredecessor>
-        <name>Forward</name>
+        <name>BlockAddition13</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
@@ -3022,7 +3028,7 @@ Phauteur = 0,5 </Commentaires>
   <BlockMobileAverage>
     <entries>
       <BlockPredecessor>
-        <name>Rotation</name>
+        <name>BlockAddition14</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
@@ -3037,7 +3043,7 @@ Phauteur = 0,5 </Commentaires>
   <BlockMobileAverage>
     <entries>
       <BlockPredecessor>
-        <name>Lateral</name>
+        <name>BlockAddition15</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
@@ -3049,6 +3055,105 @@ Phauteur = 0,5 </Commentaires>
     <gainMax>60</gainMax>
     <discount_factor>0.9</discount_factor>
   </BlockMobileAverage>
+  <BlockAddition>
+    <entries>
+      <BlockPredecessor>
+        <name>Forward</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>MoveInput</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockAddition13</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockAddition>
+  <MoveInput>
+    <entries />
+    <name>MoveInput</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <labels>
+      <string>Avance</string>
+    </labels>
+    <default_values>
+      <float>0</float>
+    </default_values>
+  </MoveInput>
+  <BlockAddition>
+    <entries>
+      <BlockPredecessor>
+        <name>Rotation</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>MoveInput1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockAddition14</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockAddition>
+  <MoveInput>
+    <entries />
+    <name>MoveInput1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <labels>
+      <string>Rotation</string>
+    </labels>
+    <default_values>
+      <float>0</float>
+    </default_values>
+  </MoveInput>
+  <BlockAddition>
+    <entries>
+      <BlockPredecessor>
+        <name>Lateral</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>MoveInput2</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockAddition15</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockAddition>
+  <MoveInput>
+    <entries />
+    <name>MoveInput2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <labels>
+      <string>Lateral</string>
+    </labels>
+    <default_values>
+      <float>0</float>
+    </default_values>
+  </MoveInput>
   <SchemaComments />
   <frequency>100</frequency>
 </MotorPrimitive>

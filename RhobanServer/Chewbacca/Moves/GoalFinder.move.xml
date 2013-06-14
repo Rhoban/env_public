@@ -1,0 +1,514 @@
+<?xml version="1.0"?>
+<MotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>GoalFinder</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <SnapshotBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockMin</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockMin</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockAddition</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>SnapshotBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </SnapshotBlock>
+  <BlockServo>
+    <entries />
+    <name>Pan</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <servo_name>Pan</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <GoalBlock>
+    <entries />
+    <name>GoalBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <refresh_frequency>5</refresh_frequency>
+  </GoalBlock>
+  <BlockMin>
+    <entries>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>5</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>6</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockMin</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockMin>
+  <BlockMin>
+    <entries>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>6</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>7</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockMin1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockMin>
+  <BlockMin>
+    <entries>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>5</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>6</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>7</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockMin2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockMin>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>Left side + top</Commentaires>
+  </CommentsBlock>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>All goal</Commentaires>
+  </CommentsBlock>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>Right side + top</Commentaires>
+  </CommentsBlock>
+  <SnapshotBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockMin2</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockMin2</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockAddition</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>SnapshotBlock1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </SnapshotBlock>
+  <SnapshotBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockMin1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockMin1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockAddition</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>SnapshotBlock2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </SnapshotBlock>
+  <BlockAddition>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockGain</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockAddition</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockAddition>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>Pan</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-1</float>
+      <float>-1</float>
+    </gains>
+  </BlockGain>
+  <BlockMin>
+    <entries>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>5</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>GoalBlock</name>
+        <output_idx>7</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockMin3</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockMin>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock3</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>Both sides no top</Commentaires>
+  </CommentsBlock>
+  <SnapshotBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockMin3</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockMin3</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockAddition</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>SnapshotBlock3</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </SnapshotBlock>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>SnapshotBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>SnapshotBlock1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>SnapshotBlock3</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>SnapshotBlock2</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>1</float>
+      <float>4</float>
+      <float>3</float>
+      <float>2</float>
+    </gains>
+  </BlockGain>
+  <MultiplexerBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockMax</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>Constant</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>SnapshotBlock</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>SnapshotBlock2</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>SnapshotBlock3</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>SnapshotBlock1</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Direction</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </MultiplexerBlock>
+  <BlockMax>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockGain1</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockGain1</name>
+        <output_idx>2</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockGain1</name>
+        <output_idx>3</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockMax</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockMax>
+  <Constant>
+    <entries />
+    <name>Constant</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <constants>
+      <float>0</float>
+    </constants>
+  </Constant>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock4</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>The goal direction can be read the block called 'Direction'</Commentaires>
+  </CommentsBlock>
+  <BlockMax>
+    <entries>
+      <BlockPredecessor>
+        <name>SnapshotBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>SnapshotBlock1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>SnapshotBlock3</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>SnapshotBlock2</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockMax1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockMax>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockMax1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-1</float>
+    </gains>
+  </BlockGain>
+  <ChronoBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain2</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Age</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <clock_speeds>
+      <float>1</float>
+    </clock_speeds>
+  </ChronoBlock>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock5</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>The duration without seeing the goal can be read in the block called 'Age'</Commentaires>
+  </CommentsBlock>
+  <EmptyBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>Direction</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>EmptyBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </EmptyBlock>
+  <SchemaComments />
+  <frequency>100</frequency>
+</MotorPrimitive>

@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<MotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>FollowTheBall</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <BallBlock>
+    <entries />
+    <name>BallBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <refresh_frequency>5</refresh_frequency>
+    <clipping>true</clipping>
+  </BallBlock>
+  <PIDBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>Constant</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BallBlock</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>PIDBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <correct_update>false</correct_update>
+    <P_coef>10</P_coef>
+    <I_coef>10</I_coef>
+    <D_coef>-1</D_coef>
+    <integral_discount>0.75</integral_discount>
+    <min_output>-50</min_output>
+    <max_output>50</max_output>
+    <min_integral_output>-50</min_integral_output>
+    <max_integral_output>50</max_integral_output>
+  </PIDBlock>
+  <Constant>
+    <entries />
+    <name>Constant</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <constants>
+      <float>0</float>
+    </constants>
+  </Constant>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>PIDBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Pan</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <servo_name>Pan</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <SchemaComments />
+  <frequency>100</frequency>
+</MotorPrimitive>

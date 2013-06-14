@@ -1,0 +1,443 @@
+<?xml version="1.0"?>
+<MotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>DetectionTir</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <BallBlock>
+    <entries />
+    <name>BallBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <refresh_frequency>5</refresh_frequency>
+    <clipping>true</clipping>
+  </BallBlock>
+  <BlockDelay>
+    <entries>
+      <BlockPredecessor>
+        <name>BallBlock</name>
+        <output_idx>2</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockDelay</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <delay>0.35</delay>
+  </BlockDelay>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockDelay</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-1</float>
+    </gains>
+  </BlockGain>
+  <BlockAddition>
+    <entries>
+      <BlockPredecessor>
+        <name>BallBlock</name>
+        <output_idx>2</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockGain</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockAddition</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockAddition>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>Computing position in vision in blocks</Commentaires>
+  </CommentsBlock>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>Only for testing</Commentaires>
+  </CommentsBlock>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>Constant</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Tilt</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <servo_name>Tilt</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <Constant>
+    <entries />
+    <name>Constant</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <constants>
+      <float>-25</float>
+    </constants>
+  </Constant>
+  <BlockMobileAverage>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockAddition</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockMobileAverage</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <discount_factor>0.95</discount_factor>
+  </BlockMobileAverage>
+  <BlockDigitalLevel>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockMobileAverage</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockDigitalLevel</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <min_value>
+      <float>-0.1</float>
+    </min_value>
+    <max_value>
+      <float>0.1</float>
+    </max_value>
+    <output_low>1</output_low>
+    <output_medium>0</output_medium>
+    <output_high>0</output_high>
+    <hysteresis>false</hysteresis>
+  </BlockDigitalLevel>
+  <BlockDynamicGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockDigitalLevel</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>Constant1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockDigitalLevel1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockDynamicGain</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockDynamicGain>
+  <Constant>
+    <entries />
+    <name>Constant1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <constants>
+      <float>10</float>
+    </constants>
+  </Constant>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Epaule G Lat</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <servo_name>Epaule G Lat</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockDynamicGain1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-2</float>
+    </gains>
+  </BlockGain>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>Is ball well detected?</Commentaires>
+  </CommentsBlock>
+  <BlockDigitalLevel>
+    <entries>
+      <BlockPredecessor>
+        <name>VariationBoundBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockDigitalLevel1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <min_value>
+      <float>0</float>
+    </min_value>
+    <max_value>
+      <float>0.6</float>
+    </max_value>
+    <output_low>0</output_low>
+    <output_medium>0</output_medium>
+    <output_high>1</output_high>
+    <hysteresis>false</hysteresis>
+  </BlockDigitalLevel>
+  <VariationBoundBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>BallBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>VariationBoundBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <min_value>
+      <float>-0.1</float>
+    </min_value>
+    <max_value>
+      <float>0.2</float>
+    </max_value>
+    <discount_factor>0</discount_factor>
+  </VariationBoundBlock>
+  <VariationBoundBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockDynamicGain</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>VariationBoundBlock1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <min_value>
+      <float>-1</float>
+    </min_value>
+    <max_value>
+      <float>15</float>
+    </max_value>
+    <discount_factor>0</discount_factor>
+  </VariationBoundBlock>
+  <BlockMobileAverage>
+    <entries>
+      <BlockPredecessor>
+        <name>BallBlock</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockMobileAverage1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <discount_factor>0.95</discount_factor>
+  </BlockMobileAverage>
+  <BlockDigitalLevel>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockMobileAverage1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockGain2</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockDigitalLevel2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <min_value>
+      <float>0</float>
+      <float>0</float>
+    </min_value>
+    <max_value>
+      <float>0.3</float>
+      <float>0.3</float>
+    </max_value>
+    <output_low>0</output_low>
+    <output_medium>0</output_medium>
+    <output_high>1</output_high>
+    <hysteresis>false</hysteresis>
+  </BlockDigitalLevel>
+  <CommentsBlock>
+    <entries />
+    <name>CommentsBlock3</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <Commentaires>Something predictive should be used here</Commentaires>
+  </CommentsBlock>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockMobileAverage1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-1</float>
+    </gains>
+  </BlockGain>
+  <BlockDynamicGain>
+    <entries>
+      <BlockPredecessor>
+        <name>VariationBoundBlock1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockDigitalLevel2</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockDynamicGain1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockDynamicGain>
+  <BlockDynamicGain>
+    <entries>
+      <BlockPredecessor>
+        <name>VariationBoundBlock1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockDigitalLevel2</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockDynamicGain2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockDynamicGain>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockDynamicGain2</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain3</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>1</float>
+    </gains>
+  </BlockGain>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain3</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Epaule D Lat</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <servo_name>Epaule D Lat</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <SchemaComments />
+  <frequency>100</frequency>
+</MotorPrimitive>

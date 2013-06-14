@@ -27,8 +27,8 @@
       <gainMax>60</gainMax>
     </BlockDynamicGain>
     <Position>
-      <X>502</X>
-      <Y>148</Y>
+      <X>565</X>
+      <Y>156</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -100,7 +100,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0.095555953681468964</output_value>
+    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -109,7 +109,7 @@
     <TargetName>BlockDynamicGain</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.95222204923629761</output_value>
+    <output_value>1</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -144,7 +144,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0.95222204923629761</output_value>
+    <output_value>1</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -153,7 +153,7 @@
     <TargetName>BlockPolynome</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.95222204923629761</output_value>
+    <output_value>1</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -239,7 +239,7 @@
     <TargetName>BlockDivision</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-52.372211456298828</output_value>
+    <output_value>-55</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -248,7 +248,7 @@
     <TargetName>BlockDivision</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.95222204923629761</output_value>
+    <output_value>1</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -281,7 +281,7 @@
       <max_integral_output>0</max_integral_output>
     </PIDBlock>
     <Position>
-      <X>248</X>
+      <X>250.46333333333337</X>
       <Y>58</Y>
     </Position>
   </GraphicalBlock>
@@ -329,7 +329,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0.55254429578781128</output_value>
+    <output_value>-0.48217707872390747</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -380,7 +380,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-0.083172142505645752</output_value>
+    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -389,7 +389,7 @@
     <TargetName>BoundBlock2</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.55254429578781128</output_value>
+    <output_value>-0.48217707872390747</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -470,13 +470,13 @@
       <max_value>
         <float>0</float>
       </max_value>
-      <output_low>-1</output_low>
+      <output_low>-0.8</output_low>
       <output_medium>0</output_medium>
-      <output_high>1</output_high>
+      <output_high>0.8</output_high>
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>289</X>
+      <X>287.96999999999997</X>
       <Y>335</Y>
     </Position>
   </GraphicalBlock>
@@ -508,8 +508,8 @@
       <gainMax>60</gainMax>
     </MultiplexerBlock>
     <Position>
-      <X>487</X>
-      <Y>347</Y>
+      <X>483.07166666666666</X>
+      <Y>335</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -522,7 +522,7 @@
     <TargetName>MultiplexerBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-1</output_value>
+    <output_value>-0.800000011920929</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -531,7 +531,7 @@
     <TargetName>MultiplexerBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-0.083172142505645752</output_value>
+    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -540,7 +540,7 @@
     <TargetName>MultiplexerBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-0.083172142505645752</output_value>
+    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -574,7 +574,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-52.372211456298828</output_value>
+    <output_value>-61.354686737060547</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -583,7 +583,7 @@
     <TargetName>BlockDigitalLevel2</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>1.4004559516906738</output_value>
+    <output_value>0.72026598453521729</output_value>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -592,7 +592,7 @@
     <TargetName>BlockDigitalLevel</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-52.372211456298828</output_value>
+    <output_value>-61.354686737060547</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -692,7 +692,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-0.083172142505645752</output_value>
+    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -701,7 +701,7 @@
     <TargetName>MoveBlock1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.55254429578781128</output_value>
+    <output_value>-0.48217707872390747</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -743,12 +743,12 @@
       <max_integral_output>0</max_integral_output>
     </PIDBlock>
     <Position>
-      <X>245</X>
-      <Y>115</Y>
+      <X>244.82833333333332</X>
+      <Y>114.88</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-0.87040257453918457</output_value>
+    <output_value>0.72326564788818359</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -757,7 +757,7 @@
     <TargetName>BlockDynamicGain</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.580268383026123</output_value>
+    <output_value>-0.48217707872390747</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -813,7 +813,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-1.4506709575653076</output_value>
+    <output_value>1.2054426670074463</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -822,7 +822,7 @@
     <TargetName>PIDBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-1.4506709575653076</output_value>
+    <output_value>1.2054426670074463</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -831,7 +831,7 @@
     <TargetName>PIDBlock1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>10</output_value>
+    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -840,7 +840,7 @@
     <TargetName>BlockAddition1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-53.520126342773438</output_value>
+    <output_value>36.163280487060547</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -849,7 +849,7 @@
     <TargetName>BlockAddition1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-43.520126342773438</output_value>
+    <output_value>36.163280487060547</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
