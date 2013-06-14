@@ -6,7 +6,7 @@
                 <Id>110</Id>
                 <Name>Bassin Lat</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>-3</ZeroAngle>
+                <ZeroAngle>-1</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1023</MaxSpeed>
@@ -21,7 +21,7 @@
                 <Id>14</Id>
                 <Name>Bassin Long</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>0</ZeroAngle>
+                <ZeroAngle>5</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -66,7 +66,7 @@
                 <Id>132</Id>
                 <Name>Coude D</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>-70</ZeroAngle>
+                <ZeroAngle>-80</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -96,7 +96,7 @@
                 <Id>36</Id>
                 <Name>Cuisse D</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>0</ZeroAngle>
+                <ZeroAngle>-4</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -111,7 +111,7 @@
                 <Id>12</Id>
                 <Name>Cuisse G</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>0</ZeroAngle>
+                <ZeroAngle>-3</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -171,7 +171,7 @@
                 <Id>120</Id>
                 <Name>Epaule G Long</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>-25</ZeroAngle>
+                <ZeroAngle>0</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -216,7 +216,7 @@
                 <Id>35</Id>
                 <Name>Hanche D Lat</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>0</ZeroAngle>
+                <ZeroAngle>2</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -265,6 +265,21 @@
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
+                <MaxTorque>1023</MaxTorque>
+                <SmoothFactor>0</SmoothFactor>
+                <Bounce>50</Bounce>
+                <Punch>1</Punch>
+                <Inverse>0</Inverse>
+                <unit>1</unit>
+            </ServoConfig>
+            <ServoConfig>
+                <Id>140</Id>
+                <Name>Pan</Name>
+                <IniAngle>0</IniAngle>
+                <ZeroAngle>-21</ZeroAngle>
+                <MinAngle>-180</MinAngle>
+                <MaxAngle>180</MaxAngle>
+                <MaxSpeed>1023</MaxSpeed>
                 <MaxTorque>1023</MaxTorque>
                 <SmoothFactor>0</SmoothFactor>
                 <Bounce>50</Bounce>
@@ -347,21 +362,6 @@
                 <Inverse>0</Inverse>
                 <unit>1</unit>
             </ServoConfig>
-            <ServoConfig>
-                <Id>140</Id>
-                <Name>Pan</Name>
-                <IniAngle>0</IniAngle>
-                <ZeroAngle>-21</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
         </Servos>
     </ServosConfig>
     <SensorsConfig>
@@ -379,5 +379,8 @@
         <string>TrackBall</string>
         <string>WalkToBall</string>
         <string>TestBall</string>
+        <string>FallDetector</string>
+        <string>LocateBallAndGoal</string>
+        <string>TrackBallAndGoal</string>
     </autoload_moves>
 </MoveSchedulerConfig>
