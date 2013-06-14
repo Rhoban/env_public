@@ -270,8 +270,8 @@
     <VariationBoundBlock>
       <entries>
         <BlockPredecessor>
-          <name>MoveInput</name>
-          <output_idx>2</output_idx>
+          <name>BlockGain2</name>
+          <output_idx>0</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
@@ -1130,7 +1130,14 @@
   </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockGain>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>MoveInput</name>
+          <output_idx>2</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockGain2</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
