@@ -18,6 +18,7 @@
     <gain>1</gain>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
     <servo_name>Tilt</servo_name>
     <unit>1</unit>
     <relative>1</relative>
@@ -35,6 +36,7 @@
     <gain>1</gain>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
     <servo_name>Pan</servo_name>
     <unit>1</unit>
     <relative>1</relative>
@@ -281,7 +283,7 @@
       <float>0</float>
     </min_value>
     <max_value>
-      <float>500</float>
+      <float>1000</float>
     </max_value>
     <output_low>0</output_low>
     <output_medium>0</output_medium>
@@ -306,7 +308,7 @@
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
     <constants>
-      <float>-51</float>
+      <float>-60</float>
       <float>0</float>
     </constants>
   </Constant>
@@ -588,12 +590,143 @@
         <condition />
         <fire />
       </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockDigitalLevel3</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockDigitalLevel4</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
     </entries>
     <name>BlockMin2</name>
     <gain>1</gain>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
   </BlockMin>
+  <BallBlock>
+    <entries />
+    <name>BallBlock1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <refresh_frequency>5</refresh_frequency>
+    <clipping>true</clipping>
+  </BallBlock>
+  <VariationBoundBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>BallBlock1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>VariationBoundBlock2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <min_value>
+      <float>-0.2</float>
+    </min_value>
+    <max_value>
+      <float>10000</float>
+    </max_value>
+    <discount_factor>0</discount_factor>
+  </VariationBoundBlock>
+  <BlockDigitalLevel>
+    <entries>
+      <BlockPredecessor>
+        <name>VariationBoundBlock2</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockDigitalLevel3</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <min_value>
+      <float>0</float>
+    </min_value>
+    <max_value>
+      <float>0.5</float>
+    </max_value>
+    <output_low>0</output_low>
+    <output_medium>0</output_medium>
+    <output_high>1</output_high>
+    <hysteresis>false</hysteresis>
+  </BlockDigitalLevel>
+  <BlockDigitalLevel>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockPolynome</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockDigitalLevel4</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <min_value>
+      <float>0.1</float>
+    </min_value>
+    <max_value>
+      <float>0</float>
+    </max_value>
+    <output_low>1</output_low>
+    <output_medium>0</output_medium>
+    <output_high>0</output_high>
+    <hysteresis>false</hysteresis>
+  </BlockDigitalLevel>
+  <BlockPolynome>
+    <entries>
+      <BlockPredecessor>
+        <name>MoveBlock2</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockPolynome</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <const_coefs>
+      <float>0</float>
+    </const_coefs>
+    <lin_coefs>
+      <float>0</float>
+    </lin_coefs>
+    <square_coefs>
+      <float>0</float>
+    </square_coefs>
+    <abs_coefs>
+      <float>1</float>
+    </abs_coefs>
+  </BlockPolynome>
+  <MoveBlock>
+    <entries />
+    <name>MoveBlock2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <move_name>PushBallToGoal</move_name>
+    <inputs />
+    <outputs>
+      <string>Rotation</string>
+    </outputs>
+    <default_outputs>
+      <float>0</float>
+    </default_outputs>
+  </MoveBlock>
   <SchemaComments />
   <frequency>100</frequency>
 </MotorPrimitive>

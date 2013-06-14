@@ -198,11 +198,11 @@
     <gainMax>60</gainMax>
     <correct_update>false</correct_update>
     <P_coef>-15</P_coef>
-    <I_coef>-20</I_coef>
+    <I_coef>-25</I_coef>
     <D_coef>0</D_coef>
     <integral_discount>1</integral_discount>
-    <min_output>-1</min_output>
-    <max_output>1</max_output>
+    <min_output>-1.8</min_output>
+    <max_output>1.8</max_output>
     <min_integral_output>-2</min_integral_output>
     <max_integral_output>2</max_integral_output>
   </PIDBlock>
@@ -284,8 +284,8 @@
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
     <gains>
-      <float>2.1</float>
-      <float>-2.5</float>
+      <float>5</float>
+      <float>-5</float>
     </gains>
   </BlockGain>
   <Constant>
