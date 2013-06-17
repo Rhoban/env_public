@@ -5,32 +5,29 @@
   <gain>1</gain>
   <gainMin>-1</gainMin>
   <gainMax>60</gainMax>
-  <BallBlock>
-    <entries />
-    <name>BallBlock</name>
-    <gain>1</gain>
-    <gainMin>-1</gainMin>
-    <gainMax>60</gainMax>
-    <refresh_frequency>5</refresh_frequency>
-    <clipping>true</clipping>
-  </BallBlock>
-  <EmptyBlock>
+  <BlockServo>
     <entries>
       <BlockPredecessor>
-        <name>BallBlock</name>
+        <name>Constant</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
       </BlockPredecessor>
+    </entries>
+    <name>Hanche D Rot1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Hanche D Rot</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <EmptyBlock>
+    <entries>
       <BlockPredecessor>
-        <name>BallBlock</name>
-        <output_idx>1</output_idx>
-        <condition />
-        <fire />
-      </BlockPredecessor>
-      <BlockPredecessor>
-        <name>BallBlock</name>
-        <output_idx>2</output_idx>
+        <name>Hanche D Rot1</name>
+        <output_idx>0</output_idx>
         <condition />
         <fire />
       </BlockPredecessor>
@@ -40,6 +37,27 @@
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
   </EmptyBlock>
+  <BlockServo>
+    <entries />
+    <name>Hanche D Rot</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Hanche D Rot</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <Constant>
+    <entries />
+    <name>Constant</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <constants>
+      <float>5</float>
+    </constants>
+  </Constant>
   <SchemaComments />
   <frequency>100</frequency>
 </MotorPrimitive>

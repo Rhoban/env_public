@@ -12,11 +12,15 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <Commentaires>This move looks for an object and then track it</Commentaires>
+      <Commentaires>This move looks for an object.
+
+It takes as input the apparent coordinates of the object, whether it is detecte dor not,  as well as max/min pan and tilt. on image.
+
+It outputs controls for pan and tilt</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>65</X>
-      <Y>32</Y>
+      <X>-102.81166666666668</X>
+      <Y>56</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -38,7 +42,7 @@
       </default_values>
     </MoveInput>
     <Position>
-      <X>2</X>
+      <X>48</X>
       <Y>236.07999999999998</Y>
     </Position>
   </GraphicalBlock>
@@ -69,9 +73,8 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <labels>
-        <string>x</string>
-        <string>y</string>
-        <string>age</string>
+        <string>pan</string>
+        <string>tilt</string>
       </labels>
     </MoveOutput>
     <Position>
@@ -86,11 +89,12 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <Commentaires>The move outputs x and y as well as the ime since the object was seen</Commentaires>
+      <Commentaires>The move outputs pan and tilt.
+</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>974</X>
-      <Y>221</Y>
+      <X>1140.8600000000001</X>
+      <Y>341</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -103,8 +107,8 @@
       <Commentaires>max and min tilt and pan angles the object should be looked for</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>2</X>
-      <Y>445</Y>
+      <X>-187.92333333333335</X>
+      <Y>569</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -161,7 +165,7 @@
     </MultiplexerBlock>
     <Position>
       <X>506</X>
-      <Y>204</Y>
+      <Y>258</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -193,7 +197,7 @@
     </MultiplexerBlock>
     <Position>
       <X>506</X>
-      <Y>279.91999999999996</Y>
+      <Y>307</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -227,8 +231,8 @@
       <max_integral_output>1</max_integral_output>
     </PIDBlock>
     <Position>
-      <X>669</X>
-      <Y>176.92000000000002</Y>
+      <X>660.965</X>
+      <Y>207.06</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -262,7 +266,7 @@
       <max_integral_output>2</max_integral_output>
     </PIDBlock>
     <Position>
-      <X>624.93000000000006</X>
+      <X>660.965</X>
       <Y>258</Y>
     </Position>
   </GraphicalBlock>
@@ -291,8 +295,8 @@
       <discount_factor>0</discount_factor>
     </VariationBoundBlock>
     <Position>
-      <X>179.45166666666665</X>
-      <Y>369</Y>
+      <X>231.45166666666665</X>
+      <Y>407</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -316,29 +320,15 @@
   <GraphicalBlock>
     <CommentsBlock>
       <entries />
-      <name>CommentsBlock3</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <Commentaires>When switching to/from detected/notdetected, the head freezes for some time</Commentaires>
-    </CommentsBlock>
-    <Position>
-      <X>807</X>
-      <Y>569</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <CommentsBlock>
-      <entries />
       <name>CommentsBlock4</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <Commentaires>Proportional reaction</Commentaires>
+      <Commentaires>The PIDs controlling pan and tilt</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>455</X>
-      <Y>95</Y>
+      <X>630.97</X>
+      <Y>147</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -348,11 +338,13 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <Commentaires>Control is given either to the PIDS or to a periodic scan</Commentaires>
+      <Commentaires>Control is multiplexed between the PIDS
+and a periodic scan, depending whether
+the object is detecte dor not</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>669</X>
-      <Y>101</Y>
+      <X>335.94833333333332</X>
+      <Y>193.12</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -368,8 +360,8 @@
       </constants>
     </Constant>
     <Position>
-      <X>259</X>
-      <Y>165</Y>
+      <X>585.49</X>
+      <Y>147</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -434,8 +426,8 @@
       </gains>
     </BlockGain>
     <Position>
-      <X>652.93000000000006</X>
-      <Y>525.08</Y>
+      <X>660.965</X>
+      <Y>583</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -475,31 +467,6 @@
     <TargetName>PIDBlock1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
-    <Constant>
-      <entries />
-      <name>Constant1</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <constants>
-        <float>0</float>
-      </constants>
-    </Constant>
-    <Position>
-      <X>997.92833333333328</X>
-      <Y>502</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>2</TargetIndex>
-    <SourceName>Constant1</SourceName>
-    <TargetName>MoveOutput</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlock>
     <BlockDigitalLevel>
       <entries>
         <BlockPredecessor>
@@ -525,7 +492,7 @@
       <hysteresis>true</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>421</X>
+      <X>539</X>
       <Y>583</Y>
     </Position>
   </GraphicalBlock>
@@ -555,8 +522,8 @@
       <hysteresis>true</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>425</X>
-      <Y>655</Y>
+      <X>539</X>
+      <Y>624.92</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -679,8 +646,8 @@
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>271</X>
-      <Y>537</Y>
+      <X>335.94833333333332</X>
+      <Y>569</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -705,8 +672,8 @@
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>265</X>
-      <Y>657</Y>
+      <X>335.94833333333332</X>
+      <Y>672.8</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -749,8 +716,8 @@
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>203</X>
-      <Y>593</Y>
+      <X>335.94833333333332</X>
+      <Y>624.92</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -793,8 +760,8 @@
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>213</X>
-      <Y>727</Y>
+      <X>335.94833333333332</X>
+      <Y>719</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -837,8 +804,8 @@
       <gainMax>60</gainMax>
     </BlockDivision>
     <Position>
-      <X>351</X>
-      <Y>617</Y>
+      <X>461</X>
+      <Y>583</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -863,8 +830,8 @@
       <gainMax>60</gainMax>
     </BlockDivision>
     <Position>
-      <X>357</X>
-      <Y>713</Y>
+      <X>461</X>
+      <Y>642.9</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -981,8 +948,8 @@
       <gainMax>60</gainMax>
     </MultiplexerBlock>
     <Position>
-      <X>910.82666666666671</X>
-      <Y>428.92</Y>
+      <X>981</X>
+      <Y>382.92</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -1034,8 +1001,8 @@
       <discount_factor>0</discount_factor>
     </VariationBoundBlock>
     <Position>
-      <X>837</X>
-      <Y>297.84000000000003</Y>
+      <X>879</X>
+      <Y>341</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -1169,6 +1136,84 @@
     <SourceName>BlockGain2</SourceName>
     <TargetName>VariationBoundBlock</TargetName>
   </GraphicalBlockLink>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock3</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>This smoothens the "detected " property</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>179.45166666666665</X>
+      <Y>341</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock6</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>This creates a fake object position so
+that the robot moves its head periodically.
+
+When max/min pan and tilt are attained the direction is changed</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>418.77333333333331</X>
+      <Y>494.03999999999996</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock7</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>Inputs are apparent coordinates of the object</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>-3.105000000000004</X>
+      <Y>193.12</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock8</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>Bounds the tracking speed when the object
+is not detected
+</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>855</X>
+      <Y>244.06</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock9</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>TODO: use the third reset entry of pid blocks 
+to smoothen the transition between scan and 
+tracking
+</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>335.94833333333332</X>
+      <Y>56</Y>
+    </Position>
+  </GraphicalBlock>
   <hsize>500</hsize>
   <vsize>500</vsize>
   <SchemaComments />

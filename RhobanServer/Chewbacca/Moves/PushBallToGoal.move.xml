@@ -65,11 +65,11 @@
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
     <const_coefs>
-      <float>2</float>
+      <float>1.2</float>
       <float>0</float>
     </const_coefs>
     <lin_coefs>
-      <float>-2</float>
+      <float>-1</float>
       <float>1</float>
     </lin_coefs>
     <square_coefs>
@@ -108,7 +108,7 @@
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
     <constants>
-      <float>-55</float>
+      <float>-70</float>
     </constants>
   </Constant>
   <BoundBlock>
@@ -165,7 +165,7 @@
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
     <correct_update>false</correct_update>
-    <P_coef>0.6</P_coef>
+    <P_coef>1.5</P_coef>
     <I_coef>0</I_coef>
     <D_coef>0</D_coef>
     <integral_discount>0.95</integral_discount>
@@ -189,7 +189,7 @@
         <fire />
       </BlockPredecessor>
       <BlockPredecessor>
-        <name>BlockPolynome1</name>
+        <name>MultiplexerBlock1</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
@@ -200,14 +200,14 @@
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
     <min_value>
-      <float>-0.3</float>
-      <float>-0.3</float>
-      <float>-0.3</float>
+      <float>-0.5</float>
+      <float>-0.5</float>
+      <float>-0.5</float>
     </min_value>
     <max_value>
-      <float>0.3</float>
-      <float>0.3</float>
-      <float>0.3</float>
+      <float>0.5</float>
+      <float>0.5</float>
+      <float>0.5</float>
     </max_value>
     <discount_factor>0</discount_factor>
   </VariationBoundBlock>
@@ -237,14 +237,14 @@
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
     <min_value>
+      <float>-1</float>
       <float>-0.8</float>
       <float>-0.8</float>
-      <float>0</float>
     </min_value>
     <max_value>
+      <float>1</float>
       <float>0.8</float>
       <float>0.8</float>
-      <float>0.6</float>
     </max_value>
   </BoundBlock>
   <BlockDigitalLevel>
@@ -264,7 +264,7 @@
       <float>0</float>
     </min_value>
     <max_value>
-      <float>2</float>
+      <float>10</float>
     </max_value>
     <output_low>0</output_low>
     <output_medium>0</output_medium>
@@ -283,7 +283,7 @@
     <entries>
       <BlockPredecessor>
         <name>MoveBlock</name>
-        <output_idx>1</output_idx>
+        <output_idx>0</output_idx>
         <condition />
         <fire />
       </BlockPredecessor>
@@ -298,9 +298,9 @@
     <max_value>
       <float>0</float>
     </max_value>
-    <output_low>-1</output_low>
+    <output_low>-0.8</output_low>
     <output_medium>0</output_medium>
-    <output_high>1</output_high>
+    <output_high>0.8</output_high>
     <hysteresis>false</hysteresis>
   </BlockDigitalLevel>
   <MultiplexerBlock>
@@ -412,32 +412,6 @@
     <outputs />
     <default_outputs />
   </MoveBlock>
-  <BlockPolynome>
-    <entries>
-      <BlockPredecessor>
-        <name>BlockDigitalLevel</name>
-        <output_idx>0</output_idx>
-        <condition />
-        <fire />
-      </BlockPredecessor>
-    </entries>
-    <name>BlockPolynome1</name>
-    <gain>1</gain>
-    <gainMin>-1</gainMin>
-    <gainMax>60</gainMax>
-    <const_coefs>
-      <float>1</float>
-    </const_coefs>
-    <lin_coefs>
-      <float>-1</float>
-    </lin_coefs>
-    <square_coefs>
-      <float>0</float>
-    </square_coefs>
-    <abs_coefs>
-      <float>0</float>
-    </abs_coefs>
-  </BlockPolynome>
   <PIDBlock>
     <entries>
       <BlockPredecessor>
@@ -452,7 +426,7 @@
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
     <correct_update>false</correct_update>
-    <P_coef>-0.4</P_coef>
+    <P_coef>-3</P_coef>
     <I_coef>0</I_coef>
     <D_coef>0</D_coef>
     <integral_discount>0.95</integral_discount>
@@ -496,6 +470,159 @@
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
   </BlockAddition>
+  <Constant>
+    <entries />
+    <name>Constant3</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <constants>
+      <float>40</float>
+      <float>-40</float>
+    </constants>
+  </Constant>
+  <BlockAddition>
+    <entries>
+      <BlockPredecessor>
+        <name>MoveBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>Constant3</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockAddition</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockAddition>
+  <BlockAddition>
+    <entries>
+      <BlockPredecessor>
+        <name>MoveBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>Constant3</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockAddition2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockAddition>
+  <BlockDivision>
+    <entries>
+      <BlockPredecessor>
+        <name>Constant2</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockAddition2</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockAddition</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockDivision2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockDivision>
+  <Constant>
+    <entries />
+    <name>Constant2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <constants>
+      <float>50</float>
+    </constants>
+  </Constant>
+  <MultiplexerBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockDigitalLevel1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockDivision2</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>Constant4</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockDivision2</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>MultiplexerBlock1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </MultiplexerBlock>
+  <BlockDigitalLevel>
+    <entries>
+      <BlockPredecessor>
+        <name>MoveBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockDigitalLevel1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <min_value>
+      <float>-30</float>
+    </min_value>
+    <max_value>
+      <float>30</float>
+    </max_value>
+    <output_low>0</output_low>
+    <output_medium>1</output_medium>
+    <output_high>2</output_high>
+    <hysteresis>false</hysteresis>
+  </BlockDigitalLevel>
+  <Constant>
+    <entries />
+    <name>Constant4</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <constants>
+      <float>0.6</float>
+    </constants>
+  </Constant>
   <SchemaComments />
   <frequency>100</frequency>
 </MotorPrimitive>
