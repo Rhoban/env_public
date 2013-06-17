@@ -1,0 +1,823 @@
+<?xml version="1.0"?>
+<MotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>Equilibre</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <AccelerometerBlock>
+    <entries />
+    <name>AccelerometerBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </AccelerometerBlock>
+  <PIDBlock>
+    <entries>
+      <BlockPredecessor>
+        <name>Constant</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>BlockMobileAverage</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>PIDBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <correct_update>false</correct_update>
+    <P_coef>50</P_coef>
+    <I_coef>8</I_coef>
+    <D_coef>0</D_coef>
+    <integral_discount>0.7</integral_discount>
+    <min_output>-30</min_output>
+    <max_output>30</max_output>
+    <min_integral_output>-30</min_integral_output>
+    <max_integral_output>30</max_integral_output>
+  </PIDBlock>
+  <Constant>
+    <entries />
+    <name>Constant</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <constants>
+      <float>0</float>
+    </constants>
+  </Constant>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>PIDBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Epaule G Long</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Epaule G Long</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Epaule D Long</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Epaule D Long</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>PIDBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-1</float>
+    </gains>
+  </BlockGain>
+  <BlockMobileAverage>
+    <entries>
+      <BlockPredecessor>
+        <name>AccelerometerBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockMobileAverage</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <discount_factor>0.95</discount_factor>
+  </BlockMobileAverage>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockMobileAverage1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>15</float>
+    </gains>
+  </BlockGain>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Cheville G1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Cheville G</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-1</float>
+    </gains>
+  </BlockGain>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain2</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Cheville D1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Cheville D</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockMobileAverage>
+    <entries>
+      <BlockPredecessor>
+        <name>AccelerometerBlock</name>
+        <output_idx>3</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockMobileAverage1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <discount_factor>0.3</discount_factor>
+  </BlockMobileAverage>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockMobileAverage1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain3</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-10</float>
+    </gains>
+  </BlockGain>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain3</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Genou G1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Genou G</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain4</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Genou D1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Genou D</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain3</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain4</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-1</float>
+    </gains>
+  </BlockGain>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockMobileAverage1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain5</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-10</float>
+    </gains>
+  </BlockGain>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain5</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain6</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-1</float>
+    </gains>
+  </BlockGain>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain5</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Cuisse G1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Cuisse G</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain6</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Cuisse D1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Cuisse D</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>PIDBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain7</name>
+    <gain>2</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-0.5</float>
+    </gains>
+  </BlockGain>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain7</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Bassin Long</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Bassin Long</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>PIDBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain8</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>2</float>
+    </gains>
+  </BlockGain>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain8</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Cuisse G</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Cuisse G</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain8</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain9</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-1</float>
+    </gains>
+  </BlockGain>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain9</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Cuisse D2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Cuisse D</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>PIDBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain10</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-0.3</float>
+    </gains>
+  </BlockGain>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain10</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Cheville G2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Cheville G</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain10</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain11</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-1</float>
+    </gains>
+  </BlockGain>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain11</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Cheville D2</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Cheville D</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockSigmabanLegKinematic>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain16</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockSigmabanLegKinematic</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <right_leg>false</right_leg>
+    <tibia_length>80</tibia_length>
+    <femur_length>115</femur_length>
+  </BlockSigmabanLegKinematic>
+  <BlockSigmabanLegKinematic>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain16</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockSigmabanLegKinematic1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <right_leg>true</right_leg>
+    <tibia_length>80</tibia_length>
+    <femur_length>115</femur_length>
+  </BlockSigmabanLegKinematic>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain12</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Hanche D Lat</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Hanche D Lat</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockSigmabanLegKinematic1</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Cuisse D3</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Cuisse D</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockSigmabanLegKinematic1</name>
+        <output_idx>2</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Genou D</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Genou D</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockSigmabanLegKinematic1</name>
+        <output_idx>3</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Cheville D</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Cheville D</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain13</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Pied D</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Pied D</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain14</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Hanche G Lat</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Hanche G Lat</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockSigmabanLegKinematic</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Cuisse D</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Cuisse D</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockSigmabanLegKinematic</name>
+        <output_idx>2</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Genou G</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Genou G</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockSigmabanLegKinematic</name>
+        <output_idx>3</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Cheville G</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Cheville G</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockServo>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockGain15</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>Pied G</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+    <servo_name>Pied G</servo_name>
+    <unit>1</unit>
+    <relative>1</relative>
+  </BlockServo>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockSigmabanLegKinematic1</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain12</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-1</float>
+    </gains>
+  </BlockGain>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockSigmabanLegKinematic1</name>
+        <output_idx>4</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain13</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-1</float>
+    </gains>
+  </BlockGain>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockSigmabanLegKinematic</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain14</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-1</float>
+    </gains>
+  </BlockGain>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>BlockSigmabanLegKinematic</name>
+        <output_idx>4</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain15</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>-1</float>
+    </gains>
+  </BlockGain>
+  <BlockGain>
+    <entries>
+      <BlockPredecessor>
+        <name>PIDBlock</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockGain16</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <gains>
+      <float>0.01</float>
+    </gains>
+  </BlockGain>
+  <SchemaComments />
+  <frequency>100</frequency>
+</MotorPrimitive>
