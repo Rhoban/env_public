@@ -16,8 +16,8 @@
       <clipping>true</clipping>
     </BallBlock>
     <Position>
-      <X>-28</X>
-      <Y>211</Y>
+      <X>-142</X>
+      <Y>189.84</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -104,8 +104,8 @@
       </abs_coefs>
     </BlockPolynome>
     <Position>
-      <X>156</X>
-      <Y>121</Y>
+      <X>284.28166666666669</X>
+      <Y>109.11999999999999</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -145,8 +145,8 @@
       <gainMax>60</gainMax>
     </SnapshotBlock>
     <Position>
-      <X>616</X>
-      <Y>293</Y>
+      <X>580</X>
+      <Y>211</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -171,8 +171,8 @@
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>374</X>
-      <Y>189.84</Y>
+      <X>446</X>
+      <Y>262</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -197,8 +197,8 @@
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>597.15166666666664</X>
-      <Y>571</Y>
+      <X>513.15166666666664</X>
+      <Y>396.96000000000004</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -221,8 +221,8 @@
       </clock_speeds>
     </ChronoBlock>
     <Position>
-      <X>284</X>
-      <Y>85</Y>
+      <X>374</X>
+      <Y>98.94</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -268,8 +268,8 @@
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>416</X>
-      <Y>129</Y>
+      <X>480</X>
+      <Y>98.94</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -353,8 +353,8 @@
       </gains>
     </BlockGain>
     <Position>
-      <X>260</X>
-      <Y>216</Y>
+      <X>284.28166666666669</X>
+      <Y>299.88</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -428,8 +428,8 @@
       </gains>
     </BlockGain>
     <Position>
-      <X>308</X>
-      <Y>336</Y>
+      <X>328.52666666666664</X>
+      <Y>413.04</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -472,8 +472,8 @@
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>480</X>
-      <Y>262</Y>
+      <X>446</X>
+      <Y>299.88</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -498,8 +498,8 @@
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>510</X>
-      <Y>306</Y>
+      <X>446</X>
+      <Y>351</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -727,8 +727,8 @@
       </abs_coefs>
     </BlockPolynome>
     <Position>
-      <X>218</X>
-      <Y>496</Y>
+      <X>328.52666666666664</X>
+      <Y>557.06</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -759,8 +759,8 @@
       </clock_speeds>
     </ChronoBlock>
     <Position>
-      <X>392</X>
-      <Y>464</Y>
+      <X>446</X>
+      <Y>557.06</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -818,8 +818,8 @@
       </clock_speeds>
     </ChronoBlock>
     <Position>
-      <X>392</X>
-      <Y>518</Y>
+      <X>446</X>
+      <Y>592</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -975,8 +975,8 @@
       </clock_speeds>
     </ChronoBlock>
     <Position>
-      <X>289</X>
-      <Y>141</Y>
+      <X>374</X>
+      <Y>137</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -1046,8 +1046,8 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>181.54999999999998</X>
-      <Y>341.96</Y>
+      <X>204.97333333333324</X>
+      <Y>380.96000000000004</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -1072,8 +1072,8 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>185</X>
-      <Y>391</Y>
+      <X>204.97333333333324</X>
+      <Y>419</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -1092,11 +1092,57 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <Commentaires>This moves records the last positions of ball and goal relatively to robot direction (indepandently of head pan and tilt)</Commentaires>
+      <Commentaires>This moves records the last positions of ball and goal relatively to robot direction (independently of head pan and tilt).
+
+Outputs are object coordinates and last detection age</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>-91</X>
-      <Y>-16</Y>
+      <X>-259</X>
+      <Y>-46</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>If the ball is detected for at least half a second or if the goal is detected for at least a tenth of second then the pan and tilt are updated</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>234.97333333333324</X>
+      <Y>45</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>Chronos measure time without seeing the objects</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>298.8416666666667</X>
+      <Y>519</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock3</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>Computation of the object pan and tilt relative to the robots (in degrees) from:
+1. the apparent pan and tilt on the image (in [-1,1]*[-1,1])
+2. the pan and scan of the camera</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>146.30333333333329</X>
+      <Y>211</Y>
     </Position>
   </GraphicalBlock>
   <hsize>500</hsize>
