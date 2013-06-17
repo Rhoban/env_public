@@ -71,9 +71,9 @@ class RobocupStm:
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <loop>RobocupStm.check_fall(self.connection)</loop>
-      <enter>self.connection.SchedulerStartMove("MarcheBasse",0,200)
+      <enter>self.connection.SchedulerStartMove("MarcheBasse",0,500)
 self.connection.SchedulerStartMove("TrackBallAndGoal",0,100)
-self.connection.SchedulerStartMove("PositionBasse",0,200)</enter>
+self.connection.SchedulerStartMove("PositionBasse",0,500)</enter>
       <exit>self.connection.SchedulerStopMove("MarcheBasse",200)
 self.connection.SchedulerStopMove("TrackBallAndGoal",200)
 self.connection.SchedulerStopMove("PositionBasse",200)</exit>
