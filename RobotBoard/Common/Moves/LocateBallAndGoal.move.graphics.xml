@@ -62,7 +62,7 @@
       <gainMax>60</gainMax>
     </SnapshotBlock>
     <Position>
-      <X>580</X>
+      <X>633</X>
       <Y>137</Y>
     </Position>
   </GraphicalBlock>
@@ -172,7 +172,7 @@
     </BlockAddition>
     <Position>
       <X>446</X>
-      <Y>262</Y>
+      <Y>286</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -268,12 +268,12 @@
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>480</X>
-      <Y>98.94</Y>
+      <X>489.855</X>
+      <Y>109.11999999999999</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0.4398840069770813</output_value>
+    <output_value>0.66015398502349854</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -282,7 +282,7 @@
     <TargetName>BlockDigitalLevel</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
+    <output_value>1</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -358,7 +358,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0.90478533506393433</output_value>
+    <output_value>-0.33982294797897339</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -367,7 +367,7 @@
     <TargetName>BlockGain</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-0.77613967657089233</output_value>
+    <output_value>0.00758705148473382</output_value>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -394,7 +394,7 @@
     <TargetName>BlockGain</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>27.1435604095459</output_value>
+    <output_value>-10.19468879699707</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -433,7 +433,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-42.97265625</output_value>
+    <output_value>11.718711853027344</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -442,7 +442,7 @@
     <TargetName>BlockAddition</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>7.65625</output_value>
+    <output_value>-37.51953125</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -473,7 +473,7 @@
     </BlockAddition>
     <Position>
       <X>446</X>
-      <Y>299.88</Y>
+      <Y>323.88</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -499,11 +499,11 @@
     </BlockAddition>
     <Position>
       <X>446</X>
-      <Y>351</Y>
+      <Y>361.76</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-17.463142395019531</output_value>
+    <output_value>0.17070865631103516</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -512,7 +512,7 @@
     <TargetName>BlockAddition1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-42.97265625</output_value>
+    <output_value>11.718711853027344</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -539,7 +539,7 @@
     <TargetName>BlockAddition3</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>7.65625</output_value>
+    <output_value>-37.51953125</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -548,7 +548,7 @@
     <TargetName>BlockAddition3</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-15.829095840454102</output_value>
+    <output_value>1.5240234136581421</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -557,7 +557,7 @@
     <TargetName>SnapshotBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-9.8068923950195312</output_value>
+    <output_value>-37.348823547363281</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -566,7 +566,7 @@
     <TargetName>SnapshotBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-72.97265625</output_value>
+    <output_value>-18.281288146972656</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -575,7 +575,7 @@
     <TargetName>SnapshotBlock1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>30.15625</output_value>
+    <output_value>-15.01953125</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -613,15 +613,16 @@
         <string>ball_pan</string>
         <string>ball_tilt</string>
         <string>ball_age</string>
+        <string>ball_locked</string>
       </labels>
     </MoveOutput>
     <Position>
-      <X>892</X>
-      <Y>146</Y>
+      <X>864</X>
+      <Y>93.16</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-12.307893753051758</output_value>
+    <output_value>1.5240234136581421</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -630,7 +631,7 @@
     <TargetName>MoveOutput</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-0.21158881485462189</output_value>
+    <output_value>-37.348823547363281</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -782,7 +783,7 @@
     <TargetName>MoveOutput</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>4.0664057731628418</output_value>
+    <output_value>-81.738319396972656</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -791,7 +792,7 @@
     <TargetName>MoveOutput1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-5.9492182731628418</output_value>
+    <output_value>-24.30078125</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -832,7 +833,7 @@
     <TargetName>ChronoBlock2</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>14.398944854736328</output_value>
+    <output_value>718.88037109375</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1051,7 +1052,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>42.97265625</output_value>
+    <output_value>-11.718711853027344</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1077,7 +1078,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>7.65625</output_value>
+    <output_value>-37.51953125</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1141,10 +1142,19 @@ Outputs are object coordinates and last detection age</Commentaires>
 2. the pan and scan of the camera</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>146.30333333333329</X>
-      <Y>211</Y>
+      <X>116.61833333333328</X>
+      <Y>189.08</Y>
     </Position>
   </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>1</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>3</TargetIndex>
+    <SourceName>BlockDigitalLevel</SourceName>
+    <TargetName>MoveOutput</TargetName>
+  </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
   <SchemaComments />
