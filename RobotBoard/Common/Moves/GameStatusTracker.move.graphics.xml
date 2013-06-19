@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>GameStatusTracker</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <GraphicalBlock>
+    <RefereeBlock>
+      <entries />
+      <name>RefereeBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <refresh_frequency>5</refresh_frequency>
+    </RefereeBlock>
+    <Position>
+      <X>130</X>
+      <Y>160</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockDigitalLevel>
+      <entries>
+        <BlockPredecessor>
+          <name>RefereeBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockDigitalLevel</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <min_value>
+        <float>2.9</float>
+      </min_value>
+      <max_value>
+        <float>3.1</float>
+      </max_value>
+      <output_low>0</output_low>
+      <output_medium>1</output_medium>
+      <output_high>0</output_high>
+      <hysteresis>false</hysteresis>
+    </BlockDigitalLevel>
+    <Position>
+      <X>428</X>
+      <Y>160</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>RefereeBlock</SourceName>
+    <TargetName>BlockDigitalLevel</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <MoveOutput>
+      <entries />
+      <name>MoveOutput</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <labels>
+        <string>Playing</string>
+      </labels>
+    </MoveOutput>
+    <Position>
+      <X>654</X>
+      <Y>154.04</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDigitalLevel</SourceName>
+    <TargetName>MoveOutput</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>Verify if the status should force us to play</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>337.65333333333331</X>
+      <Y>112</Y>
+    </Position>
+  </GraphicalBlock>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>
