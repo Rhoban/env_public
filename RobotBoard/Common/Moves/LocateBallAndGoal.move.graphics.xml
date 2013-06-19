@@ -9,15 +9,15 @@
     <BallBlock>
       <entries />
       <name>BallBlock</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
+      <gain>-1.90000033</gain>
+      <gainMin>-1.90000033</gainMin>
       <gainMax>60</gainMax>
       <refresh_frequency>5</refresh_frequency>
       <clipping>true</clipping>
     </BallBlock>
     <Position>
-      <X>-142</X>
-      <Y>189.84</Y>
+      <X>-127</X>
+      <Y>98.94</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -30,7 +30,7 @@
       <refresh_frequency>5</refresh_frequency>
     </GoalBlock>
     <Position>
-      <X>-192</X>
+      <X>-148</X>
       <Y>323.88</Y>
     </Position>
   </GraphicalBlock>
@@ -62,8 +62,8 @@
       <gainMax>60</gainMax>
     </SnapshotBlock>
     <Position>
-      <X>633</X>
-      <Y>137</Y>
+      <X>732</X>
+      <Y>98.94</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -105,7 +105,7 @@
     </BlockPolynome>
     <Position>
       <X>284.28166666666669</X>
-      <Y>109.11999999999999</Y>
+      <Y>98.94</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -145,8 +145,8 @@
       <gainMax>60</gainMax>
     </SnapshotBlock>
     <Position>
-      <X>580</X>
-      <Y>211</Y>
+      <X>829</X>
+      <Y>286</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -171,7 +171,7 @@
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>446</X>
+      <X>473.94666666666672</X>
       <Y>286</Y>
     </Position>
   </GraphicalBlock>
@@ -197,7 +197,7 @@
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>513.15166666666664</X>
+      <X>473.94666666666672</X>
       <Y>396.96000000000004</Y>
     </Position>
   </GraphicalBlock>
@@ -221,7 +221,7 @@
       </clock_speeds>
     </ChronoBlock>
     <Position>
-      <X>374</X>
+      <X>395.92666666666673</X>
       <Y>98.94</Y>
     </Position>
   </GraphicalBlock>
@@ -268,8 +268,8 @@
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>489.855</X>
-      <Y>109.11999999999999</Y>
+      <X>513.15166666666664</X>
+      <Y>98.94</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -428,8 +428,8 @@
       </gains>
     </BlockGain>
     <Position>
-      <X>328.52666666666664</X>
-      <Y>413.04</Y>
+      <X>366.7399999999999</X>
+      <Y>438.93313588933768</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -472,7 +472,7 @@
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>446</X>
+      <X>473.94666666666672</X>
       <Y>323.88</Y>
     </Position>
   </GraphicalBlock>
@@ -498,8 +498,8 @@
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>446</X>
-      <Y>361.76</Y>
+      <X>473.94666666666672</X>
+      <Y>450.85313588933769</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -604,6 +604,12 @@
           <condition />
           <fire />
         </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
       </entries>
       <name>MoveOutput</name>
       <gain>1</gain>
@@ -617,7 +623,7 @@
       </labels>
     </MoveOutput>
     <Position>
-      <X>864</X>
+      <X>950</X>
       <Y>93.16</Y>
     </Position>
   </GraphicalBlock>
@@ -686,7 +692,7 @@
       </labels>
     </MoveOutput>
     <Position>
-      <X>864</X>
+      <X>950</X>
       <Y>286</Y>
     </Position>
   </GraphicalBlock>
@@ -728,8 +734,8 @@
       </abs_coefs>
     </BlockPolynome>
     <Position>
-      <X>328.52666666666664</X>
-      <Y>557.06</Y>
+      <X>366.7399999999999</X>
+      <Y>562.23188153360263</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -760,8 +766,8 @@
       </clock_speeds>
     </ChronoBlock>
     <Position>
-      <X>446</X>
-      <Y>557.06</Y>
+      <X>488.9083333333333</X>
+      <Y>543.11999999999989</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -819,8 +825,8 @@
       </clock_speeds>
     </ChronoBlock>
     <Position>
-      <X>446</X>
-      <Y>592</Y>
+      <X>488.9083333333333</X>
+      <Y>590.11188153360263</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -869,8 +875,8 @@
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>-105</X>
-      <Y>345</Y>
+      <X>-31.065742159676844</X>
+      <Y>450.85313588933769</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -908,8 +914,8 @@
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>-25</X>
-      <Y>351</Y>
+      <X>28.781666666666673</X>
+      <Y>450.85313588933769</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -976,8 +982,8 @@
       </clock_speeds>
     </ChronoBlock>
     <Position>
-      <X>374</X>
-      <Y>137</Y>
+      <X>395.92666666666673</X>
+      <Y>152.96</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -1047,8 +1053,8 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>204.97333333333324</X>
-      <Y>380.96000000000004</Y>
+      <X>284.28166666666669</X>
+      <Y>420.45788850277881</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -1073,8 +1079,8 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>204.97333333333324</X>
-      <Y>419</Y>
+      <X>284.28166666666669</X>
+      <Y>467.41676655179327</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -1098,8 +1104,8 @@
 Outputs are object coordinates and last detection age</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>-259</X>
-      <Y>-46</Y>
+      <X>-176</X>
+      <Y>11.079999999999998</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -1112,8 +1118,8 @@ Outputs are object coordinates and last detection age</Commentaires>
       <Commentaires>If the ball is detected for at least half a second or if the goal is detected for at least a tenth of second then the pan and tilt are updated</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>234.97333333333324</X>
-      <Y>45</Y>
+      <X>284.28166666666669</X>
+      <Y>43</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -1126,8 +1132,8 @@ Outputs are object coordinates and last detection age</Commentaires>
       <Commentaires>Chronos measure time without seeing the objects</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>298.8416666666667</X>
-      <Y>519</Y>
+      <X>307.21592450698978</X>
+      <Y>651.28105923799717</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -1142,8 +1148,8 @@ Outputs are object coordinates and last detection age</Commentaires>
 2. the pan and scan of the camera</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>116.61833333333328</X>
-      <Y>189.08</Y>
+      <X>204.97333333333324</X>
+      <Y>189.84</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -1155,6 +1161,20 @@ Outputs are object coordinates and last detection age</Commentaires>
     <SourceName>BlockDigitalLevel</SourceName>
     <TargetName>MoveOutput</TargetName>
   </GraphicalBlockLink>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock4</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>At least two bars must be seen in order to consider that the goal has been seen</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>-148</X>
+      <Y>497.61590941030727</Y>
+    </Position>
+  </GraphicalBlock>
   <hsize>500</hsize>
   <vsize>500</vsize>
   <SchemaComments />
