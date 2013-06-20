@@ -24,7 +24,7 @@
       </labels>
     </MoveOutput>
     <Position>
-      <X>749</X>
+      <X>960</X>
       <Y>174</Y>
     </Position>
   </GraphicalBlock>
@@ -41,6 +41,7 @@
         <string>goal_left</string>
         <string>goal_right</string>
         <string>ball_pan</string>
+        <string>ball_tilt</string>
       </outputs>
       <default_outputs>
         <float>0</float>
@@ -63,8 +64,8 @@
       <Commentaires>if the ball_pan is less or greater than goal_left or goal_right then the cap is corrected</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>147</X>
-      <Y>50</Y>
+      <X>224</X>
+      <Y>60</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -373,15 +374,215 @@
     <SourceName>BlockDigitalLevel1</SourceName>
     <TargetName>BlockAddition2</TargetName>
   </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockDynamicGain>
+      <entries />
+      <name>BlockDynamicGain</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockDynamicGain>
+    <Position>
+      <X>788</X>
+      <Y>179.96</Y>
+    </Position>
+  </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>10</output_value>
+    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockAddition2</SourceName>
+    <TargetName>BlockDynamicGain</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDynamicGain</SourceName>
     <TargetName>MoveOutput</TargetName>
   </GraphicalBlockLink>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>if ball is close reduce correction</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>712.21</X>
+      <Y>129.06</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockAddition>
+      <entries />
+      <name>BlockAddition3</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockAddition>
+    <Position>
+      <X>335.16666666666669</X>
+      <Y>346</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>3</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>MoveBlock</SourceName>
+    <TargetName>BlockAddition3</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>60</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>224</X>
+      <Y>346</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>Constant</SourceName>
+    <TargetName>BlockAddition3</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockDivision>
+      <entries />
+      <name>BlockDivision</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockDivision>
+    <Position>
+      <X>577</X>
+      <Y>346</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>40</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>475.4</X>
+      <Y>301</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Constant1</SourceName>
+    <TargetName>BlockDivision</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockAddition3</SourceName>
+    <TargetName>BlockDivision</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BoundBlock>
+      <entries />
+      <name>BoundBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <min_value>
+        <float>0</float>
+      </min_value>
+      <max_value>
+        <float>1</float>
+      </max_value>
+    </BoundBlock>
+    <Position>
+      <X>660</X>
+      <Y>346</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDivision</SourceName>
+    <TargetName>BoundBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BoundBlock</SourceName>
+    <TargetName>BlockDynamicGain</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>    [min_tilt,max_tilt]
+               -&gt;
+[0, min_tilt + max_tilt]</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>219.67166666666662</X>
+      <Y>389</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock3</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>Computing gain according
+to delta to min_tilt.
+Above the specified value,
+output is bound to 1</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>475.4</X>
+      <Y>389</Y>
+    </Position>
+  </GraphicalBlock>
   <hsize>500</hsize>
   <vsize>500</vsize>
   <SchemaComments />
