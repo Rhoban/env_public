@@ -24,6 +24,7 @@ class RobocupStm:
         global fallface
         info = connection.SchedulerGetOutputValues_response("FallDetector",["fallback","fallface"])
         if info and len(info) &gt;= 1 and len(info[0]) &gt;= 2:
+             print(info)
              fallback = info[0][0] &gt; 0.1
              fallface = info[0][1] &gt; 0.1
              print(str(fallback) + " " + str(fallface))
@@ -41,7 +42,7 @@ class RobocupStm:
     </StmPreambleBlock>
     <Position>
       <X>-200</X>
-      <Y>102</Y>
+      <Y>-20.914575675773392</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -79,7 +80,7 @@ self.connection.SchedulerStopMove("TrackBallAndGoal",200)
 self.connection.SchedulerStopMove("PositionBasse",200)</exit>
     </StmStateBlock>
     <Position>
-      <X>130.85685646844632</X>
+      <X>127.85685646844632</X>
       <Y>630.27436247416665</Y>
     </Position>
   </GraphicalBlock>
@@ -138,7 +139,7 @@ retourne = False</enter>
       <loop>RobocupStm.check_releve(self.connection)</loop>
       <enter>releve = False
 self.connection.SchedulerStartMove("Relevage",0,200)</enter>
-      <exit>self.connection.SchedulerStopMove("Relevage",200)</exit>
+      <exit>self.connection.SchedulerStopMove("Relevage",500)</exit>
     </StmStateBlock>
     <Position>
       <X>796.56849989617388</X>
