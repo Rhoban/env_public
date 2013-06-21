@@ -9,7 +9,7 @@
     <MoveOutput>
       <entries>
         <BlockPredecessor>
-          <name>BlockDynamicGain</name>
+          <name>BlockDynamicGain1</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -24,7 +24,7 @@
       </labels>
     </MoveOutput>
     <Position>
-      <X>960</X>
+      <X>1068</X>
       <Y>174</Y>
     </Position>
   </GraphicalBlock>
@@ -35,11 +35,14 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <Commentaires>if the ball_pan is less or greater than goal_left or goal_right then the cap is corrected</Commentaires>
+      <Commentaires>if the ball_pan is less or greater than:
+    goal_left or goal_right
+then:
+    the cap is corrected</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>224</X>
-      <Y>60</Y>
+      <X>259.74666666666667</X>
+      <Y>54.299999999999983</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -68,7 +71,7 @@
       </gains>
     </BlockGain>
     <Position>
-      <X>267</X>
+      <X>224</X>
       <Y>150.06</Y>
     </Position>
   </GraphicalBlock>
@@ -77,7 +80,7 @@
       <entries>
         <BlockPredecessor>
           <name>MoveBlock1</name>
-          <output_idx>1</output_idx>
+          <output_idx>2</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
@@ -98,8 +101,8 @@
       </gains>
     </BlockGain>
     <Position>
-      <X>267</X>
-      <Y>200</Y>
+      <X>224</X>
+      <Y>205.96</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -124,12 +127,12 @@
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>398</X>
-      <Y>150.06</Y>
+      <X>367.57333333333332</X>
+      <Y>156.02</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-3.7717702388763428</output_value>
+    <output_value>-28.1865234375</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -138,7 +141,7 @@
     <TargetName>BlockAddition</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>17.402803421020508</output_value>
+    <output_value>4.3009090423583984</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -168,8 +171,8 @@
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>398</X>
-      <Y>219</Y>
+      <X>367.57333333333332</X>
+      <Y>211.92000000000002</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -182,7 +185,7 @@
     <TargetName>BlockAddition1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-17.402803421020508</output_value>
+    <output_value>-4.3009090423583984</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -208,16 +211,16 @@
         <float>0</float>
       </min_value>
       <max_value>
-        <float>0</float>
+        <float>10</float>
       </max_value>
-      <output_low>10</output_low>
-      <output_medium>0</output_medium>
+      <output_low>-15</output_low>
+      <output_medium>-5</output_medium>
       <output_high>0</output_high>
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>477.79999999999995</X>
-      <Y>150.06</Y>
+      <X>475.4</X>
+      <Y>156.02</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -238,20 +241,20 @@
         <float>0</float>
       </min_value>
       <max_value>
-        <float>0</float>
+        <float>10</float>
       </max_value>
-      <output_low>-10</output_low>
-      <output_medium>0</output_medium>
+      <output_low>15</output_low>
+      <output_medium>5</output_medium>
       <output_high>0</output_high>
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
       <X>475.4</X>
-      <Y>219</Y>
+      <Y>211.92000000000002</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>13.631033897399902</output_value>
+    <output_value>-23.885612487792969</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -260,7 +263,7 @@
     <TargetName>BlockDigitalLevel</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-17.402803421020508</output_value>
+    <output_value>-4.3009090423583984</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -272,13 +275,13 @@
     <BlockAddition>
       <entries>
         <BlockPredecessor>
-          <name>BlockDigitalLevel</name>
+          <name>BlockDynamicGain2</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>BlockDigitalLevel1</name>
+          <name>BlockDynamicGain3</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -290,28 +293,10 @@
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>609</X>
+      <X>672.72333333333336</X>
       <Y>179.96</Y>
     </Position>
   </GraphicalBlock>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockDigitalLevel</SourceName>
-    <TargetName>BlockAddition2</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>-10</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>BlockDigitalLevel1</SourceName>
-    <TargetName>BlockAddition2</TargetName>
-  </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockDynamicGain>
       <entries>
@@ -334,27 +319,18 @@
       <gainMax>60</gainMax>
     </BlockDynamicGain>
     <Position>
-      <X>788</X>
+      <X>839.14666666666665</X>
       <Y>179.96</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-10</output_value>
+    <output_value>-14.369914054870606</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockAddition2</SourceName>
     <TargetName>BlockDynamicGain</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>-10</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockDynamicGain</SourceName>
-    <TargetName>MoveOutput</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <CommentsBlock>
@@ -473,7 +449,7 @@
     <TargetName>BlockDivision</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>57.863868713378906</output_value>
+    <output_value>28.956333160400391</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -508,7 +484,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>1.4465967416763306</output_value>
+    <output_value>0.72390836477279663</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -517,7 +493,7 @@
     <TargetName>BoundBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>1</output_value>
+    <output_value>0.72390836477279663</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -569,20 +545,24 @@ output is bound to 1</Commentaires>
       <inputs />
       <outputs>
         <string>goal_left</string>
+        <string>goal_left_age</string>
         <string>goal_right</string>
+        <string>goal_right_age</string>
       </outputs>
       <default_outputs>
         <float>-30</float>
+        <float>10</float>
         <float>30</float>
+        <float>10</float>
       </default_outputs>
     </MoveBlock>
     <Position>
-      <X>-34.526666666666657</X>
-      <Y>136.12</Y>
+      <X>-51.589999999999996</X>
+      <Y>80.259999999999991</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>3.7717702388763428</output_value>
+    <output_value>28.1865234375</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -594,7 +574,7 @@ output is bound to 1</Commentaires>
     <output_value>0</output_value>
     <Condition />
     <Fire />
-    <SourceIndex>1</SourceIndex>
+    <SourceIndex>2</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>MoveBlock1</SourceName>
     <TargetName>BlockGain1</TargetName>
@@ -619,11 +599,11 @@ output is bound to 1</Commentaires>
     </MoveBlock>
     <Position>
       <X>-61</X>
-      <Y>240.07999999999998</Y>
+      <Y>279.08</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>17.402803421020508</output_value>
+    <output_value>4.3009090423583984</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -632,7 +612,7 @@ output is bound to 1</Commentaires>
     <TargetName>BlockGain</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>17.402803421020508</output_value>
+    <output_value>4.3009090423583984</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -641,13 +621,364 @@ output is bound to 1</Commentaires>
     <TargetName>BlockGain1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-2.1361300945281982</output_value>
+    <output_value>-31.043666839599609</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>MoveBlock</SourceName>
     <TargetName>BlockAddition3</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <ChronoBlock>
+      <entries />
+      <name>ChronoBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <clock_speeds>
+        <float>0.1</float>
+      </clock_speeds>
+    </ChronoBlock>
+    <Position>
+      <X>739.75666666666666</X>
+      <Y>30.299999999999983</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BoundBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>ChronoBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BoundBlock1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <min_value>
+        <float>0</float>
+      </min_value>
+      <max_value>
+        <float>1</float>
+      </max_value>
+    </BoundBlock>
+    <Position>
+      <X>851.06666666666672</X>
+      <Y>30.299999999999983</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>17.236850738525391</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>ChronoBlock</SourceName>
+    <TargetName>BoundBlock1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock4</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>Not correcting at
+move beginning</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>763.75666666666666</X>
+      <Y>-37.119999999999976</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockDynamicGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BoundBlock1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockDynamicGain</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockDynamicGain1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockDynamicGain>
+    <Position>
+      <X>958</X>
+      <Y>179.96</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>-10.402500152587891</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockDynamicGain</SourceName>
+    <TargetName>BlockDynamicGain1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-10.402500152587891</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDynamicGain1</SourceName>
+    <TargetName>MoveOutput</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>1</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BoundBlock1</SourceName>
+    <TargetName>BlockDynamicGain1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock5</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>Correction is reduced if the line age is high</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>259.74666666666667</X>
+      <Y>-61</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockPolynome>
+      <entries>
+        <BlockPredecessor>
+          <name>MoveBlock1</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>MoveBlock1</name>
+          <output_idx>3</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockPolynome</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <const_coefs>
+        <float>1</float>
+        <float>1</float>
+      </const_coefs>
+      <lin_coefs>
+        <float>-0.04</float>
+        <float>-0.04</float>
+      </lin_coefs>
+      <square_coefs>
+        <float>0</float>
+        <float>0</float>
+      </square_coefs>
+      <abs_coefs>
+        <float>0</float>
+        <float>0</float>
+      </abs_coefs>
+    </BlockPolynome>
+    <Position>
+      <X>259.74666666666667</X>
+      <Y>-15</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0.8401150107383728</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>MoveBlock1</SourceName>
+    <TargetName>BlockPolynome</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>178.349853515625</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>3</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>MoveBlock1</SourceName>
+    <TargetName>BlockPolynome</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BoundBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockPolynome</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockPolynome</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BoundBlock2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <min_value>
+        <float>0</float>
+        <float>0</float>
+      </min_value>
+      <max_value>
+        <float>1</float>
+        <float>1</float>
+      </max_value>
+    </BoundBlock>
+    <Position>
+      <X>425.79666666666662</X>
+      <Y>-7.02</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0.95799422264099121</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockPolynome</SourceName>
+    <TargetName>BoundBlock2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-7.9174928665161133</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockPolynome</SourceName>
+    <TargetName>BoundBlock2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockDynamicGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BoundBlock2</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockDynamicGain2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockDynamicGain>
+    <Position>
+      <X>611</X>
+      <Y>156.02</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockDynamicGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BoundBlock2</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockDynamicGain3</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockDynamicGain>
+    <Position>
+      <X>611</X>
+      <Y>211.92000000000002</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0.95799422264099121</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BoundBlock2</SourceName>
+    <TargetName>BlockDynamicGain2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-15</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockDigitalLevel</SourceName>
+    <TargetName>BlockDynamicGain2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BoundBlock2</SourceName>
+    <TargetName>BlockDynamicGain3</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>15</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockDigitalLevel1</SourceName>
+    <TargetName>BlockDynamicGain3</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>-14.369914054870606</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDynamicGain2</SourceName>
+    <TargetName>BlockAddition2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockDynamicGain3</SourceName>
+    <TargetName>BlockAddition2</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
