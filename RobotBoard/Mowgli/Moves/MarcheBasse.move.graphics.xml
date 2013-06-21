@@ -54,6 +54,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Hanche D Lat</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -77,6 +78,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cuisse D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -100,6 +102,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Genou D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -123,6 +126,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cheville D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -146,6 +150,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Pied D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -196,6 +201,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Hanche G Lat</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -219,6 +225,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cuisse G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -242,6 +249,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Genou G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -265,6 +273,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cheville G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -288,6 +297,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Pied G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -375,18 +385,25 @@
   </GraphicalBlock>
   <GraphicalBlock>
     <EntrySinus>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>ChronoBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>EntrySinus</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <period>0.625</period>
+      <period>1</period>
       <shift>0</shift>
       <smooth_update>true</smooth_update>
     </EntrySinus>
     <Position>
-      <X>-232</X>
-      <Y>326</Y>
+      <X>-233.78282745894</X>
+      <Y>325</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -421,6 +438,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Epaule D Lat</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -444,6 +462,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Epaule G Lat</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -768,8 +787,8 @@
       </clock_speeds>
     </ChronoBlock>
     <Position>
-      <X>-386</X>
-      <Y>-63.274125435573524</Y>
+      <X>-1427.5213612823409</X>
+      <Y>378.27864391894343</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -789,7 +808,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>7</float>
+        <float>5</float>
       </constants>
     </Constant>
     <Position>
@@ -811,6 +830,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Bassin Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -856,6 +876,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Bassin Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -1003,6 +1024,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cheville D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -1049,6 +1071,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cheville G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -1096,6 +1119,12 @@
         </BlockPredecessor>
         <BlockPredecessor>
           <name>BlockMobileAverage</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockPolynome</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -1195,6 +1224,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Hanche D Lat</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -1241,6 +1271,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Hanche G Lat</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -1312,6 +1343,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Pied D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -1335,6 +1367,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Pied G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -1367,6 +1400,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cheville D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -1390,6 +1424,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cheville G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -1500,6 +1535,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Bassin Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -1599,6 +1635,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Epaule D Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -1622,6 +1659,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Epaule G Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -1802,6 +1840,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Genou G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -1825,6 +1864,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Genou D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -2213,17 +2253,24 @@ Frontale</Commentaires>
   </GraphicalBlock>
   <GraphicalBlock>
     <EntrySinus>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>ChronoBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>EntrySinus1</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <period>0.625</period>
+      <period>1</period>
       <shift>0</shift>
       <smooth_update>true</smooth_update>
     </EntrySinus>
     <Position>
-      <X>-974.96639494273575</X>
+      <X>-981.13130031398873</X>
       <Y>204.46226828159684</Y>
     </Position>
   </GraphicalBlock>
@@ -2317,6 +2364,7 @@ Frontale</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Hanche D Rot</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -2340,6 +2388,7 @@ Frontale</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Hanche G Rot</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -2392,18 +2441,25 @@ Frontale</Commentaires>
   </GraphicalBlock>
   <GraphicalBlock>
     <EntrySinus>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>ChronoBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>EntrySinus2</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <period>0.625</period>
+      <period>1</period>
       <shift>0</shift>
       <smooth_update>true</smooth_update>
     </EntrySinus>
     <Position>
-      <X>-1027.5444028159591</X>
-      <Y>327.1442866524535</Y>
+      <X>-1035</X>
+      <Y>325</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -2423,8 +2479,8 @@ Frontale</Commentaires>
       <delay>0.27</delay>
     </BlockDelay>
     <Position>
-      <X>-920.54354468799374</X>
-      <Y>326.22186546169524</Y>
+      <X>-944.10352424170912</X>
+      <Y>325</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -2791,6 +2847,12 @@ Frontale</Commentaires>
           <condition />
           <fire />
         </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Constant23</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
       </entries>
       <name>BlockAddition3</name>
       <gain>1</gain>
@@ -2831,6 +2893,12 @@ Frontale</Commentaires>
         </BlockPredecessor>
         <BlockPredecessor>
           <name>Constant21</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Constant23</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -2951,8 +3019,8 @@ Frontale</Commentaires>
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>-915.00901754344466</X>
-      <Y>372.342924999609</Y>
+      <X>-1018.3201909083758</X>
+      <Y>404</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -2967,8 +3035,8 @@ Frontale</Commentaires>
       </constants>
     </Constant>
     <Position>
-      <X>-1178.9578704225937</X>
-      <Y>547.19692209122718</Y>
+      <X>-1108.2283333333332</X>
+      <Y>513.712299983422</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -2984,7 +3052,7 @@ Frontale</Commentaires>
     <BlockDynamicGain>
       <entries>
         <BlockPredecessor>
-          <name>BlockAddition5</name>
+          <name>BlockDynamicGain15</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -3006,15 +3074,6 @@ Frontale</Commentaires>
       <Y>328.06670784320937</Y>
     </Position>
   </GraphicalBlock>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockAddition5</SourceName>
-    <TargetName>BlockDynamicGain</TargetName>
-  </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0.18677890300750732</output_value>
     <Condition />
@@ -3045,8 +3104,8 @@ Frontale</Commentaires>
       </constants>
     </Constant>
     <Position>
-      <X>-948.37133802922676</X>
-      <Y>434.14514478041684</Y>
+      <X>-1108.2283333333332</X>
+      <Y>458.9914754798582</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -3086,8 +3145,8 @@ Frontale</Commentaires>
       </constants>
     </Constant>
     <Position>
-      <X>-411</X>
-      <Y>204.46226828159684</Y>
+      <X>-397</X>
+      <Y>185.09142327567204</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -3449,6 +3508,7 @@ Frontale</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Genou D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -3472,6 +3532,7 @@ Frontale</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Genou G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -3590,8 +3651,8 @@ Frontale</Commentaires>
       <discount_factor>0.9</discount_factor>
     </BlockMobileAverage>
     <Position>
-      <X>-646</X>
-      <Y>593</Y>
+      <X>-686.445</X>
+      <Y>595</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -3782,6 +3843,7 @@ Frontale</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cuisse D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -3805,6 +3867,7 @@ Frontale</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cuisse G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -3969,6 +4032,7 @@ Frontale</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Bassin Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -4062,6 +4126,7 @@ Frontale</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Bassin Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -4314,7 +4379,7 @@ Frontale</Commentaires>
     <BlockDynamicGain>
       <entries>
         <BlockPredecessor>
-          <name>BlockAddition12</name>
+          <name>BlockDynamicGain13</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -4533,6 +4598,7 @@ Frontale</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Bassin Lat</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -4840,6 +4906,7 @@ Robustification:
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Genou D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -4863,6 +4930,7 @@ Robustification:
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Genou G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -4984,6 +5052,7 @@ Robustification:
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Pied G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -5007,6 +5076,7 @@ Robustification:
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Pied D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -5158,6 +5228,7 @@ Robustification:
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cheville D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -5181,6 +5252,7 @@ Robustification:
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cheville G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -5238,6 +5310,12 @@ Robustification:
         <BlockPredecessor>
           <name>AccelerometerBlock</name>
           <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockPolynome</name>
+          <output_idx>0</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
@@ -5306,8 +5384,8 @@ Robustification:
 I=-1</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>-701</X>
-      <Y>432</Y>
+      <X>-734</X>
+      <Y>471.77787354384753</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -5457,7 +5535,7 @@ I=-1</Commentaires>
     <BlockGain>
       <entries>
         <BlockPredecessor>
-          <name>Forward</name>
+          <name>BlockDynamicGain14</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -5497,8 +5575,8 @@ I=-1</Commentaires>
       </constants>
     </Constant>
     <Position>
-      <X>-981.13130031398873</X>
-      <Y>59</Y>
+      <X>-1018.3201909083758</X>
+      <Y>56.191389367292771</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -5529,8 +5607,8 @@ I=-1</Commentaires>
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>-823.916267993678</X>
-      <Y>75.277934374325355</Y>
+      <X>-928.98466721564716</X>
+      <Y>27.273430697486532</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -5550,15 +5628,6 @@ I=-1</Commentaires>
     <TargetIndex>1</TargetIndex>
     <SourceName>BlockGain36</SourceName>
     <TargetName>BlockAddition12</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>-0.00057984283193945885</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockAddition12</SourceName>
-    <TargetName>BlockDynamicGain3</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <Constant>
@@ -5590,6 +5659,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Bassin Lat</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -5641,12 +5711,12 @@ I=-1</Commentaires>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>0</float>
+        <float>5</float>
       </constants>
     </Constant>
     <Position>
-      <X>-517</X>
-      <Y>59</Y>
+      <X>-338.54842619239747</X>
+      <Y>85.3226505707743</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -5769,6 +5839,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cuisse D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -5792,6 +5863,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cuisse G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -5856,6 +5928,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Bassin Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -6297,6 +6370,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cuisse D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -6313,6 +6387,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cuisse G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -6403,6 +6478,18 @@ I=-1</Commentaires>
           <condition />
           <fire />
         </BlockPredecessor>
+        <BlockPredecessor>
+          <name />
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockPolynome</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
       </entries>
       <name>PIDBlock2</name>
       <gain>1</gain>
@@ -6437,6 +6524,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Bassin Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -6502,12 +6590,19 @@ I=-1</Commentaires>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <EntrySinus>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>ChronoBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>EntrySinus3</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <period>0.625</period>
+      <period>1</period>
       <shift>0</shift>
       <smooth_update>true</smooth_update>
     </EntrySinus>
@@ -6551,6 +6646,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Epaule D Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -6574,6 +6670,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Epaule G Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -6919,6 +7016,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Bassin Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -6965,6 +7063,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cheville D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -7020,6 +7119,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Epaule D Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -7043,6 +7143,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Epaule G Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -7184,6 +7285,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Pied D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -7289,6 +7391,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cheville G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -7408,6 +7511,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Hanche G Rot</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -7495,6 +7599,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Bassin Lat</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -7559,6 +7664,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Hanche D Lat</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -7776,6 +7882,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Pied G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -7905,6 +8012,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Genou D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -7928,6 +8036,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Genou G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -8072,6 +8181,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Bassin Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -8113,6 +8223,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cheville D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -8159,6 +8270,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cheville G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -8418,6 +8530,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Bassin Lat</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -8519,6 +8632,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Genou D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -8542,6 +8656,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Genou G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -8746,6 +8861,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cheville D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -8769,6 +8885,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cheville G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -8792,6 +8909,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Bassin Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -8892,6 +9010,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cuisse D</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -8915,6 +9034,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Cuisse G</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -9043,6 +9163,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Epaule D Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -9066,6 +9187,7 @@ I=-1</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
       <servo_name>Epaule G Long</servo_name>
       <unit>1</unit>
       <relative>1</relative>
@@ -9310,8 +9432,8 @@ I=-1</Commentaires>
       </default_values>
     </MoveInput>
     <Position>
-      <X>-956</X>
-      <Y>35</Y>
+      <X>-1035</X>
+      <Y>9.6020851267904632</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -9338,8 +9460,8 @@ I=-1</Commentaires>
       </default_values>
     </MoveInput>
     <Position>
-      <X>-1094</X>
-      <Y>399</Y>
+      <X>-1141.5249999999999</X>
+      <Y>398.04</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -9353,15 +9475,28 @@ I=-1</Commentaires>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockAddition>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>Forward</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>MoveInput2</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockAddition16</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>-272</X>
-      <Y>182</Y>
+      <X>-303.09</X>
+      <Y>185.09142327567204</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -9379,8 +9514,8 @@ I=-1</Commentaires>
       </default_values>
     </MoveInput>
     <Position>
-      <X>-350</X>
-      <Y>222</Y>
+      <X>-376.59125676206622</X>
+      <Y>229.04</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -9401,14 +9536,381 @@ I=-1</Commentaires>
     <SourceName>MoveInput2</SourceName>
     <TargetName>BlockAddition16</TargetName>
   </GraphicalBlockLink>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock27</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>Chronomètre général</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>-1464.5280279490075</X>
+      <Y>328.06670784320937</Y>
+    </Position>
+  </GraphicalBlock>
   <GraphicalBlockLink>
     <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
+    <SourceName>ChronoBlock</SourceName>
+    <TargetName>EntrySinus</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>ChronoBlock</SourceName>
+    <TargetName>EntrySinus1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>ChronoBlock</SourceName>
+    <TargetName>EntrySinus3</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>ChronoBlock</SourceName>
+    <TargetName>EntrySinus2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <ChronoBlock>
+      <entries />
+      <name>ChronoBlock4</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <clock_speeds>
+        <float>0.4</float>
+      </clock_speeds>
+    </ChronoBlock>
+    <Position>
+      <X>-1427.5213612823409</X>
+      <Y>204.46226828159684</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock28</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>Chronomètre de lancement</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>-1480.5913612823408</X>
+      <Y>165</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BoundBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>ChronoBlock4</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BoundBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <min_value>
+        <float>0</float>
+      </min_value>
+      <max_value>
+        <float>1</float>
+      </max_value>
+    </BoundBlock>
+    <Position>
+      <X>-1335.6728592056882</X>
+      <Y>204.46226828159684</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>ChronoBlock4</SourceName>
+    <TargetName>BoundBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockDynamicGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BoundBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockAddition12</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockDynamicGain13</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockDynamicGain>
+    <Position>
+      <X>-870.37542298775281</X>
+      <Y>75.277934374325355</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BoundBlock</SourceName>
+    <TargetName>BlockDynamicGain13</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDynamicGain13</SourceName>
+    <TargetName>BlockDynamicGain3</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockAddition12</SourceName>
+    <TargetName>BlockDynamicGain13</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockDynamicGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BoundBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockAddition16</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockDynamicGain14</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockDynamicGain>
+    <Position>
+      <X>-253</X>
+      <Y>165</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BoundBlock</SourceName>
+    <TargetName>BlockDynamicGain14</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
     <SourceName>BlockAddition16</SourceName>
+    <TargetName>BlockDynamicGain14</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDynamicGain14</SourceName>
     <TargetName>BlockGain48</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockDynamicGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BoundBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockAddition5</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockDynamicGain15</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockDynamicGain>
+    <Position>
+      <X>-948.53484238151668</X>
+      <Y>378.27864391894343</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BoundBlock</SourceName>
+    <TargetName>BlockDynamicGain15</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockAddition5</SourceName>
+    <TargetName>BlockDynamicGain15</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDynamicGain15</SourceName>
+    <TargetName>BlockDynamicGain</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockPolynome>
+      <entries>
+        <BlockPredecessor>
+          <name>ChronoBlock4</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockPolynome</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <const_coefs>
+        <float>1</float>
+      </const_coefs>
+      <lin_coefs>
+        <float>-10</float>
+      </lin_coefs>
+      <square_coefs>
+        <float>0</float>
+      </square_coefs>
+      <abs_coefs>
+        <float>0</float>
+      </abs_coefs>
+    </BlockPolynome>
+    <Position>
+      <X>-1276.4993591137222</X>
+      <Y>125</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>ChronoBlock4</SourceName>
+    <TargetName>BlockPolynome</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>BlockPolynome</SourceName>
+    <TargetName>PIDBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>BlockPolynome</SourceName>
+    <TargetName>PIDBlock2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>BlockPolynome</SourceName>
+    <TargetName>PIDBlock1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant23</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>-15</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>-303.09</X>
+      <Y>125</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>5</TargetIndex>
+    <SourceName>Constant23</SourceName>
+    <TargetName>BlockAddition3</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>5</TargetIndex>
+    <SourceName>Constant23</SourceName>
+    <TargetName>BlockAddition4</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
