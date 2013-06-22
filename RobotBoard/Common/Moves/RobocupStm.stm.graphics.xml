@@ -37,7 +37,9 @@ class RobocupStm:
         info = connection.SchedulerGetOutputValues_response("Relevage",["Finished"])
         if info and len(info) &gt;= 1 and len(info[0])&gt;=1:
             print( str( type( info[0][0] )))
+            print( str( info[0][0] ))
             releve = info[0][0] &gt; 0.1
+            print( str(releve))
 </preamble>
     </StmPreambleBlock>
     <Position>
@@ -52,18 +54,6 @@ class RobocupStm:
           <name>Initial</name>
           <output_idx>0</output_idx>
           <condition>not fallback and not fallface</condition>
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>FallFace</name>
-          <output_idx>0</output_idx>
-          <condition>releve</condition>
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>FallBack</name>
-          <output_idx>0</output_idx>
-          <condition>retourne and not fallback and not fallface</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -112,8 +102,8 @@ retourne = False</enter>
       <exit>self.connection.SchedulerStopMove("Retournement",200)</exit>
     </StmStateBlock>
     <Position>
-      <X>998.97818131299482</X>
-      <Y>-20.914575675773392</Y>
+      <X>930.97818131299482</X>
+      <Y>29.085424324226608</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -121,12 +111,6 @@ retourne = False</enter>
       <entries>
         <BlockPredecessor>
           <name>WalkToBall</name>
-          <output_idx>0</output_idx>
-          <condition>fallface</condition>
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>FallBack</name>
           <output_idx>0</output_idx>
           <condition>fallface</condition>
           <fire />
@@ -142,8 +126,8 @@ self.connection.SchedulerStartMove("Relevage",0,200)</enter>
       <exit>self.connection.SchedulerStopMove("Relevage",500)</exit>
     </StmStateBlock>
     <Position>
-      <X>796.56849989617388</X>
-      <Y>630.27436247416665</Y>
+      <X>1034.5684998961738</X>
+      <Y>560.27436247416665</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -151,7 +135,7 @@ self.connection.SchedulerStartMove("Relevage",0,200)</enter>
     <Condition>fallback</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
+    <TargetIndex>1</TargetIndex>
     <SourceName>WalkToBall</SourceName>
     <TargetName>FallBack</TargetName>
   </GraphicalBlockLink>
@@ -160,7 +144,7 @@ self.connection.SchedulerStartMove("Relevage",0,200)</enter>
     <Condition>fallface</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
+    <TargetIndex>2</TargetIndex>
     <SourceName>WalkToBall</SourceName>
     <TargetName>FallFace</TargetName>
   </GraphicalBlockLink>
@@ -187,7 +171,7 @@ self.connection.SchedulerStartMove("Relevage",0,200)</enter>
     <Condition>not fallback and not fallface</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
+    <TargetIndex>2</TargetIndex>
     <SourceName>Initial</SourceName>
     <TargetName>WalkToBall</TargetName>
   </GraphicalBlockLink>
@@ -214,7 +198,7 @@ self.connection.SchedulerStartMove("Relevage",0,200)</enter>
     <Condition>releve</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
+    <TargetIndex>0</TargetIndex>
     <SourceName>FallFace</SourceName>
     <TargetName>WalkToBall</TargetName>
   </GraphicalBlockLink>
@@ -232,7 +216,7 @@ self.connection.SchedulerStartMove("Relevage",0,200)</enter>
     <Condition>retourne and not fallback and not fallface</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>2</TargetIndex>
+    <TargetIndex>1</TargetIndex>
     <SourceName>FallBack</SourceName>
     <TargetName>WalkToBall</TargetName>
   </GraphicalBlockLink>
