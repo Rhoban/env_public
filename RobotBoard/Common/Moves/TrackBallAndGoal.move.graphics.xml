@@ -383,7 +383,7 @@
       </max_value>
       <output_low>0</output_low>
       <output_medium>0</output_medium>
-      <output_high>1.5</output_high>
+      <output_high>1</output_high>
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
@@ -454,41 +454,6 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
-    <Constant>
-      <entries />
-      <name>TiltBall</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <constants>
-        <float>-60</float>
-        <float>0</float>
-      </constants>
-    </Constant>
-    <Position>
-      <X>611.1</X>
-      <Y>485.04</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlockLink>
-    <output_value>-60</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>TiltBall</SourceName>
-    <TargetName>MultiplexerTiltMin</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>TiltBall</SourceName>
-    <TargetName>MultiplexerTiltMax</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlock>
     <VariationBoundBlock>
       <entries>
         <BlockPredecessor>
@@ -540,41 +505,6 @@
     <TargetIndex>0</TargetIndex>
     <SourceName>VariationBoundBlock</SourceName>
     <TargetName>TeteAlt1</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlock>
-    <Constant>
-      <entries />
-      <name>TiltGoal</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <constants>
-        <float>5</float>
-        <float>25</float>
-      </constants>
-    </Constant>
-    <Position>
-      <X>611.1</X>
-      <Y>531.95999999999992</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlockLink>
-    <output_value>5</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>2</TargetIndex>
-    <SourceName>TiltGoal</SourceName>
-    <TargetName>MultiplexerTiltMin</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>25</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
-    <TargetIndex>2</TargetIndex>
-    <SourceName>TiltGoal</SourceName>
-    <TargetName>MultiplexerTiltMax</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <CommentsBlock>
@@ -1589,6 +1519,64 @@ pan and tilt depending on object coordinates
     <TargetIndex>0</TargetIndex>
     <SourceName>MoveBlock3</SourceName>
     <TargetName>VariationBoundBlock2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <MoveBlock>
+      <entries />
+      <name>MoveBlock4</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <move_name>VisionParameters</move_name>
+      <inputs />
+      <outputs>
+        <string>BallTiltMin</string>
+        <string>BallTiltMax</string>
+        <string>GoalTiltMin</string>
+        <string>GoalTiltMax</string>
+      </outputs>
+      <default_outputs />
+    </MoveBlock>
+    <Position>
+      <X>611.1</X>
+      <Y>491</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>MoveBlock4</SourceName>
+    <TargetName>MultiplexerTiltMin</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>2</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>MoveBlock4</SourceName>
+    <TargetName>MultiplexerTiltMin</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>MoveBlock4</SourceName>
+    <TargetName>MultiplexerTiltMax</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>3</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>MoveBlock4</SourceName>
+    <TargetName>MultiplexerTiltMax</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <ChronoBlock>
