@@ -324,7 +324,7 @@
       <discount_factor>0</discount_factor>
     </VariationBoundBlock>
     <Position>
-      <X>1046.4729572676001</X>
+      <X>1147.167805768451</X>
       <Y>219.12</Y>
     </Position>
   </GraphicalBlock>
@@ -366,7 +366,7 @@
       </max_value>
     </BoundBlock>
     <Position>
-      <X>1333.066074256795</X>
+      <X>1445.7240786684981</X>
       <Y>205.18</Y>
     </Position>
   </GraphicalBlock>
@@ -1158,7 +1158,7 @@ en fonction du temps depuis lequel la balle n'a pas été vue</Commentaires>
       </default_outputs>
     </MoveBlock>
     <Position>
-      <X>-132.32666666666665</X>
+      <X>-199.39999999999998</X>
       <Y>-175.42603753949558</Y>
     </Position>
   </GraphicalBlock>
@@ -1188,7 +1188,7 @@ en fonction du temps depuis lequel la balle n'a pas été vue</Commentaires>
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>85.443333333333356</X>
+      <X>-15</X>
       <Y>-161.48603753949558</Y>
     </Position>
   </GraphicalBlock>
@@ -1272,7 +1272,7 @@ en fonction du temps depuis lequel la balle n'a pas été vue</Commentaires>
       </gains>
     </BlockGain>
     <Position>
-      <X>1204.5902696562955</X>
+      <X>1335.8327409234616</X>
       <Y>205.18</Y>
     </Position>
   </GraphicalBlock>
@@ -1409,8 +1409,8 @@ en fonction du temps depuis lequel la balle n'a pas été vue</Commentaires>
       </default_outputs>
     </MoveBlock>
     <Position>
-      <X>-15</X>
-      <Y>-287</Y>
+      <X>-116.82499999999999</X>
+      <Y>-289</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -1435,8 +1435,8 @@ en fonction du temps depuis lequel la balle n'a pas été vue</Commentaires>
       <gainMax>60</gainMax>
     </BlockMin>
     <Position>
-      <X>222</X>
-      <Y>-200</Y>
+      <X>106</X>
+      <Y>-204</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -1755,8 +1755,8 @@ en fonction du temps depuis lequel la balle n'a pas été vue</Commentaires>
       </default_outputs>
     </MoveBlock>
     <Position>
-      <X>835.76447243511757</X>
-      <Y>522.12</Y>
+      <X>969.96113910178428</X>
+      <Y>536.06</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -1770,8 +1770,8 @@ en fonction du temps depuis lequel la balle n'a pas été vue</Commentaires>
 - Try to shoot once in a while</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>904.6216569532022</X>
-      <Y>451.07999999999993</Y>
+      <X>835.76447243511757</X>
+      <Y>631.08</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -1793,7 +1793,7 @@ en fonction du temps depuis lequel la balle n'a pas été vue</Commentaires>
       </clock_speeds>
     </ChronoBlock>
     <Position>
-      <X>1344.4860742567951</X>
+      <X>1550.4860742567951</X>
       <Y>550</Y>
     </Position>
   </GraphicalBlock>
@@ -1823,15 +1823,15 @@ en fonction du temps depuis lequel la balle n'a pas été vue</Commentaires>
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>1118.4907453351648</X>
-      <Y>689.62158657782652</Y>
+      <X>1358.6907453351646</X>
+      <Y>701.54158657782659</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
     <BlockDigitalLevel>
       <entries>
         <BlockPredecessor>
-          <name>BlockDynamicGain5</name>
+          <name>BlockAddition7</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -1842,18 +1842,18 @@ en fonction du temps depuis lequel la balle n'a pas été vue</Commentaires>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <min_value>
-        <float>-60</float>
+        <float>0</float>
       </min_value>
       <max_value>
-        <float>-60</float>
+        <float>0</float>
       </max_value>
-      <output_low>1</output_low>
+      <output_low>-1</output_low>
       <output_medium>-1</output_medium>
-      <output_high>-1</output_high>
+      <output_high>1</output_high>
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>1113.6907453351646</X>
+      <X>1335.8327409234616</X>
       <Y>550</Y>
     </Position>
   </GraphicalBlock>
@@ -1865,11 +1865,11 @@ en fonction du temps depuis lequel la balle n'a pas été vue</Commentaires>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <Commentaires>If the ball stays near, restart the chrono
-every ten seconds</Commentaires>
+every three seconds</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>790.41613910178432</X>
-      <Y>689.62158657782652</Y>
+      <X>1498.5639261590331</X>
+      <Y>695.58158657782656</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -1894,7 +1894,7 @@ every ten seconds</Commentaires>
       <gainMax>60</gainMax>
     </BlockDynamicGain>
     <Position>
-      <X>1046.4729572676001</X>
+      <X>1113.5696239342667</X>
       <Y>550</Y>
     </Position>
   </GraphicalBlock>
@@ -1906,15 +1906,6 @@ every ten seconds</Commentaires>
     <TargetIndex>0</TargetIndex>
     <SourceName>MoveBlock4</SourceName>
     <TargetName>BlockDynamicGain5</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>-4.0550155639648438</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockDynamicGain5</SourceName>
-    <TargetName>BlockDigitalLevel6</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>0</output_value>
@@ -1947,7 +1938,7 @@ every ten seconds</Commentaires>
       <gainMax>60</gainMax>
     </BlockMin>
     <Position>
-      <X>1230.0925916052811</X>
+      <X>1475.9140786684982</X>
       <Y>550</Y>
     </Position>
   </GraphicalBlock>
@@ -2004,8 +1995,8 @@ every ten seconds</Commentaires>
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>1471.8719023943218</X>
-      <Y>431</Y>
+      <X>1649.8719023943218</X>
+      <Y>393</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -2081,8 +2072,8 @@ every ten seconds</Commentaires>
     try to shoot</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>1271.4327409234618</X>
-      <Y>419.08</Y>
+      <X>1582.0552357276551</X>
+      <Y>439.15999999999991</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -2096,8 +2087,8 @@ every ten seconds</Commentaires>
       <clipping>true</clipping>
     </BallBlock>
     <Position>
-      <X>917.89503681526116</X>
-      <Y>621.24025606226633</Y>
+      <X>1021.2144724351175</X>
+      <Y>643</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -2175,8 +2166,8 @@ every ten seconds</Commentaires>
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>995</X>
-      <Y>120.84</Y>
+      <X>1025.0144724351176</X>
+      <Y>156.12</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -2352,7 +2343,7 @@ every ten seconds</Commentaires>
       <entries>
         <BlockPredecessor>
           <name>BlockDynamicGain2</name>
-          <output_idx>1</output_idx>
+          <output_idx>2</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
@@ -2370,7 +2361,7 @@ every ten seconds</Commentaires>
     </BlockAddition>
     <Position>
       <X>1025.0144724351176</X>
-      <Y>320.94</Y>
+      <Y>287.8</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -2399,6 +2390,112 @@ every ten seconds</Commentaires>
     <TargetIndex>2</TargetIndex>
     <SourceName>BlockAddition6</SourceName>
     <TargetName>VariationBoundBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockAddition>
+      <entries>
+        <BlockPredecessor>
+          <name>MoveBlock6</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockGain1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockAddition7</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockAddition>
+    <Position>
+      <X>1267.5902696562955</X>
+      <Y>550</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockDynamicGain5</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>1170.985</X>
+      <Y>550</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDynamicGain5</SourceName>
+    <TargetName>BlockGain1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockGain1</SourceName>
+    <TargetName>BlockAddition7</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <MoveBlock>
+      <entries />
+      <name>MoveBlock6</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <move_name>VisionParameters</move_name>
+      <inputs />
+      <outputs>
+        <string>TiltShoot</string>
+      </outputs>
+      <default_outputs>
+        <float>-50</float>
+      </default_outputs>
+    </MoveBlock>
+    <Position>
+      <X>966.45499999999993</X>
+      <Y>451.07999999999993</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>MoveBlock6</SourceName>
+    <TargetName>BlockAddition7</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockAddition7</SourceName>
+    <TargetName>BlockDigitalLevel6</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
