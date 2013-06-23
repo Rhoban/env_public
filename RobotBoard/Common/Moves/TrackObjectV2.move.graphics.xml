@@ -81,8 +81,8 @@ It outputs controls for pan and tilt</Commentaires>
       </labels>
     </MoveOutput>
     <Position>
-      <X>1621.176518072537</X>
-      <Y>376.06</Y>
+      <X>1683.3342884872347</X>
+      <Y>420.94</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -96,7 +96,7 @@ It outputs controls for pan and tilt</Commentaires>
 </Commentaires>
     </CommentsBlock>
     <Position>
-      <X>1604.4191392018129</X>
+      <X>1651.3827879595845</X>
       <Y>329.08</Y>
     </Position>
   </GraphicalBlock>
@@ -1027,7 +1027,7 @@ mode change
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <min_value>
-        <float>-50</float>
+        <float>0</float>
       </min_value>
       <max_value>
         <float>0</float>
@@ -1038,8 +1038,8 @@ mode change
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>1387.9860587145663</X>
-      <Y>370.1</Y>
+      <X>1444.9560587145663</X>
+      <Y>390</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -1064,7 +1064,7 @@ mode change
       <gainMax>60</gainMax>
     </BlockDynamicGain>
     <Position>
-      <X>1504.6247597334791</X>
+      <X>1562.638678787197</X>
       <Y>341</Y>
     </Position>
   </GraphicalBlock>
@@ -1090,15 +1090,6 @@ mode change
     <TargetIndex>1</TargetIndex>
     <SourceName>MultiplexerBlock3</SourceName>
     <TargetName>MoveOutput</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>-55.207138061523438</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>MultiplexerBlock3</SourceName>
-    <TargetName>BlockDigitalLevel1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <output_value>-13.583142280578613</output_value>
@@ -1152,8 +1143,8 @@ mode change
 Tilt approach instead of -50</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>1334.1327253812331</X>
-      <Y>463.22003475065242</Y>
+      <X>1334.1327253812328</X>
+      <Y>540.93945940810738</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -1639,6 +1630,92 @@ search an object lost</Commentaires>
     <TargetIndex>3</TargetIndex>
     <SourceName>MoveInput</SourceName>
     <TargetName>MultiplexerBlock3</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries />
+      <name>BlockGain</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>1295.5829208401065</X>
+      <Y>390</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <MoveBlock>
+      <entries />
+      <name>MoveBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <move_name>VisionParametrs</move_name>
+      <inputs />
+      <outputs>
+        <string>TiltApproach</string>
+      </outputs>
+      <default_outputs>
+        <float>0</float>
+      </default_outputs>
+    </MoveBlock>
+    <Position>
+      <X>1149.5749901037564</X>
+      <Y>376.06</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockAddition>
+      <entries />
+      <name>BlockAddition3</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockAddition>
+    <Position>
+      <X>1387.9860587145663</X>
+      <Y>390</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>MoveBlock</SourceName>
+    <TargetName>BlockGain</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain</SourceName>
+    <TargetName>BlockAddition3</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>MultiplexerBlock3</SourceName>
+    <TargetName>BlockAddition3</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockAddition3</SourceName>
+    <TargetName>BlockDigitalLevel1</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
