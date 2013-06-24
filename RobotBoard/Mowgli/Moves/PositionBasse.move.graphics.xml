@@ -482,7 +482,7 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>448</X>
+      <X>245.69333333333333</X>
       <Y>401</Y>
     </Position>
   </GraphicalBlock>
@@ -506,7 +506,7 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>448</X>
+      <X>300.82856134062973</X>
       <Y>432</Y>
     </Position>
   </GraphicalBlock>
@@ -529,7 +529,7 @@
       </gains>
     </BlockGain>
     <Position>
-      <X>380</X>
+      <X>245.69333333333333</X>
       <Y>432</Y>
     </Position>
   </GraphicalBlock>
@@ -554,8 +554,8 @@
       </constants>
     </Constant>
     <Position>
-      <X>94</X>
-      <Y>402</Y>
+      <X>86.690624151048567</X>
+      <Y>401</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -769,8 +769,8 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>357</X>
-      <Y>331</Y>
+      <X>245.69333333333333</X>
+      <Y>332</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -797,6 +797,120 @@
     <TargetIndex>0</TargetIndex>
     <SourceName>Constant4</SourceName>
     <TargetName>Bassin Long</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>Constant5</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Epaule D Lat</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+      <servo_name>Epaule D Lat</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>245.69333333333333</X>
+      <Y>497</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain5</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Epaule G Lat</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+      <servo_name>Epaule G Lat</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>300.82856134062973</X>
+      <Y>537</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>Constant5</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain5</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>245.69333333333333</X>
+      <Y>537</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain5</SourceName>
+    <TargetName>Epaule G Lat</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant5</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>10</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>86.690624151048567</X>
+      <Y>514</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Constant5</SourceName>
+    <TargetName>Epaule D Lat</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Constant5</SourceName>
+    <TargetName>BlockGain5</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
