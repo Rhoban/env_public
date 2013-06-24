@@ -47,7 +47,6 @@ It outputs controls for pan and tilt</Commentaires>
         <float>0</float>
         <float>100</float>
         <float>0</float>
-        <float>0</float>
       </default_values>
     </MoveInput>
     <Position>
@@ -143,13 +142,19 @@ It outputs controls for pan and tilt</Commentaires>
     <MultiplexerBlock>
       <entries>
         <BlockPredecessor>
-          <name />
+          <name>BlockMin</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
           <name>BlockDynamicGain1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>MoveInput</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -175,7 +180,7 @@ It outputs controls for pan and tilt</Commentaires>
     <MultiplexerBlock>
       <entries>
         <BlockPredecessor>
-          <name />
+          <name>BlockMin</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -183,6 +188,12 @@ It outputs controls for pan and tilt</Commentaires>
         <BlockPredecessor>
           <name>BlockDynamicGain1</name>
           <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>MoveInput</name>
+          <output_idx>1</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
@@ -218,6 +229,12 @@ It outputs controls for pan and tilt</Commentaires>
           <condition />
           <fire />
         </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel5</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
       </entries>
       <name>PIDBlock</name>
       <gain>1</gain>
@@ -249,6 +266,12 @@ It outputs controls for pan and tilt</Commentaires>
         </BlockPredecessor>
         <BlockPredecessor>
           <name>MultiplexerBlock1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel5</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -782,7 +805,7 @@ the object is detecte dor not</Commentaires>
     <MultiplexerBlock>
       <entries>
         <BlockPredecessor>
-          <name />
+          <name>BlockMin</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -795,6 +818,12 @@ the object is detecte dor not</Commentaires>
         </BlockPredecessor>
         <BlockPredecessor>
           <name>PIDBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>MoveInput</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -814,7 +843,7 @@ the object is detecte dor not</Commentaires>
     <MultiplexerBlock>
       <entries>
         <BlockPredecessor>
-          <name />
+          <name>BlockMin</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -828,6 +857,12 @@ the object is detecte dor not</Commentaires>
         <BlockPredecessor>
           <name>PIDBlock1</name>
           <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>MoveInput</name>
+          <output_idx>1</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
@@ -1016,7 +1051,7 @@ mode change
     <BlockDigitalLevel>
       <entries>
         <BlockPredecessor>
-          <name>MultiplexerBlock3</name>
+          <name>BlockAddition3</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -1294,7 +1329,14 @@ Tilt approach instead of -50</Commentaires>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockDigitalLevel>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>MoveInput</name>
+          <output_idx>3</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockDigitalLevel2</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -1326,12 +1368,21 @@ Tilt approach instead of -50</Commentaires>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <ChronoBlock>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel2</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>ChronoBlock</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <clock_speeds />
+      <clock_speeds>
+        <float>1</float>
+      </clock_speeds>
     </ChronoBlock>
     <Position>
       <X>-68.778258512386657</X>
@@ -1364,7 +1415,14 @@ Go back to this position for a while</Commentaires>
   </GraphicalBlock>
   <GraphicalBlock>
     <BlockDigitalLevel>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>ChronoBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockDigitalLevel4</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -1420,7 +1478,14 @@ search an object lost</Commentaires>
   </GraphicalBlock>
   <GraphicalBlock>
     <BlockDigitalLevel>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>MoveInput</name>
+          <output_idx>2</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockDigitalLevel6</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -1443,7 +1508,20 @@ search an object lost</Commentaires>
   </GraphicalBlock>
   <GraphicalBlock>
     <BlockMin>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel6</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel4</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockMin</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -1551,7 +1629,14 @@ search an object lost</Commentaires>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockDerivative>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>BlockMin</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockDerivative</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -1574,7 +1659,14 @@ search an object lost</Commentaires>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockDigitalLevel>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>BlockDerivative</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockDigitalLevel5</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -1633,7 +1725,14 @@ search an object lost</Commentaires>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockGain>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>MoveBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockGain</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -1670,7 +1769,20 @@ search an object lost</Commentaires>
   </GraphicalBlock>
   <GraphicalBlock>
     <BlockAddition>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>MultiplexerBlock3</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockAddition3</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
