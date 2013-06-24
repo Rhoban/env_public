@@ -142,19 +142,19 @@ It outputs controls for pan and tilt</Commentaires>
     <MultiplexerBlock>
       <entries>
         <BlockPredecessor>
-          <name>BlockMin</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>BlockDynamicGain1</name>
+          <name>BlockMax</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
           <name>MoveInput</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockDynamicGain1</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -173,20 +173,14 @@ It outputs controls for pan and tilt</Commentaires>
     </MultiplexerBlock>
     <Position>
       <X>506</X>
-      <Y>258</Y>
+      <Y>244.06</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
     <MultiplexerBlock>
       <entries>
         <BlockPredecessor>
-          <name>BlockMin</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>BlockDynamicGain1</name>
+          <name>BlockMax</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -194,6 +188,12 @@ It outputs controls for pan and tilt</Commentaires>
         <BlockPredecessor>
           <name>MoveInput</name>
           <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockDynamicGain1</name>
+          <output_idx>0</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
@@ -322,8 +322,8 @@ and a periodic scan, depending whether
 the object is detecte dor not</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>335.94833333333332</X>
-      <Y>193.12</Y>
+      <X>305.38</X>
+      <Y>165.24</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -344,7 +344,6 @@ the object is detecte dor not</Commentaires>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -353,7 +352,6 @@ the object is detecte dor not</Commentaires>
     <TargetName>PIDBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -362,25 +360,22 @@ the object is detecte dor not</Commentaires>
     <TargetName>PIDBlock1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.11467361450195313</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>2</TargetIndex>
+    <TargetIndex>1</TargetIndex>
     <SourceName>MoveInput</SourceName>
     <TargetName>MultiplexerBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-0.68047589063644409</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
-    <TargetIndex>2</TargetIndex>
+    <TargetIndex>1</TargetIndex>
     <SourceName>MoveInput</SourceName>
     <TargetName>MultiplexerBlock1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.11467361450195313</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -389,7 +384,6 @@ the object is detecte dor not</Commentaires>
     <TargetName>PIDBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-0.68047589063644409</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -502,7 +496,6 @@ the object is detecte dor not</Commentaires>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-70</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -511,7 +504,6 @@ the object is detecte dor not</Commentaires>
     <TargetName>BlockGain1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>70</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -520,7 +512,6 @@ the object is detecte dor not</Commentaires>
     <TargetName>BlockGain1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-60</output_value>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -529,7 +520,6 @@ the object is detecte dor not</Commentaires>
     <TargetName>BlockGain1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>3</SourceIndex>
@@ -590,7 +580,6 @@ the object is detecte dor not</Commentaires>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>70</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -599,7 +588,6 @@ the object is detecte dor not</Commentaires>
     <TargetName>BlockAddition</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>60</output_value>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -634,7 +622,6 @@ the object is detecte dor not</Commentaires>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>70</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -643,7 +630,6 @@ the object is detecte dor not</Commentaires>
     <TargetName>BlockAddition2</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>70</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -678,7 +664,6 @@ the object is detecte dor not</Commentaires>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>60</output_value>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -687,7 +672,6 @@ the object is detecte dor not</Commentaires>
     <TargetName>BlockAddition4</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>3</SourceIndex>
@@ -748,7 +732,6 @@ the object is detecte dor not</Commentaires>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>140</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -757,7 +740,6 @@ the object is detecte dor not</Commentaires>
     <TargetName>BlockDivision</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>56.486080169677734</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -766,7 +748,6 @@ the object is detecte dor not</Commentaires>
     <TargetName>BlockDivision</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>60</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -775,7 +756,6 @@ the object is detecte dor not</Commentaires>
     <TargetName>BlockDivision1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>4.7928614616394043</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -784,7 +764,6 @@ the object is detecte dor not</Commentaires>
     <TargetName>BlockDivision1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.40347200632095337</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -793,7 +772,6 @@ the object is detecte dor not</Commentaires>
     <TargetName>BlockDigitalLevel</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0.079881027340888977</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -805,7 +783,7 @@ the object is detecte dor not</Commentaires>
     <MultiplexerBlock>
       <entries>
         <BlockPredecessor>
-          <name>BlockMin</name>
+          <name>BlockMax</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -817,13 +795,13 @@ the object is detecte dor not</Commentaires>
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>PIDBlock</name>
+          <name>VariationBoundBlock1</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>MoveInput</name>
+          <name>MoveInput3</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -843,7 +821,7 @@ the object is detecte dor not</Commentaires>
     <MultiplexerBlock>
       <entries>
         <BlockPredecessor>
-          <name>BlockMin</name>
+          <name>BlockMax</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -855,13 +833,13 @@ the object is detecte dor not</Commentaires>
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>PIDBlock1</name>
-          <output_idx>0</output_idx>
+          <name>VariationBoundBlock1</name>
+          <output_idx>1</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>MoveInput</name>
+          <name>MoveInput3</name>
           <output_idx>1</output_idx>
           <condition />
           <fire />
@@ -898,22 +876,21 @@ the object is detecte dor not</Commentaires>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <min_value>
-        <float>-30</float>
+        <float>-50</float>
         <float>-60</float>
       </min_value>
       <max_value>
-        <float>30</float>
+        <float>50</float>
         <float>60</float>
       </max_value>
       <discount_factor>0</discount_factor>
     </VariationBoundBlock>
     <Position>
-      <X>962.4759660461599</X>
-      <Y>329.08</Y>
+      <X>894.4759660461599</X>
+      <Y>277.1</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-13.583142280578613</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -922,7 +899,6 @@ the object is detecte dor not</Commentaires>
     <TargetName>VariationBoundBlock1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-55.207138061523438</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -931,7 +907,6 @@ the object is detecte dor not</Commentaires>
     <TargetName>VariationBoundBlock1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-13.583142280578613</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -940,7 +915,6 @@ the object is detecte dor not</Commentaires>
     <TargetName>MultiplexerBlock2</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-55.207138061523438</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -949,25 +923,6 @@ the object is detecte dor not</Commentaires>
     <TargetName>MultiplexerBlock3</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-13.583142280578613</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>2</TargetIndex>
-    <SourceName>PIDBlock</SourceName>
-    <TargetName>MultiplexerBlock2</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>-55.207138061523438</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>2</TargetIndex>
-    <SourceName>PIDBlock1</SourceName>
-    <TargetName>MultiplexerBlock3</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>-13.583142280578613</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -976,7 +931,6 @@ the object is detecte dor not</Commentaires>
     <TargetName>BlockAddition</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-55.207138061523438</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -997,7 +951,7 @@ that the robot moves its head periodically.
 When max/min pan and tilt are attained the direction is changed</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>379.2883333333333</X>
+      <X>297.89833333333326</X>
       <Y>524.97945940810746</Y>
     </Position>
   </GraphicalBlock>
@@ -1118,7 +1072,6 @@ mode change
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>-55.207138061523438</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1127,7 +1080,6 @@ mode change
     <TargetName>MoveOutput</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-13.583142280578613</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1136,7 +1088,6 @@ mode change
     <TargetName>BlockDynamicGain</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1145,7 +1096,6 @@ mode change
     <TargetName>BlockDynamicGain</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>-0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1165,21 +1115,6 @@ mode change
     <Position>
       <X>481.65999999999997</X>
       <Y>886.36838066355176</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <CommentsBlock>
-      <entries />
-      <name>CommentsBlock12</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <Commentaires>TODO:
-Tilt approach instead of -50</Commentaires>
-    </CommentsBlock>
-    <Position>
-      <X>1334.1327253812328</X>
-      <Y>540.93945940810738</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -1223,7 +1158,6 @@ Tilt approach instead of -50</Commentaires>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1283,7 +1217,6 @@ Tilt approach instead of -50</Commentaires>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1292,7 +1225,6 @@ Tilt approach instead of -50</Commentaires>
     <TargetName>BlockDynamicGain1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1301,7 +1233,6 @@ Tilt approach instead of -50</Commentaires>
     <TargetName>BlockDynamicGain1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1310,20 +1241,18 @@ Tilt approach instead of -50</Commentaires>
     <TargetName>BlockDynamicGain1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
+    <TargetIndex>2</TargetIndex>
     <SourceName>BlockDynamicGain1</SourceName>
     <TargetName>MultiplexerBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
+    <TargetIndex>2</TargetIndex>
     <SourceName>BlockDynamicGain1</SourceName>
     <TargetName>MultiplexerBlock1</TargetName>
   </GraphicalBlockLink>
@@ -1358,7 +1287,6 @@ Tilt approach instead of -50</Commentaires>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>3</SourceIndex>
@@ -1390,7 +1318,6 @@ Tilt approach instead of -50</Commentaires>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1431,7 +1358,7 @@ Go back to this position for a while</Commentaires>
         <float>0.01</float>
       </min_value>
       <max_value>
-        <float>0.5</float>
+        <float>1</float>
       </max_value>
       <output_low>0</output_low>
       <output_medium>2</output_medium>
@@ -1439,27 +1366,17 @@ Go back to this position for a while</Commentaires>
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>29.227712420080039</X>
+      <X>34.53091871594129</X>
       <Y>420.94</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>ChronoBlock</SourceName>
     <TargetName>BlockDigitalLevel4</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>3</TargetIndex>
-    <SourceName>MoveInput</SourceName>
-    <TargetName>MultiplexerBlock2</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <CommentsBlock>
@@ -1491,10 +1408,10 @@ search an object lost</Commentaires>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <min_value>
-        <float>0.5</float>
+        <float>1</float>
       </min_value>
       <max_value>
-        <float>0.5</float>
+        <float>1</float>
       </max_value>
       <output_low>0</output_low>
       <output_medium>0</output_medium>
@@ -1504,32 +1421,6 @@ search an object lost</Commentaires>
     <Position>
       <X>-11.695000000000007</X>
       <Y>329.08</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockMin>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockDigitalLevel6</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>BlockDigitalLevel4</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>BlockMin</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-    </BlockMin>
-    <Position>
-      <X>146.78803322500011</X>
-      <Y>424.22963624356055</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -1543,47 +1434,10 @@ search an object lost</Commentaires>
     </CommentsBlock>
     <Position>
       <X>115.47636655833344</X>
-      <Y>370.1</Y>
+      <Y>370.62142846660049</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockMin</SourceName>
-    <TargetName>MultiplexerBlock</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockMin</SourceName>
-    <TargetName>MultiplexerBlock1</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockMin</SourceName>
-    <TargetName>MultiplexerBlock2</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockMin</SourceName>
-    <TargetName>MultiplexerBlock3</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -1592,25 +1446,6 @@ search an object lost</Commentaires>
     <TargetName>BlockDigitalLevel6</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockDigitalLevel6</SourceName>
-    <TargetName>BlockMin</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>BlockDigitalLevel4</SourceName>
-    <TargetName>BlockMin</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1619,7 +1454,6 @@ search an object lost</Commentaires>
     <TargetName>MultiplexerBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -1631,7 +1465,7 @@ search an object lost</Commentaires>
     <BlockDerivative>
       <entries>
         <BlockPredecessor>
-          <name>BlockMin</name>
+          <name>BlockMax</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -1648,15 +1482,6 @@ search an object lost</Commentaires>
       <Y>99.84</Y>
     </Position>
   </GraphicalBlock>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockMin</SourceName>
-    <TargetName>BlockDerivative</TargetName>
-  </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockDigitalLevel>
       <entries>
@@ -1688,7 +1513,6 @@ search an object lost</Commentaires>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1697,7 +1521,6 @@ search an object lost</Commentaires>
     <TargetName>BlockDigitalLevel5</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1706,22 +1529,12 @@ search an object lost</Commentaires>
     <TargetName>PIDBlock</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>2</TargetIndex>
     <SourceName>BlockDigitalLevel5</SourceName>
     <TargetName>PIDBlock1</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
-    <TargetIndex>3</TargetIndex>
-    <SourceName>MoveInput</SourceName>
-    <TargetName>MultiplexerBlock3</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockGain>
@@ -1753,13 +1566,13 @@ search an object lost</Commentaires>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <move_name>VisionParametrs</move_name>
+      <move_name>VisionParameters</move_name>
       <inputs />
       <outputs>
         <string>TiltApproach</string>
       </outputs>
       <default_outputs>
-        <float>0</float>
+        <float>-45</float>
       </default_outputs>
     </MoveBlock>
     <Position>
@@ -1794,7 +1607,6 @@ search an object lost</Commentaires>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1803,7 +1615,6 @@ search an object lost</Commentaires>
     <TargetName>BlockGain</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1812,7 +1623,6 @@ search an object lost</Commentaires>
     <TargetName>BlockAddition3</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1821,13 +1631,147 @@ search an object lost</Commentaires>
     <TargetName>BlockAddition3</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockAddition3</SourceName>
     <TargetName>BlockDigitalLevel1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>VariationBoundBlock1</SourceName>
+    <TargetName>MultiplexerBlock2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>VariationBoundBlock1</SourceName>
+    <TargetName>MultiplexerBlock3</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockMax>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel6</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel4</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockMax</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockMax>
+    <Position>
+      <X>172</X>
+      <Y>430</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDigitalLevel6</SourceName>
+    <TargetName>BlockMax</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockDigitalLevel4</SourceName>
+    <TargetName>BlockMax</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMax</SourceName>
+    <TargetName>BlockDerivative</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMax</SourceName>
+    <TargetName>MultiplexerBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMax</SourceName>
+    <TargetName>MultiplexerBlock1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMax</SourceName>
+    <TargetName>MultiplexerBlock2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMax</SourceName>
+    <TargetName>MultiplexerBlock3</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <MoveInput>
+      <entries />
+      <name>MoveInput3</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <labels>
+        <string>OldPan</string>
+        <string>OldTilt</string>
+      </labels>
+      <default_values>
+        <float>0</float>
+        <float>0</float>
+      </default_values>
+    </MoveInput>
+    <Position>
+      <X>779.595</X>
+      <Y>376.06</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>3</TargetIndex>
+    <SourceName>MoveInput3</SourceName>
+    <TargetName>MultiplexerBlock2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>3</TargetIndex>
+    <SourceName>MoveInput3</SourceName>
+    <TargetName>MultiplexerBlock3</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
