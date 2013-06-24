@@ -28,7 +28,7 @@ position.
     <MoveBlock>
       <entries>
         <BlockPredecessor>
-          <name>BlockDigitalLevel1</name>
+          <name>BlockDynamicGain</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -102,12 +102,12 @@ position.
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>80</float>
+        <float>90</float>
       </constants>
     </Constant>
     <Position>
       <X>322</X>
-      <Y>412</Y>
+      <Y>419.58000000000004</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -118,12 +118,12 @@ position.
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>-10</float>
+        <float>-40</float>
       </constants>
     </Constant>
     <Position>
       <X>322</X>
-      <Y>456</Y>
+      <Y>465.44000000000005</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -134,12 +134,12 @@ position.
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>-40</float>
+        <float>-10</float>
       </constants>
     </Constant>
     <Position>
       <X>322</X>
-      <Y>495</Y>
+      <Y>527</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -193,13 +193,26 @@ position.
       </default_outputs>
     </MoveBlock>
     <Position>
-      <X>-272</X>
+      <X>-311</X>
       <Y>256</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
     <BlockMax>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>MoveBlock1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>MoveBlock1</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockMax</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -228,7 +241,14 @@ position.
   </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockDigitalLevel>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>BlockMax</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockDigitalLevel</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -274,7 +294,20 @@ do not track.</Commentaires>
   </GraphicalBlock>
   <GraphicalBlock>
     <BlockAddition>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>MoveBlock1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockGain</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockAddition</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -287,7 +320,14 @@ do not track.</Commentaires>
   </GraphicalBlock>
   <GraphicalBlock>
     <BlockGain>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>MoveBlock1</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockGain</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -327,7 +367,14 @@ do not track.</Commentaires>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockDigitalLevel>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>BlockAddition</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockDigitalLevel1</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -358,7 +405,20 @@ do not track.</Commentaires>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockDynamicGain>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockDynamicGain</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -409,7 +469,20 @@ do not track.</Commentaires>
   </GraphicalBlock>
   <GraphicalBlock>
     <BlockMin>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>MoveBlock1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>MoveBlock1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockMin</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -453,7 +526,14 @@ try to validate them.</Commentaires>
   </GraphicalBlock>
   <GraphicalBlock>
     <BlockDigitalLevel>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>BlockMin</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockDigitalLevel2</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -481,6 +561,35 @@ try to validate them.</Commentaires>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockMin</SourceName>
     <TargetName>BlockDigitalLevel2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockWatch>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel2</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockWatch</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <delay_ms>500</delay_ms>
+    </BlockWatch>
+    <Position>
+      <X>180.39333333333335</X>
+      <Y>124</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDigitalLevel2</SourceName>
+    <TargetName>BlockWatch</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
