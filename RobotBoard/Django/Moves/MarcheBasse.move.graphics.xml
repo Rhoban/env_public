@@ -3123,11 +3123,11 @@ Frontale</Commentaires>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>-0.3</float>
+        <float>0</float>
       </constants>
     </Constant>
     <Position>
-      <X>-338.54842619239747</X>
+      <X>-402.54127751818748</X>
       <Y>204.46226828159684</Y>
     </Position>
   </GraphicalBlock>
@@ -5559,7 +5559,7 @@ I=-1</Commentaires>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>-1.5</float>
+        <float>0.5</float>
       </constants>
     </Constant>
     <Position>
@@ -9334,6 +9334,12 @@ I=-1</Commentaires>
           <condition />
           <fire />
         </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Constant24</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
       </entries>
       <name>BlockAddition16</name>
       <gain>1</gain>
@@ -9341,7 +9347,7 @@ I=-1</Commentaires>
       <gainMax>60</gainMax>
     </BlockAddition>
     <Position>
-      <X>-253</X>
+      <X>-278.70419143049907</X>
       <Y>241.97135019399207</Y>
     </Position>
   </GraphicalBlock>
@@ -10180,6 +10186,31 @@ I=-1</Commentaires>
     <TargetIndex>2</TargetIndex>
     <SourceName>BlockDynamicGain17</SourceName>
     <TargetName>BlockAddition5</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant24</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>-0.3</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>-465.38127751818752</X>
+      <Y>204.46226828159684</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <output_value>0</output_value>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>Constant24</SourceName>
+    <TargetName>BlockAddition16</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>

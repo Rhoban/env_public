@@ -24,35 +24,18 @@
   <GraphicalBlock>
     <BlockServo>
       <entries />
-      <name>Cuisse G</name>
+      <name>Pan</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-      <servo_name>Cuisse G</servo_name>
+      <servo_name>Pan</servo_name>
       <unit>1</unit>
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>498</X>
-      <Y>105</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockServo>
-      <entries />
-      <name>Cuisse D</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-      <servo_name>Cuisse D</servo_name>
-      <unit>1</unit>
-      <relative>1</relative>
-    </BlockServo>
-    <Position>
-      <X>507</X>
-      <Y>186</Y>
+      <X>534</X>
+      <Y>96</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -62,16 +45,7 @@
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>EntrySinus</SourceName>
-    <TargetName>Cuisse G</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>EntrySinus</SourceName>
-    <TargetName>Cuisse D</TargetName>
+    <TargetName>Pan</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
