@@ -356,36 +356,6 @@
     <SourceName>MultiplexerTiltMax</SourceName>
     <TargetName>MoveBlock</TargetName>
   </GraphicalBlockLink>
-  <GraphicalBlock>
-    <BlockDigitalLevel>
-      <entries>
-        <BlockPredecessor>
-          <name>ChronoBlock</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>BlockDigitalLevel</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <min_value>
-        <float>0</float>
-      </min_value>
-      <max_value>
-        <float>10</float>
-      </max_value>
-      <output_low>0</output_low>
-      <output_medium>0</output_medium>
-      <output_high>1</output_high>
-      <hysteresis>false</hysteresis>
-    </BlockDigitalLevel>
-    <Position>
-      <X>201.535</X>
-      <Y>391</Y>
-    </Position>
-  </GraphicalBlock>
   <GraphicalBlockLink>
     <Condition />
     <Fire />
@@ -712,16 +682,17 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <Commentaires>Track the goal if:
-1. goal was not seen and ball was seen for 10 secs
-2. the ball tilt is high
-(if the ball tilt is low
-the ball is close and we dont want to lose track of it)
-3. the ball is visible
+1. goal was not locked for n seconds
+    (or has just been locked)
+2. The goal is not well locked
+    (during enough time)
+3. the ball has been long enough a short
+    time ago
 4. the player is not rotating too much</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>80.849999999999966</X>
-      <Y>217.96000000000004</Y>
+      <X>-57.997792978943835</X>
+      <Y>179.15999999999997</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -894,36 +865,6 @@ the ball is close and we dont want to lose track of it)
     <TargetName>MultiplexerTiltMax</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
-    <BlockDigitalLevel>
-      <entries>
-        <BlockPredecessor>
-          <name>MoveBlock3</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>BlockDigitalLevel2</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <min_value>
-        <float>-50</float>
-      </min_value>
-      <max_value>
-        <float>0</float>
-      </max_value>
-      <output_low>0</output_low>
-      <output_medium>1</output_medium>
-      <output_high>1</output_high>
-      <hysteresis>false</hysteresis>
-    </BlockDigitalLevel>
-    <Position>
-      <X>201.535</X>
-      <Y>442.08</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
     <BlockMin>
       <entries>
         <BlockPredecessor>
@@ -961,22 +902,6 @@ the ball is close and we dont want to lose track of it)
       <Y>472</Y>
     </Position>
   </GraphicalBlock>
-  <GraphicalBlockLink>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockDigitalLevel</SourceName>
-    <TargetName>BlockMin2</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>BlockDigitalLevel2</SourceName>
-    <TargetName>BlockMin2</TargetName>
-  </GraphicalBlockLink>
   <GraphicalBlock>
     <VariationBoundBlock>
       <entries>
@@ -995,13 +920,13 @@ the ball is close and we dont want to lose track of it)
         <float>-0.2</float>
       </min_value>
       <max_value>
-        <float>10000</float>
+        <float>0.2</float>
       </max_value>
       <discount_factor>0</discount_factor>
     </VariationBoundBlock>
     <Position>
-      <X>179.635</X>
-      <Y>491</Y>
+      <X>-26</X>
+      <Y>537.92</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -1030,7 +955,7 @@ the ball is close and we dont want to lose track of it)
         <float>0</float>
       </min_value>
       <max_value>
-        <float>0.5</float>
+        <float>0.8</float>
       </max_value>
       <output_low>0</output_low>
       <output_medium>0</output_medium>
@@ -1038,8 +963,8 @@ the ball is close and we dont want to lose track of it)
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>318.09</X>
-      <Y>491</Y>
+      <X>166.005</X>
+      <Y>537.92</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -1084,7 +1009,7 @@ the ball is close and we dont want to lose track of it)
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>266.31220702105628</X>
+      <X>166.005</X>
       <Y>603.47067550236284</Y>
     </Position>
   </GraphicalBlock>
@@ -1116,7 +1041,7 @@ the ball is close and we dont want to lose track of it)
       </abs_coefs>
     </BlockPolynome>
     <Position>
-      <X>179.635</X>
+      <X>2.7150000000000034</X>
       <Y>597.5106755023628</Y>
     </Position>
   </GraphicalBlock>
@@ -1153,7 +1078,7 @@ the ball is close and we dont want to lose track of it)
       </default_outputs>
     </MoveBlock>
     <Position>
-      <X>-0.354459645610504</X>
+      <X>-243.9066666666667</X>
       <Y>589.53067550236278</Y>
     </Position>
   </GraphicalBlock>
@@ -1440,31 +1365,21 @@ pan and tilt depending on object coordinates
       <move_name>LocateBall</move_name>
       <inputs />
       <outputs>
-        <string>ball_tilt</string>
         <string>ball_locked</string>
       </outputs>
       <default_outputs>
         <float>0</float>
-        <float>0</float>
       </default_outputs>
     </MoveBlock>
     <Position>
-      <X>-195.7233333333333</X>
-      <Y>537.92</Y>
+      <X>-223.86333333333334</X>
+      <Y>523.9799999999999</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>MoveBlock3</SourceName>
-    <TargetName>BlockDigitalLevel2</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>MoveBlock3</SourceName>
     <TargetName>VariationBoundBlock2</TargetName>
@@ -1529,127 +1444,9 @@ pan and tilt depending on object coordinates
     <TargetName>MultiplexerTiltMax</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
-    <ChronoBlock>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockDigitalLevel5</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>ChronoBlock</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <clock_speeds>
-        <float>1</float>
-      </clock_speeds>
-    </ChronoBlock>
-    <Position>
-      <X>104</X>
-      <Y>391</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlockLink>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>ChronoBlock</SourceName>
-    <TargetName>BlockDigitalLevel</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlock>
-    <GoalBlock>
-      <entries />
-      <name>GoalBlock1</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <refresh_frequency>5</refresh_frequency>
-    </GoalBlock>
-    <Position>
-      <X>-265.91</X>
-      <Y>263.82000000000005</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockMin>
-      <entries>
-        <BlockPredecessor>
-          <name>VariationBoundBlock4</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>VariationBoundBlock3</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>BlockMin3</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-    </BlockMin>
-    <Position>
-      <X>-45.064459645610505</X>
-      <Y>391</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockPolynome>
-      <entries>
-        <BlockPredecessor>
-          <name>GoalBlock1</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>BlockPolynome1</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <const_coefs>
-        <float>1</float>
-      </const_coefs>
-      <lin_coefs>
-        <float>-1</float>
-      </lin_coefs>
-      <square_coefs>
-        <float>0</float>
-      </square_coefs>
-      <abs_coefs>
-        <float>0</float>
-      </abs_coefs>
-    </BlockPolynome>
-    <Position>
-      <X>-162.17499999999996</X>
-      <Y>263.82000000000005</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlockLink>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>GoalBlock1</SourceName>
-    <TargetName>BlockPolynome1</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlock>
     <BlockDigitalLevel>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockMin3</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>BlockDigitalLevel5</name>
+      <entries />
+      <name>BlockDigitalLevel6</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
@@ -1657,16 +1454,39 @@ pan and tilt depending on object coordinates
         <float>0.5</float>
       </min_value>
       <max_value>
-        <float>0.5</float>
+        <float>10</float>
       </max_value>
-      <output_low>-1.1</output_low>
-      <output_medium>1</output_medium>
+      <output_low>1</output_low>
+      <output_medium>0</output_medium>
       <output_high>1</output_high>
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>22.745540354389497</X>
+      <X>166.005</X>
       <Y>391</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <MoveBlock>
+      <entries />
+      <name>MoveBlock1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <move_name>LocateGoal</move_name>
+      <inputs />
+      <outputs>
+        <string>goal_age</string>
+        <string>goal_locked</string>
+      </outputs>
+      <default_outputs>
+        <float>100</float>
+        <float>0</float>
+      </default_outputs>
+    </MoveBlock>
+    <Position>
+      <X>-228</X>
+      <Y>369.08</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -1674,42 +1494,35 @@ pan and tilt depending on object coordinates
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
-    <SourceName>BlockMin3</SourceName>
-    <TargetName>BlockDigitalLevel5</TargetName>
+    <SourceName>MoveBlock1</SourceName>
+    <TargetName>BlockDigitalLevel6</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
-    <SourceName>BlockDigitalLevel5</SourceName>
-    <TargetName>ChronoBlock</TargetName>
+    <SourceName>BlockDigitalLevel6</SourceName>
+    <TargetName>BlockMin2</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <VariationBoundBlock>
-      <entries>
-        <BlockPredecessor>
-          <name>MoveBlock3</name>
-          <output_idx>1</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
+      <entries />
       <name>VariationBoundBlock3</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <min_value>
-        <float>-0.5</float>
+        <float>-100</float>
       </min_value>
       <max_value>
-        <float>0.5</float>
+        <float>0.4</float>
       </max_value>
       <discount_factor>0</discount_factor>
     </VariationBoundBlock>
     <Position>
-      <X>-230.91000000000003</X>
-      <Y>442.08</Y>
+      <X>-26</X>
+      <Y>471</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -1717,42 +1530,30 @@ pan and tilt depending on object coordinates
     <Fire />
     <SourceIndex>1</SourceIndex>
     <TargetIndex>0</TargetIndex>
-    <SourceName>MoveBlock3</SourceName>
+    <SourceName>MoveBlock1</SourceName>
     <TargetName>VariationBoundBlock3</TargetName>
   </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>VariationBoundBlock3</SourceName>
-    <TargetName>BlockMin3</TargetName>
-  </GraphicalBlockLink>
   <GraphicalBlock>
-    <VariationBoundBlock>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockPolynome1</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>VariationBoundBlock4</name>
+    <BlockDigitalLevel>
+      <entries />
+      <name>BlockDigitalLevel</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <min_value>
-        <float>-0.5</float>
+        <float>0</float>
       </min_value>
       <max_value>
-        <float>0.5</float>
+        <float>0.9</float>
       </max_value>
-      <discount_factor>0</discount_factor>
-    </VariationBoundBlock>
+      <output_low>1</output_low>
+      <output_medium>1</output_medium>
+      <output_high>0</output_high>
+      <hysteresis>false</hysteresis>
+    </BlockDigitalLevel>
     <Position>
-      <X>-195.7233333333333</X>
-      <Y>375</Y>
+      <X>166.005</X>
+      <Y>472</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -1760,17 +1561,73 @@ pan and tilt depending on object coordinates
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
-    <SourceName>BlockPolynome1</SourceName>
-    <TargetName>VariationBoundBlock4</TargetName>
+    <SourceName>VariationBoundBlock3</SourceName>
+    <TargetName>BlockDigitalLevel</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>VariationBoundBlock4</SourceName>
-    <TargetName>BlockMin3</TargetName>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockDigitalLevel</SourceName>
+    <TargetName>BlockMin2</TargetName>
   </GraphicalBlockLink>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>1</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>112.00000000000006</X>
+      <Y>391</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock10</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>2</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>112.00000000000006</X>
+      <Y>472</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock11</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>3</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>112.00000000000006</X>
+      <Y>537.92</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock12</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>4</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>112.00000000000006</X>
+      <Y>603.47067550236284</Y>
+    </Position>
+  </GraphicalBlock>
   <hsize>500</hsize>
   <vsize>500</vsize>
   <SchemaComments />
@@ -1779,4 +1636,3 @@ pan and tilt depending on object coordinates
   <SmoothStop>1000</SmoothStop>
   <Duration>0</Duration>
 </GraphicalMotorPrimitive>
-
