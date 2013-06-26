@@ -61,21 +61,9 @@ class RobocupStm:
     <StmStateBlock>
       <entries>
         <BlockPredecessor>
-          <name>FallFace</name>
+          <name>Waiting</name>
           <output_idx>0</output_idx>
-          <condition>releve</condition>
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>FallBack</name>
-          <output_idx>0</output_idx>
-          <condition>retourne and not fallback and not fallface</condition>
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>Initial</name>
-          <output_idx>0</output_idx>
-          <condition>not fallback and not fallface</condition>
+          <condition>playing and not fallback and not fallface</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -101,13 +89,7 @@ self.connection.SchedulerStopMove("PositionBasse",200)</exit>
     <StmStateBlock>
       <entries>
         <BlockPredecessor>
-          <name>Initial</name>
-          <output_idx>0</output_idx>
-          <condition>fallback</condition>
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>WalkToBall</name>
+          <name>Waiting</name>
           <output_idx>0</output_idx>
           <condition>fallback</condition>
           <fire />
@@ -118,15 +100,19 @@ self.connection.SchedulerStopMove("PositionBasse",200)</exit>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <loop>RobocupStm.check_fall(self.connection)
+global retourne
+retourne = False
 info = self.connection.SchedulerGetOutputValues_response("Retournement",["Finished"])
 if info and len(info) &gt;= 1 and len(info[0])&gt;=1:
-    if info[0][0] &gt;= 0.9 and fallback:
-        retourne = False
-        self.connection.SchedulerStartMove("Retournement",0,200)
-    else:
-        retourne = True
+    if info[0][0] &gt;= 0.9:
+        if fallback:
+            retourne = False
+            self.connection.SchedulerStartMove("Retournement",0,200)
+        else:
+            retourne = True
 </loop>
-      <enter>self.connection.SchedulerStartMove("Retournement",0,200)
+      <enter>global retourne
+self.connection.SchedulerStartMove("Retournement",0,200)
 retourne = False</enter>
       <exit>self.connection.SchedulerStopMove("Retournement",200)</exit>
     </StmStateBlock>
@@ -139,19 +125,7 @@ retourne = False</enter>
     <StmStateBlock>
       <entries>
         <BlockPredecessor>
-          <name>Initial</name>
-          <output_idx>0</output_idx>
-          <condition>fallface</condition>
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>FallBack</name>
-          <output_idx>0</output_idx>
-          <condition>fallface</condition>
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>WalkToBall</name>
+          <name>Waiting</name>
           <output_idx>0</output_idx>
           <condition>fallface</condition>
           <fire />
@@ -191,7 +165,32 @@ self.connection.SchedulerStartMove("GameStatusTracker",0,20)</enter>
   </GraphicalBlock>
   <GraphicalBlock>
     <StmStateBlock>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>Initial</name>
+          <output_idx>0</output_idx>
+          <condition>True</condition>
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>FallBack</name>
+          <output_idx>0</output_idx>
+          <condition>retourne</condition>
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>FallFace</name>
+          <output_idx>0</output_idx>
+          <condition>releve</condition>
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>WalkToBall</name>
+          <output_idx>0</output_idx>
+          <condition>not playing or fallback or fallface</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>Waiting</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -218,7 +217,7 @@ RobocupStm.checkGameState(self.connection)</loop>
     <Condition>playing and not fallback and not fallface</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>2</TargetIndex>
+    <TargetIndex>0</TargetIndex>
     <SourceName>Waiting</SourceName>
     <TargetName>WalkToBall</TargetName>
   </GraphicalBlockLink>
@@ -226,7 +225,7 @@ RobocupStm.checkGameState(self.connection)</loop>
     <Condition>fallback</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>2</TargetIndex>
+    <TargetIndex>0</TargetIndex>
     <SourceName>Waiting</SourceName>
     <TargetName>FallBack</TargetName>
   </GraphicalBlockLink>
@@ -234,7 +233,7 @@ RobocupStm.checkGameState(self.connection)</loop>
     <Condition>fallface</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>3</TargetIndex>
+    <TargetIndex>0</TargetIndex>
     <SourceName>Waiting</SourceName>
     <TargetName>FallFace</TargetName>
   </GraphicalBlockLink>
@@ -247,7 +246,7 @@ RobocupStm.checkGameState(self.connection)</loop>
     <TargetName>Waiting</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <Condition>retourne</Condition>
+    <Condition>releve</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>2</TargetIndex>

@@ -45,12 +45,11 @@
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>428</X>
+      <X>301</X>
       <Y>160</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -60,7 +59,14 @@
   </GraphicalBlockLink>
   <GraphicalBlock>
     <MoveOutput>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>BlockMax</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>MoveOutput</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -70,19 +76,10 @@
       </labels>
     </MoveOutput>
     <Position>
-      <X>654</X>
-      <Y>154.04</Y>
+      <X>722</X>
+      <Y>148.08</Y>
     </Position>
   </GraphicalBlock>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockDigitalLevel</SourceName>
-    <TargetName>MoveOutput</TargetName>
-  </GraphicalBlockLink>
   <GraphicalBlock>
     <CommentsBlock>
       <entries />
@@ -93,10 +90,200 @@
       <Commentaires>Verify if the status should force us to play</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>337.65333333333331</X>
-      <Y>112</Y>
+      <X>273.65333333333331</X>
+      <Y>116</Y>
     </Position>
   </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>If entry is -1, take default value</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>192</X>
+      <Y>288</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockDigitalLevel>
+      <entries>
+        <BlockPredecessor>
+          <name>RefereeBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockDigitalLevel1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <min_value>
+        <float>-0.5</float>
+      </min_value>
+      <max_value>
+        <float>-0.5</float>
+      </max_value>
+      <output_low>1</output_low>
+      <output_medium>0</output_medium>
+      <output_high>0</output_high>
+      <hysteresis>false</hysteresis>
+    </BlockDigitalLevel>
+    <Position>
+      <X>301</X>
+      <Y>255</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>RefereeBlock</SourceName>
+    <TargetName>BlockDigitalLevel1</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <MultiplexerBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockDigitalLevel</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Constant</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>MultiplexerBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </MultiplexerBlock>
+    <Position>
+      <X>510</X>
+      <Y>160</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDigitalLevel1</SourceName>
+    <TargetName>MultiplexerBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockDigitalLevel</SourceName>
+    <TargetName>MultiplexerBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>1</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>417</X>
+      <Y>288</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>Constant</SourceName>
+    <TargetName>MultiplexerBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockMax>
+      <entries>
+        <BlockPredecessor>
+          <name>MultiplexerBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Constant1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockMax</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockMax>
+    <Position>
+      <X>626</X>
+      <Y>178</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>MultiplexerBlock</SourceName>
+    <TargetName>BlockMax</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMax</SourceName>
+    <TargetName>MoveOutput</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>1</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>560</X>
+      <Y>314</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>Constant1</SourceName>
+    <TargetName>BlockMax</TargetName>
+  </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
   <SchemaComments />
