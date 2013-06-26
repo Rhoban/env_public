@@ -569,14 +569,6 @@ Outputs are object coordinates and last detection age</Commentaires>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>3</TargetIndex>
-    <SourceName>BlockDigitalLevel</SourceName>
-    <TargetName>MoveOutput</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockDigitalLevel</SourceName>
     <TargetName>BlockPolynome1</TargetName>
@@ -760,6 +752,42 @@ Outputs are object coordinates and last detection age</Commentaires>
     <SourceName>Tilt</SourceName>
     <TargetName>MoveOutput</TargetName>
   </GraphicalBlockLink>
+  <GraphicalBlock>
+    <VariationBoundBlock>
+      <entries />
+      <name>VariationBoundBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <min_value>
+        <float>-1</float>
+      </min_value>
+      <max_value>
+        <float>1</float>
+      </max_value>
+      <discount_factor>0</discount_factor>
+    </VariationBoundBlock>
+    <Position>
+      <X>715.60333333333335</X>
+      <Y>160.76000000000002</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDigitalLevel</SourceName>
+    <TargetName>VariationBoundBlock</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>3</TargetIndex>
+    <SourceName>VariationBoundBlock</SourceName>
+    <TargetName>MoveOutput</TargetName>
+  </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
   <SchemaComments />
@@ -768,4 +796,3 @@ Outputs are object coordinates and last detection age</Commentaires>
   <SmoothStop>1000</SmoothStop>
   <Duration>0</Duration>
 </GraphicalMotorPrimitive>
-
