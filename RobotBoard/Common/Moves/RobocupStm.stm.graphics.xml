@@ -16,6 +16,7 @@
 fallface = False
 releve = False
 retourne = False
+playing = False
 
 class RobocupStm:
     @staticmethod
@@ -40,7 +41,16 @@ class RobocupStm:
             print( str( info[0][0] ))
             releve = info[0][0] &gt; 0.1
             print( str(releve))
-</preamble>
+
+    @staticmethod
+    def checkGameState(connection):
+        global playing
+        info = connection.SchedulerGetOutputValues_response("GameStatusTracker",["Playing"])
+        # There should always be one value in info[0] debug is needed if not
+        if info and len(info) &gt;= 1 and len(info[0]) == 1:
+            playing = info[0][0] == 1
+        else:
+            print("Failed to get message " + str(info))</preamble>
     </StmPreambleBlock>
     <Position>
       <X>-200</X>
@@ -50,6 +60,18 @@ class RobocupStm:
   <GraphicalBlock>
     <StmStateBlock>
       <entries>
+        <BlockPredecessor>
+          <name>FallFace</name>
+          <output_idx>0</output_idx>
+          <condition>releve</condition>
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>FallBack</name>
+          <output_idx>0</output_idx>
+          <condition>retourne and not fallback and not fallface</condition>
+          <fire />
+        </BlockPredecessor>
         <BlockPredecessor>
           <name>Initial</name>
           <output_idx>0</output_idx>
@@ -61,7 +83,8 @@ class RobocupStm:
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>RobocupStm.check_fall(self.connection)</loop>
+      <loop>RobocupStm.check_fall(self.connection)
+RobocupStm.checkGameState(self.connection)</loop>
       <enter>self.connection.SchedulerStartMove("MarcheBasse",0,500)
 self.connection.SchedulerStartMove("TrackBallAndGoal",0,100)
 self.connection.SchedulerStartMove("PositionBasse",0,500)</enter>
@@ -70,13 +93,19 @@ self.connection.SchedulerStopMove("TrackBallAndGoal",200)
 self.connection.SchedulerStopMove("PositionBasse",200)</exit>
     </StmStateBlock>
     <Position>
-      <X>127.85685646844632</X>
-      <Y>630.27436247416665</Y>
+      <X>309.58267834829559</X>
+      <Y>899.01766256622818</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
     <StmStateBlock>
       <entries>
+        <BlockPredecessor>
+          <name>Initial</name>
+          <output_idx>0</output_idx>
+          <condition>fallback</condition>
+          <fire />
+        </BlockPredecessor>
         <BlockPredecessor>
           <name>WalkToBall</name>
           <output_idx>0</output_idx>
@@ -102,13 +131,25 @@ retourne = False</enter>
       <exit>self.connection.SchedulerStopMove("Retournement",200)</exit>
     </StmStateBlock>
     <Position>
-      <X>930.97818131299482</X>
-      <Y>29.085424324226608</Y>
+      <X>1103.0938418051217</X>
+      <Y>48.713774278195956</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
     <StmStateBlock>
       <entries>
+        <BlockPredecessor>
+          <name>Initial</name>
+          <output_idx>0</output_idx>
+          <condition>fallface</condition>
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>FallBack</name>
+          <output_idx>0</output_idx>
+          <condition>fallface</condition>
+          <fire />
+        </BlockPredecessor>
         <BlockPredecessor>
           <name>WalkToBall</name>
           <output_idx>0</output_idx>
@@ -126,28 +167,10 @@ self.connection.SchedulerStartMove("Relevage",0,200)</enter>
       <exit>self.connection.SchedulerStopMove("Relevage",500)</exit>
     </StmStateBlock>
     <Position>
-      <X>1034.5684998961738</X>
-      <Y>560.27436247416665</Y>
+      <X>1026.4515217682972</X>
+      <Y>820.546760027102</Y>
     </Position>
   </GraphicalBlock>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition>fallback</Condition>
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>WalkToBall</SourceName>
-    <TargetName>FallBack</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition>fallface</Condition>
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>2</TargetIndex>
-    <SourceName>WalkToBall</SourceName>
-    <TargetName>FallFace</TargetName>
-  </GraphicalBlockLink>
   <GraphicalBlock>
     <StmStateBlock>
       <entries />
@@ -158,67 +181,86 @@ self.connection.SchedulerStartMove("Relevage",0,200)</enter>
       <loop>RobocupStm.check_fall(self.connection)
 </loop>
       <enter>self.connection.SchedulerStartMove("FallDetector",0,20)
-</enter>
+self.connection.SchedulerStartMove("GameStatusTracker",0,20)</enter>
       <exit />
     </StmStateBlock>
     <Position>
-      <X>274.80448482331491</X>
-      <Y>102</Y>
+      <X>254.80448482331491</X>
+      <Y>7</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmStateBlock>
+      <entries />
+      <name>Waiting</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <loop>RobocupStm.check_fall(self.connection)
+RobocupStm.checkGameState(self.connection)</loop>
+      <enter />
+      <exit />
+    </StmStateBlock>
+    <Position>
+      <X>700.82102411196308</X>
+      <Y>450.74763500043593</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition>not fallback and not fallface</Condition>
+    <Condition>True</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Initial</SourceName>
+    <TargetName>Waiting</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition>playing and not fallback and not fallface</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>2</TargetIndex>
-    <SourceName>Initial</SourceName>
+    <SourceName>Waiting</SourceName>
     <TargetName>WalkToBall</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition>fallback</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>Initial</SourceName>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>Waiting</SourceName>
     <TargetName>FallBack</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
     <Condition>fallface</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>Initial</SourceName>
+    <TargetIndex>3</TargetIndex>
+    <SourceName>Waiting</SourceName>
     <TargetName>FallFace</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition>releve</Condition>
+    <Condition>retourne</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>FallBack</SourceName>
+    <TargetName>Waiting</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition>retourne</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>2</TargetIndex>
     <SourceName>FallFace</SourceName>
-    <TargetName>WalkToBall</TargetName>
+    <TargetName>Waiting</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition>fallface</Condition>
+    <Condition>not playing or fallback or fallface</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>FallBack</SourceName>
-    <TargetName>FallFace</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
-    <output_value>0</output_value>
-    <Condition>retourne and not fallback and not fallface</Condition>
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>FallBack</SourceName>
-    <TargetName>WalkToBall</TargetName>
+    <TargetIndex>3</TargetIndex>
+    <SourceName>WalkToBall</SourceName>
+    <TargetName>Waiting</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
