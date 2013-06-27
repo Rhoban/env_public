@@ -1,8 +1,7 @@
 #!/bin/bash
-
+DIR="/home/rhoban/Environments/RhobanServer/Chewbacca"
 while true;
 do
-    start-stop-daemon --background --user rhoban --start --exec ./start_rhoban_server
-    start-stop-daemon --background --user rhoban --start --exec ./start_stm
+    cd $DIR && `pwd`/wifiChecker.sh
     sleep 10
 done;
