@@ -146,7 +146,7 @@
           <fire />
         </BlockPredecessor>
       </entries>
-      <name>Cuisse D</name>
+      <name>Cuisse D1</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
@@ -170,7 +170,7 @@
           <fire />
         </BlockPredecessor>
       </entries>
-      <name>Genou D</name>
+      <name>Genou D1</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
@@ -194,7 +194,7 @@
           <fire />
         </BlockPredecessor>
       </entries>
-      <name>Cheville D</name>
+      <name>Cheville D1</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
@@ -238,7 +238,7 @@
     <SourceIndex>1</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockSigmabanLegKinematic</SourceName>
-    <TargetName>Cuisse D</TargetName>
+    <TargetName>Cuisse D1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <Condition />
@@ -246,7 +246,7 @@
     <SourceIndex>2</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockSigmabanLegKinematic</SourceName>
-    <TargetName>Genou D</TargetName>
+    <TargetName>Genou D1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <Condition />
@@ -254,7 +254,7 @@
     <SourceIndex>3</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockSigmabanLegKinematic</SourceName>
-    <TargetName>Cheville D</TargetName>
+    <TargetName>Cheville D1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockSigmabanLegKinematic>
@@ -325,7 +325,7 @@
           <fire />
         </BlockPredecessor>
       </entries>
-      <name>Cuisse G</name>
+      <name>Cuisse G1</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
@@ -349,7 +349,7 @@
           <fire />
         </BlockPredecessor>
       </entries>
-      <name>Genou G</name>
+      <name>Genou G1</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
@@ -373,7 +373,7 @@
           <fire />
         </BlockPredecessor>
       </entries>
-      <name>Cheville G</name>
+      <name>Cheville G1</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
@@ -417,7 +417,7 @@
     <SourceIndex>1</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockSigmabanLegKinematic1</SourceName>
-    <TargetName>Cuisse G</TargetName>
+    <TargetName>Cuisse G1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <Condition />
@@ -425,7 +425,7 @@
     <SourceIndex>2</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockSigmabanLegKinematic1</SourceName>
-    <TargetName>Genou G</TargetName>
+    <TargetName>Genou G1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <Condition />
@@ -591,7 +591,7 @@
     <SourceIndex>3</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockSigmabanLegKinematic1</SourceName>
-    <TargetName>Cheville G</TargetName>
+    <TargetName>Cheville G1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlock>
     <BlockGain>
@@ -1359,6 +1359,457 @@
     <TargetIndex>0</TargetIndex>
     <SourceName>JoypadAxisBlock</SourceName>
     <TargetName>BlockGain7</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <AccelerometerBlock>
+      <entries />
+      <name>AccelerometerBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </AccelerometerBlock>
+    <Position>
+      <X>915</X>
+      <Y>682</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockMobileAverage>
+      <entries>
+        <BlockPredecessor>
+          <name>AccelerometerBlock</name>
+          <output_idx>3</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockMobileAverage2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <discount_factor>0.2</discount_factor>
+    </BlockMobileAverage>
+    <Position>
+      <X>1002</X>
+      <Y>681</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockMobileAverage2</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain8</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-10</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>1096</X>
+      <Y>681</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain10</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Cheville D</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+      <servo_name>Cheville D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>1287</X>
+      <Y>636</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain9</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Cheville G</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+      <servo_name>Cheville G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>1287</X>
+      <Y>681</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain10</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain9</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>1240</X>
+      <Y>681</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain9</SourceName>
+    <TargetName>Cheville G</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain8</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain10</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>1183</X>
+      <Y>656</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain12</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Genou D</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+      <servo_name>Genou D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>1287</X>
+      <Y>743</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain11</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Genou G</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+      <servo_name>Genou G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>1287</X>
+      <Y>780</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain12</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain11</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>1240</X>
+      <Y>780</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain8</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain12</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>1183</X>
+      <Y>759</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain12</SourceName>
+    <TargetName>Genou D</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain12</SourceName>
+    <TargetName>BlockGain11</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain11</SourceName>
+    <TargetName>Genou G</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain10</SourceName>
+    <TargetName>Cheville D</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain10</SourceName>
+    <TargetName>BlockGain9</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain8</SourceName>
+    <TargetName>BlockGain10</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain8</SourceName>
+    <TargetName>BlockGain12</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain8</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain13</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-0.5</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>1183</X>
+      <Y>860</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain13</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Cuisse D</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+      <servo_name>Cuisse D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>1287</X>
+      <Y>860</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain14</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Cuisse G</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+      <servo_name>Cuisse G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>1287</X>
+      <Y>898</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain13</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain14</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>1240</X>
+      <Y>898</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain13</SourceName>
+    <TargetName>BlockGain14</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain14</SourceName>
+    <TargetName>Cuisse G</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain13</SourceName>
+    <TargetName>Cuisse D</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain8</SourceName>
+    <TargetName>BlockGain13</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMobileAverage2</SourceName>
+    <TargetName>BlockGain8</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>3</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>AccelerometerBlock</SourceName>
+    <TargetName>BlockMobileAverage2</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
