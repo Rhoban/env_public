@@ -653,6 +653,60 @@
     <SourceName>BlockAddition5</SourceName>
     <TargetName>MoveOutput5</TargetName>
   </GraphicalBlockLink>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock7</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>Tilt Target When Truning Aound Ball</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>-106.40500000000002</X>
+      <Y>561</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant7</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>-60</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>147.32333333333332</X>
+      <Y>561</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <MoveOutput>
+      <entries />
+      <name>MoveOutput6</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <labels>
+        <string>TiltTargetAroundBall</string>
+      </labels>
+    </MoveOutput>
+    <Position>
+      <X>471</X>
+      <Y>555.04</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Constant7</SourceName>
+    <TargetName>MoveOutput6</TargetName>
+  </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
   <SchemaComments />
