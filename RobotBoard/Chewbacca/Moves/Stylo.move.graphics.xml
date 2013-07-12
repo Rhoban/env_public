@@ -1317,8 +1317,8 @@
       <gainMax>60</gainMax>
     </JoypadAxisBlock>
     <Position>
-      <X>618</X>
-      <Y>483</Y>
+      <X>564</X>
+      <Y>512</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -1336,12 +1336,12 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <gains>
-        <float>10</float>
+        <float>0.0001</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>697</X>
-      <Y>535</Y>
+      <X>701</X>
+      <Y>489</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -1810,6 +1810,38 @@
     <TargetIndex>0</TargetIndex>
     <SourceName>AccelerometerBlock</SourceName>
     <TargetName>BlockMobileAverage2</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries />
+      <name>BlockGain15</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>0.0001</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>701</X>
+      <Y>537</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>JoypadAxisBlock</SourceName>
+    <TargetName>BlockGain15</TargetName>
+  </GraphicalBlockLink>
+  <GraphicalBlockLink>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>BlockGain15</SourceName>
+    <TargetName>BlockAddition1</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
   <vsize>500</vsize>

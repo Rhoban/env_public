@@ -108,8 +108,7 @@ if info and len(info) &gt;= 1 and len(info[0])&gt;=1:
 </loop>
       <enter>global retourne
 self.connection.SchedulerStartMove("Retournement",0,200)
-retourne = False
-self.connection.SchedulerStopMove("PositionBasse", 200)</enter>
+retourne = False</enter>
       <exit>self.connection.SchedulerStopMove("Retournement",200)</exit>
     </StmStateBlock>
     <Position>
@@ -133,8 +132,7 @@ self.connection.SchedulerStopMove("PositionBasse", 200)</enter>
       <gainMax>60</gainMax>
       <loop>RobocupStm.check_releve(self.connection)</loop>
       <enter>releve = False
-self.connection.SchedulerStartMove("Relevage",0,200)
-self.connection.SchedulerStopMove("PositionBasse", 200)</enter>
+self.connection.SchedulerStartMove("Relevage",0,200)</enter>
       <exit>self.connection.SchedulerStopMove("Relevage",500)</exit>
     </StmStateBlock>
     <Position>
@@ -155,19 +153,18 @@ self.connection.SchedulerStopMove("PositionBasse", 200)</enter>
 self.connection.SchedulerStartMove("GameStatusTracker",0,20)
 self.connection.SchedulerStartMove("LocateBall",0,20)
 self.connection.SchedulerStartMove("LocateGoal",0,20)
-# self.connection.SchedulerStartMove("DetectionTir",0,20)
 self.connection.SchedulerStartMove("MotionParameters",0,20)
 self.connection.SchedulerStartMove("PositionBasse",0,20)
 self.connection.SchedulerStartMove("PushBallToGoal",0,20)
 self.connection.SchedulerStartMove("PushBallToGoalCorrection",0,20)
-self.connection.SchedulerStartMove("TrackObject",0,20)
 self.connection.SchedulerStartMove("TrackBallAndGoal",0,20)
+self.connection.SchedulerStartMove("TrackObject",0,20)
 self.connection.SchedulerStartMove("VisionParameters",0,20)
 </enter>
       <exit />
     </StmStateBlock>
     <Position>
-      <X>123.80448482331491</X>
+      <X>122.80448482331491</X>
       <Y>123</Y>
     </Position>
   </GraphicalBlock>
@@ -205,7 +202,7 @@ self.connection.SchedulerStartMove("VisionParameters",0,20)
       <gainMax>60</gainMax>
       <loop>RobocupStm.check_fall(self.connection)
 RobocupStm.checkGameState(self.connection)</loop>
-      <enter>self.connection.SchedulerStartMove("PositionBasse", 0, 200)</enter>
+      <enter />
       <exit />
     </StmStateBlock>
     <Position>
