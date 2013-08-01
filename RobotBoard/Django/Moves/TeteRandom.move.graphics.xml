@@ -26,7 +26,7 @@
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>0</x>
-              <y>92.871</y>
+              <y>0</y>
             </SplinePoint>
             <SplinePoint>
               <left_tangent>0</left_tangent>
@@ -56,13 +56,13 @@
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>5</x>
-              <y>119.824</y>
+              <y>30</y>
             </SplinePoint>
             <SplinePoint>
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>6</x>
-              <y>122.754</y>
+              <y>40</y>
             </SplinePoint>
             <SplinePoint>
               <left_tangent>0</left_tangent>
@@ -85,7 +85,7 @@
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>0</x>
-              <y>14.043</y>
+              <y>-4.043</y>
             </SplinePoint>
             <SplinePoint>
               <left_tangent>0</left_tangent>
@@ -97,31 +97,31 @@
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>2</x>
-              <y>18.438</y>
+              <y>-8.438</y>
             </SplinePoint>
             <SplinePoint>
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>3</x>
-              <y>11.992</y>
+              <y>-11.992</y>
             </SplinePoint>
             <SplinePoint>
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>4</x>
-              <y>7.305</y>
+              <y>-7.305</y>
             </SplinePoint>
             <SplinePoint>
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>5</x>
-              <y>37.773</y>
+              <y>-5</y>
             </SplinePoint>
             <SplinePoint>
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>6</x>
-              <y>33.672</y>
+              <y>0</y>
             </SplinePoint>
             <SplinePoint>
               <left_tangent>0</left_tangent>
@@ -153,7 +153,7 @@
     <BlockServo>
       <entries>
         <BlockPredecessor>
-          <name>Spline</name>
+          <name>VariationBoundBlock</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -177,7 +177,7 @@
     <BlockServo>
       <entries>
         <BlockPredecessor>
-          <name>Spline</name>
+          <name>VariationBoundBlock</name>
           <output_idx>1</output_idx>
           <condition />
           <fire />
@@ -205,7 +205,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <clock_speeds>
-        <float>0.2</float>
+        <float>0.1</float>
       </clock_speeds>
     </ChronoBlock>
     <Position>
@@ -343,7 +343,20 @@
   </GraphicalBlockLink>
   <GraphicalBlock>
     <VariationBoundBlock>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>Spline</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Spline</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>VariationBoundBlock</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
