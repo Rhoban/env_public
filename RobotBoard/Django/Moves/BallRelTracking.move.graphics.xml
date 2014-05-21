@@ -33,6 +33,12 @@
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
+          <name>BallBlock</name>
+          <output_idx>4</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
           <name>BlockGain1</name>
           <output_idx>0</output_idx>
           <condition />
@@ -104,14 +110,14 @@
       <pan_range_min>-60</pan_range_min>
       <pan_range_max>60</pan_range_max>
       <tilt_range_min>-60</tilt_range_min>
-      <tilt_range_max>5</tilt_range_max>
+      <tilt_range_max>-5</tilt_range_max>
       <partial_error_threshold>5</partial_error_threshold>
       <complete_error_threshold>15</complete_error_threshold>
-      <scanning_speed>0.003</scanning_speed>
+      <scanning_speed>0.001</scanning_speed>
     </BlockBallRelLoc>
     <Position>
       <X>472.30868943536223</X>
-      <Y>9.1431596183526267</Y>
+      <Y>6.6431596183526267</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -215,9 +221,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>30.40506386756897</Avg>
-    <Max>73.113906860351562</Max>
-    <Min>25.904108047485352</Min>
+    <Avg>613.32927997692207</Avg>
+    <Max>1000</Max>
+    <Min>168.58430480957031</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -226,9 +232,9 @@
     <TargetName>ballDistance</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-33.260098603931631</Avg>
-    <Max>15.800000190734863</Max>
-    <Min>-41.1069450378418</Min>
+    <Avg>24.794530729989749</Avg>
+    <Max>41.789279937744141</Max>
+    <Min>6.70380163192749</Min>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -237,9 +243,9 @@
     <TargetName>ballAzimuth</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>330.44198841984206</Avg>
-    <Max>991.70751953125</Max>
-    <Min>5.8404378890991211</Min>
+    <Avg>42.676730953358316</Avg>
+    <Max>160.11634826660156</Max>
+    <Min>5.8281149864196777</Min>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -248,9 +254,9 @@
     <TargetName>distanceVariance</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>327.1425792961507</Avg>
-    <Max>988.394775390625</Max>
-    <Min>2.7565007209777832</Min>
+    <Avg>37.937631650550948</Avg>
+    <Max>155.9986572265625</Max>
+    <Min>2.7708525657653809</Min>
     <Condition />
     <Fire />
     <SourceIndex>3</SourceIndex>
@@ -280,14 +286,14 @@
       <clipping>true</clipping>
     </BallBlock>
     <Position>
-      <X>45.318643101159</X>
-      <Y>-132.79086279021789</Y>
+      <X>8.3186431011589974</X>
+      <Y>-155.79086279021789</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>-0.062074481802483206</Avg>
-    <Max>0.93107587099075317</Max>
-    <Min>-0.63158577680587769</Min>
+    <Avg>-0.26729999167995677</Avg>
+    <Max>0.3278718888759613</Max>
+    <Min>-0.92823874950408936</Min>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -296,9 +302,9 @@
     <TargetName>BlockBallRelLoc</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0.27783867363138376</Avg>
-    <Max>0.93159639835357666</Max>
-    <Min>-0.96354168653488159</Min>
+    <Avg>-0.2900183768801366</Avg>
+    <Max>0.11048927158117294</Max>
+    <Min>-0.986700713634491</Min>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -307,9 +313,9 @@
     <TargetName>BlockBallRelLoc</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0.074200892609361607</Avg>
-    <Max>0.14603987336158752</Max>
-    <Min>0.00220970856025815</Min>
+    <Avg>0.028444282895400869</Avg>
+    <Max>0.05568646639585495</Max>
+    <Min>0.0026875089388340712</Min>
     <Condition />
     <Fire />
     <SourceIndex>3</SourceIndex>
@@ -390,13 +396,13 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>-42.274598464168406</Avg>
-    <Max>5.2734389305114746</Max>
-    <Min>-58.59375</Min>
+    <Avg>-14.890927310730961</Avg>
+    <Max>-3.8085925579071045</Max>
+    <Min>-33.10546875</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>5</TargetIndex>
+    <TargetIndex>6</TargetIndex>
     <SourceName>Tilt1</SourceName>
     <TargetName>BlockBallRelLoc</TargetName>
   </GraphicalLink>
@@ -439,7 +445,7 @@
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>6</TargetIndex>
+    <TargetIndex>7</TargetIndex>
     <SourceName>velAzimuth</SourceName>
     <TargetName>BlockBallRelLoc</TargetName>
   </GraphicalLink>
@@ -450,7 +456,7 @@
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>7</TargetIndex>
+    <TargetIndex>8</TargetIndex>
     <SourceName>velDistance</SourceName>
     <TargetName>BlockBallRelLoc</TargetName>
   </GraphicalLink>
@@ -557,7 +563,7 @@
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>8</TargetIndex>
+    <TargetIndex>9</TargetIndex>
     <SourceName>varianceAzimuth</SourceName>
     <TargetName>BlockBallRelLoc</TargetName>
   </GraphicalLink>
@@ -568,7 +574,7 @@
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>9</TargetIndex>
+    <TargetIndex>10</TargetIndex>
     <SourceName>varianceDistance</SourceName>
     <TargetName>BlockBallRelLoc</TargetName>
   </GraphicalLink>
@@ -579,7 +585,7 @@
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>10</TargetIndex>
+    <TargetIndex>11</TargetIndex>
     <SourceName>covariance</SourceName>
     <TargetName>BlockBallRelLoc</TargetName>
   </GraphicalLink>
@@ -590,7 +596,7 @@
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>11</TargetIndex>
+    <TargetIndex>12</TargetIndex>
     <SourceName>varianceVelAzimuth</SourceName>
     <TargetName>BlockBallRelLoc</TargetName>
   </GraphicalLink>
@@ -601,7 +607,7 @@
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>12</TargetIndex>
+    <TargetIndex>13</TargetIndex>
     <SourceName>varianceVelDistance</SourceName>
     <TargetName>BlockBallRelLoc</TargetName>
   </GraphicalLink>
@@ -612,7 +618,7 @@
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>13</TargetIndex>
+    <TargetIndex>14</TargetIndex>
     <SourceName>covarianceVel</SourceName>
     <TargetName>BlockBallRelLoc</TargetName>
   </GraphicalLink>
@@ -632,7 +638,7 @@
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name />
+          <name>Constant1</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -668,7 +674,7 @@
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name />
+          <name>Constant1</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -689,9 +695,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>-42.440529830313309</Avg>
-    <Max>4.9983577728271484</Max>
-    <Min>-59.9776725769043</Min>
+    <Avg>-14.693084935884219</Avg>
+    <Max>-5.3753986358642578</Max>
+    <Min>-32.5</Min>
     <Condition />
     <Fire />
     <SourceIndex>6</SourceIndex>
@@ -742,7 +748,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0.40202702702702703</Avg>
+    <Avg>0.722972972972973</Avg>
     <Max>1</Max>
     <Min>0</Min>
     <Condition />
@@ -764,7 +770,7 @@
     <TargetName>BlockMin</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0.39864864864864863</Avg>
+    <Avg>0.722972972972973</Avg>
     <Max>1</Max>
     <Min>0</Min>
     <Condition />
@@ -798,9 +804,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>-20.52030957349249</Avg>
-    <Max>59.995723724365234</Max>
-    <Min>-59.781074523925781</Min>
+    <Avg>36.55632974650409</Avg>
+    <Max>60</Max>
+    <Min>16.733242034912109</Min>
     <Condition />
     <Fire />
     <SourceIndex>5</SourceIndex>
@@ -809,9 +815,9 @@
     <TargetName>BlockGain</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>20.52030957349249</Avg>
-    <Max>59.781074523925781</Max>
-    <Min>-59.995723724365234</Min>
+    <Avg>-36.55632974650409</Avg>
+    <Max>-16.733242034912109</Max>
+    <Min>-60</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -843,9 +849,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>20.0416100735136</Avg>
-    <Max>59.472629547119141</Max>
-    <Min>-59.472682952880859</Min>
+    <Avg>-36.6171603653882</Avg>
+    <Max>-16.992212295532227</Max>
+    <Min>-63.281276702880859</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -854,15 +860,64 @@
     <TargetName>BlockGain1</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-20.0416100735136</Avg>
-    <Max>59.472682952880859</Max>
-    <Min>-59.472629547119141</Min>
+    <Avg>36.6171603653882</Avg>
+    <Max>63.281276702880859</Max>
+    <Min>16.992212295532227</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>4</TargetIndex>
+    <TargetIndex>5</TargetIndex>
     <SourceName>BlockGain1</SourceName>
     <TargetName>BlockBallRelLoc</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>13645599.091216216</Avg>
+    <Max>13675574</Max>
+    <Min>13615554</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>4</SourceIndex>
+    <TargetIndex>4</TargetIndex>
+    <SourceName>BallBlock</SourceName>
+    <TargetName>BlockBallRelLoc</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>0</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>600.86271589976059</X>
+      <Y>331.1875063280641</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>Constant1</SourceName>
+    <TargetName>Tilt</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>Constant1</SourceName>
+    <TargetName>Pan</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
