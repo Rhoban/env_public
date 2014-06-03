@@ -104,6 +104,12 @@
           <condition />
           <fire />
         </BlockPredecessor>
+        <BlockPredecessor>
+          <name>IsEnabled</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
       </entries>
       <name>BlockCartWalk</name>
       <gain>1</gain>
@@ -557,7 +563,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>2.8</float>
+        <float>2.6</float>
       </constants>
     </Constant>
     <Position>
@@ -577,7 +583,7 @@
       </constants>
     </Constant>
     <Position>
-      <X>-198.81237986673966</X>
+      <X>-320.14</X>
       <Y>93.039999999999992</Y>
     </Position>
   </GraphicalBlock>
@@ -621,7 +627,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>15</float>
+        <float>0</float>
       </constants>
     </Constant>
     <Position>
@@ -718,7 +724,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>0</float>
+        <float>20</float>
       </constants>
     </Constant>
     <Position>
@@ -734,7 +740,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>-3</float>
+        <float>-1</float>
       </constants>
     </Constant>
     <Position>
@@ -750,7 +756,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>1.3</float>
+        <float>1.8</float>
       </constants>
     </Constant>
     <Position>
@@ -1457,17 +1463,6 @@
     <SourceName>Constant</SourceName>
     <TargetName>BlockCartWalk</TargetName>
   </GraphicalLink>
-  <GraphicalLink>
-    <Avg>4</Avg>
-    <Max>4</Max>
-    <Min>4</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>Step</SourceName>
-    <TargetName>BlockCartWalk</TargetName>
-  </GraphicalLink>
   <GraphicalBlock>
     <BlockMobileAverage>
       <entries>
@@ -1559,8 +1554,8 @@
       <Commentaires>Stepping -&gt;</Commentaires>
     </CommentsBlock>
     <Position>
-      <X>-282.695713200073</X>
-      <Y>93.039999999999992</Y>
+      <X>-421.22904653340635</X>
+      <Y>31.039999999999992</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -1767,6 +1762,166 @@
     <SourceIndex>0</SourceIndex>
     <TargetIndex>3</TargetIndex>
     <SourceName>Rise</SourceName>
+    <TargetName>BlockCartWalk</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>IsEnabled</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>0</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>-257.68990914754147</X>
+      <Y>881.862458907917</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>Enabled (0 or 1) -&gt;</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>-407.81237986673966</X>
+      <Y>808.327402530471</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <MoveInput>
+      <entries />
+      <name>MoveInput1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <labels>
+        <string>Stepping</string>
+      </labels>
+      <default_values>
+        <float>0</float>
+      </default_values>
+    </MoveInput>
+    <Position>
+      <X>-320.14</X>
+      <Y>25.079999999999991</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <MoveInput>
+      <entries />
+      <name>MoveInput2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <labels>
+        <string>Enabled</string>
+      </labels>
+      <default_values>
+        <float>0</float>
+      </default_values>
+    </MoveInput>
+    <Position>
+      <X>-277.82990914754146</X>
+      <Y>808.327402530471</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockAddition>
+      <entries />
+      <name>BlockAddition1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockAddition>
+    <Position>
+      <X>-165.92237986673968</X>
+      <Y>63.039999999999992</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockAddition>
+      <entries />
+      <name>BlockAddition2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockAddition>
+    <Position>
+      <X>-94.555</X>
+      <Y>820.24740253047094</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>MoveInput1</SourceName>
+    <TargetName>BlockAddition1</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockAddition1</SourceName>
+    <TargetName>BlockCartWalk</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>Step</SourceName>
+    <TargetName>BlockAddition1</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>MoveInput2</SourceName>
+    <TargetName>BlockAddition2</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>IsEnabled</SourceName>
+    <TargetName>BlockAddition2</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>16</TargetIndex>
+    <SourceName>BlockAddition2</SourceName>
     <TargetName>BlockCartWalk</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
