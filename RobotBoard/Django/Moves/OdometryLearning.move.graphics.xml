@@ -1,0 +1,361 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>OdometryLearning</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <GraphicalBlock>
+    <BlockMotionCapture>
+      <entries />
+      <name>BlockMotionCapture</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <average_coef_pos>0.8</average_coef_pos>
+      <average_coef_vel>0.95</average_coef_vel>
+      <max_invalid_tick>5</max_invalid_tick>
+      <zmq_url_server>tcp://192.168.16.100:3232</zmq_url_server>
+    </BlockMotionCapture>
+    <Position>
+      <X>136.35056250122409</X>
+      <Y>235.04000000000002</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockOdometryLearning>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockMotionCapture</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockMotionCapture</name>
+          <output_idx>3</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockMotionCapture</name>
+          <output_idx>4</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockMotionCapture</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockMotionCapture</name>
+          <output_idx>8</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockMotionCapture</name>
+          <output_idx>10</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockMotionCapture</name>
+          <output_idx>11</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockMotionCapture</name>
+          <output_idx>7</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockOdometryLearning</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockOdometryLearning>
+    <Position>
+      <X>399.89137278282493</X>
+      <Y>215.04000000000002</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>-0.0388303103766013</Avg>
+    <Max>0.29755944013595581</Max>
+    <Min>-0.57851117849349976</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMotionCapture</SourceName>
+    <TargetName>BlockOdometryLearning</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>-0.02589694668250523</Avg>
+    <Max>0.36213520169258118</Max>
+    <Min>-0.59100884199142456</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>3</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockMotionCapture</SourceName>
+    <TargetName>BlockOdometryLearning</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>14.173823927326984</Avg>
+    <Max>175.37101745605469</Max>
+    <Min>-163.75685119628906</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>4</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>BlockMotionCapture</SourceName>
+    <TargetName>BlockOdometryLearning</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0.93950177935943058</Avg>
+    <Max>1</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>3</TargetIndex>
+    <SourceName>BlockMotionCapture</SourceName>
+    <TargetName>BlockOdometryLearning</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>-6.3006452463506254E-06</Avg>
+    <Max>0.20792707800865173</Max>
+    <Min>-0.42585042119026184</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>8</SourceIndex>
+    <TargetIndex>4</TargetIndex>
+    <SourceName>BlockMotionCapture</SourceName>
+    <TargetName>BlockOdometryLearning</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0.0071178945921640908</Avg>
+    <Max>0.49117594957351685</Max>
+    <Min>-0.18082678318023682</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>10</SourceIndex>
+    <TargetIndex>5</TargetIndex>
+    <SourceName>BlockMotionCapture</SourceName>
+    <TargetName>BlockOdometryLearning</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>-1.2357861104389625</Avg>
+    <Max>575.78826904296875</Max>
+    <Min>-628.716796875</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>11</SourceIndex>
+    <TargetIndex>6</TargetIndex>
+    <SourceName>BlockMotionCapture</SourceName>
+    <TargetName>BlockOdometryLearning</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0.93950177935943058</Avg>
+    <Max>1</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>7</SourceIndex>
+    <TargetIndex>7</TargetIndex>
+    <SourceName>BlockMotionCapture</SourceName>
+    <TargetName>BlockOdometryLearning</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <MoveBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockOdometryLearning</name>
+          <output_idx>2</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>MoveBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <move_name>CartWalk</move_name>
+      <inputs>
+        <string>Enabled</string>
+      </inputs>
+      <outputs />
+      <default_outputs />
+    </MoveBlock>
+    <Position>
+      <X>800</X>
+      <Y>215.04000000000002</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0.44483985765124556</Avg>
+    <Max>1</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>2</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockOdometryLearning</SourceName>
+    <TargetName>MoveBlock</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <MoveBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>MoveBlock1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <move_name>CartWalk</move_name>
+      <inputs>
+        <string>Stepping</string>
+      </inputs>
+      <outputs />
+      <default_outputs />
+    </MoveBlock>
+    <Position>
+      <X>800</X>
+      <Y>55.039999999999964</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <MoveBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>MoveBlock2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <move_name>CartWalk</move_name>
+      <inputs>
+        <string>Turn</string>
+      </inputs>
+      <outputs />
+      <default_outputs />
+    </MoveBlock>
+    <Position>
+      <X>800</X>
+      <Y>141.04</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockOdometryLearning</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>15</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>662</X>
+      <Y>189.04</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0.092526690391459068</Avg>
+    <Max>1</Max>
+    <Min>-1</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockOdometryLearning</SourceName>
+    <TargetName>BlockGain</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>1.3879003558718861</Avg>
+    <Max>15</Max>
+    <Min>-15</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain</SourceName>
+    <TargetName>MoveBlock2</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockOdometryLearning</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>2</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>647</X>
+      <Y>98.039999999999992</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0.22419928825622776</Avg>
+    <Max>1</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockOdometryLearning</SourceName>
+    <TargetName>BlockGain1</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0.44839857651245552</Avg>
+    <Max>2</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain1</SourceName>
+    <TargetName>MoveBlock1</TargetName>
+  </GraphicalLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>
