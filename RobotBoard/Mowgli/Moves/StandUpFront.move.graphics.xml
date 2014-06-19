@@ -577,9 +577,38 @@
           <BoundedBool>true</BoundedBool>
           <Recordable>true</Recordable>
         </SplineSequence>
+        <SplineSequence>
+          <Points>
+            <SplinePoint>
+              <left_tangent>0</left_tangent>
+              <right_tangent>0</right_tangent>
+              <x>0</x>
+              <y>80</y>
+            </SplinePoint>
+            <SplinePoint>
+              <left_tangent>0</left_tangent>
+              <right_tangent>0</right_tangent>
+              <x>5</x>
+              <y>80</y>
+            </SplinePoint>
+            <SplinePoint>
+              <left_tangent>0</left_tangent>
+              <right_tangent>0</right_tangent>
+              <x>6</x>
+              <y>0</y>
+            </SplinePoint>
+          </Points>
+          <name>Tilt</name>
+          <cyclic>0</cyclic>
+          <type>0</type>
+          <bounded>1</bounded>
+          <CyclicBool>false</CyclicBool>
+          <BoundedBool>true</BoundedBool>
+          <Recordable>true</Recordable>
+        </SplineSequence>
       </sequences>
       <shift>0</shift>
-      <speed_factor>1.25</speed_factor>
+      <speed_factor>1.5</speed_factor>
       <entrytype>0</entrytype>
       <autostart>1</autostart>
     </Spline>
@@ -1435,27 +1464,11 @@
     <TargetName>Pied G</TargetName>
   </GraphicalLink>
   <GraphicalBlock>
-    <Constant>
-      <entries />
-      <name>Constant</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <constants>
-        <float>-1023</float>
-      </constants>
-    </Constant>
-    <Position>
-      <X>-702</X>
-      <Y>107.99999999999997</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
     <BlockServo>
       <entries>
         <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
+          <name>Spline</name>
+          <output_idx>18</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
@@ -1466,43 +1479,7 @@
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>Constant</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>Pan</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-      <servo_name>Pan</servo_name>
-      <unit>1</unit>
-      <relative>1</relative>
-    </BlockServo>
-    <Position>
-      <X>-587</X>
-      <Y>82.039999999999992</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockServo>
-      <entries>
-        <BlockPredecessor>
           <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>Constant</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -1518,8 +1495,8 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>-587</X>
-      <Y>147.99999999999997</Y>
+      <X>-151</X>
+      <Y>352.04000000000008</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
@@ -1528,20 +1505,9 @@
     <Min>0</Min>
     <Condition />
     <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>2</TargetIndex>
-    <SourceName>Constant</SourceName>
-    <TargetName>Pan</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>2</TargetIndex>
-    <SourceName>Constant</SourceName>
+    <SourceIndex>18</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Spline</SourceName>
     <TargetName>Tilt</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
