@@ -12,44 +12,44 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <preamble>fallback = False
+      <preamble># Some flags used in states
+fallback = False
 fallface = False
 releve = False
 retourne = False
 playing = False
 
+#Some methods
 class RobocupStm:
-    @staticmethod
-    def check_fall(connection):
-        global fallback
-        global fallface
-        info = connection.SchedulerGetOutputValues_response("FallDetector",["fallback","fallface"])
-        if info and len(info) &gt;= 1 and len(info[0]) &gt;= 2:
-             fallback = info[0][0] &gt; 0.1
-             fallface = info[0][1] &gt; 0.1
-        else:
-            print("Failed to get message " + str(info))
+ @staticmethod
+ def check_fall(stm):
+  global fallback
+  global fallface
+  info = stm.GetMoveValues("FallDetector",["fallback","fallface"])
+  if info and len(info) &gt;= 1 and len(info[0]) &gt;= 2:
+   fallback = float(info[0][0]) &gt; 0.1
+   fallface = float(info[0][1]) &gt; 0.1
+  else:
+   print("Failed to get message " + str(info))
 
-    @staticmethod
-    def check_releve(connection):
-        global releve
-        info = connection.SchedulerGetOutputValues_response("Relevage",["Finished"])
-        if info and len(info) &gt;= 1 and len(info[0])&gt;=1:
-            releve = info[0][0] &gt; 0.1
+ def check_releve(self):
+  global releve
+  info = self.SchedulerGetOutputValues_response("Relevage",["Finished"])
+  if info and len(info) &gt;= 1 and len(info[0])&gt;=1:
+   releve = info[0][0] &gt; 0.1
 
-    @staticmethod
-    def checkGameState(connection):
-        global playing
-        info = connection.SchedulerGetOutputValues_response("GameStatusTracker",["Playing"])
-        # There should always be one value in info[0] debug is needed if not
-        if info and len(info) &gt;= 1 and len(info[0]) == 1:
-            playing = info[0][0] == 1
-        else:
-            print("Failed to get message " + str(info))</preamble>
+ def checkGameState(self):
+  global playing
+  info = self.SchedulerGetOutputValues_response("GameStatusTracker",["Playing"])
+  # There should always be one value in info[0] debug is needed if not
+  if info and len(info) &gt;= 1 and len(info[0]) == 1:
+   playing = info[0][0] == 1
+  else:
+   print("Failed to get message " + str(info))</preamble>
     </StmPreambleBlock>
     <Position>
-      <X>-200</X>
-      <Y>-20.914575675773392</Y>
+      <X>-319.441597364592</X>
+      <Y>-379.23936776954929</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -66,14 +66,14 @@ class RobocupStm:
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>RobocupStm.check_fall(self.connection)
-RobocupStm.checkGameState(self.connection)</loop>
-      <enter>self.connection.SchedulerStartMove("MarcheBasse",0,500)
-self.connection.SchedulerStartMove("TrackBallAndGoal",0,100)
-self.connection.SchedulerStartMove("PositionBasse",0,500)</enter>
-      <exit>self.connection.SchedulerStopMove("MarcheBasse",200)
-self.connection.SchedulerStopMove("TrackBallAndGoal",200)
-self.connection.SchedulerStopMove("PositionBasse",200)</exit>
+      <loop>RobocupStm.check_fall(self)
+RobocupStm.checkGameState(self)</loop>
+      <enter>self..SchedulerStartMove("MarcheBasse",0,500)
+self..SchedulerStartMove("TrackBallAndGoal",0,100)
+self..SchedulerStartMove("PositionBasse",0,500)</enter>
+      <exit>self..SchedulerStopMove("MarcheBasse",200)
+self..SchedulerStopMove("TrackBallAndGoal",200)
+self..SchedulerStopMove("PositionBasse",200)</exit>
     </StmStateBlock>
     <Position>
       <X>309.58267834829559</X>
@@ -94,22 +94,22 @@ self.connection.SchedulerStopMove("PositionBasse",200)</exit>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>RobocupStm.check_fall(self.connection)
+      <loop>RobocupStm.check_fall(self)
 global retourne
 retourne = False
-info = self.connection.SchedulerGetOutputValues_response("Retournement",["Finished"])
+info = self..SchedulerGetOutputValues_response("Retournement",["Finished"])
 if info and len(info) &gt;= 1 and len(info[0])&gt;=1:
     if info[0][0] &gt;= 0.9:
         if fallback:
             retourne = False
-            self.connection.SchedulerStartMove("Retournement",0,200)
+            self..SchedulerStartMove("Retournement",0,200)
         else:
             retourne = True
 </loop>
       <enter>global retourne
-self.connection.SchedulerStartMove("Retournement",0,200)
+self..SchedulerStartMove("Retournement",0,200)
 retourne = False</enter>
-      <exit>self.connection.SchedulerStopMove("Retournement",200)</exit>
+      <exit>self..SchedulerStopMove("Retournement",200)</exit>
     </StmStateBlock>
     <Position>
       <X>1103.0938418051217</X>
@@ -130,10 +130,10 @@ retourne = False</enter>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>RobocupStm.check_releve(self.connection)</loop>
+      <loop>RobocupStm.check_releve(self.)</loop>
       <enter>releve = False
-self.connection.SchedulerStartMove("Relevage",0,200)</enter>
-      <exit>self.connection.SchedulerStopMove("Relevage",500)</exit>
+self..SchedulerStartMove("Relevage",0,200)</enter>
+      <exit>self..SchedulerStopMove("Relevage",500)</exit>
     </StmStateBlock>
     <Position>
       <X>1026.4515217682972</X>
@@ -147,19 +147,18 @@ self.connection.SchedulerStartMove("Relevage",0,200)</enter>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>RobocupStm.check_fall(self.connection)
-</loop>
-      <enter>self.connection.SchedulerStartMove("FallDetector",0,20)
-self.connection.SchedulerStartMove("GameStatusTracker",0,20)
-self.connection.SchedulerStartMove("LocateBall",0,20)
-self.connection.SchedulerStartMove("LocateGoal",0,20)
-self.connection.SchedulerStartMove("MotionParameters",0,20)
-self.connection.SchedulerStartMove("PositionBasse",0,20)
-self.connection.SchedulerStartMove("PushBallToGoal",0,20)
-self.connection.SchedulerStartMove("PushBallToGoalCorrection",0,20)
-self.connection.SchedulerStartMove("TrackBallAndGoal",0,20)
-self.connection.SchedulerStartMove("TrackObject",0,20)
-self.connection.SchedulerStartMove("VisionParameters",0,20)
+      <loop />
+      <enter>self.SchedulerStartMove("FallDetector",0,20)
+self.SchedulerStartMove("GameStatusTracker",0,20)
+self.SchedulerStartMove("LocateBall",0,20)
+self.SchedulerStartMove("LocateGoal",0,20)
+self.SchedulerStartMove("MotionParameters",0,20)
+self.SchedulerStartMove("PositionBasse",0,20)
+self.SchedulerStartMove("PushBallToGoal",0,20)
+self.SchedulerStartMove("PushBallToGoalCorrection",0,20)
+self.SchedulerStartMove("TrackBallAndGoal",0,20)
+self.SchedulerStartMove("TrackObject",0,20)
+self.SchedulerStartMove("VisionParameters",0,20)
 </enter>
       <exit />
     </StmStateBlock>
@@ -200,8 +199,11 @@ self.connection.SchedulerStartMove("VisionParameters",0,20)
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>RobocupStm.check_fall(self.connection)
-RobocupStm.checkGameState(self.connection)</loop>
+      <loop>val = self.GetMoveValues("PositionBasse",["test"])
+print("Value of block test " + str(val[0][0]))
+#RobocupStm.check_fall(self)
+#RobocupStm.checkGameState(self)
+ </loop>
       <enter />
       <exit />
     </StmStateBlock>
@@ -211,6 +213,9 @@ RobocupStm.checkGameState(self.connection)</loop>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
     <Condition>True</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -219,6 +224,9 @@ RobocupStm.checkGameState(self.connection)</loop>
     <TargetName>Waiting</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
     <Condition>playing and not fallback and not fallface</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -227,6 +235,9 @@ RobocupStm.checkGameState(self.connection)</loop>
     <TargetName>WalkToBall</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
     <Condition>fallback</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -235,6 +246,9 @@ RobocupStm.checkGameState(self.connection)</loop>
     <TargetName>FallBack</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
     <Condition>fallface</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -243,6 +257,9 @@ RobocupStm.checkGameState(self.connection)</loop>
     <TargetName>FallFace</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
     <Condition>retourne</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -251,6 +268,9 @@ RobocupStm.checkGameState(self.connection)</loop>
     <TargetName>Waiting</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
     <Condition>releve</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -259,6 +279,9 @@ RobocupStm.checkGameState(self.connection)</loop>
     <TargetName>Waiting</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
     <Condition>not playing or fallback or fallface</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
