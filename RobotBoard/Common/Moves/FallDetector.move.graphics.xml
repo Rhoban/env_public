@@ -6,19 +6,6 @@
   <gainMin>-1</gainMin>
   <gainMax>60</gainMax>
   <GraphicalBlock>
-    <AccelerometerBlock>
-      <entries />
-      <name>AccelerometerBlock</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-    </AccelerometerBlock>
-    <Position>
-      <X>9</X>
-      <Y>163.94</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
     <BlockDigitalLevel>
       <entries>
         <BlockPredecessor>
@@ -33,7 +20,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <min_value>
-        <float>-0.3</float>
+        <float>-1</float>
       </min_value>
       <max_value>
         <float>0</float>
@@ -95,6 +82,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
+    <Avg>-1.1666666666666667</Avg>
+    <Max>2</Max>
+    <Min>-2</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -123,16 +113,19 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <gains>
-        <float>1</float>
-        <float>1</float>
+        <float>-0.04</float>
+        <float>-0.04</float>
       </gains>
     </BlockGain>
     <Position>
-      <X>222</X>
-      <Y>163.94</Y>
+      <X>211.95</X>
+      <Y>157.98</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
+    <Avg>-0.35866327480956289</Avg>
+    <Max>1.8537707328796387</Max>
+    <Min>-1.4709829092025757</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -209,6 +202,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
+    <Avg>0.16145833333333334</Avg>
+    <Max>1</Max>
+    <Min>0</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -217,6 +213,9 @@
     <TargetName>Result</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
+    <Avg>0.036458333333333336</Avg>
+    <Max>1</Max>
+    <Min>0</Min>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -255,6 +254,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
+    <Avg>0.27849961591224809</Avg>
+    <Max>3.130234956741333</Max>
+    <Min>0</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -263,6 +265,9 @@
     <TargetName>BlockGain2</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
+    <Avg>0.045509921930109463</Avg>
+    <Max>1.7798689603805542</Max>
+    <Min>0</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -271,6 +276,9 @@
     <TargetName>BlockGain2</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
+    <Avg>0.27849961591224809</Avg>
+    <Max>3.130234956741333</Max>
+    <Min>0</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -279,6 +287,9 @@
     <TargetName>BlockDigitalLevel1</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
+    <Avg>0.045509921930109463</Avg>
+    <Max>1.7798689603805542</Max>
+    <Min>0</Min>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -318,7 +329,7 @@
     <BlockMobileAverage>
       <entries>
         <BlockPredecessor>
-          <name>AccelerometerBlock</name>
+          <name>ReadablePinBlock</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -336,14 +347,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>AccelerometerBlock</SourceName>
-    <TargetName>BlockMobileAverage</TargetName>
-  </GraphicalBlockLink>
-  <GraphicalBlockLink>
+    <Avg>10.54019011153529</Avg>
+    <Max>39.5601692199707</Max>
+    <Min>-46.344268798828125</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -352,6 +358,9 @@
     <TargetName>BlockGain</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
+    <Avg>10.54019011153529</Avg>
+    <Max>39.5601692199707</Max>
+    <Min>-46.344268798828125</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -390,6 +399,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
+    <Avg>0.16145833333333334</Avg>
+    <Max>1</Max>
+    <Min>0</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -398,6 +410,9 @@
     <TargetName>MoveOutput</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
+    <Avg>0.036458333333333336</Avg>
+    <Max>1</Max>
+    <Min>0</Min>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -423,7 +438,7 @@
         <float>0</float>
       </min_value>
       <max_value>
-        <float>0.3</float>
+        <float>1</float>
       </max_value>
       <output_low>-2</output_low>
       <output_medium>-2</output_medium>
@@ -436,6 +451,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
+    <Avg>-0.35866327480956289</Avg>
+    <Max>1.8537707328796387</Max>
+    <Min>-1.4709829092025757</Min>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -444,6 +462,9 @@
     <TargetName>BlockDigitalLevel2</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
+    <Avg>-1.8125</Avg>
+    <Max>2</Max>
+    <Min>-2</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -451,6 +472,31 @@
     <SourceName>BlockDigitalLevel2</SourceName>
     <TargetName>ChronoBlock1</TargetName>
   </GraphicalBlockLink>
+  <GraphicalBlock>
+    <ReadablePinBlock>
+      <entries />
+      <name>ReadablePinBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <pin_sensor_name>Pitch</pin_sensor_name>
+    </ReadablePinBlock>
+    <Position>
+      <X>-64</X>
+      <Y>163.94</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>10.267968768719584</Avg>
+    <Max>39.610000610351562</Max>
+    <Min>-46.380001068115234</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>ReadablePinBlock</SourceName>
+    <TargetName>BlockMobileAverage</TargetName>
+  </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
   <SchemaComments />

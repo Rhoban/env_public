@@ -16,7 +16,6 @@
 fallback = False
 fallface = False
 releve = False
-retourne = False
 playing = False
 
 #Some methods
@@ -32,15 +31,17 @@ class RobocupStm:
   else:
    print("Failed to get message " + str(info))
 
- def check_releve(self):
+ @staticmethod
+ def check_releve(stm, moveName):
   global releve
-  info = self.SchedulerGetOutputValues_response("Relevage",["Finished"])
+  info = stm.SchedulerGetOutputValues_response(moveName,["over"])
   if info and len(info) &gt;= 1 and len(info[0])&gt;=1:
-   releve = info[0][0] &gt; 0.1
+   releve = (float(info[0][0]) &gt; 0.1)
 
- def checkGameState(self):
+ @staticmethod
+ def checkGameState(stm):
   global playing
-  info = self.SchedulerGetOutputValues_response("GameStatusTracker",["Playing"])
+  info = stm.SchedulerGetOutputValues_response("GameStatusTracker",["Playing"])
   # There should always be one value in info[0] debug is needed if not
   if info and len(info) &gt;= 1 and len(info[0]) == 1:
    playing = info[0][0] == 1
@@ -48,8 +49,8 @@ class RobocupStm:
    print("Failed to get message " + str(info))</preamble>
     </StmPreambleBlock>
     <Position>
-      <X>-319.441597364592</X>
-      <Y>-379.23936776954929</Y>
+      <X>-162.87844259109312</X>
+      <Y>156.28576737842377</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -68,16 +69,12 @@ class RobocupStm:
       <gainMax>60</gainMax>
       <loop>RobocupStm.check_fall(self)
 RobocupStm.checkGameState(self)</loop>
-      <enter>self..SchedulerStartMove("MarcheBasse",0,500)
-self..SchedulerStartMove("TrackBallAndGoal",0,100)
-self..SchedulerStartMove("PositionBasse",0,500)</enter>
-      <exit>self..SchedulerStopMove("MarcheBasse",200)
-self..SchedulerStopMove("TrackBallAndGoal",200)
-self..SchedulerStopMove("PositionBasse",200)</exit>
+      <enter>self.SchedulerStartMove("CartWalk",0,500)</enter>
+      <exit>self.SchedulerStopMove("CartWalk",200)</exit>
     </StmStateBlock>
     <Position>
-      <X>309.58267834829559</X>
-      <Y>899.01766256622818</Y>
+      <X>329.52544852549039</X>
+      <Y>782.64412162814051</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -94,26 +91,14 @@ self..SchedulerStopMove("PositionBasse",200)</exit>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>RobocupStm.check_fall(self)
-global retourne
-retourne = False
-info = self..SchedulerGetOutputValues_response("Retournement",["Finished"])
-if info and len(info) &gt;= 1 and len(info[0])&gt;=1:
-    if info[0][0] &gt;= 0.9:
-        if fallback:
-            retourne = False
-            self..SchedulerStartMove("Retournement",0,200)
-        else:
-            retourne = True
-</loop>
-      <enter>global retourne
-self..SchedulerStartMove("Retournement",0,200)
-retourne = False</enter>
-      <exit>self..SchedulerStopMove("Retournement",200)</exit>
+      <loop>RobocupStm.check_releve(self,"StandUpBack")</loop>
+      <enter>releve = False
+self.SchedulerStartMove("StandUpBack",0,200)</enter>
+      <exit>self.SchedulerStopMove("StandUpFront",500)</exit>
     </StmStateBlock>
     <Position>
-      <X>1103.0938418051217</X>
-      <Y>59.160000000000082</Y>
+      <X>1088.2794503272548</X>
+      <Y>603.16576737842377</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -130,14 +115,15 @@ retourne = False</enter>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>RobocupStm.check_releve(self.)</loop>
+      <loop>RobocupStm.check_releve(self,"StandUpFront")</loop>
       <enter>releve = False
-self..SchedulerStartMove("Relevage",0,200)</enter>
-      <exit>self..SchedulerStopMove("Relevage",500)</exit>
+print("Entering FallFace!!!!")
+self.SchedulerStartMove("StandUpFront",0,200)</enter>
+      <exit>self.SchedulerStopMove("StandUpFront",500)</exit>
     </StmStateBlock>
     <Position>
-      <X>1026.4515217682972</X>
-      <Y>820.546760027102</Y>
+      <X>792.524808255211</X>
+      <Y>805.35263837017567</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -149,22 +135,12 @@ self..SchedulerStartMove("Relevage",0,200)</enter>
       <gainMax>60</gainMax>
       <loop />
       <enter>self.SchedulerStartMove("FallDetector",0,20)
-self.SchedulerStartMove("GameStatusTracker",0,20)
-self.SchedulerStartMove("LocateBall",0,20)
-self.SchedulerStartMove("LocateGoal",0,20)
-self.SchedulerStartMove("MotionParameters",0,20)
-self.SchedulerStartMove("PositionBasse",0,20)
-self.SchedulerStartMove("PushBallToGoal",0,20)
-self.SchedulerStartMove("PushBallToGoalCorrection",0,20)
-self.SchedulerStartMove("TrackBallAndGoal",0,20)
-self.SchedulerStartMove("TrackObject",0,20)
-self.SchedulerStartMove("VisionParameters",0,20)
-</enter>
+self.SchedulerStartMove("GameStatusTracker",0,20)</enter>
       <exit />
     </StmStateBlock>
     <Position>
-      <X>122.80448482331491</X>
-      <Y>123</Y>
+      <X>414.80989074224027</X>
+      <Y>281.774054439194</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -179,7 +155,7 @@ self.SchedulerStartMove("VisionParameters",0,20)
         <BlockPredecessor>
           <name>FallBack</name>
           <output_idx>0</output_idx>
-          <condition>retourne</condition>
+          <condition>print("Releve in transiiton" + str(releve)) and releve</condition>
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
@@ -199,17 +175,13 @@ self.SchedulerStartMove("VisionParameters",0,20)
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>val = self.GetMoveValues("PositionBasse",["test"])
-print("Value of block test " + str(val[0][0]))
-#RobocupStm.check_fall(self)
-#RobocupStm.checkGameState(self)
- </loop>
+      <loop>RobocupStm.checkGameState(self)</loop>
       <enter />
       <exit />
     </StmStateBlock>
     <Position>
-      <X>700.82102411196308</X>
-      <Y>450.74763500043593</Y>
+      <X>647.71352399321177</X>
+      <Y>510.52412162814051</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
@@ -260,7 +232,7 @@ print("Value of block test " + str(val[0][0]))
     <Avg>0</Avg>
     <Max>0</Max>
     <Min>0</Min>
-    <Condition>retourne</Condition>
+    <Condition>releve</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>1</TargetIndex>
@@ -271,7 +243,7 @@ print("Value of block test " + str(val[0][0]))
     <Avg>0</Avg>
     <Max>0</Max>
     <Min>0</Min>
-    <Condition>releve</Condition>
+    <Condition>print("Releve in transiiton" + str(releve)) and releve</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>2</TargetIndex>

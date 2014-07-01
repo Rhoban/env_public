@@ -583,13 +583,13 @@
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>0</x>
-              <y>80</y>
+              <y>100</y>
             </SplinePoint>
             <SplinePoint>
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>5</x>
-              <y>80</y>
+              <y>100</y>
             </SplinePoint>
             <SplinePoint>
               <left_tangent>0</left_tangent>
@@ -599,6 +599,35 @@
             </SplinePoint>
           </Points>
           <name>Tilt</name>
+          <cyclic>0</cyclic>
+          <type>0</type>
+          <bounded>1</bounded>
+          <CyclicBool>false</CyclicBool>
+          <BoundedBool>true</BoundedBool>
+          <Recordable>true</Recordable>
+        </SplineSequence>
+        <SplineSequence>
+          <Points>
+            <SplinePoint>
+              <left_tangent>0</left_tangent>
+              <right_tangent>0</right_tangent>
+              <x>0</x>
+              <y>0</y>
+            </SplinePoint>
+            <SplinePoint>
+              <left_tangent>0</left_tangent>
+              <right_tangent>0</right_tangent>
+              <x>6</x>
+              <y>0</y>
+            </SplinePoint>
+            <SplinePoint>
+              <left_tangent>0</left_tangent>
+              <right_tangent>0</right_tangent>
+              <x>6.1</x>
+              <y>1</y>
+            </SplinePoint>
+          </Points>
+          <name>over</name>
           <cyclic>0</cyclic>
           <type>0</type>
           <bounded>1</bounded>
@@ -1509,6 +1538,40 @@
     <TargetIndex>0</TargetIndex>
     <SourceName>Spline</SourceName>
     <TargetName>Tilt</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <MoveOutput>
+      <entries>
+        <BlockPredecessor>
+          <name>Spline</name>
+          <output_idx>19</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>MoveOutput</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <labels>
+        <string>over</string>
+      </labels>
+    </MoveOutput>
+    <Position>
+      <X>-154</X>
+      <Y>409.03999999999996</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>19</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Spline</SourceName>
+    <TargetName>MoveOutput</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
