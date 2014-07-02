@@ -20,6 +20,20 @@
       <Y>159.04</Y>
     </Position>
   </GraphicalBlock>
+  <GraphicalBlock>
+    <StmOnStopBlock>
+      <entries />
+      <name>StmOnStopBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <OnStop>self.loader.stopMachine("BstopsA");</OnStop>
+    </StmOnStopBlock>
+    <Position>
+      <X>591</X>
+      <Y>102.03999999999999</Y>
+    </Position>
+  </GraphicalBlock>
   <hsize>500</hsize>
   <vsize>500</vsize>
   <SchemaComments />
