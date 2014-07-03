@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <entries />
-  <name>RobocupStm</name>
+  <name>DemoFP</name>
   <gain>1</gain>
   <gainMin>-1</gainMin>
   <gainMax>60</gainMax>
@@ -12,32 +12,34 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <preamble>self.fallback = False
-self.fallface = False
-self.releve = False
-self.playing = True
+      <preamble>fallback = False
+fallface = False
+releve = False
+retourne = False
+playing = True
 
-def checkGameState(self):
- info = self.SchedulerGetOutputValues_response("GameStatusTracker",["Playing"])
- if info and len(info) &gt;= 1 and len(info[0]) == 1:
-  self.playing = (info[0][0] == 1)
+class RobocupStm:
+    @staticmethod
+    def check_fall(connection):
+        global fallback
+        global fallface
+        info = connection.SchedulerGetOutputValues_response("FallDetector",["fallback","fallface"])
+        if info and len(info) &gt;= 1 and len(info[0]) &gt;= 2:
+             fallback = info[0][0] &gt; 0.1
+             fallface = info[0][1] &gt; 0.1
+        else:
+            print("Failed to get message " + str(info))
 
-def check_fall(self):
- info = self.GetMoveValues("FallDetector",["fallback","fallface"])
- if info and len(info) &gt;= 1 and len(info[0]) &gt;= 2:
-  self.fallback = float(info[0][0]) &gt; 0.1
-  self.fallface = float(info[0][1]) &gt; 0.1
-
-def check_releve(self, moveName):
- info = self.SchedulerGetOutputValues_response(moveName,["over"])
- if info and len(info) &gt;= 1 and len(info[0])&gt;=1:
-  self.releve = float(info[0][0]) &gt; 0.1
-
-</preamble>
+    @staticmethod
+    def check_releve(connection):
+        global releve
+        info = connection.SchedulerGetOutputValues_response("Relevage",["Finished"])
+        if info and len(info) &gt;= 1 and len(info[0])&gt;=1:
+            releve = info[0][0] &gt; 0.1</preamble>
     </StmPreambleBlock>
     <Position>
-      <X>-108.87844259109312</X>
-      <Y>310.9257673784237</Y>
+      <X>-200</X>
+      <Y>-20.914575675773392</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -46,7 +48,7 @@ def check_releve(self, moveName):
         <BlockPredecessor>
           <name>Waiting</name>
           <output_idx>0</output_idx>
-          <condition>self.playing and not self.fallback and not self.fallface</condition>
+          <condition>playing and not fallback and not fallface</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -54,14 +56,15 @@ def check_releve(self, moveName):
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>check_fall(self)
-checkGameState(self)</loop>
-      <enter>self.SchedulerStartMove("CartWalk",0,500)</enter>
-      <exit>self.SchedulerStopMove("CartWalk",200)</exit>
+      <loop>RobocupStm.check_fall(self.connection)</loop>
+      <enter>self.connection.SchedulerStartMove("MarcheBasse",0,5000)
+self.connection.SchedulerStartMove("PositionBasse",0,500)</enter>
+      <exit>self.connection.SchedulerStopMove("MarcheBasse",200)
+self.connection.SchedulerStopMove("PositionBasse",200)</exit>
     </StmStateBlock>
     <Position>
-      <X>213.52544852549039</X>
-      <Y>867.64412162814051</Y>
+      <X>309.58267834829559</X>
+      <Y>899.01766256622818</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -70,7 +73,7 @@ checkGameState(self)</loop>
         <BlockPredecessor>
           <name>Waiting</name>
           <output_idx>0</output_idx>
-          <condition>self.fallback</condition>
+          <condition>fallback</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -78,17 +81,26 @@ checkGameState(self)</loop>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>check_releve(self,"StandUpBack")</loop>
-      <enter>self.releve = False
-print("Starting move standupback")
-self.SchedulerStopMove("CartWalk",200)
-self.SchedulerStartMove("StandUpBack",0,200)</enter>
-      <exit>self.SchedulerStopMove("StandUpBack",500)
-self.fallback = False</exit>
+      <loop>RobocupStm.check_fall(self.connection)
+global retourne
+retourne = False
+info = self.connection.SchedulerGetOutputValues_response("Retournement",["Finished"])
+if info and len(info) &gt;= 1 and len(info[0])&gt;=1:
+    if info[0][0] &gt;= 0.9:
+        if fallback:
+            retourne = False
+            self.connection.SchedulerStartMove("Retournement",0,200)
+        else:
+            retourne = True
+</loop>
+      <enter>global retourne
+self.connection.SchedulerStartMove("Retournement",0,200)
+retourne = False</enter>
+      <exit>self.connection.SchedulerStopMove("Retournement",200)</exit>
     </StmStateBlock>
     <Position>
-      <X>1305.2794503272548</X>
-      <Y>714.72412162814055</Y>
+      <X>1103.0938418051217</X>
+      <Y>59.160000000000082</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -97,7 +109,7 @@ self.fallback = False</exit>
         <BlockPredecessor>
           <name>Waiting</name>
           <output_idx>0</output_idx>
-          <condition>self.fallface</condition>
+          <condition>fallface</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -105,16 +117,14 @@ self.fallback = False</exit>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>check_releve(self,"StandUpFront")</loop>
-      <enter>self.releve = False
-self.SchedulerStopMove("CartWalk",200)
-self.SchedulerStartMove("StandUpFront",0,200)</enter>
-      <exit>self.SchedulerStopMove("StandUpFront",500)
-self.fallface = False</exit>
+      <loop>RobocupStm.check_releve(self.connection)</loop>
+      <enter>releve = False
+self.connection.SchedulerStartMove("Relevage",0,200)</enter>
+      <exit>self.connection.SchedulerStopMove("Relevage",500)</exit>
     </StmStateBlock>
     <Position>
-      <X>861.52480825521116</X>
-      <Y>851.68412162814059</Y>
+      <X>1026.4515217682972</X>
+      <Y>820.546760027102</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -124,14 +134,15 @@ self.fallface = False</exit>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop />
-      <enter>self.SchedulerStartMove("FallDetector",0,20)
-self.SchedulerStartMove("GameStatusTracker",0,20)</enter>
+      <loop>RobocupStm.check_fall(self.connection)
+</loop>
+      <enter>self.connection.SchedulerStartMove("FallDetector",0,20)
+self.connection.SchedulerStartMove("PositionBasse",0,20)</enter>
       <exit />
     </StmStateBlock>
     <Position>
-      <X>339.98544852549043</X>
-      <Y>310.9257673784237</Y>
+      <X>261.58267834829559</X>
+      <Y>223</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -140,25 +151,25 @@ self.SchedulerStartMove("GameStatusTracker",0,20)</enter>
         <BlockPredecessor>
           <name>Initial</name>
           <output_idx>0</output_idx>
-          <condition />
+          <condition>True</condition>
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
           <name>FallBack</name>
           <output_idx>0</output_idx>
-          <condition>self.releve</condition>
+          <condition>retourne</condition>
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
           <name>FallFace</name>
           <output_idx>0</output_idx>
-          <condition>self.releve</condition>
+          <condition>releve</condition>
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
           <name>WalkToBall</name>
           <output_idx>0</output_idx>
-          <condition>not self.playing or self.fallback or self.fallface</condition>
+          <condition>not playing or fallback or fallface</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -166,20 +177,20 @@ self.SchedulerStartMove("GameStatusTracker",0,20)</enter>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>checkGameState(self)</loop>
+      <loop>RobocupStm.check_fall(self.connection)</loop>
       <enter />
       <exit />
     </StmStateBlock>
     <Position>
-      <X>711.71352399321177</X>
-      <Y>502.52412162814051</Y>
+      <X>700.82102411196308</X>
+      <Y>450.74763500043593</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlockLink>
     <Avg>0</Avg>
     <Max>0</Max>
     <Min>0</Min>
-    <Condition />
+    <Condition>True</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
@@ -190,7 +201,7 @@ self.SchedulerStartMove("GameStatusTracker",0,20)</enter>
     <Avg>0</Avg>
     <Max>0</Max>
     <Min>0</Min>
-    <Condition>self.playing and not self.fallback and not self.fallface</Condition>
+    <Condition>playing and not fallback and not fallface</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
@@ -201,7 +212,7 @@ self.SchedulerStartMove("GameStatusTracker",0,20)</enter>
     <Avg>0</Avg>
     <Max>0</Max>
     <Min>0</Min>
-    <Condition>self.fallback</Condition>
+    <Condition>fallback</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
@@ -212,7 +223,7 @@ self.SchedulerStartMove("GameStatusTracker",0,20)</enter>
     <Avg>0</Avg>
     <Max>0</Max>
     <Min>0</Min>
-    <Condition>self.fallface</Condition>
+    <Condition>fallface</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
@@ -223,7 +234,7 @@ self.SchedulerStartMove("GameStatusTracker",0,20)</enter>
     <Avg>0</Avg>
     <Max>0</Max>
     <Min>0</Min>
-    <Condition>self.releve</Condition>
+    <Condition>retourne</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>1</TargetIndex>
@@ -234,7 +245,7 @@ self.SchedulerStartMove("GameStatusTracker",0,20)</enter>
     <Avg>0</Avg>
     <Max>0</Max>
     <Min>0</Min>
-    <Condition>self.releve</Condition>
+    <Condition>releve</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>2</TargetIndex>
@@ -245,7 +256,7 @@ self.SchedulerStartMove("GameStatusTracker",0,20)</enter>
     <Avg>0</Avg>
     <Max>0</Max>
     <Min>0</Min>
-    <Condition>not self.playing or self.fallback or self.fallface</Condition>
+    <Condition>not playing or fallback or fallface</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>3</TargetIndex>
