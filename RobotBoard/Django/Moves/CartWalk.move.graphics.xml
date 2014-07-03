@@ -199,8 +199,8 @@
     <BlockServo>
       <entries>
         <BlockPredecessor>
-          <name>BlockMobileAverage</name>
-          <output_idx>1</output_idx>
+          <name>BlockGain2</name>
+          <output_idx>0</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
@@ -235,8 +235,8 @@
     <BlockServo>
       <entries>
         <BlockPredecessor>
-          <name>BlockMobileAverage</name>
-          <output_idx>8</output_idx>
+          <name>BlockGain1</name>
+          <output_idx>0</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
@@ -563,7 +563,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>2.6</float>
+        <float>2.5</float>
       </constants>
     </Constant>
     <Position>
@@ -724,7 +724,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>-25</float>
+        <float>0</float>
       </constants>
     </Constant>
     <Position>
@@ -893,7 +893,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>-18</float>
+        <float>-15</float>
       </constants>
     </Constant>
     <Position>
@@ -1294,17 +1294,6 @@
     <TargetName>Cuisse G1</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>50.240534911284577</Avg>
-    <Max>71.6989974975586</Max>
-    <Min>45.926803588867188</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockMobileAverage</SourceName>
-    <TargetName>Genou G</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
     <Avg>26.175439654169857</Avg>
     <Max>36.0079460144043</Max>
     <Min>21.894565582275391</Min>
@@ -1369,17 +1358,6 @@
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockMobileAverage</SourceName>
     <TargetName>Cuisse D1</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>-50.285517795665847</Avg>
-    <Max>-45.801342010498047</Max>
-    <Min>-71.817672729492188</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>8</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockMobileAverage</SourceName>
-    <TargetName>Genou D</TargetName>
   </GraphicalLink>
   <GraphicalLink>
     <Avg>-26.217844801980096</Avg>
@@ -1949,6 +1927,96 @@
     <TargetIndex>16</TargetIndex>
     <SourceName>BlockAddition2</SourceName>
     <TargetName>BlockCartWalk</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockMobileAverage</name>
+          <output_idx>8</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>293.684114543694</X>
+      <Y>244.03999999999996</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockMobileAverage</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>280.819114543694</X>
+      <Y>112.03999999999999</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>8</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMobileAverage</SourceName>
+    <TargetName>BlockGain1</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain1</SourceName>
+    <TargetName>Genou D</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMobileAverage</SourceName>
+    <TargetName>BlockGain2</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain2</SourceName>
+    <TargetName>Genou G</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
