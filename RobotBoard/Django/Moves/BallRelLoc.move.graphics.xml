@@ -109,66 +109,6 @@
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
-    <EmptyBlock>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockRelLoc</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>EmptyBlock</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-    </EmptyBlock>
-    <Position>
-      <X>829</X>
-      <Y>181.03999999999996</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <EmptyBlock>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockRelLoc</name>
-          <output_idx>1</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>EmptyBlock1</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-    </EmptyBlock>
-    <Position>
-      <X>829</X>
-      <Y>241.03999999999996</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <EmptyBlock>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockRelLoc</name>
-          <output_idx>2</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>EmptyBlock2</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-    </EmptyBlock>
-    <Position>
-      <X>829</X>
-      <Y>298.03999999999996</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
     <BlockServo>
       <entries>
         <BlockPredecessor>
@@ -488,28 +428,6 @@
     <SourceName>Cheville D</SourceName>
     <TargetName>BlockGain2</TargetName>
   </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0.98639455782312924</Avg>
-    <Max>1</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockRelLoc</SourceName>
-    <TargetName>EmptyBlock</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>394.76766926252924</Avg>
-    <Max>3055.800048828125</Max>
-    <Min>130.30844116210938</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockRelLoc</SourceName>
-    <TargetName>EmptyBlock1</TargetName>
-  </GraphicalLink>
   <GraphicalBlock>
     <EmptyBlock>
       <entries>
@@ -745,69 +663,6 @@
     <BlockServo>
       <entries>
         <BlockPredecessor>
-          <name>Constant</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>Tilt</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-      <servo_name>Tilt</servo_name>
-      <unit>1</unit>
-      <relative>1</relative>
-    </BlockServo>
-    <Position>
-      <X>697</X>
-      <Y>434.03999999999996</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <Constant>
-      <entries />
-      <name>Constant</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <constants>
-        <float>-10.3</float>
-      </constants>
-    </Constant>
-    <Position>
-      <X>581</X>
-      <Y>434.03999999999996</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>-16.422448703220912</Avg>
-    <Max>-10.300000190734863</Max>
-    <Min>-40.299999237060547</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>Constant</SourceName>
-    <TargetName>Tilt</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
-    <BlockServo>
-      <entries>
-        <BlockPredecessor>
           <name />
           <output_idx>0</output_idx>
           <condition />
@@ -907,17 +762,6 @@
     <TargetName>BlockRelLoc</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-6.8299631683193907</Avg>
-    <Max>11.19412899017334</Max>
-    <Min>-8.0450439453125</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>2</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockRelLoc</SourceName>
-    <TargetName>EmptyBlock2</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
     <Avg>-0.56702291894526713</Avg>
     <Max>-0.29298749566078186</Max>
     <Min>-0.58595627546310425</Min>
@@ -972,6 +816,57 @@
     <TargetIndex>5</TargetIndex>
     <SourceName>BlockGain</SourceName>
     <TargetName>BlockTimestampDelay</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <MoveOutput>
+      <entries />
+      <name>MoveOutput</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <labels>
+        <string>detected</string>
+        <string>distance</string>
+        <string>azimuth</string>
+      </labels>
+    </MoveOutput>
+    <Position>
+      <X>802</X>
+      <Y>227.2</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockRelLoc</SourceName>
+    <TargetName>MoveOutput</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockRelLoc</SourceName>
+    <TargetName>MoveOutput</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>2</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>BlockRelLoc</SourceName>
+    <TargetName>MoveOutput</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
