@@ -1,0 +1,334 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>OdometryCapture</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <GraphicalBlock>
+    <BlockOdometryCapture>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockMotionCapture</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockMotionCapture</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockMotionCapture</name>
+          <output_idx>3</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockMotionCapture</name>
+          <output_idx>4</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockOdometryCapture</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockOdometryCapture>
+    <Position>
+      <X>445.89137278282493</X>
+      <Y>191.98</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <MoveBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockOdometryCapture</name>
+          <output_idx>3</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>MoveBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <move_name>CartWalk</move_name>
+      <inputs>
+        <string>Enabled</string>
+      </inputs>
+      <outputs />
+      <default_outputs />
+    </MoveBlock>
+    <Position>
+      <X>800</X>
+      <Y>290.03999999999996</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <MoveBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockOdometryCapture</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>MoveBlock1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <move_name>CartWalk</move_name>
+      <inputs>
+        <string>Stepping</string>
+      </inputs>
+      <outputs />
+      <default_outputs />
+    </MoveBlock>
+    <Position>
+      <X>800</X>
+      <Y>55.039999999999964</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <MoveBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockOdometryCapture</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>MoveBlock2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <move_name>CartWalk</move_name>
+      <inputs>
+        <string>Turn</string>
+      </inputs>
+      <outputs />
+      <default_outputs />
+    </MoveBlock>
+    <Position>
+      <X>800</X>
+      <Y>141.04</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>5.2179585594911968</Avg>
+    <Max>5.8423233032226562</Max>
+    <Min>0.27980104088783264</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockOdometryCapture</SourceName>
+    <TargetName>MoveBlock1</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>6.3863525195997592</Avg>
+    <Max>8.9760293960571289</Max>
+    <Min>-14.095637321472168</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockOdometryCapture</SourceName>
+    <TargetName>MoveBlock2</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <BlockMotionCapture>
+      <entries />
+      <name>BlockMotionCapture</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <average_coef_pos>0.85</average_coef_pos>
+      <average_coef_vel>0.95</average_coef_vel>
+      <max_invalid_tick>10</max_invalid_tick>
+      <zmq_url_server>tcp://192.168.16.101:3232</zmq_url_server>
+    </BlockMotionCapture>
+    <Position>
+      <X>190</X>
+      <Y>191.98</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0.1360544217687075</Avg>
+    <Max>1</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMotionCapture</SourceName>
+    <TargetName>BlockOdometryCapture</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0.044235014755811007</Avg>
+    <Max>0.4385334849357605</Max>
+    <Min>-0.017126109451055527</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockMotionCapture</SourceName>
+    <TargetName>BlockOdometryCapture</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>-0.46641092803202516</Avg>
+    <Max>-0.41207060217857361</Max>
+    <Min>-0.47317710518836975</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>3</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>BlockMotionCapture</SourceName>
+    <TargetName>BlockOdometryCapture</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>102.69697539518479</Avg>
+    <Max>118.55199432373047</Max>
+    <Min>-18.339267730712891</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>4</SourceIndex>
+    <TargetIndex>3</TargetIndex>
+    <SourceName>BlockMotionCapture</SourceName>
+    <TargetName>BlockOdometryCapture</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <MoveBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockOdometryCapture</name>
+          <output_idx>2</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>MoveBlock3</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <move_name>CartWalk</move_name>
+      <inputs>
+        <string>Lateral</string>
+      </inputs>
+      <outputs />
+      <default_outputs />
+    </MoveBlock>
+    <Position>
+      <X>800</X>
+      <Y>216.04</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>-1.9187943368237845</Avg>
+    <Max>0.15418623387813568</Max>
+    <Min>-2.1808953285217285</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>2</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockOdometryCapture</SourceName>
+    <TargetName>MoveBlock3</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0.020408163265306121</Avg>
+    <Max>1</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>3</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockOdometryCapture</SourceName>
+    <TargetName>MoveBlock</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries />
+      <name>Epaule D Long</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+      <servo_name>Epaule D Long</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>421</X>
+      <Y>350.03999999999996</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>-1023</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>326</X>
+      <Y>350.03999999999996</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>Constant</SourceName>
+    <TargetName>Epaule D Long</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries />
+      <name>Epaule G Long</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+      <servo_name>Epaule G Long</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>421</X>
+      <Y>414.03999999999996</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>Constant</SourceName>
+    <TargetName>Epaule G Long</TargetName>
+  </GraphicalLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>
