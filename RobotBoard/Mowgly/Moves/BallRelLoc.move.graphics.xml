@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <entries />
-  <name>BallRelTracking2</name>
+  <name>BallRelLoc</name>
   <gain>1</gain>
   <gainMin>-1</gainMin>
   <gainMax>60</gainMax>
@@ -106,66 +106,6 @@
     <Position>
       <X>228.86</X>
       <Y>48.039999999999992</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <EmptyBlock>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockRelLoc</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>EmptyBlock</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-    </EmptyBlock>
-    <Position>
-      <X>829</X>
-      <Y>181.03999999999996</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <EmptyBlock>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockRelLoc</name>
-          <output_idx>1</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>EmptyBlock1</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-    </EmptyBlock>
-    <Position>
-      <X>829</X>
-      <Y>241.03999999999996</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <EmptyBlock>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockRelLoc</name>
-          <output_idx>2</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>EmptyBlock2</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-    </EmptyBlock>
-    <Position>
-      <X>829</X>
-      <Y>298.03999999999996</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -467,9 +407,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>1.8750000890577212E-05</Avg>
-    <Max>1.8750000890577212E-05</Max>
-    <Min>1.8750000890577212E-05</Min>
+    <Avg>-14.131789954875613</Avg>
+    <Max>0.29296249151229858</Max>
+    <Min>-44.824226379394531</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -478,37 +418,15 @@
     <TargetName>BlockGain1</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0.58595627546310425</Avg>
-    <Max>0.58595627546310425</Max>
-    <Min>0.58595627546310425</Min>
+    <Avg>-11.596965899314947</Avg>
+    <Max>0.29301249980926514</Max>
+    <Min>-38.378864288330078</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>Cheville D</SourceName>
     <TargetName>BlockGain2</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0.98639455782312924</Avg>
-    <Max>1</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockRelLoc</SourceName>
-    <TargetName>EmptyBlock</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>394.76766926252924</Avg>
-    <Max>3055.800048828125</Max>
-    <Min>130.30844116210938</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockRelLoc</SourceName>
-    <TargetName>EmptyBlock1</TargetName>
   </GraphicalLink>
   <GraphicalBlock>
     <EmptyBlock>
@@ -531,7 +449,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0.91156462585034015</Avg>
+    <Avg>0.29729729729729731</Avg>
     <Max>1</Max>
     <Min>0</Min>
     <Condition />
@@ -605,14 +523,14 @@
       <gainMax>60</gainMax>
     </BlockTimestampDelay>
     <Position>
-      <X>356</X>
-      <Y>231.03999999999996</Y>
+      <X>358</X>
+      <Y>236.03999999999996</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>1564381.5510204081</Avg>
-    <Max>1594185</Max>
-    <Min>1534366</Min>
+    <Avg>3590500.6722972975</Avg>
+    <Max>3620560</Max>
+    <Min>3560536</Min>
     <Condition />
     <Fire />
     <SourceIndex>4</SourceIndex>
@@ -621,9 +539,9 @@
     <TargetName>BlockTimestampDelay</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.5859372615814209</Avg>
-    <Max>-0.5859372615814209</Max>
-    <Min>-0.5859372615814209</Min>
+    <Avg>10.819064008200105</Avg>
+    <Max>40.136722564697266</Max>
+    <Min>-2.3437449932098389</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -632,9 +550,9 @@
     <TargetName>BlockTimestampDelay</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-1.8750000890577212E-05</Avg>
-    <Max>-1.8750000890577212E-05</Max>
-    <Min>-1.8750000890577212E-05</Min>
+    <Avg>14.131789954875613</Avg>
+    <Max>44.824226379394531</Max>
+    <Min>-0.29296249151229858</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -643,9 +561,9 @@
     <TargetName>BlockTimestampDelay</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.58595627546310425</Avg>
-    <Max>-0.58595627546310425</Max>
-    <Min>-0.58595627546310425</Min>
+    <Avg>11.596965899314947</Avg>
+    <Max>38.378864288330078</Max>
+    <Min>-0.29301249980926514</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -654,9 +572,9 @@
     <TargetName>BlockTimestampDelay</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.58598750829696655</Avg>
-    <Max>-0.58598750829696655</Max>
-    <Min>-0.58598750829696655</Min>
+    <Avg>13.508265743485174</Avg>
+    <Max>46.289093017578125</Max>
+    <Min>-1.1718437671661377</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -665,9 +583,9 @@
     <TargetName>BlockTimestampDelay</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.5859372615814209</Avg>
-    <Max>-0.5859372615814209</Max>
-    <Min>-0.5859372615814209</Min>
+    <Avg>10.828961616432345</Avg>
+    <Max>40.136722564697266</Max>
+    <Min>-2.3437449932098389</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -676,9 +594,9 @@
     <TargetName>BlockRelLoc</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.562040456703731</Avg>
-    <Max>-0.29298749566078186</Max>
-    <Min>-0.58595627546310425</Min>
+    <Avg>-23.529504459854717</Avg>
+    <Max>-0.58589375019073486</Max>
+    <Min>-72.363235473632812</Min>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -687,9 +605,9 @@
     <TargetName>BlockRelLoc</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-1.8750000890577212E-05</Avg>
-    <Max>-1.8750000890577212E-05</Max>
-    <Min>-1.8750000890577212E-05</Min>
+    <Avg>14.214929739969808</Avg>
+    <Max>44.531257629394531</Max>
+    <Min>-0.29296249151229858</Min>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -698,9 +616,9 @@
     <TargetName>BlockRelLoc</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.58595627546310425</Avg>
-    <Max>-0.58595627546310425</Max>
-    <Min>-0.58595627546310425</Min>
+    <Avg>11.689013519377506</Avg>
+    <Max>37.792926788330078</Max>
+    <Min>-0.29301249980926514</Min>
     <Condition />
     <Fire />
     <SourceIndex>3</SourceIndex>
@@ -709,9 +627,9 @@
     <TargetName>BlockRelLoc</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.29001676436932106</Avg>
-    <Max>-3.7500001781154424E-05</Max>
-    <Min>-0.29300624132156372</Min>
+    <Avg>-23.132628547679587</Avg>
+    <Max>2.4999999368446879E-05</Max>
+    <Min>-72.6562271118164</Min>
     <Condition />
     <Fire />
     <SourceIndex>4</SourceIndex>
@@ -720,9 +638,9 @@
     <TargetName>BlockRelLoc</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.58598750829696655</Avg>
-    <Max>-0.58598750829696655</Max>
-    <Min>-0.58598750829696655</Min>
+    <Avg>13.597344077217418</Avg>
+    <Max>46.289093017578125</Max>
+    <Min>-1.1718437671661377</Min>
     <Condition />
     <Fire />
     <SourceIndex>5</SourceIndex>
@@ -731,78 +649,15 @@
     <TargetName>BlockRelLoc</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.42550223214285715</Avg>
-    <Max>-0.29296875</Max>
-    <Min>-0.5859375</Min>
+    <Avg>5.2476786273415641</Avg>
+    <Max>56.249973297119141</Max>
+    <Min>-11.425806045532227</Min>
     <Condition />
     <Fire />
     <SourceIndex>6</SourceIndex>
     <TargetIndex>6</TargetIndex>
     <SourceName>BlockTimestampDelay</SourceName>
     <TargetName>BlockRelLoc</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
-    <BlockServo>
-      <entries>
-        <BlockPredecessor>
-          <name>Constant</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>Tilt</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-      <servo_name>Tilt</servo_name>
-      <unit>1</unit>
-      <relative>1</relative>
-    </BlockServo>
-    <Position>
-      <X>697</X>
-      <Y>434.03999999999996</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <Constant>
-      <entries />
-      <name>Constant</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <constants>
-        <float>-10.3</float>
-      </constants>
-    </Constant>
-    <Position>
-      <X>581</X>
-      <Y>434.03999999999996</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>-16.422448703220912</Avg>
-    <Max>-10.300000190734863</Max>
-    <Min>-40.299999237060547</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>Constant</SourceName>
-    <TargetName>Tilt</TargetName>
   </GraphicalLink>
   <GraphicalBlock>
     <BlockServo>
@@ -841,9 +696,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>-0.43148118622448978</Avg>
-    <Max>-0.29296875</Max>
-    <Min>-0.5859375</Min>
+    <Avg>5.1942316381511491</Avg>
+    <Max>56.249973297119141</Max>
+    <Min>-11.425806045532227</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -852,9 +707,9 @@
     <TargetName>BlockTimestampDelay</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-17.156602405366442</Avg>
-    <Max>-11.132805824279785</Max>
-    <Min>-41.015617370605469</Min>
+    <Avg>-18.552004939800984</Avg>
+    <Max>-0.29292500019073486</Max>
+    <Min>-60.937458038330078</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -863,9 +718,9 @@
     <TargetName>BlockTimestampDelay</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-17.260237606204285</Avg>
-    <Max>-11.132805824279785</Max>
-    <Min>-41.015617370605469</Min>
+    <Avg>-18.641083275546897</Avg>
+    <Max>-0.29292500019073486</Max>
+    <Min>-60.937458038330078</Min>
     <Condition />
     <Fire />
     <SourceIndex>7</SourceIndex>
@@ -874,9 +729,9 @@
     <TargetName>BlockRelLoc</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.16011152388591346</Avg>
-    <Max>0.2871774435043335</Max>
-    <Min>-0.1864776611328125</Min>
+    <Avg>-0.00359525317214099</Avg>
+    <Max>0.509995698928833</Max>
+    <Min>-0.15262442827224731</Min>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -885,9 +740,9 @@
     <TargetName>BlockRelLoc</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.38561816711206826</Avg>
-    <Max>-0.15605790913105011</Max>
-    <Min>-0.875</Min>
+    <Avg>0.59553697781410775</Avg>
+    <Max>0.79511398077011108</Max>
+    <Min>-0.61045122146606445</Min>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -896,9 +751,9 @@
     <TargetName>BlockRelLoc</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0.013620277925324784</Avg>
-    <Max>0.048002481460571289</Max>
-    <Min>0.0048775947652757168</Min>
+    <Avg>0.073995483082693977</Avg>
+    <Max>0.076195210218429565</Max>
+    <Min>0.055350050330162048</Min>
     <Condition />
     <Fire />
     <SourceIndex>3</SourceIndex>
@@ -907,20 +762,9 @@
     <TargetName>BlockRelLoc</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-6.8299631683193907</Avg>
-    <Max>11.19412899017334</Max>
-    <Min>-8.0450439453125</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>2</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockRelLoc</SourceName>
-    <TargetName>EmptyBlock2</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>-0.56702291894526713</Avg>
-    <Max>-0.29298749566078186</Max>
-    <Min>-0.58595627546310425</Min>
+    <Avg>-23.383020027263743</Avg>
+    <Max>-0.58589375019073486</Max>
+    <Min>-74.121047973632812</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -952,9 +796,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0.2920097490041495</Avg>
-    <Max>0.29300624132156372</Max>
-    <Min>3.7500001781154424E-05</Min>
+    <Avg>22.929727911745228</Avg>
+    <Max>72.6562271118164</Max>
+    <Min>-2.4999999368446879E-05</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -963,15 +807,85 @@
     <TargetName>BlockGain</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.2920097490041495</Avg>
-    <Max>-3.7500001781154424E-05</Max>
-    <Min>-0.29300624132156372</Min>
+    <Avg>-22.929727911745228</Avg>
+    <Max>2.4999999368446879E-05</Max>
+    <Min>-72.6562271118164</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>5</TargetIndex>
     <SourceName>BlockGain</SourceName>
     <TargetName>BlockTimestampDelay</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <MoveOutput>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockRelLoc</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockRelLoc</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockRelLoc</name>
+          <output_idx>2</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>MoveOutput</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <labels>
+        <string>detected</string>
+        <string>distance</string>
+        <string>azimuth</string>
+      </labels>
+    </MoveOutput>
+    <Position>
+      <X>972</X>
+      <Y>227.2</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>1</Avg>
+    <Max>1</Max>
+    <Min>1</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockRelLoc</SourceName>
+    <TargetName>MoveOutput</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>96.455605520187191</Avg>
+    <Max>142.9705810546875</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockRelLoc</SourceName>
+    <TargetName>MoveOutput</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>5.3831209650112166</Avg>
+    <Max>56.299720764160156</Max>
+    <Min>-7.4994630813598633</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>2</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>BlockRelLoc</SourceName>
+    <TargetName>MoveOutput</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
