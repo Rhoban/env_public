@@ -55,13 +55,13 @@
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>6</x>
-              <y>-65</y>
+              <y>-70</y>
             </SplinePoint>
             <SplinePoint>
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>7</x>
-              <y>-65</y>
+              <y>-70</y>
             </SplinePoint>
             <SplinePoint>
               <left_tangent>0</left_tangent>
@@ -120,13 +120,13 @@
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>6</x>
-              <y>65</y>
+              <y>70</y>
             </SplinePoint>
             <SplinePoint>
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>7</x>
-              <y>65</y>
+              <y>70</y>
             </SplinePoint>
             <SplinePoint>
               <left_tangent>0</left_tangent>
@@ -475,7 +475,7 @@
               <left_tangent>0</left_tangent>
               <right_tangent>0</right_tangent>
               <x>5</x>
-              <y>-40</y>
+              <y>-50</y>
             </SplinePoint>
             <SplinePoint>
               <left_tangent>0</left_tangent>
@@ -624,8 +624,27 @@
           <Recordable>true</Recordable>
         </SplineSequence>
         <SplineSequence>
-          <Points />
-          <name>Z</name>
+          <Points>
+            <SplinePoint>
+              <left_tangent>0</left_tangent>
+              <right_tangent>0</right_tangent>
+              <x>0</x>
+              <y>0</y>
+            </SplinePoint>
+            <SplinePoint>
+              <left_tangent>0</left_tangent>
+              <right_tangent>0</right_tangent>
+              <x>8</x>
+              <y>0</y>
+            </SplinePoint>
+            <SplinePoint>
+              <left_tangent>0</left_tangent>
+              <right_tangent>0</right_tangent>
+              <x>8.1</x>
+              <y>1</y>
+            </SplinePoint>
+          </Points>
+          <name>over</name>
           <cyclic>0</cyclic>
           <type>0</type>
           <bounded>1</bounded>
@@ -635,7 +654,7 @@
         </SplineSequence>
       </sequences>
       <shift>0</shift>
-      <speed_factor>1</speed_factor>
+      <speed_factor>1.2</speed_factor>
       <entrytype>0</entrytype>
       <autostart>1</autostart>
     </Spline>
@@ -1491,20 +1510,8 @@
     <TargetName>Pied G</TargetName>
   </GraphicalLink>
   <GraphicalBlock>
-    <BlockSigmabanLegKinematic>
+    <MoveOutput>
       <entries>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
         <BlockPredecessor>
           <name>Spline</name>
           <output_idx>18</output_idx>
@@ -1512,660 +1519,19 @@
           <fire />
         </BlockPredecessor>
       </entries>
-      <name>BlockSigmabanLegKinematic</name>
+      <name>MoveOutput</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <right_leg>true</right_leg>
-      <tibia_length>80</tibia_length>
-      <femur_length>115</femur_length>
-    </BlockSigmabanLegKinematic>
+      <labels>
+        <string>over</string>
+      </labels>
+    </MoveOutput>
     <Position>
-      <X>-210.54333333333335</X>
-      <Y>361.04000000000008</Y>
+      <X>-151</X>
+      <Y>350.03999999999996</Y>
     </Position>
   </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockSigmabanLegKinematic>
-      <entries>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>Spline</name>
-          <output_idx>18</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>BlockSigmabanLegKinematic1</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <right_leg>false</right_leg>
-      <tibia_length>80</tibia_length>
-      <femur_length>115</femur_length>
-    </BlockSigmabanLegKinematic>
-    <Position>
-      <X>-210.54333333333335</X>
-      <Y>488.04000000000019</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockGain>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockSigmabanLegKinematic</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>BlockGain</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <gains>
-        <float>-1</float>
-      </gains>
-    </BlockGain>
-    <Position>
-      <X>41</X>
-      <Y>268</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockGain>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockSigmabanLegKinematic</name>
-          <output_idx>4</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>BlockGain1</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <gains>
-        <float>-1</float>
-      </gains>
-    </BlockGain>
-    <Position>
-      <X>41</X>
-      <Y>361.04000000000008</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockGain>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockSigmabanLegKinematic1</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>BlockGain2</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <gains>
-        <float>-1</float>
-      </gains>
-    </BlockGain>
-    <Position>
-      <X>41</X>
-      <Y>433.04000000000008</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockGain>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockSigmabanLegKinematic1</name>
-          <output_idx>4</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>BlockGain3</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <gains>
-        <float>-1</float>
-      </gains>
-    </BlockGain>
-    <Position>
-      <X>41</X>
-      <Y>548.04000000000019</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockSigmabanLegKinematic</SourceName>
-    <TargetName>BlockGain</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
-    <BlockServo>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockGain</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>Hanche D Lat</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-      <servo_name>Hanche D Lat</servo_name>
-      <unit>1</unit>
-      <relative>1</relative>
-    </BlockServo>
-    <Position>
-      <X>110</X>
-      <Y>268</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockServo>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockSigmabanLegKinematic</name>
-          <output_idx>1</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>Cuisse D</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-      <servo_name>Cuisse D</servo_name>
-      <unit>1</unit>
-      <relative>1</relative>
-    </BlockServo>
-    <Position>
-      <X>110</X>
-      <Y>289.04000000000008</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockServo>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockSigmabanLegKinematic</name>
-          <output_idx>2</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>Genou D</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-      <servo_name>Genou D</servo_name>
-      <unit>1</unit>
-      <relative>1</relative>
-    </BlockServo>
-    <Position>
-      <X>110</X>
-      <Y>308</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>-0</Max>
-    <Min>-0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockSigmabanLegKinematic</SourceName>
-    <TargetName>Cuisse D</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>-7.0195835330120939E-15</Avg>
-    <Max>-7.0195835330120939E-15</Max>
-    <Min>-7.0195835330120939E-15</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>2</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockSigmabanLegKinematic</SourceName>
-    <TargetName>Genou D</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>-0</Max>
-    <Min>-0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockGain</SourceName>
-    <TargetName>Hanche D Lat</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
-    <BlockServo>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockSigmabanLegKinematic</name>
-          <output_idx>3</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>Cheville D</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-      <servo_name>Cheville D</servo_name>
-      <unit>1</unit>
-      <relative>1</relative>
-    </BlockServo>
-    <Position>
-      <X>110</X>
-      <Y>334.04000000000008</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>3</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockSigmabanLegKinematic</SourceName>
-    <TargetName>Cheville D</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockSigmabanLegKinematic1</SourceName>
-    <TargetName>BlockGain2</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>4</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockSigmabanLegKinematic1</SourceName>
-    <TargetName>BlockGain3</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
-    <BlockServo>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockGain1</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>Pied D</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-      <servo_name>Pied D</servo_name>
-      <unit>1</unit>
-      <relative>1</relative>
-    </BlockServo>
-    <Position>
-      <X>110</X>
-      <Y>361.04000000000008</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>-0</Max>
-    <Min>-0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockGain1</SourceName>
-    <TargetName>Pied D</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>4</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockSigmabanLegKinematic</SourceName>
-    <TargetName>BlockGain1</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
-    <BlockServo>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockGain2</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>Hanche G Lat</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-      <servo_name>Hanche G Lat</servo_name>
-      <unit>1</unit>
-      <relative>1</relative>
-    </BlockServo>
-    <Position>
-      <X>118</X>
-      <Y>432.04000000000008</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>-0</Max>
-    <Min>-0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockGain2</SourceName>
-    <TargetName>Hanche G Lat</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
-    <BlockServo>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockSigmabanLegKinematic1</name>
-          <output_idx>1</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>Cuisse G</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-      <servo_name>Cuisse G</servo_name>
-      <unit>1</unit>
-      <relative>1</relative>
-    </BlockServo>
-    <Position>
-      <X>124</X>
-      <Y>462.04000000000013</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockServo>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockSigmabanLegKinematic1</name>
-          <output_idx>2</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>Genou G2</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-      <servo_name>Genou G</servo_name>
-      <unit>1</unit>
-      <relative>1</relative>
-    </BlockServo>
-    <Position>
-      <X>124</X>
-      <Y>488.04000000000019</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockServo>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockSigmabanLegKinematic1</name>
-          <output_idx>3</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>Cheville G</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-      <servo_name>Cheville G</servo_name>
-      <unit>1</unit>
-      <relative>1</relative>
-    </BlockServo>
-    <Position>
-      <X>124</X>
-      <Y>515.04000000000019</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockServo>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockGain3</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>Genou G</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-      <servo_name>Genou G</servo_name>
-      <unit>1</unit>
-      <relative>1</relative>
-    </BlockServo>
-    <Position>
-      <X>126</X>
-      <Y>566.04000000000019</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>-0</Max>
-    <Min>-0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockSigmabanLegKinematic1</SourceName>
-    <TargetName>Cuisse G</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>-7.0195835330120939E-15</Avg>
-    <Max>-7.0195835330120939E-15</Max>
-    <Min>-7.0195835330120939E-15</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>2</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockSigmabanLegKinematic1</SourceName>
-    <TargetName>Genou G2</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>3</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockSigmabanLegKinematic1</SourceName>
-    <TargetName>Cheville G</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>-0</Max>
-    <Min>-0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockGain3</SourceName>
-    <TargetName>Genou G</TargetName>
-  </GraphicalLink>
   <GraphicalLink>
     <Avg>0</Avg>
     <Max>0</Max>
@@ -2173,20 +1539,9 @@
     <Condition />
     <Fire />
     <SourceIndex>18</SourceIndex>
-    <TargetIndex>2</TargetIndex>
+    <TargetIndex>0</TargetIndex>
     <SourceName>Spline</SourceName>
-    <TargetName>BlockSigmabanLegKinematic</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>18</SourceIndex>
-    <TargetIndex>2</TargetIndex>
-    <SourceName>Spline</SourceName>
-    <TargetName>BlockSigmabanLegKinematic1</TargetName>
+    <TargetName>MoveOutput</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
