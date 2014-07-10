@@ -563,7 +563,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>2.6</float>
+        <float>2.4</float>
       </constants>
     </Constant>
     <Position>
@@ -643,7 +643,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>1</float>
+        <float>0.5</float>
       </constants>
     </Constant>
     <Position>
@@ -729,11 +729,11 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>-1.5</float>
+        <float>-0.8</float>
       </constants>
     </Constant>
     <Position>
-      <X>-136</X>
+      <X>-135</X>
       <Y>458.03999999999996</Y>
     </Position>
   </GraphicalBlock>
@@ -745,7 +745,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>0.4</float>
+        <float>0.5</float>
       </constants>
     </Constant>
     <Position>
@@ -783,7 +783,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>1.73280418</float>
+        <float>2</float>
       </constants>
     </Constant>
     <Position>
@@ -882,7 +882,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>-14</float>
+        <float>-10</float>
       </constants>
     </Constant>
     <Position>
@@ -2098,40 +2098,8 @@
     <TargetName>MoveOutput</TargetName>
   </GraphicalLink>
   <GraphicalBlock>
-    <BoundBlock>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockAddition1</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>BoundBlock</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <min_value>
-        <float>0</float>
-      </min_value>
-      <max_value>
-        <float>1000</float>
-      </max_value>
-    </BoundBlock>
-    <Position>
-      <X>94.593333333333334</X>
-      <Y>419.03999999999985</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
     <BlockAddition>
       <entries>
-        <BlockPredecessor>
-          <name>BlockGain3</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
         <BlockPredecessor>
           <name>HipOffset</name>
           <output_idx>0</output_idx>
@@ -2178,64 +2146,8 @@
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
+    <TargetIndex>0</TargetIndex>
     <SourceName>HipOffset</SourceName>
-    <TargetName>BlockAddition4</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>4.8148148148148149</Avg>
-    <Max>5</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockAddition1</SourceName>
-    <TargetName>BoundBlock</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
-    <BlockGain>
-      <entries>
-        <BlockPredecessor>
-          <name>BoundBlock</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>BlockGain3</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <gains>
-        <float>-0.2</float>
-      </gains>
-    </BlockGain>
-    <Position>
-      <X>191.21391025103662</X>
-      <Y>419.03999999999985</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>4.8148148148148149</Avg>
-    <Max>5</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BoundBlock</SourceName>
-    <TargetName>BlockGain3</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>-0.96296296296296291</Avg>
-    <Max>0</Max>
-    <Min>-1</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockGain3</SourceName>
     <TargetName>BlockAddition4</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
