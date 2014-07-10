@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>RobocupGame</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <GraphicalBlock>
+    <StmPreambleBlock>
+      <entries />
+      <name>StmPreambleBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <preamble>self.SchedulerStartMove("CartWalk",0,500)
+self.SchedulerStartMove("BallRelLoc",0,100)
+self.SchedulerStartMove("BallTracker",0,100)
+self.SchedulerStopMove("Dribble",500)
+self.SchedulerStopMove("StandUpBack",500)
+self.SchedulerStopMove("StandUpFront",500)
+
+self.ballDetected = False
+sellf.canKick = False
+
+def check_ball_detected(self):
+  info = self.GetMoveValues("BallTracker",["detected"])
+  if info and len(info) &gt;= 1:
+    self.ballDetected = float(info[0][0]) &gt; 0.1
+ 
+def check_can_kick(self):
+  info = self.GetMoveValues("Dribble",["canKick"])
+  if info and len(info)&gt;=1:
+ self.canKick = float(info[0][0))&gt;0.1</preamble>
+    </StmPreambleBlock>
+    <Position>
+      <X>73</X>
+      <Y>-147.56000000000006</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmOnStopBlock>
+      <entries />
+      <name>StmOnStopBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <OnStop>self.SchedulerStopMove("CartWalk",500)
+self.SchedulerStopMove("BallTracker",500)
+self.SchedulerStopMove("Dribble",500)</OnStop>
+    </StmOnStopBlock>
+    <Position>
+      <X>73</X>
+      <Y>205.96000000000009</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmStateBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Dribble</name>
+          <output_idx>0</output_idx>
+          <condition>not self.ballDetected</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Initial</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <loop>check_ball_detected(self)</loop>
+      <enter />
+      <exit />
+    </StmStateBlock>
+    <Position>
+      <X>514</X>
+      <Y>-74</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <StmStateBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Initial</name>
+          <output_idx>0</output_idx>
+          <condition>self.ballDetected</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Dribble</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <loop>check_ball_detected(self)</loop>
+      <enter>self.SchedulerStartMove("Dribble",0,500)</enter>
+      <exit>self.SchedulerStopMove("Dribble",500)</exit>
+    </StmStateBlock>
+    <Position>
+      <X>639</X>
+      <Y>142.12</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition>not self.ballDetected</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Dribble</SourceName>
+    <TargetName>Initial</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition>self.ballDetected</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Initial</SourceName>
+    <TargetName>Dribble</TargetName>
+  </GraphicalLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>0</SmoothStart>
+  <SmoothStop>0</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>
