@@ -17,8 +17,8 @@
       </constants>
     </Constant>
     <Position>
-      <X>114</X>
-      <Y>92.039999999999992</Y>
+      <X>127</X>
+      <Y>112.03999999999999</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -53,20 +53,147 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>239</X>
-      <Y>92.039999999999992</Y>
+      <X>261</X>
+      <Y>112.03999999999999</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-60</Avg>
+    <Max>-60</Max>
+    <Min>-60</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>Constant</SourceName>
     <TargetName>Tilt</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <MoveBlock>
+      <entries />
+      <name>MoveBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <move_name>BallRelLoc</move_name>
+      <inputs />
+      <outputs>
+        <string>azimuth</string>
+        <string>distance</string>
+      </outputs>
+      <default_outputs>
+        <float>0</float>
+        <float>0</float>
+      </default_outputs>
+    </MoveBlock>
+    <Position>
+      <X>-32</X>
+      <Y>157.04000000000002</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockMobileAverage>
+      <entries>
+        <BlockPredecessor>
+          <name>MoveBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>MoveBlock</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockMobileAverage</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <discount_factor>0.97</discount_factor>
+    </BlockMobileAverage>
+    <Position>
+      <X>171</X>
+      <Y>178.96000000000004</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>-0.224970709281638</Avg>
+    <Max>10.674474716186523</Max>
+    <Min>-13.248992919921875</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>MoveBlock</SourceName>
+    <TargetName>BlockMobileAverage</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>6.0600927767127448</Avg>
+    <Max>47.504848480224609</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>MoveBlock</SourceName>
+    <TargetName>BlockMobileAverage</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <MoveBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockMobileAverage</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockMobileAverage</name>
+          <output_idx>1</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>MoveBlock1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <move_name>Kick</move_name>
+      <inputs>
+        <string>ballAzimuth</string>
+        <string>ballDistance</string>
+      </inputs>
+      <outputs />
+      <default_outputs />
+    </MoveBlock>
+    <Position>
+      <X>360</X>
+      <Y>157.04000000000002</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>-0.17902864959805903</Avg>
+    <Max>9.0908803939819336</Max>
+    <Min>-8.4519329071044922</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockMobileAverage</SourceName>
+    <TargetName>MoveBlock1</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>6.2024662379764948</Avg>
+    <Max>18.092172622680664</Max>
+    <Min>0.19252851605415344</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockMobileAverage</SourceName>
+    <TargetName>MoveBlock1</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>

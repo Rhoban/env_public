@@ -207,26 +207,26 @@
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>BallBlock</name>
+          <name>MoveInput</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>MoveInput</name>
           <output_idx>1</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>BallBlock</name>
+          <name>MoveInput</name>
           <output_idx>2</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
+          <name>MoveInput</name>
+          <output_idx>3</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
@@ -367,9 +367,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-1</Avg>
+    <Max>-1</Max>
+    <Min>-1</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -400,9 +400,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>1.1718181696805088</Avg>
-    <Max>2.0199999809265137</Max>
-    <Min>0.76999998092651367</Min>
+    <Avg>-4.3745973112449148</Avg>
+    <Max>22.729999542236328</Max>
+    <Min>-17.850000381469727</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -411,9 +411,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>2.9609090848402544</Avg>
-    <Max>5.2899999618530273</Max>
-    <Min>2.0499999523162842</Min>
+    <Avg>-3.3295973291333092</Avg>
+    <Max>27.020000457763672</Max>
+    <Min>-36.590000152587891</Min>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -422,9 +422,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-13.494545416398482</Avg>
-    <Max>-11.039999961853027</Max>
-    <Min>-17.8799991607666</Min>
+    <Avg>42.283892525922532</Avg>
+    <Max>78.169998168945312</Max>
+    <Min>15.619999885559082</Min>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -433,9 +433,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>12.909090909090908</Avg>
-    <Max>116</Max>
-    <Min>-43</Min>
+    <Avg>-17.322147651006713</Avg>
+    <Max>754</Max>
+    <Min>-755</Min>
     <Condition />
     <Fire />
     <SourceIndex>3</SourceIndex>
@@ -444,9 +444,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>25.181818181818183</Avg>
-    <Max>54</Max>
-    <Min>-15</Min>
+    <Avg>34.332214765100673</Avg>
+    <Max>841</Max>
+    <Min>-1114</Min>
     <Condition />
     <Fire />
     <SourceIndex>4</SourceIndex>
@@ -477,9 +477,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0.0099999997764825821</Avg>
-    <Max>0.0099999997764825821</Max>
-    <Min>0.0099999997764825821</Min>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1183,9 +1183,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>-1.1186129613356157</Avg>
-    <Max>-0.87891125679016113</Max>
-    <Min>-1.7578175067901611</Min>
+    <Avg>-0.537762284768773</Avg>
+    <Max>2.050783634185791</Max>
+    <Min>-2.050778865814209</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1194,9 +1194,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0.29301249980926514</Avg>
-    <Max>0.29301249980926514</Max>
-    <Min>0.29301249980926514</Min>
+    <Avg>-5.8544531730869549</Avg>
+    <Max>11.425787925720215</Max>
+    <Min>-43.945304870605469</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1205,9 +1205,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>32.572802110151812</Avg>
-    <Max>35.742191314697266</Max>
-    <Min>24.902347564697266</Min>
+    <Avg>2.5649550149516225</Avg>
+    <Max>16.406253814697266</Max>
+    <Min>-11.425777435302734</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1216,8 +1216,8 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.85227296569130639</Avg>
-    <Max>-0.2929689884185791</Max>
+    <Avg>8.84018439802889</Avg>
+    <Max>36.9140625</Max>
     <Min>-1.1718752384185791</Min>
     <Condition />
     <Fire />
@@ -1227,9 +1227,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0.10653385143765543</Avg>
-    <Max>0.2929685115814209</Max>
-    <Min>-0.2929689884185791</Min>
+    <Avg>4.4790542896597305</Avg>
+    <Max>47.167942047119141</Max>
+    <Min>-12.597681045532227</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1238,9 +1238,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>31.960189125754617</Avg>
-    <Max>35.449180603027344</Max>
-    <Min>22.851524353027344</Min>
+    <Avg>-2.2827529727180793</Avg>
+    <Max>12.011762619018555</Max>
+    <Min>-14.062456130981445</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1249,9 +1249,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.74573839794505725</Avg>
-    <Max>-0.5859372615814209</Max>
-    <Min>-1.1718747615814209</Min>
+    <Avg>-0.21628565436241612</Avg>
+    <Max>2.05078125</Max>
+    <Min>-1.7578125</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1260,9 +1260,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0.21306794234674634</Avg>
-    <Max>0.2929685115814209</Max>
-    <Min>-0.2929689884185791</Min>
+    <Avg>6.4590745216941681</Avg>
+    <Max>47.4609375</Max>
+    <Min>-5.2734389305114746</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1271,9 +1271,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>31.74715909090909</Avg>
-    <Max>35.44921875</Max>
-    <Min>22.55859375</Min>
+    <Avg>1.5051513066703806</Avg>
+    <Max>15.8203125</Max>
+    <Min>-12.890625</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1282,9 +1282,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.18647215356891553</Avg>
-    <Max>-3.7500001781154424E-05</Max>
-    <Min>-0.29300624132156372</Min>
+    <Avg>-6.5888473674389108</Avg>
+    <Max>25.78125</Max>
+    <Min>-36.9140625</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1293,9 +1293,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>32.626072450117633</Avg>
-    <Max>36.328132629394531</Max>
-    <Min>25.7812557220459</Min>
+    <Avg>-3.2167450924179133</Avg>
+    <Max>10.546887397766113</Max>
+    <Min>-14.355456352233887</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1304,9 +1304,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.15983238825025514</Avg>
-    <Max>-3.1250001484295353E-05</Max>
-    <Min>-0.8789374828338623</Min>
+    <Avg>-0.49254142197986578</Avg>
+    <Max>42.1875</Max>
+    <Min>-43.65234375</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1315,9 +1315,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-27.246097564697266</Avg>
-    <Max>-15.234378814697266</Max>
-    <Min>-29.882816314697266</Min>
+    <Avg>-9.3740120907626157</Avg>
+    <Max>4.9999998736893758E-06</Max>
+    <Min>-52.148433685302734</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1326,9 +1326,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-148.2421875</Avg>
-    <Max>-148.2421875</Max>
-    <Min>-148.2421875</Min>
+    <Avg>-147.65625</Avg>
+    <Max>-147.65625</Max>
+    <Min>-147.65625</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1337,9 +1337,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.58592522144317627</Avg>
-    <Max>-0.58592522144317627</Max>
-    <Min>-0.58592522144317627</Min>
+    <Avg>-0.16125015050095456</Avg>
+    <Max>39.843730926513672</Max>
+    <Min>-43.359394073486328</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1348,9 +1348,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>26.260691556063566</Avg>
-    <Max>28.710975646972656</Max>
-    <Min>14.648475646972656</Min>
+    <Avg>27.040641446241597</Avg>
+    <Max>56.542987823486328</Max>
+    <Min>0.58595651388168335</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1370,9 +1370,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>4.3749998440034688E-05</Avg>
-    <Max>4.3749998440034688E-05</Max>
-    <Min>4.3749998440034688E-05</Min>
+    <Avg>0.092387959268399461</Avg>
+    <Max>0.29294374585151672</Max>
+    <Min>-0.58596247434616089</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1381,9 +1381,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.58595001697540283</Avg>
-    <Max>-0.58595001697540283</Max>
-    <Min>-0.58595001697540283</Min>
+    <Avg>-60.349588637383995</Avg>
+    <Max>-60.058586120605469</Max>
+    <Min>-60.351554870605469</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1407,8 +1407,8 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
+    <Avg>0.785234899328859</Avg>
+    <Max>1</Max>
     <Min>0</Min>
     <Condition />
     <Fire />
@@ -2041,9 +2041,9 @@
     <TargetName>Hanche G Rot</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.24146803400733255</Avg>
-    <Max>-0.13291986286640167</Max>
-    <Min>-0.34974977374076843</Min>
+    <Avg>-6.0319283955496887</Avg>
+    <Max>13.263001441955566</Max>
+    <Min>-57.174465179443359</Min>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -2052,9 +2052,9 @@
     <TargetName>Cuisse G</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>34.405090852217242</Avg>
-    <Max>42.791046142578125</Max>
-    <Min>30.283962249755859</Min>
+    <Avg>1.7290338219593486</Avg>
+    <Max>15.313027381896973</Max>
+    <Min>-12.730281829833984</Min>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -2063,9 +2063,9 @@
     <TargetName>Hanche G Lat</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-1.300092870538885</Avg>
-    <Max>-1.0321595668792725</Max>
-    <Min>-1.675226092338562</Min>
+    <Avg>8.59035054990481</Avg>
+    <Max>34.275413513183594</Max>
+    <Min>-1.5125501155853272</Min>
     <Condition />
     <Fire />
     <SourceIndex>3</SourceIndex>
@@ -2074,9 +2074,9 @@
     <TargetName>Genou G</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0.13816970112648877</Avg>
-    <Max>0.23191961646080017</Max>
-    <Min>0.073716610670089722</Min>
+    <Avg>5.7182532795861167</Avg>
+    <Max>48.894084930419922</Max>
+    <Min>-27.810850143432617</Min>
     <Condition />
     <Fire />
     <SourceIndex>4</SourceIndex>
@@ -2085,9 +2085,9 @@
     <TargetName>Cheville G</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>36.3985446583141</Avg>
-    <Max>45.120231628417969</Max>
-    <Min>32.088699340820312</Min>
+    <Avg>-2.88669785667889</Avg>
+    <Max>10.920731544494629</Max>
+    <Min>-13.513909339904785</Min>
     <Condition />
     <Fire />
     <SourceIndex>5</SourceIndex>
@@ -2107,9 +2107,9 @@
     <TargetName>Hanche D Rot</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0.071741469024511229</Avg>
-    <Max>0.178275465965271</Max>
-    <Min>-0.018013428896665573</Min>
+    <Avg>7.58699476516502</Avg>
+    <Max>57.5987663269043</Max>
+    <Min>-14.357364654541016</Min>
     <Condition />
     <Fire />
     <SourceIndex>7</SourceIndex>
@@ -2118,9 +2118,9 @@
     <TargetName>Cuisse D</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>36.1951359835538</Avg>
-    <Max>44.986854553222656</Max>
-    <Min>31.836700439453125</Min>
+    <Avg>2.9380205460646125</Avg>
+    <Max>16.047344207763672</Max>
+    <Min>-12.071284294128418</Min>
     <Condition />
     <Fire />
     <SourceIndex>8</SourceIndex>
@@ -2129,9 +2129,9 @@
     <TargetName>Hanche D Lat</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0.775288538499312</Avg>
-    <Max>0.83309739828109741</Max>
-    <Min>0.6763308048248291</Min>
+    <Avg>-7.0856315549269659</Avg>
+    <Max>37.857517242431641</Max>
+    <Min>-42.772548675537109</Min>
     <Condition />
     <Fire />
     <SourceIndex>10</SourceIndex>
@@ -2140,9 +2140,9 @@
     <TargetName>Cheville D</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>34.40055899186568</Avg>
-    <Max>42.747097015380859</Max>
-    <Min>30.203392028808594</Min>
+    <Avg>-1.7761541568916175</Avg>
+    <Max>10.790886878967285</Max>
+    <Min>-11.930135726928711</Min>
     <Condition />
     <Fire />
     <SourceIndex>11</SourceIndex>
@@ -2151,9 +2151,9 @@
     <TargetName>Pied D</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-0.14758466322118755</Avg>
+    <Max>46.464374542236328</Max>
+    <Min>-50.185420989990234</Min>
     <Condition />
     <Fire />
     <SourceIndex>12</SourceIndex>
@@ -2162,9 +2162,9 @@
     <TargetName>Epaule G Long</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-30</Avg>
-    <Max>-30</Max>
-    <Min>-30</Min>
+    <Avg>-9.4133747313796672</Avg>
+    <Max>0</Max>
+    <Min>-52.272705078125</Min>
     <Condition />
     <Fire />
     <SourceIndex>13</SourceIndex>
@@ -2184,9 +2184,9 @@
     <TargetName>Coude G</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>-0</Max>
-    <Min>-0</Min>
+    <Avg>0.32074669735262407</Avg>
+    <Max>46.464374542236328</Max>
+    <Min>-50.185420989990234</Min>
     <Condition />
     <Fire />
     <SourceIndex>15</SourceIndex>
@@ -2195,9 +2195,9 @@
     <TargetName>Epaule D Long</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>30</Avg>
-    <Max>30</Max>
-    <Min>30</Min>
+    <Avg>27.770894844860038</Avg>
+    <Max>57.666671752929688</Max>
+    <Min>-0</Min>
     <Condition />
     <Fire />
     <SourceIndex>16</SourceIndex>
@@ -2253,9 +2253,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0.87462261590090662</Avg>
-    <Max>0.98235511779785156</Max>
-    <Min>0.76555842161178589</Min>
+    <Avg>-9.9611100391828575</Avg>
+    <Max>2.9264833927154541</Max>
+    <Min>-37.009029388427734</Min>
     <Condition />
     <Fire />
     <SourceIndex>9</SourceIndex>
@@ -2300,9 +2300,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0.2929685115814209</Avg>
-    <Max>0.2929685115814209</Max>
-    <Min>0.2929685115814209</Min>
+    <Avg>-12.259465144763144</Avg>
+    <Max>1.7578113079071045</Max>
+    <Min>-39.84375</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -2386,15 +2386,34 @@
   </GraphicalBlock>
   <GraphicalBlock>
     <EmptyBlock>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>BlockKick</name>
+          <output_idx>19</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockKick</name>
+          <output_idx>20</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockKick</name>
+          <output_idx>21</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>Generic</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
     </EmptyBlock>
     <Position>
-      <X>914.73460200824024</X>
-      <Y>1269.994046087294</Y>
+      <X>939.73460200824024</X>
+      <Y>1288.994046087294</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
@@ -2432,7 +2451,14 @@
   </GraphicalLink>
   <GraphicalBlock>
     <MoveOutput>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>BlockKick</name>
+          <output_idx>18</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>MoveOutput</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -2442,13 +2468,13 @@
       </labels>
     </MoveOutput>
     <Position>
-      <X>987.787405159132</X>
-      <Y>1207.7509420952324</Y>
+      <X>1040.7874051591321</X>
+      <Y>1258.0740460872939</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
+    <Avg>0.37248322147651008</Avg>
+    <Max>1</Max>
     <Min>0</Min>
     <Condition />
     <Fire />
@@ -2458,118 +2484,79 @@
     <TargetName>MoveOutput</TargetName>
   </GraphicalLink>
   <GraphicalBlock>
-    <Constant>
+    <MoveInput>
       <entries />
-      <name>ball_distance</name>
+      <name>MoveInput</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <constants>
+      <labels>
+        <string>ballDistance</string>
+        <string>ballAzimuth</string>
+        <string>goalDistance</string>
+        <string>goalAzimuth</string>
+      </labels>
+      <default_values>
         <float>0</float>
-      </constants>
-    </Constant>
+        <float>0</float>
+        <float>0</float>
+        <float>0</float>
+      </default_values>
+    </MoveInput>
     <Position>
-      <X>-50</X>
-      <Y>1430.245432764161</Y>
+      <X>-116.31666666666668</X>
+      <Y>1416.3975215247203</Y>
     </Position>
   </GraphicalBlock>
-  <GraphicalBlock>
-    <Constant>
-      <entries />
-      <name>ball_azimuth</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <constants>
-        <float>0</float>
-      </constants>
-    </Constant>
-    <Position>
-      <X>-50</X>
-      <Y>1468.0951469854088</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <Constant>
-      <entries />
-      <name>goal_distance</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <constants>
-        <float>0</float>
-      </constants>
-    </Constant>
-    <Position>
-      <X>-50</X>
-      <Y>1510.4372247847016</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <Constant>
-      <entries />
-      <name>goal_azimuth</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <constants>
-        <float>0</float>
-      </constants>
-    </Constant>
-    <Position>
-      <X>-50</X>
-      <Y>1560.9373275983446</Y>
-    </Position>
-  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0.0071595780795202556</Avg>
+    <Max>9.0908803939819336</Max>
+    <Min>-8.4519329071044922</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>34</TargetIndex>
+    <SourceName>MoveInput</SourceName>
+    <TargetName>BlockKick</TargetName>
+  </GraphicalLink>
   <GraphicalLink>
     <Avg>0</Avg>
     <Max>0</Max>
     <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>2</SourceIndex>
+    <TargetIndex>35</TargetIndex>
+    <SourceName>MoveInput</SourceName>
+    <TargetName>BlockKick</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>3</SourceIndex>
+    <TargetIndex>36</TargetIndex>
+    <SourceName>MoveInput</SourceName>
+    <TargetName>BlockKick</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>6.1344344023390107</Avg>
+    <Max>18.092172622680664</Max>
+    <Min>0.20462164282798767</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>33</TargetIndex>
-    <SourceName>ball_distance</SourceName>
-    <TargetName>BlockKick</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>34</TargetIndex>
-    <SourceName>ball_azimuth</SourceName>
-    <TargetName>BlockKick</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>35</TargetIndex>
-    <SourceName>goal_distance</SourceName>
-    <TargetName>BlockKick</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>36</TargetIndex>
-    <SourceName>goal_azimuth</SourceName>
+    <SourceName>MoveInput</SourceName>
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
   <SchemaComments />
   <Frequency>100</Frequency>
-  <SmoothStart>1000</SmoothStart>
+  <SmoothStart>0</SmoothStart>
   <SmoothStop>1000</SmoothStop>
   <Duration>0</Duration>
 </GraphicalMotorPrimitive>
