@@ -1374,86 +1374,6 @@
     <TargetName>BlockGoalScanner</TargetName>
   </GraphicalLink>
   <GraphicalBlock>
-    <MoveInput>
-      <entries />
-      <name>MoveInput</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <labels>
-        <string>trigger</string>
-        <string>azimuth</string>
-      </labels>
-      <default_values>
-        <float>0</float>
-        <float>0</float>
-      </default_values>
-    </MoveInput>
-    <Position>
-      <X>434.74524274089248</X>
-      <Y>449.09999999999997</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <SnapshotBlock>
-      <entries>
-        <BlockPredecessor>
-          <name>MoveInput</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>MoveInput</name>
-          <output_idx>1</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>SnapshotBlock</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-    </SnapshotBlock>
-    <Position>
-      <X>563.74524274089254</X>
-      <Y>419.03999999999996</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>MoveInput</SourceName>
-    <TargetName>SnapshotBlock</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>MoveInput</SourceName>
-    <TargetName>SnapshotBlock</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>11</TargetIndex>
-    <SourceName>SnapshotBlock</SourceName>
-    <TargetName>BlockGoalScanner</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
     <EmptyBlock>
       <entries>
         <BlockPredecessor>
@@ -1483,6 +1403,38 @@
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGoalScanner</SourceName>
     <TargetName>EmptyBlock2</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <MoveBlock>
+      <entries />
+      <name>MoveBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <move_name>RelMagnetoAzimuth</move_name>
+      <inputs />
+      <outputs>
+        <string>RelAzimuth</string>
+      </outputs>
+      <default_outputs>
+        <float>0</float>
+      </default_outputs>
+    </MoveBlock>
+    <Position>
+      <X>408.02591589281326</X>
+      <Y>482.03999999999996</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>11</TargetIndex>
+    <SourceName>MoveBlock</SourceName>
+    <TargetName>BlockGoalScanner</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
