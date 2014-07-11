@@ -50,18 +50,18 @@ def check_releve(self, moveName):
           <fire />
         </BlockPredecessor>
       </entries>
-      <name>WalkToBall</name>
+      <name>PlaySoccer</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <loop>check_fall(self)
 checkGameState(self)</loop>
-      <enter>self.SchedulerStartMove("CartWalk",0,500)</enter>
-      <exit>self.SchedulerStopMove("CartWalk",200)</exit>
+      <enter>self.loader.startMachine("RobocupGame")</enter>
+      <exit>self.loader.stopMachine("RobocupGame")</exit>
     </StmStateBlock>
     <Position>
-      <X>213.52544852549039</X>
-      <Y>867.64412162814051</Y>
+      <X>120.52544852549039</X>
+      <Y>793.64412162814062</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -126,7 +126,8 @@ self.fallface = False</exit>
       <gainMax>60</gainMax>
       <loop />
       <enter>self.SchedulerStartMove("FallDetector",0,20)
-self.SchedulerStartMove("GameStatusTracker",0,20)</enter>
+self.SchedulerStartMove("GameStatusTracker",0,20)
+self.SchedulerStartMove("RelMagnetoAzimuth",0,20)</enter>
       <exit />
     </StmStateBlock>
     <Position>
@@ -156,7 +157,7 @@ self.SchedulerStartMove("GameStatusTracker",0,20)</enter>
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>WalkToBall</name>
+          <name>PlaySoccer</name>
           <output_idx>0</output_idx>
           <condition>not self.playing or self.fallback or self.fallface</condition>
           <fire />
@@ -195,7 +196,7 @@ self.SchedulerStartMove("GameStatusTracker",0,20)</enter>
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>Waiting</SourceName>
-    <TargetName>WalkToBall</TargetName>
+    <TargetName>PlaySoccer</TargetName>
   </GraphicalBlockLink>
   <GraphicalBlockLink>
     <Avg>0</Avg>
@@ -249,7 +250,7 @@ self.SchedulerStartMove("GameStatusTracker",0,20)</enter>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>3</TargetIndex>
-    <SourceName>WalkToBall</SourceName>
+    <SourceName>PlaySoccer</SourceName>
     <TargetName>Waiting</TargetName>
   </GraphicalBlockLink>
   <hsize>500</hsize>
