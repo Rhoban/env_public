@@ -20,7 +20,7 @@ self.SchedulerStopMove("StandUpBack",500)
 self.SchedulerStopMove("StandUpFront",500)
 
 self.ballDetected = False
-sellf.canKick = False
+self.canKick = False
 
 def check_ball_detected(self):
   info = self.GetMoveValues("BallTracker",["detected"])
@@ -30,11 +30,12 @@ def check_ball_detected(self):
 def check_can_kick(self):
   info = self.GetMoveValues("Dribble",["canKick"])
   if info and len(info)&gt;=1:
- self.canKick = float(info[0][0))&gt;0.1</preamble>
+    self.canKick = float(info[0][0])&gt;0.1
+</preamble>
     </StmPreambleBlock>
     <Position>
       <X>73</X>
-      <Y>-147.56000000000006</Y>
+      <Y>-148.56000000000006</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
