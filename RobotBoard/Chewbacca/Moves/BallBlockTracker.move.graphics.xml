@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <entries />
-  <name>BallTracker</name>
+  <name>BallBlockTracker</name>
   <gain>1</gain>
   <gainMin>-1</gainMin>
   <gainMax>60</gainMax>
@@ -9,14 +9,14 @@
     <BlockTracker>
       <entries>
         <BlockPredecessor>
-          <name>MoveBlock</name>
+          <name>Constant</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>MoveBlock</name>
-          <output_idx>1</output_idx>
+          <name>Constant</name>
+          <output_idx>0</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
@@ -38,12 +38,6 @@
           <condition />
           <fire />
         </BlockPredecessor>
-        <BlockPredecessor>
-          <name>BlockGain2</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
       </entries>
       <name>BlockTracker</name>
       <gain>1</gain>
@@ -51,15 +45,15 @@
       <gainMax>60</gainMax>
       <camera_width>80</camera_width>
       <camera_height>50</camera_height>
-      <pan_min>-135</pan_min>
-      <pan_max>135</pan_max>
+      <pan_min>-60</pan_min>
+      <pan_max>60</pan_max>
       <tilt_min>-5</tilt_min>
-      <tilt_max>70</tilt_max>
+      <tilt_max>50</tilt_max>
       <max_age>2</max_age>
     </BlockTracker>
     <Position>
       <X>383.08794805575997</X>
-      <Y>161.04</Y>
+      <Y>166.04</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -73,7 +67,7 @@
       <clipping>true</clipping>
     </BallBlock>
     <Position>
-      <X>242.44666666666666</X>
+      <X>246.24666666666667</X>
       <Y>236.65599278958604</Y>
     </Position>
   </GraphicalBlock>
@@ -109,7 +103,7 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>639.21473511491365</X>
+      <X>684.73615583272</X>
       <Y>132.85642672675996</Y>
     </Position>
   </GraphicalBlock>
@@ -145,8 +139,24 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>642.6647351149137</X>
-      <Y>171.04</Y>
+      <X>688.18615583272</X>
+      <Y>236.65599278958604</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>0</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>250.04666666666668</X>
+      <Y>166.04</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
@@ -156,14 +166,36 @@
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Constant</SourceName>
+    <TargetName>BlockTracker</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>Constant</SourceName>
+    <TargetName>BlockTracker</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>1</Avg>
+    <Max>1</Max>
+    <Min>1</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
     <TargetIndex>4</TargetIndex>
     <SourceName>BallBlock</SourceName>
     <TargetName>BlockTracker</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0.18536286056041718</Avg>
-    <Max>0.18536286056041718</Max>
-    <Min>0.18536286056041718</Min>
+    <Avg>0.0075547584343004827</Avg>
+    <Max>0.4159075915813446</Max>
+    <Min>-0.031179580837488174</Min>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -172,9 +204,9 @@
     <TargetName>BlockTracker</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0.96890938282012939</Avg>
-    <Max>0.96890938282012939</Max>
-    <Min>0.96890938282012939</Min>
+    <Avg>-0.00086092866694640724</Avg>
+    <Max>0.053220681846141815</Max>
+    <Min>-0.097622260451316834</Min>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -206,9 +238,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>-25.301279067993164</Avg>
-    <Max>-25.301279067993164</Max>
-    <Min>-25.301279067993164</Min>
+    <Avg>14.71301182833585</Avg>
+    <Max>33.815940856933594</Max>
+    <Min>12.972267150878906</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -217,9 +249,9 @@
     <TargetName>BlockGain</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>25.301279067993164</Avg>
-    <Max>25.301279067993164</Max>
-    <Min>25.301279067993164</Min>
+    <Avg>-14.71301182833585</Avg>
+    <Max>-12.972267150878906</Max>
+    <Min>-33.815940856933594</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -246,14 +278,14 @@
       </gains>
     </BlockGain>
     <Position>
-      <X>565.01200799582125</X>
-      <Y>171.04</Y>
+      <X>596</X>
+      <Y>211.04</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>30</Avg>
-    <Max>30</Max>
-    <Min>30</Min>
+    <Avg>16.015508343475034</Avg>
+    <Max>16.819664001464844</Max>
+    <Min>14.631460189819336</Min>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -262,196 +294,15 @@
     <TargetName>BlockGain1</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-30</Avg>
-    <Max>-30</Max>
-    <Min>-30</Min>
+    <Avg>-16.015508343475034</Avg>
+    <Max>-14.631460189819336</Max>
+    <Min>-16.819664001464844</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockGain1</SourceName>
     <TargetName>Tilt</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
-    <MoveBlock>
-      <entries />
-      <name>MoveBlock</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <move_name>BallRelLoc</move_name>
-      <inputs />
-      <outputs>
-        <string>azimuth</string>
-        <string>distance</string>
-      </outputs>
-      <default_outputs>
-        <float>0</float>
-        <float>0</float>
-      </default_outputs>
-    </MoveBlock>
-    <Position>
-      <X>216.86499999999995</X>
-      <Y>127.19999999999999</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>MoveBlock</SourceName>
-    <TargetName>BlockTracker</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>MoveBlock</SourceName>
-    <TargetName>BlockTracker</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
-    <MoveOutput>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockTracker</name>
-          <output_idx>2</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>BlockTracker</name>
-          <output_idx>3</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>BlockTracker</name>
-          <output_idx>4</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>MoveOutput</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <labels>
-        <string>distance</string>
-        <string>azimuth</string>
-        <string>detected</string>
-      </labels>
-    </MoveOutput>
-    <Position>
-      <X>565.01200799582125</X>
-      <Y>214.73599278958602</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>2</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockTracker</SourceName>
-    <TargetName>MoveOutput</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>3</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>BlockTracker</SourceName>
-    <TargetName>MoveOutput</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>4</SourceIndex>
-    <TargetIndex>2</TargetIndex>
-    <SourceName>BlockTracker</SourceName>
-    <TargetName>MoveOutput</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
-    <MoveBlock>
-      <entries />
-      <name>MoveBlock1</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <move_name>CartWalk</move_name>
-      <inputs />
-      <outputs>
-        <string>Turn</string>
-      </outputs>
-      <default_outputs>
-        <float>0</float>
-      </default_outputs>
-    </MoveBlock>
-    <Position>
-      <X>140.575</X>
-      <Y>287.03999999999996</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockGain>
-      <entries>
-        <BlockPredecessor>
-          <name>MoveBlock1</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>BlockGain2</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <gains>
-        <float>3</float>
-      </gains>
-    </BlockGain>
-    <Position>
-      <X>289</X>
-      <Y>287.03999999999996</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>5</TargetIndex>
-    <SourceName>BlockGain2</SourceName>
-    <TargetName>BlockTracker</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>MoveBlock1</SourceName>
-    <TargetName>BlockGain2</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>

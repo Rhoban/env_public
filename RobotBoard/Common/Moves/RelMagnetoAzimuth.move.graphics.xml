@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<GraphicalMotorPrimitive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <entries />
+  <name>RelMagnetoAzimuth</name>
+  <gain>1</gain>
+  <gainMin>-1</gainMin>
+  <gainMax>60</gainMax>
+  <GraphicalBlock>
+    <CompassBlock>
+      <entries />
+      <name>CompassBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </CompassBlock>
+    <Position>
+      <X>486.06666666666672</X>
+      <Y>65.039999999999992</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockAngleDistance>
+      <entries>
+        <BlockPredecessor>
+          <name>CompassBlock</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>GoalAzimuth</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockAngleDistance</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockAngleDistance>
+    <Position>
+      <X>649</X>
+      <Y>115.03999999999999</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>GoalAzimuth</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>-145</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>510</X>
+      <Y>161.04</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>Goal Absolute Azimuth in degrees
+</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>292</X>
+      <Y>155.07999999999998</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockAngleMobileAverage>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockAngleDistance</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockAngleMobileAverage</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <discount_coef>0.9</discount_coef>
+    </BlockAngleMobileAverage>
+    <Position>
+      <X>781</X>
+      <Y>115.03999999999999</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>-14.491224926267121</Avg>
+    <Max>96.0414810180664</Max>
+    <Min>-65.576469421386719</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockAngleDistance</SourceName>
+    <TargetName>BlockAngleMobileAverage</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <MoveOutput>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockAngleMobileAverage</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>MoveOutput</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <labels>
+        <string>RelAzimuth</string>
+      </labels>
+    </MoveOutput>
+    <Position>
+      <X>958</X>
+      <Y>109.07999999999998</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>-14.495567394760311</Avg>
+    <Max>95.248138427734375</Max>
+    <Min>-65.101242065429688</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockAngleMobileAverage</SourceName>
+    <TargetName>MoveOutput</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>-91.437829043414141</Avg>
+    <Max>176.53102111816406</Max>
+    <Min>-157.10090637207031</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>CompassBlock</SourceName>
+    <TargetName>BlockAngleDistance</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>-136.33445945945945</Avg>
+    <Max>0</Max>
+    <Min>-145</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>GoalAzimuth</SourceName>
+    <TargetName>BlockAngleDistance</TargetName>
+  </GraphicalLink>
+  <hsize>500</hsize>
+  <vsize>500</vsize>
+  <SchemaComments />
+  <Frequency>100</Frequency>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
+  <Duration>0</Duration>
+</GraphicalMotorPrimitive>
