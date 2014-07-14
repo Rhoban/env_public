@@ -23,6 +23,8 @@ self.lookedAtFeet = False
 # Kicked
 self.kicked = False
 
+self.antiGlitch=0
+
 def check_ball_detected(self):
   info = self.GetMoveValues("BallTracker",["detected"])
   if info and len(info) &gt;= 1:
@@ -220,8 +222,8 @@ self.SchedulerStartMove("CartWalk",0,1000)</enter>
       <exit />
     </StmStateBlock>
     <Position>
-      <X>374</X>
-      <Y>299.19999999999993</Y>
+      <X>248.375</X>
+      <Y>317.19999999999993</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -244,7 +246,7 @@ self.SchedulerStopMove("CartWalk",1000)</enter>
       <exit />
     </StmStateBlock>
     <Position>
-      <X>1232.4499999999998</X>
+      <X>1231.8999999999999</X>
       <Y>262.15999999999997</Y>
     </Position>
   </GraphicalBlock>
@@ -284,15 +286,18 @@ self.SchedulerStopMove("CartWalk",1000)</enter>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>check_goal_scanned(self)</loop>
+      <loop>self.antiGlitch+=1
+if self.antiGlitch&gt;5:
+    check_goal_scanned(self)</loop>
       <enter>self.goalScanned=False
 self.SchedulerStopMove("LookAtFeet",200)
-self.SchedulerStartMove("GoalRelLoc",0,200)</enter>
+self.SchedulerStartMove("GoalRelLoc",0,200)
+self.antiGlitch=0</enter>
       <exit />
     </StmStateBlock>
     <Position>
       <X>974</X>
-      <Y>349.99999999999994</Y>
+      <Y>348.99999999999994</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
@@ -320,14 +325,17 @@ self.SchedulerStartMove("GoalRelLoc",0,200)</enter>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>check_feet_ball(self)</loop>
+      <loop>self.antiGlitch+=1
+if self.antiGlitch&gt;5:
+    check_feet_ball(self)</loop>
       <enter>self.lookedAtFeet=False
-self.SchedulerStartMove("LookAtFeet",0,200)</enter>
+self.SchedulerStartMove("LookAtFeet",0,200)
+self.antiGlitch=0</enter>
       <exit />
     </StmStateBlock>
     <Position>
-      <X>1231.8999999999999</X>
-      <Y>545.91999999999985</Y>
+      <X>1484.8999999999999</X>
+      <Y>555.91999999999985</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
@@ -366,9 +374,12 @@ self.SchedulerStartMove("LookAtFeet",0,200)</enter>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>check_kicked(self)</loop>
+      <loop>self.antiGlitch+=1
+if self.antiGlitch&gt;5:
+  check_kicked(self)</loop>
       <enter>self.kicked=False
-self.SchedulerStartMove("Kick",0,0)</enter>
+self.SchedulerStartMove("Kick",0,0)
+self.antiGlitch=0</enter>
       <exit />
     </StmStateBlock>
     <Position>
