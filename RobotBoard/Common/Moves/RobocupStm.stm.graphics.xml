@@ -253,6 +253,20 @@ self.SchedulerStartMove("RelMagnetoAzimuth",0,20)</enter>
     <SourceName>PlaySoccer</SourceName>
     <TargetName>Waiting</TargetName>
   </GraphicalBlockLink>
+  <GraphicalBlock>
+    <StmOnStopBlock>
+      <entries />
+      <name>StmOnStopBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <OnStop>self.loader.stopMachine("RobocupGame")</OnStop>
+    </StmOnStopBlock>
+    <Position>
+      <X>-432</X>
+      <Y>640.04576737842365</Y>
+    </Position>
+  </GraphicalBlock>
   <hsize>500</hsize>
   <vsize>500</vsize>
   <SchemaComments />
