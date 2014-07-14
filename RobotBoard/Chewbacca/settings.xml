@@ -1,18 +1,13 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <connection_config_filename>ConnectionConfig.xml</connection_config_filename>
   <command_store_filename>commands.xml</command_store_filename>
-  <robot_spec_filename>C:\Users\olivier\Documents\Programmation\Rhoban\Environments\RobotBoard\Chewbacca\ConfigFiles\JointsSpecification.xml</robot_spec_filename>
+  <robot_spec_filename>JointsSpecification.xml</robot_spec_filename>
   <lowlevel_config_filename>LowLevelConfig.xml</lowlevel_config_filename>
   <robot_config_filename>MoveSchedulerConfig.xml</robot_config_filename>
+  <move_scheduler_config_filename>MoveSchedulerConfig.xml</move_scheduler_config_filename>
   <vision_config_filename>VisionConfig.xml</vision_config_filename>
-  <port>7777</port>
-  <ip>77.77.77.120</ip>
-  <known_ips>
-    <string>127.0.0.1</string>
-    <string>192.168.16.120</string>
-    <string>10.0.0.1</string>
-    <string>77.77.77.120</string>
-  </known_ips>
+  <use_zmq>false</use_zmq>
   <monitor_frequency>5</monitor_frequency>
   <monitor_error_frequency>1</monitor_error_frequency>
   <splineModelerCloudWidth>30</splineModelerCloudWidth>
