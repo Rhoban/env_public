@@ -289,45 +289,6 @@ self.SchedulerStopMove("CartWalk",1000)</enter>
           <fire />
         </BlockPredecessor>
       </entries>
-      <name>GoalScan</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <loop>self.antiGlitch+=1
-if self.antiGlitch&gt;5:
-    check_goal_scanned(self)</loop>
-      <enter>self.goalScanned=False
-self.SchedulerStopMove("LookAtFeet",200)
-self.SchedulerStartMove("GoalRelLoc",0,200)
-self.antiGlitch=0</enter>
-      <exit />
-    </StmStateBlock>
-    <Position>
-      <X>974</X>
-      <Y>348.99999999999994</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition>True</Condition>
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>KickStart</SourceName>
-    <TargetName>GoalScan</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
-    <StmStateBlock>
-      <entries>
-        <BlockPredecessor>
-          <name>GoalScan</name>
-          <output_idx>0</output_idx>
-          <condition>self.goalScanned</condition>
-          <fire />
-        </BlockPredecessor>
-      </entries>
       <name>LookBallAtFeet</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -345,17 +306,6 @@ self.antiGlitch=0</enter>
       <Y>555.91999999999985</Y>
     </Position>
   </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition>self.goalScanned</Condition>
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>GoalScan</SourceName>
-    <TargetName>LookBallAtFeet</TargetName>
-  </GraphicalLink>
   <GraphicalLink>
     <Avg>0</Avg>
     <Max>0</Max>
@@ -533,6 +483,17 @@ self.antiGlitch=0</enter>
     <TargetIndex>1</TargetIndex>
     <SourceName>Dribble</SourceName>
     <TargetName>WalkToBall</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition>True</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>KickStart</SourceName>
+    <TargetName>LookBallAtFeet</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
