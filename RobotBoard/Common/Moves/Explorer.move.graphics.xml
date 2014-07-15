@@ -25,15 +25,15 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <wait_delay>1</wait_delay>
-      <turn_delay>1</turn_delay>
-      <step_delay>1</step_delay>
-      <turn_vel>1</turn_vel>
-      <step_vel>1</step_vel>
-      <turn_coef>1</turn_coef>
+      <wait_delay>10</wait_delay>
+      <turn_delay>5</turn_delay>
+      <step_delay>20</step_delay>
+      <turn_vel>20</turn_vel>
+      <step_vel>4</step_vel>
+      <turn_coef>3</turn_coef>
     </BlockExplorer>
     <Position>
-      <X>473</X>
+      <X>471.14913914684007</X>
       <Y>175.94</Y>
     </Position>
   </GraphicalBlock>
@@ -114,8 +114,8 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
+    <Avg>0.10738255033557047</Avg>
+    <Max>1</Max>
     <Min>0</Min>
     <Condition />
     <Fire />
@@ -125,9 +125,9 @@
     <TargetName>BlockExplorer</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-17.222227338976509</Avg>
+    <Max>146.93515014648438</Max>
+    <Min>-128.58270263671875</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -136,8 +136,8 @@
     <TargetName>BlockExplorer</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
+    <Avg>0.54697986577181212</Avg>
+    <Max>1</Max>
     <Min>0</Min>
     <Condition />
     <Fire />
@@ -147,8 +147,8 @@
     <TargetName>MoveBlock</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
+    <Avg>1.6778523489932886</Avg>
+    <Max>10</Max>
     <Min>0</Min>
     <Condition />
     <Fire />
@@ -158,9 +158,9 @@
     <TargetName>MoveBlock</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-3.183061207700896</Avg>
+    <Max>30</Max>
+    <Min>-30</Min>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -172,7 +172,7 @@
   <vsize>500</vsize>
   <SchemaComments />
   <Frequency>100</Frequency>
-  <SmoothStart>0</SmoothStart>
-  <SmoothStop>0</SmoothStop>
+  <SmoothStart>1000</SmoothStart>
+  <SmoothStop>1000</SmoothStop>
   <Duration>0</Duration>
 </GraphicalMotorPrimitive>
