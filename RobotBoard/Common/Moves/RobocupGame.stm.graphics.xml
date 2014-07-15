@@ -87,11 +87,12 @@ self.SchedulerStopMove("BallTracker",200)
 self.SchedulerStopMove("Dribble",200)
 self.SchedulerStopMove("GoalRelLoc",200)
 self.SchedulerStopMove("Kick",200)
-self.SchedulerStopMove("LookAtFeet",200)</OnStop>
+self.SchedulerStopMove("LookAtFeet",200)
+self.SchedulerStopMove("Explorer",0)</OnStop>
     </StmOnStopBlock>
     <Position>
-      <X>-104</X>
-      <Y>178.19999999999996</Y>
+      <X>-105</X>
+      <Y>177.19999999999996</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -127,12 +128,13 @@ self.SchedulerStopMove("LookAtFeet",200)</OnStop>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <loop>check_ball_detected(self)</loop>
-      <enter>self.ballDetected=False</enter>
-      <exit />
+      <enter>self.ballDetected=False
+self.SchedulerStartMove("Explorer",0,1000)</enter>
+      <exit>self.SchedulerStopMove("Explorer",0)</exit>
     </StmStateBlock>
     <Position>
-      <X>756.12718149213356</X>
-      <Y>-48.439999999999884</Y>
+      <X>715.155</X>
+      <Y>-42.450181895939522</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
