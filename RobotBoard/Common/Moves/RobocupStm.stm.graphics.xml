@@ -80,6 +80,7 @@ checkGameState(self)</loop>
       <gainMax>60</gainMax>
       <loop>check_releve(self,"StandUpBack")</loop>
       <enter>self.releve = False
+self.SchedulerStopMove("BallTracker",100)
 print("Starting move standupback")
 self.SchedulerStopMove("CartWalk",200)
 self.SchedulerStartMove("StandUpBack",0,200)</enter>
@@ -107,6 +108,7 @@ self.fallback = False</exit>
       <gainMax>60</gainMax>
       <loop>check_releve(self,"StandUpFront")</loop>
       <enter>self.releve = False
+self.SchedulerStopMove("BallTracker",100)
 self.SchedulerStopMove("CartWalk",200)
 self.SchedulerStartMove("StandUpFront",0,200)</enter>
       <exit>self.SchedulerStopMove("StandUpFront",500)
@@ -114,7 +116,7 @@ self.fallface = False</exit>
     </StmStateBlock>
     <Position>
       <X>861.52480825521116</X>
-      <Y>851.68412162814059</Y>
+      <Y>850.60001817299576</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -168,7 +170,7 @@ self.SchedulerStartMove("RelMagnetoAzimuth",0,20)</enter>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <loop>checkGameState(self)</loop>
-      <enter />
+      <enter>self.SchedulerStartMove("BallTracker",0,200)</enter>
       <exit />
     </StmStateBlock>
     <Position>
