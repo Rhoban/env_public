@@ -28,7 +28,7 @@
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>GoalAzimuth</name>
+          <name>BlockAddition</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -52,11 +52,11 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>-140</float>
+        <float>40</float>
       </constants>
     </Constant>
     <Position>
-      <X>510</X>
+      <X>486.06666666666672</X>
       <Y>161.04</Y>
     </Position>
   </GraphicalBlock>
@@ -71,8 +71,8 @@
 </Commentaires>
     </CommentsBlock>
     <Position>
-      <X>292</X>
-      <Y>155.07999999999998</Y>
+      <X>279</X>
+      <Y>115.03999999999999</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -92,14 +92,14 @@
       <discount_coef>0.9</discount_coef>
     </BlockAngleMobileAverage>
     <Position>
-      <X>781</X>
+      <X>841</X>
       <Y>115.03999999999999</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>-14.491224926267121</Avg>
-    <Max>96.0414810180664</Max>
-    <Min>-65.576469421386719</Min>
+    <Avg>162.14146423339844</Avg>
+    <Max>166.57737731933594</Max>
+    <Min>149.964111328125</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -126,14 +126,14 @@
       </labels>
     </MoveOutput>
     <Position>
-      <X>958</X>
+      <X>1067</X>
       <Y>109.07999999999998</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>-14.495567394760311</Avg>
-    <Max>95.248138427734375</Max>
-    <Min>-65.101242065429688</Min>
+    <Avg>161.99622780936105</Avg>
+    <Max>166.2308349609375</Max>
+    <Min>150.24433898925781</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -142,9 +142,9 @@
     <TargetName>MoveOutput</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-91.437829043414141</Avg>
-    <Max>176.53102111816406</Max>
-    <Min>-157.10090637207031</Min>
+    <Avg>47.858536093575616</Avg>
+    <Max>60.035892486572266</Max>
+    <Min>43.422630310058594</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -152,16 +152,99 @@
     <SourceName>CompassBlock</SourceName>
     <TargetName>BlockAngleDistance</TargetName>
   </GraphicalLink>
+  <GraphicalBlock>
+    <BlockAddition>
+      <entries>
+        <BlockPredecessor>
+          <name>GoalAzimuth</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>MoveInput</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockAddition</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockAddition>
+    <Position>
+      <X>576</X>
+      <Y>161.04</Y>
+    </Position>
+  </GraphicalBlock>
   <GraphicalLink>
-    <Avg>-136.33445945945945</Avg>
-    <Max>0</Max>
-    <Min>-145</Min>
+    <Avg>-150</Avg>
+    <Max>-150</Max>
+    <Min>-150</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>GoalAzimuth</SourceName>
+    <TargetName>BlockAddition</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>-150</Avg>
+    <Max>-150</Max>
+    <Min>-150</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>1</TargetIndex>
-    <SourceName>GoalAzimuth</SourceName>
+    <SourceName>BlockAddition</SourceName>
     <TargetName>BlockAngleDistance</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <MoveInput>
+      <entries />
+      <name>MoveInput</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <labels>
+        <string>offset</string>
+      </labels>
+      <default_values>
+        <float>0</float>
+      </default_values>
+    </MoveInput>
+    <Position>
+      <X>416.37333333333333</X>
+      <Y>212.04</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>10</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>495.27666666666676</X>
+      <Y>264.03999999999996</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>MoveInput</SourceName>
+    <TargetName>BlockAddition</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>

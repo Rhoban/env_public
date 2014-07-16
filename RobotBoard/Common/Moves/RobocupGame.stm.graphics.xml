@@ -22,13 +22,33 @@ self.goalScanned = False
 self.lookedAtFeet = False
 # Kicked
 self.kicked = False
+# Near to ball
+self.nearBall = False
+# Defending?
+self.defender = False
 
 self.antiGlitch=0
+
+self.lastGoalScan=0
+
+def goal_scanned(self):
+  import time
+  self.lastGoalScan = time.time()
+  
+def should_scan_goals(self):
+  import time
+  print("Scan age: %f" % (time.time()-self.lastGoalScan))
+  return (time.time()-self.lastGoalScan)&gt;30
 
 def check_ball_detected(self):
   info = self.GetMoveValues("BallTracker",["detected"])
   if info and len(info) &gt;= 1:
     self.ballDetected = float(info[0][0])&gt;0.1
+ 
+def check_near_ball(self):
+  info = self.GetMoveValues("Dribble",["nearBall"])
+  if info and len(info) &gt;= 1:
+    self.nearBall = float(info[0][0])&gt;0.1
  
 def check_can_kick(self):
   info = self.GetMoveValues("Dribble",["canKick"])
@@ -50,11 +70,15 @@ def check_kicked(self):
   info = self.GetMoveValues("Kick",["over"])
   if info and len(info) &gt;= 1:
     self.kicked = float(info[0][0])&gt;0.1
-</preamble>
+
+def check_defender(self):
+  info = self.GetMoveValues("Defender",["defender"])
+  if info and len(info) &gt;= 1:
+    self.defender = float(info[0][0])&gt;0.1</preamble>
     </StmPreambleBlock>
     <Position>
-      <X>157.625</X>
-      <Y>-399.56000000000006</Y>
+      <X>143.962973017906</X>
+      <Y>-616.12000000000046</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -69,11 +93,12 @@ self.SchedulerStopMove("BallTracker",200)
 self.SchedulerStopMove("Dribble",200)
 self.SchedulerStopMove("GoalRelLoc",200)
 self.SchedulerStopMove("Kick",200)
-self.SchedulerStopMove("LookAtFeet",200)</OnStop>
+self.SchedulerStopMove("LookAtFeet",200)
+self.SchedulerStopMove("Explorer",0)</OnStop>
     </StmOnStopBlock>
     <Position>
-      <X>-104</X>
-      <Y>178.19999999999996</Y>
+      <X>-105</X>
+      <Y>177.19999999999996</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -97,27 +122,41 @@ self.SchedulerStopMove("LookAtFeet",200)</OnStop>
           <condition>True</condition>
           <fire />
         </BlockPredecessor>
+        <BlockPredecessor>
+          <name>WalkToBall</name>
+          <output_idx>0</output_idx>
+          <condition>not self.ballDetected</condition>
+          <fire />
+        </BlockPredecessor>
       </entries>
       <name>Explore</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <loop>check_ball_detected(self)</loop>
-      <enter />
-      <exit />
+      <enter>self.ballDetected=False
+self.nearBall = False
+self.SchedulerStartMove("Explorer",0,1000)</enter>
+      <exit>self.SchedulerStopMove("Explorer",0)</exit>
     </StmStateBlock>
     <Position>
-      <X>645.25166666666667</X>
-      <Y>-74</Y>
+      <X>715.155</X>
+      <Y>-42.450181895939522</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
     <StmStateBlock>
       <entries>
         <BlockPredecessor>
-          <name>Explore</name>
+          <name>AlignToGoals</name>
           <output_idx>0</output_idx>
-          <condition>self.ballDetected</condition>
+          <condition>self.goalScanned</condition>
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>WalkToBall</name>
+          <output_idx>0</output_idx>
+          <condition>self.nearBall and (not should_scan_goals(self) or self.defender)</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -125,14 +164,19 @@ self.SchedulerStopMove("LookAtFeet",200)</OnStop>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>check_ball_detected(self)
-check_can_kick(self)</loop>
-      <enter>self.SchedulerStartMove("Dribble",0,500)</enter>
-      <exit>self.SchedulerStopMove("Dribble",500)</exit>
+      <loop>self.antiGlitch+=1
+if self.antiGlitch&gt;300:
+  check_ball_detected(self)
+  check_can_kick(self)
+  check_near_ball(self)</loop>
+      <enter>self.SchedulerStartMove("Dribble",0,500)
+self.antiGlitch=0
+self.canKick=False</enter>
+      <exit>self.SchedulerStopMove("Dribble",100)</exit>
     </StmStateBlock>
     <Position>
-      <X>679</X>
-      <Y>109.12</Y>
+      <X>1263.2963638421438</X>
+      <Y>31.68313250284848</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
@@ -146,17 +190,6 @@ check_can_kick(self)</loop>
     <SourceName>Dribble</SourceName>
     <TargetName>Explore</TargetName>
   </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition>self.ballDetected</Condition>
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>Explore</SourceName>
-    <TargetName>Dribble</TargetName>
-  </GraphicalLink>
   <GraphicalBlock>
     <StmStateBlock>
       <entries />
@@ -169,17 +202,19 @@ check_can_kick(self)</loop>
 self.SchedulerStartMove("RelMagnetoAzimuth",0,0)
 self.SchedulerStartMove("BallRelLoc",0,100)
 self.SchedulerStartMove("BallTracker",0,100)
+self.SchedulerStartMove("Defender",0,0)
 self.SchedulerStopMove("Dribble",500)
 self.SchedulerStopMove("StandUpBack",500)
 self.SchedulerStopMove("StandUpFront",500)
 self.SchedulerStopMove("Kick",500)
-self.SchedulerStopMove("LookBallAtFeet",500)
-self.SchedulerStopMove("GoalRelLoc",500)</enter>
+self.SchedulerStopMove("LookAtFeet",500)
+self.SchedulerStopMove("GoalRelLoc",500)
+self.lastGoalScan=0</enter>
       <exit />
     </StmStateBlock>
     <Position>
-      <X>575.34833333333336</X>
-      <Y>-382.80000000000007</Y>
+      <X>567.34833333333336</X>
+      <Y>-399.56000000000006</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
@@ -222,8 +257,8 @@ self.SchedulerStartMove("CartWalk",0,1000)</enter>
       <exit />
     </StmStateBlock>
     <Position>
-      <X>248.375</X>
-      <Y>317.19999999999993</Y>
+      <X>312.375</X>
+      <Y>489.19999999999993</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -246,8 +281,8 @@ self.SchedulerStopMove("CartWalk",1000)</enter>
       <exit />
     </StmStateBlock>
     <Position>
-      <X>1231.8999999999999</X>
-      <Y>262.15999999999997</Y>
+      <X>1538.1276123750993</X>
+      <Y>270.76000000000028</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
@@ -282,45 +317,6 @@ self.SchedulerStopMove("CartWalk",1000)</enter>
           <fire />
         </BlockPredecessor>
       </entries>
-      <name>GoalScan</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <loop>self.antiGlitch+=1
-if self.antiGlitch&gt;5:
-    check_goal_scanned(self)</loop>
-      <enter>self.goalScanned=False
-self.SchedulerStopMove("LookAtFeet",200)
-self.SchedulerStartMove("GoalRelLoc",0,200)
-self.antiGlitch=0</enter>
-      <exit />
-    </StmStateBlock>
-    <Position>
-      <X>974</X>
-      <Y>348.99999999999994</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition>True</Condition>
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>KickStart</SourceName>
-    <TargetName>GoalScan</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
-    <StmStateBlock>
-      <entries>
-        <BlockPredecessor>
-          <name>GoalScan</name>
-          <output_idx>0</output_idx>
-          <condition>self.goalScanned</condition>
-          <fire />
-        </BlockPredecessor>
-      </entries>
       <name>LookBallAtFeet</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -338,17 +334,6 @@ self.antiGlitch=0</enter>
       <Y>555.91999999999985</Y>
     </Position>
   </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition>self.goalScanned</Condition>
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>GoalScan</SourceName>
-    <TargetName>LookBallAtFeet</TargetName>
-  </GraphicalLink>
   <GraphicalLink>
     <Avg>0</Avg>
     <Max>0</Max>
@@ -408,6 +393,148 @@ self.antiGlitch=0</enter>
     <TargetIndex>1</TargetIndex>
     <SourceName>KickTheBall</SourceName>
     <TargetName>KickEnd</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <StmStateBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>Explore</name>
+          <output_idx>0</output_idx>
+          <condition>self. ballDetected</condition>
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>Dribble</name>
+          <output_idx>0</output_idx>
+          <condition>not self.nearBall</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>WalkToBall</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <loop>check_defender(self)
+self.antiGlitch+=1
+if self.antiGlitch&gt;50:
+  check_ball_detected(self)
+  check_near_ball(self)</loop>
+      <enter>self.SchedulerStartMove("Dribble",0,500)
+self.antiGlitch=0
+self.nearBall = False</enter>
+      <exit>self.SchedulerStopMove("Dribble",100)</exit>
+    </StmStateBlock>
+    <Position>
+      <X>1263.2963638421438</X>
+      <Y>-422.56000000000006</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition>self. ballDetected</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Explore</SourceName>
+    <TargetName>WalkToBall</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition>not self.ballDetected</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>3</TargetIndex>
+    <SourceName>WalkToBall</SourceName>
+    <TargetName>Explore</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <StmStateBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>WalkToBall</name>
+          <output_idx>0</output_idx>
+          <condition>self.nearBall and should_scan_goals(self) and not self.defender</condition>
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>AlignToGoals</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <loop>self.antiGlitch+=1
+if self.antiGlitch&gt;5:
+    check_goal_scanned(self)</loop>
+      <enter>self.goalScanned=False
+self.SchedulerStopMove("BallTracker",0)
+self.SchedulerStopMove("LookAtFeet",200)
+self.SchedulerStartMove("GoalRelLoc",0,200)
+self.antiGlitch=0</enter>
+      <exit>self.SchedulerStartMove("BallTracker",0,0)
+goal_scanned(self)</exit>
+    </StmStateBlock>
+    <Position>
+      <X>1739.4182635550178</X>
+      <Y>-265.67885266750011</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition>self.nearBall and should_scan_goals(self) and not self.defender</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>WalkToBall</SourceName>
+    <TargetName>AlignToGoals</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition>self.goalScanned</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>AlignToGoals</SourceName>
+    <TargetName>Dribble</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition>not self.nearBall</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>Dribble</SourceName>
+    <TargetName>WalkToBall</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition>True</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>KickStart</SourceName>
+    <TargetName>LookBallAtFeet</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition>self.nearBall and (not should_scan_goals(self) or self.defender)</Condition>
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>WalkToBall</SourceName>
+    <TargetName>Dribble</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>

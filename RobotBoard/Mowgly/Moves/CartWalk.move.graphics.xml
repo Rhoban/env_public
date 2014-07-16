@@ -81,7 +81,7 @@
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>Constant</name>
+          <name>YLat</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -579,7 +579,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>-2</float>
+        <float>0</float>
       </constants>
     </Constant>
     <Position>
@@ -595,7 +595,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>1</float>
+        <float>0</float>
       </constants>
     </Constant>
     <Position>
@@ -643,7 +643,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>0.5</float>
+        <float>0.15</float>
       </constants>
     </Constant>
     <Position>
@@ -745,7 +745,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>1.2</float>
+        <float>0.5</float>
       </constants>
     </Constant>
     <Position>
@@ -783,7 +783,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>2</float>
+        <float>3</float>
       </constants>
     </Constant>
     <Position>
@@ -882,7 +882,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>-15</float>
+        <float>-18</float>
       </constants>
     </Constant>
     <Position>
@@ -1384,7 +1384,7 @@
   <GraphicalBlock>
     <Constant>
       <entries />
-      <name>Constant</name>
+      <name>YLat</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
@@ -1405,7 +1405,7 @@
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>12</TargetIndex>
-    <SourceName>Constant</SourceName>
+    <SourceName>YLat</SourceName>
     <TargetName>BlockCartWalk</TargetName>
   </GraphicalLink>
   <GraphicalBlock>
@@ -1646,7 +1646,7 @@
     </Constant>
     <Position>
       <X>-111</X>
-      <Y>686.03999999999985</Y>
+      <Y>687.03999999999985</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
