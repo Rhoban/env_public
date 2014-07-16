@@ -36,7 +36,7 @@
                 <Id>32</Id>
                 <Name>Cheville D</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>21.0938</ZeroAngle>
+                <ZeroAngle>15</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -51,7 +51,7 @@
                 <Id>37</Id>
                 <Name>Cheville G</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>-0.585938</ZeroAngle>
+                <ZeroAngle>5</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -375,6 +375,7 @@
     </SensorsConfig>
     <ServosScene />
     <autoload_moves>
+        <string>LookAtFeet</string>
         <string>BallRelLoc</string>
         <string>GoalRelLoc</string>
         <string>CartWalk</string>
