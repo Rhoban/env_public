@@ -783,7 +783,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>2</float>
+        <float>3</float>
       </constants>
     </Constant>
     <Position>
@@ -882,7 +882,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>-10</float>
+        <float>-12</float>
       </constants>
     </Constant>
     <Position>
@@ -1452,44 +1452,6 @@
     <TargetName>BlockCartWalk</TargetName>
   </GraphicalLink>
   <GraphicalBlock>
-    <VariationBoundBlock>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockAddition</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>VariationBoundBlock</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <min_value>
-        <float>-200</float>
-      </min_value>
-      <max_value>
-        <float>200</float>
-      </max_value>
-      <discount_factor>0</discount_factor>
-    </VariationBoundBlock>
-    <Position>
-      <X>-233.01904653340637</X>
-      <Y>244.03999999999996</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>4</TargetIndex>
-    <SourceName>VariationBoundBlock</SourceName>
-    <TargetName>BlockCartWalk</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
     <CommentsBlock>
       <entries />
       <name>CommentsBlock</name>
@@ -1583,17 +1545,6 @@
     <TargetIndex>1</TargetIndex>
     <SourceName>MoveInput</SourceName>
     <TargetName>BlockAddition</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockAddition</SourceName>
-    <TargetName>VariationBoundBlock</TargetName>
   </GraphicalLink>
   <GraphicalLink>
     <Avg>0.96296296296296291</Avg>
@@ -2149,6 +2100,17 @@
     <TargetIndex>0</TargetIndex>
     <SourceName>HipOffset</SourceName>
     <TargetName>BlockAddition4</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>4</TargetIndex>
+    <SourceName>BlockAddition</SourceName>
+    <TargetName>BlockCartWalk</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
