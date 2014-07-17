@@ -77,8 +77,8 @@ def check_defender(self):
     self.defender = float(info[0][0])&gt;0.1</preamble>
     </StmPreambleBlock>
     <Position>
-      <X>143.962973017906</X>
-      <Y>-616.12000000000046</Y>
+      <X>198.18432189575259</X>
+      <Y>-670.88000000000068</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -133,14 +133,17 @@ self.SchedulerStopMove("Explorer",0)</OnStop>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>check_ball_detected(self)</loop>
+      <loop>self.antiGlitch+=1
+if self.antiGlitch&gt;5:
+  check_ball_detected(self)</loop>
       <enter>self.ballDetected=False
 self.nearBall = False
-self.SchedulerStartMove("Explorer",0,1000)</enter>
-      <exit>self.SchedulerStopMove("Explorer",0)</exit>
+self.SchedulerStartMove("Explorer",0,1000)
+self.antiGlitch=0</enter>
+      <exit>self.SchedulerStopMove("Explorer",100)</exit>
     </StmStateBlock>
     <Position>
-      <X>715.155</X>
+      <X>711.155</X>
       <Y>-42.450181895939522</Y>
     </Position>
   </GraphicalBlock>
@@ -420,6 +423,7 @@ if self.antiGlitch&gt;50:
   check_ball_detected(self)
   check_near_ball(self)</loop>
       <enter>self.SchedulerStartMove("Dribble",0,500)
+self.SchedulerStopMove("Explorer",100)
 self.antiGlitch=0
 self.nearBall = False</enter>
       <exit>self.SchedulerStopMove("Dribble",100)</exit>
