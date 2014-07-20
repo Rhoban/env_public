@@ -14,8 +14,8 @@
       <gainMax>60</gainMax>
     </CompassBlock>
     <Position>
-      <X>486.06666666666672</X>
-      <Y>65.039999999999992</Y>
+      <X>462.13333333333338</X>
+      <Y>64.039999999999992</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -28,7 +28,7 @@
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>GoalAzimuth</name>
+          <name>BlockAddition</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -52,11 +52,11 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>-150</float>
+        <float>-140</float>
       </constants>
     </Constant>
     <Position>
-      <X>510</X>
+      <X>495.27666666666676</X>
       <Y>161.04</Y>
     </Position>
   </GraphicalBlock>
@@ -71,8 +71,8 @@
 </Commentaires>
     </CommentsBlock>
     <Position>
-      <X>292</X>
-      <Y>155.07999999999998</Y>
+      <X>279</X>
+      <Y>115.03999999999999</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -92,14 +92,14 @@
       <discount_coef>0.9</discount_coef>
     </BlockAngleMobileAverage>
     <Position>
-      <X>781</X>
+      <X>841</X>
       <Y>115.03999999999999</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>23.263875337747429</Avg>
-    <Max>27.243009567260742</Max>
-    <Min>12.49755859375</Min>
+    <Avg>14.75462819840884</Avg>
+    <Max>170.39585876464844</Max>
+    <Min>-170.92308044433594</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -126,14 +126,14 @@
       </labels>
     </MoveOutput>
     <Position>
-      <X>958</X>
+      <X>1067</X>
       <Y>109.07999999999998</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>22.932091602912315</Avg>
-    <Max>25.88682746887207</Max>
-    <Min>13.112176895141602</Min>
+    <Avg>12.72087204516334</Avg>
+    <Max>111.18280029296875</Max>
+    <Min>-145.72097778320313</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -142,9 +142,9 @@
     <TargetName>MoveOutput</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>135.19766411414514</Avg>
-    <Max>179.00401306152344</Max>
-    <Min>-179.59974670410156</Min>
+    <Avg>-73.9367011037449</Avg>
+    <Max>179.29238891601563</Max>
+    <Min>-179.29238891601563</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -154,7 +154,20 @@
   </GraphicalLink>
   <GraphicalBlock>
     <BlockAddition>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>GoalAzimuth</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>MoveInput</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockAddition</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -166,9 +179,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-140</Avg>
+    <Max>-140</Max>
+    <Min>-140</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -177,9 +190,9 @@
     <TargetName>BlockAddition</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-154.61831439741505</Avg>
+    <Max>-140</Max>
+    <Min>-169.43417358398438</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -202,14 +215,30 @@
       </default_values>
     </MoveInput>
     <Position>
-      <X>491.22</X>
-      <Y>209.04</Y>
+      <X>416.37333333333333</X>
+      <Y>212.04</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>10</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>495.27666666666676</X>
+      <Y>264.03999999999996</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0</Avg>
+    <Avg>-14.618314397415059</Avg>
     <Max>0</Max>
-    <Min>0</Min>
+    <Min>-29.434173583984375</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>

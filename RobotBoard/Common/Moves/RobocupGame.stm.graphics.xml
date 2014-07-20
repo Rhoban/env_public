@@ -24,6 +24,8 @@ self.lookedAtFeet = False
 self.kicked = False
 # Near to ball
 self.nearBall = False
+# Defending?
+self.defender = False
 
 self.antiGlitch=0
 
@@ -68,11 +70,15 @@ def check_kicked(self):
   info = self.GetMoveValues("Kick",["over"])
   if info and len(info) &gt;= 1:
     self.kicked = float(info[0][0])&gt;0.1
-</preamble>
+
+def check_defender(self):
+  info = self.GetMoveValues("Defender",["defender"])
+  if info and len(info) &gt;= 1:
+    self.defender = float(info[0][0])&gt;0.1</preamble>
     </StmPreambleBlock>
     <Position>
-      <X>176.962973017906</X>
-      <Y>-583.27074367010675</Y>
+      <X>198.18432189575259</X>
+      <Y>-670.88000000000068</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -127,13 +133,17 @@ self.SchedulerStopMove("Explorer",0)</OnStop>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>check_ball_detected(self)</loop>
+      <loop>self.antiGlitch+=1
+if self.antiGlitch&gt;5:
+  check_ball_detected(self)</loop>
       <enter>self.ballDetected=False
-self.SchedulerStartMove("Explorer",0,1000)</enter>
-      <exit>self.SchedulerStopMove("Explorer",0)</exit>
+self.nearBall = False
+self.SchedulerStartMove("Explorer",0,1000)
+self.antiGlitch=0</enter>
+      <exit>self.SchedulerStopMove("Explorer",100)</exit>
     </StmStateBlock>
     <Position>
-      <X>715.155</X>
+      <X>711.155</X>
       <Y>-42.450181895939522</Y>
     </Position>
   </GraphicalBlock>
@@ -149,7 +159,7 @@ self.SchedulerStartMove("Explorer",0,1000)</enter>
         <BlockPredecessor>
           <name>WalkToBall</name>
           <output_idx>0</output_idx>
-          <condition>self.nearBall and not should_scan_goals(self)</condition>
+          <condition>self.nearBall and (not should_scan_goals(self) or self.defender)</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -195,17 +205,19 @@ self.canKick=False</enter>
 self.SchedulerStartMove("RelMagnetoAzimuth",0,0)
 self.SchedulerStartMove("BallRelLoc",0,100)
 self.SchedulerStartMove("BallTracker",0,100)
+self.SchedulerStartMove("Defender",0,0)
 self.SchedulerStopMove("Dribble",500)
 self.SchedulerStopMove("StandUpBack",500)
 self.SchedulerStopMove("StandUpFront",500)
 self.SchedulerStopMove("Kick",500)
 self.SchedulerStopMove("LookAtFeet",500)
-self.SchedulerStopMove("GoalRelLoc",500)</enter>
+self.SchedulerStopMove("GoalRelLoc",500)
+self.lastGoalScan=0</enter>
       <exit />
     </StmStateBlock>
     <Position>
-      <X>575.34833333333336</X>
-      <Y>-382.80000000000007</Y>
+      <X>567.34833333333336</X>
+      <Y>-399.56000000000006</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
@@ -405,18 +417,20 @@ self.antiGlitch=0</enter>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>self.antiGlitch+=1
+      <loop>check_defender(self)
+self.antiGlitch+=1
 if self.antiGlitch&gt;50:
   check_ball_detected(self)
   check_near_ball(self)</loop>
       <enter>self.SchedulerStartMove("Dribble",0,500)
+self.SchedulerStopMove("Explorer",100)
 self.antiGlitch=0
 self.nearBall = False</enter>
       <exit>self.SchedulerStopMove("Dribble",100)</exit>
     </StmStateBlock>
     <Position>
       <X>1263.2963638421438</X>
-      <Y>-399.56000000000006</Y>
+      <Y>-422.56000000000006</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
@@ -447,7 +461,7 @@ self.nearBall = False</enter>
         <BlockPredecessor>
           <name>WalkToBall</name>
           <output_idx>0</output_idx>
-          <condition>self.nearBall and should_scan_goals(self)</condition>
+          <condition>self.nearBall and should_scan_goals(self) and not self.defender</condition>
           <fire />
         </BlockPredecessor>
       </entries>
@@ -475,7 +489,7 @@ goal_scanned(self)</exit>
     <Avg>0</Avg>
     <Max>0</Max>
     <Min>0</Min>
-    <Condition>self.nearBall and should_scan_goals(self)</Condition>
+    <Condition>self.nearBall and should_scan_goals(self) and not self.defender</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>0</TargetIndex>
@@ -519,7 +533,7 @@ goal_scanned(self)</exit>
     <Avg>0</Avg>
     <Max>0</Max>
     <Min>0</Min>
-    <Condition>self.nearBall and not should_scan_goals(self)</Condition>
+    <Condition>self.nearBall and (not should_scan_goals(self) or self.defender)</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>1</TargetIndex>

@@ -33,7 +33,7 @@
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>VariationBoundBlock</name>
+          <name>BlockAddition</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -289,7 +289,7 @@
           <fire />
         </BlockPredecessor>
       </entries>
-      <name>Cheville G</name>
+      <name>Cheville G1</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
@@ -325,7 +325,7 @@
           <fire />
         </BlockPredecessor>
       </entries>
-      <name>Cheville D</name>
+      <name>Cheville D1</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
@@ -563,7 +563,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>2.4</float>
+        <float>2.5</float>
       </constants>
     </Constant>
     <Position>
@@ -579,7 +579,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>0</float>
+        <float>-4</float>
       </constants>
     </Constant>
     <Position>
@@ -611,7 +611,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>2.3</float>
+        <float>2.7</float>
       </constants>
     </Constant>
     <Position>
@@ -627,7 +627,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>0</float>
+        <float>-4</float>
       </constants>
     </Constant>
     <Position>
@@ -686,7 +686,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>0</float>
+        <float>0.1</float>
       </constants>
     </Constant>
     <Position>
@@ -729,11 +729,11 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>-0.8</float>
+        <float>-1</float>
       </constants>
     </Constant>
     <Position>
-      <X>-135</X>
+      <X>-138.17528030145718</X>
       <Y>458.03999999999996</Y>
     </Position>
   </GraphicalBlock>
@@ -745,7 +745,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>0.5</float>
+        <float>0.7</float>
       </constants>
     </Constant>
     <Position>
@@ -783,12 +783,12 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>2</float>
+        <float>3.3</float>
       </constants>
     </Constant>
     <Position>
       <X>-111</X>
-      <Y>544.14486862559784</Y>
+      <Y>542.14486862559784</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
@@ -882,11 +882,11 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>-10</float>
+        <float>-17</float>
       </constants>
     </Constant>
     <Position>
-      <X>140.59333333333333</X>
+      <X>138.59333333333333</X>
       <Y>496.89547756421064</Y>
     </Position>
   </GraphicalBlock>
@@ -1269,7 +1269,7 @@
     <SourceIndex>2</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockMobileAverage</SourceName>
-    <TargetName>Cheville G</TargetName>
+    <TargetName>Cheville G1</TargetName>
   </GraphicalLink>
   <GraphicalLink>
     <Avg>-2.9702113770322982</Avg>
@@ -1335,7 +1335,7 @@
     <SourceIndex>9</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockMobileAverage</SourceName>
-    <TargetName>Cheville D</TargetName>
+    <TargetName>Cheville D1</TargetName>
   </GraphicalLink>
   <GraphicalLink>
     <Avg>-0.51179028724236464</Avg>
@@ -1452,44 +1452,6 @@
     <TargetName>BlockCartWalk</TargetName>
   </GraphicalLink>
   <GraphicalBlock>
-    <VariationBoundBlock>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockAddition</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>VariationBoundBlock</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <min_value>
-        <float>-200</float>
-      </min_value>
-      <max_value>
-        <float>200</float>
-      </max_value>
-      <discount_factor>0</discount_factor>
-    </VariationBoundBlock>
-    <Position>
-      <X>-233.01904653340637</X>
-      <Y>244.03999999999996</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>4</TargetIndex>
-    <SourceName>VariationBoundBlock</SourceName>
-    <TargetName>BlockCartWalk</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
     <CommentsBlock>
       <entries />
       <name>CommentsBlock</name>
@@ -1583,17 +1545,6 @@
     <TargetIndex>1</TargetIndex>
     <SourceName>MoveInput</SourceName>
     <TargetName>BlockAddition</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockAddition</SourceName>
-    <TargetName>VariationBoundBlock</TargetName>
   </GraphicalLink>
   <GraphicalLink>
     <Avg>0.96296296296296291</Avg>
@@ -1722,7 +1673,7 @@
     </Constant>
     <Position>
       <X>-257.68990914754147</X>
-      <Y>880.862458907917</Y>
+      <Y>876.862458907917</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -2149,6 +2100,161 @@
     <TargetIndex>0</TargetIndex>
     <SourceName>HipOffset</SourceName>
     <TargetName>BlockAddition4</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>4</TargetIndex>
+    <SourceName>BlockAddition</SourceName>
+    <TargetName>BlockCartWalk</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <Constant>
+      <entries />
+      <name>Constant1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <constants>
+        <float>0</float>
+      </constants>
+    </Constant>
+    <Position>
+      <X>138.59333333333333</X>
+      <Y>686.03999999999985</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>Constant1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain3</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>282</X>
+      <Y>668.04</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Constant1</SourceName>
+    <TargetName>BlockGain3</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain3</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name />
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name />
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Cheville G</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+      <servo_name>Cheville G</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>404</X>
+      <Y>641.03999999999985</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain3</SourceName>
+    <TargetName>Cheville G</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>Constant1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name />
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name />
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Cheville D</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+      <servo_name>Cheville D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>404</X>
+      <Y>736.04000000000008</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Constant1</SourceName>
+    <TargetName>Cheville D</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>

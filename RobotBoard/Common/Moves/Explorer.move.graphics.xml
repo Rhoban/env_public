@@ -41,7 +41,7 @@
     <MoveBlock>
       <entries>
         <BlockPredecessor>
-          <name>BlockExplorer</name>
+          <name>BlockDynamicGain</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -73,7 +73,7 @@
       <default_outputs />
     </MoveBlock>
     <Position>
-      <X>641</X>
+      <X>817</X>
       <Y>146.04</Y>
     </Position>
   </GraphicalBlock>
@@ -114,7 +114,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0.10738255033557047</Avg>
+    <Avg>0.97986577181208057</Avg>
     <Max>1</Max>
     <Min>0</Min>
     <Condition />
@@ -125,9 +125,9 @@
     <TargetName>BlockExplorer</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-17.222227338976509</Avg>
-    <Max>146.93515014648438</Max>
-    <Min>-128.58270263671875</Min>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -136,19 +136,8 @@
     <TargetName>BlockExplorer</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0.54697986577181212</Avg>
-    <Max>1</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockExplorer</SourceName>
-    <TargetName>MoveBlock</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>1.6778523489932886</Avg>
-    <Max>10</Max>
+    <Avg>0</Avg>
+    <Max>0</Max>
     <Min>0</Min>
     <Condition />
     <Fire />
@@ -158,14 +147,137 @@
     <TargetName>MoveBlock</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-3.183061207700896</Avg>
-    <Max>30</Max>
-    <Min>-30</Min>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
     <TargetIndex>2</TargetIndex>
     <SourceName>BlockExplorer</SourceName>
+    <TargetName>MoveBlock</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <MoveBlock>
+      <entries />
+      <name>MoveBlock2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <move_name>Defender</move_name>
+      <inputs />
+      <outputs>
+        <string>defender</string>
+      </outputs>
+      <default_outputs>
+        <float>0</float>
+      </default_outputs>
+    </MoveBlock>
+    <Position>
+      <X>459.11080581350677</X>
+      <Y>239</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockPolynome>
+      <entries>
+        <BlockPredecessor>
+          <name>MoveBlock2</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockPolynome</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <const_coefs>
+        <float>1</float>
+      </const_coefs>
+      <lin_coefs>
+        <float>-1</float>
+      </lin_coefs>
+      <square_coefs>
+        <float>0</float>
+      </square_coefs>
+      <abs_coefs>
+        <float>0</float>
+      </abs_coefs>
+    </BlockPolynome>
+    <Position>
+      <X>586</X>
+      <Y>246.98000000000002</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>MoveBlock2</SourceName>
+    <TargetName>BlockPolynome</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <BlockDynamicGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockExplorer</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockPolynome</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockDynamicGain</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockDynamicGain>
+    <Position>
+      <X>687</X>
+      <Y>148</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockExplorer</SourceName>
+    <TargetName>BlockDynamicGain</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>1</Avg>
+    <Max>1</Max>
+    <Min>1</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockPolynome</SourceName>
+    <TargetName>BlockDynamicGain</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockDynamicGain</SourceName>
     <TargetName>MoveBlock</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
