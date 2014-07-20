@@ -170,8 +170,11 @@ self.SchedulerStartMove("Balance",0,20);</enter>
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <loop>checkGameState(self)</loop>
-      <enter>self.SchedulerStartMove("BallTracker",0,200)</enter>
+      <loop>checkGameState(self)
+check_fall(self)</loop>
+      <enter>self.SchedulerStartMove("BallTracker",0,200)
+self.fallface=False
+self.fallback=False</enter>
       <exit />
     </StmStateBlock>
     <Position>
