@@ -129,7 +129,8 @@ self.fallface = False</exit>
       <loop />
       <enter>self.SchedulerStartMove("FallDetector",0,20)
 self.SchedulerStartMove("GameStatusTracker",0,20)
-self.SchedulerStartMove("RelMagnetoAzimuth",0,20)</enter>
+self.SchedulerStartMove("RelMagnetoAzimuth",0,20)
+self.SchedulerStartMove("Balance",0,20);</enter>
       <exit />
     </StmStateBlock>
     <Position>
