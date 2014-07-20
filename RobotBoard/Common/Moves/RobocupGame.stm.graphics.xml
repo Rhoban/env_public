@@ -201,7 +201,8 @@ self.canKick=False</enter>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <loop />
-      <enter>self.SchedulerStartMove("CartWalk",0,1000)
+      <enter>self.SchedulerStartMove("Balance",0,20)
+self.SchedulerStartMove("CartWalk",0,1000)
 self.SchedulerStartMove("RelMagnetoAzimuth",0,0)
 self.SchedulerStartMove("BallRelLoc",0,100)
 self.SchedulerStartMove("BallTracker",0,100)
