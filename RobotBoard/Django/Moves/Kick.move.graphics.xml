@@ -99,7 +99,7 @@
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>Genou G1</name>
+          <name>BlockGain</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -135,7 +135,7 @@
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>Genou D</name>
+          <name>BlockGain1</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -207,14 +207,26 @@
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>BallBlock</name>
+          <name>MoveInput</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>MoveInput</name>
           <output_idx>1</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>BallBlock</name>
+          <name>MoveInput</name>
           <output_idx>2</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>MoveInput</name>
+          <output_idx>3</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
@@ -250,12 +262,12 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>0</float>
+        <float>-1</float>
       </constants>
     </Constant>
     <Position>
-      <X>-50</X>
-      <Y>-16.95999999999998</Y>
+      <X>-339.17999999999995</X>
+      <Y>8.37333333333342</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -270,8 +282,8 @@
       </constants>
     </Constant>
     <Position>
-      <X>-50</X>
-      <Y>31.04000000000002</Y>
+      <X>-420.82666666666671</X>
+      <Y>91.04000000000002</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -286,8 +298,8 @@
       </constants>
     </Constant>
     <Position>
-      <X>-50</X>
-      <Y>86.039999999999992</Y>
+      <X>-203.24666666666673</X>
+      <Y>43.37333333333325</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -318,8 +330,8 @@
       </constants>
     </Constant>
     <Position>
-      <X>-50</X>
-      <Y>251.03999999999996</Y>
+      <X>-203.24666666666673</X>
+      <Y>197.04</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -334,8 +346,8 @@
       </constants>
     </Constant>
     <Position>
-      <X>-50</X>
-      <Y>301.03999999999996</Y>
+      <X>-203.24666666666673</X>
+      <Y>284.20512642304334</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -350,14 +362,14 @@
       </constants>
     </Constant>
     <Position>
-      <X>-50</X>
-      <Y>350.03999999999996</Y>
+      <X>-203.24666666666673</X>
+      <Y>372.95589654485508</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-1</Avg>
+    <Max>-1</Max>
+    <Min>-1</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -366,9 +378,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>0.0099999997764825821</Avg>
+    <Max>0.0099999997764825821</Max>
+    <Min>0.0099999997764825821</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -388,9 +400,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>2.3793333530426026</Avg>
+    <Max>7.880000114440918</Max>
+    <Min>-1.2400000095367432</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -399,9 +411,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-4.5726667086283364</Avg>
+    <Max>-3.8399999141693115</Max>
+    <Min>-6.9600000381469727</Min>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -410,9 +422,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>161.761333211263</Avg>
+    <Max>176.6300048828125</Max>
+    <Min>156.16999816894531</Min>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -421,9 +433,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-11</Avg>
+    <Max>74</Max>
+    <Min>-100</Min>
     <Condition />
     <Fire />
     <SourceIndex>3</SourceIndex>
@@ -432,9 +444,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>55.466666666666669</Avg>
+    <Max>1182</Max>
+    <Min>-549</Min>
     <Condition />
     <Fire />
     <SourceIndex>4</SourceIndex>
@@ -832,42 +844,6 @@
           <fire />
         </BlockPredecessor>
       </entries>
-      <name>Genou D</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-      <servo_name>Genou D</servo_name>
-      <unit>1</unit>
-      <relative>1</relative>
-    </BlockServo>
-    <Position>
-      <X>-81.82</X>
-      <Y>829.52543783391832</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockServo>
-      <entries>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
       <name>Cheville D1</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>
@@ -1207,9 +1183,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>0.21484375</Avg>
+    <Max>0.5859375</Max>
+    <Min>-0.29296875</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1218,9 +1194,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-0.390625</Avg>
+    <Max>-0.29296875</Max>
+    <Min>-1.46484375</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1229,9 +1205,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>0.27348124982187677</Avg>
+    <Max>0.29301249980926514</Max>
+    <Min>4.3749998440034688E-05</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1240,20 +1216,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>15</TargetIndex>
-    <SourceName>Genou G1</SourceName>
-    <TargetName>BlockKick</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-0.33202624456789637</Avg>
+    <Max>4.9999998736893758E-06</Max>
+    <Min>-1.1718699932098389</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1262,9 +1227,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>0.27348124983448846</Avg>
+    <Max>0.58598124980926514</Max>
+    <Min>-0.29292500019073486</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1273,9 +1238,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-5.0013579311780633E-06</Avg>
+    <Max>0.29296374320983887</Max>
+    <Min>-0.58594250679016113</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1284,9 +1249,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-0.019574999859711777</Avg>
+    <Max>1.1718312501907349</Max>
+    <Min>-0.29301249980926514</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1295,9 +1260,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-0.25389999320987044</Avg>
+    <Max>6.24999984211172E-06</Max>
+    <Min>-0.58593124151229858</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1306,20 +1271,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>21</TargetIndex>
-    <SourceName>Genou D</SourceName>
-    <TargetName>BlockKick</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>0.2539050064760886</Avg>
+    <Max>1.1718738079071045</Max>
+    <Min>-1.1718761920928955</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1328,9 +1282,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-0.31252500188505411</Avg>
+    <Max>-2.4999999368446879E-05</Max>
+    <Min>-0.87893122434616089</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1339,9 +1293,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>0.66409373879432676</Avg>
+    <Max>1.1719062328338623</Max>
+    <Min>0.29300001263618469</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1350,9 +1304,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-21.69921875</Avg>
+    <Max>-21.38671875</Max>
+    <Min>-21.97265625</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1361,9 +1315,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>0.31249874830245972</Avg>
+    <Max>0.58593624830245972</Max>
+    <Min>0.29296749830245972</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1372,9 +1326,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-1.5233937501907349</Avg>
+    <Max>-0.87886250019073486</Max>
+    <Min>-1.7577687501907349</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1383,9 +1337,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>7.30466890335083</Avg>
+    <Max>7.61716890335083</Max>
+    <Min>7.03123140335083</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1394,9 +1348,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-0.58593124151229858</Avg>
+    <Max>-0.58593124151229858</Max>
+    <Min>-0.58593124151229858</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1405,9 +1359,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>4.9999998736893758E-05</Avg>
+    <Max>4.9999998736893758E-05</Max>
+    <Min>4.9999998736893758E-05</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1416,9 +1370,9 @@
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-70.390640258789062</Avg>
+    <Max>-70.312515258789062</Max>
+    <Min>-70.898452758789062</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -1449,28 +1403,6 @@
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>32</TargetIndex>
-    <SourceName>BallBlock</SourceName>
-    <TargetName>BlockKick</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>1</SourceIndex>
-    <TargetIndex>33</TargetIndex>
-    <SourceName>BallBlock</SourceName>
-    <TargetName>BlockKick</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>2</SourceIndex>
-    <TargetIndex>34</TargetIndex>
     <SourceName>BallBlock</SourceName>
     <TargetName>BlockKick</TargetName>
   </GraphicalLink>
@@ -1695,42 +1627,6 @@
       <entries>
         <BlockPredecessor>
           <name>BlockKick</name>
-          <output_idx>9</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name />
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>Cuisse D2</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-      <servo_name>Cuisse D</servo_name>
-      <unit>1</unit>
-      <relative>1</relative>
-    </BlockServo>
-    <Position>
-      <X>1119.8364911982462</X>
-      <Y>829.52543783391832</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
-    <BlockServo>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockKick</name>
           <output_idx>8</output_idx>
           <condition />
           <fire />
@@ -1874,8 +1770,8 @@
     <BlockServo>
       <entries>
         <BlockPredecessor>
-          <name>BlockKick</name>
-          <output_idx>3</output_idx>
+          <name>BlockGain2</name>
+          <output_idx>0</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
@@ -2010,7 +1906,7 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>1119.013157864913</X>
+      <X>1196.3464911982464</X>
       <Y>1073.6709420952325</Y>
     </Position>
   </GraphicalBlock>
@@ -2118,7 +2014,7 @@
       <relative>1</relative>
     </BlockServo>
     <Position>
-      <X>1118.8331578649129</X>
+      <X>1196.1664911982464</X>
       <Y>1219.6709420952325</Y>
     </Position>
   </GraphicalBlock>
@@ -2134,9 +2030,9 @@
     <TargetName>Hanche G Rot</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-0.54969175855318708</Avg>
+    <Max>-0.446859747171402</Max>
+    <Min>-0.74861752986907959</Min>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -2145,9 +2041,9 @@
     <TargetName>Cuisse G</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-0.036928563689192138</Avg>
+    <Max>0.0649416372179985</Max>
+    <Min>-0.12698110938072205</Min>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -2156,20 +2052,9 @@
     <TargetName>Hanche G Lat</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>3</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockKick</SourceName>
-    <TargetName>Genou G</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>0.076293399930000311</Avg>
+    <Max>1.5780155658721924</Max>
+    <Min>-4.652308464050293</Min>
     <Condition />
     <Fire />
     <SourceIndex>4</SourceIndex>
@@ -2178,9 +2063,9 @@
     <TargetName>Cheville G</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>0.34671381016572317</Avg>
+    <Max>0.52339679002761841</Max>
+    <Min>0.23035065829753876</Min>
     <Condition />
     <Fire />
     <SourceIndex>5</SourceIndex>
@@ -2200,9 +2085,9 @@
     <TargetName>Hanche D Rot</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>0.877016286055247</Avg>
+    <Max>0.92670857906341553</Max>
+    <Min>0.82417410612106323</Min>
     <Condition />
     <Fire />
     <SourceIndex>7</SourceIndex>
@@ -2211,9 +2096,9 @@
     <TargetName>Cuisse D</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>0.31984305183092754</Avg>
+    <Max>0.40695050358772278</Max>
+    <Min>0.23556743562221527</Min>
     <Condition />
     <Fire />
     <SourceIndex>8</SourceIndex>
@@ -2222,20 +2107,9 @@
     <TargetName>Hanche D Lat</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>9</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockKick</SourceName>
-    <TargetName>Cuisse D2</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-0.034884315760185323</Avg>
+    <Max>0.072439618408679962</Max>
+    <Min>-0.12238392978906632</Min>
     <Condition />
     <Fire />
     <SourceIndex>10</SourceIndex>
@@ -2244,9 +2118,9 @@
     <TargetName>Cheville D</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>0.49268437226613365</Avg>
+    <Max>0.58312177658081055</Max>
+    <Min>0.3897462785243988</Min>
     <Condition />
     <Fire />
     <SourceIndex>11</SourceIndex>
@@ -2255,9 +2129,9 @@
     <TargetName>Pied D</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>1.1848392486572266</Avg>
+    <Max>1.1848392486572266</Max>
+    <Min>1.1848392486572266</Min>
     <Condition />
     <Fire />
     <SourceIndex>12</SourceIndex>
@@ -2266,9 +2140,9 @@
     <TargetName>Epaule G Long</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-21.996109008789062</Avg>
+    <Max>-21.996109008789062</Max>
+    <Min>-21.996109008789062</Min>
     <Condition />
     <Fire />
     <SourceIndex>13</SourceIndex>
@@ -2288,9 +2162,9 @@
     <TargetName>Coude G</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>-1.1848392486572266</Avg>
+    <Max>-1.1848392486572266</Max>
+    <Min>-1.1848392486572266</Min>
     <Condition />
     <Fire />
     <SourceIndex>15</SourceIndex>
@@ -2299,9 +2173,9 @@
     <TargetName>Epaule D Long</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Avg>8.0038909912109375</Avg>
+    <Max>8.0038909912109375</Max>
+    <Min>8.0038909912109375</Min>
     <Condition />
     <Fire />
     <SourceIndex>16</SourceIndex>
@@ -2311,14 +2185,508 @@
   </GraphicalLink>
   <GraphicalLink>
     <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
+    <Max>-0</Max>
+    <Min>-0</Min>
     <Condition />
     <Fire />
     <SourceIndex>17</SourceIndex>
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockKick</SourceName>
     <TargetName>Coude D</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockGain3</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name />
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name />
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Genou D1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+      <servo_name>Genou D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>1118.3064911982463</X>
+      <Y>829.52543783391832</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockServo>
+      <entries>
+        <BlockPredecessor>
+          <name />
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name />
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name />
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Genou D</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
+      <servo_name>Genou D</servo_name>
+      <unit>1</unit>
+      <relative>1</relative>
+    </BlockServo>
+    <Position>
+      <X>-81.82</X>
+      <Y>829.52543783391832</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>direction du tir (degres)</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>-313.06333333333339</X>
+      <Y>166.70666666666654</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>décalage latéral de la position du ballon
+(non pris en compte en mode automatic choice)</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>-442.52333333333337</X>
+      <Y>248.03999999999996</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>mode (0: normal, 1:debug)</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>-302.99666666666678</X>
+      <Y>344.03999999999996</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock3</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>0 : right shoot
+1: left shoot
+-1: automatic choice</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>-431.66666666666663</X>
+      <Y>-59.377436788478207</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <CommentsBlock>
+      <entries />
+      <name>CommentsBlock4</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <Commentaires>Force du tir : (0.0; 1.0)
+1.0 : Hara Tir ...</Commentaires>
+    </CommentsBlock>
+    <Position>
+      <X>-519.66666666666674</X>
+      <Y>43.37333333333325</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <EmptyBlock>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockKick</name>
+          <output_idx>19</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockKick</name>
+          <output_idx>20</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>BlockKick</name>
+          <output_idx>21</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>Generic</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </EmptyBlock>
+    <Position>
+      <X>939.73460200824024</X>
+      <Y>1288.994046087294</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>19</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockKick</SourceName>
+    <TargetName>Generic</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>20</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockKick</SourceName>
+    <TargetName>Generic</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>21</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>BlockKick</SourceName>
+    <TargetName>Generic</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <MoveOutput>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockKick</name>
+          <output_idx>18</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>MoveOutput</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <labels>
+        <string>over</string>
+      </labels>
+    </MoveOutput>
+    <Position>
+      <X>1040.7874051591321</X>
+      <Y>1258.0740460872939</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>1</Avg>
+    <Max>1</Max>
+    <Min>1</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>18</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockKick</SourceName>
+    <TargetName>MoveOutput</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <MoveInput>
+      <entries />
+      <name>MoveInput</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <labels>
+        <string>ballDistance</string>
+        <string>ballAzimuth</string>
+        <string>goalDistance</string>
+        <string>goalAzimuth</string>
+      </labels>
+      <default_values>
+        <float>0</float>
+        <float>0</float>
+        <float>0</float>
+        <float>0</float>
+      </default_values>
+    </MoveInput>
+    <Position>
+      <X>-116.31666666666668</X>
+      <Y>1416.3975215247203</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>-2.8171778599421184</Avg>
+    <Max>-1.5035685300827026</Max>
+    <Min>-6.6709132194519043</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>34</TargetIndex>
+    <SourceName>MoveInput</SourceName>
+    <TargetName>BlockKick</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>2</SourceIndex>
+    <TargetIndex>35</TargetIndex>
+    <SourceName>MoveInput</SourceName>
+    <TargetName>BlockKick</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>25.705417633056641</Avg>
+    <Max>25.705417633056641</Max>
+    <Min>25.705417633056641</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>3</SourceIndex>
+    <TargetIndex>36</TargetIndex>
+    <SourceName>MoveInput</SourceName>
+    <TargetName>BlockKick</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>25.287125142415366</Avg>
+    <Max>26.749582290649414</Max>
+    <Min>24.853599548339844</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>33</TargetIndex>
+    <SourceName>MoveInput</SourceName>
+    <TargetName>BlockKick</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>Genou G1</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>28</X>
+      <Y>541.37688899846148</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Genou G1</SourceName>
+    <TargetName>BlockGain</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>15</TargetIndex>
+    <SourceName>BlockGain</SourceName>
+    <TargetName>BlockKick</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>Genou D</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain1</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>100</X>
+      <Y>797.19513278731972</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>Genou D</SourceName>
+    <TargetName>BlockGain1</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>21</TargetIndex>
+    <SourceName>BlockGain1</SourceName>
+    <TargetName>BlockKick</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockKick</name>
+          <output_idx>3</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>1023</X>
+      <Y>541.37688899846148</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>3</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockKick</SourceName>
+    <TargetName>BlockGain2</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain2</SourceName>
+    <TargetName>Genou G</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>BlockKick</name>
+          <output_idx>9</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain3</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>992</X>
+      <Y>797.19513278731972</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>9</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockKick</SourceName>
+    <TargetName>BlockGain3</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain3</SourceName>
+    <TargetName>Genou D1</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
