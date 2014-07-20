@@ -58,9 +58,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0</Avg>
+    <Avg>-6.4473684210526319</Avg>
     <Max>0</Max>
-    <Min>0</Min>
+    <Min>-70</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -111,7 +111,7 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <discount_factor>0.97</discount_factor>
+      <discount_factor>0.9</discount_factor>
     </BlockMobileAverage>
     <Position>
       <X>171</X>
@@ -169,21 +169,10 @@
       <default_outputs />
     </MoveBlock>
     <Position>
-      <X>367</X>
-      <Y>214.19999999999996</Y>
+      <X>630</X>
+      <Y>202.04</Y>
     </Position>
   </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockMobileAverage</SourceName>
-    <TargetName>MoveBlock1</TargetName>
-  </GraphicalLink>
   <GraphicalLink>
     <Avg>0</Avg>
     <Max>0</Max>
@@ -301,7 +290,7 @@
         <float>0</float>
       </min_value>
       <max_value>
-        <float>2.5</float>
+        <float>1.5</float>
       </max_value>
       <output_low>0</output_low>
       <output_medium>0</output_medium>
@@ -314,8 +303,8 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
+    <Avg>0.063826669889845353</Avg>
+    <Max>1.2801339626312256</Max>
     <Min>0</Min>
     <Condition />
     <Fire />
@@ -351,8 +340,8 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0.34228187919463088</Avg>
-    <Max>1</Max>
+    <Avg>0</Avg>
+    <Max>0</Max>
     <Min>0</Min>
     <Condition />
     <Fire />
@@ -360,6 +349,100 @@
     <TargetIndex>1</TargetIndex>
     <SourceName>BallBlock</SourceName>
     <TargetName>MoveOutput</TargetName>
+  </GraphicalLink>
+  <GraphicalBlock>
+    <MoveBlock>
+      <entries />
+      <name>MoveBlock2</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <move_name>GoalRelLoc</move_name>
+      <inputs />
+      <outputs>
+        <string>goalCorrection</string>
+      </outputs>
+      <default_outputs>
+        <float>0</float>
+      </default_outputs>
+    </MoveBlock>
+    <Position>
+      <X>331.82333333333332</X>
+      <Y>48.099999999999994</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries />
+      <name>BlockGain</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>-0.08</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>527</X>
+      <Y>112.03999999999999</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockAddition>
+      <entries />
+      <name>BlockAddition</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+    </BlockAddition>
+    <Position>
+      <X>467</X>
+      <Y>202.04</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>MoveBlock2</SourceName>
+    <TargetName>BlockGain</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockGain</SourceName>
+    <TargetName>BlockAddition</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockMobileAverage</SourceName>
+    <TargetName>BlockAddition</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BlockAddition</SourceName>
+    <TargetName>MoveBlock1</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
