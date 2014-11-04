@@ -105,7 +105,7 @@
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>BlockAddition2</name>
+          <name>BlockDynamicGain</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -882,7 +882,7 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>-15</float>
+        <float>-13</float>
       </constants>
     </Constant>
     <Position>
@@ -2160,7 +2160,20 @@
   </GraphicalBlock>
   <GraphicalBlock>
     <BlockDynamicGain>
-      <entries />
+      <entries>
+        <BlockPredecessor>
+          <name>BlockAddition2</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+        <BlockPredecessor>
+          <name>MoveInput4</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
       <name>BlockDynamicGain</name>
       <gain>1</gain>
       <gainMin>-1</gainMin>

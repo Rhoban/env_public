@@ -43,18 +43,18 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <radius>40</radius>
+      <radius>30</radius>
       <k_forward>0.5</k_forward>
       <k_lateral>-0.4</k_lateral>
       <k_rotation>0.5</k_rotation>
-      <max_speed_forward>40</max_speed_forward>
+      <max_speed_forward>30</max_speed_forward>
       <max_speed_lateral>15</max_speed_lateral>
       <max_rotation>55</max_rotation>
-      <kick_treshold>14</kick_treshold>
+      <kick_treshold>12</kick_treshold>
       <push>false</push>
     </BlockDribble>
     <Position>
-      <X>337.123598492714</X>
+      <X>336.123598492714</X>
       <Y>166.50000000000003</Y>
     </Position>
   </GraphicalBlock>
@@ -121,9 +121,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>-2.2453652075779291</Avg>
-    <Max>3.9357795715332031</Max>
-    <Min>-11.460284233093262</Min>
+    <Avg>7.482105635214543</Avg>
+    <Max>30</Max>
+    <Min>-12.394844055175781</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -132,9 +132,9 @@
     <TargetName>BlockGain</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>2.7097056500705672</Avg>
+    <Avg>-0.67571529098179028</Avg>
     <Max>15</Max>
-    <Min>-4.9499387741088867</Min>
+    <Min>-15</Min>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -143,9 +143,9 @@
     <TargetName>BlockGain</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>6.6480377176661554</Avg>
-    <Max>19.255931854248047</Max>
-    <Min>-22.645515441894531</Min>
+    <Avg>-0.0054855380153310471</Avg>
+    <Max>43.323722839355469</Max>
+    <Min>-14.352173805236816</Min>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -227,9 +227,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>-0.67360956212620682</Avg>
-    <Max>1.1807339191436768</Max>
-    <Min>-3.4380853176116943</Min>
+    <Avg>2.24463168769211</Avg>
+    <Max>9</Max>
+    <Min>-3.7184531688690186</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -288,9 +288,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>1</Avg>
+    <Avg>0.70289855072463769</Avg>
     <Max>1</Max>
-    <Min>1</Min>
+    <Min>0</Min>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -320,9 +320,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>14.66747893816159</Avg>
-    <Max>23.56242561340332</Max>
-    <Min>6.6584773063659668</Min>
+    <Avg>13.818192980427673</Avg>
+    <Max>112.90050506591797</Max>
+    <Min>0</Min>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -331,9 +331,9 @@
     <TargetName>BlockMobileAverage1</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>14.615185366736519</Avg>
-    <Max>23.421846389770508</Max>
-    <Min>7.5042309761047363</Min>
+    <Avg>15.073228516440461</Avg>
+    <Max>105.53987121582031</Max>
+    <Min>0</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -342,7 +342,7 @@
     <TargetName>BlockDribble</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0.38271604938271603</Avg>
+    <Avg>0.30434782608695654</Avg>
     <Max>1</Max>
     <Min>0</Min>
     <Condition />
@@ -374,9 +374,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>5.6279108627342884</Avg>
-    <Max>14.512737274169922</Max>
-    <Min>-9.26505184173584</Min>
+    <Avg>0.13078304714914682</Avg>
+    <Max>78.903152465820312</Max>
+    <Min>-10.574880599975586</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -385,9 +385,9 @@
     <TargetName>BlockMobileAverage2</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>5.6412287789546411</Avg>
-    <Max>14.511862754821777</Max>
-    <Min>-9.0316476821899414</Min>
+    <Avg>0.23699730877643047</Avg>
+    <Max>78.647445678710938</Max>
+    <Min>-10.574407577514648</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -429,9 +429,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>-0.69219453037315493</Avg>
-    <Max>1.1799620389938355</Max>
-    <Min>-3.4800512790679932</Min>
+    <Avg>2.1570245471809573</Avg>
+    <Max>9</Max>
+    <Min>-3.6953639984130859</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -440,9 +440,9 @@
     <TargetName>MoveBlock1</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>3.354573689205687</Avg>
-    <Max>9.62709903717041</Max>
-    <Min>-11.310295104980469</Min>
+    <Avg>0.096362876887197024</Avg>
+    <Max>21.4461612701416</Max>
+    <Min>-7.2029023170471191</Min>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -451,9 +451,9 @@
     <TargetName>MoveBlock1</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.67360956212620682</Avg>
-    <Max>1.1807339191436768</Max>
-    <Min>-3.4380853176116943</Min>
+    <Avg>2.24463168769211</Avg>
+    <Max>9</Max>
+    <Min>-3.7184531688690186</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -462,8 +462,8 @@
     <TargetName>BlockMobileAverage</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.6774264125176418</Avg>
-    <Max>1.2374846935272217</Max>
+    <Avg>0.16892882274544757</Avg>
+    <Max>3.75</Max>
     <Min>-3.75</Min>
     <Condition />
     <Fire />
@@ -473,9 +473,9 @@
     <TargetName>BlockMobileAverage</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>3.3240188588330777</Avg>
-    <Max>9.6279659271240234</Max>
-    <Min>-11.322757720947266</Min>
+    <Avg>-0.0027427690076655235</Avg>
+    <Max>21.661861419677734</Max>
+    <Min>-7.1760869026184082</Min>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -510,9 +510,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>1</Avg>
+    <Avg>0.70289855072463769</Avg>
     <Max>1</Max>
-    <Min>1</Min>
+    <Min>0</Min>
     <Condition />
     <Fire />
     <SourceIndex>2</SourceIndex>
@@ -521,9 +521,9 @@
     <TargetName>BlockDynamicGain</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-5.6279108627342884</Avg>
-    <Max>9.26505184173584</Max>
-    <Min>-14.512737274169922</Min>
+    <Avg>-0.13078304714914682</Avg>
+    <Max>10.574880599975586</Max>
+    <Min>-78.903152465820312</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -532,9 +532,9 @@
     <TargetName>BlockGain1</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-5.6025925756972512</Avg>
-    <Max>9.26505184173584</Max>
-    <Min>-14.512737274169922</Min>
+    <Avg>-0.19862683743670367</Avg>
+    <Max>10.574880599975586</Max>
+    <Min>-78.903152465820312</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -585,9 +585,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>-0.6824311253641423</Avg>
-    <Max>1.2297897338867188</Max>
-    <Min>-3.75</Min>
+    <Avg>0.18482381905703876</Avg>
+    <Max>3.75</Max>
+    <Min>-3.749992847442627</Min>
     <Condition />
     <Fire />
     <SourceIndex>1</SourceIndex>
@@ -607,9 +607,9 @@
     <TargetName>BlockAddition1</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-0.6824311253641423</Avg>
-    <Max>1.2297897338867188</Max>
-    <Min>-3.75</Min>
+    <Avg>0.18482381905703876</Avg>
+    <Max>3.75</Max>
+    <Min>-3.749992847442627</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -648,7 +648,7 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>0.61728395061728392</Avg>
+    <Avg>0.39855072463768115</Avg>
     <Max>1</Max>
     <Min>0</Min>
     <Condition />
@@ -703,9 +703,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>7.7030247310061517</Avg>
-    <Max>62.336532592773438</Max>
-    <Min>-13.220377922058106</Min>
+    <Avg>-15.508142044794733</Avg>
+    <Max>35.508785247802734</Max>
+    <Min>-145.61015319824219</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -714,9 +714,9 @@
     <TargetName>BlockGain2</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>-7.7294783662130806</Avg>
-    <Max>13.220377922058106</Max>
-    <Min>-62.336532592773438</Min>
+    <Avg>14.99326796332995</Avg>
+    <Max>129.85452270507813</Max>
+    <Min>-35.508785247802734</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -725,7 +725,7 @@
     <TargetName>BlockDribble</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>0.75308641975308643</Avg>
+    <Avg>0.463768115942029</Avg>
     <Max>1</Max>
     <Min>0</Min>
     <Condition />
