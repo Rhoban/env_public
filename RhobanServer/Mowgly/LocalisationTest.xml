@@ -2,11 +2,11 @@
 <LocalisationTest>
     <showFieldFilter>false</showFieldFilter>
     <showBallFilter>false</showBallFilter>
-    <showTaggedImg>true</showTaggedImg>
+    <showTaggedImg>false</showTaggedImg>
     <csp>
         <className>SchedulerRequester</className>
     </csp>
-    <playing>false</playing>
+    <playing>true</playing>
     <pipeline>
         <filter>
             <className>GoalByROI</className>
@@ -808,8 +808,9 @@
             <paramPairInt />
         </filter>
         <filter>
-            <className>SourceLogs</className>
+            <className>SourceV4l2</className>
             <name>source</name>
+            <device>/dev/video0</device>
             <debugLevel>
                 <threads>false</threads>
                 <graphics>false</graphics>
@@ -820,8 +821,6 @@
             <paramInts />
             <paramFloats />
             <paramPairInt />
-            <startIndex>180</startIndex>
-            <imagesFile>../../../Code/VisionReloaded/Resources/Logs/Robocup2014/images1.csv</imagesFile>
         </filter>
     </pipeline>
 </LocalisationTest>
