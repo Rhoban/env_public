@@ -1,0 +1,809 @@
+<?xml version="1.0" ?>
+<LocalisationTest>
+    <showFieldFilter>false</showFieldFilter>
+    <showBallFilter>false</showBallFilter>
+    <showTaggedImg>false</showTaggedImg>
+    <csp>
+        <className>SchedulerRequester</className>
+    </csp>
+    <playing>true</playing>
+    <embedded>true</embedded>
+    <pipeline>
+        <filter>
+            <className>GoalByROI</className>
+            <name>GoalByROI</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>source</dependency>
+                <dependency>goalMask</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>goalMaxU</name>
+                    <value>140</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>goalMinY</name>
+                    <value>130</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kHeight</name>
+                    <value>31</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kWidth</name>
+                    <value>3</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>BallByROI</className>
+            <name>ballByROI</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>source</dependency>
+                <dependency>ballMask</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>Epochs</name>
+                    <value>15</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>ballMaxU</name>
+                    <value>255</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>ballMinV</name>
+                    <value>150</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>minPointDist</name>
+                    <value>3</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats>
+                <ParamFloat>
+                    <name>cluster_threshold</name>
+                    <value>1.2</value>
+            </ParamFloat>
+                <ParamFloat>
+                    <name>score_threshold</name>
+                    <value>0.599999986588954925537109375</value>
+                </ParamFloat>
+            </paramFloats>
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Mask</className>
+            <name>ballMask</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>ballMask2</dependency>
+                <dependency>clipping</dependency>
+            </dependencies>
+            <paramInts />
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>BallColor</className>
+            <name>ballMask1</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>ballSrc</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>ballMaxU</name>
+                    <value>255</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>ballMinV</name>
+                    <value>150</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Dilate</className>
+            <name>ballMask2</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>ballMask1</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>Shape</name>
+                    <value>2</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel height</name>
+                    <value>5</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel width</name>
+                    <value>5</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Rescale</className>
+            <name>ballSrc</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>source</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>ratio</name>
+                    <value>8</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Blur</className>
+            <name>blur</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>clippingSrc</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>kernel height</name>
+                    <value>5</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel width</name>
+                    <value>5</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Blur</className>
+            <name>blur2</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>contours3</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>kernel height</name>
+                    <value>5</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel width</name>
+                    <value>5</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>ClippingRules</className>
+            <name>clipping</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>closure</dependency>
+            </dependencies>
+            <paramInts />
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Diff</className>
+            <name>clippingBorder</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>largeClipping</dependency>
+                <dependency>smallClipping</dependency>
+            </dependencies>
+            <paramInts />
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Mask</className>
+            <name>clippingRaw</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>diffClipping</dependency>
+                <dependency>colorClipping</dependency>
+            </dependencies>
+            <paramInts />
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Rescale</className>
+            <name>clippingSrc</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>source</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>ratio</name>
+                    <value>8</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Closure</className>
+            <name>closure</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>opening</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>Shape</name>
+                    <value>2</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel height</name>
+                    <value>11</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel width</name>
+                    <value>11</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>FieldColor</className>
+            <name>colorClipping</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>clippingSrc</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>fieldMaxV</name>
+                    <value>181</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Diff</className>
+            <name>contours1</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>clippingSrc</dependency>
+                <dependency>blur</dependency>
+            </dependencies>
+            <paramInts />
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Mult</className>
+            <name>contours2</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>contours1</dependency>
+            </dependencies>
+            <paramInts />
+            <paramFloats>
+                <ParamFloat>
+                    <name>ratio</name>
+                    <value>45</value>
+                </ParamFloat>
+            </paramFloats>
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Norm</className>
+            <name>contours3</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>contours2</dependency>
+            </dependencies>
+            <paramInts />
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Threshold</className>
+            <name>diffClipping</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>blur2</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>threshold</name>
+                    <value>139</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>thresholdType</name>
+                    <value>1</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Dilate</className>
+            <name>dilate</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>clippingRaw</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>Shape</name>
+                    <value>2</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel height</name>
+                    <value>7</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel width</name>
+                    <value>7</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Mult</className>
+            <name>goalBorders</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>goalBorders1</dependency>
+            </dependencies>
+            <paramInts />
+            <paramFloats>
+                <ParamFloat>
+                    <name>ratio</name>
+                    <value>10</value>
+                </ParamFloat>
+            </paramFloats>
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>AbsDiff</className>
+            <name>goalBorders1</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>hBlurGoal</dependency>
+                <dependency>goalSrc</dependency>
+            </dependencies>
+            <paramInts />
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Norm</className>
+            <name>goalBordersNormed</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>goalBorders</dependency>
+            </dependencies>
+            <paramInts />
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Threshold</className>
+            <name>goalBordersThreshold</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>goalBordersNormed</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>threshold</name>
+                    <value>22</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>thresholdType</name>
+                    <value>0</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>GoalColor</className>
+            <name>goalColorMask</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>goalZone</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>goalMaxU</name>
+                    <value>130</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>goalMaxV</name>
+                    <value>150</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>goalMinY</name>
+                    <value>104</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Dilate</className>
+            <name>goalMask</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>goalMask1</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>Shape</name>
+                    <value>2</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel height</name>
+                    <value>5</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel width</name>
+                    <value>5</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Mask</className>
+            <name>goalMask1</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>goalColorMask</dependency>
+                <dependency>goalBordersThreshold</dependency>
+            </dependencies>
+            <paramInts />
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Rescale</className>
+            <name>goalSrc</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>source</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>ratio</name>
+                    <value>8</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Mask</className>
+            <name>goalZone</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>goalSrc</dependency>
+                <dependency>clippingBorder</dependency>
+            </dependencies>
+            <paramInts />
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Opening</className>
+            <name>goalsByDiff</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>goalBordersThreshold</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>Shape</name>
+                    <value>2</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel height</name>
+                    <value>5</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel width</name>
+                    <value>5</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Blur</className>
+            <name>hBlurGoal</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>goalSrc</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>kernel height</name>
+                    <value>1</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel width</name>
+                    <value>3</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Dilate</className>
+            <name>largeClipping</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>clipping</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>Shape</name>
+                    <value>2</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel height</name>
+                    <value>5</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel width</name>
+                    <value>5</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Opening</className>
+            <name>opening</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>dilate</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>Shape</name>
+                    <value>2</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel height</name>
+                    <value>9</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel width</name>
+                    <value>9</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Erode</className>
+            <name>smallClipping</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>clipping</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>Shape</name>
+                    <value>2</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel height</name>
+                    <value>9</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel width</name>
+                    <value>9</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>SourceV4l2</className>
+            <name>source</name>
+            <device>/dev/video0</device>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies />
+            <paramInts />
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+    </pipeline>
+</LocalisationTest>
