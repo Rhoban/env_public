@@ -25,11 +25,11 @@
             <paramInts>
                 <ParamInt>
                     <name>goalMaxU</name>
-                    <value>140</value>
+                    <value>130</value>
                 </ParamInt>
                 <ParamInt>
-                    <name>goalMinY</name>
-                    <value>130</value>
+                    <name>goalMaxV</name>
+                    <value>160</value>
                 </ParamInt>
                 <ParamInt>
                     <name>kHeight</name>
@@ -59,7 +59,7 @@
             <paramInts>
                 <ParamInt>
                     <name>Epochs</name>
-                    <value>15</value>
+                    <value>150</value>
                 </ParamInt>
                 <ParamInt>
                     <name>ballMaxU</name>
@@ -73,15 +73,19 @@
                     <name>minPointDist</name>
                     <value>3</value>
                 </ParamInt>
+                <ParamInt>
+                    <name>minScore</name>
+                    <value>4</value>
+                </ParamInt>
             </paramInts>
             <paramFloats>
                 <ParamFloat>
-                    <name>cluster_threshold</name>
-                    <value>1.2</value>
-            </ParamFloat>
+                    <name>clusterPercentTol</name>
+                    <value>2</value>
+                </ParamFloat>
                 <ParamFloat>
-                    <name>score_threshold</name>
-                    <value>0.599999986588954925537109375</value>
+                    <name>clusterFlatTol</name>
+                    <value>3</value>
                 </ParamFloat>
             </paramFloats>
             <paramPairInt />
@@ -343,7 +347,7 @@
             <paramInts>
                 <ParamInt>
                     <name>fieldMaxV</name>
-                    <value>181</value>
+                    <value>101</value>
                 </ParamInt>
             </paramInts>
             <paramFloats />
@@ -473,7 +477,7 @@
             <paramFloats>
                 <ParamFloat>
                     <name>ratio</name>
-                    <value>10</value>
+                    <value>5</value>
                 </ParamFloat>
             </paramFloats>
             <paramPairInt />
@@ -546,7 +550,7 @@
                 <perfs>false</perfs>
             </debugLevel>
             <dependencies>
-                <dependency>goalZone</dependency>
+                <dependency>goalSrc</dependency>
             </dependencies>
             <paramInts>
                 <ParamInt>
@@ -555,59 +559,9 @@
                 </ParamInt>
                 <ParamInt>
                     <name>goalMaxV</name>
-                    <value>150</value>
-                </ParamInt>
-                <ParamInt>
-                    <name>goalMinY</name>
-                    <value>104</value>
+                    <value>160</value>
                 </ParamInt>
             </paramInts>
-            <paramFloats />
-            <paramPairInt />
-        </filter>
-        <filter>
-            <className>Dilate</className>
-            <name>goalMask</name>
-            <debugLevel>
-                <threads>false</threads>
-                <graphics>false</graphics>
-                <parameters>false</parameters>
-                <perfs>false</perfs>
-            </debugLevel>
-            <dependencies>
-                <dependency>goalMask1</dependency>
-            </dependencies>
-            <paramInts>
-                <ParamInt>
-                    <name>Shape</name>
-                    <value>2</value>
-                </ParamInt>
-                <ParamInt>
-                    <name>kernel height</name>
-                    <value>5</value>
-                </ParamInt>
-                <ParamInt>
-                    <name>kernel width</name>
-                    <value>5</value>
-                </ParamInt>
-            </paramInts>
-            <paramFloats />
-            <paramPairInt />
-        </filter>
-        <filter>
-            <className>Mask</className>
-            <name>goalMask1</name>
-            <debugLevel>
-                <threads>false</threads>
-                <graphics>false</graphics>
-                <parameters>false</parameters>
-                <perfs>false</perfs>
-            </debugLevel>
-            <dependencies>
-                <dependency>goalColorMask</dependency>
-                <dependency>goalBordersThreshold</dependency>
-            </dependencies>
-            <paramInts />
             <paramFloats />
             <paramPairInt />
         </filter>
@@ -642,7 +596,7 @@
                 <perfs>false</perfs>
             </debugLevel>
             <dependencies>
-                <dependency>goalSrc</dependency>
+                <dependency>goalColorMask</dependency>
                 <dependency>clippingBorder</dependency>
             </dependencies>
             <paramInts />
@@ -650,8 +604,8 @@
             <paramPairInt />
         </filter>
         <filter>
-            <className>Opening</className>
-            <name>goalsByDiff</name>
+            <className>Dilate</className>
+            <name>goalMask</name>
             <debugLevel>
                 <threads>false</threads>
                 <graphics>false</graphics>
@@ -659,41 +613,16 @@
                 <perfs>false</perfs>
             </debugLevel>
             <dependencies>
-                <dependency>goalBordersThreshold</dependency>
+                <dependency>goalZone</dependency>
             </dependencies>
             <paramInts>
                 <ParamInt>
                     <name>Shape</name>
-                    <value>2</value>
-                </ParamInt>
-                <ParamInt>
-                    <name>kernel height</name>
-                    <value>5</value>
-                </ParamInt>
-                <ParamInt>
-                    <name>kernel width</name>
-                    <value>5</value>
-                </ParamInt>
-            </paramInts>
-            <paramFloats />
-            <paramPairInt />
-        </filter>
-        <filter>
-            <className>Blur</className>
-            <name>hBlurGoal</name>
-            <debugLevel>
-                <threads>false</threads>
-                <graphics>false</graphics>
-                <parameters>false</parameters>
-                <perfs>false</perfs>
-            </debugLevel>
-            <dependencies>
-                <dependency>goalSrc</dependency>
-            </dependencies>
-            <paramInts>
-                <ParamInt>
-                    <name>kernel height</name>
                     <value>1</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel height</name>
+                    <value>7</value>
                 </ParamInt>
                 <ParamInt>
                     <name>kernel width</name>
