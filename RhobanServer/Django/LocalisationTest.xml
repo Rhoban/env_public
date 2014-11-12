@@ -58,8 +58,12 @@
             </dependencies>
             <paramInts>
                 <ParamInt>
+                    <name>tagLevel</name>
+                    <value>1</value>
+                </ParamInt>
+                <ParamInt>
                     <name>Epochs</name>
-                    <value>150</value>
+                    <value>25</value>
                 </ParamInt>
                 <ParamInt>
                     <name>ballMaxU</name>
@@ -75,17 +79,17 @@
                 </ParamInt>
                 <ParamInt>
                     <name>minScore</name>
-                    <value>4</value>
+                    <value>3</value>
                 </ParamInt>
             </paramInts>
             <paramFloats>
                 <ParamFloat>
                     <name>clusterPercentTol</name>
-                    <value>2</value>
+                    <value>10</value>
                 </ParamFloat>
                 <ParamFloat>
                     <name>clusterFlatTol</name>
-                    <value>3</value>
+                    <value>5</value>
                 </ParamFloat>
             </paramFloats>
             <paramPairInt />
