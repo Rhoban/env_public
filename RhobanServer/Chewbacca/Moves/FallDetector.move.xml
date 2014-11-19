@@ -5,13 +5,13 @@
   <gain>1</gain>
   <gainMin>-1</gainMin>
   <gainMax>60</gainMax>
-  <AccelerometerBlock>
+  <EmptyBlock>
     <entries />
-    <name>AccelerometerBlock</name>
+    <name />
     <gain>1</gain>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
-  </AccelerometerBlock>
+  </EmptyBlock>
   <BlockDigitalLevel>
     <entries>
       <BlockPredecessor>
@@ -26,7 +26,7 @@
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
     <min_value>
-      <float>-0.4</float>
+      <float>-1</float>
     </min_value>
     <max_value>
       <float>0</float>
@@ -90,8 +90,8 @@
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
     <gains>
-      <float>1</float>
-      <float>1</float>
+      <float>-0.02</float>
+      <float>-0.04</float>
     </gains>
   </BlockGain>
   <BlockDigitalLevel>
@@ -118,8 +118,8 @@
       <float>0</float>
     </min_value>
     <max_value>
-      <float>0.5</float>
-      <float>0.5</float>
+      <float>1</float>
+      <float>1</float>
     </max_value>
     <output_low>0</output_low>
     <output_medium>0</output_medium>
@@ -193,7 +193,7 @@
   <BlockMobileAverage>
     <entries>
       <BlockPredecessor>
-        <name>AccelerometerBlock</name>
+        <name>ReadablePinBlock</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
@@ -208,14 +208,14 @@
   <MoveOutput>
     <entries>
       <BlockPredecessor>
-        <name>Result</name>
+        <name>BlockAddition</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
       </BlockPredecessor>
       <BlockPredecessor>
-        <name>Result</name>
-        <output_idx>1</output_idx>
+        <name>BlockAddition1</name>
+        <output_idx>0</output_idx>
         <condition />
         <fire />
       </BlockPredecessor>
@@ -246,13 +246,72 @@
       <float>0</float>
     </min_value>
     <max_value>
-      <float>0.4</float>
+      <float>1</float>
     </max_value>
     <output_low>-2</output_low>
     <output_medium>-2</output_medium>
     <output_high>2</output_high>
     <hysteresis>false</hysteresis>
   </BlockDigitalLevel>
+  <ReadablePinBlock>
+    <entries />
+    <name>ReadablePinBlock</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <pin_sensor_name>Pitch</pin_sensor_name>
+  </ReadablePinBlock>
+  <BlockAddition>
+    <entries>
+      <BlockPredecessor>
+        <name>Result</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>Constant</name>
+        <output_idx>0</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockAddition</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockAddition>
+  <BlockAddition>
+    <entries>
+      <BlockPredecessor>
+        <name>Result</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+      <BlockPredecessor>
+        <name>Constant</name>
+        <output_idx>1</output_idx>
+        <condition />
+        <fire />
+      </BlockPredecessor>
+    </entries>
+    <name>BlockAddition1</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </BlockAddition>
+  <Constant>
+    <entries />
+    <name>Constant</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <constants>
+      <float>0</float>
+      <float>0</float>
+    </constants>
+  </Constant>
   <SchemaComments />
   <frequency>100</frequency>
 </MotorPrimitive>

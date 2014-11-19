@@ -5,7 +5,8 @@
     <showTaggedImg>false</showTaggedImg>
     <tag>false</tag>
     <benchmark>true</benchmark>
-    <benchmarkDetail>2</benchmarkDetail>
+    <benchmarkDetail>10</benchmarkDetail>
+    <ballExploration>200</ballExploration>
     <csp>
         <className>SchedulerRequester</className>
     </csp>
@@ -730,6 +731,7 @@
             <className>SourceV4l2</className>
             <name>source</name>
             <device>/dev/video0</device>
+            <captureFrequency>15</captureFrequency>
             <debugLevel>
                 <threads>false</threads>
                 <graphics>false</graphics>
@@ -739,7 +741,13 @@
             <dependencies />
             <paramInts />
             <paramFloats />
-            <paramPairInt />
+            <paramPairInt>
+                <PairInt>
+                    <name>size</name>
+                    <value.first>800</value.first>
+                    <value.second>448</value.second>
+                </PairInt>
+            </paramPairInt>
         </filter>
     </pipeline>
 </LocalisationTest>

@@ -5,7 +5,24 @@
   <gain>1</gain>
   <gainMin>-1</gainMin>
   <gainMax>60</gainMax>
-  <BlockServo>
+  <EmptyBlock>
+    <entries />
+    <name />
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+  </EmptyBlock>
+  <Constant>
+    <entries />
+    <name>Constant</name>
+    <gain>1</gain>
+    <gainMin>-1</gainMin>
+    <gainMax>60</gainMax>
+    <constants>
+      <float>0.1</float>
+    </constants>
+  </Constant>
+  <BlockDigitalLevel>
     <entries>
       <BlockPredecessor>
         <name>Constant</name>
@@ -14,19 +31,25 @@
         <fire />
       </BlockPredecessor>
     </entries>
-    <name>Hanche D Rot1</name>
+    <name>BlockDigitalLevel</name>
     <gain>1</gain>
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
-    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-    <servo_name>Hanche D Rot</servo_name>
-    <unit>1</unit>
-    <relative>1</relative>
-  </BlockServo>
+    <min_value>
+      <float>0.5</float>
+    </min_value>
+    <max_value>
+      <float>0.5</float>
+    </max_value>
+    <output_low>0</output_low>
+    <output_medium>0</output_medium>
+    <output_high>1</output_high>
+    <hysteresis>false</hysteresis>
+  </BlockDigitalLevel>
   <EmptyBlock>
     <entries>
       <BlockPredecessor>
-        <name>Hanche D Rot1</name>
+        <name>BlockDigitalLevel</name>
         <output_idx>0</output_idx>
         <condition />
         <fire />
@@ -37,27 +60,6 @@
     <gainMin>-1</gainMin>
     <gainMax>60</gainMax>
   </EmptyBlock>
-  <BlockServo>
-    <entries />
-    <name>Hanche D Rot</name>
-    <gain>1</gain>
-    <gainMin>-1</gainMin>
-    <gainMax>60</gainMax>
-    <UseWrongMX28Conversion>false</UseWrongMX28Conversion>
-    <servo_name>Hanche D Rot</servo_name>
-    <unit>1</unit>
-    <relative>1</relative>
-  </BlockServo>
-  <Constant>
-    <entries />
-    <name>Constant</name>
-    <gain>1</gain>
-    <gainMin>-1</gainMin>
-    <gainMax>60</gainMax>
-    <constants>
-      <float>5</float>
-    </constants>
-  </Constant>
   <SchemaComments />
   <frequency>100</frequency>
 </MotorPrimitive>
