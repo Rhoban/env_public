@@ -50,7 +50,8 @@
       <max_speed_forward>35</max_speed_forward>
       <max_speed_lateral>15</max_speed_lateral>
       <max_rotation>55</max_rotation>
-      <kick_treshold>40</kick_treshold>
+      <kick_thresholdX>40</kick_thresholdX>
+      <kick_thresholdY>40</kick_thresholdY>
       <push>true</push>
     </BlockDribble>
     <Position>
@@ -240,34 +241,11 @@
     <TargetName>BlockAddition</TargetName>
   </GraphicalLink>
   <GraphicalBlock>
-    <BlockGain>
-      <entries>
-        <BlockPredecessor>
-          <name>BlockDynamicGain</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>BlockGain1</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <gains>
-        <float>-1</float>
-      </gains>
-    </BlockGain>
-    <Position>
-      <X>113</X>
-      <Y>69.529520945913362</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalBlock>
     <BlockMobileAverage>
       <entries>
         <BlockPredecessor>
           <name>BallPositionBlock</name>
-          <output_idx>3</output_idx>
+          <output_idx>1</output_idx>
           <condition />
           <fire />
         </BlockPredecessor>
@@ -276,10 +254,10 @@
       <gain>1</gain>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
-      <discount_factor>0.6</discount_factor>
+      <discount_factor>0.5</discount_factor>
     </BlockMobileAverage>
     <Position>
-      <X>103.09</X>
+      <X>-30.636718301835089</X>
       <Y>166.50000000000003</Y>
     </Position>
   </GraphicalBlock>
@@ -309,7 +287,7 @@
     <BlockMobileAverage>
       <entries>
         <BlockPredecessor>
-          <name>BlockGain1</name>
+          <name>BallPositionBlock</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -322,21 +300,10 @@
       <discount_factor>0.5</discount_factor>
     </BlockMobileAverage>
     <Position>
-      <X>206</X>
-      <Y>115.16</Y>
+      <X>-30.636718301835089</X>
+      <Y>91.22</Y>
     </Position>
   </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>8.99276155007608</Avg>
-    <Max>31.034460067749023</Max>
-    <Min>-53.396530151367188</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockGain1</SourceName>
-    <TargetName>BlockMobileAverage2</TargetName>
-  </GraphicalLink>
   <GraphicalLink>
     <Avg>9.0516646742312741</Avg>
     <Max>31.02325439453125</Max>
@@ -424,43 +391,6 @@
     <TargetIndex>2</TargetIndex>
     <SourceName>BlockGain</SourceName>
     <TargetName>BlockMobileAverage</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
-    <BlockDynamicGain>
-      <entries>
-        <BlockPredecessor>
-          <name>BallPositionBlock</name>
-          <output_idx>4</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-        <BlockPredecessor>
-          <name>BlockDigitalLevel</name>
-          <output_idx>0</output_idx>
-          <condition />
-          <fire />
-        </BlockPredecessor>
-      </entries>
-      <name>BlockDynamicGain</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-    </BlockDynamicGain>
-    <Position>
-      <X>5</X>
-      <Y>216.03999999999996</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>-8.99276155007608</Avg>
-    <Max>53.396530151367188</Max>
-    <Min>-31.034460067749023</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BlockDynamicGain</SourceName>
-    <TargetName>BlockGain1</TargetName>
   </GraphicalLink>
   <GraphicalBlock>
     <Constant>
@@ -672,8 +602,8 @@
       </default_outputs>
     </MoveBlock>
     <Position>
-      <X>192.05666666666667</X>
-      <Y>243.91999999999996</Y>
+      <X>151.06035430609575</X>
+      <Y>369.96402653159254</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
@@ -774,43 +704,10 @@
       <hysteresis>false</hysteresis>
     </BlockDigitalLevel>
     <Position>
-      <X>-125.01466238250214</X>
-      <Y>91.22</Y>
+      <X>-29.553384968501753</X>
+      <Y>283.94745614841594</Y>
     </Position>
   </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>1</Avg>
-    <Max>1</Max>
-    <Min>1</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
-    <SourceName>BlockDigitalLevel</SourceName>
-    <TargetName>BlockDynamicGain</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>-7.3858317023876943</Avg>
-    <Max>53.396530151367188</Max>
-    <Min>-31.034460067749023</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>4</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BallPositionBlock</SourceName>
-    <TargetName>BlockDynamicGain</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>86.957964437979243</Avg>
-    <Max>273.81747436523438</Max>
-    <Min>48.359809875488281</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>3</SourceIndex>
-    <TargetIndex>0</TargetIndex>
-    <SourceName>BallPositionBlock</SourceName>
-    <TargetName>BlockMobileAverage1</TargetName>
-  </GraphicalLink>
   <GraphicalLink>
     <Avg>0.90338927979019756</Avg>
     <Max>0.95877993106842041</Max>
@@ -843,6 +740,28 @@
     <TargetIndex>1</TargetIndex>
     <SourceName>BlockDigitalLevel</SourceName>
     <TargetName>BlockDynamicGain1</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>1</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BallPositionBlock</SourceName>
+    <TargetName>BlockMobileAverage1</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>0</TargetIndex>
+    <SourceName>BallPositionBlock</SourceName>
+    <TargetName>BlockMobileAverage2</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
