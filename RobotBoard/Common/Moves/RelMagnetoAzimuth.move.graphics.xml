@@ -52,12 +52,12 @@
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <constants>
-        <float>155</float>
+        <float>-135</float>
       </constants>
     </Constant>
     <Position>
-      <X>416.37333333333333</X>
-      <Y>161.04</Y>
+      <X>424.65333333333331</X>
+      <Y>145.04</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -71,8 +71,8 @@
 </Commentaires>
     </CommentsBlock>
     <Position>
-      <X>279</X>
-      <Y>115.03999999999999</Y>
+      <X>231.58620628104188</X>
+      <Y>85.656803892476674</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -97,9 +97,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>10.456906241755332</Avg>
-    <Max>16.087791442871094</Max>
-    <Min>0</Min>
+    <Avg>-77.074338003853768</Avg>
+    <Max>-61.6936149597168</Max>
+    <Min>-86.494415283203125</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -131,9 +131,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>10.230444961978543</Avg>
-    <Max>15.498353004455566</Max>
-    <Min>0</Min>
+    <Avg>-77.2583468428282</Avg>
+    <Max>-63.402366638183594</Max>
+    <Min>-86.233345031738281</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -142,9 +142,9 @@
     <TargetName>MoveOutput</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>121.15599773776147</Avg>
-    <Max>160.27215576171875</Max>
-    <Min>0</Min>
+    <Avg>-132.9256617465866</Avg>
+    <Max>-123.50558471679688</Max>
+    <Min>-148.30638122558594</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -162,7 +162,7 @@
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
-          <name>MoveInput</name>
+          <name>BlockGain</name>
           <output_idx>0</output_idx>
           <condition />
           <fire />
@@ -179,9 +179,9 @@
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
-    <Avg>131.61290322580646</Avg>
-    <Max>170</Max>
-    <Min>0</Min>
+    <Avg>150</Avg>
+    <Max>150</Max>
+    <Min>150</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -190,9 +190,9 @@
     <TargetName>BlockAddition</TargetName>
   </GraphicalLink>
   <GraphicalLink>
-    <Avg>131.61290322580646</Avg>
-    <Max>170</Max>
-    <Min>0</Min>
+    <Avg>150</Avg>
+    <Max>150</Max>
+    <Min>150</Min>
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
@@ -215,8 +215,8 @@
       </default_values>
     </MoveInput>
     <Position>
-      <X>416.37333333333333</X>
-      <Y>212.04</Y>
+      <X>300.27287294770855</X>
+      <Y>223.95999999999998</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -231,8 +231,31 @@
       </constants>
     </Constant>
     <Position>
-      <X>444.36333333333334</X>
-      <Y>266.03999999999996</Y>
+      <X>396.94953961437523</X>
+      <Y>332.03999999999996</Y>
+    </Position>
+  </GraphicalBlock>
+  <GraphicalBlock>
+    <BlockGain>
+      <entries>
+        <BlockPredecessor>
+          <name>MoveInput</name>
+          <output_idx>0</output_idx>
+          <condition />
+          <fire />
+        </BlockPredecessor>
+      </entries>
+      <name>BlockGain</name>
+      <gain>1</gain>
+      <gainMin>-1</gainMin>
+      <gainMax>60</gainMax>
+      <gains>
+        <float>1</float>
+      </gains>
+    </BlockGain>
+    <Position>
+      <X>429.06333333333333</X>
+      <Y>223.95999999999998</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
@@ -242,8 +265,19 @@
     <Condition />
     <Fire />
     <SourceIndex>0</SourceIndex>
-    <TargetIndex>1</TargetIndex>
+    <TargetIndex>0</TargetIndex>
     <SourceName>MoveInput</SourceName>
+    <TargetName>BlockGain</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>1</TargetIndex>
+    <SourceName>BlockGain</SourceName>
     <TargetName>BlockAddition</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
