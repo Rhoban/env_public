@@ -6,7 +6,8 @@
     <tag>false</tag>
     <benchmark>false</benchmark>
     <benchmarkDetail>2</benchmarkDetail>
-    <ballExploration>25</ballExploration>
+    <ballExploration>35</ballExploration>
+    <compassOffset>-140.0</compassOffset>
     <csp>
         <className>SchedulerRequester</className>
     </csp>
@@ -29,11 +30,11 @@
             <paramInts>
                 <ParamInt>
                     <name>goalMaxU</name>
-                    <value>130</value>
+                    <value>105</value>
                 </ParamInt>
                 <ParamInt>
-                    <name>goalMaxV</name>
-                    <value>160</value>
+                    <name>goalMinV</name>
+                    <value>130</value>
                 </ParamInt>
                 <ParamInt>
                     <name>kHeight</name>
@@ -563,11 +564,11 @@
             <paramInts>
                 <ParamInt>
                     <name>goalMaxU</name>
-                    <value>10</value>
+                    <value>105</value>
                 </ParamInt>
                 <ParamInt>
-                    <name>goalMaxV</name>
-                    <value>10</value>
+                    <name>goalMinV</name>
+                    <value>130</value>
                 </ParamInt>
             </paramInts>
             <paramFloats />
