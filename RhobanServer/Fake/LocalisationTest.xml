@@ -4,12 +4,12 @@
     <showBallFilter>true</showBallFilter>
     <showTaggedImg>true</showTaggedImg>
     <tag>true</tag>
-    <benchmark>true</benchmark>
-    <benchmarkDetail>1</benchmarkDetail>
+    <benchmark>false</benchmark>
+    <benchmarkDetail>3</benchmarkDetail>
     <nbParticlesFF>1000</nbParticlesFF>
     <nbParticlesBF>1000</nbParticlesBF>
     <compassOffset>160</compassOffset>
-    <ballExploration>250</ballExploration>
+    <ballExploration>5</ballExploration>
     <robotPosExploration>100</robotPosExploration>
     <robotAngleExploration>40</robotAngleExploration>
     <tag>false</tag>
@@ -39,7 +39,7 @@
                     <value>130</value>
                 </ParamInt>
                 <ParamInt>
-                    <name>goalMaxV</name>
+                    <name>goalMinV</name>
                     <value>160</value>
                 </ParamInt>
                 <ParamInt>
@@ -573,8 +573,8 @@
                     <value>130</value>
                 </ParamInt>
                 <ParamInt>
-                    <name>goalMaxV</name>
-                    <value>160</value>
+                    <name>goalMinV</name>
+                    <value>130</value>
                 </ParamInt>
             </paramInts>
             <paramFloats />
@@ -765,7 +765,7 @@
             <paramInts />
             <paramFloats />
             <paramPairInt />
-            <startIndex>405</startIndex>
+            <startIndex>895</startIndex>
             <imagesFile>../../../Code/VisionReloaded/Resources/Logs/Robocup2014/images1.csv</imagesFile>
         </filter>
     </pipeline>
