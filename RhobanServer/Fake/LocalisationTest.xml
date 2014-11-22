@@ -20,6 +20,54 @@
     <embedded>false</embedded>
     <pipeline>
         <filter>
+            <className>ChannelSelector</className>
+            <name>Y</name>
+            <debugLevel>
+              <graphics>true</graphics>
+            </debugLevel>
+            <dependencies>
+                <dependency>source</dependency>
+            </dependencies>
+            <paramInts>
+              <ParamInt>
+                <name>channel</name>
+                <value>0</value>
+              </ParamInt>
+            </paramInts>
+        </filter>
+        <filter>
+            <className>ChannelSelector</className>
+            <name>U</name>
+            <debugLevel>
+              <graphics>true</graphics>
+            </debugLevel>
+            <dependencies>
+                <dependency>source</dependency>
+            </dependencies>
+            <paramInts>
+              <ParamInt>
+                <name>channel</name>
+                <value>1</value>
+              </ParamInt>
+            </paramInts>
+        </filter>
+        <filter>
+            <className>ChannelSelector</className>
+            <name>V</name>
+            <debugLevel>
+              <graphics>true</graphics>
+            </debugLevel>
+            <dependencies>
+                <dependency>source</dependency>
+            </dependencies>
+            <paramInts>
+              <ParamInt>
+                <name>channel</name>
+                <value>2</value>
+              </ParamInt>
+            </paramInts>
+        </filter>
+        <filter>
             <className>GoalByROI</className>
             <name>GoalByROI</name>
             <debugLevel>
