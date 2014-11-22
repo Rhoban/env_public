@@ -1,10 +1,9 @@
 <?xml version="1.0" ?>
 <LocalisationTest>
-    <showFieldFilter>true</showFieldFilter>
-    <showBallFilter>true</showBallFilter>
+    <showTopView>true</showTopView>
+    <showRobotView>true</showRobotView>
     <showTaggedImg>true</showTaggedImg>
-    <tag>true</tag>
-    <benchmark>false</benchmark>
+    <benchmark>true</benchmark>
     <benchmarkDetail>3</benchmarkDetail>
     <nbParticlesFF>1000</nbParticlesFF>
     <nbParticlesBF>1000</nbParticlesBF>
@@ -12,7 +11,6 @@
     <ballExploration>5</ballExploration>
     <robotPosExploration>100</robotPosExploration>
     <robotAngleExploration>40</robotAngleExploration>
-    <tag>false</tag>
     <csp>
         <className>LogReader</className>
         <path>../../../Code/VisionReloaded/Resources/Logs/Robocup2014/dump1.csv</path>
@@ -59,7 +57,7 @@
             <name>ballByROI</name>
             <debugLevel>
                 <threads>false</threads>
-                <graphics>true</graphics>
+                <graphics>false</graphics>
                 <parameters>false</parameters>
                 <perfs>false</perfs>
             </debugLevel>
