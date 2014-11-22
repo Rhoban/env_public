@@ -607,7 +607,7 @@
             <name>goalColorMask</name>
             <debugLevel>
                 <threads>false</threads>
-                <graphics>false</graphics>
+                <graphics>true</graphics>
                 <parameters>false</parameters>
                 <perfs>false</perfs>
             </debugLevel>
@@ -784,7 +784,7 @@
         <filter>
             <className>ColorConverter</className>
             <name>source</name>
-            <conversion>RGB2YUV</conversion>
+            <conversion>RGB2YCrCb</conversion>
             <debugLevel>
                 <threads>false</threads>
                 <graphics>false</graphics>
