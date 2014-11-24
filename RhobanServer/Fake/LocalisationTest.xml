@@ -1,19 +1,18 @@
 <?xml version="1.0" ?>
 <LocalisationTest>
-    <showFieldFilter>true</showFieldFilter>
-    <showBallFilter>true</showBallFilter>
+    <showTopView>true</showTopView>
+    <showRobotView>true</showRobotView>
     <showTaggedImg>true</showTaggedImg>
-    <tag>true</tag>
     <benchmark>false</benchmark>
     <benchmarkDetail>3</benchmarkDetail>
     <nbParticlesFF>1000</nbParticlesFF>
     <nbParticlesBF>1000</nbParticlesBF>
+    <imageDelay>300</imageDelay>
     <compassOffset>160</compassOffset>
     <ballExploration>35</ballExploration>
     <robotPosExploration>100</robotPosExploration>
     <robotAngleExploration>40</robotAngleExploration>
-    <ballResampling>0.05</ballResampling>
-    <tag>false</tag>
+    <ballResampling>0.0</ballResampling>
     <csp>
         <className>LogReader</className>
         <path>../../../Code/VisionReloaded/Resources/Logs/Robocup2014/dump1.csv</path>
@@ -21,6 +20,54 @@
     <playing>false</playing>
     <embedded>false</embedded>
     <pipeline>
+        <filter>
+            <className>ChannelSelector</className>
+            <name>Y</name>
+            <debugLevel>
+              <graphics>true</graphics>
+            </debugLevel>
+            <dependencies>
+                <dependency>source</dependency>
+            </dependencies>
+            <paramInts>
+              <ParamInt>
+                <name>channel</name>
+                <value>0</value>
+              </ParamInt>
+            </paramInts>
+        </filter>
+        <filter>
+            <className>ChannelSelector</className>
+            <name>U</name>
+            <debugLevel>
+              <graphics>true</graphics>
+            </debugLevel>
+            <dependencies>
+                <dependency>source</dependency>
+            </dependencies>
+            <paramInts>
+              <ParamInt>
+                <name>channel</name>
+                <value>1</value>
+              </ParamInt>
+            </paramInts>
+        </filter>
+        <filter>
+            <className>ChannelSelector</className>
+            <name>V</name>
+            <debugLevel>
+              <graphics>true</graphics>
+            </debugLevel>
+            <dependencies>
+                <dependency>source</dependency>
+            </dependencies>
+            <paramInts>
+              <ParamInt>
+                <name>channel</name>
+                <value>2</value>
+              </ParamInt>
+            </paramInts>
+        </filter>
         <filter>
             <className>GoalByROI</className>
             <name>GoalByROI</name>
@@ -60,7 +107,7 @@
             <name>ballByROI</name>
             <debugLevel>
                 <threads>false</threads>
-                <graphics>true</graphics>
+                <graphics>false</graphics>
                 <parameters>false</parameters>
                 <perfs>false</perfs>
             </debugLevel>
@@ -561,7 +608,7 @@
             <name>goalColorMask</name>
             <debugLevel>
                 <threads>false</threads>
-                <graphics>false</graphics>
+                <graphics>true</graphics>
                 <parameters>false</parameters>
                 <perfs>false</perfs>
             </debugLevel>
@@ -738,7 +785,7 @@
         <filter>
             <className>ColorConverter</className>
             <name>source</name>
-            <conversion>RGB2YUV</conversion>
+            <conversion>RGB2YCrCb</conversion>
             <debugLevel>
                 <threads>false</threads>
                 <graphics>false</graphics>
