@@ -4,7 +4,7 @@
     <showRobotView>true</showRobotView>
     <showTaggedImg>true</showTaggedImg>
     <benchmark>false</benchmark>
-    <benchmarkDetail>3</benchmarkDetail>
+    <benchmarkDetail>4</benchmarkDetail>
     <nbParticlesFF>1000</nbParticlesFF>
     <nbParticlesBF>1000</nbParticlesBF>
     <imageDelay>300</imageDelay>
@@ -785,7 +785,7 @@
         <filter>
             <className>ColorConverter</className>
             <name>source</name>
-            <conversion>RGB2YCrCb</conversion>
+            <conversion>RGB2YUV</conversion>
             <debugLevel>
                 <threads>false</threads>
                 <graphics>false</graphics>
