@@ -7,8 +7,11 @@
     <benchmark>false</benchmark>
     <benchmarkDetail>2</benchmarkDetail>
     <ballExploration>35</ballExploration>
+    <robotPosExploration>60</robotPosExploration>
+    <robotAngleExploration>35</robotAngleExploration>
     <compassOffset>-140.0</compassOffset>
-    <ballResampling>0.00</ballResampling>
+    <ballResampling>0.003</ballResampling>
+    <fieldResampling>0.005</fieldResampling>
     <csp>
         <className>SchedulerRequester</className>
     </csp>
@@ -16,7 +19,7 @@
     <embedded>true</embedded>
     <pipeline>
         <filter>
-            <className>GoalByROI</className>
+            <className>WhiteGoalByROI</className>
             <name>GoalByROI</name>
             <debugLevel>
                 <threads>false</threads>
@@ -30,12 +33,12 @@
             </dependencies>
             <paramInts>
                 <ParamInt>
-                    <name>goalMaxU</name>
-                    <value>105</value>
+                    <name>goalMinY</name>
+                    <value>180</value>
                 </ParamInt>
                 <ParamInt>
                     <name>goalMinV</name>
-                    <value>130</value>
+                    <value>60</value>
                 </ParamInt>
                 <ParamInt>
                     <name>kHeight</name>
@@ -357,7 +360,7 @@
             <paramInts>
                 <ParamInt>
                     <name>fieldMaxV</name>
-                    <value>121</value>
+                    <value>91</value>
                 </ParamInt>
             </paramInts>
             <paramFloats />
@@ -551,12 +554,12 @@
             <paramPairInt />
         </filter>
         <filter>
-            <className>GoalColor</className>
+            <className>WhiteGoalColor</className>
             <name>goalColorMask</name>
             <debugLevel>
                 <threads>false</threads>
                 <graphics>false</graphics>
-                <parameters>false</parameters>
+                <parameters>true</parameters>
                 <perfs>false</perfs>
             </debugLevel>
             <dependencies>
@@ -564,12 +567,12 @@
             </dependencies>
             <paramInts>
                 <ParamInt>
-                    <name>goalMaxU</name>
-                    <value>105</value>
+                    <name>goalMinY</name>
+                    <value>160</value>
                 </ParamInt>
                 <ParamInt>
                     <name>goalMinV</name>
-                    <value>130</value>
+                    <value>60</value>
                 </ParamInt>
             </paramInts>
             <paramFloats />
