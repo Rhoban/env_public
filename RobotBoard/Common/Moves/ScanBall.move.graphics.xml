@@ -302,33 +302,6 @@
     <TargetName>BlockTracker</TargetName>
   </GraphicalLink>
   <GraphicalBlock>
-    <Constant>
-      <entries />
-      <name>Constant</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <constants>
-        <float>1</float>
-      </constants>
-    </Constant>
-    <Position>
-      <X>417</X>
-      <Y>493.03999999999996</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>1</Avg>
-    <Max>1</Max>
-    <Min>1</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>2</TargetIndex>
-    <SourceName>Constant</SourceName>
-    <TargetName>BlockTracker</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
     <BlockDynamicGain>
       <entries>
         <BlockPredecessor>
@@ -538,55 +511,6 @@
     <TargetIndex>1</TargetIndex>
     <SourceName>BlockPolynome</SourceName>
     <TargetName>BlockDynamicGain3</TargetName>
-  </GraphicalLink>
-  <GraphicalBlock>
-    <Constant>
-      <entries />
-      <name>Constant1</name>
-      <gain>1</gain>
-      <gainMin>-1</gainMin>
-      <gainMax>60</gainMax>
-      <constants>
-        <float>0</float>
-      </constants>
-    </Constant>
-    <Position>
-      <X>417</X>
-      <Y>552.38217660987209</Y>
-    </Position>
-  </GraphicalBlock>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>3</TargetIndex>
-    <SourceName>Constant1</SourceName>
-    <TargetName>BlockTracker</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>4</TargetIndex>
-    <SourceName>Constant1</SourceName>
-    <TargetName>BlockTracker</TargetName>
-  </GraphicalLink>
-  <GraphicalLink>
-    <Avg>0</Avg>
-    <Max>0</Max>
-    <Min>0</Min>
-    <Condition />
-    <Fire />
-    <SourceIndex>0</SourceIndex>
-    <TargetIndex>5</TargetIndex>
-    <SourceName>Constant1</SourceName>
-    <TargetName>BlockTracker</TargetName>
   </GraphicalLink>
   <GraphicalBlock>
     <BlockGain>
@@ -1285,8 +1209,8 @@
       <pin_sensor_name>Pitch</pin_sensor_name>
     </ReadablePinBlock>
     <Position>
-      <X>-65.126067215585138</X>
-      <Y>17.547143087701272</Y>
+      <X>-77.059400548918475</X>
+      <Y>52.162846551025567</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalBlock>
@@ -1306,8 +1230,8 @@
       <discount_factor>0.8</discount_factor>
     </BlockMobileAverage>
     <Position>
-      <X>193.06448482331498</X>
-      <Y>73.822978955775213</Y>
+      <X>96.621151489981656</X>
+      <Y>52.162846551025567</Y>
     </Position>
   </GraphicalBlock>
   <GraphicalLink>
@@ -1331,6 +1255,17 @@
     <TargetIndex>0</TargetIndex>
     <SourceName>BlockMobileAverage1</SourceName>
     <TargetName>BlockScanner</TargetName>
+  </GraphicalLink>
+  <GraphicalLink>
+    <Avg>0</Avg>
+    <Max>0</Max>
+    <Min>0</Min>
+    <Condition />
+    <Fire />
+    <SourceIndex>0</SourceIndex>
+    <TargetIndex>2</TargetIndex>
+    <SourceName>BlockMobileAverage1</SourceName>
+    <TargetName>BlockTracker</TargetName>
   </GraphicalLink>
   <hsize>500</hsize>
   <vsize>500</vsize>
