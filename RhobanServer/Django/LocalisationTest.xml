@@ -19,7 +19,7 @@
     <embedded>true</embedded>
     <pipeline>
         <filter>
-            <className>WhiteGoalByROI</className>
+            <className>GoalByROI</className>
             <name>GoalByROI</name>
             <debugLevel>
                 <threads>false</threads>
@@ -33,12 +33,12 @@
             </dependencies>
             <paramInts>
                 <ParamInt>
-                    <name>goalMinY</name>
-                    <value>200</value>
+                    <name>goalMaxU</name>
+                    <value>255</value>
                 </ParamInt>
                 <ParamInt>
                     <name>goalMinV</name>
-                    <value>60</value>
+                    <value>150</value>
                 </ParamInt>
                 <ParamInt>
                     <name>kHeight</name>
@@ -554,7 +554,7 @@
             <paramPairInt />
         </filter>
         <filter>
-            <className>WhiteGoalColor</className>
+            <className>GoalColor</className>
             <name>goalColorMask</name>
             <debugLevel>
                 <threads>false</threads>
@@ -567,12 +567,12 @@
             </dependencies>
             <paramInts>
                 <ParamInt>
-                    <name>goalMinY</name>
-                    <value>190</value>
+                    <name>goalMaxU</name>
+                    <value>100</value>
                 </ParamInt>
                 <ParamInt>
                     <name>goalMinV</name>
-                    <value>60</value>
+                    <value>120</value>
                 </ParamInt>
             </paramInts>
             <paramFloats />
