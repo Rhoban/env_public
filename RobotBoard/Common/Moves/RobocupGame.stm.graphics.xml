@@ -71,7 +71,7 @@ self.SchedulerStopMove("Kick",200)</OnStop>
         <BlockPredecessor>
           <name>KickStart</name>
           <output_idx>0</output_idx>
-          <condition>not self.canKick and self.antiGlitch &gt; 1000</condition>
+          <condition>not self.canKick and self.antiGlitch &gt; 300</condition>
           <fire />
         </BlockPredecessor>
         <BlockPredecessor>
@@ -89,9 +89,11 @@ self.SchedulerStopMove("Kick",200)</OnStop>
 if self.antiGlitch&gt;300:
   check_can_kick(self)</loop>
       <enter>self.SchedulerStartMove("Dribble",0,500)
+self.SchedulerStartMove("ScanBall",0,500)
 self.antiGlitch=0
 self.canKick=False</enter>
-      <exit>self.SchedulerStopMove("Dribble",100)</exit>
+      <exit>self.SchedulerStopMove("Dribble",100)
+self.SchedulerStopMove("ScanBall",100)</exit>
     </StmStateBlock>
     <Position>
       <X>997.1184730434577</X>
@@ -108,7 +110,6 @@ self.canKick=False</enter>
       <loop />
       <enter>self.SchedulerStartMove("Balance",0,20)
 self.SchedulerStartMove("CartWalk",0,1000)
-self.SchedulerStartMove("ScanBall",0, 0)
 self.SchedulerStartMove("ScanGoal",0, 0)
 self.SchedulerStopMove("Dribble",500)
 self.SchedulerStopMove("StandUpBack",500)
@@ -211,10 +212,10 @@ self.antiGlitch=0</enter>
       <gainMin>-1</gainMin>
       <gainMax>60</gainMax>
       <loop>self.antiGlitch += 1
-if self.antiGlitch &gt; 800:
+if self.antiGlitch &gt; 250:
   check_can_kick(self)
 </loop>
-      <enter>self.SchedulerStopMove("CartWalk",1000)
+      <enter>self.SchedulerStopMove("CartWalk",2000)
 self.antiGlitch=0
 self.canKick=False</enter>
       <exit />
@@ -250,7 +251,7 @@ self.canKick=False</enter>
     <Avg>0</Avg>
     <Max>0</Max>
     <Min>0</Min>
-    <Condition>not self.canKick and self.antiGlitch &gt; 1000</Condition>
+    <Condition>not self.canKick and self.antiGlitch &gt; 300</Condition>
     <Fire />
     <SourceIndex>0</SourceIndex>
     <TargetIndex>1</TargetIndex>
