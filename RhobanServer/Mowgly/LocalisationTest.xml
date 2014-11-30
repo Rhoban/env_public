@@ -9,7 +9,7 @@
     <ballExploration>35</ballExploration>
     <robotPosExploration>60</robotPosExploration>
     <robotAngleExploration>35</robotAngleExploration>
-    <compassOffset>-140.0</compassOffset>
+    <compassOffset>80.0</compassOffset>
     <ballResampling>0.003</ballResampling>
     <fieldResampling>0.005</fieldResampling>
     <csp>
@@ -19,7 +19,7 @@
     <embedded>true</embedded>
     <pipeline>
         <filter>
-            <className>WhiteGoalByROI</className>
+            <className>GoalByROI</className>
             <name>GoalByROI</name>
             <debugLevel>
                 <threads>false</threads>
@@ -33,12 +33,12 @@
             </dependencies>
             <paramInts>
                 <ParamInt>
-                    <name>goalMinY</name>
-                    <value>180</value>
+                    <name>goalMaxU</name>
+                    <value>100</value>
                 </ParamInt>
                 <ParamInt>
                     <name>goalMinV</name>
-                    <value>60</value>
+                    <value>120</value>
                 </ParamInt>
                 <ParamInt>
                     <name>kHeight</name>
@@ -554,7 +554,7 @@
             <paramPairInt />
         </filter>
         <filter>
-            <className>WhiteGoalColor</className>
+            <className>GoalColor</className>
             <name>goalColorMask</name>
             <debugLevel>
                 <threads>false</threads>
@@ -567,12 +567,12 @@
             </dependencies>
             <paramInts>
                 <ParamInt>
-                    <name>goalMinY</name>
-                    <value>160</value>
+                    <name>goalMaxU</name>
+                    <value>100</value>
                 </ParamInt>
                 <ParamInt>
                     <name>goalMinV</name>
-                    <value>60</value>
+                    <value>120</value>
                 </ParamInt>
             </paramInts>
             <paramFloats />
