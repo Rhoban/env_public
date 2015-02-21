@@ -4,7 +4,7 @@
     <showRobotView>true</showRobotView>
     <showTaggedImg>true</showTaggedImg>
     <benchmark>false</benchmark>
-    <benchmarkDetail>4</benchmarkDetail>
+    <benchmarkDetail>3</benchmarkDetail>
     <nbParticlesFF>1000</nbParticlesFF>
     <nbParticlesBF>1000</nbParticlesBF>
     <imageDelay>300</imageDelay>
@@ -21,10 +21,56 @@
     <embedded>false</embedded>
     <pipeline>
         <filter>
+            <className>ClippingRHT</className>
+            <name>clippingLines</name>
+            <debugLevel>
+              <graphics>true</graphics>
+            </debugLevel>
+            <dependencies>
+                <dependency>clippingEdges</dependency>
+            </dependencies>
+            <paramInts>
+              <ParamInt>
+                <name>nbEpochs</name>
+                <value>3</value>
+              </ParamInt>
+              <ParamInt>
+                <name>iterationsByEpoch</name>
+                <value>100</value>
+              </ParamInt>
+              <ParamInt>
+                <name>minEdgeSize</name>
+                <value>40</value>
+              </ParamInt>
+              <ParamInt>
+                <name>minScore</name>
+                <value>15</value>
+              </ParamInt>
+              <ParamInt>
+                <name>eraseThickness</name>
+                <value>4</value>
+              </ParamInt>
+            </paramInts>
+            <paramFloats>
+              <paramFloat>
+                <name>minDist</name>
+                <value>20.0</value>
+              </paramFloat>
+              <paramFloat>
+                <name>rhoTol</name>
+                <value>5.0</value>
+              </paramFloat>
+              <paramFloat>
+                <name>thetaTol</name>
+                <value>3.0</value>
+              </paramFloat>
+            </paramFloats>
+        </filter>
+        <filter>
             <className>ChannelSelector</className>
             <name>Y</name>
             <debugLevel>
-              <graphics>true</graphics>
+              <graphics>false</graphics>
             </debugLevel>
             <dependencies>
                 <dependency>source</dependency>
@@ -40,7 +86,7 @@
             <className>ChannelSelector</className>
             <name>U</name>
             <debugLevel>
-              <graphics>true</graphics>
+              <graphics>false</graphics>
             </debugLevel>
             <dependencies>
                 <dependency>source</dependency>
@@ -56,7 +102,7 @@
             <className>ChannelSelector</className>
             <name>V</name>
             <debugLevel>
-              <graphics>true</graphics>
+              <graphics>false</graphics>
             </debugLevel>
             <dependencies>
                 <dependency>source</dependency>
@@ -300,7 +346,7 @@
             <name>clipping</name>
             <debugLevel>
                 <threads>false</threads>
-                <graphics>false</graphics>
+                <graphics>true</graphics>
                 <parameters>false</parameters>
                 <perfs>false</perfs>
             </debugLevel>
@@ -333,7 +379,7 @@
             <name>clippingRaw</name>
             <debugLevel>
                 <threads>false</threads>
-                <graphics>false</graphics>
+                <graphics>true</graphics>
                 <parameters>false</parameters>
                 <perfs>false</perfs>
             </debugLevel>
@@ -360,7 +406,7 @@
             <paramInts>
                 <ParamInt>
                     <name>ratio</name>
-                    <value>8</value>
+                    <value>4</value>
                 </ParamInt>
             </paramInts>
             <paramFloats />
@@ -385,11 +431,11 @@
                 </ParamInt>
                 <ParamInt>
                     <name>kernel height</name>
-                    <value>11</value>
+                    <value>5</value>
                 </ParamInt>
                 <ParamInt>
                     <name>kernel width</name>
-                    <value>11</value>
+                    <value>5</value>
                 </ParamInt>
             </paramInts>
             <paramFloats />
@@ -400,7 +446,7 @@
             <name>colorClipping</name>
             <debugLevel>
                 <threads>false</threads>
-                <graphics>false</graphics>
+                <graphics>true</graphics>
                 <parameters>false</parameters>
                 <perfs>false</perfs>
             </debugLevel>
@@ -413,6 +459,52 @@
                     <value>101</value>
                 </ParamInt>
             </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Erode</className>
+            <name>clipping2</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>false</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>clipping</dependency>
+            </dependencies>
+            <paramInts>
+                <ParamInt>
+                    <name>Shape</name>
+                    <value>2</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel height</name>
+                    <value>3</value>
+                </ParamInt>
+                <ParamInt>
+                    <name>kernel width</name>
+                    <value>3</value>
+                </ParamInt>
+            </paramInts>
+            <paramFloats />
+            <paramPairInt />
+        </filter>
+        <filter>
+            <className>Diff</className>
+            <name>clippingEdges</name>
+            <debugLevel>
+                <threads>false</threads>
+                <graphics>true</graphics>
+                <parameters>false</parameters>
+                <perfs>false</perfs>
+            </debugLevel>
+            <dependencies>
+                <dependency>clipping</dependency>
+                <dependency>clipping2</dependency>
+            </dependencies>
+            <paramInts />
             <paramFloats />
             <paramPairInt />
         </filter>
@@ -475,7 +567,7 @@
             <name>diffClipping</name>
             <debugLevel>
                 <threads>false</threads>
-                <graphics>false</graphics>
+                <graphics>true</graphics>
                 <parameters>false</parameters>
                 <perfs>false</perfs>
             </debugLevel>
@@ -485,7 +577,7 @@
             <paramInts>
                 <ParamInt>
                     <name>threshold</name>
-                    <value>139</value>
+                    <value>255</value>
                 </ParamInt>
                 <ParamInt>
                     <name>thresholdType</name>
@@ -514,11 +606,11 @@
                 </ParamInt>
                 <ParamInt>
                     <name>kernel height</name>
-                    <value>7</value>
+                    <value>1</value>
                 </ParamInt>
                 <ParamInt>
                     <name>kernel width</name>
-                    <value>7</value>
+                    <value>1</value>
                 </ParamInt>
             </paramInts>
             <paramFloats />
