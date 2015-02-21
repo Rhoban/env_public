@@ -1,17 +1,17 @@
 <?xml version="1.0" ?>
 <LocalisationTest>
     <showTopView>true</showTopView>
-    <showRobotView>true</showRobotView>
+    <showRobotView>false</showRobotView>
     <showTaggedImg>true</showTaggedImg>
-    <benchmark>true</benchmark>
+    <benchmark>false</benchmark>
     <benchmarkDetail>3</benchmarkDetail>
     <nbParticlesFF>1000</nbParticlesFF>
     <nbParticlesBF>1000</nbParticlesBF>
     <imageDelay>300</imageDelay>
-    <compassOffset>160</compassOffset>
+    <compassOffset>150</compassOffset>
     <ballExploration>35</ballExploration>
-    <robotPosExploration>100</robotPosExploration>
-    <robotAngleExploration>40</robotAngleExploration>
+    <robotPosExploration>50</robotPosExploration>
+    <robotAngleExploration>20</robotAngleExploration>
     <ballResampling>0.0</ballResampling>
     <csp>
         <className>LogReader</className>
@@ -905,7 +905,7 @@
             <paramInts />
             <paramFloats />
             <paramPairInt />
-            <startIndex>895</startIndex>
+            <startIndex>250</startIndex>
             <imagesFile>../../../Code/VisionReloaded/Resources/Logs/Robocup2014/images1.csv</imagesFile>
         </filter>
     </pipeline>
