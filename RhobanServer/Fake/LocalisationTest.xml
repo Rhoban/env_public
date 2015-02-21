@@ -3,7 +3,7 @@
     <showTopView>true</showTopView>
     <showRobotView>false</showRobotView>
     <showTaggedImg>true</showTaggedImg>
-    <benchmark>false</benchmark>
+    <benchmark>true</benchmark>
     <benchmarkDetail>3</benchmarkDetail>
     <nbParticlesFF>1000</nbParticlesFF>
     <nbParticlesBF>1000</nbParticlesBF>
@@ -44,7 +44,7 @@
               </ParamInt>
               <ParamInt>
                 <name>minScore</name>
-                <value>15</value>
+                <value>5</value>
               </ParamInt>
               <ParamInt>
                 <name>eraseThickness</name>
@@ -54,15 +54,15 @@
             <paramFloats>
               <paramFloat>
                 <name>minDist</name>
-                <value>20.0</value>
+                <value>10.0</value>
               </paramFloat>
               <paramFloat>
                 <name>rhoTol</name>
-                <value>5.0</value>
+                <value>2.0</value>
               </paramFloat>
               <paramFloat>
                 <name>thetaTol</name>
-                <value>3.0</value>
+                <value>0.2</value>
               </paramFloat>
             </paramFloats>
         </filter>
@@ -496,7 +496,7 @@
             <name>clippingEdges</name>
             <debugLevel>
                 <threads>false</threads>
-                <graphics>false</graphics>
+                <graphics>true</graphics>
                 <parameters>false</parameters>
                 <perfs>false</perfs>
             </debugLevel>
