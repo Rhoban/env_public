@@ -395,36 +395,7 @@
             <paramPairInt />
         </filter>
         <filter>
-            <className>Erode</className>
-            <name>clipping2</name>
-            <debugLevel>
-                <threads>false</threads>
-                <graphics>false</graphics>
-                <parameters>false</parameters>
-                <perfs>false</perfs>
-            </debugLevel>
-            <dependencies>
-                <dependency>clipping</dependency>
-            </dependencies>
-            <paramInts>
-                <ParamInt>
-                    <name>Shape</name>
-                    <value>2</value>
-                </ParamInt>
-                <ParamInt>
-                    <name>kernel height</name>
-                    <value>3</value>
-                </ParamInt>
-                <ParamInt>
-                    <name>kernel width</name>
-                    <value>3</value>
-                </ParamInt>
-            </paramInts>
-            <paramFloats />
-            <paramPairInt />
-        </filter>
-        <filter>
-            <className>Diff</className>
+            <className>BinaryEdges</className>
             <name>clippingEdges</name>
             <debugLevel>
                 <threads>false</threads>
@@ -434,7 +405,6 @@
             </debugLevel>
             <dependencies>
                 <dependency>clipping</dependency>
-                <dependency>clipping2</dependency>
             </dependencies>
             <paramInts />
             <paramFloats />
