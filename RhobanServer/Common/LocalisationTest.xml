@@ -3,16 +3,16 @@
   <showTopView>false</showTopView>
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
-  <benchmark>true</benchmark>
+  <benchmark>false</benchmark>
   <benchmarkDetail>3</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
-  <imageDelay>300</imageDelay>
+  <imageDelay>250</imageDelay>
   <compassOffset>150</compassOffset>
   <ballExploration>35</ballExploration>
   <robotPosExploration>50</robotPosExploration>
   <robotAngleExploration>20</robotAngleExploration>
-  <ballResampling>0.0</ballResampling>
+  <ballResampling>0.02</ballResampling>
   <csp>
     <className>SchedulerRequester</className>
   </csp>
@@ -35,7 +35,7 @@
         </ParamInt>
         <ParamInt>
           <name>iterationsByEpoch</name>
-          <value>100</value>
+          <value>30</value>
         </ParamInt>
         <ParamInt>
           <name>minEdgeSize</name>
@@ -57,11 +57,11 @@
         </paramFloat>
         <paramFloat>
           <name>rhoTol</name>
-          <value>2.0</value>
+          <value>10.0</value>
         </paramFloat>
         <paramFloat>
           <name>thetaTol</name>
-          <value>0.2</value>
+          <value>2.5</value>
         </paramFloat>
       </paramFloats>
     </filter>
@@ -139,7 +139,7 @@
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>8</value>
+          <value>11</value>
         </ParamInt>
         <ParamInt>
           <name>roiMargin</name>
@@ -157,11 +157,11 @@
       <paramFloats>
         <ParamFloat>
           <name>clusterPercentTol</name>
-          <value>10</value>
+          <value>15</value>
         </ParamFloat>
         <ParamFloat>
           <name>clusterFlatTol</name>
-          <value>5</value>
+          <value>8</value>
         </ParamFloat>
         <ParamFloat>
           <name>robotHeight</name>
@@ -371,11 +371,11 @@
         </ParamInt>
         <ParamInt>
           <name>kernel height</name>
-          <value>5</value>
+          <value>11</value>
         </ParamInt>
         <ParamInt>
           <name>kernel width</name>
-          <value>5</value>
+          <value>11</value>
         </ParamInt>
       </paramInts>
       <paramFloats />
@@ -396,7 +396,7 @@
       <paramInts>
         <ParamInt>
           <name>fieldMaxV</name>
-          <value>101</value>
+          <value>123</value>
         </ParamInt>
       </paramInts>
       <paramFloats />
