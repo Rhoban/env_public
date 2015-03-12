@@ -3,7 +3,7 @@
   <showTopView>false</showTopView>
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
-  <benchmark>false</benchmark>
+  <benchmark>true</benchmark>
   <benchmarkDetail>3</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
@@ -19,6 +19,45 @@
   <playing>true</playing>
   <embedded>true</embedded>
   <pipeline>
+      <filter>
+          <className>ChannelSelector</className>
+          <name>Y</name>
+          <dependencies>
+            <dependency>source</dependency>
+          </dependencies>
+          <paramInts>
+              <paramInt>
+                <name>channel</name>
+                <value>0</value>
+              </paramInt>
+          </paramInts>
+      </filter>
+      <filter>
+          <className>ChannelSelector</className>
+          <name>U</name>
+          <dependencies>
+            <dependency>source</dependency>
+          </dependencies>
+          <paramInts>
+              <paramInt>
+                <name>channel</name>
+                <value>1</value>
+              </paramInt>
+          </paramInts>
+      </filter>
+      <filter>
+          <className>ChannelSelector</className>
+          <name>V</name>
+          <dependencies>
+            <dependency>source</dependency>
+          </dependencies>
+          <paramInts>
+              <paramInt>
+                <name>channel</name>
+                <value>2</value>
+              </paramInt>
+          </paramInts>
+      </filter>
     <filter>
       <className>ClippingRHT</className>
       <name>clippingLines</name>
@@ -512,7 +551,7 @@
       <paramInts>
         <ParamInt>
           <name>goalMaxU</name>
-          <value>125</value>
+          <value>0</value>
         </ParamInt>
         <ParamInt>
           <name>goalMinV</name>
