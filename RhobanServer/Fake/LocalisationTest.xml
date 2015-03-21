@@ -172,15 +172,15 @@
         </ParamInt>
         <ParamInt>
           <name>ballMinY</name>
-          <value>140</value>
+          <value>130</value>
         </ParamInt>
         <ParamInt>
           <name>ballMinU</name>
-          <value>140</value>
+          <value>130</value>
         </ParamInt>
         <ParamInt>
           <name>ballMinV</name>
-          <value>135</value>
+          <value>125</value>
         </ParamInt>
         <ParamInt>
           <name>minPointDist</name>
@@ -193,6 +193,10 @@
         <ParamInt>
           <name>roiMargin</name>
           <value>20</value>
+        </ParamInt>
+        <ParamInt>
+          <name>shadowMaxY</name>
+          <value>25</value>
         </ParamInt>
       </paramInts>
       <paramFloats>
@@ -223,6 +227,10 @@
         <ParamFloat>
           <name>qTilt</name>
           <value>1</value>
+        </ParamFloat>
+        <ParamFloat>
+          <name>shadowMinRatio</name>
+          <value>0.002</value>
         </ParamFloat>
       </paramFloats>
       <paramPairInt />
@@ -710,7 +718,7 @@
       <paramFloats />
       <paramPairInt />
       <startIndex>5</startIndex>
-      <imagesFile>../../../Code/VisionReloaded/Resources/Logs/2015_03_12_CiteNum/log5/images.csv</imagesFile>
+      <imagesFile>../../../Code/VisionReloaded/Resources/Logs/2015_03_12_CiteNum/log1/images.csv</imagesFile>
     </filter>
   </pipeline>
 </LocalisationTest>
