@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<LocalisationTest>
+  <showTopView>false</showTopView>
+  <showRobotView>false</showRobotView>
+  <showTaggedImg>false</showTaggedImg>
+  <benchmark>false</benchmark>
+  <benchmarkDetail>3</benchmarkDetail>
+  <nbParticlesFF>1</nbParticlesFF>
+  <nbParticlesBF>1</nbParticlesBF>
+  <imageDelay>300</imageDelay>
+  <compassOffset>150</compassOffset>
+  <ballExploration>4</ballExploration>
+  <robotPosExploration>50</robotPosExploration>
+  <robotAngleExploration>20</robotAngleExploration>
+  <ballResampling>0.0</ballResampling>
+  <csp>
+    <className>LogReader</className>
+    <path>../../../Code/VisionReloaded/Resources/Logs/Robocup2014/dump1.csv</path>
+  </csp>
+  <playing>false</playing>
+  <embedded>false</embedded>
+  <pipeline>
+    <filter>
+      <className>BallByROI</className>
+      <name>ballByROI</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>true</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>source</dependency>
+        <dependency>ballMask</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>tagLevel</name>
+          <value>1</value>
+        </ParamInt>
+        <ParamInt>
+          <name>Epochs</name>
+          <value>25</value>
+        </ParamInt>
+        <ParamInt>
+          <name>ballMaxU</name>
+          <value>200</value>
+        </ParamInt>
+        <ParamInt>
+          <name>ballMinV</name>
+          <value>200</value>
+        </ParamInt>
+        <ParamInt>
+          <name>minPointDist</name>
+          <value>3</value>
+        </ParamInt>
+        <ParamInt>
+          <name>minScore</name>
+          <value>11</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats>
+        <ParamFloat>
+          <name>clusterPercentTol</name>
+          <value>15</value>
+        </ParamFloat>
+        <ParamFloat>
+          <name>clusterFlatTol</name>
+          <value>8</value>
+        </ParamFloat>
+      </paramFloats>
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>Dilate</className>
+      <name>ballMask</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>ballColor</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>Shape</name>
+          <value>2</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel height</name>
+          <value>3</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel width</name>
+          <value>3</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>BallColor</className>
+      <name>ballColor</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>true</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>ballSrc</dependency>
+      </dependencies>
+      <paramInts>
+        <paramInt>
+          <name>ballMaxU</name>
+          <value>200</value>
+        </paramInt>
+        <paramInt>
+          <name>ballMinV</name>
+          <value>200</value>
+        </paramInt>
+      </paramInts>
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>Rescale</className>
+      <name>ballSrc</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>source</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>ratio</name>
+          <value>4</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>SourceLogs</className>
+      <name>source</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies />
+      <paramInts />
+      <paramFloats />
+      <paramPairInt />
+      <startIndex>370</startIndex>
+      <imagesFile>../../../Code/VisionReloaded/Resources/Logs/Robocup2014/images1.csv</imagesFile>
+    </filter>
+  </pipeline>
+</LocalisationTest>
