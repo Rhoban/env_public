@@ -14,8 +14,7 @@
   <robotAngleExploration>20</robotAngleExploration>
   <ballResampling>0.0</ballResampling>
   <csp>
-    <className>LogReader</className>
-    <path>../../../Code/VisionReloaded/Resources/Logs/Robocup2014/dump1.csv</path>
+    <className>SchedulerRequester</className>
   </csp>
   <playing>true</playing>
   <embedded>true</embedded>
@@ -25,7 +24,7 @@
       <name>ballByROI</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -105,7 +104,7 @@
       <name>ballColor</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
