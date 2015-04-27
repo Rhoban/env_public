@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
 <LocalisationTest>
-  <showTopView>false</showTopView>
-  <showRobotView>false</showRobotView>
-  <showTaggedImg>false</showTaggedImg>
+  <showTopView>true</showTopView>
+  <showRobotView>true</showRobotView>
+  <showTaggedImg>true</showTaggedImg>
   <benchmark>true</benchmark>
   <benchmarkDetail>3</benchmarkDetail>
-  <nbParticlesFF>1</nbParticlesFF>
-  <nbParticlesBF>1</nbParticlesBF>
+  <nbParticlesFF>1000</nbParticlesFF>
+  <nbParticlesBF>1000</nbParticlesBF>
   <imageDelay>300</imageDelay>
   <compassOffset>150</compassOffset>
   <ballExploration>4</ballExploration>
@@ -31,7 +31,7 @@
       </debugLevel>
       <dependencies>
         <dependency>source</dependency>
-        <dependency>ballMask</dependency>
+        <dependency>ballMask2</dependency>
       </dependencies>
       <paramInts>
         <ParamInt>
@@ -101,6 +101,14 @@
       <paramPairInt />
     </filter>
     <filter>
+      <className>Mask</className>
+      <name>ballMask2</name>
+      <dependencies>
+        <dependency>ballMask</dependency>
+        <dependency>clippingLines</dependency>
+      </dependencies>
+    </filter>
+    <filter>
       <className>BallColor</className>
       <name>ballColor</name>
       <debugLevel>
@@ -147,6 +155,119 @@
       <paramPairInt />
     </filter>
     <filter>
+      <className>FieldColor</className>
+      <name>colorClipping</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <dependencies> 
+        <dependency>source</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>fieldMaxV</name>
+          <value>80</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
+    <filter>
+      <className>Opening</className>
+      <name>opening</name>
+      <dependencies> 
+        <dependency>colorClipping</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>kernel height</name>
+          <value>7</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel width</name>
+          <value>7</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
+    <filter>
+      <className>Closure</className>
+      <name>closure</name>
+      <dependencies> 
+        <dependency>opening</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>kernel height</name>
+          <value>15</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel width</name>
+          <value>15</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
+    <filter>
+      <className>ClippingRules</className>
+      <name>clipping</name>
+      <dependencies> 
+        <dependency>closure</dependency>
+      </dependencies>
+    </filter>
+    <filter>
+      <className>BinaryEdges</className>
+      <name>clippingEdges</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <dependencies> 
+        <dependency>clipping</dependency>
+      </dependencies>
+    </filter>
+    <filter>
+      <className>ClippingRHT</className>
+      <name>clippingLines</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <dependencies> 
+        <dependency>clippingEdges</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>nbEpochs</name>
+          <value>5</value>
+        </ParamInt>
+        <ParamInt>
+          <name>iterationsByEpoch</name>
+          <value>100</value>
+        </ParamInt>
+        <ParamInt>
+          <name>minEdgeSize</name>
+          <value>30</value>
+        </ParamInt>
+        <ParamInt>
+          <name>minScore</name>
+          <value>5</value>
+        </ParamInt>
+        <ParamInt>
+          <name>eraseThickness</name>
+          <value>3</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats>
+        <ParamFloat>
+          <name>minDist</name>
+          <value>30.0</value>
+        </ParamFloat>
+        <ParamFloat>
+          <name>rhoTol</name>
+          <value>8.0</value>
+        </ParamFloat>
+        <ParamFloat>
+          <name>thetaTol</name>
+          <value>2.0</value>
+        </ParamFloat>
+      </paramFloats>
+    </filter>
+    <filter>
       <className>SourceLogs</className>
       <name>source</name>
       <debugLevel>
@@ -159,7 +280,7 @@
       <paramInts />
       <paramFloats />
       <paramPairInt />
-      <startIndex>370</startIndex>
+      <startIndex>190</startIndex>
       <imagesFile>../../../Code/VisionReloaded/Resources/Logs/Robocup2014/images1.csv</imagesFile>
     </filter>
   </pipeline>
