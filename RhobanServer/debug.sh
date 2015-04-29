@@ -15,4 +15,4 @@ sleep 0.1
 
 # Running RhobanServer
 cd $ENVS/RhobanServer/$ROBOT &&
-nohup ./start_rhoban_server &
+nohup ./start_rhoban_server_debug &
