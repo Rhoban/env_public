@@ -1,11 +1,12 @@
 #!/bin/bash
 
-if [ $# -ne 1 ]; then
-    echo "Usage: ./wifi.sh [field-letter]"
-    exit
-fi
+#if [ $# -ne 1 ]; then
+#    echo "Usage: ./wifi.sh [field-letter]"
+#    exit
+#fi
 
-ESSID="KID-$1"
+#ESSID="KID-$1"
+ESSID="HL_KID_A"
 HOSTNAME=`hostname`
 
 if [ "$HOSTNAME" == "Chewbacca" ]; then
@@ -19,6 +20,7 @@ if [ "$HOSTNAME" == "Django" ]; then
 fi
 
 echo "Connecting to $ESSID with $IP..."
+sudo killall wpa_supplicant ;
 sudo ifconfig wlan0 down ; 
 sleep 1 ; 
 sudo ifconfig wlan0 up ; 
@@ -27,3 +29,5 @@ sudo iwconfig wlan0 mode managed ;
 sudo iwconfig wlan0 key off ; 
 sudo iwconfig wlan0 essid "$ESSID" ; 
 sudo ifconfig wlan0 $IP netmask 255.255.0.0 ;
+echo "done"
+
