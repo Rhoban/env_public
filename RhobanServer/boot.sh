@@ -10,4 +10,4 @@ killall -9 RhobanServer
 
 # Running RhobanServer
 cd $ENVS/RhobanServer/$ROBOT &&
-nohup /home/rhoban/RhobanCode/RhobanServer/release/RhobanServer &
+nohup $HOME/RhobanCode/RhobanServer/release/RhobanServer &
