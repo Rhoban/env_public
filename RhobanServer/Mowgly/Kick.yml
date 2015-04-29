@@ -3,14 +3,23 @@ sensor_roll_zero: 0.50
 
 right:
   x_pos: -0.015
-  y_pos: -0.035
+  y_pos: -0.040
   leg_space: 0.015
   bassin_x: 0.0  
   com_y_tgt: 0.0
+  stab_time: 1.5
+  gain_pitch_asserv: 0.005 
+  shoot_delta_z: 0.020
+  torso_roll_gain: -0.1
 
 left:
-  x_pos: -0.015
-  y_pos: 0.032
+  x_pos: -0.0125
+  y_pos: 0.035
   leg_space: 0.015
   bassin_x: 0.0
-  com_y_tgt: 0.01
+  com_y_tgt: 0.005
+  stab_time: 2.0
+  gain_pitch_asserv: 0.01
+  shoot_delta_z: 0.020
+  torso_roll_gain: -0.075
+

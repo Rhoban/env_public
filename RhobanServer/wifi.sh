@@ -5,7 +5,7 @@
 #    exit
 #fi
 
-# ESSID="KID-$1"
+#ESSID="KID-$1"
 ESSID="HL_KID_A"
 HOSTNAME=`hostname`
 
