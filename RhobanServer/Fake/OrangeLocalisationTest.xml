@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <LocalisationTest>
-  <showTopView>true</showTopView>
-  <showRobotView>true</showRobotView>
-  <showTaggedImg>true</showTaggedImg>
-  <benchmark>true</benchmark>
+  <showTopView>false</showTopView>
+  <showRobotView>false</showRobotView>
+  <showTaggedImg>false</showTaggedImg>
+  <benchmark>false</benchmark>
   <benchmarkDetail>3</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
@@ -15,17 +15,180 @@
   <ballResampling>0.0</ballResampling>
   <csp>
     <className>LogReader</className>
-    <path>../../../Code/VisionReloaded/Resources/Logs/Robocup2014/dump1.csv</path>
+    <path>../../../Code/Vision/Resources/Logs/Robocup2014/dump1.csv</path>
   </csp>
   <playing>false</playing>
   <embedded>false</embedded>
   <pipeline>
+        <filter>
+            <className>ChannelSelector</className>
+            <name>Y</name>
+            <debugLevel>
+              <graphics>false</graphics>
+            </debugLevel>
+            <dependencies>
+                <dependency>source</dependency>
+            </dependencies>
+            <paramInts>
+              <ParamInt>
+                <name>channel</name>
+                <value>0</value>
+              </ParamInt>
+            </paramInts>
+        </filter>
+        <filter>
+            <className>ChannelSelector</className>
+            <name>U</name>
+            <debugLevel>
+              <graphics>false</graphics>
+            </debugLevel>
+            <dependencies>
+                <dependency>source</dependency>
+            </dependencies>
+            <paramInts>
+              <ParamInt>
+                <name>channel</name>
+                <value>1</value>
+              </ParamInt>
+            </paramInts>
+        </filter>
+        <filter>
+            <className>ChannelSelector</className>
+            <name>V</name>
+            <debugLevel>
+              <graphics>false</graphics>
+            </debugLevel>
+            <dependencies>
+                <dependency>source</dependency>
+            </dependencies>
+            <paramInts>
+              <ParamInt>
+                <name>channel</name>
+                <value>2</value>
+              </ParamInt>
+            </paramInts>
+        </filter>
+    <filter>
+      <className>BinaryEdges</className>
+      <name>clippingBorders</name>
+      <dependencies>
+        <dependency>clippingLines</dependency>
+      </dependencies>
+    </filter>
+    <filter>
+      <className>Dilate</className>
+      <name>clippingBorders2</name>
+      <dependencies>
+        <dependency>clippingBorders</dependency>
+      </dependencies>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <paramInts>
+        <ParamInt>
+          <name>Shape</name>
+          <value>2</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel height</name>
+          <value>21</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel width</name>
+          <value>21</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>GoalColor</className>
+      <name>goalColor</name>
+      <dependencies>
+        <dependency>ballSrc</dependency>
+      </dependencies>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <paramInts>
+        <ParamInt>
+          <name>goalMaxU</name>
+          <value>130</value>
+        </ParamInt>
+        <ParamInt>
+          <name>goalMinV</name>
+          <value>0</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
+    <filter>
+      <className>GoalByROI</className>
+      <name>goalByROI</name>
+      <dependencies>
+        <dependency>source</dependency>
+        <dependency>goalMask2</dependency>
+      </dependencies>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <paramInts>
+        <ParamInt>
+          <name>goalMaxU</name>
+          <value>130</value>
+        </ParamInt>
+        <ParamInt>
+          <name>goalMinV</name>
+          <value>0</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kWidth</name>
+          <value>3</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kHeight</name>
+          <value>31</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
+    <filter>
+      <className>Mask</className>
+      <name>goalMask</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>goalColor</dependency>
+        <dependency>clippingBorders2</dependency>
+      </dependencies>
+    </filter>
+    <filter>
+      <className>Dilate</className>
+      <name>goalMask2</name>
+      <dependencies>
+        <dependency>goalMask</dependency>
+      </dependencies>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <paramInts>
+        <ParamInt>
+          <name>kernel width</name>
+          <value>3</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel height</name>
+          <value>31</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats />
+      <paramPairInt />
+    </filter>
     <filter>
       <className>BallByROI</className>
       <name>ballByROI</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -44,11 +207,11 @@
         </ParamInt>
         <ParamInt>
           <name>ballMaxU</name>
-          <value>200</value>
+          <value>160</value>
         </ParamInt>
         <ParamInt>
           <name>ballMinV</name>
-          <value>200</value>
+          <value>150</value>
         </ParamInt>
         <ParamInt>
           <name>minPointDist</name>
@@ -112,10 +275,7 @@
       <className>BallColor</className>
       <name>ballColor</name>
       <debugLevel>
-        <threads>false</threads>
-        <graphics>true</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>ballSrc</dependency>
@@ -123,11 +283,11 @@
       <paramInts>
         <paramInt>
           <name>ballMaxU</name>
-          <value>200</value>
+          <value>160</value>
         </paramInt>
         <paramInt>
           <name>ballMinV</name>
-          <value>200</value>
+          <value>150</value>
         </paramInt>
       </paramInts>
       <paramFloats />
@@ -161,7 +321,7 @@
         <graphics>true</graphics>
       </debugLevel>
       <dependencies> 
-        <dependency>source</dependency>
+        <dependency>ballSrc</dependency>
       </dependencies>
       <paramInts>
         <ParamInt>
@@ -215,7 +375,7 @@
       <className>BinaryEdges</className>
       <name>clippingEdges</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies> 
         <dependency>clipping</dependency>
@@ -225,7 +385,7 @@
       <className>ClippingRHT</className>
       <name>clippingLines</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies> 
         <dependency>clippingEdges</dependency>
@@ -237,7 +397,7 @@
         </ParamInt>
         <ParamInt>
           <name>iterationsByEpoch</name>
-          <value>100</value>
+          <value>50</value>
         </ParamInt>
         <ParamInt>
           <name>minEdgeSize</name>
@@ -245,7 +405,7 @@
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>5</value>
+          <value>10</value>
         </ParamInt>
         <ParamInt>
           <name>eraseThickness</name>
@@ -268,8 +428,16 @@
       </paramFloats>
     </filter>
     <filter>
-      <className>SourceLogs</className>
+      <className>ColorConverter</className>
       <name>source</name>
+      <conversion>RGB2YUV</conversion>
+      <dependencies>
+        <dependency>bgrSource</dependency>
+      </dependencies>
+    </filter>
+    <filter>
+      <className>SourceLogs</className>
+      <name>bgrSource</name>
       <debugLevel>
         <threads>false</threads>
         <graphics>false</graphics>
@@ -281,7 +449,7 @@
       <paramFloats />
       <paramPairInt />
       <startIndex>190</startIndex>
-      <imagesFile>../../../Code/VisionReloaded/Resources/Logs/Robocup2014/images1.csv</imagesFile>
+      <imagesFile>../../../Code/Vision/Resources/Logs/Robocup2014/images1.csv</imagesFile>
     </filter>
   </pipeline>
 </LocalisationTest>
