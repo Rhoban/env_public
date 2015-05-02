@@ -1,8 +1,0 @@
-#!/bin/bash
-
-while true;
-do
-    start-stop-daemon --background --user rhoban --start --exec ./start_rhoban_server
-    start-stop-daemon --background --user rhoban --start --exec ./start_stm
-    sleep 10
-done;
