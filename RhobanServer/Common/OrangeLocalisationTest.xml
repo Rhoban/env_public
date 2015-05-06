@@ -7,7 +7,7 @@
   <benchmarkDetail>3</benchmarkDetail>
   <nbParticlesFF>1</nbParticlesFF>
   <nbParticlesBF>1</nbParticlesBF>
-  <imageDelay>300</imageDelay>
+  <imageDelay>0</imageDelay>
   <compassOffset>150</compassOffset>
   <ballExploration>4</ballExploration>
   <robotPosExploration>50</robotPosExploration>
@@ -43,11 +43,11 @@
         </ParamInt>
         <ParamInt>
           <name>ballMaxU</name>
-          <value>200</value>
+          <value>255</value>
         </ParamInt>
         <ParamInt>
           <name>ballMinV</name>
-          <value>200</value>
+          <value>150</value>
         </ParamInt>
         <ParamInt>
           <name>minPointDist</name>
@@ -114,11 +114,11 @@
       <paramInts>
         <paramInt>
           <name>ballMaxU</name>
-          <value>200</value>
+          <value>255</value>
         </paramInt>
         <paramInt>
           <name>ballMinV</name>
-          <value>200</value>
+          <value>150</value>
         </paramInt>
       </paramInts>
       <paramFloats />
@@ -139,7 +139,7 @@
       <paramInts>
         <ParamInt>
           <name>ratio</name>
-          <value>4</value>
+          <value>8</value>
         </ParamInt>
       </paramInts>
       <paramFloats />
@@ -149,7 +149,7 @@
       <className>SourceV4l2</className>
       <name>source</name>
       <device>/dev/video0</device>
-      <captureFrequency>20</captureFrequency>
+      <captureFrequency>30</captureFrequency>
       <debugLevel>
         <graphics>false</graphics>
       </debugLevel>
