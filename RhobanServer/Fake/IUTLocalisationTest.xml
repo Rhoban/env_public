@@ -116,11 +116,11 @@
       </paramFloats>
     </filter>
     <filter>
-      <className>GoalByROI</className>
+      <className>WhiteGoalByROI</className>
       <name>GoalByROI</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -130,12 +130,12 @@
       </dependencies>
       <paramInts>
         <ParamInt>
-          <name>goalMaxU</name>
-          <value>130</value>
+          <name>goalMinY</name>
+          <value>160</value>
         </ParamInt>
         <ParamInt>
           <name>goalMinV</name>
-          <value>100</value>
+          <value>0</value>
         </ParamInt>
         <ParamInt>
           <name>kHeight</name>
@@ -154,7 +154,7 @@
       <name>ballByROI</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -249,7 +249,7 @@
       <name>ballMask</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -295,7 +295,7 @@
       <name>ballColor</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -320,7 +320,7 @@
       <name>ballColor2</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -451,7 +451,7 @@
       <className>FieldColor</className>
       <name>colorClipping</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -561,11 +561,11 @@
       <paramPairInt />
     </filter>
     <filter>
-      <className>GoalColor</className>
+      <className>WhiteGoalColor</className>
       <name>goalColor</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -574,12 +574,12 @@
       </dependencies>
       <paramInts>
         <ParamInt>
-          <name>goalMaxU</name>
-          <value>125</value>
+          <name>goalMinY</name>
+          <value>170</value>
         </ParamInt>
         <ParamInt>
           <name>goalMinV</name>
-          <value>100</value>
+          <value>0</value>
         </ParamInt>
       </paramInts>
       <paramFloats />
@@ -611,7 +611,7 @@
       <name>goalMask</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -628,7 +628,7 @@
       <name>goalMask2</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -671,11 +671,11 @@
         </ParamInt>
         <ParamInt>
           <name>kernel height</name>
-          <value>11</value>
+          <value>5</value>
         </ParamInt>
         <ParamInt>
           <name>kernel width</name>
-          <value>11</value>
+          <value>5</value>
         </ParamInt>
       </paramInts>
       <paramFloats />
@@ -686,7 +686,7 @@
       <name>source</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
