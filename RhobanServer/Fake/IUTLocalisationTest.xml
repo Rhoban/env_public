@@ -14,8 +14,9 @@
   <robotAngleExploration>20</robotAngleExploration>
   <ballResampling>0.0</ballResampling>
   <csp>
-    <className>LogReader</className>
-    <path>../../../Code/Vision/Resources/Logs/Robocup2014/dump1.csv</path>
+    <className>LogReader2</className>
+    <sensorPath>../../../Code/Vision/Resources/Logs/2015_05_07_IUT/Log7/imu.csv</sensorPath>
+    <motorPath>../../../Code/Vision/Resources/Logs/2015_05_07_IUT/Log7/servos.csv</motorPath>
   </csp>
   <playing>false</playing>
   <embedded>false</embedded>
@@ -200,7 +201,7 @@
         </ParamInt>
         <ParamInt>
           <name>reflectionMinY</name>
-          <value>160</value>
+          <value>195</value>
         </ParamInt>
       </paramInts>
       <paramFloats>
@@ -214,15 +215,15 @@
         </ParamFloat>
         <ParamFloat>
           <name>clusterPercentTol</name>
-          <value>15</value>
+          <value>10</value>
         </ParamFloat>
         <ParamFloat>
           <name>clusterFlatTol</name>
-          <value>8</value>
+          <value>6</value>
         </ParamFloat>
         <ParamFloat>
           <name>robotHeight</name>
-          <value>75</value>
+          <value>60</value>
         </ParamFloat>
         <ParamFloat>
           <name>tilt</name>
@@ -304,7 +305,7 @@
       <paramInts>
         <paramInt>
           <name>goalMinY</name>
-          <value>160</value>
+          <value>190</value>
         </paramInt>
         <paramInt>
           <name>goalMinV</name>
@@ -315,7 +316,7 @@
       <paramPairInt />
     </filter>
     <filter>
-      <className>Closure</className>
+      <className>Dilate</className>
       <name>ballColor2</name>
       <debugLevel>
         <threads>false</threads>
@@ -333,11 +334,11 @@
         </ParamInt>
         <ParamInt>
           <name>kernel height</name>
-          <value>7</value>
+          <value>5</value>
         </ParamInt>
         <ParamInt>
           <name>kernel width</name>
-          <value>7</value>
+          <value>5</value>
         </ParamInt>
       </paramInts>
       <paramFloats />
@@ -693,7 +694,7 @@
       <paramInts />
       <paramFloats />
       <paramPairInt />
-      <startIndex>0</startIndex>
+      <startIndex>15</startIndex>
       <imagesFile>../../../Code/Vision/Resources/Logs/2015_05_07_IUT/Log7/images.csv</imagesFile>
     </filter>
   </pipeline>
