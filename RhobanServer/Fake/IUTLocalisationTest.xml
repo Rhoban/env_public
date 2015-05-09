@@ -153,7 +153,7 @@
       <name>ballByROI</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -172,15 +172,15 @@
         </ParamInt>
         <ParamInt>
           <name>ballMinY</name>
-          <value>130</value>
+          <value>180</value>
         </ParamInt>
         <ParamInt>
           <name>ballMinU</name>
-          <value>130</value>
+          <value>255</value>
         </ParamInt>
         <ParamInt>
           <name>ballMinV</name>
-          <value>125</value>
+          <value>205</value>
         </ParamInt>
         <ParamInt>
           <name>minPointDist</name>
@@ -248,7 +248,7 @@
       <name>ballMask</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -294,7 +294,7 @@
       <name>ballColor</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -304,7 +304,7 @@
       <paramInts>
         <paramInt>
           <name>goalMinY</name>
-          <value>110</value>
+          <value>160</value>
         </paramInt>
         <paramInt>
           <name>goalMinV</name>
@@ -319,7 +319,7 @@
       <name>ballColor2</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -422,7 +422,7 @@
       <name>closure</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -675,35 +675,6 @@
         <ParamInt>
           <name>kernel width</name>
           <value>11</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Opening</className>
-      <name>opening</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>true</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>colorClipping</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>Shape</name>
-          <value>2</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel height</name>
-          <value>9</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel width</name>
-          <value>9</value>
         </ParamInt>
       </paramInts>
       <paramFloats />
