@@ -10,5 +10,5 @@ killall -9 RhobanServer
 
 # Running RhobanServer
 cd $ENVS/RhobanServer/$ROBOT &&
-gdb $HOME/RhobanCode/RhobanServer/debug/RhobanServer
+gdb $HOME/Code/RhobanServer/debug/RhobanServer
 

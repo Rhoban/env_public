@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd $HOME/RhobanCode/RhobanServer/release &&
+cd $HOME/Code/RhobanServer/release &&
 make
 
