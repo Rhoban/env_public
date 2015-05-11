@@ -288,36 +288,6 @@
                 <unit>1</unit>
             </ServoConfig>
             <ServoConfig>
-                <Id>220</Id>
-                <Name>Servo 220</Name>
-                <IniAngle>0</IniAngle>
-                <ZeroAngle>0</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0.95</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
-                <Id>221</Id>
-                <Name>Servo 221</Name>
-                <IniAngle>0</IniAngle>
-                <ZeroAngle>0</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0.95</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
                 <Id>140</Id>
                 <Name>head_pitch</Name>
                 <IniAngle>0</IniAngle>
@@ -345,19 +315,5 @@
     </SensorsConfig>
     <ServosScene />
     <autoload_moves>
-        <string>BallRelLoc</string>
-        <string>GoalRelLoc</string>
-        <string>CartWalk</string>
-        <string>Dribble</string>
-        <string>StandUpBack</string>
-        <string>StandUpFront</string>
-        <string>FallDetector</string>
-        <string>GameStatusTracker</string>
-        <string>Kick</string>
-        <string>LookAtFeet</string>
-        <string>RelMagnetoAzimuth</string>
-        <string>Defender</string>
-        <string>Explorer</string>
-        <string>Balance</string>
     </autoload_moves>
 </MoveSchedulerConfig>
