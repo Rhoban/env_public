@@ -3,10 +3,10 @@
     <ServosConfig>
         <Servos>
             <ServoConfig>
-                <Id>37</Id>
+                <Id>32</Id>
                 <Name>right_ankle_pitch</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>-3.078906</ZeroAngle>
+                <ZeroAngle>0</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -18,10 +18,10 @@
                 <unit>1</unit>
             </ServoConfig>
             <ServoConfig>
-                <Id>32</Id>
+                <Id>37</Id>
                 <Name>left_ankle_pitch</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>2.51562</ZeroAngle>
+                <ZeroAngle>0</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -36,7 +36,7 @@
                 <Id>132</Id>
                 <Name>right_elbow</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>17.8711</ZeroAngle>
+                <ZeroAngle>-4.98047</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -66,7 +66,7 @@
                 <Id>36</Id>
                 <Name>right_hip_pitch</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>22.5586</ZeroAngle>
+                <ZeroAngle>22.5</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -81,7 +81,7 @@
                 <Id>12</Id>
                 <Name>left_hip_pitch</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>-22.5586</ZeroAngle>
+                <ZeroAngle>-22.5</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -96,7 +96,7 @@
                 <Id>131</Id>
                 <Name>right_shoulder_pitch</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>9.375</ZeroAngle>
+                <ZeroAngle>-80</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -111,7 +111,7 @@
                 <Id>130</Id>
                 <Name>right_shoulder_roll</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>-25.1953</ZeroAngle>
+                <ZeroAngle>-22.5</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -126,7 +126,7 @@
                 <Id>121</Id>
                 <Name>left_shoulder_pitch</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>-15.339</ZeroAngle>
+                <ZeroAngle>80</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -141,7 +141,7 @@
                 <Id>120</Id>
                 <Name>left_shoulder_roll</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>17.2852</ZeroAngle>
+                <ZeroAngle>22.5</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -156,7 +156,7 @@
                 <Id>6</Id>
                 <Name>right_knee</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>-23.7305</ZeroAngle>
+                <ZeroAngle>0</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -171,7 +171,7 @@
                 <Id>15</Id>
                 <Name>left_knee</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>0.1641</ZeroAngle>
+                <ZeroAngle>0</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1023</MaxSpeed>
@@ -186,7 +186,7 @@
                 <Id>35</Id>
                 <Name>right_hip_roll</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>-21.0</ZeroAngle>
+                <ZeroAngle>-22.5</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -201,7 +201,7 @@
                 <Id>103</Id>
                 <Name>right_hip_yaw</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>-0.585938</ZeroAngle>
+                <ZeroAngle>0</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -216,7 +216,7 @@
                 <Id>10</Id>
                 <Name>left_hip_roll</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>20.2148</ZeroAngle>
+                <ZeroAngle>22.5</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -231,52 +231,7 @@
                 <Id>102</Id>
                 <Name>left_hip_yaw</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>-1.46484</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1000</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
-                <Id>141</Id>
-                <Name>head_yaw</Name>
-                <IniAngle>0</IniAngle>
-                <ZeroAngle>-24.9023</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1023</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
-                <Id>38</Id>
-                <Name>right_ankle_roll</Name>
-                <IniAngle>0</IniAngle>
-                <ZeroAngle>-21</ZeroAngle>
-                <MinAngle>-180</MinAngle>
-                <MaxAngle>180</MaxAngle>
-                <MaxSpeed>1000</MaxSpeed>
-                <MaxTorque>1023</MaxTorque>
-                <SmoothFactor>0</SmoothFactor>
-                <Bounce>50</Bounce>
-                <Punch>1</Punch>
-                <Inverse>0</Inverse>
-                <unit>1</unit>
-            </ServoConfig>
-            <ServoConfig>
-                <Id>17</Id>
-                <Name>left_ankle_roll</Name>
-                <IniAngle>0</IniAngle>
-                <ZeroAngle>24.0234</ZeroAngle>
+                <ZeroAngle>0</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -291,7 +246,52 @@
                 <Id>140</Id>
                 <Name>head_pitch</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>31.0938</ZeroAngle>
+                <ZeroAngle>0</ZeroAngle>
+                <MinAngle>-180</MinAngle>
+                <MaxAngle>180</MaxAngle>
+                <MaxSpeed>1023</MaxSpeed>
+                <MaxTorque>1023</MaxTorque>
+                <SmoothFactor>0</SmoothFactor>
+                <Bounce>50</Bounce>
+                <Punch>1</Punch>
+                <Inverse>0</Inverse>
+                <unit>1</unit>
+            </ServoConfig>
+            <ServoConfig>
+                <Id>17</Id>
+                <Name>right_ankle_roll</Name>
+                <IniAngle>0</IniAngle>
+                <ZeroAngle>22.5</ZeroAngle>
+                <MinAngle>-180</MinAngle>
+                <MaxAngle>180</MaxAngle>
+                <MaxSpeed>1000</MaxSpeed>
+                <MaxTorque>1023</MaxTorque>
+                <SmoothFactor>0</SmoothFactor>
+                <Bounce>50</Bounce>
+                <Punch>1</Punch>
+                <Inverse>0</Inverse>
+                <unit>1</unit>
+            </ServoConfig>
+            <ServoConfig>
+                <Id>38</Id>
+                <Name>left_ankle_roll</Name>
+                <IniAngle>0</IniAngle>
+                <ZeroAngle>-22.5</ZeroAngle>
+                <MinAngle>-180</MinAngle>
+                <MaxAngle>180</MaxAngle>
+                <MaxSpeed>1000</MaxSpeed>
+                <MaxTorque>1023</MaxTorque>
+                <SmoothFactor>0</SmoothFactor>
+                <Bounce>50</Bounce>
+                <Punch>1</Punch>
+                <Inverse>0</Inverse>
+                <unit>1</unit>
+            </ServoConfig>
+            <ServoConfig>
+                <Id>141</Id>
+                <Name>head_yaw</Name>
+                <IniAngle>0</IniAngle>
+                <ZeroAngle>-22.5</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1023</MaxSpeed>
