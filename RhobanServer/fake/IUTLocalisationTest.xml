@@ -3,7 +3,7 @@
   <showTopView>false</showTopView>
   <showRobotView>false</showRobotView>
   <showTaggedImg>true</showTaggedImg>
-  <benchmark>true</benchmark>
+  <benchmark>false</benchmark>
   <benchmarkDetail>3</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
@@ -85,7 +85,7 @@
         </ParamInt>
         <ParamInt>
           <name>iterationsByEpoch</name>
-          <value>30</value>
+          <value>100</value>
         </ParamInt>
         <ParamInt>
           <name>minEdgeSize</name>
@@ -93,7 +93,7 @@
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>5</value>
+          <value>20</value>
         </ParamInt>
         <ParamInt>
           <name>eraseThickness</name>
@@ -370,7 +370,7 @@
       <name>clipping</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -470,7 +470,7 @@
       <name>clippingEdges</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
