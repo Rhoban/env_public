@@ -4,11 +4,11 @@
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
   <benchmark>true</benchmark>
-  <benchmarkDetail>2</benchmarkDetail>
+  <benchmarkDetail>4</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
   <imageDelay>30</imageDelay>
-  <compassOffset>150</compassOffset>
+  <compassOffset>-124</compassOffset>
   <ballExploration>4</ballExploration>
   <robotPosExploration>50</robotPosExploration>
   <robotAngleExploration>20</robotAngleExploration>
@@ -167,7 +167,7 @@
         </ParamInt>
         <ParamInt>
           <name>Epochs</name>
-          <value>25</value>
+          <value>500</value>
         </ParamInt>
         <ParamInt>
           <name>ballMinY</name>
@@ -187,15 +187,15 @@
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>11</value>
+          <value>70</value>
         </ParamInt>
         <ParamInt>
           <name>roiMargin</name>
-          <value>20</value>
+          <value>5</value>
         </ParamInt>
         <ParamInt>
           <name>shadowMaxY</name>
-          <value>25</value>
+          <value>40</value>
         </ParamInt>
         <ParamInt>
           <name>reflectionMinY</name>
@@ -205,11 +205,15 @@
       <paramFloats>
         <ParamFloat>
           <name>closureSize</name>
-          <value>0.1</value>
+          <value>0.04</value>
         </ParamFloat>
         <ParamFloat>
           <name>openingSize</name>
-          <value>0.05</value>
+          <value>0.04</value>
+        </ParamFloat>
+        <ParamFloat>
+            <name>uselessBottomRatio</name>
+          <value>0.4</value>
         </ParamFloat>
         <ParamFloat>
           <name>clusterPercentTol</name>
@@ -221,7 +225,7 @@
         </ParamFloat>
         <ParamFloat>
           <name>robotHeight</name>
-          <value>60</value>
+          <value>50</value>
         </ParamFloat>
         <ParamFloat>
           <name>tilt</name>
@@ -695,7 +699,7 @@
         </paramInt>
         <paramInt>
           <name>brightness</name>
-          <value>120</value>
+          <value>160</value>
         </paramInt>
         <paramInt>
           <name>contrast</name>
