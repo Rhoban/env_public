@@ -1,0 +1,59 @@
+[
+    {
+        "param": "/moves/walk/var/enabled",
+        "type": "toggle",
+        "number": 3
+    },
+    {
+        "param": "/moves/walk/var/step",
+        "type": "axis",
+        "number": 1,
+        "range": [38, -38]
+    },
+    {
+        "param": "/moves/walk/var/lateral",
+        "type": "axis",
+        "number": 0,
+        "range": [30, -30]
+    },
+    {
+        "param": "/moves/walk/var/turn",
+        "type": "axis",
+        "number": 2,
+        "range": [30, -30]
+    },
+    {
+        "param": "/moves/walk/freq",
+        "type": "increment",
+        "number": 4,
+        "step": 0.1
+    },
+    {
+        "param": "/moves/walk/freq",
+        "type": "decrement",
+        "number": 6,
+        "step": 0.1
+    },
+    {
+        "param": "/moves/walk/nbShootLeft",
+        "type": "increment",
+        "number": 10
+    },
+    {
+        "param": "/moves/walk/nbShootRight",
+        "type": "increment",
+        "number": 11
+    },
+    {
+        "param": "/moves/walk/trunkXOffset",
+        "type": "increment",
+        "number": 5,
+        "step": 0.001
+    },
+    {
+        "param": "/moves/walk/trunkXOffset",
+        "type": "decrement",
+        "number": 7,
+        "step": 0.001
+    }
+]
