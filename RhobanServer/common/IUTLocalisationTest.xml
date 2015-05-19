@@ -2,30 +2,28 @@
 <LocalisationTest>
   <showTopView>false</showTopView>
   <showRobotView>false</showRobotView>
-  <showTaggedImg>true</showTaggedImg>
+  <showTaggedImg>false</showTaggedImg>
   <benchmark>true</benchmark>
-  <benchmarkDetail>3</benchmarkDetail>
+  <benchmarkDetail>2</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
-  <imageDelay>300</imageDelay>
+  <imageDelay>30</imageDelay>
   <compassOffset>150</compassOffset>
   <ballExploration>4</ballExploration>
   <robotPosExploration>50</robotPosExploration>
   <robotAngleExploration>20</robotAngleExploration>
   <ballResampling>0.0</ballResampling>
   <csp>
-    <className>LogReader2</className>
-    <sensorPath>../../../Code/Vision/Resources/Logs/2015_05_07_IUT/Log7/imu.csv</sensorPath>
-    <motorPath>../../../Code/Vision/Resources/Logs/2015_05_07_IUT/Log7/servos.csv</motorPath>
+    <className>SchedulerRequester</className>
   </csp>
-  <playing>false</playing>
-  <embedded>false</embedded>
+  <playing>true</playing>
+  <embedded>true</embedded>
   <pipeline>
     <filter>
       <className>ChannelSelector</className>
       <name>Y</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>source</dependency>
@@ -41,7 +39,7 @@
       <className>ChannelSelector</className>
       <name>U</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>source</dependency>
@@ -57,7 +55,7 @@
       <className>ChannelSelector</className>
       <name>V</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>source</dependency>
@@ -85,7 +83,7 @@
         </ParamInt>
         <ParamInt>
           <name>iterationsByEpoch</name>
-          <value>30</value>
+          <value>100</value>
         </ParamInt>
         <ParamInt>
           <name>minEdgeSize</name>
@@ -93,7 +91,7 @@
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>5</value>
+          <value>20</value>
         </ParamInt>
         <ParamInt>
           <name>eraseThickness</name>
@@ -120,7 +118,7 @@
       <name>goalByROI</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -412,7 +410,7 @@
       <paramInts>
         <ParamInt>
           <name>ratio</name>
-          <value>4</value>
+          <value>8</value>
         </ParamInt>
       </paramInts>
       <paramFloats />
@@ -565,7 +563,7 @@
       <name>goalColor</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -611,7 +609,7 @@
       <name>goalMask</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -628,7 +626,7 @@
       <name>goalMask2</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -682,20 +680,80 @@
       <paramPairInt />
     </filter>
     <filter>
-      <className>SourceLogs2</className>
+      <className>SourceV4l2</className>
       <name>source</name>
+      <device>/dev/video0</device>
+      <captureFrequency>30</captureFrequency>
       <debugLevel>
-        <threads>false</threads>
         <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
       </debugLevel>
       <dependencies />
-      <paramInts />
+      <paramInts>
+        <paramInt>
+          <name>backlight_compensation</name>
+          <value>0</value>
+        </paramInt>
+        <paramInt>
+          <name>brightness</name>
+          <value>120</value>
+        </paramInt>
+        <paramInt>
+          <name>contrast</name>
+          <value>255</value>
+        </paramInt>
+        <paramInt>
+          <name>exposure_auto</name>
+          <value>1</value>
+        </paramInt>
+        <paramInt>
+          <name>exposure_(absolute)</name>
+          <value>100</value>
+        </paramInt>
+        <paramInt>
+          <name>exposure_auto_priority</name>
+          <value>0</value>
+        </paramInt>
+        <paramInt>
+          <name>focus_auto</name>
+          <value>0</value>
+        </paramInt>
+        <paramInt>
+          <name>focus_(absolute)</name>
+          <value>0</value>
+        </paramInt>
+        <paramInt>
+          <name>gain</name>
+          <value>200</value>
+        </paramInt>
+        <paramInt>
+          <name>power_line_frequency</name>
+          <value>2</value>
+        </paramInt>
+        <paramInt>
+          <name>saturation</name>
+          <value>255</value>
+        </paramInt>
+        <paramInt>
+          <name>sharpness</name>
+          <value>0</value>
+        </paramInt>
+        <paramInt>
+          <name>white_balance_temperature</name>
+          <value>5000</value>
+        </paramInt>
+        <paramInt>
+          <name>white_balance_temperature_auto</name>
+          <value>0</value>
+        </paramInt>
+      </paramInts>
       <paramFloats />
-      <paramPairInt />
-      <startIndex>15</startIndex>
-      <imagesFile>../../../Code/Vision/Resources/Logs/2015_05_07_IUT/Log7/images.csv</imagesFile>
+      <paramPairInt>
+        <PairInt>
+          <name>size</name>
+          <value.first>800</value.first>
+          <value.second>448</value.second>
+        </PairInt>
+      </paramPairInt>
     </filter>
   </pipeline>
 </LocalisationTest>
