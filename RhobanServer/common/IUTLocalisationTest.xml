@@ -3,22 +3,70 @@
   <showTopView>false</showTopView>
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
-  <benchmark>false</benchmark>
-  <benchmarkDetail>3</benchmarkDetail>
+  <benchmark>true</benchmark>
+  <benchmarkDetail>2</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
-  <imageDelay>250</imageDelay>
+  <imageDelay>30</imageDelay>
   <compassOffset>150</compassOffset>
-  <ballExploration>35</ballExploration>
+  <ballExploration>4</ballExploration>
   <robotPosExploration>50</robotPosExploration>
   <robotAngleExploration>20</robotAngleExploration>
-  <ballResampling>0.02</ballResampling>
+  <ballResampling>0.0</ballResampling>
   <csp>
     <className>SchedulerRequester</className>
   </csp>
   <playing>true</playing>
   <embedded>true</embedded>
   <pipeline>
+    <filter>
+      <className>ChannelSelector</className>
+      <name>Y</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>source</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>channel</name>
+          <value>0</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
+    <filter>
+      <className>ChannelSelector</className>
+      <name>U</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>source</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>channel</name>
+          <value>1</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
+    <filter>
+      <className>ChannelSelector</className>
+      <name>V</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>source</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>channel</name>
+          <value>2</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
     <filter>
       <className>ClippingRHT</className>
       <name>clippingLines</name>
@@ -35,7 +83,7 @@
         </ParamInt>
         <ParamInt>
           <name>iterationsByEpoch</name>
-          <value>30</value>
+          <value>100</value>
         </ParamInt>
         <ParamInt>
           <name>minEdgeSize</name>
@@ -43,7 +91,7 @@
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>5</value>
+          <value>20</value>
         </ParamInt>
         <ParamInt>
           <name>eraseThickness</name>
@@ -66,8 +114,8 @@
       </paramFloats>
     </filter>
     <filter>
-      <className>GoalByROI</className>
-      <name>GoalByROI</name>
+      <className>WhiteGoalByROI</className>
+      <name>goalByROI</name>
       <debugLevel>
         <threads>false</threads>
         <graphics>false</graphics>
@@ -80,12 +128,12 @@
       </dependencies>
       <paramInts>
         <ParamInt>
-          <name>goalMaxU</name>
-          <value>130</value>
+          <name>goalMinY</name>
+          <value>160</value>
         </ParamInt>
         <ParamInt>
           <name>goalMinV</name>
-          <value>100</value>
+          <value>0</value>
         </ParamInt>
         <ParamInt>
           <name>kHeight</name>
@@ -123,15 +171,15 @@
         </ParamInt>
         <ParamInt>
           <name>ballMinY</name>
-          <value>140</value>
+          <value>180</value>
         </ParamInt>
         <ParamInt>
           <name>ballMinU</name>
-          <value>140</value>
+          <value>255</value>
         </ParamInt>
         <ParamInt>
           <name>ballMinV</name>
-          <value>135</value>
+          <value>205</value>
         </ParamInt>
         <ParamInt>
           <name>minPointDist</name>
@@ -145,6 +193,14 @@
           <name>roiMargin</name>
           <value>20</value>
         </ParamInt>
+        <ParamInt>
+          <name>shadowMaxY</name>
+          <value>25</value>
+        </ParamInt>
+        <ParamInt>
+          <name>reflectionMinY</name>
+          <value>195</value>
+        </ParamInt>
       </paramInts>
       <paramFloats>
         <ParamFloat>
@@ -157,15 +213,15 @@
         </ParamFloat>
         <ParamFloat>
           <name>clusterPercentTol</name>
-          <value>15</value>
+          <value>10</value>
         </ParamFloat>
         <ParamFloat>
           <name>clusterFlatTol</name>
-          <value>8</value>
+          <value>6</value>
         </ParamFloat>
         <ParamFloat>
           <name>robotHeight</name>
-          <value>75</value>
+          <value>60</value>
         </ParamFloat>
         <ParamFloat>
           <name>tilt</name>
@@ -174,6 +230,14 @@
         <ParamFloat>
           <name>qTilt</name>
           <value>1</value>
+        </ParamFloat>
+        <ParamFloat>
+          <name>shadowMinRatio</name>
+          <value>0.002</value>
+        </ParamFloat>
+        <ParamFloat>
+          <name>reflectionMinRatio</name>
+          <value>0.001</value>
         </ParamFloat>
       </paramFloats>
       <paramPairInt />
@@ -239,7 +303,7 @@
       <paramInts>
         <paramInt>
           <name>goalMinY</name>
-          <value>180</value>
+          <value>190</value>
         </paramInt>
         <paramInt>
           <name>goalMinV</name>
@@ -250,7 +314,7 @@
       <paramPairInt />
     </filter>
     <filter>
-      <className>Closure</className>
+      <className>Dilate</className>
       <name>ballColor2</name>
       <debugLevel>
         <threads>false</threads>
@@ -268,11 +332,11 @@
         </ParamInt>
         <ParamInt>
           <name>kernel height</name>
-          <value>7</value>
+          <value>5</value>
         </ParamInt>
         <ParamInt>
           <name>kernel width</name>
-          <value>7</value>
+          <value>5</value>
         </ParamInt>
       </paramInts>
       <paramFloats />
@@ -346,7 +410,7 @@
       <paramInts>
         <ParamInt>
           <name>ratio</name>
-          <value>4</value>
+          <value>8</value>
         </ParamInt>
       </paramInts>
       <paramFloats />
@@ -362,7 +426,7 @@
         <perfs>false</perfs>
       </debugLevel>
       <dependencies>
-        <dependency>opening</dependency>
+        <dependency>colorClipping</dependency>
       </dependencies>
       <paramInts>
         <ParamInt>
@@ -371,11 +435,11 @@
         </ParamInt>
         <ParamInt>
           <name>kernel height</name>
-          <value>11</value>
+          <value>7</value>
         </ParamInt>
         <ParamInt>
           <name>kernel width</name>
-          <value>11</value>
+          <value>7</value>
         </ParamInt>
       </paramInts>
       <paramFloats />
@@ -385,10 +449,7 @@
       <className>FieldColor</className>
       <name>colorClipping</name>
       <debugLevel>
-        <threads>false</threads>
         <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -396,7 +457,7 @@
       <paramInts>
         <ParamInt>
           <name>fieldMaxV</name>
-          <value>123</value>
+          <value>135</value>
         </ParamInt>
       </paramInts>
       <paramFloats />
@@ -498,7 +559,7 @@
       <paramPairInt />
     </filter>
     <filter>
-      <className>GoalColor</className>
+      <className>WhiteGoalColor</className>
       <name>goalColor</name>
       <debugLevel>
         <threads>false</threads>
@@ -511,12 +572,12 @@
       </dependencies>
       <paramInts>
         <ParamInt>
-          <name>goalMaxU</name>
-          <value>125</value>
+          <name>goalMinY</name>
+          <value>170</value>
         </ParamInt>
         <ParamInt>
           <name>goalMinV</name>
-          <value>100</value>
+          <value>0</value>
         </ParamInt>
       </paramInts>
       <paramFloats />
@@ -608,40 +669,11 @@
         </ParamInt>
         <ParamInt>
           <name>kernel height</name>
-          <value>11</value>
+          <value>5</value>
         </ParamInt>
         <ParamInt>
           <name>kernel width</name>
-          <value>11</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Opening</className>
-      <name>opening</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>colorClipping</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>Shape</name>
-          <value>2</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel height</name>
-          <value>9</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel width</name>
-          <value>9</value>
+          <value>5</value>
         </ParamInt>
       </paramInts>
       <paramFloats />
@@ -651,7 +683,7 @@
       <className>SourceV4l2</className>
       <name>source</name>
       <device>/dev/video0</device>
-      <captureFrequency>20</captureFrequency>
+      <captureFrequency>30</captureFrequency>
       <debugLevel>
         <graphics>false</graphics>
       </debugLevel>
@@ -663,11 +695,11 @@
         </paramInt>
         <paramInt>
           <name>brightness</name>
-          <value>128</value>
+          <value>120</value>
         </paramInt>
         <paramInt>
           <name>contrast</name>
-          <value>128</value>
+          <value>255</value>
         </paramInt>
         <paramInt>
           <name>exposure_auto</name>
@@ -691,7 +723,7 @@
         </paramInt>
         <paramInt>
           <name>gain</name>
-          <value>255</value>
+          <value>200</value>
         </paramInt>
         <paramInt>
           <name>power_line_frequency</name>
@@ -699,7 +731,7 @@
         </paramInt>
         <paramInt>
           <name>saturation</name>
-          <value>137</value>
+          <value>255</value>
         </paramInt>
         <paramInt>
           <name>sharpness</name>
@@ -707,7 +739,7 @@
         </paramInt>
         <paramInt>
           <name>white_balance_temperature</name>
-          <value>3000</value>
+          <value>5000</value>
         </paramInt>
         <paramInt>
           <name>white_balance_temperature_auto</name>
