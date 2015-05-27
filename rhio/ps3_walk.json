@@ -14,13 +14,13 @@
         "param": "/moves/walk/var/lateral",
         "type": "axis",
         "number": 0,
-        "range": [30, -30]
+        "range": [20, -20]
     },
     {
         "param": "/moves/walk/var/turn",
         "type": "axis",
         "number": 2,
-        "range": [30, -30]
+        "range": [20, -20]
     },
     {
         "param": "/moves/walk/freq",
@@ -55,5 +55,17 @@
         "type": "decrement",
         "number": 7,
         "step": 0.001
+    },
+    {
+        "param": "/moves/walk/riseGain",
+        "type": "increment",
+        "number": 5,
+        "step": 0.002
+    },
+    {
+        "param": "/moves/walk/riseGain",
+        "type": "decrement",
+        "number": 7,
+        "step": 0.002
     }
 ]
