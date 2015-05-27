@@ -8,10 +8,10 @@
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
   <imageDelay>30</imageDelay>
-  <compassOffset>-124</compassOffset>
-  <ballExploration>4</ballExploration>
+  <compassOffset>120</compassOffset>
+  <ballExploration>10</ballExploration>
   <robotPosExploration>50</robotPosExploration>
-  <robotAngleExploration>20</robotAngleExploration>
+  <robotAngleExploration>5</robotAngleExploration>
   <ballResampling>0.0</ballResampling>
   <csp>
     <className>SchedulerRequester</className>
@@ -187,11 +187,11 @@
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>70</value>
+          <value>200</value>
         </ParamInt>
         <ParamInt>
           <name>roiMargin</name>
-          <value>5</value>
+          <value>15</value>
         </ParamInt>
         <ParamInt>
           <name>shadowMaxY</name>
@@ -318,7 +318,7 @@
       <paramPairInt />
     </filter>
     <filter>
-      <className>Dilate</className>
+      <className>Closure</className>
       <name>ballColor2</name>
       <debugLevel>
         <threads>false</threads>
