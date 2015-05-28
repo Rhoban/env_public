@@ -20,54 +20,6 @@
   <embedded>true</embedded>
   <pipeline>
     <filter>
-      <className>ChannelSelector</className>
-      <name>Y</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>source</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>channel</name>
-          <value>0</value>
-        </ParamInt>
-      </paramInts>
-    </filter>
-    <filter>
-      <className>ChannelSelector</className>
-      <name>U</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>source</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>channel</name>
-          <value>1</value>
-        </ParamInt>
-      </paramInts>
-    </filter>
-    <filter>
-      <className>ChannelSelector</className>
-      <name>V</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>source</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>channel</name>
-          <value>2</value>
-        </ParamInt>
-      </paramInts>
-    </filter>
-    <filter>
       <className>ClippingRHT</className>
       <name>clippingLines</name>
       <debugLevel>
@@ -83,7 +35,7 @@
         </ParamInt>
         <ParamInt>
           <name>iterationsByEpoch</name>
-          <value>100</value>
+          <value>50</value>
         </ParamInt>
         <ParamInt>
           <name>minEdgeSize</name>
@@ -91,7 +43,7 @@
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>20</value>
+          <value>3</value>
         </ParamInt>
         <ParamInt>
           <name>eraseThickness</name>
@@ -101,15 +53,15 @@
       <paramFloats>
         <paramFloat>
           <name>minDist</name>
-          <value>10.0</value>
+          <value>5.0</value>
         </paramFloat>
         <paramFloat>
           <name>rhoTol</name>
-          <value>10.0</value>
+          <value>2.0</value>
         </paramFloat>
         <paramFloat>
           <name>thetaTol</name>
-          <value>2.5</value>
+          <value>0.8</value>
         </paramFloat>
       </paramFloats>
     </filter>
@@ -414,7 +366,7 @@
       <paramInts>
         <ParamInt>
           <name>ratio</name>
-          <value>8</value>
+          <value>4</value>
         </ParamInt>
       </paramInts>
       <paramFloats />

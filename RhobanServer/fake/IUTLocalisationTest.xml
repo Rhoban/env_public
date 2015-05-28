@@ -22,6 +22,17 @@
   <embedded>false</embedded>
   <pipeline>
     <filter>
+      <className>ColorConverter</className>
+      <name>RGB</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <conversion>YUV2BGR</conversion>
+      <dependencies>
+        <dependency>source</dependency>
+      </dependencies>
+    </filter>
+    <filter>
       <className>ChannelSelector</className>
       <name>Y</name>
       <debugLevel>
@@ -57,7 +68,7 @@
       <className>ChannelSelector</className>
       <name>V</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
       </debugLevel>
       <dependencies>
         <dependency>source</dependency>
@@ -85,7 +96,7 @@
         </ParamInt>
         <ParamInt>
           <name>iterationsByEpoch</name>
-          <value>100</value>
+          <value>50</value>
         </ParamInt>
         <ParamInt>
           <name>minEdgeSize</name>
@@ -93,7 +104,7 @@
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>5</value>
+          <value>3</value>
         </ParamInt>
         <ParamInt>
           <name>eraseThickness</name>
@@ -111,7 +122,7 @@
         </paramFloat>
         <paramFloat>
           <name>thetaTol</name>
-          <value>0.5</value>
+          <value>0.8</value>
         </paramFloat>
       </paramFloats>
     </filter>
