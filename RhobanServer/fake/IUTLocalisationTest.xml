@@ -22,6 +22,19 @@
   <embedded>false</embedded>
   <pipeline>
     <filter>
+      <className>BallROIDetector</className>
+      <name>ballROIDetector</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>true</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingSrc</dependency>
+      </dependencies>
+    </filter>
+    <filter>
       <className>ColorConverter</className>
       <name>RGB</name>
       <debugLevel>
@@ -172,6 +185,7 @@
       <dependencies>
         <dependency>source</dependency>
         <dependency>ballMask</dependency>
+	<dependency>ballROIDetector</dependency>
       </dependencies>
       <paramInts>
         <ParamInt>
