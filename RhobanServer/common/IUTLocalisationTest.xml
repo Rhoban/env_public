@@ -8,10 +8,10 @@
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
   <imageDelay>30</imageDelay>
-  <compassOffset>-124</compassOffset>
-  <ballExploration>4</ballExploration>
+  <compassOffset>120</compassOffset>
+  <ballExploration>10</ballExploration>
   <robotPosExploration>50</robotPosExploration>
-  <robotAngleExploration>20</robotAngleExploration>
+  <robotAngleExploration>5</robotAngleExploration>
   <ballResampling>0.0</ballResampling>
   <csp>
     <className>SchedulerRequester</className>
@@ -19,54 +19,6 @@
   <playing>true</playing>
   <embedded>true</embedded>
   <pipeline>
-    <filter>
-      <className>ChannelSelector</className>
-      <name>Y</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>source</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>channel</name>
-          <value>0</value>
-        </ParamInt>
-      </paramInts>
-    </filter>
-    <filter>
-      <className>ChannelSelector</className>
-      <name>U</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>source</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>channel</name>
-          <value>1</value>
-        </ParamInt>
-      </paramInts>
-    </filter>
-    <filter>
-      <className>ChannelSelector</className>
-      <name>V</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>source</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>channel</name>
-          <value>2</value>
-        </ParamInt>
-      </paramInts>
-    </filter>
     <filter>
       <className>ClippingRHT</className>
       <name>clippingLines</name>
@@ -83,7 +35,7 @@
         </ParamInt>
         <ParamInt>
           <name>iterationsByEpoch</name>
-          <value>100</value>
+          <value>50</value>
         </ParamInt>
         <ParamInt>
           <name>minEdgeSize</name>
@@ -91,7 +43,7 @@
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>20</value>
+          <value>3</value>
         </ParamInt>
         <ParamInt>
           <name>eraseThickness</name>
@@ -101,15 +53,15 @@
       <paramFloats>
         <paramFloat>
           <name>minDist</name>
-          <value>10.0</value>
+          <value>5.0</value>
         </paramFloat>
         <paramFloat>
           <name>rhoTol</name>
-          <value>10.0</value>
+          <value>2.0</value>
         </paramFloat>
         <paramFloat>
           <name>thetaTol</name>
-          <value>2.5</value>
+          <value>0.8</value>
         </paramFloat>
       </paramFloats>
     </filter>
@@ -187,11 +139,11 @@
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>70</value>
+          <value>200</value>
         </ParamInt>
         <ParamInt>
           <name>roiMargin</name>
-          <value>5</value>
+          <value>15</value>
         </ParamInt>
         <ParamInt>
           <name>shadowMaxY</name>
@@ -318,7 +270,7 @@
       <paramPairInt />
     </filter>
     <filter>
-      <className>Dilate</className>
+      <className>Closure</className>
       <name>ballColor2</name>
       <debugLevel>
         <threads>false</threads>
@@ -414,7 +366,7 @@
       <paramInts>
         <ParamInt>
           <name>ratio</name>
-          <value>8</value>
+          <value>4</value>
         </ParamInt>
       </paramInts>
       <paramFloats />
