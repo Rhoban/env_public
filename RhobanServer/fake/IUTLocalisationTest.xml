@@ -3,11 +3,11 @@
   <showTopView>false</showTopView>
   <showRobotView>false</showRobotView>
   <showTaggedImg>true</showTaggedImg>
-  <benchmark>true</benchmark>
+  <benchmark>false</benchmark>
   <benchmarkDetail>5</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
-  <imageDelay>30</imageDelay>
+  <imageDelay>1</imageDelay>
   <compassOffset>120</compassOffset>
   <ballExploration>10</ballExploration>
   <robotPosExploration>50</robotPosExploration>
@@ -33,6 +33,16 @@
       <dependencies>
         <dependency>clippingSrc</dependency>
       </dependencies>
+      <paramFloats>
+        <ParamFloat>
+          <name>blobToRoiFactor</name>
+          <value>1.6</value>
+        </ParamFloat>
+        <ParamFloat>
+          <name>blobToRoiFlat</name>
+          <value>10</value>
+        </ParamFloat>
+      </paramFloats>
     </filter>
     <filter>
       <className>ColorConverter</className>
@@ -178,14 +188,14 @@
       <name>ballByROI</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
       <dependencies>
         <dependency>source</dependency>
         <dependency>ballMask</dependency>
-	<dependency>ballROIDetector</dependency>
+	      <dependency>ballROIDetector</dependency>
       </dependencies>
       <paramInts>
         <ParamInt>
@@ -194,7 +204,7 @@
         </ParamInt>
         <ParamInt>
           <name>Epochs</name>
-          <value>500</value>
+          <value>100</value>
         </ParamInt>
         <ParamInt>
           <name>ballMinY</name>
@@ -214,15 +224,11 @@
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>200</value>
-        </ParamInt>
-        <ParamInt>
-          <name>roiMargin</name>
-          <value>15</value>
+          <value>25</value>
         </ParamInt>
         <ParamInt>
           <name>shadowMaxY</name>
-          <value>40</value>
+          <value>35</value>
         </ParamInt>
         <ParamInt>
           <name>reflectionMinY</name>
@@ -244,11 +250,11 @@
         </ParamFloat>
         <ParamFloat>
           <name>clusterPercentTol</name>
-          <value>10</value>
+          <value>25</value>
         </ParamFloat>
         <ParamFloat>
           <name>clusterFlatTol</name>
-          <value>6</value>
+          <value>0</value>
         </ParamFloat>
         <ParamFloat>
           <name>robotHeight</name>
@@ -264,7 +270,7 @@
         </ParamFloat>
         <ParamFloat>
           <name>shadowMinRatio</name>
-          <value>0.002</value>
+          <value>0.0</value>
         </ParamFloat>
         <ParamFloat>
           <name>reflectionMinRatio</name>
@@ -723,7 +729,7 @@
       <paramInts />
       <paramFloats />
       <paramPairInt />
-      <startIndex>10</startIndex>
+      <startIndex>0</startIndex>
       <imagesFile>../../../Code/Vision/Resources/Logs/2015_05_27_IUT/Log1/images.csv</imagesFile>
     </filter>
   </pipeline>
