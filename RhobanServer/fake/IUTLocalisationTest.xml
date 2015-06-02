@@ -3,24 +3,58 @@
   <showTopView>false</showTopView>
   <showRobotView>false</showRobotView>
   <showTaggedImg>true</showTaggedImg>
-  <benchmark>true</benchmark>
-  <benchmarkDetail>3</benchmarkDetail>
+  <benchmark>false</benchmark>
+  <benchmarkDetail>5</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
-  <imageDelay>300</imageDelay>
-  <compassOffset>150</compassOffset>
-  <ballExploration>4</ballExploration>
+  <imageDelay>1</imageDelay>
+  <compassOffset>120</compassOffset>
+  <ballExploration>10</ballExploration>
   <robotPosExploration>50</robotPosExploration>
-  <robotAngleExploration>20</robotAngleExploration>
+  <robotAngleExploration>5</robotAngleExploration>
   <ballResampling>0.0</ballResampling>
   <csp>
     <className>LogReader2</className>
-    <sensorPath>../../../Code/Vision/Resources/Logs/2015_05_07_IUT/Log7/imu.csv</sensorPath>
-    <motorPath>../../../Code/Vision/Resources/Logs/2015_05_07_IUT/Log7/servos.csv</motorPath>
+    <sensorPath>../../../Code/Vision/Resources/Logs/2015_05_27_IUT/Log1/imu.csv</sensorPath>
+    <motorPath>../../../Code/Vision/Resources/Logs/2015_05_27_IUT/Log1/servos.csv</motorPath>
   </csp>
   <playing>false</playing>
   <embedded>false</embedded>
   <pipeline>
+    <filter>
+      <className>BallROIDetector</className>
+      <name>ballROIDetector</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>true</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingSrc</dependency>
+      </dependencies>
+      <paramFloats>
+        <ParamFloat>
+          <name>blobToRoiFactor</name>
+          <value>1.6</value>
+        </ParamFloat>
+        <ParamFloat>
+          <name>blobToRoiFlat</name>
+          <value>10</value>
+        </ParamFloat>
+      </paramFloats>
+    </filter>
+    <filter>
+      <className>ColorConverter</className>
+      <name>RGB</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <conversion>YUV2BGR</conversion>
+      <dependencies>
+        <dependency>source</dependency>
+      </dependencies>
+    </filter>
     <filter>
       <className>ChannelSelector</className>
       <name>Y</name>
@@ -73,7 +107,7 @@
       <className>ClippingRHT</className>
       <name>clippingLines</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingEdges</dependency>
@@ -85,7 +119,7 @@
         </ParamInt>
         <ParamInt>
           <name>iterationsByEpoch</name>
-          <value>30</value>
+          <value>50</value>
         </ParamInt>
         <ParamInt>
           <name>minEdgeSize</name>
@@ -93,7 +127,7 @@
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>5</value>
+          <value>3</value>
         </ParamInt>
         <ParamInt>
           <name>eraseThickness</name>
@@ -103,15 +137,15 @@
       <paramFloats>
         <paramFloat>
           <name>minDist</name>
-          <value>10.0</value>
+          <value>5.0</value>
         </paramFloat>
         <paramFloat>
           <name>rhoTol</name>
-          <value>10.0</value>
+          <value>2.0</value>
         </paramFloat>
         <paramFloat>
           <name>thetaTol</name>
-          <value>2.5</value>
+          <value>0.8</value>
         </paramFloat>
       </paramFloats>
     </filter>
@@ -120,7 +154,7 @@
       <name>goalByROI</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -154,13 +188,14 @@
       <name>ballByROI</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
       <dependencies>
         <dependency>source</dependency>
         <dependency>ballMask</dependency>
+	      <dependency>ballROIDetector</dependency>
       </dependencies>
       <paramInts>
         <ParamInt>
@@ -169,7 +204,7 @@
         </ParamInt>
         <ParamInt>
           <name>Epochs</name>
-          <value>25</value>
+          <value>100</value>
         </ParamInt>
         <ParamInt>
           <name>ballMinY</name>
@@ -189,15 +224,11 @@
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>11</value>
-        </ParamInt>
-        <ParamInt>
-          <name>roiMargin</name>
-          <value>20</value>
+          <value>25</value>
         </ParamInt>
         <ParamInt>
           <name>shadowMaxY</name>
-          <value>25</value>
+          <value>35</value>
         </ParamInt>
         <ParamInt>
           <name>reflectionMinY</name>
@@ -211,19 +242,23 @@
         </ParamFloat>
         <ParamFloat>
           <name>openingSize</name>
-          <value>0.05</value>
+          <value>0.04</value>
+        </ParamFloat>
+        <ParamFloat>
+          <name>uselessBottomRatio</name>
+          <value>0.4</value>
         </ParamFloat>
         <ParamFloat>
           <name>clusterPercentTol</name>
-          <value>10</value>
+          <value>25</value>
         </ParamFloat>
         <ParamFloat>
           <name>clusterFlatTol</name>
-          <value>6</value>
+          <value>0</value>
         </ParamFloat>
         <ParamFloat>
           <name>robotHeight</name>
-          <value>60</value>
+          <value>50</value>
         </ParamFloat>
         <ParamFloat>
           <name>tilt</name>
@@ -235,7 +270,7 @@
         </ParamFloat>
         <ParamFloat>
           <name>shadowMinRatio</name>
-          <value>0.002</value>
+          <value>0.0</value>
         </ParamFloat>
         <ParamFloat>
           <name>reflectionMinRatio</name>
@@ -316,7 +351,7 @@
       <paramPairInt />
     </filter>
     <filter>
-      <className>Dilate</className>
+      <className>Closure</className>
       <name>ballColor2</name>
       <debugLevel>
         <threads>false</threads>
@@ -370,7 +405,7 @@
       <name>clipping</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -451,7 +486,7 @@
       <className>FieldColor</className>
       <name>colorClipping</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -470,7 +505,7 @@
       <name>clippingEdges</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -565,7 +600,7 @@
       <name>goalColor</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -611,7 +646,7 @@
       <name>goalMask</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -628,7 +663,7 @@
       <name>goalMask2</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -694,8 +729,8 @@
       <paramInts />
       <paramFloats />
       <paramPairInt />
-      <startIndex>15</startIndex>
-      <imagesFile>../../../Code/Vision/Resources/Logs/2015_05_07_IUT/Log7/images.csv</imagesFile>
+      <startIndex>0</startIndex>
+      <imagesFile>../../../Code/Vision/Resources/Logs/2015_05_27_IUT/Log1/images.csv</imagesFile>
     </filter>
   </pipeline>
 </LocalisationTest>
