@@ -3,16 +3,17 @@
   <showTopView>false</showTopView>
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
-  <benchmark>true</benchmark>
+  <benchmark>false</benchmark>
   <benchmarkDetail>4</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
   <imageDelay>30</imageDelay>
   <compassOffset>120</compassOffset>
   <ballExploration>10</ballExploration>
-  <robotPosExploration>50</robotPosExploration>
-  <robotAngleExploration>5</robotAngleExploration>
+  <robotPosExploration>15</robotPosExploration>
+  <robotAngleExploration>3</robotAngleExploration>
   <ballResampling>0.0</ballResampling>
+  <fieldResampling>0.002</fieldResampling>
   <csp>
     <className>SchedulerRequester</className>
   </csp>
@@ -671,7 +672,7 @@
         </paramInt>
         <paramInt>
           <name>brightness</name>
-          <value>160</value>
+          <value>128</value>
         </paramInt>
         <paramInt>
           <name>contrast</name>
@@ -683,7 +684,7 @@
         </paramInt>
         <paramInt>
           <name>exposure_(absolute)</name>
-          <value>100</value>
+          <value>311</value>
         </paramInt>
         <paramInt>
           <name>exposure_auto_priority</name>
@@ -699,11 +700,11 @@
         </paramInt>
         <paramInt>
           <name>gain</name>
-          <value>200</value>
+          <value>80</value>
         </paramInt>
         <paramInt>
           <name>power_line_frequency</name>
-          <value>2</value>
+          <value>1</value>
         </paramInt>
         <paramInt>
           <name>saturation</name>
@@ -711,11 +712,11 @@
         </paramInt>
         <paramInt>
           <name>sharpness</name>
-          <value>0</value>
+          <value>255</value>
         </paramInt>
         <paramInt>
           <name>white_balance_temperature</name>
-          <value>5000</value>
+          <value>3000</value>
         </paramInt>
         <paramInt>
           <name>white_balance_temperature_auto</name>
