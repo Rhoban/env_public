@@ -2,9 +2,9 @@
 <LocalisationTest>
   <showTopView>false</showTopView>
   <showRobotView>false</showRobotView>
-  <showTaggedImg>true</showTaggedImg>
-  <benchmark>false</benchmark>
-  <benchmarkDetail>5</benchmarkDetail>
+  <showTaggedImg>false</showTaggedImg>
+  <benchmark>true</benchmark>
+  <benchmarkDetail>1</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
   <imageDelay>1</imageDelay>
@@ -32,16 +32,64 @@
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
+	<dependency>clippingLines</dependency>
+	<dependency>source</dependency>
       </dependencies>
+      <paramInts>
+	<ParamInt>
+          <name>whiteMinY</name>
+          <value>165</value>
+        </ParamInt>
+        <ParamInt>
+          <name>marginY</name>
+          <value>60</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginU</name>
+          <value>20</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginV</name>
+          <value>20</value>
+        </ParamInt>
+	<ParamInt>
+          <name>ballColorY1</name>
+          <value>90</value>
+        </ParamInt>
+	<ParamInt>
+          <name>ballColorU1</name>
+          <value>90</value>
+        </ParamInt>
+	<ParamInt>
+          <name>ballColorV1</name>
+          <value>210</value>
+        </ParamInt>
+	<ParamInt>
+          <name>ballColorY2</name>
+          <value>70</value>
+        </ParamInt>
+	<ParamInt>
+          <name>ballColorU2</name>
+          <value>200</value>
+        </ParamInt>
+	<ParamInt>
+          <name>ballColorV2</name>
+          <value>100</value>
+        </ParamInt>
+      </paramInts>
       <paramFloats>
         <ParamFloat>
           <name>blobToRoiFactor</name>
-          <value>1.6</value>
+          <value>1</value>
         </ParamFloat>
         <ParamFloat>
           <name>blobToRoiFlat</name>
-          <value>10</value>
+          <value>5</value>
         </ParamFloat>
+	<ParamFloat>
+          <name>openingSize</name>
+          <value>0.028</value>
+          </ParamFloat>
       </paramFloats>
     </filter>
     <filter>
@@ -59,7 +107,7 @@
       <className>ChannelSelector</className>
       <name>Y</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>source</dependency>
@@ -75,7 +123,7 @@
       <className>ChannelSelector</className>
       <name>U</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>source</dependency>
@@ -91,7 +139,7 @@
       <className>ChannelSelector</className>
       <name>V</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>source</dependency>
@@ -195,7 +243,7 @@
       <dependencies>
         <dependency>source</dependency>
         <dependency>ballMask</dependency>
-	      <dependency>ballROIDetector</dependency>
+	<dependency>ballROIDetector</dependency>
       </dependencies>
       <paramInts>
         <ParamInt>
@@ -204,7 +252,7 @@
         </ParamInt>
         <ParamInt>
           <name>Epochs</name>
-          <value>100</value>
+          <value>200</value>
         </ParamInt>
         <ParamInt>
           <name>ballMinY</name>
@@ -224,7 +272,7 @@
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>25</value>
+          <value>40</value>
         </ParamInt>
         <ParamInt>
           <name>shadowMaxY</name>
@@ -235,6 +283,7 @@
           <value>195</value>
         </ParamInt>
       </paramInts>
+
       <paramFloats>
         <ParamFloat>
           <name>closureSize</name>
@@ -242,7 +291,7 @@
         </ParamFloat>
         <ParamFloat>
           <name>openingSize</name>
-          <value>0.04</value>
+          <value>0.1</value>
         </ParamFloat>
         <ParamFloat>
           <name>uselessBottomRatio</name>
@@ -486,7 +535,7 @@
       <className>FieldColor</className>
       <name>colorClipping</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -505,7 +554,7 @@
       <name>clippingEdges</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -730,7 +779,7 @@
       <paramFloats />
       <paramPairInt />
       <startIndex>0</startIndex>
-      <imagesFile>../../../Code/Vision/Resources/Logs/2015_05_27_IUT/Log1/images.csv</imagesFile>
+      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_04_1/Log1/images.csv</imagesFile>
     </filter>
   </pipeline>
 </LocalisationTest>
