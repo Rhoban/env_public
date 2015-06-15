@@ -4,7 +4,7 @@
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
   <benchmark>true</benchmark>
-  <benchmarkDetail>1</benchmarkDetail>
+  <benchmarkDetail>2</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
   <imageDelay>1</imageDelay>
@@ -22,11 +22,51 @@
   <embedded>false</embedded>
   <pipeline>
     <filter>
+      <className>ClippingByBlob</className>
+      <name>clippingByBlob</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingSrc</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>whiteMinY</name>
+          <value>195</value>
+        </ParamInt>
+	<ParamInt>
+          <name>fieldY</name>
+          <value>124</value>
+        </ParamInt>
+        <ParamInt>
+          <name>fieldU</name>
+          <value>99</value>
+        </ParamInt>
+	<ParamInt>
+          <name>fieldV</name>
+          <value>103</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginY</name>
+          <value>70</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginU</name>
+          <value>18</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginV</name>
+          <value>18</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
+    <filter>
       <className>BallROIDetector</className>
       <name>ballROIDetector</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -38,7 +78,7 @@
       <paramInts>
 	<ParamInt>
           <name>whiteMinY</name>
-          <value>165</value>
+          <value>195</value>
         </ParamInt>
         <ParamInt>
           <name>marginY</name>
@@ -54,27 +94,27 @@
         </ParamInt>
 	<ParamInt>
           <name>ballColorY1</name>
-          <value>90</value>
+          <value>123</value>
         </ParamInt>
 	<ParamInt>
           <name>ballColorU1</name>
-          <value>90</value>
+          <value>174</value>
         </ParamInt>
 	<ParamInt>
           <name>ballColorV1</name>
-          <value>210</value>
+          <value>75</value>
         </ParamInt>
 	<ParamInt>
           <name>ballColorY2</name>
-          <value>70</value>
+          <value>136</value>
         </ParamInt>
 	<ParamInt>
           <name>ballColorU2</name>
-          <value>200</value>
+          <value>88</value>
         </ParamInt>
 	<ParamInt>
           <name>ballColorV2</name>
-          <value>100</value>
+          <value>171</value>
         </ParamInt>
       </paramInts>
       <paramFloats>
@@ -96,7 +136,7 @@
       <className>ColorConverter</className>
       <name>RGB</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <conversion>YUV2BGR</conversion>
       <dependencies>
@@ -236,7 +276,7 @@
       <name>ballByROI</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -282,8 +322,11 @@
           <name>reflectionMinY</name>
           <value>195</value>
         </ParamInt>
+	<ParamInt>
+          <name>activateCircleDetection</name>
+          <value>1</value>
+        </ParamInt>
       </paramInts>
-
       <paramFloats>
         <ParamFloat>
           <name>closureSize</name>
@@ -470,7 +513,7 @@
       <name>clippingBorders</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -507,7 +550,7 @@
       <name>closure</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -535,146 +578,44 @@
       <className>FieldColor</className>
       <name>colorClipping</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
       </dependencies>
       <paramInts>
+	<ParamInt>
+          <name>fieldY</name>
+          <value>124</value>
+        </ParamInt>
         <ParamInt>
-          <name>fieldMaxV</name>
-          <value>135</value>
+          <name>fieldU</name>
+          <value>99</value>
+        </ParamInt>
+	<ParamInt>
+          <name>fieldV</name>
+          <value>103</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginY</name>
+          <value>70</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginU</name>
+          <value>18</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginV</name>
+          <value>18</value>
         </ParamInt>
       </paramInts>
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>BinaryEdges</className>
-      <name>clippingEdges</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>clipping</dependency>
-      </dependencies>
-      <paramInts />
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Mult</className>
-      <name>goalBorders</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>goalBorders1</dependency>
-      </dependencies>
-      <paramInts />
-      <paramFloats>
-        <ParamFloat>
-          <name>ratio</name>
-          <value>5</value>
-        </ParamFloat>
-      </paramFloats>
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>AbsDiff</className>
-      <name>goalBorders1</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>hBlurGoal</dependency>
-        <dependency>goalSrc</dependency>
-      </dependencies>
-      <paramInts />
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Norm</className>
-      <name>goalBordersNormed</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>goalBorders</dependency>
-      </dependencies>
-      <paramInts />
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Threshold</className>
-      <name>goalBordersThreshold</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>goalBordersNormed</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>threshold</name>
-          <value>22</value>
-        </ParamInt>
-        <ParamInt>
-          <name>thresholdType</name>
-          <value>0</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>WhiteGoalColor</className>
-      <name>goalColor</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>goalSrc</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>goalMinY</name>
-          <value>170</value>
-        </ParamInt>
-        <ParamInt>
-          <name>goalMinV</name>
-          <value>0</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
-      <paramPairInt />
     </filter>
     <filter>
       <className>Rescale</className>
       <name>goalSrc</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -770,7 +711,7 @@
       <name>source</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -779,7 +720,7 @@
       <paramFloats />
       <paramPairInt />
       <startIndex>0</startIndex>
-      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_04_1/Log1/images.csv</imagesFile>
+      <imagesFile>../../../Code/Vision/Resources/Logs/06-09-15_16_58_28/images.csv</imagesFile>
     </filter>
   </pipeline>
 </LocalisationTest>
