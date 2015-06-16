@@ -22,6 +22,26 @@
   <embedded>false</embedded>
   <pipeline>
     <filter>
+      <className>Rescale</className>
+      <name>clippingByBlobFullScale</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>true</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingByBlob</dependency>
+      </dependencies>
+      <paramFloats>
+        <ParamFloat>
+          <name>ratio</name>
+          <value>0.25</value>
+        </ParamFloat>
+      </paramFloats>
+      <paramPairInt />
+    </filter>
+    <filter>
       <className>ClippingByBlob</className>
       <name>clippingByBlob</name>
       <debugLevel>
@@ -66,13 +86,13 @@
       <name>ballROIDetector</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
-	<dependency>clippingLines</dependency>
+	<dependency>clippingByBlob</dependency>
 	<dependency>source</dependency>
       </dependencies>
       <paramInts>
@@ -276,13 +296,13 @@
       <name>ballByROI</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
       <dependencies>
         <dependency>source</dependency>
-        <dependency>ballMask</dependency>
+        <dependency>clippingByBlobFullScale</dependency>
 	<dependency>ballROIDetector</dependency>
       </dependencies>
       <paramInts>
@@ -483,13 +503,12 @@
       <dependencies>
         <dependency>source</dependency>
       </dependencies>
-      <paramInts>
-        <ParamInt>
+      <paramFloats>
+        <ParamFloat>
           <name>ratio</name>
           <value>4</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
+        </ParamFloat>
+      </paramFloats>
       <paramPairInt />
     </filter>
     <filter>
@@ -536,13 +555,12 @@
       <dependencies>
         <dependency>source</dependency>
       </dependencies>
-      <paramInts>
-        <ParamInt>
+      <paramFloats>
+        <ParamFloat>
           <name>ratio</name>
           <value>4</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
+        </ParamFloat>
+      </paramFloats>
       <paramPairInt />
     </filter>
     <filter>
@@ -622,13 +640,12 @@
       <dependencies>
         <dependency>source</dependency>
       </dependencies>
-      <paramInts>
-        <ParamInt>
+      <paramFloats>
+        <ParamFloat>
           <name>ratio</name>
           <value>4</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
+        </ParamFloat>
+      </paramFloats>
       <paramPairInt />
     </filter>
     <filter>
@@ -719,8 +736,8 @@
       <paramInts />
       <paramFloats />
       <paramPairInt />
-      <startIndex>0</startIndex>
-      <imagesFile>../../../Code/Vision/Resources/Logs/06-09-15_16_58_28/images.csv</imagesFile>
+      <startIndex>2</startIndex>
+      <imagesFile>../../../Code/Vision/Resources/Logs/newCalib/images.csv</imagesFile>
     </filter>
   </pipeline>
 </LocalisationTest>
