@@ -26,7 +26,7 @@
       <name>clippingByBlobFullScale</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -53,31 +53,31 @@
       <paramInts>
         <ParamInt>
           <name>whiteMinY</name>
-          <value>195</value>
+          <value>160</value>
         </ParamInt>
 	<ParamInt>
           <name>fieldY</name>
-          <value>124</value>
+          <value>80</value>
         </ParamInt>
         <ParamInt>
           <name>fieldU</name>
-          <value>99</value>
+          <value>114</value>
         </ParamInt>
 	<ParamInt>
           <name>fieldV</name>
-          <value>103</value>
+          <value>91</value>
         </ParamInt>
 	<ParamInt>
           <name>marginY</name>
-          <value>70</value>
+          <value>60</value>
         </ParamInt>
 	<ParamInt>
           <name>marginU</name>
-          <value>18</value>
+          <value>15</value>
         </ParamInt>
 	<ParamInt>
           <name>marginV</name>
-          <value>18</value>
+          <value>30</value>
         </ParamInt>
       </paramInts>
     </filter>
@@ -98,43 +98,43 @@
       <paramInts>
 	<ParamInt>
           <name>whiteMinY</name>
-          <value>195</value>
+          <value>220</value>
         </ParamInt>
         <ParamInt>
           <name>marginY</name>
-          <value>60</value>
+          <value>5</value>
         </ParamInt>
 	<ParamInt>
           <name>marginU</name>
-          <value>20</value>
+          <value>5</value>
         </ParamInt>
 	<ParamInt>
           <name>marginV</name>
-          <value>20</value>
+          <value>5</value>
         </ParamInt>
 	<ParamInt>
           <name>ballColorY1</name>
-          <value>123</value>
+          <value>65</value>
         </ParamInt>
 	<ParamInt>
           <name>ballColorU1</name>
-          <value>174</value>
+          <value>130</value>
         </ParamInt>
 	<ParamInt>
           <name>ballColorV1</name>
-          <value>75</value>
+          <value>100</value>
         </ParamInt>
 	<ParamInt>
           <name>ballColorY2</name>
-          <value>136</value>
+          <value>65</value>
         </ParamInt>
 	<ParamInt>
           <name>ballColorU2</name>
-          <value>88</value>
+          <value>130</value>
         </ParamInt>
 	<ParamInt>
           <name>ballColorV2</name>
-          <value>171</value>
+          <value>100</value>
         </ParamInt>
       </paramInts>
       <paramFloats>
@@ -215,7 +215,7 @@
       <className>ClippingRHT</className>
       <name>clippingLines</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingEdges</dependency>
@@ -316,7 +316,7 @@
         </ParamInt>
         <ParamInt>
           <name>ballMinY</name>
-          <value>180</value>
+          <value>160</value>
         </ParamInt>
         <ParamInt>
           <name>ballMinU</name>
@@ -452,7 +452,7 @@
       <paramInts>
         <paramInt>
           <name>goalMinY</name>
-          <value>190</value>
+          <value>160</value>
         </paramInt>
         <paramInt>
           <name>goalMinV</name>
@@ -516,7 +516,7 @@
       <name>clipping</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -532,7 +532,7 @@
       <name>clippingBorders</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -568,7 +568,7 @@
       <name>closure</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -596,7 +596,7 @@
       <className>FieldColor</className>
       <name>colorClipping</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -633,7 +633,7 @@
       <name>goalSrc</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
