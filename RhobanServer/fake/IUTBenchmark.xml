@@ -3,7 +3,7 @@
   <showTopView>false</showTopView>
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
-  <benchmark>true</benchmark>
+  <benchmark>false</benchmark>
   <benchmarkDetail>2</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
@@ -13,11 +13,6 @@
   <robotPosExploration>50</robotPosExploration>
   <robotAngleExploration>5</robotAngleExploration>
   <ballResampling>0.0</ballResampling>
-  <csp>
-    <className>LogReader2</className>
-    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_16_IUT/Log1/imu.csv</sensorPath>
-    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_16_IUT/Log1/servos.csv</motorPath>
-  </csp>
   <playing>false</playing>
   <embedded>false</embedded>
   <pipeline>
@@ -26,7 +21,7 @@
       <name>clippingByBlobFullScale</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -45,7 +40,7 @@
       <className>ClippingByBlob</className>
       <name>clippingByBlob</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -86,7 +81,7 @@
       <name>ballROIDetector</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -215,7 +210,7 @@
       <className>ClippingRHT</className>
       <name>clippingLines</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingEdges</dependency>
@@ -296,7 +291,7 @@
       <name>ballByROI</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -516,7 +511,7 @@
       <name>clipping</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -532,7 +527,7 @@
       <name>clippingBorders</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -568,7 +563,7 @@
       <name>closure</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -596,7 +591,7 @@
       <className>FieldColor</className>
       <name>colorClipping</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -633,7 +628,7 @@
       <name>goalSrc</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -722,22 +717,6 @@
       </paramInts>
       <paramFloats />
       <paramPairInt />
-    </filter>
-    <filter>
-      <className>SourceLogs2</className>
-      <name>source</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>true</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies />
-      <paramInts />
-      <paramFloats />
-      <paramPairInt />
-      <startIndex>2</startIndex>
-      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_16_IUT/Log1/images.csv</imagesFile>
     </filter>
   </pipeline>
 </LocalisationTest>
