@@ -15,32 +15,12 @@
   <ballResampling>0.0</ballResampling>
   <csp>
     <className>LogReader2</className>
-    <sensorPath>../../../Code/Vision/Resources/Logs/newCalib/imu.csv</sensorPath>
-    <motorPath>../../../Code/Vision/Resources/Logs/newCalib/servos.csv</motorPath>
+    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_16_IUT/Log2/imu.csv</sensorPath>
+    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_16_IUT/Log2/servos.csv</motorPath>
   </csp>
   <playing>false</playing>
   <embedded>false</embedded>
   <pipeline>
-    <filter>
-      <className>Rescale</className>
-      <name>clippingByBlobFullScale</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>clippingByBlob</dependency>
-      </dependencies>
-      <paramFloats>
-        <ParamFloat>
-          <name>ratio</name>
-          <value>0.25</value>
-        </ParamFloat>
-      </paramFloats>
-      <paramPairInt />
-    </filter>
     <filter>
       <className>ClippingByBlob</className>
       <name>clippingByBlob</name>
@@ -93,12 +73,11 @@
       <dependencies>
         <dependency>clippingSrc</dependency>
 	<dependency>clippingByBlob</dependency>
-	<dependency>source</dependency>
       </dependencies>
       <paramInts>
 	<ParamInt>
           <name>whiteMinY</name>
-          <value>220</value>
+          <value>210</value>
         </ParamInt>
         <ParamInt>
           <name>marginY</name>
@@ -302,7 +281,6 @@
       </debugLevel>
       <dependencies>
         <dependency>source</dependency>
-        <dependency>clippingByBlobFullScale</dependency>
 	<dependency>ballROIDetector</dependency>
       </dependencies>
       <paramInts>
@@ -629,6 +607,126 @@
       </paramInts>
     </filter>
     <filter>
+      <className>BinaryEdges</className>
+      <name>clippingEdges</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>clipping</dependency>
+      </dependencies>
+      <paramInts />
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>Mult</className>
+      <name>goalBorders</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>goalBorders1</dependency>
+      </dependencies>
+      <paramInts />
+      <paramFloats>
+        <ParamFloat>
+          <name>ratio</name>
+          <value>5</value>
+        </ParamFloat>
+      </paramFloats>
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>AbsDiff</className>
+      <name>goalBorders1</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>hBlurGoal</dependency>
+        <dependency>goalSrc</dependency>
+      </dependencies>
+      <paramInts />
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>Norm</className>
+      <name>goalBordersNormed</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>goalBorders</dependency>
+      </dependencies>
+      <paramInts />
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>Threshold</className>
+      <name>goalBordersThreshold</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>goalBordersNormed</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>threshold</name>
+          <value>22</value>
+        </ParamInt>
+        <ParamInt>
+          <name>thresholdType</name>
+          <value>0</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>WhiteGoalColor</className>
+      <name>goalColor</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>true</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>goalSrc</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>goalMinY</name>
+          <value>150</value>
+        </ParamInt>
+        <ParamInt>
+          <name>goalMinV</name>
+          <value>0</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
       <className>Rescale</className>
       <name>goalSrc</name>
       <debugLevel>
@@ -737,7 +835,7 @@
       <paramFloats />
       <paramPairInt />
       <startIndex>2</startIndex>
-      <imagesFile>../../../Code/Vision/Resources/Logs/newCalib/images.csv</imagesFile>
+      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_16_IUT/Log2/images.csv</imagesFile>
     </filter>
   </pipeline>
 </LocalisationTest>

@@ -20,6 +20,46 @@
   <playing>true</playing>
   <embedded>true</embedded>
   <pipeline>
+        <filter>
+      <className>ClippingByBlob</className>
+      <name>clippingByBlob</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingSrc</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>whiteMinY</name>
+          <value>160</value>
+        </ParamInt>
+	<ParamInt>
+          <name>fieldY</name>
+          <value>80</value>
+        </ParamInt>
+        <ParamInt>
+          <name>fieldU</name>
+          <value>114</value>
+        </ParamInt>
+	<ParamInt>
+          <name>fieldV</name>
+          <value>91</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginY</name>
+          <value>60</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginU</name>
+          <value>15</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginV</name>
+          <value>30</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
     <filter>
       <className>BallROIDetector</className>
       <name>ballROIDetector</name>
@@ -31,16 +71,63 @@
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
+	<dependency>clippingByBlob</dependency>
       </dependencies>
+      <paramInts>
+	<ParamInt>
+          <name>whiteMinY</name>
+          <value>210</value>
+        </ParamInt>
+        <ParamInt>
+          <name>marginY</name>
+          <value>5</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginU</name>
+          <value>5</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginV</name>
+          <value>5</value>
+        </ParamInt>
+	<ParamInt>
+          <name>ballColorY1</name>
+          <value>65</value>
+        </ParamInt>
+	<ParamInt>
+          <name>ballColorU1</name>
+          <value>130</value>
+        </ParamInt>
+	<ParamInt>
+          <name>ballColorV1</name>
+          <value>100</value>
+        </ParamInt>
+	<ParamInt>
+          <name>ballColorY2</name>
+          <value>65</value>
+        </ParamInt>
+	<ParamInt>
+          <name>ballColorU2</name>
+          <value>130</value>
+        </ParamInt>
+	<ParamInt>
+          <name>ballColorV2</name>
+          <value>100</value>
+        </ParamInt>
+      </paramInts>
       <paramFloats>
         <ParamFloat>
           <name>blobToRoiFactor</name>
-          <value>1.6</value>
+          <value>1</value>
         </ParamFloat>
         <ParamFloat>
           <name>blobToRoiFlat</name>
-          <value>10</value>
+          <value>5</value>
         </ParamFloat>
+	<ParamFloat>
+          <name>openingSize</name>
+          <value>0.028</value>
+          </ParamFloat>
       </paramFloats>
     </filter>
     <filter>
@@ -134,8 +221,7 @@
       </debugLevel>
       <dependencies>
         <dependency>source</dependency>
-        <dependency>ballMask</dependency>
-        <dependency>ballROIDetector</dependency>
+	<dependency>ballROIDetector</dependency>
       </dependencies>
       <paramInts>
         <ParamInt>
@@ -144,11 +230,11 @@
         </ParamInt>
         <ParamInt>
           <name>Epochs</name>
-          <value>100</value>
+          <value>200</value>
         </ParamInt>
         <ParamInt>
           <name>ballMinY</name>
-          <value>180</value>
+          <value>160</value>
         </ParamInt>
         <ParamInt>
           <name>ballMinU</name>
@@ -164,7 +250,7 @@
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>25</value>
+          <value>40</value>
         </ParamInt>
         <ParamInt>
           <name>shadowMaxY</name>
@@ -174,6 +260,10 @@
           <name>reflectionMinY</name>
           <value>195</value>
         </ParamInt>
+	<ParamInt>
+          <name>activateCircleDetection</name>
+          <value>1</value>
+        </ParamInt>
       </paramInts>
       <paramFloats>
         <ParamFloat>
@@ -182,10 +272,10 @@
         </ParamFloat>
         <ParamFloat>
           <name>openingSize</name>
-          <value>0.04</value>
+          <value>0.1</value>
         </ParamFloat>
         <ParamFloat>
-            <name>uselessBottomRatio</name>
+          <name>uselessBottomRatio</name>
           <value>0.4</value>
         </ParamFloat>
         <ParamFloat>
@@ -280,7 +370,7 @@
       <paramInts>
         <paramInt>
           <name>goalMinY</name>
-          <value>190</value>
+          <value>160</value>
         </paramInt>
         <paramInt>
           <name>goalMinV</name>
@@ -331,13 +421,12 @@
       <dependencies>
         <dependency>source</dependency>
       </dependencies>
-      <paramInts>
-        <ParamInt>
+      <paramFloats>
+        <ParamFloat>
           <name>ratio</name>
           <value>4</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
+        </ParamFloat>
+      </paramFloats>
       <paramPairInt />
     </filter>
     <filter>
@@ -384,13 +473,12 @@
       <dependencies>
         <dependency>source</dependency>
       </dependencies>
-      <paramInts>
-        <ParamInt>
+      <paramFloats>
+        <ParamFloat>
           <name>ratio</name>
           <value>4</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
+        </ParamFloat>
+      </paramFloats>
       <paramPairInt />
     </filter>
     <filter>
@@ -432,13 +520,31 @@
         <dependency>clippingSrc</dependency>
       </dependencies>
       <paramInts>
+	<ParamInt>
+          <name>fieldY</name>
+          <value>124</value>
+        </ParamInt>
         <ParamInt>
-          <name>fieldMaxV</name>
-          <value>135</value>
+          <name>fieldU</name>
+          <value>99</value>
+        </ParamInt>
+	<ParamInt>
+          <name>fieldV</name>
+          <value>103</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginY</name>
+          <value>70</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginU</name>
+          <value>18</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginV</name>
+          <value>18</value>
         </ParamInt>
       </paramInts>
-      <paramFloats />
-      <paramPairInt />
     </filter>
     <filter>
       <className>BinaryEdges</className>
@@ -572,13 +678,12 @@
       <dependencies>
         <dependency>source</dependency>
       </dependencies>
-      <paramInts>
-        <ParamInt>
+      <paramFloats>
+        <ParamFloat>
           <name>ratio</name>
           <value>4</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
+        </ParamFloat>
+      </paramFloats>
       <paramPairInt />
     </filter>
     <filter>
