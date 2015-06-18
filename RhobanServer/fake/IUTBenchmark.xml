@@ -3,7 +3,7 @@
   <showTopView>false</showTopView>
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
-  <benchmark>true</benchmark>
+  <benchmark>false</benchmark>
   <benchmarkDetail>2</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
@@ -13,11 +13,6 @@
   <robotPosExploration>50</robotPosExploration>
   <robotAngleExploration>5</robotAngleExploration>
   <ballResampling>0.0</ballResampling>
-  <csp>
-    <className>LogReader2</className>
-    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_16_IUT/Log1/imu.csv</sensorPath>
-    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_16_IUT/Log1/servos.csv</motorPath>
-  </csp>
   <playing>false</playing>
   <embedded>false</embedded>
   <pipeline>
@@ -45,7 +40,7 @@
       <className>ClippingByBlob</className>
       <name>clippingByBlob</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -53,31 +48,31 @@
       <paramInts>
         <ParamInt>
           <name>whiteMinY</name>
-          <value>160</value>
+          <value>195</value>
         </ParamInt>
 	<ParamInt>
           <name>fieldY</name>
-          <value>80</value>
+          <value>124</value>
         </ParamInt>
         <ParamInt>
           <name>fieldU</name>
-          <value>114</value>
+          <value>99</value>
         </ParamInt>
 	<ParamInt>
           <name>fieldV</name>
-          <value>91</value>
+          <value>103</value>
         </ParamInt>
 	<ParamInt>
           <name>marginY</name>
-          <value>60</value>
+          <value>70</value>
         </ParamInt>
 	<ParamInt>
           <name>marginU</name>
-          <value>15</value>
+          <value>18</value>
         </ParamInt>
 	<ParamInt>
           <name>marginV</name>
-          <value>30</value>
+          <value>18</value>
         </ParamInt>
       </paramInts>
     </filter>
@@ -86,7 +81,7 @@
       <name>ballROIDetector</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -98,43 +93,43 @@
       <paramInts>
 	<ParamInt>
           <name>whiteMinY</name>
-          <value>220</value>
+          <value>195</value>
         </ParamInt>
         <ParamInt>
           <name>marginY</name>
-          <value>5</value>
+          <value>60</value>
         </ParamInt>
 	<ParamInt>
           <name>marginU</name>
-          <value>5</value>
+          <value>20</value>
         </ParamInt>
 	<ParamInt>
           <name>marginV</name>
-          <value>5</value>
+          <value>20</value>
         </ParamInt>
 	<ParamInt>
           <name>ballColorY1</name>
-          <value>65</value>
+          <value>123</value>
         </ParamInt>
 	<ParamInt>
           <name>ballColorU1</name>
-          <value>130</value>
+          <value>174</value>
         </ParamInt>
 	<ParamInt>
           <name>ballColorV1</name>
-          <value>100</value>
+          <value>75</value>
         </ParamInt>
 	<ParamInt>
           <name>ballColorY2</name>
-          <value>65</value>
+          <value>136</value>
         </ParamInt>
 	<ParamInt>
           <name>ballColorU2</name>
-          <value>130</value>
+          <value>88</value>
         </ParamInt>
 	<ParamInt>
           <name>ballColorV2</name>
-          <value>100</value>
+          <value>171</value>
         </ParamInt>
       </paramInts>
       <paramFloats>
@@ -296,7 +291,7 @@
       <name>ballByROI</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -316,7 +311,7 @@
         </ParamInt>
         <ParamInt>
           <name>ballMinY</name>
-          <value>160</value>
+          <value>180</value>
         </ParamInt>
         <ParamInt>
           <name>ballMinU</name>
@@ -452,7 +447,7 @@
       <paramInts>
         <paramInt>
           <name>goalMinY</name>
-          <value>160</value>
+          <value>190</value>
         </paramInt>
         <paramInt>
           <name>goalMinV</name>
@@ -722,22 +717,6 @@
       </paramInts>
       <paramFloats />
       <paramPairInt />
-    </filter>
-    <filter>
-      <className>SourceLogs2</className>
-      <name>source</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>true</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies />
-      <paramInts />
-      <paramFloats />
-      <paramPairInt />
-      <startIndex>2</startIndex>
-      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_16_IUT/Log1/images.csv</imagesFile>
     </filter>
   </pipeline>
 </LocalisationTest>

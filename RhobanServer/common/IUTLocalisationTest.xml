@@ -10,17 +10,68 @@
   <imageDelay>30</imageDelay>
   <compassOffset>120</compassOffset>
   <ballExploration>10</ballExploration>
-  <robotPosExploration>50</robotPosExploration>
-  <robotAngleExploration>5</robotAngleExploration>
+  <robotPosExploration>15</robotPosExploration>
+  <robotAngleExploration>3</robotAngleExploration>
   <ballResampling>0.0</ballResampling>
+  <fieldResampling>0.002</fieldResampling>
   <csp>
     <className>SchedulerRequester</className>
   </csp>
   <playing>true</playing>
   <embedded>true</embedded>
   <pipeline>
-    <filter>
-      <className>BallROIDetector</className>
+      <filter>
+          <className>Rescale</className>
+          <name>clippingByBlobFullScale</name>
+          <dependencies>
+              <dependency>clippingByBlob</dependency>
+          </dependencies>
+          <paramFloats>
+              <ParamFloat>
+                  <name>ratio</name>
+                  <value>0.25</value>
+              </ParamFloat>
+          </paramFloats>
+      </filter>
+      <filter>
+          <className>ClippingByBlob</className>
+          <name>clippingByBlob</name>
+          <dependencies>
+              <dependency>clippingSrc</dependency>
+          </dependencies>
+          <paramInts>
+              <ParamInt>
+                  <name>whiteMinY</name>
+                  <value>160</value>
+              </ParamInt>
+              <ParamInt>
+                  <name>fieldY</name>
+                  <value>80</value>
+              </ParamInt>
+              <ParamInt>
+                  <name>fieldU</name>
+                  <value>114</value>
+              </ParamInt>
+              <ParamInt>
+                  <name>fieldV</name>
+                  <value>91</value>
+              </ParamInt>
+              <ParamInt>
+                  <name>marginY</name>
+                  <value>60</value>
+              </ParamInt>
+              <ParamInt>
+                  <name>marginU</name>
+                  <value>15</value>
+              </ParamInt>
+              <ParamInt>
+                   <name>marginV</name>
+                   <value>30</value>
+              </ParamInt>
+            </paramInts>
+        </filter>
+      <filter>
+          <className>BallROIDetector</className>
       <name>ballROIDetector</name>
       <debugLevel>
         <threads>false</threads>
@@ -30,6 +81,8 @@
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
+        <dependency>clippingByBlob</dependency>
+        <dependency>source</dependency>
       </dependencies>
       <paramFloats>
         <ParamFloat>
@@ -330,13 +383,13 @@
       <dependencies>
         <dependency>source</dependency>
       </dependencies>
-      <paramInts>
-        <ParamInt>
+      <paramInts/>
+      <paramFloats>
+        <ParamFloat>
           <name>ratio</name>
           <value>4</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
+        </ParamFloat>
+      </paramFloats>
       <paramPairInt />
     </filter>
     <filter>
@@ -383,13 +436,13 @@
       <dependencies>
         <dependency>source</dependency>
       </dependencies>
-      <paramInts>
-        <ParamInt>
+      <paramInts/>
+      <paramFloats>
+        <ParamFloat>
           <name>ratio</name>
           <value>4</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
+        </ParamFloat>
+      </paramFloats>
       <paramPairInt />
     </filter>
     <filter>
@@ -431,10 +484,6 @@
         <dependency>clippingSrc</dependency>
       </dependencies>
       <paramInts>
-        <ParamInt>
-          <name>fieldMaxV</name>
-          <value>135</value>
-        </ParamInt>
       </paramInts>
       <paramFloats />
       <paramPairInt />
@@ -571,13 +620,12 @@
       <dependencies>
         <dependency>source</dependency>
       </dependencies>
-      <paramInts>
-        <ParamInt>
+      <paramFloats>
+        <ParamFloat>
           <name>ratio</name>
           <value>4</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
+        </ParamFloat>
+      </paramFloats>
       <paramPairInt />
     </filter>
     <filter>
@@ -671,7 +719,7 @@
         </paramInt>
         <paramInt>
           <name>brightness</name>
-          <value>160</value>
+          <value>128</value>
         </paramInt>
         <paramInt>
           <name>contrast</name>
@@ -683,7 +731,7 @@
         </paramInt>
         <paramInt>
           <name>exposure_(absolute)</name>
-          <value>100</value>
+          <value>311</value>
         </paramInt>
         <paramInt>
           <name>exposure_auto_priority</name>
@@ -699,11 +747,11 @@
         </paramInt>
         <paramInt>
           <name>gain</name>
-          <value>200</value>
+          <value>80</value>
         </paramInt>
         <paramInt>
           <name>power_line_frequency</name>
-          <value>2</value>
+          <value>1</value>
         </paramInt>
         <paramInt>
           <name>saturation</name>
@@ -711,11 +759,11 @@
         </paramInt>
         <paramInt>
           <name>sharpness</name>
-          <value>0</value>
+          <value>255</value>
         </paramInt>
         <paramInt>
           <name>white_balance_temperature</name>
-          <value>5000</value>
+          <value>3000</value>
         </paramInt>
         <paramInt>
           <name>white_balance_temperature_auto</name>
