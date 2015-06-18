@@ -20,8 +20,58 @@
   <playing>true</playing>
   <embedded>true</embedded>
   <pipeline>
-    <filter>
-      <className>BallROIDetector</className>
+      <filter>
+          <className>Rescale</className>
+          <name>clippingByBlobFullScale</name>
+          <dependencies>
+              <dependency>clippingByBlob</dependency>
+          </dependencies>
+          <paramFloats>
+              <ParamFloat>
+                  <name>ratio</name>
+                  <value>0.25</value>
+              </ParamFloat>
+          </paramFloats>
+      </filter>
+      <filter>
+          <className>ClippingByBlob</className>
+          <name>clippingByBlob</name>
+          <dependencies>
+              <dependency>clippingSrc</dependency>
+          </dependencies>
+          <paramInts>
+              <ParamInt>
+                  <name>whiteMinY</name>
+                  <value>160</value>
+              </ParamInt>
+              <ParamInt>
+                  <name>fieldY</name>
+                  <value>80</value>
+              </ParamInt>
+              <ParamInt>
+                  <name>fieldU</name>
+                  <value>114</value>
+              </ParamInt>
+              <ParamInt>
+                  <name>fieldV</name>
+                  <value>91</value>
+              </ParamInt>
+              <ParamInt>
+                  <name>marginY</name>
+                  <value>60</value>
+              </ParamInt>
+              <ParamInt>
+                  <name>marginU</name>
+                  <value>15</value>
+              </ParamInt>
+              <ParamInt>
+                   <name>marginV</name>
+                   <value>30</value>
+              </ParamInt>
+            </paramInts>
+        </filter>
+      <filter>
+          <className>BallROIDetector</className>
       <name>ballROIDetector</name>
       <debugLevel>
         <threads>false</threads>
@@ -390,7 +440,7 @@
           <name>ratio</name>
           <value>4</value>
         </ParamFloat>
-      </paramFloat>
+      </paramFloats>
       <paramPairInt />
     </filter>
     <filter>
@@ -432,10 +482,6 @@
         <dependency>clippingSrc</dependency>
       </dependencies>
       <paramInts>
-        <ParamInt>
-          <name>fieldMaxV</name>
-          <value>135</value>
-        </ParamInt>
       </paramInts>
       <paramFloats />
       <paramPairInt />
