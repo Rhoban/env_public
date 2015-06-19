@@ -129,7 +129,52 @@
           <value>0.028</value>
           </ParamFloat>
       </paramFloats>
-  </filter>
+    <filter>
+      <className>ClippingRHT</className>
+      <name>clippingLines</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingEdges</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>nbEpochs</name>
+          <value>3</value>
+        </ParamInt>
+        <ParamInt>
+          <name>iterationsByEpoch</name>
+          <value>50</value>
+        </ParamInt>
+        <ParamInt>
+          <name>minEdgeSize</name>
+          <value>40</value>
+        </ParamInt>
+        <ParamInt>
+          <name>minScore</name>
+          <value>3</value>
+        </ParamInt>
+        <ParamInt>
+          <name>eraseThickness</name>
+          <value>6</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats>
+        <paramFloat>
+          <name>minDist</name>
+          <value>5.0</value>
+        </paramFloat>
+        <paramFloat>
+          <name>rhoTol</name>
+          <value>2.0</value>
+        </paramFloat>
+        <paramFloat>
+          <name>thetaTol</name>
+          <value>0.8</value>
+        </paramFloat>
+      </paramFloats>
+    </filter>
     <filter>
       <className>WhiteGoalByROI</className>
       <name>goalByROI</name>
@@ -264,6 +309,52 @@
       <paramPairInt />
     </filter>
     <filter>
+      <className>Mask</className>
+      <name>ballMask</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>ballColor2</dependency>
+        <dependency>clippingLines</dependency>
+      </dependencies>
+      <paramInts />
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>Dilate</className>
+      <name>ballMask2</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>ballMask</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>Shape</name>
+          <value>2</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel height</name>
+          <value>3</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel width</name>
+          <value>3</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
       <className>WhiteGoalColor</className>
       <name>ballColor</name>
       <debugLevel>
@@ -338,6 +429,22 @@
       <paramPairInt />
     </filter>
     <filter>
+      <className>ClippingRules</className>
+      <name>clipping</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>closure</dependency>
+      </dependencies>
+      <paramInts />
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
       <className>BinaryEdges</className>
       <name>clippingBorders</name>
       <debugLevel>
@@ -372,6 +479,71 @@
         </ParamFloat>
       </paramFloats>
       <paramPairInt />
+    </filter>
+    <filter>
+      <className>Closure</className>
+      <name>closure</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>colorClipping</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>Shape</name>
+          <value>2</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel height</name>
+          <value>7</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel width</name>
+          <value>7</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>FieldColor</className>
+      <name>colorClipping</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingSrc</dependency>
+      </dependencies>
+      <paramInts>
+	<ParamInt>
+          <name>fieldY</name>
+          <value>124</value>
+        </ParamInt>
+        <ParamInt>
+          <name>fieldU</name>
+          <value>99</value>
+        </ParamInt>
+	<ParamInt>
+          <name>fieldV</name>
+          <value>103</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginY</name>
+          <value>70</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginU</name>
+          <value>18</value>
+        </ParamInt>
+	<ParamInt>
+          <name>marginV</name>
+          <value>18</value>
+        </ParamInt>
+      </paramInts>
     </filter>
     <filter>
       <className>BinaryEdges</className>
