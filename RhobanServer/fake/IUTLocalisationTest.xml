@@ -186,7 +186,7 @@
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>4</value>
+          <value>5</value>
         </ParamInt>
         <ParamInt>
           <name>eraseThickness</name>
@@ -213,7 +213,7 @@
       <name>goalByROI</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -388,31 +388,6 @@
       <paramPairInt />
     </filter>
     <filter>
-      <className>WhiteGoalColor</className>
-      <name>ballColor</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>ballSrc</dependency>
-      </dependencies>
-      <paramInts>
-        <paramInt>
-          <name>goalMinY</name>
-          <value>160</value>
-        </paramInt>
-        <paramInt>
-          <name>goalMinV</name>
-          <value>0</value>
-        </paramInt>
-      </paramInts>
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
       <className>Closure</className>
       <name>ballColor2</name>
       <debugLevel>
@@ -422,7 +397,7 @@
         <perfs>false</perfs>
       </debugLevel>
       <dependencies>
-        <dependency>ballColor</dependency>
+        <dependency>whiteDetection</dependency>
       </dependencies>
       <paramInts>
         <ParamInt>
@@ -482,12 +457,12 @@
       <name>clippingBorders</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
       <dependencies>
-        <dependency>clippingByBlob</dependency>
+        <dependency>clipping</dependency>
       </dependencies>
       <paramInts />
       <paramFloats />
@@ -518,7 +493,7 @@
       <name>fieldColorOpening</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -547,7 +522,7 @@
       <name>fieldColorClosingTheOpening</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -575,7 +550,7 @@
       <className>FieldColor</className>
       <name>fieldColor</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -666,7 +641,7 @@
       <name>whiteDetectionClosing</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -695,7 +670,7 @@
       <name>clippingEdges</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -785,31 +760,7 @@
       <paramFloats />
       <paramPairInt />
     </filter>
-    <filter>
-      <className>WhiteGoalColor</className>
-      <name>goalColor</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>true</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>goalSrc</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>goalMinY</name>
-          <value>150</value>
-        </ParamInt>
-        <ParamInt>
-          <name>goalMinV</name>
-          <value>0</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
-      <paramPairInt />
-    </filter>
+    
     <filter>
       <className>Rescale</className>
       <name>goalSrc</name>
@@ -840,7 +791,7 @@
         <perfs>false</perfs>
       </debugLevel>
       <dependencies>
-        <dependency>goalColor</dependency>
+        <dependency>whiteDetection</dependency>
         <dependency>clippingBorders2</dependency>
       </dependencies>
       <paramInts />
