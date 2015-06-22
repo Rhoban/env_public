@@ -38,55 +38,18 @@
       <name>ballROIDetector</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
-	<dependency>clippingByBlob</dependency>
+	<dependency>clipping</dependency>
+        <dependency>whiteDetection</dependency>
+        <dependency>whiteDetection</dependency>
+        <dependency>sparkleDetection</dependency>
       </dependencies>
       <paramInts>
-	<ParamInt>
-          <name>whiteMinY</name>
-          <value>210</value>
-        </ParamInt>
-        <ParamInt>
-          <name>marginY</name>
-          <value>5</value>
-        </ParamInt>
-	<ParamInt>
-          <name>marginU</name>
-          <value>5</value>
-        </ParamInt>
-	<ParamInt>
-          <name>marginV</name>
-          <value>5</value>
-        </ParamInt>
-	<ParamInt>
-          <name>ballColorY1</name>
-          <value>65</value>
-        </ParamInt>
-	<ParamInt>
-          <name>ballColorU1</name>
-          <value>130</value>
-        </ParamInt>
-	<ParamInt>
-          <name>ballColorV1</name>
-          <value>100</value>
-        </ParamInt>
-	<ParamInt>
-          <name>ballColorY2</name>
-          <value>65</value>
-        </ParamInt>
-	<ParamInt>
-          <name>ballColorU2</name>
-          <value>130</value>
-        </ParamInt>
-	<ParamInt>
-          <name>ballColorV2</name>
-          <value>100</value>
-        </ParamInt>
       </paramInts>
       <paramFloats>
         <ParamFloat>
@@ -247,7 +210,7 @@
       <name>ballByROI</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -664,6 +627,42 @@
       </paramInts>
       <paramFloats />
       <paramPairInt />
+    </filter>
+    <filter>
+      <className>ColorBounding</className>
+      <name>sparkleDetection</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingSrc</dependency>
+      </dependencies>
+      <paramInts>
+	<ParamInt>
+          <name>minY</name>
+          <value>210</value>
+        </ParamInt>
+        <ParamInt>
+          <name>maxY</name>
+          <value>255</value>
+        </ParamInt>
+	<ParamInt>
+          <name>minU</name>
+          <value>0</value>
+        </ParamInt>
+	<ParamInt>
+          <name>maxU</name>
+          <value>255</value>
+        </ParamInt>
+	<ParamInt>
+          <name>minV</name>
+          <value>0</value>
+        </ParamInt>
+	<ParamInt>
+          <name>maxV</name>
+          <value>255</value>
+        </ParamInt>
+      </paramInts>
     </filter>
     <filter>
       <className>BinaryEdges</className>
