@@ -20,7 +20,7 @@
   <playing>true</playing>
   <embedded>true</embedded>
   <pipeline>
-        <filter>
+    <filter>
       <className>ClippingByBlob</className>
       <name>clippingByBlob</name>
       <debugLevel>
@@ -28,37 +28,9 @@
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
+        <dependency>whiteDetectionClosing</dependency>
+        <dependency>fieldColorClosingTheOpening</dependency>
       </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>whiteMinY</name>
-          <value>170</value>
-        </ParamInt>
-	<ParamInt>
-          <name>fieldY</name>
-          <value>80</value>
-        </ParamInt>
-        <ParamInt>
-          <name>fieldU</name>
-          <value>114</value>
-        </ParamInt>
-	<ParamInt>
-          <name>fieldV</name>
-          <value>91</value>
-        </ParamInt>
-	<ParamInt>
-          <name>marginY</name>
-          <value>60</value>
-        </ParamInt>
-	<ParamInt>
-          <name>marginU</name>
-          <value>15</value>
-        </ParamInt>
-	<ParamInt>
-          <name>marginV</name>
-          <value>30</value>
-        </ParamInt>
-      </paramInts>
     </filter>
     <filter>
       <className>BallROIDetector</className>
@@ -71,49 +43,12 @@
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
-	<dependency>clippingByBlob</dependency>
+	<dependency>clipping</dependency>
+        <dependency>whiteDetection</dependency>
+        <dependency>whiteDetection</dependency>
+        <dependency>sparkleDetection</dependency>
       </dependencies>
       <paramInts>
-	<ParamInt>
-          <name>whiteMinY</name>
-          <value>210</value>
-        </ParamInt>
-        <ParamInt>
-          <name>marginY</name>
-          <value>5</value>
-        </ParamInt>
-	<ParamInt>
-          <name>marginU</name>
-          <value>5</value>
-        </ParamInt>
-	<ParamInt>
-          <name>marginV</name>
-          <value>5</value>
-        </ParamInt>
-	<ParamInt>
-          <name>ballColorY1</name>
-          <value>65</value>
-        </ParamInt>
-	<ParamInt>
-          <name>ballColorU1</name>
-          <value>130</value>
-        </ParamInt>
-	<ParamInt>
-          <name>ballColorV1</name>
-          <value>100</value>
-        </ParamInt>
-	<ParamInt>
-          <name>ballColorY2</name>
-          <value>65</value>
-        </ParamInt>
-	<ParamInt>
-          <name>ballColorU2</name>
-          <value>130</value>
-        </ParamInt>
-	<ParamInt>
-          <name>ballColorV2</name>
-          <value>100</value>
-        </ParamInt>
       </paramInts>
       <paramFloats>
         <ParamFloat>
@@ -129,7 +64,53 @@
           <value>0.028</value>
           </ParamFloat>
       </paramFloats>
-  </filter>
+    </filter>
+    <filter>
+      <className>ClippingRHT</className>
+      <name>clippingLines</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingEdges</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>nbEpochs</name>
+          <value>3</value>
+        </ParamInt>
+        <ParamInt>
+          <name>iterationsByEpoch</name>
+          <value>100</value>
+        </ParamInt>
+        <ParamInt>
+          <name>minEdgeSize</name>
+          <value>20</value>
+        </ParamInt>
+        <ParamInt>
+          <name>minScore</name>
+          <value>5</value>
+        </ParamInt>
+        <ParamInt>
+          <name>eraseThickness</name>
+          <value>5</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats>
+        <paramFloat>
+          <name>minDist</name>
+          <value>1.0</value>
+        </paramFloat>
+        <paramFloat>
+          <name>rhoTol</name>
+          <value>2.0</value>
+        </paramFloat>
+        <paramFloat>
+          <name>thetaTol</name>
+          <value>0.8</value>
+        </paramFloat>
+      </paramFloats>
+    </filter>
     <filter>
       <className>WhiteGoalByROI</className>
       <name>goalByROI</name>
@@ -264,8 +245,8 @@
       <paramPairInt />
     </filter>
     <filter>
-      <className>WhiteGoalColor</className>
-      <name>ballColor</name>
+      <className>Mask</className>
+      <name>ballMask</name>
       <debugLevel>
         <threads>false</threads>
         <graphics>false</graphics>
@@ -273,17 +254,38 @@
         <perfs>false</perfs>
       </debugLevel>
       <dependencies>
-        <dependency>ballSrc</dependency>
+        <dependency>ballColor2</dependency>
+        <dependency>clippingLines</dependency>
+      </dependencies>
+      <paramInts />
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>Dilate</className>
+      <name>ballMask2</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>ballMask</dependency>
       </dependencies>
       <paramInts>
-        <paramInt>
-          <name>goalMinY</name>
-          <value>160</value>
-        </paramInt>
-        <paramInt>
-          <name>goalMinV</name>
-          <value>0</value>
-        </paramInt>
+        <ParamInt>
+          <name>Shape</name>
+          <value>2</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel height</name>
+          <value>3</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel width</name>
+          <value>3</value>
+        </ParamInt>
       </paramInts>
       <paramFloats />
       <paramPairInt />
@@ -298,7 +300,7 @@
         <perfs>false</perfs>
       </debugLevel>
       <dependencies>
-        <dependency>ballColor</dependency>
+        <dependency>whiteDetection</dependency>
       </dependencies>
       <paramInts>
         <ParamInt>
@@ -338,6 +340,22 @@
       <paramPairInt />
     </filter>
     <filter>
+      <className>ClippingRules</className>
+      <name>clipping</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingByBlob</dependency>
+      </dependencies>
+      <paramInts />
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
       <className>BinaryEdges</className>
       <name>clippingBorders</name>
       <debugLevel>
@@ -347,7 +365,7 @@
         <perfs>false</perfs>
       </debugLevel>
       <dependencies>
-        <dependency>clippingByBlob</dependency>
+        <dependency>clipping</dependency>
       </dependencies>
       <paramInts />
       <paramFloats />
@@ -372,6 +390,219 @@
         </ParamFloat>
       </paramFloats>
       <paramPairInt />
+    </filter>
+    <filter>
+      <className>Opening</className>
+      <name>fieldColorOpening</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>fieldColor3D</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>Shape</name>
+          <value>2</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel height</name>
+          <value>5</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel width</name>
+          <value>5</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>Closure</className>
+      <name>fieldColorClosingTheOpening</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>fieldColorOpening</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>Shape</name>
+          <value>2</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel height</name>
+          <value>7</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel width</name>
+          <value>7</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>FieldColor</className>
+      <name>fieldColor</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingSrc</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>fieldMaxU</name>
+          <value>134</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>ColorBounding</className>
+      <name>fieldColor3D</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingSrc</dependency>
+      </dependencies>
+      <paramInts>
+	<ParamInt>
+          <name>minY</name>
+          <value>0</value>
+        </ParamInt>
+        <ParamInt>
+          <name>maxY</name>
+          <value>255</value>
+        </ParamInt>
+	<ParamInt>
+          <name>minU</name>
+          <value>0</value>
+        </ParamInt>
+	<ParamInt>
+          <name>maxU</name>
+          <value>131</value>
+        </ParamInt>
+	<ParamInt>
+          <name>minV</name>
+          <value>70</value>
+        </ParamInt>
+	<ParamInt>
+          <name>maxV</name>
+          <value>255</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
+    <filter>
+      <className>ColorBounding</className>
+      <name>whiteDetection</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingSrc</dependency>
+      </dependencies>
+      <paramInts>
+	<ParamInt>
+          <name>minY</name>
+          <value>150</value>
+        </ParamInt>
+        <ParamInt>
+          <name>maxY</name>
+          <value>255</value>
+        </ParamInt>
+	<ParamInt>
+          <name>minU</name>
+          <value>0</value>
+        </ParamInt>
+	<ParamInt>
+          <name>maxU</name>
+          <value>255</value>
+        </ParamInt>
+	<ParamInt>
+          <name>minV</name>
+          <value>0</value>
+        </ParamInt>
+	<ParamInt>
+          <name>maxV</name>
+          <value>255</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
+    <filter>
+      <className>Closure</className>
+      <name>whiteDetectionClosing</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>whiteDetection</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>Shape</name>
+          <value>2</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel height</name>
+          <value>3</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel width</name>
+          <value>3</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>ColorBounding</className>
+      <name>sparkleDetection</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingSrc</dependency>
+      </dependencies>
+      <paramInts>
+	<ParamInt>
+          <name>minY</name>
+          <value>210</value>
+        </ParamInt>
+        <ParamInt>
+          <name>maxY</name>
+          <value>255</value>
+        </ParamInt>
+	<ParamInt>
+          <name>minU</name>
+          <value>0</value>
+        </ParamInt>
+	<ParamInt>
+          <name>maxU</name>
+          <value>255</value>
+        </ParamInt>
+	<ParamInt>
+          <name>minV</name>
+          <value>0</value>
+        </ParamInt>
+	<ParamInt>
+          <name>maxV</name>
+          <value>255</value>
+        </ParamInt>
+      </paramInts>
     </filter>
     <filter>
       <className>BinaryEdges</className>
@@ -468,31 +699,7 @@
       <paramFloats />
       <paramPairInt />
     </filter>
-    <filter>
-      <className>WhiteGoalColor</className>
-      <name>goalColor</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>goalSrc</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>goalMinY</name>
-          <value>150</value>
-        </ParamInt>
-        <ParamInt>
-          <name>goalMinV</name>
-          <value>0</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
-      <paramPairInt />
-    </filter>
+    
     <filter>
       <className>Rescale</className>
       <name>goalSrc</name>
@@ -523,7 +730,7 @@
         <perfs>false</perfs>
       </debugLevel>
       <dependencies>
-        <dependency>goalColor</dependency>
+        <dependency>whiteDetection</dependency>
         <dependency>clippingBorders2</dependency>
       </dependencies>
       <paramInts />
