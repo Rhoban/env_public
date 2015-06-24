@@ -4,7 +4,7 @@
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
   <benchmark>true</benchmark>
-  <benchmarkDetail>1</benchmarkDetail>
+  <benchmarkDetail>0</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
   <imageDelay>1</imageDelay>
@@ -187,7 +187,7 @@
       <paramInts>
         <ParamInt>
           <name>goalMinY</name>
-          <value>160</value>
+          <value>150</value>
         </ParamInt>
         <ParamInt>
           <name>goalMinV</name>
@@ -217,6 +217,7 @@
       <dependencies>
         <dependency>source</dependency>
 	<dependency>ballROIDetector</dependency>
+        <dependency>fieldColor</dependency>
       </dependencies>
       <paramInts>
         <ParamInt>
@@ -229,7 +230,7 @@
         </ParamInt>
         <ParamInt>
           <name>ballMinY</name>
-          <value>160</value>
+          <value>150</value>
         </ParamInt>
         <ParamInt>
           <name>ballMinU</name>
@@ -271,7 +272,7 @@
         </ParamFloat>
         <ParamFloat>
           <name>uselessBottomRatio</name>
-          <value>0.4</value>
+          <value>0</value>
         </ParamFloat>
         <ParamFloat>
           <name>clusterPercentTol</name>
@@ -279,7 +280,7 @@
         </ParamFloat>
         <ParamFloat>
           <name>clusterFlatTol</name>
-          <value>0</value>
+          <value>5</value>
         </ParamFloat>
         <ParamFloat>
           <name>robotHeight</name>
@@ -461,7 +462,7 @@
         <perfs>false</perfs>
       </debugLevel>
       <dependencies>
-        <dependency>fieldColor3D</dependency>
+        <dependency>fieldColor</dependency>
       </dependencies>
       <paramInts>
         <ParamInt>
@@ -510,26 +511,8 @@
       <paramPairInt />
     </filter>
     <filter>
-      <className>FieldColor</className>
-      <name>fieldColor</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>clippingSrc</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>fieldMaxU</name>
-          <value>134</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
       <className>ColorBounding</className>
-      <name>fieldColor3D</name>
+      <name>fieldColor</name>
       <debugLevel>
         <graphics>true</graphics>
       </debugLevel>
