@@ -242,15 +242,15 @@
         </ParamInt>
         <ParamInt>
           <name>minPointDist</name>
-          <value>3</value>
+          <value>10</value>
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>40</value>
+          <value>15</value>
         </ParamInt>
         <ParamInt>
           <name>shadowMaxY</name>
-          <value>35</value>
+          <value>255</value>
         </ParamInt>
         <ParamInt>
           <name>reflectionMinY</name>
@@ -262,6 +262,10 @@
         </ParamInt>
       </paramInts>
       <paramFloats>
+        <ParamFloat>
+          <name>edgeToMinPointRatio</name>
+          <value>0.1</value>
+        </ParamFloat>
         <ParamFloat>
           <name>closureSize</name>
           <value>0.1</value>
@@ -280,7 +284,7 @@
         </ParamFloat>
         <ParamFloat>
           <name>clusterFlatTol</name>
-          <value>5</value>
+          <value>0</value>
         </ParamFloat>
         <ParamFloat>
           <name>robotHeight</name>
@@ -623,7 +627,7 @@
       <paramInts>
 	<ParamInt>
           <name>minY</name>
-          <value>210</value>
+          <value>195</value>
         </ParamInt>
         <ParamInt>
           <name>maxY</name>

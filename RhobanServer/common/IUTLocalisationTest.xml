@@ -66,6 +66,65 @@
       </paramFloats>
     </filter>
     <filter>
+      <className>ColorConverter</className>
+      <name>RGB</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <conversion>YUV2BGR</conversion>
+      <dependencies>
+        <dependency>source</dependency>
+      </dependencies>
+    </filter>
+    <filter>
+      <className>ChannelSelector</className>
+      <name>Y</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>source</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>channel</name>
+          <value>0</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
+    <filter>
+      <className>ChannelSelector</className>
+      <name>U</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>source</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>channel</name>
+          <value>1</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
+    <filter>
+      <className>ChannelSelector</className>
+      <name>V</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>source</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>channel</name>
+          <value>2</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
+    <filter>
       <className>ClippingRHT</className>
       <name>clippingLines</name>
       <debugLevel>
@@ -127,7 +186,7 @@
       <paramInts>
         <ParamInt>
           <name>goalMinY</name>
-          <value>160</value>
+          <value>150</value>
         </ParamInt>
         <ParamInt>
           <name>goalMinV</name>
@@ -157,6 +216,7 @@
       <dependencies>
         <dependency>source</dependency>
 	<dependency>ballROIDetector</dependency>
+        <dependency>fieldColor</dependency>
       </dependencies>
       <paramInts>
         <ParamInt>
@@ -169,7 +229,7 @@
         </ParamInt>
         <ParamInt>
           <name>ballMinY</name>
-          <value>160</value>
+          <value>150</value>
         </ParamInt>
         <ParamInt>
           <name>ballMinU</name>
@@ -181,15 +241,15 @@
         </ParamInt>
         <ParamInt>
           <name>minPointDist</name>
-          <value>3</value>
+          <value>10</value>
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>40</value>
+          <value>15</value>
         </ParamInt>
         <ParamInt>
           <name>shadowMaxY</name>
-          <value>35</value>
+          <value>255</value>
         </ParamInt>
         <ParamInt>
           <name>reflectionMinY</name>
@@ -202,6 +262,10 @@
       </paramInts>
       <paramFloats>
         <ParamFloat>
+          <name>edgeToMinPointRatio</name>
+          <value>0.1</value>
+        </ParamFloat>
+        <ParamFloat>
           <name>closureSize</name>
           <value>0.1</value>
         </ParamFloat>
@@ -211,7 +275,7 @@
         </ParamFloat>
         <ParamFloat>
           <name>uselessBottomRatio</name>
-          <value>0.4</value>
+          <value>0</value>
         </ParamFloat>
         <ParamFloat>
           <name>clusterPercentTol</name>
@@ -401,7 +465,7 @@
         <perfs>false</perfs>
       </debugLevel>
       <dependencies>
-        <dependency>fieldColor3D</dependency>
+        <dependency>fieldColor</dependency>
       </dependencies>
       <paramInts>
         <ParamInt>
@@ -450,26 +514,8 @@
       <paramPairInt />
     </filter>
     <filter>
-      <className>FieldColor</className>
-      <name>fieldColor</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>clippingSrc</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>fieldMaxU</name>
-          <value>134</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
       <className>ColorBounding</className>
-      <name>fieldColor3D</name>
+      <name>fieldColor</name>
       <debugLevel>
         <graphics>false</graphics>
       </debugLevel>
@@ -580,7 +626,7 @@
       <paramInts>
 	<ParamInt>
           <name>minY</name>
-          <value>210</value>
+          <value>195</value>
         </ParamInt>
         <ParamInt>
           <name>maxY</name>
