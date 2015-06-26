@@ -3,7 +3,7 @@
   <showTopView>false</showTopView>
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
-  <benchmark>true</benchmark>
+  <benchmark>false</benchmark>
   <benchmarkDetail>4</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
@@ -45,8 +45,8 @@
       <dependencies>
         <dependency>clippingSrc</dependency>
 	<dependency>clipping</dependency>
-        <dependency>whiteDetection</dependency>
-        <dependency>whiteDetection</dependency>
+        <dependency>whiteBallDetection</dependency>
+        <dependency>whiteBallDetection</dependency>
         <dependency>sparkleDetection</dependency>
       </dependencies>
       <paramInts>
@@ -633,6 +633,42 @@
       </paramInts>
     </filter>
     <filter>
+      <className>ColorBounding</className>
+      <name>whiteBallDetection</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingSrc</dependency>
+      </dependencies>
+      <paramInts>
+	<ParamInt>
+          <name>minY</name>
+          <value>170</value>
+        </ParamInt>
+        <ParamInt>
+          <name>maxY</name>
+          <value>255</value>
+        </ParamInt>
+	<ParamInt>
+          <name>minU</name>
+          <value>0</value>
+        </ParamInt>
+	<ParamInt>
+          <name>maxU</name>
+          <value>255</value>
+        </ParamInt>
+	<ParamInt>
+          <name>minV</name>
+          <value>0</value>
+        </ParamInt>
+	<ParamInt>
+          <name>maxV</name>
+          <value>255</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
+    <filter>
       <className>Closure</className>
       <name>whiteDetectionClosing</name>
       <debugLevel>
@@ -673,7 +709,7 @@
       <paramInts>
 	<ParamInt>
           <name>minY</name>
-          <value>195</value>
+          <value>200</value>
         </ParamInt>
         <ParamInt>
           <name>maxY</name>
@@ -884,7 +920,7 @@
       <paramInts />
       <paramFloats />
       <paramPairInt />
-      <startIndex>2</startIndex>
+      <startIndex>63</startIndex>
       <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log1/images.csv</imagesFile>
     </filter>
   </pipeline>
