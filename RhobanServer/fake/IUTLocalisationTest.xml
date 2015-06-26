@@ -2,7 +2,7 @@
 <LocalisationTest>
   <showTopView>false</showTopView>
   <showRobotView>false</showRobotView>
-  <showTaggedImg>false</showTaggedImg>
+  <showTaggedImg>true</showTaggedImg>
   <benchmark>false</benchmark>
   <benchmarkDetail>4</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
@@ -67,69 +67,10 @@
       </paramFloats>
     </filter>
     <filter>
-      <className>ColorConverter</className>
-      <name>RGB</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <conversion>YUV2BGR</conversion>
-      <dependencies>
-        <dependency>source</dependency>
-      </dependencies>
-    </filter>
-    <filter>
-      <className>ChannelSelector</className>
-      <name>Y</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>source</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>channel</name>
-          <value>0</value>
-        </ParamInt>
-      </paramInts>
-    </filter>
-    <filter>
-      <className>ChannelSelector</className>
-      <name>U</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>source</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>channel</name>
-          <value>1</value>
-        </ParamInt>
-      </paramInts>
-    </filter>
-    <filter>
-      <className>ChannelSelector</className>
-      <name>V</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>source</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>channel</name>
-          <value>2</value>
-        </ParamInt>
-      </paramInts>
-    </filter>
-    <filter>
       <className>ClippingRHT</className>
       <name>clippingLines</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingEdges</dependency>
@@ -141,11 +82,11 @@
         </ParamInt>
         <ParamInt>
           <name>iterationsByEpoch</name>
-          <value>100</value>
+          <value>50</value>
         </ParamInt>
         <ParamInt>
           <name>minEdgeSize</name>
-          <value>20</value>
+          <value>40</value>
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
@@ -656,7 +597,7 @@
       <name>clippingEdges</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -855,7 +796,7 @@
       <paramInts />
       <paramFloats />
       <paramPairInt />
-      <startIndex>2</startIndex>
+      <startIndex>0</startIndex>
       <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log6/images.csv</imagesFile>
     </filter>
   </pipeline>
