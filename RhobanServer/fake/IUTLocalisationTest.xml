@@ -15,8 +15,8 @@
   <ballResampling>0.0</ballResampling>
   <csp>
     <className>LogReader2</className>
-    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_23_IUT/Log1/imu.csv</sensorPath>
-    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_23_IUT/Log1/servos.csv</motorPath>
+    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log1/imu.csv</sensorPath>
+    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log1/servos.csv</motorPath>
   </csp>
   <playing>false</playing>
   <embedded>false</embedded>
@@ -132,7 +132,7 @@
         <graphics>true</graphics>
       </debugLevel>
       <dependencies>
-        <dependency>clippingEdges</dependency>
+        <dependency>clippingBorders</dependency>
       </dependencies>
       <paramInts>
         <ParamInt>
@@ -406,7 +406,7 @@
     </filter>
     <filter>
       <className>ClippingRules</className>
-      <name>clipping</name>
+      <name>clippingRules</name>
       <debugLevel>
         <threads>false</threads>
         <graphics>true</graphics>
@@ -415,6 +415,52 @@
       </debugLevel>
       <dependencies>
         <dependency>clippingByBlob</dependency>
+      </dependencies>
+      <paramInts />
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>Erode</className>
+      <name>clippingEroded</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>true</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingRules</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>Shape</name>
+          <value>0</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel height</name>
+          <value>9</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel width</name>
+          <value>9</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>ClosestBlob</className>
+      <name>clipping</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>true</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingRules</dependency>
+        <dependency>clippingEroded</dependency>
       </dependencies>
       <paramInts />
       <paramFloats />
@@ -652,22 +698,6 @@
       </paramInts>
     </filter>
     <filter>
-      <className>BinaryEdges</className>
-      <name>clippingEdges</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>clipping</dependency>
-      </dependencies>
-      <paramInts />
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
       <className>Mult</className>
       <name>goalBorders</name>
       <debugLevel>
@@ -746,7 +776,6 @@
       <paramFloats />
       <paramPairInt />
     </filter>
-    
     <filter>
       <className>Rescale</className>
       <name>goalSrc</name>
@@ -856,7 +885,7 @@
       <paramFloats />
       <paramPairInt />
       <startIndex>2</startIndex>
-      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_23_IUT/Log1/images.csv</imagesFile>
+      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log1/images.csv</imagesFile>
     </filter>
   </pipeline>
 </LocalisationTest>
