@@ -2,6 +2,7 @@
 <MoveSchedulerConfig>
     <ServosConfig>
         <Servos>
+
             <ServoConfig>
                 <Id>32</Id>
                 <Name>right_ankle_pitch</Name>
@@ -36,7 +37,7 @@
                 <Id>132</Id>
                 <Name>right_elbow</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>0</ZeroAngle>
+                <ZeroAngle>22.5</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -51,7 +52,7 @@
                 <Id>122</Id>
                 <Name>left_elbow</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>0</ZeroAngle>
+                <ZeroAngle>-22.5</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -96,7 +97,7 @@
                 <Id>131</Id>
                 <Name>right_shoulder_roll</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>-80</ZeroAngle>
+                <ZeroAngle>-67.5</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -126,7 +127,7 @@
                 <Id>121</Id>
                 <Name>left_shoulder_roll</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>80</ZeroAngle>
+                <ZeroAngle>67.5</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -155,7 +156,7 @@
             <ServoConfig>
                 <Id>6</Id>
                 <Name>right_knee</Name>
-                <IniAngle>0</IniAngle>
+                <IniAngle>45</IniAngle>
                 <ZeroAngle>0</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
@@ -171,7 +172,7 @@
                 <Id>15</Id>
                 <Name>left_knee</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>0</ZeroAngle>
+                <ZeroAngle>-45</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1023</MaxSpeed>
@@ -243,10 +244,10 @@
                 <unit>1</unit>
             </ServoConfig>
             <ServoConfig>
-                <Id>140</Id>
+                <Id>141</Id>
                 <Name>head_yaw</Name>
-                <IniAngle>0</IniAngle>
-                <ZeroAngle>22.5</ZeroAngle>
+                <IniAngle>-22.5</IniAngle>
+                <ZeroAngle>0</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1023</MaxSpeed>
@@ -260,7 +261,7 @@
             <ServoConfig>
                 <Id>17</Id>
                 <Name>right_ankle_roll</Name>
-                <IniAngle>0</IniAngle>
+                <IniAngle>22.5</IniAngle>
                 <ZeroAngle>0</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
@@ -276,7 +277,7 @@
                 <Id>38</Id>
                 <Name>left_ankle_roll</Name>
                 <IniAngle>0</IniAngle>
-                <ZeroAngle>0</ZeroAngle>
+                <ZeroAngle>-22.5</ZeroAngle>
                 <MinAngle>-180</MinAngle>
                 <MaxAngle>180</MaxAngle>
                 <MaxSpeed>1000</MaxSpeed>
@@ -287,8 +288,10 @@
                 <Inverse>0</Inverse>
                 <unit>1</unit>
             </ServoConfig>
+
             <ServoConfig>
-                <Id>141</Id>
+                <Id>140</Id>
+
                 <Name>head_pitch</Name>
                 <IniAngle>0</IniAngle>
                 <ZeroAngle>0</ZeroAngle>
@@ -315,5 +318,20 @@
     </SensorsConfig>
     <ServosScene />
     <autoload_moves>
+        <string>BallRelLoc</string>
+        <string>GoalRelLoc</string>
+        <string>CartWalk</string>
+        <string>BallTracker</string>
+        <string>Dribble</string>
+        <string>StandUpBack</string>
+        <string>StandUpFront</string>
+        <string>FallDetector</string>
+        <string>GameStatusTracker</string>
+        <string>Kick</string>
+        <string>LookAtFeet</string>
+        <string>RelMagnetoAzimuth</string>
+        <string>Defender</string>
+        <string>Explorer</string>
+        <string>Balance</string>
     </autoload_moves>
 </MoveSchedulerConfig>

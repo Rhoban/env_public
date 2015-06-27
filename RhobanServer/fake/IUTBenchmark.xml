@@ -4,7 +4,7 @@
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
   <benchmark>true</benchmark>
-  <benchmarkDetail>4</benchmarkDetail>
+  <benchmarkDetail>2</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
   <imageDelay>1</imageDelay>
@@ -13,11 +13,6 @@
   <robotPosExploration>50</robotPosExploration>
   <robotAngleExploration>5</robotAngleExploration>
   <ballResampling>0.0</ballResampling>
-  <csp>
-    <className>LogReader2</className>
-    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_23_IUT/Log1/imu.csv</sensorPath>
-    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_23_IUT/Log1/servos.csv</motorPath>
-  </csp>
   <playing>false</playing>
   <embedded>false</embedded>
   <pipeline>
@@ -25,7 +20,7 @@
       <className>ClippingByBlob</className>
       <name>clippingByBlob</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -38,7 +33,7 @@
       <name>ballROIDetector</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -129,7 +124,7 @@
       <className>ClippingRHT</className>
       <name>clippingLines</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingEdges</dependency>
@@ -176,7 +171,7 @@
       <name>goalByROI</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -210,7 +205,7 @@
       <name>ballByROI</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -242,15 +237,15 @@
         </ParamInt>
         <ParamInt>
           <name>minPointDist</name>
-          <value>10</value>
+          <value>3</value>
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>15</value>
+          <value>40</value>
         </ParamInt>
         <ParamInt>
           <name>shadowMaxY</name>
-          <value>255</value>
+          <value>35</value>
         </ParamInt>
         <ParamInt>
           <name>reflectionMinY</name>
@@ -262,10 +257,6 @@
         </ParamInt>
       </paramInts>
       <paramFloats>
-        <ParamFloat>
-          <name>edgeToMinPointRatio</name>
-          <value>0.1</value>
-        </ParamFloat>
         <ParamFloat>
           <name>closureSize</name>
           <value>0.1</value>
@@ -284,7 +275,7 @@
         </ParamFloat>
         <ParamFloat>
           <name>clusterFlatTol</name>
-          <value>0</value>
+          <value>5</value>
         </ParamFloat>
         <ParamFloat>
           <name>robotHeight</name>
@@ -409,7 +400,7 @@
       <name>clipping</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -518,7 +509,7 @@
       <className>ColorBounding</className>
       <name>fieldColor</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -554,7 +545,7 @@
       <className>ColorBounding</className>
       <name>whiteDetection</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -619,7 +610,7 @@
       <className>ColorBounding</className>
       <name>sparkleDetection</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -627,7 +618,7 @@
       <paramInts>
 	<ParamInt>
           <name>minY</name>
-          <value>195</value>
+          <value>210</value>
         </ParamInt>
         <ParamInt>
           <name>maxY</name>
@@ -772,7 +763,7 @@
       <name>goalMask</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -789,7 +780,7 @@
       <name>goalMask2</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -818,7 +809,7 @@
       <name>clippingBorders2</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -841,22 +832,6 @@
       </paramInts>
       <paramFloats />
       <paramPairInt />
-    </filter>
-    <filter>
-      <className>SourceLogs2</className>
-      <name>source</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>true</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies />
-      <paramInts />
-      <paramFloats />
-      <paramPairInt />
-      <startIndex>2</startIndex>
-      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_23_IUT/Log1/images.csv</imagesFile>
     </filter>
   </pipeline>
 </LocalisationTest>
