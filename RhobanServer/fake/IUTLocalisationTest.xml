@@ -2,7 +2,7 @@
 <LocalisationTest>
   <showTopView>false</showTopView>
   <showRobotView>false</showRobotView>
-  <showTaggedImg>true</showTaggedImg>
+  <showTaggedImg>false</showTaggedImg>
   <benchmark>false</benchmark>
   <benchmarkDetail>4</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
@@ -45,8 +45,8 @@
       <dependencies>
         <dependency>clippingSrc</dependency>
 	<dependency>clipping</dependency>
-        <dependency>whiteDetection</dependency>
-        <dependency>whiteDetection</dependency>
+        <dependency>whiteBallDetection</dependency>
+        <dependency>whiteBallDetection</dependency>
         <dependency>sparkleDetection</dependency>
       </dependencies>
       <paramInts>
@@ -54,11 +54,11 @@
       <paramFloats>
         <ParamFloat>
           <name>blobToRoiFactor</name>
-          <value>1</value>
+          <value>1.15</value>
         </ParamFloat>
         <ParamFloat>
           <name>blobToRoiFlat</name>
-          <value>5</value>
+          <value>4</value>
         </ParamFloat>
 	<ParamFloat>
           <name>openingSize</name>
@@ -70,10 +70,10 @@
       <className>ClippingRHT</className>
       <name>clippingLines</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
-        <dependency>clippingEdges</dependency>
+        <dependency>clippingBorders</dependency>
       </dependencies>
       <paramInts>
         <ParamInt>
@@ -247,6 +247,22 @@
           <name>reflectionMinRatio</name>
           <value>0.001</value>
         </ParamFloat>
+        <ParamFloat>
+          <name>lineRhoMargin</name>
+          <value>5</value>
+        </ParamFloat>
+        <ParamFloat>
+          <name>lineThetaMargin</name>
+          <value>3</value>
+        </ParamFloat>
+	<ParamFloat>
+          <name>lineScore</name>
+          <value>110</value>
+        </ParamFloat>
+        <ParamFloat>
+          <name>lineMinLenght</name>
+          <value>10</value>
+        </ParamFloat>
       </paramFloats>
       <paramPairInt />
     </filter>
@@ -347,7 +363,7 @@
     </filter>
     <filter>
       <className>ClippingRules</className>
-      <name>clipping</name>
+      <name>clippingRules</name>
       <debugLevel>
         <threads>false</threads>
         <graphics>false</graphics>
@@ -356,6 +372,52 @@
       </debugLevel>
       <dependencies>
         <dependency>clippingByBlob</dependency>
+      </dependencies>
+      <paramInts />
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>Erode</className>
+      <name>clippingEroded</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingRules</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>Shape</name>
+          <value>0</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel height</name>
+          <value>9</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel width</name>
+          <value>9</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>ClosestBlob</className>
+      <name>clipping</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingRules</dependency>
+        <dependency>clippingEroded</dependency>
       </dependencies>
       <paramInts />
       <paramFloats />
@@ -528,6 +590,42 @@
       </paramInts>
     </filter>
     <filter>
+      <className>ColorBounding</className>
+      <name>whiteBallDetection</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingSrc</dependency>
+      </dependencies>
+      <paramInts>
+	<ParamInt>
+          <name>minY</name>
+          <value>150</value>
+        </ParamInt>
+        <ParamInt>
+          <name>maxY</name>
+          <value>255</value>
+        </ParamInt>
+	<ParamInt>
+          <name>minU</name>
+          <value>0</value>
+        </ParamInt>
+	<ParamInt>
+          <name>maxU</name>
+          <value>255</value>
+        </ParamInt>
+	<ParamInt>
+          <name>minV</name>
+          <value>0</value>
+        </ParamInt>
+	<ParamInt>
+          <name>maxV</name>
+          <value>255</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
+    <filter>
       <className>Closure</className>
       <name>whiteDetectionClosing</name>
       <debugLevel>
@@ -568,7 +666,7 @@
       <paramInts>
 	<ParamInt>
           <name>minY</name>
-          <value>185</value>
+          <value>200</value>
         </ParamInt>
         <ParamInt>
           <name>maxY</name>
@@ -591,22 +689,6 @@
           <value>255</value>
         </ParamInt>
       </paramInts>
-    </filter>
-    <filter>
-      <className>BinaryEdges</className>
-      <name>clippingEdges</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>true</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>clipping</dependency>
-      </dependencies>
-      <paramInts />
-      <paramFloats />
-      <paramPairInt />
     </filter>
     <filter>
       <className>Mult</className>
@@ -687,7 +769,6 @@
       <paramFloats />
       <paramPairInt />
     </filter>
-    
     <filter>
       <className>Rescale</className>
       <name>goalSrc</name>
