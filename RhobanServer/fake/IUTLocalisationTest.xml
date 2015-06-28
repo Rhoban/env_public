@@ -15,8 +15,8 @@
   <ballResampling>0.0</ballResampling>
   <csp>
     <className>LogReader2</className>
-    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log1/imu.csv</sensorPath>
-    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log1/servos.csv</motorPath>
+    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log2/imu.csv</sensorPath>
+    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log2/servos.csv</motorPath>
   </csp>
   <playing>false</playing>
   <embedded>false</embedded>
@@ -25,7 +25,7 @@
       <className>ClippingByBlob</className>
       <name>clippingByBlob</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -54,11 +54,11 @@
       <paramFloats>
         <ParamFloat>
           <name>blobToRoiFactor</name>
-          <value>1</value>
+          <value>1.15</value>
         </ParamFloat>
         <ParamFloat>
           <name>blobToRoiFlat</name>
-          <value>5</value>
+          <value>4</value>
         </ParamFloat>
 	<ParamFloat>
           <name>openingSize</name>
@@ -129,7 +129,7 @@
       <className>ClippingRHT</className>
       <name>clippingLines</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingBorders</dependency>
@@ -176,7 +176,7 @@
       <name>goalByROI</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -306,6 +306,22 @@
           <name>reflectionMinRatio</name>
           <value>0.001</value>
         </ParamFloat>
+        <ParamFloat>
+          <name>lineRhoMargin</name>
+          <value>5</value>
+        </ParamFloat>
+        <ParamFloat>
+          <name>lineThetaMargin</name>
+          <value>3</value>
+        </ParamFloat>
+	<ParamFloat>
+          <name>lineScore</name>
+          <value>110</value>
+        </ParamFloat>
+        <ParamFloat>
+          <name>lineMinLenght</name>
+          <value>10</value>
+        </ParamFloat>
       </paramFloats>
       <paramPairInt />
     </filter>
@@ -409,7 +425,7 @@
       <name>clippingRules</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -425,7 +441,7 @@
       <name>clippingEroded</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -454,7 +470,7 @@
       <name>clipping</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -564,7 +580,7 @@
       <className>ColorBounding</className>
       <name>fieldColor</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -600,7 +616,7 @@
       <className>ColorBounding</className>
       <name>whiteDetection</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -636,7 +652,7 @@
       <className>ColorBounding</className>
       <name>whiteBallDetection</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -644,7 +660,7 @@
       <paramInts>
 	<ParamInt>
           <name>minY</name>
-          <value>170</value>
+          <value>150</value>
         </ParamInt>
         <ParamInt>
           <name>maxY</name>
@@ -701,7 +717,7 @@
       <className>ColorBounding</className>
       <name>sparkleDetection</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -837,7 +853,7 @@
       <name>goalMask</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -854,7 +870,7 @@
       <name>goalMask2</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -883,7 +899,7 @@
       <name>clippingBorders2</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -912,7 +928,7 @@
       <name>source</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -920,8 +936,8 @@
       <paramInts />
       <paramFloats />
       <paramPairInt />
-      <startIndex>63</startIndex>
-      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log1/images.csv</imagesFile>
+      <startIndex>2</startIndex>
+      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_23_IUT/Log1/images.csv</imagesFile>
     </filter>
   </pipeline>
 </LocalisationTest>
