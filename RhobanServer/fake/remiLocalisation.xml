@@ -3,7 +3,7 @@
   <showTopView>false</showTopView>
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
-  <benchmark>false</benchmark>
+  <benchmark>true</benchmark>
   <benchmarkDetail>4</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
@@ -15,8 +15,8 @@
   <ballResampling>0.0</ballResampling>
   <csp>
     <className>LogReader2</className>
-    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_23_IUT/Log1/imu.csv</sensorPath>
-    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_23_IUT/Log1/servos.csv</motorPath>
+    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log2/imu.csv</sensorPath>
+    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log2/servos.csv</motorPath>
   </csp>
   <playing>false</playing>
   <embedded>false</embedded>
@@ -88,8 +88,6 @@
         <dependency>whiteBallDetection</dependency>
         <dependency>sparkleDetection</dependency>
       </dependencies>
-      <paramInts>
-      </paramInts>
       <paramFloats>
         <ParamFloat>
           <name>blobToRoiFactor</name>
@@ -299,6 +297,26 @@
           <name>activateCircleDetection</name>
           <value>1</value>
         </ParamInt>
+        <ParamInt>
+          <name>lineScore</name>
+          <value>50</value>
+        </ParamInt>
+        <ParamInt>
+          <name>lineMinLenght</name>
+          <value>10</value>
+        </ParamInt>
+        <ParamInt>
+          <name>lineMinDist</name>
+          <value>10</value>
+        </ParamInt>
+        <ParamInt>
+          <name>lineEraseThickness</name>
+          <value>3</value>
+        </ParamInt>
+        <ParamInt>
+          <name>lineNbIterations</name>
+          <value>200</value>
+        </ParamInt>
       </paramInts>
       <paramFloats>
         <ParamFloat>
@@ -352,14 +370,6 @@
         <ParamFloat>
           <name>lineThetaMargin</name>
           <value>3</value>
-        </ParamFloat>
-	<ParamFloat>
-          <name>lineScore</name>
-          <value>110</value>
-        </ParamFloat>
-        <ParamFloat>
-          <name>lineMinLenght</name>
-          <value>10</value>
         </ParamFloat>
       </paramFloats>
       <paramPairInt />
@@ -730,85 +740,6 @@
       </paramInts>
     </filter>
     <filter>
-      <className>Mult</className>
-      <name>goalBorders</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>goalBorders1</dependency>
-      </dependencies>
-      <paramInts />
-      <paramFloats>
-        <ParamFloat>
-          <name>ratio</name>
-          <value>5</value>
-        </ParamFloat>
-      </paramFloats>
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>AbsDiff</className>
-      <name>goalBorders1</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>hBlurGoal</dependency>
-        <dependency>goalSrc</dependency>
-      </dependencies>
-      <paramInts />
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Norm</className>
-      <name>goalBordersNormed</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>goalBorders</dependency>
-      </dependencies>
-      <paramInts />
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Threshold</className>
-      <name>goalBordersThreshold</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>goalBordersNormed</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>threshold</name>
-          <value>22</value>
-        </ParamInt>
-        <ParamInt>
-          <name>thresholdType</name>
-          <value>0</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
       <className>Rescale</className>
       <name>goalSrc</name>
       <debugLevel>
@@ -917,7 +848,7 @@
       <paramFloats />
       <paramPairInt />
       <startIndex>2</startIndex>
-      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_23_IUT/Log1/images.csv</imagesFile>
+      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log2/images.csv</imagesFile>
     </filter>
   </pipeline>
 </LocalisationTest>
