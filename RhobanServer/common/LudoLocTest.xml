@@ -341,7 +341,7 @@
         <perfs>false</perfs>
       </debugLevel>
       <dependencies>
-          <dependency>clippingByBlobFinal</dependency>
+        <dependency>clippingByBlobFinal</dependency>
       </dependencies>
       <paramInts />
       <paramFloats />
@@ -381,64 +381,6 @@
           <value>4</value>
         </ParamFloat>
       </paramFloats>
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Opening</className>
-      <name>fieldColorOpening</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>fieldColor</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>Shape</name>
-          <value>2</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel height</name>
-          <value>5</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel width</name>
-          <value>5</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Closure</className>
-      <name>fieldColorClosingTheOpening</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>fieldColorOpening</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>Shape</name>
-          <value>2</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel height</name>
-          <value>7</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel width</name>
-          <value>7</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
       <paramPairInt />
     </filter>
     <filter>
