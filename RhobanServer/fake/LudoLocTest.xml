@@ -688,13 +688,13 @@
       <name>goalMask</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
       <dependencies>
         <dependency>whiteDetection</dependency>
-        <dependency>clippingBorders2</dependency>
+        <dependency>clippingBorders</dependency>
       </dependencies>
       <paramInts />
       <paramFloats />
@@ -720,35 +720,6 @@
         <ParamInt>
           <name>kernel height</name>
           <value>11</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel width</name>
-          <value>5</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Dilate</className>
-      <name>clippingBorders2</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>clippingBorders</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>Shape</name>
-          <value>2</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel height</name>
-          <value>5</value>
         </ParamInt>
         <ParamInt>
           <name>kernel width</name>

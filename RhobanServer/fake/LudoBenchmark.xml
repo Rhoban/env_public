@@ -8,11 +8,12 @@
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
   <imageDelay>1</imageDelay>
-  <compassOffset>120</compassOffset>
+  <compassOffset>125</compassOffset>
   <ballExploration>10</ballExploration>
-  <robotPosExploration>50</robotPosExploration>
-  <robotAngleExploration>5</robotAngleExploration>
+  <robotPosExploration>15</robotPosExploration>
+  <robotAngleExploration>3</robotAngleExploration>
   <ballResampling>0.0</ballResampling>
+  <fieldResampling>0.003</fieldResampling>
   <playing>false</playing>
   <embedded>false</embedded>
   <pipeline>
@@ -60,7 +61,7 @@
       <dependencies>
         <dependency>clippingSrc</dependency>
         <dependency>whiteDetectionClosing</dependency>
-        <dependency>fieldColorClosingTheOpening</dependency>
+        <dependency>fieldColor</dependency>
       </dependencies>
     </filter>
     <filter>
@@ -281,52 +282,44 @@
       <paramPairInt />
     </filter>
     <filter>
-      <className>ClippingRules</className>
-      <name>clippingRules</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>clippingByBlob</dependency>
-      </dependencies>
-      <paramInts />
-      <paramFloats />
-      <paramPairInt />
+        <className>Rescale</className>
+        <name>clippingByBlobDownscaled</name>
+        <dependencies>
+            <dependency>clippingByBlob</dependency>
+        </dependencies>
+        <paramFloats>
+            <ParamFloat>
+                <name>ratio</name>
+                <value>2.0</value>
+            </ParamFloat>
+        </paramFloats>
     </filter>
     <filter>
-      <className>Erode</className>
-      <name>clippingEroded</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
+      <className>Closure</className>
+      <name>clippingByBlobFinal</name>
       <dependencies>
-        <dependency>clippingRules</dependency>
+        <dependency>clippingByBlobDownscaled</dependency>
       </dependencies>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
       <paramInts>
         <ParamInt>
           <name>Shape</name>
-          <value>0</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel height</name>
-          <value>9</value>
+          <value>2</value>
         </ParamInt>
         <ParamInt>
           <name>kernel width</name>
-          <value>9</value>
+          <value>3</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel height</name>
+          <value>3</value>
         </ParamInt>
       </paramInts>
-      <paramFloats />
-      <paramPairInt />
     </filter>
     <filter>
-      <className>ClosestBlob</className>
+      <className>ClippingRules</className>
       <name>clipping</name>
       <debugLevel>
         <threads>false</threads>
@@ -335,8 +328,7 @@
         <perfs>false</perfs>
       </debugLevel>
       <dependencies>
-        <dependency>clippingRules</dependency>
-        <dependency>clippingEroded</dependency>
+        <dependency>clippingByBlobFinal</dependency>
       </dependencies>
       <paramInts />
       <paramFloats />
@@ -379,64 +371,6 @@
       <paramPairInt />
     </filter>
     <filter>
-      <className>Opening</className>
-      <name>fieldColorOpening</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>fieldColor</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>Shape</name>
-          <value>2</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel height</name>
-          <value>5</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel width</name>
-          <value>5</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Closure</className>
-      <name>fieldColorClosingTheOpening</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>fieldColorOpening</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>Shape</name>
-          <value>2</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel height</name>
-          <value>7</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel width</name>
-          <value>7</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
       <className>ColorBounding</className>
       <name>fieldColor</name>
       <debugLevel>
@@ -448,7 +382,7 @@
       <paramInts>
 	      <ParamInt>
           <name>minY</name>
-          <value>0</value>
+          <value>21</value>
         </ParamInt>
         <ParamInt>
           <name>maxY</name>
@@ -755,7 +689,7 @@
       </debugLevel>
       <dependencies>
         <dependency>whiteDetection</dependency>
-        <dependency>clippingBorders2</dependency>
+        <dependency>clippingBorders</dependency>
       </dependencies>
       <paramInts />
       <paramFloats />
@@ -781,35 +715,6 @@
         <ParamInt>
           <name>kernel height</name>
           <value>11</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel width</name>
-          <value>5</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Dilate</className>
-      <name>clippingBorders2</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>clippingBorders</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>Shape</name>
-          <value>2</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel height</name>
-          <value>5</value>
         </ParamInt>
         <ParamInt>
           <name>kernel width</name>
