@@ -580,6 +580,22 @@
 			</paramInts>
 			<paramPairInt/>
 		</filter>
+		<filter>
+			<className>Mask</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>source</dependency>
+				<dependency>clipping</dependency>
+			</dependencies>
+			<name>Mask1</name>
+			<paramFloats/>
+			<paramInts/>
+		</filter>
 	</pipeline>
 	<playing>false</playing>
 	<robotAngleExploration>3</robotAngleExploration>
