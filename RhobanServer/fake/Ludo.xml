@@ -5,6 +5,11 @@
 	<benchmark>false</benchmark>
 	<benchmarkDetail>4</benchmarkDetail>
 	<compassOffset>125</compassOffset>
+	<csp>
+		<className>LogReader2</className>
+		<motorPath>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log1/servos.csv</motorPath>
+		<sensorPath>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log1/imu.csv</sensorPath>
+	</csp>
 	<embedded>false</embedded>
 	<fieldResampling>0.003</fieldResampling>
 	<imageDelay>1</imageDelay>
@@ -14,7 +19,7 @@
 		<filter>
 			<className>ClippingByBlob</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -244,7 +249,7 @@
 		<filter>
 			<className>Rescale</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingByBlob</dependency>
@@ -261,7 +266,7 @@
 		<filter>
 			<className>Closure</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingByBlobDownscaled</dependency>
@@ -286,7 +291,7 @@
 		<filter>
 			<className>ClippingRules</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -537,7 +542,7 @@
 		<filter>
 			<className>Mask</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -580,11 +585,27 @@
 			</paramInts>
 			<paramPairInt/>
 		</filter>
+		<filter>
+			<className>SourceLogs2</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies/>
+			<imagesFile>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log1/images.csv</imagesFile>
+			<name>source</name>
+			<paramFloats/>
+			<paramInts/>
+			<paramPairInt/>
+			<startIndex>0</startIndex>
+		</filter>
 	</pipeline>
 	<playing>false</playing>
 	<robotAngleExploration>3</robotAngleExploration>
 	<robotPosExploration>15</robotPosExploration>
 	<showRobotView>false</showRobotView>
-	<showTaggedImg>false</showTaggedImg>
+	<showTaggedImg>true</showTaggedImg>
 	<showTopView>false</showTopView>
 </LocalisationTest>
