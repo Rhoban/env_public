@@ -61,7 +61,7 @@
       <className>ClippingByBlob</className>
       <name>clippingByBlob</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -300,45 +300,35 @@
         </paramFloats>
     </filter>
     <filter>
-        <className>Closure</className>
-        <name>clippingByBlobClosed</name>
-        <dependencies>
-            <dependency>clippingByBlobDownscaled</dependency>
-        </dependencies>
-        <paramInts>
-            <ParamInt>
-                <name>Shape</name>
-                <value>2</value>
-            </ParamInt>
-            <ParamInt>
-                <name>kernel width</name>
-                <value>3</value>
-            </ParamInt>
-            <ParamInt>
-                <name>kernel height</name>
-                <value>3</value>
-            </ParamInt>
-        </paramInts>
-    </filter>
-    <filter>
-        <className>Rescale</className>
-        <name>clippingByBlobFinal</name>
-        <dependencies>
-            <dependency>clippingByBlobClosed</dependency>
-        </dependencies>
-        <paramFloats>
-            <ParamFloat>
-                <name>ratio</name>
-                <value>0.5</value>
-            </ParamFloat>
-        </paramFloats>
+      <className>Closure</className>
+      <name>clippingByBlobFinal</name>
+      <dependencies>
+        <dependency>clippingByBlobDownscaled</dependency>
+      </dependencies>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <paramInts>
+        <ParamInt>
+          <name>Shape</name>
+          <value>2</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel width</name>
+          <value>3</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel height</name>
+          <value>3</value>
+        </ParamInt>
+      </paramInts>
     </filter>
     <filter>
       <className>ClippingRules</className>
       <name>clipping</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
