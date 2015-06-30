@@ -284,6 +284,31 @@
 			</paramInts>
 		</filter>
 		<filter>
+			<className>Closure</className>
+			<debugLevel>
+				<graphics>false</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingLines</dependency>
+			</dependencies>
+			<name>clippingLinesEroded</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>2</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>3</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>3</value>
+				</paramInt>
+			</paramInts>
+		</filter>
+		<filter>
 			<className>ClippingRules</className>
 			<debugLevel>
 				<graphics>false</graphics>
@@ -311,6 +336,22 @@
 				<dependency>clipping</dependency>
 			</dependencies>
 			<name>clippingBorders</name>
+			<paramFloats/>
+			<paramInts/>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>BinaryEdges</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingLinesEroded</dependency>
+			</dependencies>
+			<name>clippingBorders2</name>
 			<paramFloats/>
 			<paramInts/>
 			<paramPairInt/>
@@ -448,6 +489,43 @@
 			</paramInts>
 		</filter>
 		<filter>
+			<className>ColorBounding</className>
+			<debugLevel>
+				<graphics>false</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingSrc</dependency>
+			</dependencies>
+			<name>whiteGoalDetection</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>minY</name>
+					<value>150</value>
+				</paramInt>
+				<paramInt>
+					<name>maxY</name>
+					<value>255</value>
+				</paramInt>
+				<paramInt>
+					<name>minU</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>maxU</name>
+					<value>255</value>
+				</paramInt>
+				<paramInt>
+					<name>minV</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>maxV</name>
+					<value>255</value>
+				</paramInt>
+			</paramInts>
+		</filter>
+		<filter>
 			<className>Closure</className>
 			<debugLevel>
 				<graphics>false</graphics>
@@ -538,17 +616,60 @@
 			<className>Mask</className>
 			<debugLevel>
 				<graphics>false</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>whiteGoalDetection</dependency>
+				<dependency>fieldColorDilated</dependency>
+			</dependencies>
+			<name>whiteGoalNearField</name>
+			<paramFloats/>
+			<paramInts/>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>Mask</className>
+			<debugLevel>
+				<graphics>false</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies>
-				<dependency>whiteDetection</dependency>
-				<dependency>clippingBorders</dependency>
+				<dependency>whiteGoalNearField</dependency>
+				<dependency>clippingBorders2</dependency>
 			</dependencies>
 			<name>goalMask</name>
 			<paramFloats/>
 			<paramInts/>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>Dilate</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>fieldColor</dependency>
+			</dependencies>
+			<name>fieldColorDilated</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>2</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>7</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>7</value>
+				</paramInt>
+			</paramInts>
 			<paramPairInt/>
 		</filter>
 		<filter>
@@ -579,22 +700,6 @@
 				</paramInt>
 			</paramInts>
 			<paramPairInt/>
-		</filter>
-		<filter>
-			<className>Mask</className>
-			<debugLevel>
-				<graphics>false</graphics>
-				<parameters>false</parameters>
-				<perfs>false</perfs>
-				<threads>false</threads>
-			</debugLevel>
-			<dependencies>
-				<dependency>source</dependency>
-				<dependency>clipping</dependency>
-			</dependencies>
-			<name>Mask1</name>
-			<paramFloats/>
-			<paramInts/>
 		</filter>
 	</pipeline>
 	<playing>false</playing>
