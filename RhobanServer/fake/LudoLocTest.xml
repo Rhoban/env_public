@@ -23,41 +23,6 @@
   <embedded>false</embedded>
   <pipeline>
     <filter>
-      <className>SparkleOfHope</className>
-      <name>sparkleOfHope</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>clippingSrc</dependency>
-	      <dependency>clipping</dependency>
-        <dependency>sparkleOfHopeDetection</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>whiteMinY</name>
-          <value>150</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats>
-        <ParamFloat>
-          <name>sizeFactor</name>
-          <value>1</value>
-        </ParamFloat>
-	      <ParamFloat>
-          <name>minFillingPerc</name>
-          <value>0.55</value>
-        </ParamFloat>
-        <ParamFloat>
-          <name>maxFillingPerc</name>
-          <value>0.95</value>
-        </ParamFloat>
-      </paramFloats>
-    </filter>
-    <filter>
       <className>ClippingByBlob</className>
       <name>clippingByBlob</name>
       <debugLevel>
@@ -85,8 +50,6 @@
         <dependency>whiteBallDetection</dependency>
         <dependency>sparkleDetection</dependency>
       </dependencies>
-      <paramInts>
-      </paramInts>
       <paramFloats>
         <ParamFloat>
           <name>blobToRoiFactor</name>
@@ -292,6 +255,9 @@
         <dependencies>
             <dependency>clippingByBlob</dependency>
         </dependencies>
+        <debugLevel>
+          <graphics>true</graphics>
+        </debugLevel>
         <paramFloats>
             <ParamFloat>
                 <name>ratio</name>
@@ -525,42 +491,6 @@
 	      <ParamInt>
           <name>minY</name>
           <value>200</value>
-        </ParamInt>
-        <ParamInt>
-          <name>maxY</name>
-          <value>255</value>
-        </ParamInt>
-	      <ParamInt>
-          <name>minU</name>
-          <value>0</value>
-        </ParamInt>
-	      <ParamInt>
-          <name>maxU</name>
-          <value>255</value>
-        </ParamInt>
-	      <ParamInt>
-          <name>minV</name>
-          <value>0</value>
-        </ParamInt>
-	      <ParamInt>
-          <name>maxV</name>
-          <value>255</value>
-        </ParamInt>
-      </paramInts>
-    </filter>
-    <filter>
-      <className>ColorBounding</className>
-      <name>sparkleOfHopeDetection</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>clippingSrc</dependency>
-      </dependencies>
-      <paramInts>
-	      <ParamInt>
-          <name>minY</name>
-          <value>190</value>
         </ParamInt>
         <ParamInt>
           <name>maxY</name>
