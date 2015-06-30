@@ -65,7 +65,7 @@
 		<filter>
 			<className>ClippingRHT</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingBorders</dependency>
@@ -111,7 +111,7 @@
 		<filter>
 			<className>WhiteGoalByROI</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -249,7 +249,7 @@
 		<filter>
 			<className>Rescale</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingByBlob</dependency>
@@ -316,7 +316,7 @@
 		<filter>
 			<className>ClippingRules</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -346,9 +346,34 @@
 			<paramPairInt/>
 		</filter>
 		<filter>
-			<className>BinaryEdges</className>
+			<className>Slicer</className>
 			<debugLevel>
 				<graphics>true</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingBorders</dependency>
+			</dependencies>
+			<name>clippingBordersSliced</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>vSlices</name>
+					<value>6</value>
+				</paramInt>
+				<paramInt>
+					<name>hSlices</name>
+					<value>3</value>
+				</paramInt>
+			</paramInts>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>BinaryEdges</className>
+			<debugLevel>
+				<graphics>false</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -496,7 +521,7 @@
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -620,7 +645,7 @@
 		<filter>
 			<className>Mask</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>whiteGoalDetection</dependency>
@@ -634,7 +659,7 @@
 		<filter>
 			<className>Mask</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
