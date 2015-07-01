@@ -17,6 +17,45 @@
   <embedded>false</embedded>
   <pipeline>
     <filter>
+      <className>SparkleOfHope</className>
+      <name>sparkleOfHope</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingSrc</dependency>
+	<dependency>clipping</dependency>
+        <dependency>sparkleOfHopeDetection</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>whiteMinY</name>
+          <value>150</value>
+        </ParamInt>
+        <ParamInt>
+          <name>minPointDist</name>
+          <value>3</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats>
+        <ParamFloat>
+          <name>sizeFactor</name>
+          <value>1</value>
+        </ParamFloat>
+	<ParamFloat>
+          <name>minFillingPerc</name>
+          <value>0.55</value>
+        </ParamFloat>
+        <ParamFloat>
+          <name>maxFillingPerc</name>
+          <value>0.95</value>
+        </ParamFloat>
+      </paramFloats>
+    </filter>
+    <filter>
       <className>ClippingByBlob</className>
       <name>clippingByBlob</name>
       <debugLevel>
@@ -40,20 +79,18 @@
       <dependencies>
         <dependency>clippingSrc</dependency>
 	<dependency>clipping</dependency>
-        <dependency>whiteDetection</dependency>
-        <dependency>whiteDetection</dependency>
+        <dependency>whiteBallDetection</dependency>
+        <dependency>whiteBallDetection</dependency>
         <dependency>sparkleDetection</dependency>
       </dependencies>
-      <paramInts>
-      </paramInts>
       <paramFloats>
         <ParamFloat>
           <name>blobToRoiFactor</name>
-          <value>1</value>
+          <value>1.15</value>
         </ParamFloat>
         <ParamFloat>
           <name>blobToRoiFlat</name>
-          <value>5</value>
+          <value>4</value>
         </ParamFloat>
 	<ParamFloat>
           <name>openingSize</name>
@@ -127,7 +164,7 @@
         <graphics>false</graphics>
       </debugLevel>
       <dependencies>
-        <dependency>clippingEdges</dependency>
+        <dependency>clippingBorders</dependency>
       </dependencies>
       <paramInts>
         <ParamInt>
@@ -237,7 +274,7 @@
         </ParamInt>
         <ParamInt>
           <name>minPointDist</name>
-          <value>3</value>
+          <value>10</value>
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
@@ -245,7 +282,7 @@
         </ParamInt>
         <ParamInt>
           <name>shadowMaxY</name>
-          <value>35</value>
+          <value>255</value>
         </ParamInt>
         <ParamInt>
           <name>reflectionMinY</name>
@@ -255,8 +292,32 @@
           <name>activateCircleDetection</name>
           <value>1</value>
         </ParamInt>
+        <ParamInt>
+          <name>lineScore</name>
+          <value>50</value>
+        </ParamInt>
+        <ParamInt>
+          <name>lineMinLenght</name>
+          <value>10</value>
+        </ParamInt>
+        <ParamInt>
+          <name>lineMinDist</name>
+          <value>10</value>
+        </ParamInt>
+        <ParamInt>
+          <name>lineEraseThickness</name>
+          <value>3</value>
+        </ParamInt>
+        <ParamInt>
+          <name>lineNbIterations</name>
+          <value>200</value>
+        </ParamInt>
       </paramInts>
       <paramFloats>
+        <ParamFloat>
+          <name>edgeToMinPointRatio</name>
+          <value>0.1</value>
+        </ParamFloat>
         <ParamFloat>
           <name>closureSize</name>
           <value>0.1</value>
@@ -275,7 +336,7 @@
         </ParamFloat>
         <ParamFloat>
           <name>clusterFlatTol</name>
-          <value>5</value>
+          <value>0</value>
         </ParamFloat>
         <ParamFloat>
           <name>robotHeight</name>
@@ -297,107 +358,20 @@
           <name>reflectionMinRatio</name>
           <value>0.001</value>
         </ParamFloat>
-      </paramFloats>
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Mask</className>
-      <name>ballMask</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>ballColor2</dependency>
-        <dependency>clippingLines</dependency>
-      </dependencies>
-      <paramInts />
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Dilate</className>
-      <name>ballMask2</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>ballMask</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>Shape</name>
-          <value>2</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel height</name>
-          <value>3</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel width</name>
-          <value>3</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Closure</className>
-      <name>ballColor2</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>whiteDetection</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>Shape</name>
-          <value>2</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel height</name>
-          <value>5</value>
-        </ParamInt>
-        <ParamInt>
-          <name>kernel width</name>
-          <value>5</value>
-        </ParamInt>
-      </paramInts>
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Rescale</className>
-      <name>ballSrc</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>source</dependency>
-      </dependencies>
-      <paramFloats>
         <ParamFloat>
-          <name>ratio</name>
-          <value>4</value>
+          <name>lineRhoMargin</name>
+          <value>5</value>
+        </ParamFloat>
+        <ParamFloat>
+          <name>lineThetaMargin</name>
+          <value>3</value>
         </ParamFloat>
       </paramFloats>
       <paramPairInt />
     </filter>
     <filter>
       <className>ClippingRules</className>
-      <name>clipping</name>
+      <name>clippingRules</name>
       <debugLevel>
         <threads>false</threads>
         <graphics>false</graphics>
@@ -406,6 +380,52 @@
       </debugLevel>
       <dependencies>
         <dependency>clippingByBlob</dependency>
+      </dependencies>
+      <paramInts />
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>Erode</className>
+      <name>clippingEroded</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingRules</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>Shape</name>
+          <value>0</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel height</name>
+          <value>9</value>
+        </ParamInt>
+        <ParamInt>
+          <name>kernel width</name>
+          <value>9</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>ClosestBlob</className>
+      <name>clipping</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingRules</dependency>
+        <dependency>clippingEroded</dependency>
       </dependencies>
       <paramInts />
       <paramFloats />
@@ -578,6 +598,42 @@
       </paramInts>
     </filter>
     <filter>
+      <className>ColorBounding</className>
+      <name>whiteBallDetection</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingSrc</dependency>
+      </dependencies>
+      <paramInts>
+	<ParamInt>
+          <name>minY</name>
+          <value>150</value>
+        </ParamInt>
+        <ParamInt>
+          <name>maxY</name>
+          <value>255</value>
+        </ParamInt>
+	<ParamInt>
+          <name>minU</name>
+          <value>0</value>
+        </ParamInt>
+	<ParamInt>
+          <name>maxU</name>
+          <value>255</value>
+        </ParamInt>
+	<ParamInt>
+          <name>minV</name>
+          <value>0</value>
+        </ParamInt>
+	<ParamInt>
+          <name>maxV</name>
+          <value>255</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
+    <filter>
       <className>Closure</className>
       <name>whiteDetectionClosing</name>
       <debugLevel>
@@ -618,7 +674,7 @@
       <paramInts>
 	<ParamInt>
           <name>minY</name>
-          <value>210</value>
+          <value>200</value>
         </ParamInt>
         <ParamInt>
           <name>maxY</name>
@@ -643,101 +699,41 @@
       </paramInts>
     </filter>
     <filter>
-      <className>BinaryEdges</className>
-      <name>clippingEdges</name>
+      <className>ColorBounding</className>
+      <name>sparkleOfHopeDetection</name>
       <debugLevel>
-        <threads>false</threads>
         <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
       </debugLevel>
       <dependencies>
-        <dependency>clipping</dependency>
-      </dependencies>
-      <paramInts />
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Mult</className>
-      <name>goalBorders</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>goalBorders1</dependency>
-      </dependencies>
-      <paramInts />
-      <paramFloats>
-        <ParamFloat>
-          <name>ratio</name>
-          <value>5</value>
-        </ParamFloat>
-      </paramFloats>
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>AbsDiff</className>
-      <name>goalBorders1</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>hBlurGoal</dependency>
-        <dependency>goalSrc</dependency>
-      </dependencies>
-      <paramInts />
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Norm</className>
-      <name>goalBordersNormed</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>goalBorders</dependency>
-      </dependencies>
-      <paramInts />
-      <paramFloats />
-      <paramPairInt />
-    </filter>
-    <filter>
-      <className>Threshold</className>
-      <name>goalBordersThreshold</name>
-      <debugLevel>
-        <threads>false</threads>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-      </debugLevel>
-      <dependencies>
-        <dependency>goalBordersNormed</dependency>
+        <dependency>clippingSrc</dependency>
       </dependencies>
       <paramInts>
-        <ParamInt>
-          <name>threshold</name>
-          <value>22</value>
+	<ParamInt>
+          <name>minY</name>
+          <value>190</value>
         </ParamInt>
         <ParamInt>
-          <name>thresholdType</name>
+          <name>maxY</name>
+          <value>255</value>
+        </ParamInt>
+	<ParamInt>
+          <name>minU</name>
           <value>0</value>
         </ParamInt>
+	<ParamInt>
+          <name>maxU</name>
+          <value>255</value>
+        </ParamInt>
+	<ParamInt>
+          <name>minV</name>
+          <value>0</value>
+        </ParamInt>
+	<ParamInt>
+          <name>maxV</name>
+          <value>255</value>
+        </ParamInt>
       </paramInts>
-      <paramFloats />
-      <paramPairInt />
     </filter>
-    
     <filter>
       <className>Rescale</className>
       <name>goalSrc</name>
