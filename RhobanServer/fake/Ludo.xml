@@ -371,6 +371,34 @@
 			<paramPairInt/>
 		</filter>
 		<filter>
+			<className>ROIFromBlobs</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingBordersSliced</dependency>
+			</dependencies>
+			<name>linesROI</name>
+		</filter>
+		<filter>
+			<className>LinesByROI</className>
+			<debugLevel>
+				<graphics>true</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>source</dependency>
+				<dependency>linesROI</dependency>
+				<dependency>fieldColor</dependency>
+			</dependencies>
+			<name>linesByROI</name>
+		</filter>
+		<filter>
 			<className>BinaryEdges</className>
 			<debugLevel>
 				<graphics>false</graphics>
