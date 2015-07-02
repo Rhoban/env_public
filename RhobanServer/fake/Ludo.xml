@@ -7,8 +7,8 @@
 	<compassOffset>125</compassOffset>
 	<csp>
 		<className>LogReader2</className>
-		<motorPath>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log1/servos.csv</motorPath>
-		<sensorPath>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log1/imu.csv</sensorPath>
+		<motorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/servos.csv</motorPath>
+		<sensorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/imu.csv</sensorPath>
 	</csp>
 	<embedded>false</embedded>
 	<fieldResampling>0.003</fieldResampling>
@@ -65,7 +65,7 @@
 		<filter>
 			<className>ClippingRHT</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingBorders</dependency>
@@ -111,7 +111,7 @@
 		<filter>
 			<className>WhiteGoalByROI</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -266,12 +266,37 @@
 		<filter>
 			<className>Closure</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingByBlobDownscaled</dependency>
 			</dependencies>
 			<name>clippingByBlobFinal</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>2</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>3</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>3</value>
+				</paramInt>
+			</paramInts>
+		</filter>
+		<filter>
+			<className>Closure</className>
+			<debugLevel>
+				<graphics>false</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingLines</dependency>
+			</dependencies>
+			<name>clippingLinesEroded</name>
 			<paramFloats/>
 			<paramInts>
 				<paramInt>
@@ -316,6 +341,22 @@
 				<dependency>clipping</dependency>
 			</dependencies>
 			<name>clippingBorders</name>
+			<paramFloats/>
+			<paramInts/>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>BinaryEdges</className>
+			<debugLevel>
+				<graphics>true</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingLinesEroded</dependency>
+			</dependencies>
+			<name>clippingBorders2</name>
 			<paramFloats/>
 			<paramInts/>
 			<paramPairInt/>
@@ -453,6 +494,43 @@
 			</paramInts>
 		</filter>
 		<filter>
+			<className>ColorBounding</className>
+			<debugLevel>
+				<graphics>true</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingSrc</dependency>
+			</dependencies>
+			<name>whiteGoalDetection</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>minY</name>
+					<value>150</value>
+				</paramInt>
+				<paramInt>
+					<name>maxY</name>
+					<value>255</value>
+				</paramInt>
+				<paramInt>
+					<name>minU</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>maxU</name>
+					<value>255</value>
+				</paramInt>
+				<paramInt>
+					<name>minV</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>maxV</name>
+					<value>255</value>
+				</paramInt>
+			</paramInts>
+		</filter>
+		<filter>
 			<className>Closure</className>
 			<debugLevel>
 				<graphics>false</graphics>
@@ -543,17 +621,60 @@
 			<className>Mask</className>
 			<debugLevel>
 				<graphics>true</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>whiteGoalDetection</dependency>
+				<dependency>fieldColorDilated</dependency>
+			</dependencies>
+			<name>whiteGoalNearField</name>
+			<paramFloats/>
+			<paramInts/>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>Mask</className>
+			<debugLevel>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies>
-				<dependency>whiteDetection</dependency>
-				<dependency>clippingBorders</dependency>
+				<dependency>whiteGoalNearField</dependency>
+				<dependency>clippingBorders2</dependency>
 			</dependencies>
 			<name>goalMask</name>
 			<paramFloats/>
 			<paramInts/>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>Dilate</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>fieldColor</dependency>
+			</dependencies>
+			<name>fieldColorDilated</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>2</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>7</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>7</value>
+				</paramInt>
+			</paramInts>
 			<paramPairInt/>
 		</filter>
 		<filter>
@@ -594,7 +715,7 @@
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies/>
-			<imagesFile>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log1/images.csv</imagesFile>
+			<imagesFile>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/images.csv</imagesFile>
 			<name>source</name>
 			<paramFloats/>
 			<paramInts/>
