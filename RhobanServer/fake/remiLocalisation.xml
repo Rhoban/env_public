@@ -4,7 +4,7 @@
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
   <benchmark>true</benchmark>
-  <benchmarkDetail>6</benchmarkDetail>
+  <benchmarkDetail>2</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
   <imageDelay>1</imageDelay>
@@ -15,8 +15,8 @@
   <ballResampling>0.0</ballResampling>
   <csp>
     <className>LogReader2</className>
-    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/imu.csv</sensorPath>
-    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/servos.csv</motorPath>
+    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log2/imu.csv</sensorPath>
+    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log2/servos.csv</motorPath>
   </csp>
   <playing>false</playing>
   <embedded>false</embedded>
@@ -35,6 +35,26 @@
 	<dependency>ballROIDetector</dependency>
         <dependency>sparkleOfHope</dependency>
       </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>whiteMinY</name>
+          <value>150</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats>
+        <ParamFloat>
+          <name>minRatio</name>
+          <value>0.7</value>
+        </ParamFloat>
+	<ParamFloat>
+          <name>maxRatio</name>
+          <value>1.3</value>
+        </ParamFloat>
+        <ParamFloat>
+          <name>sizeFactor</name>
+          <value>1.15</value>
+        </ParamFloat>
+      </paramFloats>
     </filter>
     <filter>
       <className>SparkleOfHope</className>
@@ -57,21 +77,21 @@
         </ParamInt>
         <ParamInt>
           <name>minPointDist</name>
-          <value>3</value>
+          <value>5</value>
         </ParamInt>
       </paramInts>
       <paramFloats>
         <ParamFloat>
           <name>sizeFactor</name>
-          <value>1</value>
+          <value>1.15</value>
         </ParamFloat>
 	<ParamFloat>
           <name>minFillingPerc</name>
-          <value>0.55</value>
+          <value>0.5</value>
         </ParamFloat>
         <ParamFloat>
           <name>maxFillingPerc</name>
-          <value>0.95</value>
+          <value>1</value>
         </ParamFloat>
       </paramFloats>
     </filter>
@@ -847,7 +867,7 @@
       <paramFloats />
       <paramPairInt />
       <startIndex>2</startIndex>
-      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/images.csv</imagesFile>
+      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log2/images.csv</imagesFile>
     </filter>
   </pipeline>
 </LocalisationTest>
