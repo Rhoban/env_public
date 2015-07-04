@@ -397,6 +397,46 @@
 				<dependency>fieldColor</dependency>
 			</dependencies>
 			<name>linesByROI</name>
+			<paramFloats>
+				<paramFloat>
+					<name>eraseThickness</name>
+					<value>15</value>
+				</paramFloat>
+				<paramFloat>
+					<name>minDist</name>
+					<value>20</value>
+				</paramFloat>
+				<paramFloat>
+					<name>rhoTol</name>
+					<value>5</value>
+				</paramFloat>
+				<paramFloat>
+					<name>thetaTol</name>
+					<value>1.5</value>
+				</paramFloat>
+			</paramFloats>
+			<paramInts>
+				<paramInt>
+					<name>roiMargin</name>
+					<value>20</value>
+				</paramInt>
+				<paramInt>
+					<name>nbEpochs</name>
+					<value>3</value>
+				</paramInt>
+				<paramInt>
+					<name>iterationsByEpoch</name>
+					<value>100</value>
+				</paramInt>
+				<paramInt>
+					<name>minScore</name>
+					<value>5</value>
+				</paramInt>
+				<paramInt>
+					<name>minEdgeSize</name>
+					<value>40</value>
+				</paramInt>
+			</paramInts>
 		</filter>
 		<filter>
 			<className>BinaryEdges</className>
@@ -460,7 +500,7 @@
 				</paramInt>
 				<paramInt>
 					<name>maxU</name>
-					<value>131</value>
+					<value>133</value>
 				</paramInt>
 				<paramInt>
 					<name>minV</name>
