@@ -438,6 +438,20 @@
 				</paramInt>
 			</paramInts>
 		</filter>
+    <filter>
+			<className>ClippingFromLines</className>
+			<debugLevel>
+				<graphics>true</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingSrc</dependency>
+				<dependency>linesByROI</dependency>
+			</dependencies>
+			<name>clippingExperimental</name>
+    </filter>
 		<filter>
 			<className>BinaryEdges</className>
 			<debugLevel>
