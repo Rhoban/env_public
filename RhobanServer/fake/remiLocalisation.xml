@@ -15,8 +15,8 @@
   <ballResampling>0.0</ballResampling>
   <csp>
     <className>LogReader2</className>
-    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log3/imu.csv</sensorPath>
-    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log3/servos.csv</motorPath>
+    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log2/imu.csv</sensorPath>
+    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log2/servos.csv</motorPath>
   </csp>
   <playing>false</playing>
   <embedded>false</embedded>
@@ -34,8 +34,13 @@
         <dependency>source</dependency>
 	<dependency>ballROIDetector</dependency>
         <dependency>sparkleOfHope</dependency>
+        <dependency>clipping</dependency>
       </dependencies>
       <paramInts>
+        <ParamInt>
+          <name>tagLevel</name>
+          <value>0</value>
+        </ParamInt>
         <ParamInt>
           <name>whiteMinY</name>
           <value>150</value>
@@ -52,7 +57,7 @@
         </ParamFloat>
         <ParamFloat>
           <name>sizeFactor</name>
-          <value>1.15</value>
+          <value>1.2</value>
         </ParamFloat>
       </paramFloats>
     </filter>
@@ -72,6 +77,10 @@
       </dependencies>
       <paramInts>
         <ParamInt>
+          <name>tagLevel</name>
+          <value>1</value>
+        </ParamInt>
+        <ParamInt>
           <name>whiteMinY</name>
           <value>150</value>
         </ParamInt>
@@ -83,11 +92,11 @@
       <paramFloats>
         <ParamFloat>
           <name>sizeFactor</name>
-          <value>1.25</value>
+          <value>1.2</value>
         </ParamFloat>
 	<ParamFloat>
           <name>minFillingPerc</name>
-          <value>0.5</value>
+          <value>0.6</value>
         </ParamFloat>
         <ParamFloat>
           <name>maxFillingPerc</name>
@@ -310,7 +319,7 @@
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>50</value>
+          <value>40</value>
         </ParamInt>
         <ParamInt>
           <name>reflectionMinY</name>
@@ -364,7 +373,7 @@
         </ParamFloat>
         <ParamFloat>
           <name>clusterFlatTol</name>
-          <value>0</value>
+          <value>1</value>
         </ParamFloat>
         <ParamFloat>
           <name>robotHeight</name>
@@ -443,7 +452,7 @@
       <name>clipping</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -734,7 +743,7 @@
       <paramInts>
 	<ParamInt>
           <name>minY</name>
-          <value>190</value>
+          <value>195</value>
         </ParamInt>
         <ParamInt>
           <name>maxY</name>
@@ -867,7 +876,7 @@
       <paramFloats />
       <paramPairInt />
       <startIndex>2</startIndex>
-      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log3/images.csv</imagesFile>
+      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log2/images.csv</imagesFile>
     </filter>
   </pipeline>
 </LocalisationTest>
