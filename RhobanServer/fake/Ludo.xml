@@ -3,7 +3,7 @@
 	<ballExploration>10</ballExploration>
 	<ballResampling>0.0</ballResampling>
 	<benchmark>true</benchmark>
-	<benchmarkDetail>4</benchmarkDetail>
+	<benchmarkDetail>2</benchmarkDetail>
 	<compassOffset>125</compassOffset>
 	<csp>
 		<className>LogReader2</className>
@@ -61,52 +61,6 @@
 				</ParamFloat>
 			</paramFloats>
 			<paramInts/>
-		</filter>
-		<filter>
-			<className>ClippingRHT</className>
-			<debugLevel>
-				<graphics>false</graphics>
-			</debugLevel>
-			<dependencies>
-				<dependency>clippingBorders</dependency>
-			</dependencies>
-			<name>clippingLines</name>
-			<paramFloats>
-				<ParamFloat>
-					<name>minDist</name>
-					<value>1.0</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>rhoTol</name>
-					<value>2.0</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>thetaTol</name>
-					<value>0.8</value>
-				</ParamFloat>
-			</paramFloats>
-			<paramInts>
-				<paramInt>
-					<name>nbEpochs</name>
-					<value>3</value>
-				</paramInt>
-				<paramInt>
-					<name>iterationsByEpoch</name>
-					<value>50</value>
-				</paramInt>
-				<paramInt>
-					<name>minEdgeSize</name>
-					<value>40</value>
-				</paramInt>
-				<paramInt>
-					<name>minScore</name>
-					<value>5</value>
-				</paramInt>
-				<paramInt>
-					<name>eraseThickness</name>
-					<value>5</value>
-				</paramInt>
-			</paramInts>
 		</filter>
 		<filter>
 			<className>WhiteGoalByROI</className>
@@ -211,6 +165,10 @@
 					<name>tagLevel</name>
 					<value>1</value>
 				</paramInt>
+				<paramInt>
+					<name>lineNbIterations</name>
+					<value>0</value>
+				</paramInt>
 				<ParamInt>
 					<name>lineScore</name>
 					<value>110</value>
@@ -294,9 +252,9 @@
 				<graphics>false</graphics>
 			</debugLevel>
 			<dependencies>
-				<dependency>clippingLines</dependency>
+				<dependency>clippingExperimental</dependency>
 			</dependencies>
-			<name>clippingLinesEroded</name>
+			<name>clippingExperimentalEroded</name>
 			<paramFloats/>
 			<paramInts>
 				<paramInt>
@@ -461,9 +419,9 @@
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies>
-				<dependency>clippingLinesEroded</dependency>
+				<dependency>clippingExperimentalEroded</dependency>
 			</dependencies>
-			<name>clippingBorders2</name>
+			<name>clippingExperimentalBorders</name>
 			<paramFloats/>
 			<paramInts/>
 			<paramPairInt/>
@@ -748,7 +706,7 @@
 			</debugLevel>
 			<dependencies>
 				<dependency>whiteGoalNearField</dependency>
-				<dependency>clippingBorders2</dependency>
+				<dependency>clippingExperimentalBorders</dependency>
 			</dependencies>
 			<name>goalMask</name>
 			<paramFloats/>
