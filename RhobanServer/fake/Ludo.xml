@@ -2,13 +2,13 @@
 <LocalisationTest>
 	<ballExploration>10</ballExploration>
 	<ballResampling>0.0</ballResampling>
-	<benchmark>false</benchmark>
+	<benchmark>true</benchmark>
 	<benchmarkDetail>4</benchmarkDetail>
 	<compassOffset>125</compassOffset>
 	<csp>
 		<className>LogReader2</className>
-		<motorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/servos.csv</motorPath>
-		<sensorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/imu.csv</sensorPath>
+		<motorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log13/servos.csv</motorPath>
+		<sensorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log13/imu.csv</sensorPath>
 	</csp>
 	<embedded>false</embedded>
 	<fieldResampling>0.003</fieldResampling>
@@ -502,11 +502,11 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>21</value>
+					<value>12</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
-					<value>255</value>
+					<value>160</value>
 				</paramInt>
 				<paramInt>
 					<name>minU</name>
@@ -822,7 +822,7 @@
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies/>
-			<imagesFile>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/images.csv</imagesFile>
+			<imagesFile>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log13/images.csv</imagesFile>
 			<name>source</name>
 			<paramFloats/>
 			<paramInts/>
@@ -831,9 +831,9 @@
 		</filter>
 	</pipeline>
 	<playing>false</playing>
-	<robotAngleExploration>3</robotAngleExploration>
-	<robotPosExploration>15</robotPosExploration>
+	<robotAngleExploration>9</robotAngleExploration>
+	<robotPosExploration>45</robotPosExploration>
 	<showRobotView>false</showRobotView>
 	<showTaggedImg>true</showTaggedImg>
-	<showTopView>false</showTopView>
+	<showTopView>true</showTopView>
 </LocalisationTest>
