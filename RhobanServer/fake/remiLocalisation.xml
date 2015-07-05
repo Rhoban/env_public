@@ -4,7 +4,7 @@
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
   <benchmark>true</benchmark>
-  <benchmarkDetail>4</benchmarkDetail>
+  <benchmarkDetail>2</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
   <imageDelay>1</imageDelay>
@@ -15,12 +15,47 @@
   <ballResampling>0.0</ballResampling>
   <csp>
     <className>LogReader2</className>
-    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log1/imu.csv</sensorPath>
-    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log1/servos.csv</motorPath>
+    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log2/imu.csv</sensorPath>
+    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log2/servos.csv</motorPath>
   </csp>
   <playing>false</playing>
   <embedded>false</embedded>
   <pipeline>
+    <filter>
+      <className>BallROIManager</className>
+      <name>ballROIManager</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>true</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>source</dependency>
+	<dependency>ballROIDetector</dependency>
+        <dependency>sparkleOfHope</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>whiteMinY</name>
+          <value>150</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats>
+        <ParamFloat>
+          <name>minRatio</name>
+          <value>0.7</value>
+        </ParamFloat>
+	<ParamFloat>
+          <name>maxRatio</name>
+          <value>1.3</value>
+        </ParamFloat>
+        <ParamFloat>
+          <name>sizeFactor</name>
+          <value>1.15</value>
+        </ParamFloat>
+      </paramFloats>
+    </filter>
     <filter>
       <className>SparkleOfHope</className>
       <name>sparkleOfHope</name>
@@ -42,21 +77,21 @@
         </ParamInt>
         <ParamInt>
           <name>minPointDist</name>
-          <value>3</value>
+          <value>5</value>
         </ParamInt>
       </paramInts>
       <paramFloats>
         <ParamFloat>
           <name>sizeFactor</name>
-          <value>1</value>
+          <value>1.15</value>
         </ParamFloat>
 	<ParamFloat>
           <name>minFillingPerc</name>
-          <value>0.55</value>
+          <value>0.5</value>
         </ParamFloat>
         <ParamFloat>
           <name>maxFillingPerc</name>
-          <value>0.95</value>
+          <value>1</value>
         </ParamFloat>
       </paramFloats>
     </filter>
@@ -253,7 +288,7 @@
       </debugLevel>
       <dependencies>
         <dependency>source</dependency>
-	<dependency>ballROIDetector</dependency>
+	<dependency>ballROIManager</dependency>
         <dependency>fieldColor</dependency>
       </dependencies>
       <paramInts>
@@ -270,24 +305,12 @@
           <value>150</value>
         </ParamInt>
         <ParamInt>
-          <name>ballMinU</name>
-          <value>255</value>
-        </ParamInt>
-        <ParamInt>
-          <name>ballMinV</name>
-          <value>205</value>
-        </ParamInt>
-        <ParamInt>
           <name>minPointDist</name>
           <value>10</value>
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
-          <value>15</value>
-        </ParamInt>
-        <ParamInt>
-          <name>shadowMaxY</name>
-          <value>255</value>
+          <value>50</value>
         </ParamInt>
         <ParamInt>
           <name>reflectionMinY</name>
@@ -315,7 +338,7 @@
         </ParamInt>
         <ParamInt>
           <name>lineNbIterations</name>
-          <value>200</value>
+          <value>100</value>
         </ParamInt>
       </paramInts>
       <paramFloats>
@@ -354,10 +377,6 @@
         <ParamFloat>
           <name>qTilt</name>
           <value>1</value>
-        </ParamFloat>
-        <ParamFloat>
-          <name>shadowMinRatio</name>
-          <value>0.0</value>
         </ParamFloat>
         <ParamFloat>
           <name>reflectionMinRatio</name>
@@ -457,7 +476,7 @@
       <name>clippingSrc</name>
       <debugLevel>
         <threads>false</threads>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
       </debugLevel>
@@ -707,7 +726,7 @@
       <className>ColorBounding</className>
       <name>sparkleOfHopeDetection</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -847,8 +866,8 @@
       <paramInts />
       <paramFloats />
       <paramPairInt />
-      <startIndex>72</startIndex>
-      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log1/images.csv</imagesFile>
+      <startIndex>2</startIndex>
+      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log2/images.csv</imagesFile>
     </filter>
   </pipeline>
 </LocalisationTest>
