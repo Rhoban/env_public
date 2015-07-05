@@ -3,8 +3,8 @@
   <showTopView>false</showTopView>
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
-  <benchmark>true</benchmark>
-  <benchmarkDetail>2</benchmarkDetail>
+  <benchmark>false</benchmark>
+  <benchmarkDetail>4</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
   <imageDelay>1</imageDelay>
@@ -91,6 +91,41 @@
       </paramFloats>
     </filter>
     <filter>
+      <className>SparkleOfHope</className>
+      <name>sparkleOfHope</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingSrc</dependency>
+	<dependency>clipping</dependency>
+        <dependency>sparkleOfHopeDetection</dependency>
+      </dependencies>
+      <paramInts>
+        <ParamInt>
+          <name>whiteMinY</name>
+          <value>150</value>
+        </ParamInt>
+      </paramInts>
+      <paramFloats>
+        <ParamFloat>
+          <name>sizeFactor</name>
+          <value>1</value>
+        </ParamFloat>
+	<ParamFloat>
+          <name>minFillingPerc</name>
+          <value>0.55</value>
+        </ParamFloat>
+        <ParamFloat>
+          <name>maxFillingPerc</name>
+          <value>0.95</value>
+        </ParamFloat>
+      </paramFloats>
+    </filter>
+    <filter>
       <className>ClippingByBlob</className>
       <name>clippingByBlob</name>
       <debugLevel>
@@ -134,65 +169,6 @@
       </paramFloats>
     </filter>
     <filter>
-      <className>ColorConverter</className>
-      <name>RGB</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <conversion>YUV2BGR</conversion>
-      <dependencies>
-        <dependency>source</dependency>
-      </dependencies>
-    </filter>
-    <filter>
-      <className>ChannelSelector</className>
-      <name>Y</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>source</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>channel</name>
-          <value>0</value>
-        </ParamInt>
-      </paramInts>
-    </filter>
-    <filter>
-      <className>ChannelSelector</className>
-      <name>U</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>source</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>channel</name>
-          <value>1</value>
-        </ParamInt>
-      </paramInts>
-    </filter>
-    <filter>
-      <className>ChannelSelector</className>
-      <name>V</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>source</dependency>
-      </dependencies>
-      <paramInts>
-        <ParamInt>
-          <name>channel</name>
-          <value>2</value>
-        </ParamInt>
-      </paramInts>
-    </filter>
-    <filter>
       <className>ClippingRHT</className>
       <name>clippingLines</name>
       <debugLevel>
@@ -208,11 +184,11 @@
         </ParamInt>
         <ParamInt>
           <name>iterationsByEpoch</name>
-          <value>100</value>
+          <value>50</value>
         </ParamInt>
         <ParamInt>
           <name>minEdgeSize</name>
-          <value>20</value>
+          <value>40</value>
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
@@ -720,6 +696,96 @@
     <filter>
       <className>ColorBounding</className>
       <name>sparkleOfHopeDetection</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>clippingSrc</dependency>
+      </dependencies>
+      <paramInts>
+	<ParamInt>
+          <name>minY</name>
+          <value>190</value>
+        </ParamInt>
+        <ParamInt>
+          <name>maxY</name>
+          <value>255</value>
+        </ParamInt>
+	<ParamInt>
+          <name>minU</name>
+          <value>0</value>
+        </ParamInt>
+	<ParamInt>
+          <name>maxU</name>
+          <value>255</value>
+        </ParamInt>
+	<ParamInt>
+          <name>minV</name>
+          <value>0</value>
+        </ParamInt>
+	<ParamInt>
+          <name>maxV</name>
+          <value>255</value>
+        </ParamInt>
+      </paramInts>
+    </filter>
+    <filter>
+      <className>Mult</className>
+      <name>goalBorders</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>goalBorders1</dependency>
+      </dependencies>
+      <paramInts />
+      <paramFloats>
+        <ParamFloat>
+          <name>ratio</name>
+          <value>5</value>
+        </ParamFloat>
+      </paramFloats>
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>AbsDiff</className>
+      <name>goalBorders1</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>hBlurGoal</dependency>
+        <dependency>goalSrc</dependency>
+      </dependencies>
+      <paramInts />
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>Norm</className>
+      <name>goalBordersNormed</name>
+      <debugLevel>
+        <threads>false</threads>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+      </debugLevel>
+      <dependencies>
+        <dependency>goalBorders</dependency>
+      </dependencies>
+      <paramInts />
+      <paramFloats />
+      <paramPairInt />
+    </filter>
+    <filter>
+      <className>Threshold</className>
+      <name>goalBordersThreshold</name>
       <debugLevel>
         <graphics>false</graphics>
       </debugLevel>

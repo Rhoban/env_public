@@ -1,9 +1,34 @@
 [
+    /**
+     * To make a joypad work, first type in rhio:
+     *
+     * pad
+     *
+     * This will dump you all the events from your joypad. You can then write
+     * a json file in your ~/.rhio/ directory.
+     * This is an example.
+     *
+     * When your json is ready, type:
+     *
+     * pad my_file.json
+     *
+     * To run the binding
+     */
+
+
+    /**
+     * Here, the button number 3 will toggle the enabled variable. It will be
+     * set to 1 on the first push, then 0 and so.
+     */
     {
         "param": "/moves/walk/var/enabled",
         "type": "toggle",
         "number": 3
     },
+
+    /**
+     * The axis 1 will set step in the range 38 to -38
+     */
     {
         "param": "/moves/walk/var/step",
         "type": "axis",
@@ -22,6 +47,11 @@
         "number": 2,
         "range": [20, -20]
     },
+
+    /**
+     * Pressing the button 4 will increment the frequency, and
+     * pressing the button 6 will decrement it.
+     */
     {
         "param": "/moves/walk/freq",
         "type": "increment",
@@ -34,6 +64,11 @@
         "number": 6,
         "step": 0.1
     },
+
+    /**
+     * When the button 10 will be pressed, the kickLeft will be set to 1, and
+     * to 0 when it will be released
+     */
     {
         "param": "/moves/walk/var/kickLeft",
         "type": "button",
@@ -43,18 +78,6 @@
         "param": "/moves/walk/var/kickRight",
         "type": "button",
         "number": 11
-    },
-    {
-        "param": "/moves/walk/trunkXOffset",
-        "type": "increment",
-        "number": 5,
-        "step": 0.001
-    },
-    {
-        "param": "/moves/walk/trunkXOffset",
-        "type": "decrement",
-        "number": 7,
-        "step": 0.001
     },
     {
         "param": "/moves/walk/riseGain",
