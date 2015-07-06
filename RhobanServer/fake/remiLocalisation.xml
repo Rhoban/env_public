@@ -4,7 +4,7 @@
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
   <benchmark>false</benchmark>
-  <benchmarkDetail>4</benchmarkDetail>
+  <benchmarkDetail>3</benchmarkDetail>
   <nbParticlesFF>1000</nbParticlesFF>
   <nbParticlesBF>1000</nbParticlesBF>
   <imageDelay>1</imageDelay>
@@ -15,8 +15,8 @@
   <ballResampling>0.0</ballResampling>
   <csp>
     <className>LogReader2</className>
-    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log2/imu.csv</sensorPath>
-    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log2/servos.csv</motorPath>
+    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/imu.csv</sensorPath>
+    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/servos.csv</motorPath>
   </csp>
   <playing>false</playing>
   <embedded>false</embedded>
@@ -39,7 +39,7 @@
       <paramInts>
         <ParamInt>
           <name>tagLevel</name>
-          <value>0</value>
+          <value>1</value>
         </ParamInt>
         <ParamInt>
           <name>whiteMinY</name>
@@ -875,8 +875,8 @@
       <paramInts />
       <paramFloats />
       <paramPairInt />
-      <startIndex>2</startIndex>
-      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log2/images.csv</imagesFile>
+      <startIndex>72</startIndex>
+      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/images.csv</imagesFile>
     </filter>
   </pipeline>
 </LocalisationTest>
