@@ -3,11 +3,14 @@
 	<ballExploration>10</ballExploration>
 	<ballResampling>0.0</ballResampling>
 	<benchmark>false</benchmark>
-	<benchmarkDetail>4</benchmarkDetail>
+	<benchmarkDetail>1</benchmarkDetail>
 	<compassOffset>125</compassOffset>
-	<embedded>false</embedded>
-	<fieldResampling>0.003</fieldResampling>
-	<imageDelay>1</imageDelay>
+	<csp>
+		<className>SchedulerRequester</className>
+	</csp>
+	<embedded>true</embedded>
+	<fieldResampling>0.002</fieldResampling>
+	<imageDelay>30</imageDelay>
 	<nbParticlesBF>1000</nbParticlesBF>
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
@@ -200,39 +203,11 @@
 					<name>lineThetaMargin</name>
 					<value>3</value>
 				</ParamFloat>
-				<ParamFloat>
-					<name>lineScore</name>
-					<value>110</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>lineMinLenght</name>
-					<value>10</value>
-				</ParamFloat>
 			</paramFloats>
 			<paramInts>
 				<paramInt>
-					<name>tagLevel</name>
-					<value>1</value>
-				</paramInt>
-				<paramInt>
-					<name>Epochs</name>
-					<value>150</value>
-				</paramInt>
-				<paramInt>
-					<name>ballMinY</name>
-					<value>150</value>
-				</paramInt>
-				<paramInt>
-					<name>minPointDist</name>
-					<value>3</value>
-				</paramInt>
-				<paramInt>
-					<name>minScore</name>
-					<value>40</value>
-				</paramInt>
-				<paramInt>
-					<name>reflectionMinY</name>
-					<value>195</value>
+					<name>lineMinLenght</name>
+					<value>10</value>
 				</paramInt>
 				<paramInt>
 					<name>activateCircleDetection</name>
@@ -341,6 +316,117 @@
 			<paramPairInt/>
 		</filter>
 		<filter>
+			<className>Slicer</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingBorders</dependency>
+			</dependencies>
+			<name>clippingBordersSliced</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>vSlices</name>
+					<value>6</value>
+				</paramInt>
+				<paramInt>
+					<name>hSlices</name>
+					<value>3</value>
+				</paramInt>
+			</paramInts>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>ROIFromBlobs</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingBordersSliced</dependency>
+			</dependencies>
+			<name>linesROI</name>
+			<paramFloats/>
+			<paramInts/>
+		</filter>
+		<filter>
+			<className>LinesByROI</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>source</dependency>
+				<dependency>linesROI</dependency>
+				<dependency>fieldColor</dependency>
+			</dependencies>
+			<name>linesByROI</name>
+			<paramFloats>
+				<ParamFloat>
+					<name>eraseThickness</name>
+					<value>15</value>
+				</ParamFloat>
+				<ParamFloat>
+					<name>minDist</name>
+					<value>20</value>
+				</ParamFloat>
+				<ParamFloat>
+					<name>rhoTol</name>
+					<value>5</value>
+				</ParamFloat>
+				<ParamFloat>
+					<name>thetaTol</name>
+					<value>1.5</value>
+				</ParamFloat>
+			</paramFloats>
+			<paramInts>
+				<paramInt>
+					<name>roiMargin</name>
+					<value>20</value>
+				</paramInt>
+				<paramInt>
+					<name>nbEpochs</name>
+					<value>3</value>
+				</paramInt>
+				<paramInt>
+					<name>iterationsByEpoch</name>
+					<value>100</value>
+				</paramInt>
+				<paramInt>
+					<name>minScore</name>
+					<value>5</value>
+				</paramInt>
+				<paramInt>
+					<name>minEdgeSize</name>
+					<value>40</value>
+				</paramInt>
+			</paramInts>
+		</filter>
+		<filter>
+			<className>ClippingFromLines</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingSrc</dependency>
+				<dependency>linesByROI</dependency>
+			</dependencies>
+			<name>clippingExperimental</name>
+			<paramFloats/>
+			<paramInts/>
+		</filter>
+		<filter>
 			<className>BinaryEdges</className>
 			<debugLevel>
 				<graphics>false</graphics>
@@ -349,7 +435,7 @@
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies>
-				<dependency>clippingLinesEroded</dependency>
+				<dependency>clippingExperimental</dependency>
 			</dependencies>
 			<name>clippingBorders2</name>
 			<paramFloats/>
@@ -402,7 +488,7 @@
 				</paramInt>
 				<paramInt>
 					<name>maxU</name>
-					<value>131</value>
+					<value>133</value>
 				</paramInt>
 				<paramInt>
 					<name>minV</name>
@@ -702,7 +788,7 @@
 			<paramPairInt/>
 		</filter>
 	</pipeline>
-	<playing>false</playing>
+	<playing>true</playing>
 	<robotAngleExploration>3</robotAngleExploration>
 	<robotPosExploration>15</robotPosExploration>
 	<showRobotView>false</showRobotView>
