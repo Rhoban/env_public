@@ -10,10 +10,93 @@
 	</csp>
 	<embedded>true</embedded>
 	<fieldResampling>0.002</fieldResampling>
-	<imageDelay>30</imageDelay>
+	<imageDelay>-100</imageDelay>
 	<nbParticlesBF>1000</nbParticlesBF>
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
+		<filter>
+			<className>BallROIManager</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>source</dependency>
+				<dependency>ballROIDetector</dependency>
+				<dependency>sparkleOfHope</dependency>
+				<dependency>clipping</dependency>
+			</dependencies>
+			<name>ballROIManager</name>
+			<paramFloats>
+				<ParamFloat>
+					<name>minRatio</name>
+					<value>0.7</value>
+				</ParamFloat>
+				<ParamFloat>
+					<name>maxRatio</name>
+					<value>1.3</value>
+				</ParamFloat>
+				<ParamFloat>
+					<name>sizeFactor</name>
+					<value>1.2</value>
+				</ParamFloat>
+			</paramFloats>
+			<paramInts>
+				<paramInt>
+					<name>tagLevel</name>
+					<value>1</value>
+				</paramInt>
+				<paramInt>
+					<name>whiteMinY</name>
+					<value>150</value>
+				</paramInt>
+			</paramInts>
+		</filter>
+		<filter>
+			<className>SparkleOfHope</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingSrc</dependency>
+				<dependency>clipping</dependency>
+				<dependency>sparkleOfHopeDetection</dependency>
+			</dependencies>
+			<name>sparkleOfHope</name>
+			<paramFloats>
+				<ParamFloat>
+					<name>sizeFactor</name>
+					<value>1.2</value>
+				</ParamFloat>
+				<ParamFloat>
+					<name>minFillingPerc</name>
+					<value>0.6</value>
+				</ParamFloat>
+				<ParamFloat>
+					<name>maxFillingPerc</name>
+					<value>1</value>
+				</ParamFloat>
+			</paramFloats>
+			<paramInts>
+				<paramInt>
+					<name>tagLevel</name>
+					<value>1</value>
+				</paramInt>
+				<paramInt>
+					<name>whiteMinY</name>
+					<value>150</value>
+				</paramInt>
+				<paramInt>
+					<name>minPointDist</name>
+					<value>5</value>
+				</paramInt>
+			</paramInts>
+		</filter>
 		<filter>
 			<className>ClippingByBlob</className>
 			<debugLevel>
@@ -61,52 +144,6 @@
 			<paramInts/>
 		</filter>
 		<filter>
-			<className>ClippingRHT</className>
-			<debugLevel>
-				<graphics>false</graphics>
-			</debugLevel>
-			<dependencies>
-				<dependency>clippingBorders</dependency>
-			</dependencies>
-			<name>clippingLines</name>
-			<paramFloats>
-				<ParamFloat>
-					<name>minDist</name>
-					<value>1.0</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>rhoTol</name>
-					<value>2.0</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>thetaTol</name>
-					<value>0.8</value>
-				</ParamFloat>
-			</paramFloats>
-			<paramInts>
-				<paramInt>
-					<name>nbEpochs</name>
-					<value>3</value>
-				</paramInt>
-				<paramInt>
-					<name>iterationsByEpoch</name>
-					<value>50</value>
-				</paramInt>
-				<paramInt>
-					<name>minEdgeSize</name>
-					<value>40</value>
-				</paramInt>
-				<paramInt>
-					<name>minScore</name>
-					<value>5</value>
-				</paramInt>
-				<paramInt>
-					<name>eraseThickness</name>
-					<value>5</value>
-				</paramInt>
-			</paramInts>
-		</filter>
-		<filter>
 			<className>WhiteGoalByROI</className>
 			<debugLevel>
 				<graphics>false</graphics>
@@ -150,14 +187,14 @@
 			</debugLevel>
 			<dependencies>
 				<dependency>source</dependency>
-				<dependency>ballROIDetector</dependency>
+				<dependency>ballROIManager</dependency>
 				<dependency>fieldColor</dependency>
 			</dependencies>
 			<name>ballByROI</name>
 			<paramFloats>
 				<ParamFloat>
 					<name>edgeToMinPointRatio</name>
-					<value>0.02</value>
+					<value>0.1</value>
 				</ParamFloat>
 				<ParamFloat>
 					<name>closureSize</name>
@@ -177,7 +214,7 @@
 				</ParamFloat>
 				<ParamFloat>
 					<name>clusterFlatTol</name>
-					<value>0</value>
+					<value>1</value>
 				</ParamFloat>
 				<ParamFloat>
 					<name>robotHeight</name>
@@ -203,14 +240,6 @@
 					<name>lineThetaMargin</name>
 					<value>3</value>
 				</ParamFloat>
-				<ParamFloat>
-					<name>lineScore</name>
-					<value>110</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>lineMinLenght</name>
-					<value>10</value>
-				</ParamFloat>
 			</paramFloats>
 			<paramInts>
 				<paramInt>
@@ -219,7 +248,7 @@
 				</paramInt>
 				<paramInt>
 					<name>Epochs</name>
-					<value>150</value>
+					<value>200</value>
 				</paramInt>
 				<paramInt>
 					<name>ballMinY</name>
@@ -240,6 +269,26 @@
 				<paramInt>
 					<name>activateCircleDetection</name>
 					<value>1</value>
+				</paramInt>
+				<paramInt>
+					<name>lineScore</name>
+					<value>50</value>
+				</paramInt>
+				<paramInt>
+					<name>lineMinLenght</name>
+					<value>10</value>
+				</paramInt>
+				<paramInt>
+					<name>lineMinDist</name>
+					<value>10</value>
+				</paramInt>
+				<paramInt>
+					<name>lineEraseThickness</name>
+					<value>3</value>
+				</paramInt>
+				<paramInt>
+					<name>lineNbIterations</name>
+					<value>100</value>
 				</paramInt>
 			</paramInts>
 			<paramPairInt/>
@@ -292,9 +341,9 @@
 				<graphics>false</graphics>
 			</debugLevel>
 			<dependencies>
-				<dependency>clippingLines</dependency>
+				<dependency>clippingExperimental</dependency>
 			</dependencies>
-			<name>clippingLinesEroded</name>
+			<name>clippingExperimentalEroded</name>
 			<paramFloats/>
 			<paramInts>
 				<paramInt>
@@ -344,6 +393,117 @@
 			<paramPairInt/>
 		</filter>
 		<filter>
+			<className>Slicer</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingBorders</dependency>
+			</dependencies>
+			<name>clippingBordersSliced</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>vSlices</name>
+					<value>6</value>
+				</paramInt>
+				<paramInt>
+					<name>hSlices</name>
+					<value>3</value>
+				</paramInt>
+			</paramInts>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>ROIFromBlobs</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingBordersSliced</dependency>
+			</dependencies>
+			<name>linesROI</name>
+			<paramFloats/>
+			<paramInts/>
+		</filter>
+		<filter>
+			<className>LinesByROI</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>source</dependency>
+				<dependency>linesROI</dependency>
+				<dependency>fieldColor</dependency>
+			</dependencies>
+			<name>linesByROI</name>
+			<paramFloats>
+				<ParamFloat>
+					<name>eraseThickness</name>
+					<value>15</value>
+				</ParamFloat>
+				<ParamFloat>
+					<name>minDist</name>
+					<value>20</value>
+				</ParamFloat>
+				<ParamFloat>
+					<name>rhoTol</name>
+					<value>5</value>
+				</ParamFloat>
+				<ParamFloat>
+					<name>thetaTol</name>
+					<value>1.5</value>
+				</ParamFloat>
+			</paramFloats>
+			<paramInts>
+				<paramInt>
+					<name>roiMargin</name>
+					<value>20</value>
+				</paramInt>
+				<paramInt>
+					<name>nbEpochs</name>
+					<value>3</value>
+				</paramInt>
+				<paramInt>
+					<name>iterationsByEpoch</name>
+					<value>100</value>
+				</paramInt>
+				<paramInt>
+					<name>minScore</name>
+					<value>5</value>
+				</paramInt>
+				<paramInt>
+					<name>minEdgeSize</name>
+					<value>40</value>
+				</paramInt>
+			</paramInts>
+		</filter>
+		<filter>
+			<className>ClippingFromLines</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingSrc</dependency>
+				<dependency>linesByROI</dependency>
+			</dependencies>
+			<name>clippingExperimental</name>
+			<paramFloats/>
+			<paramInts/>
+		</filter>
+		<filter>
 			<className>BinaryEdges</className>
 			<debugLevel>
 				<graphics>false</graphics>
@@ -352,9 +512,9 @@
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies>
-				<dependency>clippingLinesEroded</dependency>
+				<dependency>clippingExperimentalEroded</dependency>
 			</dependencies>
-			<name>clippingBorders2</name>
+			<name>clippingExperimentalBorders</name>
 			<paramFloats/>
 			<paramInts/>
 			<paramPairInt/>
@@ -393,11 +553,11 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>21</value>
+					<value>12</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
-					<value>255</value>
+					<value>160</value>
 				</paramInt>
 				<paramInt>
 					<name>minU</name>
@@ -405,7 +565,7 @@
 				</paramInt>
 				<paramInt>
 					<name>maxU</name>
-					<value>131</value>
+					<value>133</value>
 				</paramInt>
 				<paramInt>
 					<name>minV</name>
@@ -595,6 +755,43 @@
 			</paramInts>
 		</filter>
 		<filter>
+			<className>ColorBounding</className>
+			<debugLevel>
+				<graphics>false</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingSrc</dependency>
+			</dependencies>
+			<name>sparkleOfHopeDetection</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>minY</name>
+					<value>195</value>
+				</paramInt>
+				<paramInt>
+					<name>maxY</name>
+					<value>255</value>
+				</paramInt>
+				<paramInt>
+					<name>minU</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>maxU</name>
+					<value>255</value>
+				</paramInt>
+				<paramInt>
+					<name>minV</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>maxV</name>
+					<value>255</value>
+				</paramInt>
+			</paramInts>
+		</filter>
+		<filter>
 			<className>Rescale</className>
 			<debugLevel>
 				<graphics>false</graphics>
@@ -639,7 +836,7 @@
 			</debugLevel>
 			<dependencies>
 				<dependency>whiteGoalNearField</dependency>
-				<dependency>clippingBorders2</dependency>
+				<dependency>clippingExperimentalBorders</dependency>
 			</dependencies>
 			<name>goalMask</name>
 			<paramFloats/>
@@ -782,8 +979,8 @@
 		</filter>
 	</pipeline>
 	<playing>true</playing>
-	<robotAngleExploration>3</robotAngleExploration>
-	<robotPosExploration>15</robotPosExploration>
+	<robotAngleExploration>6</robotAngleExploration>
+	<robotPosExploration>30</robotPosExploration>
 	<showRobotView>false</showRobotView>
 	<showTaggedImg>false</showTaggedImg>
 	<showTopView>false</showTopView>

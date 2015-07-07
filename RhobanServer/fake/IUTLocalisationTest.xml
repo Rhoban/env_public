@@ -15,8 +15,8 @@
   <ballResampling>0.0</ballResampling>
   <csp>
     <className>LogReader2</className>
-    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log1/imu.csv</sensorPath>
-    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_19_IUT/Log1/servos.csv</motorPath>
+    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_23_IUT/Log1/imu.csv</sensorPath>
+    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_23_IUT/Log1/servos.csv</motorPath>
   </csp>
   <playing>false</playing>
   <embedded>false</embedded>
@@ -39,6 +39,10 @@
         <ParamInt>
           <name>whiteMinY</name>
           <value>150</value>
+        </ParamInt>
+        <ParamInt>
+          <name>minPointDist</name>
+          <value>3</value>
         </ParamInt>
       </paramInts>
       <paramFloats>
