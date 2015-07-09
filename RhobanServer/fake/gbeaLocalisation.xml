@@ -35,7 +35,20 @@
                 <dependency>ballROIManager</dependency>
             </dependencies>
             <featurePath>../../../Code/Vision/Resources/fast_freak.yml</featurePath>
-            <paramInts />
+            <paramInts>
+                <ParamInt>
+                  <name>matchThreshold</name>
+                  <value>2</value>
+                </ParamInt>
+                <ParamInt>
+                  <name>distThreshold</name>
+                  <value>100</value>
+                </ParamInt>
+                <ParamInt>
+                  <name>keypointSensibility</name>
+                  <value>70</value>
+                </ParamInt>
+            </paramInts>
             <paramFloats />
             <paramPairInt />
         </filter>

@@ -29,7 +29,20 @@
 			<featurePath>../../../Code/Vision/Resources/Features/fast_freak.yml</featurePath>
 			<name>ballByROI</name>
 			<paramFloats/>
-			<paramInts/>
+            <paramInts>
+                <ParamInt>
+                  <name>matchThreshold</name>
+                  <value>2</value>
+                </ParamInt>
+                <ParamInt>
+                  <name>distThreshold</name>
+                  <value>100</value>
+                </ParamInt>
+                <ParamInt>
+                  <name>keypointSensibility</name>
+                  <value>70</value>
+                </ParamInt>
+            </paramInts>
 			<paramPairInt/>
 		</filter>
 		<filter>
