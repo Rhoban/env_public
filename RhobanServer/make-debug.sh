@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cd $HOME/Code/RhobanServer/debug &&
-make
+make -j2
 
