@@ -794,27 +794,6 @@
 			</paramInts>
 		</filter>
 		<filter>
-			<className>Rescale</className>
-			<debugLevel>
-				<graphics>false</graphics>
-				<parameters>false</parameters>
-				<perfs>false</perfs>
-				<threads>false</threads>
-			</debugLevel>
-			<dependencies>
-				<dependency>source</dependency>
-			</dependencies>
-			<name>goalSrc</name>
-			<paramFloats>
-				<ParamFloat>
-					<name>ratio</name>
-					<value>4</value>
-				</ParamFloat>
-			</paramFloats>
-			<paramInts/>
-			<paramPairInt/>
-		</filter>
-		<filter>
 			<className>Mask</className>
 			<debugLevel>
 				<graphics>false</graphics>
