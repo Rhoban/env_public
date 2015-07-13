@@ -11,15 +11,46 @@
 		<sensorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/imu.csv</sensorPath>
 	</csp>
 	<embedded>false</embedded>
-	<fieldResampling>0.003</fieldResampling>
-	<imageDelay>-100</imageDelay>
+	<fieldResampling>0.002</fieldResampling>
+	<imageDelay>0</imageDelay>
 	<nbParticlesBF>1000</nbParticlesBF>
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
 		<filter>
+		    <className>FREAK</className>
+		    <name>ballByFREAK</name>
+		    <debugLevel>
+		        <threads>false</threads>
+		        <graphics>true</graphics>
+		        <parameters>false</parameters>
+		        <perfs>false</perfs>
+		    </debugLevel>
+		    <dependencies>
+		        <dependency>source</dependency>
+		        <dependency>ballROIManager</dependency>
+		    </dependencies>
+		    <featurePath>../../../Code/Vision/Resources/fast_freak.yml</featurePath>
+		    <paramInts>
+		        <ParamInt>
+		          <name>matchThreshold</name>
+		          <value>2</value>
+		        </ParamInt>
+		        <ParamInt>
+		          <name>distThreshold</name>
+		          <value>100</value>
+		        </ParamInt>
+		        <ParamInt>
+		          <name>keypointSensibility</name>
+		          <value>70</value>
+		        </ParamInt>
+		    </paramInts>
+		    <paramFloats />
+		    <paramPairInt />
+		</filter>
+		<filter>
 			<className>BallROIManager</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -148,7 +179,7 @@
 		<filter>
 			<className>WhiteGoalByROI</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -182,7 +213,7 @@
 		<filter>
 			<className>WhiteBallByROI</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -885,7 +916,7 @@
 		<filter>
 			<className>SourceLogs2</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>

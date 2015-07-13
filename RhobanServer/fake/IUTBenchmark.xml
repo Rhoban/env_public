@@ -6,8 +6,8 @@
 	<benchmarkDetail>3</benchmarkDetail>
 	<compassOffset>125</compassOffset>
 	<embedded>false</embedded>
-	<fieldResampling>0.003</fieldResampling>
-	<imageDelay>-100</imageDelay>
+	<fieldResampling>0.002</fieldResampling>
+	<imageDelay>0</imageDelay>
 	<nbParticlesBF>1000</nbParticlesBF>
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
@@ -787,27 +787,6 @@
 					<value>255</value>
 				</paramInt>
 			</paramInts>
-		</filter>
-		<filter>
-			<className>Rescale</className>
-			<debugLevel>
-				<graphics>false</graphics>
-				<parameters>false</parameters>
-				<perfs>false</perfs>
-				<threads>false</threads>
-			</debugLevel>
-			<dependencies>
-				<dependency>source</dependency>
-			</dependencies>
-			<name>goalSrc</name>
-			<paramFloats>
-				<ParamFloat>
-					<name>ratio</name>
-					<value>4</value>
-				</ParamFloat>
-			</paramFloats>
-			<paramInts/>
-			<paramPairInt/>
 		</filter>
 		<filter>
 			<className>Mask</className>
