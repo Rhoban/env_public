@@ -2,8 +2,8 @@
 <LocalisationTest>
 	<ballExploration>10</ballExploration>
 	<ballResampling>0.0</ballResampling>
-	<benchmark>false</benchmark>
-	<benchmarkDetail>3</benchmarkDetail>
+	<benchmark>true</benchmark>
+	<benchmarkDetail>2</benchmarkDetail>
 	<compassOffset>125</compassOffset>
 	<csp>
 		<className>LogReader2</className>
@@ -79,7 +79,7 @@
 			<paramInts>
 				<paramInt>
 					<name>tagLevel</name>
-					<value>1</value>
+					<value>1cd </value>
 				</paramInt>
 				<paramInt>
 					<name>whiteMinY</name>
@@ -147,7 +147,7 @@
 		<filter>
 			<className>BallROIDetector</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -293,7 +293,7 @@
 				</paramInt>
 				<paramInt>
 					<name>minScore</name>
-					<value>40</value>
+					<value>50</value>
 				</paramInt>
 				<paramInt>
 					<name>reflectionMinY</name>
@@ -396,7 +396,7 @@
 		<filter>
 			<className>ClippingRules</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
