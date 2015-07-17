@@ -1,22 +1,25 @@
 #!/bin/bash
 
-#if [ $# -ne 1 ]; then
-#    echo "Usage: ./wifi.sh [field-letter]"
-#    exit
-#fi
+if [ $# -ne 1 ]; then
+    echo "Usage: ./wifi.sh [field-letter]"
+    exit
+fi
 
 #ESSID="KID-$1"
-ESSID="HL_KID_A"
+ESSID="HL_KID_$1"
 HOSTNAME=`hostname`
 
-if [ "$HOSTNAME" == "Chewbacca" ]; then
-    IP="192.168.114.120"
+if [ "$HOSTNAME" == "chewbacca" ]; then
+    IP="192.168.16.101"
 fi
-if [ "$HOSTNAME" == "Mowgly" ]; then
-    IP="192.168.114.121"
+if [ "$HOSTNAME" == "mowgly" ]; then
+    IP="192.168.16.102"
 fi
-if [ "$HOSTNAME" == "Django" ]; then
-    IP="192.168.114.122"
+if [ "$HOSTNAME" == "django" ]; then
+    IP="192.168.16.103"
+fi
+if [ "$HOSTNAME" == "tom" ]; then
+    IP="192.168.16.104"
 fi
 
 echo "Connecting to $ESSID with $IP..."
