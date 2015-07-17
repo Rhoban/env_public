@@ -33,10 +33,6 @@
 					<name>nbCols</name>
 					<value>800</value>
 				</paramInt>
-				<paramInt>
-					<name>tagLevel</name>
-					<value>1</value>
-				</paramInt>
 		  	</paramInts>
 		</filter>
 		<filter>
@@ -126,7 +122,11 @@
 					<value>0.028</value>
 				</ParamFloat>
 			</paramFloats>
-			<paramInts/>
+			<paramInt>
+				<name>tagLevel</name>
+				<value>1</value>
+			</paramInt>
+
 		</filter>
 		<filter>
 			<className>WhiteGoalByROI</className>
@@ -199,18 +199,6 @@
 				</ParamFloat>
 				<ParamFloat>
 					<name>clusterFlatTol</name>
-					<value>1</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>robotHeight</name>
-					<value>50</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>tilt</name>
-					<value>20</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>qTilt</name>
 					<value>1</value>
 				</ParamFloat>
 				<ParamFloat>

@@ -4,8 +4,8 @@
 	<benchmarkDetail>3</benchmarkDetail>
 	<csp>
 		<className>LogReader2</className>
-		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log4/servos.csv</motorPath>
-		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log4/imu.csv</sensorPath>
+		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log6/servos.csv</motorPath>
+		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log6/imu.csv</sensorPath>
 	</csp>
 	<embedded>false</embedded>
 	<imageDelay>0</imageDelay>
@@ -139,7 +139,10 @@
 					<value>0.028</value>
 				</ParamFloat>
 			</paramFloats>
-			<paramInts/>
+			<paramInt>
+				<name>tagLevel</name>
+				<value>1</value>
+			</paramInt>
 		</filter>
 		<filter>
 			<className>WhiteGoalByROI</className>
@@ -896,7 +899,7 @@
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies/>
-			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log4/images.csv</imagesFile>
+			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log6/images.csv</imagesFile>
 			<name>source</name>
 			<paramFloats/>
 			<paramInts/>
