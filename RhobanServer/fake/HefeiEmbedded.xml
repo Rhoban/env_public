@@ -1,21 +1,23 @@
 <?xml version="1.0" ?>
 <LocalisationTest>
+	<ballExploration>10</ballExploration>
+	<ballResampling>0.0</ballResampling>
 	<benchmark>false</benchmark>
-	<benchmarkDetail>3</benchmarkDetail>
+	<benchmarkDetail>1</benchmarkDetail>
+	<compassOffset>125</compassOffset>
 	<csp>
-		<className>LogReader2</className>
-		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log4/servos.csv</motorPath>
-		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log4/imu.csv</sensorPath>
+		<className>SchedulerRequester</className>
 	</csp>
-	<embedded>false</embedded>
-	<imageDelay>0</imageDelay>
+	<embedded>true</embedded>
+	<fieldResampling>0.002</fieldResampling>
+	<imageDelay>30</imageDelay>
 	<nbParticlesBF>1000</nbParticlesBF>
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
 		<filter>
 			<className>BallROIManager</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -178,7 +180,7 @@
 		<filter>
 			<className>WhiteBallByROI</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -888,24 +890,86 @@
 			<paramPairInt/>
 		</filter>
 		<filter>
-			<className>SourceLogs2</className>
+			<captureFrequency>30</captureFrequency>
+			<className>SourceV4l2</className>
 			<debugLevel>
-				<graphics>true</graphics>
-				<parameters>false</parameters>
-				<perfs>false</perfs>
-				<threads>false</threads>
+				<graphics>false</graphics>
 			</debugLevel>
 			<dependencies/>
-			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log4/images.csv</imagesFile>
+			<device>/dev/video0</device>
 			<name>source</name>
 			<paramFloats/>
-			<paramInts/>
-			<paramPairInt/>
-			<startIndex>1</startIndex>
+			<paramInts>
+				<paramInt>
+					<name>backlight_compensation</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>brightness</name>
+					<value>150</value>
+				</paramInt>
+				<paramInt>
+					<name>contrast</name>
+					<value>192</value>
+				</paramInt>
+				<paramInt>
+					<name>exposure_auto</name>
+					<value>1</value>
+				</paramInt>
+				<paramInt>
+					<name>exposure_(absolute)</name>
+					<value>100</value>
+				</paramInt>
+				<paramInt>
+					<name>exposure_auto_priority</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>focus_auto</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>focus_(absolute)</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>gain</name>
+					<value>180</value>
+				</paramInt>
+				<paramInt>
+					<name>power_line_frequency</name>
+					<value>1</value>
+				</paramInt>
+				<paramInt>
+					<name>saturation</name>
+					<value>255</value>
+				</paramInt>
+				<paramInt>
+					<name>sharpness</name>
+					<value>130</value>
+				</paramInt>
+				<paramInt>
+					<name>white_balance_temperature</name>
+					<value>5000</value>
+				</paramInt>
+				<paramInt>
+					<name>white_balance_temperature_auto</name>
+					<value>0</value>
+				</paramInt>
+			</paramInts>
+			<paramPairInt>
+				<PairInt>
+					<name>size</name>
+					<value.first>800</value.first>
+					<value.second>448</value.second>
+				</PairInt>
+			</paramPairInt>
 		</filter>
 	</pipeline>
-	<playing>false</playing>
+	<playing>true</playing>
+	<robotAngleExploration>3</robotAngleExploration>
+	<robotPosExploration>15</robotPosExploration>
 	<showRobotView>false</showRobotView>
-	<showTaggedImg>true</showTaggedImg>
+	<showTaggedImg>false</showTaggedImg>
 	<showTopView>false</showTopView>
 </LocalisationTest>
