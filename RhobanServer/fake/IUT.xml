@@ -7,8 +7,8 @@
 	<compassOffset>125</compassOffset>
 	<csp>
 		<className>LogReader2</className>
-		<motorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/servos.csv</motorPath>
-		<sensorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/imu.csv</sensorPath>
+		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log4/servos.csv</motorPath>
+		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log4/imu.csv</sensorPath>
 	</csp>
 	<embedded>false</embedded>
 	<fieldResampling>0.002</fieldResampling>
@@ -21,7 +21,7 @@
 		    <name>ballByFREAK</name>
 		    <debugLevel>
 		        <threads>false</threads>
-		        <graphics>true</graphics>
+		        <graphics>false</graphics>
 		        <parameters>false</parameters>
 		        <perfs>false</perfs>
 		    </debugLevel>
@@ -79,11 +79,11 @@
 			<paramInts>
 				<paramInt>
 					<name>tagLevel</name>
-					<value>1cd </value>
+					<value>1</value>
 				</paramInt>
 				<paramInt>
 					<name>whiteMinY</name>
-					<value>150</value>
+					<value>170</value>
 				</paramInt>
 			</paramInts>
 		</filter>
@@ -147,7 +147,7 @@
 		<filter>
 			<className>BallROIDetector</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -213,7 +213,7 @@
 		<filter>
 			<className>WhiteBallByROI</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -576,7 +576,7 @@
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -586,19 +586,19 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>12</value>
+					<value>36</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
-					<value>160</value>
+					<value>100</value>
 				</paramInt>
 				<paramInt>
 					<name>minU</name>
-					<value>0</value>
+					<value>80</value>
 				</paramInt>
 				<paramInt>
 					<name>maxU</name>
-					<value>133</value>
+					<value>130</value>
 				</paramInt>
 				<paramInt>
 					<name>minV</name>
@@ -606,14 +606,14 @@
 				</paramInt>
 				<paramInt>
 					<name>maxV</name>
-					<value>255</value>
+					<value>130</value>
 				</paramInt>
 			</paramInts>
 		</filter>
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -623,7 +623,7 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>150</value>
+					<value>170</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
@@ -650,7 +650,7 @@
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -660,7 +660,7 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>150</value>
+					<value>200</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
@@ -687,7 +687,7 @@
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -922,7 +922,7 @@
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies/>
-			<imagesFile>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/images.csv</imagesFile>
+			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log4/images.csv</imagesFile>
 			<name>source</name>
 			<paramFloats/>
 			<paramInts/>
