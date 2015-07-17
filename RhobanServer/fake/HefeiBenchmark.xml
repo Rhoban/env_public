@@ -2,11 +2,6 @@
 <LocalisationTest>
 	<benchmark>false</benchmark>
 	<benchmarkDetail>3</benchmarkDetail>
-	<csp>
-		<className>LogReader2</className>
-		<motorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log3/servos.csv</motorPath>
-		<sensorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log3/imu.csv</sensorPath>
-	</csp>
 	<embedded>false</embedded>
 	<imageDelay>0</imageDelay>
 	<nbParticlesBF>1000</nbParticlesBF>
@@ -48,7 +43,7 @@
 				</paramInt>
 				<paramInt>
 					<name>whiteMinY</name>
-					<value>150</value>
+					<value>170</value>
 				</paramInt>
 			</paramInts>
 		</filter>
@@ -212,18 +207,6 @@
 				</ParamFloat>
 				<ParamFloat>
 					<name>clusterFlatTol</name>
-					<value>1</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>robotHeight</name>
-					<value>50</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>tilt</name>
-					<value>20</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>qTilt</name>
 					<value>1</value>
 				</ParamFloat>
 				<ParamFloat>
@@ -551,19 +534,19 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>12</value>
+					<value>36</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
-					<value>160</value>
+					<value>100</value>
 				</paramInt>
 				<paramInt>
 					<name>minU</name>
-					<value>0</value>
+					<value>80</value>
 				</paramInt>
 				<paramInt>
 					<name>maxU</name>
-					<value>133</value>
+					<value>130</value>
 				</paramInt>
 				<paramInt>
 					<name>minV</name>
@@ -571,7 +554,7 @@
 				</paramInt>
 				<paramInt>
 					<name>maxV</name>
-					<value>255</value>
+					<value>130</value>
 				</paramInt>
 			</paramInts>
 		</filter>
@@ -588,7 +571,7 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>150</value>
+					<value>170</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
@@ -625,7 +608,7 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>150</value>
+					<value>200</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
@@ -662,7 +645,7 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>150</value>
+					<value>140</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
@@ -899,25 +882,9 @@
 			</paramInts>
 			<paramPairInt/>
 		</filter>
-		<filter>
-			<className>SourceLogs2</className>
-			<debugLevel>
-				<graphics>true</graphics>
-				<parameters>false</parameters>
-				<perfs>false</perfs>
-				<threads>false</threads>
-			</debugLevel>
-			<dependencies/>
-			<imagesFile>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log3/images.csv</imagesFile>
-			<name>source</name>
-			<paramFloats/>
-			<paramInts/>
-			<paramPairInt/>
-			<startIndex>1</startIndex>
-		</filter>
 	</pipeline>
 	<playing>false</playing>
 	<showRobotView>false</showRobotView>
-	<showTaggedImg>true</showTaggedImg>
-	<showTopView>true</showTopView>
+	<showTaggedImg>false</showTaggedImg>
+	<showTopView>false</showTopView>
 </LocalisationTest>
