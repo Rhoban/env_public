@@ -4,8 +4,8 @@
 	<benchmarkDetail>3</benchmarkDetail>
 	<csp>
 		<className>LogReader2</className>
-		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log6/servos.csv</motorPath>
-		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log6/imu.csv</sensorPath>
+		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log2/servos.csv</motorPath>
+		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log2/imu.csv</sensorPath>
 	</csp>
 	<embedded>false</embedded>
 	<imageDelay>0</imageDelay>
@@ -103,11 +103,16 @@
 			<dependencies>
 				<dependency>clippingSrc</dependency>
 				<dependency>whiteDetectionClosing</dependency>
-				<dependency>fieldColor</dependency>
+				<dependency>fieldColorOpening</dependency>
 			</dependencies>
 			<name>clippingByBlob</name>
 			<paramFloats/>
-			<paramInts/>
+			<paramInts>
+				<paramInt>
+					<name>pitchLimit</name>
+					<value>35</value>
+				</paramInt>
+			</paramInts>
 		</filter>
 		<filter>
 			<className>BallROIDetector</className>
@@ -191,7 +196,7 @@
 			<dependencies>
 				<dependency>source</dependency>
 				<dependency>ballROIManager</dependency>
-				<dependency>fieldColor</dependency>
+				<dependency>fieldColorForBall</dependency>
 			</dependencies>
 			<name>ballByROI</name>
 			<paramFloats>
@@ -458,7 +463,7 @@
 			<paramInts>
 				<paramInt>
 					<name>roiMargin</name>
-					<value>10</value>
+					<value>20</value>
 				</paramInt>
 				<paramInt>
 					<name>nbEpochs</name>
@@ -576,6 +581,43 @@
 			<dependencies>
 				<dependency>clippingSrc</dependency>
 			</dependencies>
+			<name>fieldColorForBall</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>minY</name>
+					<value>28</value>
+				</paramInt>
+				<paramInt>
+					<name>maxY</name>
+					<value>105</value>
+				</paramInt>
+				<paramInt>
+					<name>minU</name>
+					<value>80</value>
+				</paramInt>
+				<paramInt>
+					<name>maxU</name>
+					<value>132</value>
+				</paramInt>
+				<paramInt>
+					<name>minV</name>
+					<value>70</value>
+				</paramInt>
+				<paramInt>
+					<name>maxV</name>
+					<value>130</value>
+				</paramInt>
+			</paramInts>
+		</filter>
+		<filter>
+			<className>ColorBounding</className>
+			<debugLevel>
+				<graphics>true</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingSrc</dependency>
+			</dependencies>
 			<name>fieldColorLarge</name>
 			<paramFloats/>
 			<paramInts>
@@ -618,7 +660,7 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>180</value>
+					<value>150</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
@@ -872,6 +914,35 @@
 			<paramPairInt/>
 		</filter>
 		<filter>
+			<className>Opening</className>
+			<debugLevel>
+				<graphics>true</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>fieldColor</dependency>
+			</dependencies>
+			<name>fieldColorOpening</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>1</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>3</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>3</value>
+				</paramInt>
+			</paramInts>
+			<paramPairInt/>
+		</filter>
+		<filter>
 			<className>Dilate</className>
 			<debugLevel>
 				<graphics>false</graphics>
@@ -938,12 +1009,12 @@
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies/>
-			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log6/images.csv</imagesFile>
+			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log2/images.csv</imagesFile>
 			<name>source</name>
 			<paramFloats/>
 			<paramInts/>
 			<paramPairInt/>
-			<startIndex>1</startIndex>
+			<startIndex>38</startIndex>
 		</filter>
 	</pipeline>
 	<playing>false</playing>
