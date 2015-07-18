@@ -1,12 +1,16 @@
 <?xml version="1.0" ?>
 <LocalisationTest>
-	<benchmark>true</benchmark>
-	<benchmarkDetail>2</benchmarkDetail>
+	<ballExploration>10</ballExploration>
+	<ballResampling>0.0</ballResampling>
+	<benchmark>false</benchmark>
+	<benchmarkDetail>1</benchmarkDetail>
+	<compassOffset>125</compassOffset>
 	<csp>
 		<className>SchedulerRequester</className>
 	</csp>
 	<embedded>true</embedded>
-	<imageDelay>0</imageDelay>
+	<fieldResampling>0.002</fieldResampling>
+	<imageDelay>30</imageDelay>
 	<nbParticlesBF>1000</nbParticlesBF>
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
@@ -788,27 +792,6 @@
 			</paramInts>
 		</filter>
 		<filter>
-			<className>Rescale</className>
-			<debugLevel>
-				<graphics>false</graphics>
-				<parameters>false</parameters>
-				<perfs>false</perfs>
-				<threads>false</threads>
-			</debugLevel>
-			<dependencies>
-				<dependency>source</dependency>
-			</dependencies>
-			<name>goalSrc</name>
-			<paramFloats>
-				<ParamFloat>
-					<name>ratio</name>
-					<value>4</value>
-				</ParamFloat>
-			</paramFloats>
-			<paramInts/>
-			<paramPairInt/>
-		</filter>
-		<filter>
 			<className>Mask</className>
 			<debugLevel>
 				<graphics>false</graphics>
@@ -975,6 +958,8 @@
 		</filter>
 	</pipeline>
 	<playing>true</playing>
+	<robotAngleExploration>3</robotAngleExploration>
+	<robotPosExploration>15</robotPosExploration>
 	<showRobotView>false</showRobotView>
 	<showTaggedImg>false</showTaggedImg>
 	<showTopView>false</showTopView>

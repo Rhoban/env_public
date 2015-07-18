@@ -1,12 +1,13 @@
 <?xml version="1.0" ?>
 <LocalisationTest>
-	<ballExploration>10</ballExploration>
-	<ballResampling>0.0</ballResampling>
 	<benchmark>false</benchmark>
 	<benchmarkDetail>3</benchmarkDetail>
-	<compassOffset>125</compassOffset>
+	<csp>
+		<className>LogReader2</className>
+		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log1/servos.csv</motorPath>
+		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log1/imu.csv</sensorPath>
+	</csp>
 	<embedded>false</embedded>
-	<fieldResampling>0.002</fieldResampling>
 	<imageDelay>0</imageDelay>
 	<nbParticlesBF>1000</nbParticlesBF>
 	<nbParticlesFF>1000</nbParticlesFF>
@@ -14,7 +15,7 @@
 		<filter>
 			<className>BallROIManager</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -47,7 +48,7 @@
 				</paramInt>
 				<paramInt>
 					<name>whiteMinY</name>
-					<value>150</value>
+					<value>170</value>
 				</paramInt>
 			</paramInts>
 		</filter>
@@ -97,12 +98,12 @@
 		<filter>
 			<className>ClippingByBlob</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
 				<dependency>whiteDetectionClosing</dependency>
-				<dependency>fieldColor</dependency>
+				<dependency>fieldColorClosure</dependency>
 			</dependencies>
 			<name>clippingByBlob</name>
 			<paramFloats/>
@@ -138,7 +139,12 @@
 					<value>0.028</value>
 				</ParamFloat>
 			</paramFloats>
-			<paramInts/>
+			<paramInts>
+				<paramInt>
+					<name>tagLevel</name>
+					<value>1</value>
+				</paramInt>
+			</paramInts>
 		</filter>
 		<filter>
 			<className>WhiteGoalByROI</className>
@@ -177,7 +183,7 @@
 		<filter>
 			<className>WhiteBallByROI</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -211,18 +217,6 @@
 				</ParamFloat>
 				<ParamFloat>
 					<name>clusterFlatTol</name>
-					<value>1</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>robotHeight</name>
-					<value>50</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>tilt</name>
-					<value>20</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>qTilt</name>
 					<value>1</value>
 				</ParamFloat>
 				<ParamFloat>
@@ -360,7 +354,7 @@
 		<filter>
 			<className>ClippingRules</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -550,19 +544,19 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>12</value>
+					<value>36</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
-					<value>160</value>
+					<value>100</value>
 				</paramInt>
 				<paramInt>
 					<name>minU</name>
-					<value>0</value>
+					<value>80</value>
 				</paramInt>
 				<paramInt>
 					<name>maxU</name>
-					<value>133</value>
+					<value>130</value>
 				</paramInt>
 				<paramInt>
 					<name>minV</name>
@@ -570,7 +564,7 @@
 				</paramInt>
 				<paramInt>
 					<name>maxV</name>
-					<value>255</value>
+					<value>130</value>
 				</paramInt>
 			</paramInts>
 		</filter>
@@ -587,7 +581,7 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>150</value>
+					<value>170</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
@@ -624,7 +618,7 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>150</value>
+					<value>200</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
@@ -661,7 +655,7 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>150</value>
+					<value>140</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
@@ -789,6 +783,27 @@
 			</paramInts>
 		</filter>
 		<filter>
+			<className>Rescale</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>source</dependency>
+			</dependencies>
+			<name>goalSrc</name>
+			<paramFloats>
+				<ParamFloat>
+					<name>ratio</name>
+					<value>4</value>
+				</ParamFloat>
+			</paramFloats>
+			<paramInts/>
+			<paramPairInt/>
+		</filter>
+		<filter>
 			<className>Mask</className>
 			<debugLevel>
 				<graphics>false</graphics>
@@ -817,6 +832,35 @@
 			<name>goalMask</name>
 			<paramFloats/>
 			<paramInts/>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>Closure</className>
+			<debugLevel>
+				<graphics>true</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>fieldColor</dependency>
+			</dependencies>
+			<name>fieldColorClosure</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>3</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>3</value>
+				</paramInt>
+			</paramInts>
 			<paramPairInt/>
 		</filter>
 		<filter>
@@ -877,11 +921,25 @@
 			</paramInts>
 			<paramPairInt/>
 		</filter>
+		<filter>
+			<className>SourceLogs2</className>
+			<debugLevel>
+				<graphics>true</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies/>
+			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log1/images.csv</imagesFile>
+			<name>source</name>
+			<paramFloats/>
+			<paramInts/>
+			<paramPairInt/>
+			<startIndex>1</startIndex>
+		</filter>
 	</pipeline>
 	<playing>false</playing>
-	<robotAngleExploration>5</robotAngleExploration>
-	<robotPosExploration>50</robotPosExploration>
 	<showRobotView>false</showRobotView>
-	<showTaggedImg>false</showTaggedImg>
+	<showTaggedImg>true</showTaggedImg>
 	<showTopView>false</showTopView>
 </LocalisationTest>

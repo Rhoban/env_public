@@ -2,9 +2,14 @@
 <LocalisationTest>
 	<ballExploration>10</ballExploration>
 	<ballResampling>0.0</ballResampling>
-	<benchmark>false</benchmark>
-	<benchmarkDetail>3</benchmarkDetail>
+	<benchmark>true</benchmark>
+	<benchmarkDetail>2</benchmarkDetail>
 	<compassOffset>125</compassOffset>
+	<csp>
+		<className>LogReader2</className>
+		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log1/servos.csv</motorPath>
+		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log1/imu.csv</sensorPath>
+	</csp>
 	<embedded>false</embedded>
 	<fieldResampling>0.002</fieldResampling>
 	<imageDelay>0</imageDelay>
@@ -12,42 +17,22 @@
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
 		<filter>
-			<className>BallROIManager</className>
+			<className>ROIResizer</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies>
-				<dependency>source</dependency>
 				<dependency>ballROIDetector</dependency>
-				<dependency>sparkleOfHope</dependency>
-				<dependency>clipping</dependency>
 			</dependencies>
-			<name>ballROIManager</name>
-			<paramFloats>
-				<ParamFloat>
-					<name>minRatio</name>
-					<value>0.7</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>maxRatio</name>
-					<value>1.3</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>sizeFactor</name>
-					<value>1.2</value>
-				</ParamFloat>
-			</paramFloats>
+			<name>ROIResizer</name>
+			<paramFloats/>
 			<paramInts>
 				<paramInt>
-					<name>tagLevel</name>
-					<value>1</value>
-				</paramInt>
-				<paramInt>
-					<name>whiteMinY</name>
-					<value>150</value>
+					<name>nbCols</name>
+					<value>800</value>
 				</paramInt>
 			</paramInts>
 		</filter>
@@ -97,7 +82,7 @@
 		<filter>
 			<className>ClippingByBlob</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -138,12 +123,17 @@
 					<value>0.028</value>
 				</ParamFloat>
 			</paramFloats>
-			<paramInts/>
+			<paramInts>
+				<paramInt>
+					<name>tagLevel</name>
+					<value>1</value>
+				</paramInt>
+			</paramInts>
 		</filter>
 		<filter>
 			<className>WhiteGoalByROI</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -177,14 +167,14 @@
 		<filter>
 			<className>WhiteBallByROI</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies>
 				<dependency>source</dependency>
-				<dependency>ballROIManager</dependency>
+				<dependency>ROIResizer</dependency>
 				<dependency>fieldColor</dependency>
 			</dependencies>
 			<name>ballByROI</name>
@@ -211,18 +201,6 @@
 				</ParamFloat>
 				<ParamFloat>
 					<name>clusterFlatTol</name>
-					<value>1</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>robotHeight</name>
-					<value>50</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>tilt</name>
-					<value>20</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>qTilt</name>
 					<value>1</value>
 				</ParamFloat>
 				<ParamFloat>
@@ -257,7 +235,7 @@
 				</paramInt>
 				<paramInt>
 					<name>minScore</name>
-					<value>40</value>
+					<value>50</value>
 				</paramInt>
 				<paramInt>
 					<name>reflectionMinY</name>
@@ -360,7 +338,7 @@
 		<filter>
 			<className>ClippingRules</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -376,7 +354,7 @@
 		<filter>
 			<className>BinaryEdges</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -540,7 +518,7 @@
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -550,19 +528,19 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>12</value>
+					<value>36</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
-					<value>160</value>
+					<value>100</value>
 				</paramInt>
 				<paramInt>
 					<name>minU</name>
-					<value>0</value>
+					<value>80</value>
 				</paramInt>
 				<paramInt>
 					<name>maxU</name>
-					<value>133</value>
+					<value>130</value>
 				</paramInt>
 				<paramInt>
 					<name>minV</name>
@@ -570,14 +548,14 @@
 				</paramInt>
 				<paramInt>
 					<name>maxV</name>
-					<value>255</value>
+					<value>130</value>
 				</paramInt>
 			</paramInts>
 		</filter>
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -587,7 +565,7 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>150</value>
+					<value>170</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
@@ -624,7 +602,7 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>150</value>
+					<value>200</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
@@ -688,7 +666,7 @@
 		<filter>
 			<className>Closure</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -877,11 +855,27 @@
 			</paramInts>
 			<paramPairInt/>
 		</filter>
+		<filter>
+			<className>SourceLogs2</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies/>
+			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log1/images.csv</imagesFile>
+			<name>source</name>
+			<paramFloats/>
+			<paramInts/>
+			<paramPairInt/>
+			<startIndex>1</startIndex>
+		</filter>
 	</pipeline>
 	<playing>false</playing>
 	<robotAngleExploration>5</robotAngleExploration>
 	<robotPosExploration>50</robotPosExploration>
 	<showRobotView>false</showRobotView>
-	<showTaggedImg>false</showTaggedImg>
+	<showTaggedImg>true</showTaggedImg>
 	<showTopView>false</showTopView>
 </LocalisationTest>
