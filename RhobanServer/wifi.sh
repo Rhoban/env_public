@@ -5,7 +5,6 @@ if [ $# -ne 1 ]; then
     exit
 fi
 
-#ESSID="KID-$1"
 ESSID="HL_KID_$1"
 HOSTNAME=`hostname`
 
@@ -27,9 +26,9 @@ sudo killall wpa_supplicant ;
 sudo ifconfig wlan0 down ; 
 sleep 1 ; 
 sudo ifconfig wlan0 up ; 
-sudo iwlist wlan0 scan |grep $ESSID ;
-sudo iwconfig wlan0 mode managed ; 
-sudo iwconfig wlan0 key off ; 
-sudo iwconfig wlan0 essid "$ESSID" ; 
+sudo iw wlan0 scan|grep $ESSID ;
+sudo iw dev wlan0 set type managed ;
+sudo iw dev wlan0 connect $ESSID ;
 sudo ifconfig wlan0 $IP netmask 255.255.0.0 ;
-echo "done"
+echo "done, pinging field router to check it's ok"
+ping -c 5 192.168.0.1
