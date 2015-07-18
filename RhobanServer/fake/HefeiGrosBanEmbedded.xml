@@ -103,11 +103,16 @@
 			<dependencies>
 				<dependency>clippingSrc</dependency>
 				<dependency>whiteDetectionClosing</dependency>
-				<dependency>fieldColorClosure</dependency>
+				<dependency>fieldColorOpening</dependency>
 			</dependencies>
 			<name>clippingByBlob</name>
 			<paramFloats/>
-			<paramInts/>
+			<paramInts>
+				<paramInt>
+					<name>pitchLimit</name>
+					<value>45</value>
+				</paramInt>
+			</paramInts>
 		</filter>
 		<filter>
 			<className>BallROIDetector</className>
@@ -191,7 +196,7 @@
 			<dependencies>
 				<dependency>source</dependency>
 				<dependency>ballROIManager</dependency>
-				<dependency>fieldColor</dependency>
+				<dependency>fieldColorForBall</dependency>
 			</dependencies>
 			<name>ballByROI</name>
 			<paramFloats>
@@ -434,7 +439,7 @@
 			<dependencies>
 				<dependency>source</dependency>
 				<dependency>linesROI</dependency>
-				<dependency>fieldColor</dependency>
+				<dependency>fieldColorLarge</dependency>
 			</dependencies>
 			<name>linesByROI</name>
 			<paramFloats>
@@ -544,11 +549,11 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>36</value>
+					<value>40</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
-					<value>100</value>
+					<value>110</value>
 				</paramInt>
 				<paramInt>
 					<name>minU</name>
@@ -556,7 +561,81 @@
 				</paramInt>
 				<paramInt>
 					<name>maxU</name>
+					<value>133</value>
+				</paramInt>
+				<paramInt>
+					<name>minV</name>
+					<value>70</value>
+				</paramInt>
+				<paramInt>
+					<name>maxV</name>
 					<value>130</value>
+				</paramInt>
+			</paramInts>
+		</filter>
+		<filter>
+			<className>ColorBounding</className>
+			<debugLevel>
+				<graphics>false</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingSrc</dependency>
+			</dependencies>
+			<name>fieldColorForBall</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>minY</name>
+					<value>28</value>
+				</paramInt>
+				<paramInt>
+					<name>maxY</name>
+					<value>105</value>
+				</paramInt>
+				<paramInt>
+					<name>minU</name>
+					<value>80</value>
+				</paramInt>
+				<paramInt>
+					<name>maxU</name>
+					<value>132</value>
+				</paramInt>
+				<paramInt>
+					<name>minV</name>
+					<value>70</value>
+				</paramInt>
+				<paramInt>
+					<name>maxV</name>
+					<value>130</value>
+				</paramInt>
+			</paramInts>
+		</filter>
+		<filter>
+			<className>ColorBounding</className>
+			<debugLevel>
+				<graphics>false</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingSrc</dependency>
+			</dependencies>
+			<name>fieldColorLarge</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>minY</name>
+					<value>50</value>
+				</paramInt>
+				<paramInt>
+					<name>maxY</name>
+					<value>200</value>
+				</paramInt>
+				<paramInt>
+					<name>minU</name>
+					<value>70</value>
+				</paramInt>
+				<paramInt>
+					<name>maxU</name>
+					<value>150</value>
 				</paramInt>
 				<paramInt>
 					<name>minV</name>
@@ -581,7 +660,7 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>170</value>
+					<value>150</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
@@ -835,7 +914,7 @@
 			<paramPairInt/>
 		</filter>
 		<filter>
-			<className>Closure</className>
+			<className>Opening</className>
 			<debugLevel>
 				<graphics>false</graphics>
 				<parameters>false</parameters>
@@ -845,12 +924,12 @@
 			<dependencies>
 				<dependency>fieldColor</dependency>
 			</dependencies>
-			<name>fieldColorClosure</name>
+			<name>fieldColorOpening</name>
 			<paramFloats/>
 			<paramInts>
 				<paramInt>
 					<name>Shape</name>
-					<value>0</value>
+					<value>1</value>
 				</paramInt>
 				<paramInt>
 					<name>kernel height</name>
