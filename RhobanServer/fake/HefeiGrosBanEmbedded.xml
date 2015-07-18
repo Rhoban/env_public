@@ -1,9 +1,14 @@
 <?xml version="1.0" ?>
 <LocalisationTest>
+	<ballResampling>0.0</ballResampling>
 	<benchmark>false</benchmark>
-	<benchmarkDetail>3</benchmarkDetail>
-	<embedded>false</embedded>
-	<imageDelay>0</imageDelay>
+	<benchmarkDetail>1</benchmarkDetail>
+	<csp>
+		<className>SchedulerRequester</className>
+	</csp>
+	<embedded>true</embedded>
+	<fieldResampling>0.002</fieldResampling>
+	<imageDelay>30</imageDelay>
 	<nbParticlesBF>1000</nbParticlesBF>
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
@@ -98,7 +103,7 @@
 			<dependencies>
 				<dependency>clippingSrc</dependency>
 				<dependency>whiteDetectionClosing</dependency>
-				<dependency>fieldColor</dependency>
+				<dependency>fieldColorClosure</dependency>
 			</dependencies>
 			<name>clippingByBlob</name>
 			<paramFloats/>
@@ -830,6 +835,35 @@
 			<paramPairInt/>
 		</filter>
 		<filter>
+			<className>Closure</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>fieldColor</dependency>
+			</dependencies>
+			<name>fieldColorClosure</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>3</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>3</value>
+				</paramInt>
+			</paramInts>
+			<paramPairInt/>
+		</filter>
+		<filter>
 			<className>Dilate</className>
 			<debugLevel>
 				<graphics>false</graphics>
@@ -887,8 +921,84 @@
 			</paramInts>
 			<paramPairInt/>
 		</filter>
+		<filter>
+			<captureFrequency>30</captureFrequency>
+			<className>SourceV4l2</className>
+			<debugLevel>
+				<graphics>false</graphics>
+			</debugLevel>
+			<dependencies/>
+			<device>/dev/video0</device>
+			<name>source</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>backlight_compensation</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>brightness</name>
+					<value>150</value>
+				</paramInt>
+				<paramInt>
+					<name>contrast</name>
+					<value>192</value>
+				</paramInt>
+				<paramInt>
+					<name>exposure_auto</name>
+					<value>1</value>
+				</paramInt>
+				<paramInt>
+					<name>exposure_(absolute)</name>
+					<value>100</value>
+				</paramInt>
+				<paramInt>
+					<name>exposure_auto_priority</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>focus_auto</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>focus_(absolute)</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>gain</name>
+					<value>180</value>
+				</paramInt>
+				<paramInt>
+					<name>power_line_frequency</name>
+					<value>1</value>
+				</paramInt>
+				<paramInt>
+					<name>saturation</name>
+					<value>255</value>
+				</paramInt>
+				<paramInt>
+					<name>sharpness</name>
+					<value>130</value>
+				</paramInt>
+				<paramInt>
+					<name>white_balance_temperature</name>
+					<value>5000</value>
+				</paramInt>
+				<paramInt>
+					<name>white_balance_temperature_auto</name>
+					<value>0</value>
+				</paramInt>
+			</paramInts>
+			<paramPairInt>
+				<PairInt>
+					<name>size</name>
+					<value.first>800</value.first>
+					<value.second>448</value.second>
+				</PairInt>
+			</paramPairInt>
+		</filter>
 	</pipeline>
-	<playing>false</playing>
+	<playing>true</playing>
 	<showRobotView>false</showRobotView>
 	<showTaggedImg>false</showTaggedImg>
 	<showTopView>false</showTopView>

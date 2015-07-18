@@ -7,8 +7,8 @@
 	<compassOffset>125</compassOffset>
 	<csp>
 		<className>LogReader2</className>
-		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log6/servos.csv</motorPath>
-		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log6/imu.csv</sensorPath>
+		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log1/servos.csv</motorPath>
+		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log1/imu.csv</sensorPath>
 	</csp>
 	<embedded>false</embedded>
 	<fieldResampling>0.002</fieldResampling>
@@ -28,12 +28,13 @@
 				<dependency>ballROIDetector</dependency>
 			</dependencies>
 			<name>ROIResizer</name>
-                	<paramInts>
+			<paramFloats/>
+			<paramInts>
 				<paramInt>
 					<name>nbCols</name>
 					<value>800</value>
 				</paramInt>
-		  	</paramInts>
+			</paramInts>
 		</filter>
 		<filter>
 			<className>SparkleOfHope</className>
@@ -81,7 +82,7 @@
 		<filter>
 			<className>ClippingByBlob</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -128,7 +129,6 @@
 					<value>1</value>
 				</paramInt>
 			</paramInts>
-
 		</filter>
 		<filter>
 			<className>WhiteGoalByROI</className>
@@ -338,7 +338,7 @@
 		<filter>
 			<className>ClippingRules</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -354,7 +354,7 @@
 		<filter>
 			<className>BinaryEdges</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -518,7 +518,7 @@
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -555,7 +555,7 @@
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -666,7 +666,7 @@
 		<filter>
 			<className>Closure</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -864,7 +864,7 @@
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies/>
-			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log6/images.csv</imagesFile>
+			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log1/images.csv</imagesFile>
 			<name>source</name>
 			<paramFloats/>
 			<paramInts/>

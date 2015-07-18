@@ -2,6 +2,11 @@
 <LocalisationTest>
 	<benchmark>false</benchmark>
 	<benchmarkDetail>3</benchmarkDetail>
+	<csp>
+		<className>LogReader2</className>
+		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log1/servos.csv</motorPath>
+		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log1/imu.csv</sensorPath>
+	</csp>
 	<embedded>false</embedded>
 	<imageDelay>0</imageDelay>
 	<nbParticlesBF>1000</nbParticlesBF>
@@ -10,7 +15,7 @@
 		<filter>
 			<className>BallROIManager</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -93,12 +98,12 @@
 		<filter>
 			<className>ClippingByBlob</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
 				<dependency>whiteDetectionClosing</dependency>
-				<dependency>fieldColor</dependency>
+				<dependency>fieldColorClosure</dependency>
 			</dependencies>
 			<name>clippingByBlob</name>
 			<paramFloats/>
@@ -178,7 +183,7 @@
 		<filter>
 			<className>WhiteBallByROI</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -830,6 +835,35 @@
 			<paramPairInt/>
 		</filter>
 		<filter>
+			<className>Closure</className>
+			<debugLevel>
+				<graphics>true</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>fieldColor</dependency>
+			</dependencies>
+			<name>fieldColorClosure</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>3</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>3</value>
+				</paramInt>
+			</paramInts>
+			<paramPairInt/>
+		</filter>
+		<filter>
 			<className>Dilate</className>
 			<debugLevel>
 				<graphics>false</graphics>
@@ -887,9 +921,25 @@
 			</paramInts>
 			<paramPairInt/>
 		</filter>
+		<filter>
+			<className>SourceLogs2</className>
+			<debugLevel>
+				<graphics>true</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies/>
+			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log1/images.csv</imagesFile>
+			<name>source</name>
+			<paramFloats/>
+			<paramInts/>
+			<paramPairInt/>
+			<startIndex>1</startIndex>
+		</filter>
 	</pipeline>
 	<playing>false</playing>
 	<showRobotView>false</showRobotView>
-	<showTaggedImg>false</showTaggedImg>
+	<showTaggedImg>true</showTaggedImg>
 	<showTopView>false</showTopView>
 </LocalisationTest>
