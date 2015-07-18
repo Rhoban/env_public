@@ -30,4 +30,5 @@ sudo iw wlan0 scan|grep $ESSID ;
 sudo iw dev wlan0 set type managed ;
 sudo iw dev wlan0 connect $ESSID ;
 sudo ifconfig wlan0 $IP netmask 255.255.0.0 ;
-echo "done"
+echo "done, pinging field router to check it's ok"
+ping -c 5 192.168.0.1
