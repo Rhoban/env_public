@@ -434,7 +434,7 @@
 			<dependencies>
 				<dependency>source</dependency>
 				<dependency>linesROI</dependency>
-				<dependency>fieldColor</dependency>
+				<dependency>fieldColorLarge</dependency>
 			</dependencies>
 			<name>linesByROI</name>
 			<paramFloats>
@@ -458,7 +458,7 @@
 			<paramInts>
 				<paramInt>
 					<name>roiMargin</name>
-					<value>20</value>
+					<value>10</value>
 				</paramInt>
 				<paramInt>
 					<name>nbEpochs</name>
@@ -544,11 +544,11 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>36</value>
+					<value>40</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
-					<value>100</value>
+					<value>110</value>
 				</paramInt>
 				<paramInt>
 					<name>minU</name>
@@ -556,7 +556,44 @@
 				</paramInt>
 				<paramInt>
 					<name>maxU</name>
+					<value>133</value>
+				</paramInt>
+				<paramInt>
+					<name>minV</name>
+					<value>70</value>
+				</paramInt>
+				<paramInt>
+					<name>maxV</name>
 					<value>130</value>
+				</paramInt>
+			</paramInts>
+		</filter>
+		<filter>
+			<className>ColorBounding</className>
+			<debugLevel>
+				<graphics>false</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingSrc</dependency>
+			</dependencies>
+			<name>fieldColorLarge</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>minY</name>
+					<value>50</value>
+				</paramInt>
+				<paramInt>
+					<name>maxY</name>
+					<value>200</value>
+				</paramInt>
+				<paramInt>
+					<name>minU</name>
+					<value>70</value>
+				</paramInt>
+				<paramInt>
+					<name>maxU</name>
+					<value>150</value>
 				</paramInt>
 				<paramInt>
 					<name>minV</name>
@@ -581,7 +618,7 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>170</value>
+					<value>180</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
