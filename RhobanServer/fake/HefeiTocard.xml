@@ -4,14 +4,196 @@
 	<benchmarkDetail>3</benchmarkDetail>
 	<csp>
 		<className>LogReader2</className>
-		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log4/servos.csv</motorPath>
-		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log4/imu.csv</sensorPath>
+		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_19_Hefei/Log3/servos.csv</motorPath>
+		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_19_Hefei/Log3/imu.csv</sensorPath>
 	</csp>
 	<embedded>false</embedded>
 	<imageDelay>0</imageDelay>
 	<nbParticlesBF>1000</nbParticlesBF>
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
+		<filter>
+			<className>Closure</className>
+			<debugLevel>
+				<graphics>false</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingExperimental</dependency>
+			</dependencies>
+			<name>clippingExperimentalEroded</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>2</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>3</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>3</value>
+				</paramInt>
+			</paramInts>
+		</filter>
+		<filter>
+			<className>ClippingFromLines</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingSrc</dependency>
+				<dependency>linesByROI</dependency>
+			</dependencies>
+			<name>clippingExperimental</name>
+			<paramFloats/>
+			<paramInts/>
+		</filter>
+		<filter>
+			<className>BinaryEdges</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingExperimentalEroded</dependency>
+			</dependencies>
+			<name>clippingExperimentalBorders</name>
+			<paramFloats/>
+			<paramInts/>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>Mask</className>
+			<debugLevel>
+				<graphics>false</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>whiteGoalDetection</dependency>
+				<dependency>fieldColorDilated</dependency>
+			</dependencies>
+			<name>whiteGoalNearField</name>
+			<paramFloats/>
+			<paramInts/>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>Dilate</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>goalMask</dependency>
+			</dependencies>
+			<name>goalMask2</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>1</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>11</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>5</value>
+				</paramInt>
+			</paramInts>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>Mask</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>whiteGoalNearField</dependency>
+				<dependency>clippingExperimentalBorders</dependency>
+			</dependencies>
+			<name>goalMask</name>
+			<paramFloats/>
+			<paramInts/>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>GoalTocard</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>goalMaskTocardResized</dependency>
+			</dependencies>
+			<name>goalTocardDetection</name>
+			<paramInts/>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>Rescale</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>goalMaskTocardFinal</dependency>
+			</dependencies>
+			<name>goalMaskTocardResized</name>
+			<paramFloats>
+				<ParamFloat>
+					<name>ratio</name>
+					<value>0.125</value>
+				</ParamFloat>
+			</paramFloats>
+			<paramInts/>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>Dilate</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>goalMaskTocardClipped</dependency>
+			</dependencies>
+			<name>goalMaskTocardFinal</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>1</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>3</value>
+				</paramInt>
+			</paramInts>
+			<paramPairInt/>
+		</filter>
 		<filter>
 			<className>Mask</className>
 			<debugLevel>
@@ -21,7 +203,7 @@
 				<dependency>goalMaskTocard</dependency>
 				<dependency>clipping</dependency>
 			</dependencies>
-			<name>goalMaskTocardFinal</name>
+			<name>goalMaskTocardClipped</name>
 			<paramFloats/>
 			<paramInts/>
 			<paramPairInt/>
@@ -49,7 +231,7 @@
 				</ParamFloat>
 				<ParamFloat>
 					<name>height</name>
-					<value>13</value>
+					<value>25</value>
 				</ParamFloat>
 				<ParamFloat>
 					<name>width</name>
@@ -123,7 +305,7 @@
 		<filter>
 			<className>BallROIManager</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -206,7 +388,7 @@
 		<filter>
 			<className>ClippingByBlob</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -262,14 +444,14 @@
 		<filter>
 			<className>WhiteGoalByROI</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies>
 				<dependency>source</dependency>
-				<dependency>goalMaskTocardFinal</dependency>
+				<dependency>goalMask2</dependency>
 			</dependencies>
 			<name>goalByROI</name>
 			<paramFloats/>
@@ -296,7 +478,7 @@
 		<filter>
 			<className>WhiteBallByROI</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -417,7 +599,7 @@
 		<filter>
 			<className>Opening</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingByBlobDownscaled</dependency>
@@ -514,7 +696,7 @@
 		<filter>
 			<className>LinesByROI</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -590,7 +772,7 @@
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -627,7 +809,7 @@
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -664,7 +846,7 @@
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -701,7 +883,7 @@
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -994,18 +1176,18 @@
 		<filter>
 			<className>SourceLogs2</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies/>
-			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log4/images.csv</imagesFile>
+			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_19_Hefei/Log3/images.csv</imagesFile>
 			<name>source</name>
 			<paramFloats/>
 			<paramInts/>
 			<paramPairInt/>
-			<startIndex>110</startIndex>
+			<startIndex>1</startIndex>
 		</filter>
 	</pipeline>
 	<playing>false</playing>
