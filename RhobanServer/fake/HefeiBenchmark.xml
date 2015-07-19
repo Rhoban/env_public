@@ -8,6 +8,31 @@
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
 		<filter>
+			<className>Erode</className>
+			<debugLevel>
+				<graphics>false</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>sparkleOfHopeDetection</dependency>
+			</dependencies>
+			<name>sparkleOfHopeDetectionFinal</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>2</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>3</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>3</value>
+				</paramInt>
+			</paramInts>
+		</filter>
+		<filter>
 			<className>BallROIManager</className>
 			<debugLevel>
 				<graphics>false</graphics>
@@ -58,7 +83,7 @@
 			<dependencies>
 				<dependency>clippingSrc</dependency>
 				<dependency>clipping</dependency>
-				<dependency>sparkleOfHopeDetection</dependency>
+				<dependency>sparkleOfHopeDetectionFinal</dependency>
 			</dependencies>
 			<name>sparkleOfHope</name>
 			<paramFloats>
@@ -68,7 +93,7 @@
 				</ParamFloat>
 				<ParamFloat>
 					<name>minFillingPerc</name>
-					<value>0.6</value>
+					<value>0.02</value>
 				</ParamFloat>
 				<ParamFloat>
 					<name>maxFillingPerc</name>
@@ -251,7 +276,7 @@
 				</paramInt>
 				<paramInt>
 					<name>minScore</name>
-					<value>40</value>
+					<value>70</value>
 				</paramInt>
 				<paramInt>
 					<name>reflectionMinY</name>
