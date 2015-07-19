@@ -4,14 +4,39 @@
 	<benchmarkDetail>3</benchmarkDetail>
 	<csp>
 		<className>LogReader2</className>
-		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log1/servos.csv</motorPath>
-		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log1/imu.csv</sensorPath>
+		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log4/servos.csv</motorPath>
+		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log4/imu.csv</sensorPath>
 	</csp>
 	<embedded>false</embedded>
 	<imageDelay>0</imageDelay>
 	<nbParticlesBF>1000</nbParticlesBF>
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
+		<filter>
+			<className>Erode</className>
+			<debugLevel>
+				<graphics>false</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>sparkleOfHopeDetection</dependency>
+			</dependencies>
+			<name>sparkleOfHopeDetectionFinal</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>2</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>3</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>3</value>
+				</paramInt>
+			</paramInts>
+		</filter>
 		<filter>
 			<className>BallROIManager</className>
 			<debugLevel>
@@ -63,7 +88,7 @@
 			<dependencies>
 				<dependency>clippingSrc</dependency>
 				<dependency>clipping</dependency>
-				<dependency>sparkleOfHopeDetection</dependency>
+				<dependency>sparkleOfHopeDetectionFinal</dependency>
 			</dependencies>
 			<name>sparkleOfHope</name>
 			<paramFloats>
@@ -73,7 +98,7 @@
 				</ParamFloat>
 				<ParamFloat>
 					<name>minFillingPerc</name>
-					<value>0.6</value>
+					<value>0.02</value>
 				</ParamFloat>
 				<ParamFloat>
 					<name>maxFillingPerc</name>
@@ -256,7 +281,7 @@
 				</paramInt>
 				<paramInt>
 					<name>minScore</name>
-					<value>40</value>
+					<value>70</value>
 				</paramInt>
 				<paramInt>
 					<name>reflectionMinY</name>
@@ -1009,7 +1034,7 @@
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies/>
-			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log1/images.csv</imagesFile>
+			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_18_Hefei/Log4/images.csv</imagesFile>
 			<name>source</name>
 			<paramFloats/>
 			<paramInts/>
