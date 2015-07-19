@@ -21,9 +21,45 @@
 				<dependency>goalMaskTocard</dependency>
 				<dependency>clipping</dependency>
 			</dependencies>
-			<name>goalMaskTocardClipped</name>
+			<name>goalMaskTocardFinal</name>
 			<paramFloats/>
 			<paramInts/>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>OpeningWithPitch</className>
+			<debugLevel>
+				<graphics>true</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>smallGoalColorDetection</dependency>
+			</dependencies>
+			<name>goalMaskTocard</name>
+			<paramFloats>
+				<ParamFloat>
+					<name>pitch3DB</name>
+					<value>31</value>
+				</ParamFloat>
+				<ParamFloat>
+					<name>ratioDegToHeight</name>
+					<value>1.2</value>
+				</ParamFloat>
+				<ParamFloat>
+					<name>height</name>
+					<value>13</value>
+				</ParamFloat>
+				<ParamFloat>
+					<name>width</name>
+					<value>1</value>
+				</ParamFloat>
+				<ParamFloat>
+					<name>maxHeight</name>
+					<value>41</value>
+				</ParamFloat>
+			</paramFloats>
 			<paramPairInt/>
 		</filter>
 		<filter>
@@ -83,35 +119,6 @@
 					<value>255</value>
 				</paramInt>
 			</paramInts>
-		</filter>
-		<filter>
-			<className>Opening</className>
-			<debugLevel>
-				<graphics>true</graphics>
-				<parameters>false</parameters>
-				<perfs>false</perfs>
-				<threads>false</threads>
-			</debugLevel>
-			<dependencies>
-				<dependency>smallGoalColorDetection</dependency>
-			</dependencies>
-			<name>goalMaskTocard</name>
-			<paramFloats/>
-			<paramInts>
-				<paramInt>
-					<name>Shape</name>
-					<value>0</value>
-				</paramInt>
-				<paramInt>
-					<name>kernel height</name>
-					<value>35</value>
-				</paramInt>
-				<paramInt>
-					<name>kernel width</name>
-					<value>1</value>
-				</paramInt>
-			</paramInts>
-			<paramPairInt/>
 		</filter>
 		<filter>
 			<className>BallROIManager</className>
@@ -262,7 +269,7 @@
 			</debugLevel>
 			<dependencies>
 				<dependency>source</dependency>
-				<dependency>goalMaskTocardClipped</dependency>
+				<dependency>goalMaskTocardFinal</dependency>
 			</dependencies>
 			<name>goalByROI</name>
 			<paramFloats/>
