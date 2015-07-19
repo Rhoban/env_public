@@ -13,6 +13,107 @@
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
 		<filter>
+			<className>Mask</className>
+			<debugLevel>
+				<graphics>true</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>goalMaskTocard</dependency>
+				<dependency>clipping</dependency>
+			</dependencies>
+			<name>goalMaskTocardClipped</name>
+			<paramFloats/>
+			<paramInts/>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>Rescale</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>source</dependency>
+			</dependencies>
+			<name>srcDownscaled</name>
+			<paramFloats>
+				<ParamFloat>
+					<name>ratio</name>
+					<value>8</value>
+				</ParamFloat>
+			</paramFloats>
+			<paramInts/>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>ColorBounding</className>
+			<debugLevel>
+				<graphics>true</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>srcDownscaled</dependency>
+			</dependencies>
+			<name>smallGoalColorDetection</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>minY</name>
+					<value>135</value>
+				</paramInt>
+				<paramInt>
+					<name>maxY</name>
+					<value>255</value>
+				</paramInt>
+				<paramInt>
+					<name>minU</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>maxU</name>
+					<value>255</value>
+				</paramInt>
+				<paramInt>
+					<name>minV</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>maxV</name>
+					<value>255</value>
+				</paramInt>
+			</paramInts>
+		</filter>
+		<filter>
+			<className>Opening</className>
+			<debugLevel>
+				<graphics>true</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>smallGoalColorDetection</dependency>
+			</dependencies>
+			<name>goalMaskTocard</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>9</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>1</value>
+				</paramInt>
+			</paramInts>
+			<paramPairInt/>
+		</filter>
+		<filter>
 			<className>BallROIManager</className>
 			<debugLevel>
 				<graphics>true</graphics>
@@ -161,7 +262,7 @@
 			</debugLevel>
 			<dependencies>
 				<dependency>source</dependency>
-				<dependency>goalMask2</dependency>
+				<dependency>goalMaskTocardClipped</dependency>
 			</dependencies>
 			<name>goalByROI</name>
 			<paramFloats/>
@@ -307,9 +408,9 @@
 			<paramInts/>
 		</filter>
 		<filter>
-			<className>Closure</className>
+			<className>Opening</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingByBlobDownscaled</dependency>
@@ -319,40 +420,15 @@
 			<paramInts>
 				<paramInt>
 					<name>Shape</name>
-					<value>2</value>
+					<value>0</value>
 				</paramInt>
 				<paramInt>
 					<name>kernel width</name>
-					<value>3</value>
+					<value>5</value>
 				</paramInt>
 				<paramInt>
 					<name>kernel height</name>
-					<value>3</value>
-				</paramInt>
-			</paramInts>
-		</filter>
-		<filter>
-			<className>Closure</className>
-			<debugLevel>
-				<graphics>false</graphics>
-			</debugLevel>
-			<dependencies>
-				<dependency>clippingExperimental</dependency>
-			</dependencies>
-			<name>clippingExperimentalEroded</name>
-			<paramFloats/>
-			<paramInts>
-				<paramInt>
-					<name>Shape</name>
-					<value>2</value>
-				</paramInt>
-				<paramInt>
-					<name>kernel width</name>
-					<value>3</value>
-				</paramInt>
-				<paramInt>
-					<name>kernel height</name>
-					<value>3</value>
+					<value>5</value>
 				</paramInt>
 			</paramInts>
 		</filter>
@@ -482,38 +558,6 @@
 					<value>40</value>
 				</paramInt>
 			</paramInts>
-		</filter>
-		<filter>
-			<className>ClippingFromLines</className>
-			<debugLevel>
-				<graphics>false</graphics>
-				<parameters>false</parameters>
-				<perfs>false</perfs>
-				<threads>false</threads>
-			</debugLevel>
-			<dependencies>
-				<dependency>clippingSrc</dependency>
-				<dependency>linesByROI</dependency>
-			</dependencies>
-			<name>clippingExperimental</name>
-			<paramFloats/>
-			<paramInts/>
-		</filter>
-		<filter>
-			<className>BinaryEdges</className>
-			<debugLevel>
-				<graphics>false</graphics>
-				<parameters>false</parameters>
-				<perfs>false</perfs>
-				<threads>false</threads>
-			</debugLevel>
-			<dependencies>
-				<dependency>clippingExperimentalEroded</dependency>
-			</dependencies>
-			<name>clippingExperimentalBorders</name>
-			<paramFloats/>
-			<paramInts/>
-			<paramPairInt/>
 		</filter>
 		<filter>
 			<className>Rescale</className>
@@ -883,37 +927,6 @@
 			<paramPairInt/>
 		</filter>
 		<filter>
-			<className>Mask</className>
-			<debugLevel>
-				<graphics>false</graphics>
-			</debugLevel>
-			<dependencies>
-				<dependency>whiteGoalDetection</dependency>
-				<dependency>fieldColorDilated</dependency>
-			</dependencies>
-			<name>whiteGoalNearField</name>
-			<paramFloats/>
-			<paramInts/>
-			<paramPairInt/>
-		</filter>
-		<filter>
-			<className>Mask</className>
-			<debugLevel>
-				<graphics>false</graphics>
-				<parameters>false</parameters>
-				<perfs>false</perfs>
-				<threads>false</threads>
-			</debugLevel>
-			<dependencies>
-				<dependency>whiteGoalNearField</dependency>
-				<dependency>clippingExperimentalBorders</dependency>
-			</dependencies>
-			<name>goalMask</name>
-			<paramFloats/>
-			<paramInts/>
-			<paramPairInt/>
-		</filter>
-		<filter>
 			<className>Opening</className>
 			<debugLevel>
 				<graphics>true</graphics>
@@ -967,35 +980,6 @@
 				<paramInt>
 					<name>kernel width</name>
 					<value>7</value>
-				</paramInt>
-			</paramInts>
-			<paramPairInt/>
-		</filter>
-		<filter>
-			<className>Dilate</className>
-			<debugLevel>
-				<graphics>false</graphics>
-				<parameters>false</parameters>
-				<perfs>false</perfs>
-				<threads>false</threads>
-			</debugLevel>
-			<dependencies>
-				<dependency>goalMask</dependency>
-			</dependencies>
-			<name>goalMask2</name>
-			<paramFloats/>
-			<paramInts>
-				<paramInt>
-					<name>Shape</name>
-					<value>1</value>
-				</paramInt>
-				<paramInt>
-					<name>kernel height</name>
-					<value>11</value>
-				</paramInt>
-				<paramInt>
-					<name>kernel width</name>
-					<value>5</value>
 				</paramInt>
 			</paramInts>
 			<paramPairInt/>
