@@ -1,17 +1,54 @@
 <?xml version="1.0" ?>
 <LocalisationTest>
-	<benchmark>false</benchmark>
-	<benchmarkDetail>3</benchmarkDetail>
+	<benchmark>true</benchmark>
+	<benchmarkDetail>1</benchmarkDetail>
 	<csp>
 		<className>LogReader2</className>
-		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_19_Hefei/Log6/servos.csv</motorPath>
-		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_19_Hefei/Log6/imu.csv</sensorPath>
+		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_19_Hefei/Log5/servos.csv</motorPath>
+		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_19_Hefei/Log5/imu.csv</sensorPath>
 	</csp>
 	<embedded>false</embedded>
 	<imageDelay>0</imageDelay>
 	<nbParticlesBF>1000</nbParticlesBF>
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
+		<filter>
+			<className>ColorBounding</className>
+			<debugLevel>
+				<graphics>true</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingSrc</dependency>
+			</dependencies>
+			<name>whiteDetectionSpecial</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>minY</name>
+					<value>150</value>
+				</paramInt>
+				<paramInt>
+					<name>maxY</name>
+					<value>255</value>
+				</paramInt>
+				<paramInt>
+					<name>minU</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>maxU</name>
+					<value>255</value>
+				</paramInt>
+				<paramInt>
+					<name>minV</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>maxV</name>
+					<value>255</value>
+				</paramInt>
+			</paramInts>
+		</filter>
 		<filter>
 			<className>Closure</className>
 			<debugLevel>
@@ -489,6 +526,7 @@
 				<dependency>source</dependency>
 				<dependency>ballROIManager</dependency>
 				<dependency>fieldColorForBall</dependency>
+				<dependency>whiteDetectionSpecial</dependency>
 			</dependencies>
 			<name>ballByROI</name>
 			<paramFloats>
@@ -885,7 +923,7 @@
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -1184,7 +1222,7 @@
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies/>
-			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_19_Hefei/Log6/images.csv</imagesFile>
+			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_19_Hefei/Log5/images.csv</imagesFile>
 			<name>source</name>
 			<paramFloats/>
 			<paramInts/>
