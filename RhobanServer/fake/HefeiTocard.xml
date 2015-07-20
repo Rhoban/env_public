@@ -13,6 +13,35 @@
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
 		<filter>
+			<className>Dilate</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>whiteDetectionSpecial</dependency>
+			</dependencies>
+			<name>whiteDetectionSpecialDilated</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>5</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>5</value>
+				</paramInt>
+			</paramInts>
+			<paramPairInt/>
+		</filter>
+		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
 				<graphics>true</graphics>
@@ -526,7 +555,7 @@
 				<dependency>source</dependency>
 				<dependency>ballROIManager</dependency>
 				<dependency>fieldColorForBall</dependency>
-				<dependency>whiteDetectionSpecial</dependency>
+				<dependency>whiteDetectionSpecialDilated</dependency>
 			</dependencies>
 			<name>ballByROI</name>
 			<paramFloats>
