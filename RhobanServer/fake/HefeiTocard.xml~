@@ -1,17 +1,83 @@
 <?xml version="1.0" ?>
 <LocalisationTest>
-	<benchmark>false</benchmark>
-	<benchmarkDetail>3</benchmarkDetail>
+	<benchmark>true</benchmark>
+	<benchmarkDetail>1</benchmarkDetail>
 	<csp>
 		<className>LogReader2</className>
-		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_19_Hefei/Log3/servos.csv</motorPath>
-		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_19_Hefei/Log3/imu.csv</sensorPath>
+		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_19_Hefei/Log5/servos.csv</motorPath>
+		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_19_Hefei/Log5/imu.csv</sensorPath>
 	</csp>
 	<embedded>false</embedded>
 	<imageDelay>0</imageDelay>
 	<nbParticlesBF>1000</nbParticlesBF>
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
+		<filter>
+			<className>Dilate</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>whiteDetectionSpecial</dependency>
+			</dependencies>
+			<name>whiteDetectionSpecialDilated</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>5</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>5</value>
+				</paramInt>
+			</paramInts>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>ColorBounding</className>
+			<debugLevel>
+				<graphics>true</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingSrc</dependency>
+			</dependencies>
+			<name>whiteDetectionSpecial</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>minY</name>
+					<value>150</value>
+				</paramInt>
+				<paramInt>
+					<name>maxY</name>
+					<value>255</value>
+				</paramInt>
+				<paramInt>
+					<name>minU</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>maxU</name>
+					<value>255</value>
+				</paramInt>
+				<paramInt>
+					<name>minV</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>maxV</name>
+					<value>255</value>
+				</paramInt>
+			</paramInts>
+		</filter>
 		<filter>
 			<className>Closure</className>
 			<debugLevel>
@@ -141,6 +207,7 @@
 				<dependency>goalMaskTocardResized</dependency>
 			</dependencies>
 			<name>goalTocardDetection</name>
+			<paramFloats/>
 			<paramInts/>
 			<paramPairInt/>
 		</filter>
@@ -176,20 +243,20 @@
 			<dependencies>
 				<dependency>goalMaskTocardClipped</dependency>
 			</dependencies>
-			<name>fieldColorDilated</name>
+			<name>goalMaskTocardFinal</name>
 			<paramFloats/>
 			<paramInts>
 				<paramInt>
 					<name>Shape</name>
-					<value>2</value>
+					<value>0</value>
 				</paramInt>
 				<paramInt>
 					<name>kernel height</name>
-					<value>7</value>
+					<value>1</value>
 				</paramInt>
 				<paramInt>
 					<name>kernel width</name>
-					<value>7</value>
+					<value>3</value>
 				</paramInt>
 			</paramInts>
 			<paramPairInt/>
@@ -223,11 +290,11 @@
 			<paramFloats>
 				<ParamFloat>
 					<name>pitch3DB</name>
-					<value>31</value>
+					<value>15</value>
 				</ParamFloat>
 				<ParamFloat>
 					<name>ratioDegToHeight</name>
-					<value>1.2</value>
+					<value>0.45</value>
 				</ParamFloat>
 				<ParamFloat>
 					<name>height</name>
@@ -239,9 +306,10 @@
 				</ParamFloat>
 				<ParamFloat>
 					<name>maxHeight</name>
-					<value>41</value>
+					<value>51</value>
 				</ParamFloat>
 			</paramFloats>
+			<paramInts/>
 			<paramPairInt/>
 		</filter>
 		<filter>
@@ -487,6 +555,7 @@
 				<dependency>source</dependency>
 				<dependency>ballROIManager</dependency>
 				<dependency>fieldColorForBall</dependency>
+				<dependency>whiteDetectionSpecial</dependency>
 			</dependencies>
 			<name>ballByROI</name>
 			<paramFloats>
@@ -883,7 +952,7 @@
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -1182,7 +1251,7 @@
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies/>
-			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_19_Hefei/Log3/images.csv</imagesFile>
+			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_19_Hefei/Log5/images.csv</imagesFile>
 			<name>source</name>
 			<paramFloats/>
 			<paramInts/>

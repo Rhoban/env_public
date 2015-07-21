@@ -13,6 +13,72 @@
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
 		<filter>
+			<className>Dilate</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>whiteDetectionSpecial</dependency>
+			</dependencies>
+			<name>whiteDetectionSpecialDilated</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>5</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>5</value>
+				</paramInt>
+			</paramInts>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>ColorBounding</className>
+			<debugLevel>
+				<graphics>false</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingSrc</dependency>
+			</dependencies>
+			<name>whiteDetectionSpecial</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>minY</name>
+					<value>150</value>
+				</paramInt>
+				<paramInt>
+					<name>maxY</name>
+					<value>255</value>
+				</paramInt>
+				<paramInt>
+					<name>minU</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>maxU</name>
+					<value>255</value>
+				</paramInt>
+				<paramInt>
+					<name>minV</name>
+					<value>0</value>
+				</paramInt>
+				<paramInt>
+					<name>maxV</name>
+					<value>255</value>
+				</paramInt>
+			</paramInts>
+		</filter>
+		<filter>
 			<className>Closure</className>
 			<debugLevel>
 				<graphics>false</graphics>
@@ -224,11 +290,11 @@
 			<paramFloats>
 				<ParamFloat>
 					<name>pitch3DB</name>
-					<value>31</value>
+					<value>15</value>
 				</ParamFloat>
 				<ParamFloat>
 					<name>ratioDegToHeight</name>
-					<value>1.2</value>
+					<value>0.45</value>
 				</ParamFloat>
 				<ParamFloat>
 					<name>height</name>
@@ -240,7 +306,7 @@
 				</ParamFloat>
 				<ParamFloat>
 					<name>maxHeight</name>
-					<value>41</value>
+					<value>51</value>
 				</ParamFloat>
 			</paramFloats>
 			<paramInts/>
@@ -489,6 +555,7 @@
 				<dependency>source</dependency>
 				<dependency>ballROIManager</dependency>
 				<dependency>fieldColorForBall</dependency>
+				<dependency>whiteDetectionSpecialDilated</dependency>
 			</dependencies>
 			<name>ballByROI</name>
 			<paramFloats>
