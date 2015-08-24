@@ -2,24 +2,55 @@
 <LocalisationTest>
 	<ballExploration>10</ballExploration>
 	<ballResampling>0.0</ballResampling>
-	<benchmark>false</benchmark>
-	<benchmarkDetail>3</benchmarkDetail>
+	<benchmark>true</benchmark>
+	<benchmarkDetail>2</benchmarkDetail>
 	<compassOffset>125</compassOffset>
 	<csp>
 		<className>LogReader2</className>
-		<motorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/servos.csv</motorPath>
-		<sensorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/imu.csv</sensorPath>
+		<motorPath>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log4/servos.csv</motorPath>
+		<sensorPath>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log4/imu.csv</sensorPath>
 	</csp>
 	<embedded>false</embedded>
-	<fieldResampling>0.003</fieldResampling>
-	<imageDelay>-100</imageDelay>
+	<fieldResampling>0.002</fieldResampling>
+	<imageDelay>0</imageDelay>
 	<nbParticlesBF>1000</nbParticlesBF>
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
 		<filter>
+		    <className>FREAK</className>
+		    <name>ballByFREAK</name>
+		    <debugLevel>
+		        <threads>false</threads>
+		        <graphics>false</graphics>
+		        <parameters>false</parameters>
+		        <perfs>false</perfs>
+		    </debugLevel>
+		    <dependencies>
+		        <dependency>source</dependency>
+		        <dependency>ballROIManager</dependency>
+		    </dependencies>
+		    <featurePath>../../../Code/Vision/Resources/fast_freak.yml</featurePath>
+		    <paramInts>
+		        <ParamInt>
+		          <name>matchThreshold</name>
+		          <value>2</value>
+		        </ParamInt>
+		        <ParamInt>
+		          <name>distThreshold</name>
+		          <value>100</value>
+		        </ParamInt>
+		        <ParamInt>
+		          <name>keypointSensibility</name>
+		          <value>70</value>
+		        </ParamInt>
+		    </paramInts>
+		    <paramFloats />
+		    <paramPairInt />
+		</filter>
+		<filter>
 			<className>BallROIManager</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -52,7 +83,7 @@
 				</paramInt>
 				<paramInt>
 					<name>whiteMinY</name>
-					<value>150</value>
+					<value>170</value>
 				</paramInt>
 			</paramInts>
 		</filter>
@@ -148,7 +179,7 @@
 		<filter>
 			<className>WhiteGoalByROI</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -219,18 +250,6 @@
 					<value>1</value>
 				</ParamFloat>
 				<ParamFloat>
-					<name>robotHeight</name>
-					<value>50</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>tilt</name>
-					<value>20</value>
-				</ParamFloat>
-				<ParamFloat>
-					<name>qTilt</name>
-					<value>1</value>
-				</ParamFloat>
-				<ParamFloat>
 					<name>reflectionMinRatio</name>
 					<value>0.001</value>
 				</ParamFloat>
@@ -262,7 +281,7 @@
 				</paramInt>
 				<paramInt>
 					<name>minScore</name>
-					<value>40</value>
+					<value>50</value>
 				</paramInt>
 				<paramInt>
 					<name>reflectionMinY</name>
@@ -365,7 +384,7 @@
 		<filter>
 			<className>ClippingRules</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
@@ -545,7 +564,7 @@
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -555,19 +574,19 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>12</value>
+					<value>36</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
-					<value>160</value>
+					<value>100</value>
 				</paramInt>
 				<paramInt>
 					<name>minU</name>
-					<value>0</value>
+					<value>80</value>
 				</paramInt>
 				<paramInt>
 					<name>maxU</name>
-					<value>133</value>
+					<value>130</value>
 				</paramInt>
 				<paramInt>
 					<name>minV</name>
@@ -575,14 +594,14 @@
 				</paramInt>
 				<paramInt>
 					<name>maxV</name>
-					<value>255</value>
+					<value>130</value>
 				</paramInt>
 			</paramInts>
 		</filter>
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -592,7 +611,7 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>150</value>
+					<value>170</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
@@ -619,7 +638,7 @@
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -629,7 +648,7 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>150</value>
+					<value>200</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
@@ -656,7 +675,7 @@
 		<filter>
 			<className>ColorBounding</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies>
 				<dependency>clippingSrc</dependency>
@@ -794,27 +813,6 @@
 			</paramInts>
 		</filter>
 		<filter>
-			<className>Rescale</className>
-			<debugLevel>
-				<graphics>false</graphics>
-				<parameters>false</parameters>
-				<perfs>false</perfs>
-				<threads>false</threads>
-			</debugLevel>
-			<dependencies>
-				<dependency>source</dependency>
-			</dependencies>
-			<name>goalSrc</name>
-			<paramFloats>
-				<ParamFloat>
-					<name>ratio</name>
-					<value>4</value>
-				</ParamFloat>
-			</paramFloats>
-			<paramInts/>
-			<paramPairInt/>
-		</filter>
-		<filter>
 			<className>Mask</className>
 			<debugLevel>
 				<graphics>false</graphics>
@@ -906,13 +904,13 @@
 		<filter>
 			<className>SourceLogs2</className>
 			<debugLevel>
-				<graphics>true</graphics>
+				<graphics>false</graphics>
 				<parameters>false</parameters>
 				<perfs>false</perfs>
 				<threads>false</threads>
 			</debugLevel>
 			<dependencies/>
-			<imagesFile>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/images.csv</imagesFile>
+			<imagesFile>../../../Code/Vision/Resources/Logs/2015_07_17_Hefei/Log4/images.csv</imagesFile>
 			<name>source</name>
 			<paramFloats/>
 			<paramInts/>
