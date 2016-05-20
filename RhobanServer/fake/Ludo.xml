@@ -6,7 +6,7 @@
 	<benchmarkDetail>2</benchmarkDetail>
 	<compassOffset>125</compassOffset>
 	<csp>
-		<className>LogReader2</className>
+		<className>LogReader</className>
 		<motorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log13/servos.csv</motorPath>
 		<sensorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log13/imu.csv</sensorPath>
 	</csp>
@@ -63,7 +63,7 @@
 			<paramInts/>
 		</filter>
 		<filter>
-			<className>WhiteGoalByROI</className>
+			<className>GoalByROI</className>
 			<debugLevel>
 				<graphics>false</graphics>
 				<parameters>false</parameters>
@@ -97,7 +97,7 @@
 			<paramPairInt/>
 		</filter>
 		<filter>
-			<className>WhiteBallByROI</className>
+			<className>BallByROI</className>
 			<debugLevel>
 				<graphics>false</graphics>
 				<parameters>false</parameters>

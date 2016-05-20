@@ -14,9 +14,9 @@
   <robotAngleExploration>5</robotAngleExploration>
   <ballResampling>0.0</ballResampling>
   <csp>
-    <className>LogReader2</className>
-    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/imu.csv</sensorPath>
-    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/servos.csv</motorPath>
+    <className>LogReader</className>
+    <sensorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log2/imu.csv</sensorPath>
+    <motorPath>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log2/servos.csv</motorPath>
   </csp>
   <playing>false</playing>
   <embedded>false</embedded>
@@ -108,7 +108,7 @@
       <className>ClippingByBlob</className>
       <name>clippingByBlob</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
       </debugLevel>
       <dependencies>
         <dependency>clippingSrc</dependency>
@@ -253,7 +253,7 @@
       </paramFloats>
     </filter>
     <filter>
-      <className>WhiteGoalByROI</className>
+      <className>GoalByROI</className>
       <name>goalByROI</name>
       <debugLevel>
         <threads>false</threads>
@@ -287,7 +287,7 @@
       <paramPairInt />
     </filter>
     <filter>
-      <className>WhiteBallByROI</className>
+      <className>BallByROI</className>
       <name>ballByROI</name>
       <debugLevel>
         <threads>false</threads>
@@ -315,7 +315,7 @@
         </ParamInt>
         <ParamInt>
           <name>minPointDist</name>
-          <value>10</value>
+          <value>3</value>
         </ParamInt>
         <ParamInt>
           <name>minScore</name>
@@ -875,8 +875,8 @@
       <paramInts />
       <paramFloats />
       <paramPairInt />
-      <startIndex>72</startIndex>
-      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log1/images.csv</imagesFile>
+      <startIndex>1</startIndex>
+      <imagesFile>../../../Code/Vision/Resources/Logs/2015_06_30_IUT/Log2/images.csv</imagesFile>
     </filter>
   </pipeline>
 </LocalisationTest>

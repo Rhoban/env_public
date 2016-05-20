@@ -8,10 +8,35 @@
 	</csp>
 	<embedded>true</embedded>
 	<fieldResampling>0.002</fieldResampling>
-	<imageDelay>30</imageDelay>
+	<imageDelay>0</imageDelay>
 	<nbParticlesBF>1000</nbParticlesBF>
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
+		<filter>
+			<className>Erode</className>
+			<debugLevel>
+				<graphics>false</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>sparkleOfHopeDetection</dependency>
+			</dependencies>
+			<name>sparkleOfHopeDetectionFinal</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>2</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>3</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>3</value>
+				</paramInt>
+			</paramInts>
+		</filter>
 		<filter>
 			<className>BallROIManager</className>
 			<debugLevel>
@@ -63,7 +88,7 @@
 			<dependencies>
 				<dependency>clippingSrc</dependency>
 				<dependency>clipping</dependency>
-				<dependency>sparkleOfHopeDetection</dependency>
+				<dependency>sparkleOfHopeDetectionFinal</dependency>
 			</dependencies>
 			<name>sparkleOfHope</name>
 			<paramFloats>
@@ -73,7 +98,7 @@
 				</ParamFloat>
 				<ParamFloat>
 					<name>minFillingPerc</name>
-					<value>0.6</value>
+					<value>0.02</value>
 				</ParamFloat>
 				<ParamFloat>
 					<name>maxFillingPerc</name>
@@ -103,11 +128,16 @@
 			<dependencies>
 				<dependency>clippingSrc</dependency>
 				<dependency>whiteDetectionClosing</dependency>
-				<dependency>fieldColor</dependency>
+				<dependency>fieldColorOpening</dependency>
 			</dependencies>
 			<name>clippingByBlob</name>
 			<paramFloats/>
-			<paramInts/>
+			<paramInts>
+				<paramInt>
+					<name>pitchLimit</name>
+					<value>35</value>
+				</paramInt>
+			</paramInts>
 		</filter>
 		<filter>
 			<className>BallROIDetector</className>
@@ -147,7 +177,7 @@
 			</paramInts>
 		</filter>
 		<filter>
-			<className>WhiteGoalByROI</className>
+			<className>GoalByROI</className>
 			<debugLevel>
 				<graphics>false</graphics>
 				<parameters>false</parameters>
@@ -181,7 +211,7 @@
 			<paramPairInt/>
 		</filter>
 		<filter>
-			<className>WhiteBallByROI</className>
+			<className>BallByROI</className>
 			<debugLevel>
 				<graphics>false</graphics>
 				<parameters>false</parameters>
@@ -191,7 +221,7 @@
 			<dependencies>
 				<dependency>source</dependency>
 				<dependency>ballROIManager</dependency>
-				<dependency>fieldColor</dependency>
+				<dependency>fieldColorForBall</dependency>
 			</dependencies>
 			<name>ballByROI</name>
 			<paramFloats>
@@ -251,7 +281,7 @@
 				</paramInt>
 				<paramInt>
 					<name>minScore</name>
-					<value>40</value>
+					<value>70</value>
 				</paramInt>
 				<paramInt>
 					<name>reflectionMinY</name>
@@ -302,7 +332,7 @@
 			<paramInts/>
 		</filter>
 		<filter>
-			<className>Closure</className>
+			<className>Opening</className>
 			<debugLevel>
 				<graphics>false</graphics>
 			</debugLevel>
@@ -314,15 +344,15 @@
 			<paramInts>
 				<paramInt>
 					<name>Shape</name>
-					<value>2</value>
+					<value>0</value>
 				</paramInt>
 				<paramInt>
 					<name>kernel width</name>
-					<value>3</value>
+					<value>5</value>
 				</paramInt>
 				<paramInt>
 					<name>kernel height</name>
-					<value>3</value>
+					<value>5</value>
 				</paramInt>
 			</paramInts>
 		</filter>
@@ -458,7 +488,7 @@
 			<paramInts>
 				<paramInt>
 					<name>roiMargin</name>
-					<value>10</value>
+					<value>20</value>
 				</paramInt>
 				<paramInt>
 					<name>nbEpochs</name>
@@ -576,6 +606,43 @@
 			<dependencies>
 				<dependency>clippingSrc</dependency>
 			</dependencies>
+			<name>fieldColorForBall</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>minY</name>
+					<value>28</value>
+				</paramInt>
+				<paramInt>
+					<name>maxY</name>
+					<value>105</value>
+				</paramInt>
+				<paramInt>
+					<name>minU</name>
+					<value>80</value>
+				</paramInt>
+				<paramInt>
+					<name>maxU</name>
+					<value>132</value>
+				</paramInt>
+				<paramInt>
+					<name>minV</name>
+					<value>70</value>
+				</paramInt>
+				<paramInt>
+					<name>maxV</name>
+					<value>130</value>
+				</paramInt>
+			</paramInts>
+		</filter>
+		<filter>
+			<className>ColorBounding</className>
+			<debugLevel>
+				<graphics>false</graphics>
+			</debugLevel>
+			<dependencies>
+				<dependency>clippingSrc</dependency>
+			</dependencies>
 			<name>fieldColorLarge</name>
 			<paramFloats/>
 			<paramInts>
@@ -618,7 +685,7 @@
 			<paramInts>
 				<paramInt>
 					<name>minY</name>
-					<value>180</value>
+					<value>150</value>
 				</paramInt>
 				<paramInt>
 					<name>maxY</name>
@@ -869,6 +936,35 @@
 			<name>goalMask</name>
 			<paramFloats/>
 			<paramInts/>
+			<paramPairInt/>
+		</filter>
+		<filter>
+			<className>Opening</className>
+			<debugLevel>
+				<graphics>false</graphics>
+				<parameters>false</parameters>
+				<perfs>false</perfs>
+				<threads>false</threads>
+			</debugLevel>
+			<dependencies>
+				<dependency>fieldColor</dependency>
+			</dependencies>
+			<name>fieldColorOpening</name>
+			<paramFloats/>
+			<paramInts>
+				<paramInt>
+					<name>Shape</name>
+					<value>1</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel height</name>
+					<value>3</value>
+				</paramInt>
+				<paramInt>
+					<name>kernel width</name>
+					<value>3</value>
+				</paramInt>
+			</paramInts>
 			<paramPairInt/>
 		</filter>
 		<filter>
