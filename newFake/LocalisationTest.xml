@@ -13,14 +13,21 @@
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
 		<filter>
-			<captureFrequency>20</captureFrequency>
+		        <captureFrequency>20</captureFrequency>
 			<className>SourceV4l2</className>
 			<debugLevel>
-				<graphics>false</graphics>
+				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies/>
 			<device>/dev/video0</device>
+			<deviceName>/dev/hidraw2</deviceName>
 			<name>source</name>
+			<isSeecam>1</isSeecam>
+			<wbRed>10</wbRed>
+			<wbGreen>151</wbGreen>
+			<wbBlue>151</wbBlue>
+			<height>960</height>
+			<width>1280</width>
 			<paramFloats/>
 			<paramInts>
 				<paramInt>
@@ -30,6 +37,10 @@
 				<paramInt>
 					<name>contrast</name>
 					<value>50</value>
+				</paramInt>
+				<paramInt>
+					<name>exposure_auto</name>
+					<value>0</value>
 				</paramInt>
 				<paramInt>
 					<name>exposure_(absolute)</name>
@@ -60,13 +71,6 @@
 					<value>50</value>
 				</paramInt>
 			</paramInts>
-			<paramPairInt>
-				<PairInt>
-					<name>size</name>
-					<value.first>1280</value.first>
-					<value.second>960</value.second>
-				</PairInt>
-			</paramPairInt>
 		</filter>
 	</pipeline>
 	<playing>true</playing>
