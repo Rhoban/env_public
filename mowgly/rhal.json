@@ -51,7 +51,7 @@
         "devices": [
             {
                 "id": 123,
-                "name": "pressure_left",
+                "name": "left_pressure",
                 "parameters": {
                     "gain_0": -1.0,
                     "gain_1": 1.0,
@@ -73,7 +73,7 @@
             },
             {
                 "id": 124,
-                "name": "pressure_right",
+                "name": "right_pressure",
                 "parameters": {
                     "gain_0": -1.0,
                     "gain_1": 1.0,
@@ -119,7 +119,7 @@
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
                     "inverse": false,
-                    "zero": 22.5
+                    "zero": 0
                 }
             },
             {
@@ -169,7 +169,7 @@
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
                     "inverse": true,
-                    "zero": 22.5
+                    "zero": 0
                 }
             },
             {
@@ -204,7 +204,7 @@
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
                     "inverse": true,
-                    "zero": 22.5
+                    "zero": -22.5
                 }
             },
             {
@@ -294,7 +294,7 @@
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
                     "inverse": true,
-                    "zero": -22.5
+                    "zero": 22.5
                 }
             },
             {
