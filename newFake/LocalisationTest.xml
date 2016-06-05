@@ -6,21 +6,21 @@
 	<csp>
 		<className>SchedulerRequester</className>
 	</csp>
-	<embedded>true</embedded>
+	<embedded>false</embedded>
 	<fieldResampling>0.002</fieldResampling>
 	<imageDelay>30</imageDelay>
 	<nbParticlesBF>1000</nbParticlesBF>
 	<nbParticlesFF>1000</nbParticlesFF>
 	<pipeline>
 		<filter>
-		        <captureFrequency>20</captureFrequency>
+		        <captureFrequency>8</captureFrequency>
 			<className>SourceV4l2</className>
 			<debugLevel>
 				<graphics>true</graphics>
 			</debugLevel>
 			<dependencies/>
-			<device>/dev/video0</device>
-			<deviceName>/dev/hidraw2</deviceName>
+			<device>/dev/video1</device>
+			<deviceName>/dev/hidraw0</deviceName>
 			<name>source</name>
 			<isSeecam>1</isSeecam>
 			<wbRed>10</wbRed>
