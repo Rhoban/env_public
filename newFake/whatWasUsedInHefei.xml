@@ -47,7 +47,7 @@
 	<graphics>false</graphics>
       </debugLevel>
       <dependencies>
-	<dependency>clippingSrc</dependency>
+	<dependency>srcDownscaled</dependency>
       </dependencies>
       <name>whiteDetectionSpecial</name>
       <paramFloats/>
@@ -112,7 +112,7 @@
 	<threads>false</threads>
       </debugLevel>
       <dependencies>
-	<dependency>clippingSrc</dependency>
+	<dependency>srcDownscaled</dependency>
 	<dependency>linesByROI</dependency>
       </dependencies>
       <name>clippingExperimental</name>
@@ -315,7 +315,7 @@
     <filter>
       <className>Rescale</className>
       <debugLevel>
-	<graphics>false</graphics>
+	<graphics>true</graphics>
 	<parameters>false</parameters>
 	<perfs>false</perfs>
 	<threads>false</threads>
@@ -327,7 +327,7 @@
       <paramFloats>
 	<ParamFloat>
 	  <name>ratio</name>
-	  <value>8</value>
+	  <value>4</value>
 	</ParamFloat>
       </paramFloats>
       <paramInts/>
@@ -419,7 +419,7 @@
 	<threads>false</threads>
       </debugLevel>
       <dependencies>
-	<dependency>clippingSrc</dependency>
+	<dependency>srcDownscaled</dependency>
 	<dependency>clipping</dependency>
 	<dependency>sparkleOfHopeDetection</dependency>
       </dependencies>
@@ -456,10 +456,10 @@
     <filter>
       <className>ClippingByBlob</className>
       <debugLevel>
-	<graphics>false</graphics>
+	<graphics>true</graphics>
       </debugLevel>
       <dependencies>
-	<dependency>clippingSrc</dependency>
+	<dependency>srcDownscaled</dependency>
 	<dependency>whiteDetectionClosing</dependency>
 	<dependency>fieldColorOpening</dependency>
       </dependencies>
@@ -481,7 +481,7 @@
 	<threads>false</threads>
       </debugLevel>
       <dependencies>
-	<dependency>clippingSrc</dependency>
+	<dependency>srcDownscaled</dependency>
 	<dependency>clipping</dependency>
 	<dependency>whiteBallDetection</dependency>
 	<dependency>whiteBallDetection</dependency>
@@ -651,7 +651,7 @@
     <filter>
       <className>Rescale</className>
       <debugLevel>
-	<graphics>false</graphics>
+	<graphics>true</graphics>
       </debugLevel>
       <dependencies>
 	<dependency>clippingByBlob</dependency>
@@ -668,7 +668,7 @@
     <filter>
       <className>Opening</className>
       <debugLevel>
-	<graphics>false</graphics>
+	<graphics>true</graphics>
       </debugLevel>
       <dependencies>
 	<dependency>clippingByBlobDownscaled</dependency>
@@ -693,7 +693,7 @@
     <filter>
       <className>ClippingRules</className>
       <debugLevel>
-	<graphics>false</graphics>
+	<graphics>true</graphics>
 	<parameters>false</parameters>
 	<perfs>false</perfs>
 	<threads>false</threads>
@@ -818,52 +818,31 @@
       </paramInts>
     </filter>
     <filter>
-      <className>Rescale</className>
-      <debugLevel>
-	<graphics>false</graphics>
-	<parameters>false</parameters>
-	<perfs>false</perfs>
-	<threads>false</threads>
-      </debugLevel>
-      <dependencies>
-	<dependency>source</dependency>
-      </dependencies>
-      <name>clippingSrc</name>
-      <paramFloats>
-	<ParamFloat>
-	  <name>ratio</name>
-	  <value>4</value>
-	</ParamFloat>
-      </paramFloats>
-      <paramInts/>
-      <paramPairInt/>
-    </filter>
-    <filter>
       <className>ColorBounding</className>
       <debugLevel>
 	<graphics>true</graphics>
       </debugLevel>
       <dependencies>
-	<dependency>clippingSrc</dependency>
+	<dependency>srcDownscaled</dependency>
       </dependencies>
       <name>fieldColor</name>
       <paramFloats/>
       <paramInts>
 	<paramInt>
 	  <name>minY</name>
-	  <value>40</value>
+	  <value>38</value>
 	</paramInt>
 	<paramInt>
 	  <name>maxY</name>
-	  <value>110</value>
+	  <value>111</value>
 	</paramInt>
 	<paramInt>
 	  <name>minU</name>
-	  <value>80</value>
+	  <value>95</value>
 	</paramInt>
 	<paramInt>
 	  <name>maxU</name>
-	  <value>133</value>
+	  <value>130</value>
 	</paramInt>
 	<paramInt>
 	  <name>minV</name>
@@ -871,7 +850,7 @@
 	</paramInt>
 	<paramInt>
 	  <name>maxV</name>
-	  <value>130</value>
+	  <value>133</value>
 	</paramInt>
       </paramInts>
     </filter>
@@ -881,34 +860,34 @@
 	<graphics>true</graphics>
       </debugLevel>
       <dependencies>
-	<dependency>clippingSrc</dependency>
+	<dependency>srcDownscaled</dependency>
       </dependencies>
       <name>fieldColorForBall</name>
       <paramFloats/>
       <paramInts>
 	<paramInt>
 	  <name>minY</name>
-	  <value>28</value>
+	  <value>29</value>
 	</paramInt>
 	<paramInt>
 	  <name>maxY</name>
-	  <value>105</value>
+	  <value>101</value>
 	</paramInt>
 	<paramInt>
 	  <name>minU</name>
-	  <value>80</value>
+	  <value>105</value>
 	</paramInt>
 	<paramInt>
 	  <name>maxU</name>
-	  <value>132</value>
+	  <value>140</value>
 	</paramInt>
 	<paramInt>
 	  <name>minV</name>
-	  <value>70</value>
+	  <value>90</value>
 	</paramInt>
 	<paramInt>
 	  <name>maxV</name>
-	  <value>130</value>
+	  <value>145</value>
 	</paramInt>
       </paramInts>
     </filter>
@@ -918,7 +897,7 @@
 	<graphics>true</graphics>
       </debugLevel>
       <dependencies>
-	<dependency>clippingSrc</dependency>
+	<dependency>srcDownscaled</dependency>
       </dependencies>
       <name>fieldColorLarge</name>
       <paramFloats/>
@@ -955,7 +934,7 @@
 	<graphics>true</graphics>
       </debugLevel>
       <dependencies>
-	<dependency>clippingSrc</dependency>
+	<dependency>srcDownscaled</dependency>
       </dependencies>
       <name>whiteDetection</name>
       <paramFloats/>
@@ -992,7 +971,7 @@
 	<graphics>true</graphics>
       </debugLevel>
       <dependencies>
-	<dependency>clippingSrc</dependency>
+	<dependency>srcDownscaled</dependency>
       </dependencies>
       <name>whiteBallDetection</name>
       <paramFloats/>
@@ -1029,7 +1008,7 @@
 	<graphics>true</graphics>
       </debugLevel>
       <dependencies>
-	<dependency>clippingSrc</dependency>
+	<dependency>srcDownscaled</dependency>
       </dependencies>
       <name>whiteGoalDetection</name>
       <paramFloats/>
@@ -1095,7 +1074,7 @@
 	<graphics>true</graphics>
       </debugLevel>
       <dependencies>
-	<dependency>clippingSrc</dependency>
+	<dependency>srcDownscaled</dependency>
       </dependencies>
       <name>sparkleDetection</name>
       <paramFloats/>
@@ -1132,7 +1111,7 @@
 	<graphics>tre</graphics>
       </debugLevel>
       <dependencies>
-	<dependency>clippingSrc</dependency>
+	<dependency>srcDownscaled</dependency>
       </dependencies>
       <name>sparkleOfHopeDetection</name>
       <paramFloats/>
@@ -1187,7 +1166,7 @@
     <filter>
       <className>Opening</className>
       <debugLevel>
-	<graphics>false</graphics>
+	<graphics>true</graphics>
 	<parameters>false</parameters>
 	<perfs>false</perfs>
 	<threads>false</threads>
@@ -1257,7 +1236,7 @@
       <className>ChannelSelector</className>
       <name>Y</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>undistort</dependency>
@@ -1273,7 +1252,7 @@
       <className>ChannelSelector</className>
       <name>U</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>undistort</dependency>
@@ -1289,7 +1268,7 @@
       <className>ChannelSelector</className>
       <name>V</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>undistort</dependency>
