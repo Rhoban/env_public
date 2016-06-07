@@ -321,7 +321,7 @@
 	<threads>false</threads>
       </debugLevel>
       <dependencies>
-	<dependency>source</dependency>
+	<dependency>undistort</dependency>
       </dependencies>
       <name>srcDownscaled</name>
       <paramFloats>
@@ -379,7 +379,7 @@
 	<threads>false</threads>
       </debugLevel>
       <dependencies>
-	<dependency>source</dependency>
+	<dependency>undistort</dependency>
 	<dependency>ballROIDetector</dependency>
 	<dependency>sparkleOfHope</dependency>
 	<dependency>clipping</dependency>
@@ -518,7 +518,7 @@
 	<threads>false</threads>
       </debugLevel>
       <dependencies>
-	<dependency>source</dependency>
+	<dependency>undistort</dependency>
 	<dependency>goalMask2</dependency>
       </dependencies>
       <name>goalByROI</name>
@@ -552,7 +552,7 @@
 	<threads>false</threads>
       </debugLevel>
       <dependencies>
-	<dependency>source</dependency>
+	<dependency>undistort</dependency>
 	<dependency>ballROIManager</dependency>
 	<dependency>fieldColorForBall</dependency>
 	<dependency>whiteDetectionSpecialDilated</dependency>
@@ -771,7 +771,7 @@
 	<threads>false</threads>
       </debugLevel>
       <dependencies>
-	<dependency>source</dependency>
+	<dependency>undistort</dependency>
 	<dependency>linesROI</dependency>
 	<dependency>fieldColorLarge</dependency>
       </dependencies>
@@ -842,7 +842,7 @@
 	</paramInt>
 	<paramInt>
 	  <name>maxU</name>
-	  <value>130</value>
+	  <value>140</value>
 	</paramInt>
 	<paramInt>
 	  <name>minV</name>
@@ -850,7 +850,7 @@
 	</paramInt>
 	<paramInt>
 	  <name>maxV</name>
-	  <value>133</value>
+	  <value>140</value>
 	</paramInt>
       </paramInts>
     </filter>
@@ -1005,7 +1005,7 @@
     <filter>
       <className>ColorBounding</className>
       <debugLevel>
-	<graphics>true</graphics>
+	<graphics>false</graphics>
       </debugLevel>
       <dependencies>
 	<dependency>srcDownscaled</dependency>
@@ -1042,7 +1042,7 @@
     <filter>
       <className>Closure</className>
       <debugLevel>
-	<graphics>false</graphics>
+	<graphics>true</graphics>
 	<parameters>false</parameters>
 	<perfs>false</perfs>
 	<threads>false</threads>
@@ -1151,7 +1151,7 @@
 	<threads>false</threads>
       </debugLevel>
       <dependencies>
-	<dependency>source</dependency>
+	<dependency>undistort</dependency>
       </dependencies>
       <name>goalSrc</name>
       <paramFloats>
