@@ -15,7 +15,7 @@
     <filter>
       <className>Dilate</className>
       <debugLevel>
-	<graphics>false</graphics>
+	<graphics>true</graphics>
 	<parameters>false</parameters>
 	<perfs>false</perfs>
 	<threads>false</threads>
@@ -44,7 +44,7 @@
     <filter>
       <className>ColorBounding</className>
       <debugLevel>
-	<graphics>false</graphics>
+	<graphics>true</graphics>
       </debugLevel>
       <dependencies>
 	<dependency>srcDownscaled</dependency>
@@ -413,7 +413,7 @@
     <filter>
       <className>SparkleOfHope</className>
       <debugLevel>
-	<graphics>false</graphics>
+	<graphics>true</graphics>
 	<parameters>false</parameters>
 	<perfs>false</perfs>
 	<threads>false</threads>
@@ -456,7 +456,7 @@
     <filter>
       <className>ClippingByBlob</className>
       <debugLevel>
-	<graphics>true</graphics>
+	<graphics>false</graphics>
       </debugLevel>
       <dependencies>
 	<dependency>srcDownscaled</dependency>
@@ -475,7 +475,7 @@
     <filter>
       <className>BallROIDetector</className>
       <debugLevel>
-	<graphics>false</graphics>
+	<graphics>true</graphics>
 	<parameters>false</parameters>
 	<perfs>false</perfs>
 	<threads>false</threads>
@@ -546,7 +546,7 @@
     <filter>
       <className>BallByROI</className>
       <debugLevel>
-	<graphics>false</graphics>
+	<graphics>true</graphics>
 	<parameters>false</parameters>
 	<perfs>false</perfs>
 	<threads>false</threads>
@@ -651,7 +651,7 @@
     <filter>
       <className>Rescale</className>
       <debugLevel>
-	<graphics>true</graphics>
+	<graphics>false</graphics>
       </debugLevel>
       <dependencies>
 	<dependency>clippingByBlob</dependency>
@@ -668,7 +668,7 @@
     <filter>
       <className>Opening</className>
       <debugLevel>
-	<graphics>true</graphics>
+	<graphics>false</graphics>
       </debugLevel>
       <dependencies>
 	<dependency>clippingByBlobDownscaled</dependency>
@@ -931,7 +931,7 @@
     <filter>
       <className>ColorBounding</className>
       <debugLevel>
-	<graphics>true</graphics>
+	<graphics>false</graphics>
       </debugLevel>
       <dependencies>
 	<dependency>srcDownscaled</dependency>
@@ -1042,7 +1042,7 @@
     <filter>
       <className>Closure</className>
       <debugLevel>
-	<graphics>true</graphics>
+	<graphics>false</graphics>
 	<parameters>false</parameters>
 	<perfs>false</perfs>
 	<threads>false</threads>
@@ -1108,7 +1108,7 @@
     <filter>
       <className>ColorBounding</className>
       <debugLevel>
-	<graphics>tre</graphics>
+	<graphics>true</graphics>
       </debugLevel>
       <dependencies>
 	<dependency>srcDownscaled</dependency>
