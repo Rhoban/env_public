@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <LocalisationTest>
   <ballResampling>0.0</ballResampling>
-  <benchmark>false</benchmark>
-  <benchmarkDetail>1</benchmarkDetail>
+  <benchmark>true</benchmark>
+  <benchmarkDetail>3</benchmarkDetail>
   <csp>
     <className>SchedulerRequester</className>
   </csp>
@@ -1377,10 +1377,10 @@
       <captureFrequency>20</captureFrequency>
       <className>SourceV4l2</className>
       <debugLevel>
-	<graphics>true</graphics>
+	<graphics>false</graphics>
       </debugLevel>
       <dependencies/>
-      <device>/dev/video1</device>
+      <device>/dev/video0</device>
       <deviceName>/dev/hidraw0</deviceName>
       <name>source</name>
       <isSeecam>1</isSeecam>
