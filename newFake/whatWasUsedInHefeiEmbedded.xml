@@ -1374,6 +1374,22 @@
       <paramPairInt/>
     </filter>
     <filter>
+      <className>Undistort</className>
+      <debugLevel>
+	<graphics>true</graphics>
+	<parameters>false</parameters>
+	<perfs>false</perfs>
+	<threads>false</threads>
+      </debugLevel>
+      <dependencies>
+	<dependency>source</dependency>
+      </dependencies>
+      <name>undistort</name>
+      <paramFloats/>
+      <paramInts/>
+      <paramPairInt/>
+    </filter>
+    <filter>
       <captureFrequency>20</captureFrequency>
       <className>SourceV4l2</className>
       <debugLevel>
