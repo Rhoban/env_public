@@ -1374,36 +1374,64 @@
       <paramPairInt/>
     </filter>
     <filter>
-      <className>Undistort</className>
+      <captureFrequency>20</captureFrequency>
+      <className>SourceV4l2</className>
       <debugLevel>
-	<graphics>false</graphics>
-	<parameters>false</parameters>
-	<perfs>false</perfs>
-	<threads>false</threads>
-      </debugLevel>
-      <dependencies>
-	<dependency>source</dependency>
-      </dependencies>
-      <name>undistort</name>
-      <paramFloats/>
-      <paramInts/>
-      <paramPairInt/>
-    </filter>
-    <filter>
-      <className>SourceLogs2</className>
-      <debugLevel>
-	<graphics>false</graphics>
-	<parameters>false</parameters>
-	<perfs>false</perfs>
-	<threads>false</threads>
+	<graphics>true</graphics>
       </debugLevel>
       <dependencies/>
-      <imagesFile>/home/kamascience/vision101/fromDjango/99_walk2/images.csv</imagesFile>
+      <device>/dev/video1</device>
+      <deviceName>/dev/hidraw0</deviceName>
       <name>source</name>
+      <isSeecam>1</isSeecam>
+      <wbRed>60</wbRed>
+      <wbGreen>77</wbGreen>
+      <wbBlue>79</wbBlue>
+      <height>960</height>
+      <width>1280</width>
       <paramFloats/>
-      <paramInts/>
-      <paramPairInt/>
-      <startIndex>1</startIndex>
+      <paramInts>
+	<paramInt>
+	  <name>brightness</name>
+	  <value>48</value>
+	</paramInt>
+	<paramInt>
+	  <name>contrast</name>
+	  <value>54</value>
+	</paramInt>
+	<paramInt>
+	  <name>exposure_auto</name>
+	  <value>0</value>
+	</paramInt>
+	<paramInt>
+	  <name>exposure_(absolute)</name>
+	  <value>312</value>
+	</paramInt>
+	<paramInt>
+	  <name>gain</name>
+	  <value>2</value>
+	</paramInt>
+	<paramInt>
+	  <name>power_line_frequency</name>
+	  <value>1</value>
+	</paramInt>
+	<paramInt>
+	  <name>saturation</name>
+	  <value>52</value>
+	</paramInt>
+	<paramInt>
+	  <name>sharpness</name>
+	  <value>15</value>
+	</paramInt>
+	<paramInt>
+	  <name>hue</name>
+	  <value>50</value>
+	</paramInt>
+	<paramInt>
+	  <name>gamma</name>
+	  <value>50</value>
+	</paramInt>
+      </paramInts>
     </filter>
   </pipeline>
   <playing>true</playing>
