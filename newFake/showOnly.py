@@ -49,8 +49,8 @@ def setGraphics(xmlFile, listOfFiltersPath):
 
     print "Writing at ", xmlFile
     dom.writexml( open(xmlFile, 'w'),
-                  indent="  ",
-                  addindent="  ",
+                  indent="",
+                  addindent="",
                   newl='')
 '''    
     f = open(outputFile,'w')
