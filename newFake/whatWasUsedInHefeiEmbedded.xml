@@ -2,11 +2,11 @@
 <LocalisationTest>
   <ballResampling>0.0</ballResampling>
   <benchmark>true</benchmark>
-  <benchmarkDetail>3</benchmarkDetail>
-  <csp>
-    <className>SchedulerRequester</className>
-  </csp>
-  <embedded>false</embedded>
+  <benchmarkDetail>4</benchmarkDetail>
+  <gpuOn>false</gpuOn>
+  <readFromLog>false</readFromLog>
+  <pathToLog>fakeLowLevel.log</pathToLog>
+  <embedded>true</embedded>
   <fieldResampling>0.002</fieldResampling>
   <imageDelay>30</imageDelay>
   <nbParticlesBF>1000</nbParticlesBF>
@@ -1221,162 +1221,11 @@
       </paramInts>
       <paramPairInt/>
     </filter>
-    <filter>
-      <className>ColorConverter</className>
-      <name>RGB</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <conversion>YUV2BGR</conversion>
-      <dependencies>
-        <dependency>undistort</dependency>
-      </dependencies>
-    </filter>
-    <filter>
-      <className>ChannelSelector</className>
-      <name>Y</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>undistort</dependency>
-      </dependencies>
-      <paramInts>
-	<paramInt>
-	  <name>channel</name>
-	  <value>0</value>
-	</paramInt>
-      </paramInts>
-    </filter>
-    <filter>
-      <className>ChannelSelector</className>
-      <name>U</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>undistort</dependency>
-      </dependencies>
-      <paramInts>
-	<paramInt>
-	  <name>channel</name>
-	  <value>1</value>
-	</paramInt>
-      </paramInts>
-    </filter>
-        <filter>
-      <className>ChannelSelector</className>
-      <name>V</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>undistort</dependency>
-      </dependencies>
-      <paramInts>
-	<paramInt>
-	  <name>channel</name>
-	  <value>2</value>
-	</paramInt>
-      </paramInts>
-    </filter>
-    <filter>
-      <className>ColorBounding</className>
-      <debugLevel>
-	<graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-	<dependency>undistort</dependency>
-      </dependencies>
-      <name>yModal1</name>
-      <paramFloats/>
-      <paramInts>
-	<paramInt>
-	  <name>minY</name>
-	  <value>45</value>
-	</paramInt>
-	<paramInt>
-	  <name>maxY</name>
-	  <value>111</value>
-	</paramInt>
-	<paramInt>
-	  <name>minU</name>
-	  <value>0</value>
-	</paramInt>
-	<paramInt>
-	  <name>maxU</name>
-	  <value>255</value>
-	</paramInt>
-	<paramInt>
-	  <name>minV</name>
-	  <value>0</value>
-	</paramInt>
-	<paramInt>
-	  <name>maxV</name>
-	  <value>255</value>
-	</paramInt>
-      </paramInts>
-    </filter>
-        <filter>
-      <className>ColorBounding</className>
-      <debugLevel>
-	<graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-	<dependency>undistort</dependency>
-      </dependencies>
-      <name>yModal2</name>
-      <paramFloats/>
-      <paramInts>
-	<paramInt>
-	  <name>minY</name>
-	  <value>143</value>
-	</paramInt>
-	<paramInt>
-	  <name>maxY</name>
-	  <value>183</value>
-	</paramInt>
-	<paramInt>
-	  <name>minU</name>
-	  <value>0</value>
-	</paramInt>
-	<paramInt>
-	  <name>maxU</name>
-	  <value>255</value>
-	</paramInt>
-	<paramInt>
-	  <name>minV</name>
-	  <value>0</value>
-	</paramInt>
-	<paramInt>
-	  <name>maxV</name>
-	  <value>255</value>
-	</paramInt>
-      </paramInts>
-    </filter>
-    <filter>
-      <className>Histogram</className>
-      <debugLevel>
-	<graphics>false</graphics>
-	<parameters>false</parameters>
-	<perfs>false</perfs>
-	<threads>false</threads>
-      </debugLevel>
-      <dependencies>
-	<dependency>undistort</dependency>
-      </dependencies>
-      <name>histogram</name>
-      <paramFloats/>
-      <paramInt>
-	<name>bins</name>
-	<value>1</value>
-      </paramInt>
-      <paramPairInt/>
-    </filter>
+   
     <filter>
       <className>Undistort</className>
       <debugLevel>
-	<graphics>true</graphics>
+	<graphics>false</graphics>
 	<parameters>false</parameters>
 	<perfs>false</perfs>
 	<threads>false</threads>
