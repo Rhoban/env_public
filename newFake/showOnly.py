@@ -25,7 +25,7 @@ def isNumber(value):
 
 # Puts all graphics to false except for the filters in listOfFilters whom
 # graphics are set to true
-def setGraphics(xmlFile, listOfFiltersPath):
+def setGraphics(xmlFilePath, listOfFiltersPath):
     #Reading the list of filters contained in the second file.
     listFile = open(listOfFiltersPath)
     listOfFilters = []
@@ -34,8 +34,20 @@ def setGraphics(xmlFile, listOfFiltersPath):
             continue
         listOfFilters.append(line.strip())
         
+    #Taking out empty lines ans annoying spaces
+    xmlFile = open(xmlFilePath, 'r')
+    output = ""
+    for line in xmlFile :
+        if line.strip() :
+            output = output + line.rstrip() + '\n'
+    xmlFile.close()
+
+    xmlFile = open(xmlFilePath, 'w+')
+    xmlFile.write(output)
+    xmlFile.close()
+
     #Parsing the xml file
-    dom = parse(xmlFile)
+    dom = parse(xmlFilePath)
     listOfServos = []
     for node in dom.getElementsByTagName('filter'):
         name =  node.getElementsByTagName('name')[0].childNodes[0].nodeValue
@@ -47,11 +59,8 @@ def setGraphics(xmlFile, listOfFiltersPath):
             
 
 
-    print "Writing at ", xmlFile
-    dom.writexml( open(xmlFile, 'w'),
-                  indent="",
-                  addindent="",
-                  newl='')
+    print "Writing at ", xmlFilePath
+    dom.writexml( open(xmlFilePath, 'w'))
 '''    
     f = open(outputFile,'w')
     f.write(result)
