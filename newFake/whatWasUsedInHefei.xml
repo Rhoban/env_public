@@ -4,7 +4,7 @@
 <benchmarkDetail>4</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>fakeLowLevel.log</pathToLog>
+<pathToLog>logs_new/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>30</imageDelay>
@@ -14,7 +14,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -43,7 +43,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -372,7 +372,7 @@
   <filter>
     <className>BallROIManager</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -412,7 +412,7 @@
   <filter>
     <className>SparkleOfHope</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -455,7 +455,7 @@
   <filter>
     <className>ClippingByBlob</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -474,7 +474,7 @@
   <filter>
     <className>BallROIDetector</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -545,7 +545,7 @@
   <filter>
     <className>BallByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -650,7 +650,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingByBlob</dependency>
@@ -665,9 +665,26 @@
     <paramInts/>
   </filter>
   <filter>
+    <className>Rescale</className>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>undistortMask</dependency>
+    </dependencies>
+    <name>undistortMaskDownscaled</name>
+    <paramFloats>
+      <ParamFloat>
+	<name>ratio</name>
+	<value>8.0</value>
+      </ParamFloat>
+    </paramFloats>
+    <paramInts/>
+  </filter>
+  <filter>
     <className>Opening</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingByBlobDownscaled</dependency>
@@ -699,6 +716,7 @@
     </debugLevel>
     <dependencies>
       <dependency>clippingByBlobFinal</dependency>
+      <dependency>undistortMaskDownscaled</dependency>
     </dependencies>
     <name>clipping</name>
     <paramFloats/>
@@ -819,7 +837,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -856,7 +874,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -930,7 +948,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -967,7 +985,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1041,7 +1059,7 @@
   <filter>
     <className>Closure</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1070,7 +1088,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1107,7 +1125,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1165,7 +1183,7 @@
   <filter>
     <className>Opening</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1413,7 +1431,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>/home/kamascience/vision101/fromDjango/99_walk2/images.csv</imagesFile>
+    <imagesFile>logs_new/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
