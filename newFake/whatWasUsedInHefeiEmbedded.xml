@@ -1,7 +1,6 @@
-<?xml version="1.0" ?>
-<LocalisationTest>
+<?xml version="1.0" ?><LocalisationTest>
   <ballResampling>0.0</ballResampling>
-  <benchmark>true</benchmark>
+  <benchmark>false</benchmark>
   <benchmarkDetail>4</benchmarkDetail>
   <gpuOn>false</gpuOn>
   <readFromLog>false</readFromLog>
@@ -665,6 +664,23 @@
       </paramFloats>
       <paramInts/>
     </filter>
+  <filter>
+    <className>Rescale</className>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>undistortMask</dependency>
+    </dependencies>
+    <name>undistortMaskDownscaled</name>
+    <paramFloats>
+      <ParamFloat>
+	<name>ratio</name>
+	<value>8.0</value>
+      </ParamFloat>
+    </paramFloats>
+    <paramInts/>
+  </filter>
     <filter>
       <className>Opening</className>
       <debugLevel>
@@ -700,6 +716,7 @@
       </debugLevel>
       <dependencies>
 	<dependency>clippingByBlobFinal</dependency>
+        <dependency>undistortMaskDownscaled</dependency>
       </dependencies>
       <name>clipping</name>
       <paramFloats/>
@@ -1221,7 +1238,22 @@
       </paramInts>
       <paramPairInt/>
     </filter>
-   
+  <filter>
+    <className>CameraCorrectionMask</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>undistort</dependency>
+    </dependencies>
+    <name>undistortMask</name>
+    <paramFloats/>
+    <paramInts/>
+    <paramPairInt/>
+  </filter>
     <filter>
       <className>Undistort</className>
       <debugLevel>
