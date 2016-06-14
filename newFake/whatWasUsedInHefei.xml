@@ -1,10 +1,10 @@
 <?xml version="1.0" ?><LocalisationTest>
 <ballResampling>0.0</ballResampling>
-<benchmark>true</benchmark>
+<benchmark>false</benchmark>
 <benchmarkDetail>4</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>logs_new/lowLevel.log</pathToLog>
+<pathToLog>logs_with_30ms_walk/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>30</imageDelay>
@@ -14,7 +14,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -43,7 +43,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -372,7 +372,7 @@
   <filter>
     <className>BallROIManager</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -412,7 +412,7 @@
   <filter>
     <className>SparkleOfHope</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -455,7 +455,7 @@
   <filter>
     <className>ClippingByBlob</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -474,7 +474,7 @@
   <filter>
     <className>BallROIDetector</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -545,7 +545,7 @@
   <filter>
     <className>BallByROI</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -614,7 +614,7 @@
       </paramInt>
       <paramInt>
 	<name>minScore</name>
-	<value>40</value>
+	<value>30</value>
       </paramInt>
       <paramInt>
 	<name>reflectionMinY</name>
@@ -650,7 +650,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingByBlob</dependency>
@@ -667,7 +667,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>undistortMask</dependency>
@@ -684,7 +684,7 @@
   <filter>
     <className>Opening</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingByBlobDownscaled</dependency>
@@ -837,7 +837,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -847,34 +847,34 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>38</value>
+	<value>30</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
-	<value>111</value>
+	<value>85</value>
       </paramInt>
       <paramInt>
 	<name>minU</name>
-	<value>95</value>
+	<value>100</value>
       </paramInt>
       <paramInt>
 	<name>maxU</name>
-	<value>140</value>
+	<value>130</value>
       </paramInt>
       <paramInt>
 	<name>minV</name>
-	<value>70</value>
+	<value>95</value>
       </paramInt>
       <paramInt>
 	<name>maxV</name>
-	<value>140</value>
+	<value>150</value>
       </paramInt>
     </paramInts>
   </filter>
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -948,7 +948,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -985,7 +985,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1059,7 +1059,7 @@
   <filter>
     <className>Closure</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1088,7 +1088,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1125,7 +1125,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1181,9 +1181,9 @@
     <paramPairInt/>
   </filter>
   <filter>
-    <className>Opening</className>
+    <className>Closure</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1431,12 +1431,49 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>logs_new/images.csv</imagesFile>
+    <imagesFile>logs_with_30ms_walk/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
     <paramPairInt/>
     <startIndex>1</startIndex>
+  </filter>
+  <filter>
+    <className>ColorBounding</className>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>srcDownscaled</dependency>
+    </dependencies>
+    <name>tempMarker</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>minY</name>
+	<value>65</value>
+      </paramInt>
+      <paramInt>
+	<name>maxY</name>
+	<value>84</value>
+      </paramInt>
+      <paramInt>
+	<name>minU</name>
+	<value>103</value>
+      </paramInt>
+      <paramInt>
+	<name>maxU</name>
+	<value>123</value>
+      </paramInt>
+      <paramInt>
+	<name>minV</name>
+	<value>125</value>
+      </paramInt>
+      <paramInt>
+	<name>maxV</name>
+	<value>164</value>
+      </paramInt>
+    </paramInts>
   </filter>
 </pipeline>
 <playing>true</playing>
