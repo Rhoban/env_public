@@ -1,16 +1,43 @@
 <?xml version="1.0" ?><LocalisationTest>
 <ballResampling>0.0</ballResampling>
 <benchmark>true</benchmark>
-<benchmarkDetail>2</benchmarkDetail>
+<benchmarkDetail>4</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>logs_with_30ms_walk/lowLevel.log</pathToLog>
+<pathToLog>Logs/Approche60degContactBalle/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>30</imageDelay>
 <nbParticlesBF>1000</nbParticlesBF>
 <nbParticlesFF>1000</nbParticlesFF>
 <pipeline>
+  <filter>
+    <className>Canny</className>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>Y</dependency>
+    </dependencies>
+    <name>cannyOfHope</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>kernelSize</name>
+	<value>3</value>
+      </paramInt>
+    </paramInts>
+    <paramFloats>
+      <paramFloat>
+	<name>lowThreshold</name>
+	<value>30</value>
+      </paramFloat>
+      <paramFloat>
+	<name>HighThreshold</name>
+	<value>60</value>
+      </paramFloat>
+    </paramFloats>
+  </filter>
   <filter>
     <className>Dilate</className>
     <debugLevel>
@@ -43,7 +70,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -614,7 +641,7 @@
       </paramInt>
       <paramInt>
 	<name>minScore</name>
-	<value>30</value>
+	<value>15</value>
       </paramInt>
       <paramInt>
 	<name>reflectionMinY</name>
@@ -888,23 +915,23 @@
       </paramInt>
       <paramInt>
 	<name>maxY</name>
-	<value>101</value>
+	<value>70</value>
       </paramInt>
       <paramInt>
 	<name>minU</name>
-	<value>105</value>
+	<value>100</value>
       </paramInt>
       <paramInt>
 	<name>maxU</name>
-	<value>140</value>
+	<value>160</value>
       </paramInt>
       <paramInt>
 	<name>minV</name>
-	<value>90</value>
+	<value>95</value>
       </paramInt>
       <paramInt>
 	<name>maxV</name>
-	<value>145</value>
+	<value>160</value>
       </paramInt>
     </paramInts>
   </filter>
@@ -1088,7 +1115,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1098,7 +1125,7 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>225</value>
+	<value>200</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
@@ -1135,7 +1162,7 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>220</value>
+	<value>200</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
@@ -1431,7 +1458,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>logs_with_30ms_walk/images.csv</imagesFile>
+    <imagesFile>Logs/Approche60degContactBalle/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
@@ -1475,6 +1502,7 @@
       </paramInt>
     </paramInts>
   </filter>
+  
 </pipeline>
 <playing>true</playing>
 <showRobotView>false</showRobotView>
