@@ -4,7 +4,7 @@
 <benchmarkDetail>0</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>Logs/VGA_Dribble/lowLevel.log</pathToLog>
+<pathToLog>Logs/VGA_ApprocheLoin120/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -14,7 +14,7 @@
   <filter>
     <className>Canny</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>Y</dependency>
@@ -41,7 +41,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -399,7 +399,7 @@
   <filter>
     <className>BallROIManager</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -439,7 +439,7 @@
   <filter>
     <className>SparkleOfHope</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -482,7 +482,7 @@
   <filter>
     <className>ClippingByBlob</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -501,7 +501,7 @@
   <filter>
     <className>BallROIDetector</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -572,7 +572,7 @@
   <filter>
     <className>BallByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -677,7 +677,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingByBlob</dependency>
@@ -711,7 +711,7 @@
   <filter>
     <className>Opening</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingByBlobDownscaled</dependency>
@@ -864,7 +864,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -878,7 +878,7 @@
       </paramInt>
       <paramInt>
 	<name>maxY</name>
-	<value>85</value>
+	<value>110</value>
       </paramInt>
       <paramInt>
 	<name>minU</name>
@@ -886,7 +886,7 @@
       </paramInt>
       <paramInt>
 	<name>maxU</name>
-	<value>130</value>
+	<value>132</value>
       </paramInt>
       <paramInt>
 	<name>minV</name>
@@ -894,14 +894,14 @@
       </paramInt>
       <paramInt>
 	<name>maxV</name>
-	<value>150</value>
+	<value>160</value>
       </paramInt>
     </paramInts>
   </filter>
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -915,7 +915,7 @@
       </paramInt>
       <paramInt>
 	<name>maxY</name>
-	<value>70</value>
+	<value>110</value>
       </paramInt>
       <paramInt>
 	<name>minU</name>
@@ -975,7 +975,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1012,7 +1012,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1086,7 +1086,7 @@
   <filter>
     <className>Closure</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1152,7 +1152,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1210,7 +1210,7 @@
   <filter>
     <className>Closure</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1266,10 +1266,21 @@
     <paramPairInt/>
   </filter>
   <filter>
+    <className>ColorConverter</className>
+    <name>RGB</name>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+    <conversion>YUV2BGR</conversion>
+    <dependencies>
+      <dependency>undistort</dependency>
+    </dependencies>
+  </filter>
+  <filter>
     <className>ChannelSelector</className>
     <name>Y</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>undistort</dependency>
@@ -1285,7 +1296,7 @@
     <className>ChannelSelector</className>
     <name>U</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>undistort</dependency>
@@ -1301,7 +1312,7 @@
     <className>ChannelSelector</className>
     <name>V</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>undistort</dependency>
@@ -1390,7 +1401,7 @@
   <filter>
     <className>Histogram</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1425,40 +1436,18 @@
   <filter>
     <className>Undistort</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>HSV</dependency>
+      <dependency>source</dependency>
     </dependencies>
     <name>undistort</name>
     <paramFloats/>
     <paramInts/>
     <paramPairInt/>
-  </filter>
-  <filter>
-    <className>ColorConverter</className>
-    <name>RGB</name>
-    <debugLevel>
-      <graphics>true</graphics>
-    </debugLevel>
-    <conversion>YUV2BGR</conversion>
-    <dependencies>
-      <dependency>source</dependency>
-    </dependencies>
-  </filter>
-  <filter>
-    <className>ColorConverter</className>
-    <name>HSV</name>
-    <debugLevel>
-      <graphics>true</graphics>
-    </debugLevel>
-    <conversion>BGR2HSV</conversion>
-    <dependencies>
-      <dependency>RGB</dependency>
-    </dependencies>
   </filter>
   <filter>
     <className>SourceLogs2</className>
@@ -1469,7 +1458,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>Logs/VGA_Dribble/images.csv</imagesFile>
+    <imagesFile>Logs/VGA_ApprocheLoin120/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
@@ -1513,7 +1502,6 @@
       </paramInt>
     </paramInts>
   </filter>
-  
 </pipeline>
 <playing>true</playing>
 <showRobotView>false</showRobotView>
