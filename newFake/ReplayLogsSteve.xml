@@ -1,13 +1,13 @@
 <?xml version="1.0" ?><LocalisationTest>
 <ballResampling>0.0</ballResampling>
-<benchmark>true</benchmark>
-<benchmarkDetail>0</benchmarkDetail>
+<benchmark>false</benchmark>
+<benchmarkDetail>4</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>Logs/VGA_ApprocheLoin120/lowLevel.log</pathToLog>
+<pathToLog>../Logs/VGA_Approche120deg/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
-<imageDelay>11</imageDelay>
+<imageDelay>0</imageDelay>
 <nbParticlesBF>1000</nbParticlesBF>
 <nbParticlesFF>1000</nbParticlesFF>
 <pipeline>
@@ -137,11 +137,11 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>whiteGoalDetection</dependency>
-      <dependency>fieldColorDilated</dependency>
+      <dependency>fieldColorOpeningGoal</dependency>
     </dependencies>
     <name>whiteGoalNearField</name>
     <paramFloats/>
@@ -197,7 +197,7 @@
   <filter>
     <className>GoalTocard</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -213,7 +213,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -225,7 +225,7 @@
     <paramFloats>
       <ParamFloat>
 	<name>ratio</name>
-	<value>0.125</value>
+	<value>0.5</value>
       </ParamFloat>
     </paramFloats>
     <paramInts/>
@@ -234,7 +234,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -263,7 +263,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>goalMaskTocard</dependency>
@@ -277,7 +277,7 @@
   <filter>
     <className>OpeningWithPitch</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -314,7 +314,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -335,7 +335,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -525,7 +525,7 @@
     <paramInts>
       <paramInt>
 	<name>goalMinY</name>
-	<value>150</value>
+	<value>110</value>
       </paramInt>
       <paramInt>
 	<name>goalMinV</name>
@@ -614,7 +614,7 @@
       </paramInt>
       <paramInt>
 	<name>minScore</name>
-	<value>15</value>
+	<value>30</value>
       </paramInt>
       <paramInt>
 	<name>reflectionMinY</name>
@@ -740,6 +740,49 @@
     <paramPairInt/>
   </filter>
   <filter>
+    <className>Erode</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>undistortMaskDownscaled</dependency>
+    </dependencies>
+    <name>undistortMaskeEroded</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>Shape</name>
+	<value>0</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel height</name>
+	<value>3</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel width</name>
+	<value>3</value>
+      </paramInt>
+    </paramInts>
+    <paramPairInt/>
+  </filter>
+  <filter>
+    <className>Mask</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>undistortMaskeEroded</dependency>
+      <dependency>clippingBorders</dependency>
+    </dependencies>
+    <name>clippingBordersMasked</name>
+  </filter>
+  <filter>
     <className>Slicer</className>
     <debugLevel>
       <graphics>true</graphics>
@@ -748,7 +791,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>clippingBorders</dependency>
+      <dependency>clippingBordersMasked</dependency>
     </dependencies>
     <name>clippingBordersSliced</name>
     <paramFloats/>
@@ -791,6 +834,7 @@
       <dependency>undistort</dependency>
       <dependency>linesROI</dependency>
       <dependency>fieldColorLarge</dependency>
+      <dependency>undistortMask</dependency>
     </dependencies>
     <name>linesByROI</name>
     <paramFloats>
@@ -867,7 +911,7 @@
       </paramInt>
       <paramInt>
 	<name>maxV</name>
-	<value>160</value>
+	<value>150</value>
       </paramInt>
     </paramInts>
   </filter>
@@ -921,27 +965,27 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>50</value>
+	<value>30</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
-	<value>200</value>
+	<value>110</value>
       </paramInt>
       <paramInt>
 	<name>minU</name>
-	<value>70</value>
+	<value>100</value>
       </paramInt>
       <paramInt>
 	<name>maxU</name>
-	<value>150</value>
+	<value>132</value>
       </paramInt>
       <paramInt>
 	<name>minV</name>
-	<value>70</value>
+	<value>95</value>
       </paramInt>
       <paramInt>
 	<name>maxV</name>
-	<value>130</value>
+	<value>160</value>
       </paramInt>
     </paramInts>
   </filter>
@@ -1022,7 +1066,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1032,7 +1076,7 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>140</value>
+	<value>120</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
@@ -1237,10 +1281,9 @@
       </paramInt>
     </paramInts>
     <paramPairInt/>
-</filter>
-
+  </filter>
   <filter>
-    <className>CameraCorrectionMask</className>
+    <className>Closure</className>
     <debugLevel>
       <graphics>false</graphics>
       <parameters>false</parameters>
@@ -1248,97 +1291,26 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>undistort</dependency>
+      <dependency>fieldColor</dependency>
     </dependencies>
-    <name>undistortMask</name>
-    <paramFloats/>
-    <paramInts/>
-    <paramPairInt/>
-  </filter>
-  <filter>
-    <className>Undistort</className>
-    <debugLevel>
-      <graphics>true</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies>
-      <dependency>source</dependency>
-    </dependencies>
-    <name>undistort</name>
-    <paramFloats/>
-    <paramInts/>
-    <paramPairInt/>
-    </filter>
-
-  <!-- dev -->
-
-  <filter>
-    <className>ColorBounding</className>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>srcDownscaled</dependency>
-    </dependencies>
-    <name>tempMarker</name>
+    <name>fieldColorOpeningGoal</name>
     <paramFloats/>
     <paramInts>
       <paramInt>
-	<name>minY</name>
-	<value>65</value>
+	<name>Shape</name>
+	<value>0</value>
       </paramInt>
       <paramInt>
-	<name>maxY</name>
-	<value>84</value>
+	<name>kernel height</name>
+	<value>5</value>
       </paramInt>
       <paramInt>
-	<name>minU</name>
-	<value>103</value>
-      </paramInt>
-      <paramInt>
-	<name>maxU</name>
-	<value>123</value>
-      </paramInt>
-      <paramInt>
-	<name>minV</name>
-	<value>125</value>
-      </paramInt>
-      <paramInt>
-	<name>maxV</name>
-	<value>164</value>
+	<name>kernel width</name>
+	<value>5</value>
       </paramInt>
     </paramInts>
+    <paramPairInt/>
   </filter>
-
-  <filter>
-    <className>Canny</className>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>Y</dependency>
-    </dependencies>
-    <name>cannyOfHope</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>kernelSize</name>
-	<value>3</value>
-      </paramInt>
-    </paramInts>
-    <paramFloats>
-      <paramFloat>
-	<name>lowThreshold</name>
-	<value>30</value>
-      </paramFloat>
-      <paramFloat>
-	<name>HighThreshold</name>
-	<value>60</value>
-      </paramFloat>
-    </paramFloats>
-    </filter>
   <filter>
     <className>ColorConverter</className>
     <name>RGB</name>
@@ -1491,7 +1463,38 @@
     </paramInt>
     <paramPairInt/>
   </filter>
-
+  <filter>
+    <className>CameraCorrectionMask</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>undistort</dependency>
+    </dependencies>
+    <name>undistortMask</name>
+    <paramFloats/>
+    <paramInts/>
+    <paramPairInt/>
+  </filter>
+  <filter>
+    <className>Undistort</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>source</dependency>
+    </dependencies>
+    <name>undistort</name>
+    <paramFloats/>
+    <paramInts/>
+    <paramPairInt/>
+  </filter>
   <filter>
     <className>SourceLogs2</className>
     <debugLevel>
@@ -1501,15 +1504,50 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>Logs/VGA_ApprocheLoin120/images.csv</imagesFile>
+    <imagesFile>../Logs/VGA_Approche120deg/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
     <paramPairInt/>
     <startIndex>1</startIndex>
   </filter>
-
-    <!-- /dev -->
+  <filter>
+    <className>ColorBounding</className>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>srcDownscaled</dependency>
+    </dependencies>
+    <name>tempMarker</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>minY</name>
+	<value>65</value>
+      </paramInt>
+      <paramInt>
+	<name>maxY</name>
+	<value>84</value>
+      </paramInt>
+      <paramInt>
+	<name>minU</name>
+	<value>103</value>
+      </paramInt>
+      <paramInt>
+	<name>maxU</name>
+	<value>123</value>
+      </paramInt>
+      <paramInt>
+	<name>minV</name>
+	<value>125</value>
+      </paramInt>
+      <paramInt>
+	<name>maxV</name>
+	<value>164</value>
+      </paramInt>
+    </paramInts>
+  </filter>
 </pipeline>
 <playing>true</playing>
 <showRobotView>false</showRobotView>
