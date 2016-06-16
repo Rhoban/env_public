@@ -791,6 +791,7 @@
       <dependency>undistort</dependency>
       <dependency>linesROI</dependency>
       <dependency>fieldColorLarge</dependency>
+      <dependency>fieldColorLarge</dependency>
     </dependencies>
     <name>linesByROI</name>
     <paramFloats>
@@ -1272,7 +1273,34 @@
     <paramPairInt/>
     </filter>
 
-  <!-- dev -->
+
+
+
+
+
+
+
+
+
+    
+
+  <filter>
+    <className>SourceLogs2</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies/>
+    <imagesFile>Logs/VGA_ApprocheLoin120/images.csv</imagesFile>
+    <name>source</name>
+    <paramFloats/>
+    <paramInts/>
+    <paramPairInt/>
+    <startIndex>1</startIndex>
+  </filter>
+
 
   <filter>
     <className>ColorBounding</className>
@@ -1492,24 +1520,6 @@
     <paramPairInt/>
   </filter>
 
-  <filter>
-    <className>SourceLogs2</className>
-    <debugLevel>
-      <graphics>false</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies/>
-    <imagesFile>Logs/VGA_ApprocheLoin120/images.csv</imagesFile>
-    <name>source</name>
-    <paramFloats/>
-    <paramInts/>
-    <paramPairInt/>
-    <startIndex>1</startIndex>
-  </filter>
-
-    <!-- /dev -->
 </pipeline>
 <playing>true</playing>
 <showRobotView>false</showRobotView>
