@@ -12,33 +12,6 @@
 <nbParticlesFF>1000</nbParticlesFF>
 <pipeline>
   <filter>
-    <className>Canny</className>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>Y</dependency>
-    </dependencies>
-    <name>cannyOfHope</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>kernelSize</name>
-	<value>3</value>
-      </paramInt>
-    </paramInts>
-    <paramFloats>
-      <paramFloat>
-	<name>lowThreshold</name>
-	<value>30</value>
-      </paramFloat>
-      <paramFloat>
-	<name>HighThreshold</name>
-	<value>60</value>
-      </paramFloat>
-    </paramFloats>
-  </filter>
-  <filter>
     <className>Dilate</className>
     <debugLevel>
       <graphics>false</graphics>
@@ -1264,7 +1237,108 @@
       </paramInt>
     </paramInts>
     <paramPairInt/>
+</filter>
+
+  <filter>
+    <className>CameraCorrectionMask</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>undistort</dependency>
+    </dependencies>
+    <name>undistortMask</name>
+    <paramFloats/>
+    <paramInts/>
+    <paramPairInt/>
   </filter>
+  <filter>
+    <className>Undistort</className>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>source</dependency>
+    </dependencies>
+    <name>undistort</name>
+    <paramFloats/>
+    <paramInts/>
+    <paramPairInt/>
+    </filter>
+
+  <!-- dev -->
+  
+  <filter>
+    <className>ColorBounding</className>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>srcDownscaled</dependency>
+    </dependencies>
+    <name>tempMarker</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>minY</name>
+	<value>65</value>
+      </paramInt>
+      <paramInt>
+	<name>maxY</name>
+	<value>84</value>
+      </paramInt>
+      <paramInt>
+	<name>minU</name>
+	<value>103</value>
+      </paramInt>
+      <paramInt>
+	<name>maxU</name>
+	<value>123</value>
+      </paramInt>
+      <paramInt>
+	<name>minV</name>
+	<value>125</value>
+      </paramInt>
+      <paramInt>
+	<name>maxV</name>
+	<value>164</value>
+      </paramInt>
+    </paramInts>
+  </filter>
+
+  <filter>
+    <className>Canny</className>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>Y</dependency>
+    </dependencies>
+    <name>cannyOfHope</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>kernelSize</name>
+	<value>3</value>
+      </paramInt>
+    </paramInts>
+    <paramFloats>
+      <paramFloat>
+	<name>lowThreshold</name>
+	<value>30</value>
+      </paramFloat>
+      <paramFloat>
+	<name>HighThreshold</name>
+	<value>60</value>
+      </paramFloat>
+    </paramFloats>
+    </filter>
   <filter>
     <className>ColorConverter</className>
     <name>RGB</name>
@@ -1417,38 +1491,7 @@
     </paramInt>
     <paramPairInt/>
   </filter>
-  <filter>
-    <className>CameraCorrectionMask</className>
-    <debugLevel>
-      <graphics>false</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies>
-      <dependency>undistort</dependency>
-    </dependencies>
-    <name>undistortMask</name>
-    <paramFloats/>
-    <paramInts/>
-    <paramPairInt/>
-  </filter>
-  <filter>
-    <className>Undistort</className>
-    <debugLevel>
-      <graphics>true</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies>
-      <dependency>source</dependency>
-    </dependencies>
-    <name>undistort</name>
-    <paramFloats/>
-    <paramInts/>
-    <paramPairInt/>
-  </filter>
+  
   <filter>
     <className>SourceLogs2</className>
     <debugLevel>
@@ -1465,43 +1508,8 @@
     <paramPairInt/>
     <startIndex>1</startIndex>
   </filter>
-  <filter>
-    <className>ColorBounding</className>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>srcDownscaled</dependency>
-    </dependencies>
-    <name>tempMarker</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>minY</name>
-	<value>65</value>
-      </paramInt>
-      <paramInt>
-	<name>maxY</name>
-	<value>84</value>
-      </paramInt>
-      <paramInt>
-	<name>minU</name>
-	<value>103</value>
-      </paramInt>
-      <paramInt>
-	<name>maxU</name>
-	<value>123</value>
-      </paramInt>
-      <paramInt>
-	<name>minV</name>
-	<value>125</value>
-      </paramInt>
-      <paramInt>
-	<name>maxV</name>
-	<value>164</value>
-      </paramInt>
-    </paramInts>
-  </filter>
+
+    <!-- /dev -->
 </pipeline>
 <playing>true</playing>
 <showRobotView>false</showRobotView>
