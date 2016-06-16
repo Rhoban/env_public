@@ -1,13 +1,14 @@
-<?xml version="1.0" ?><LocalisationTest>
+<?xml version="1.0"?>
+<LocalisationTest>
 <ballResampling>0.0</ballResampling>
 <benchmark>false</benchmark>
-<benchmarkDetail>4</benchmarkDetail>
+<benchmarkDetail>0</benchmarkDetail>
 <gpuOn>false</gpuOn>
-<readFromLog>true</readFromLog>
+<readFromLog>false</readFromLog>
 <pathToLog>Logs/VGA_Approche120deg/lowLevel.log</pathToLog>
-<embedded>false</embedded>
+<embedded>true</embedded>
 <fieldResampling>0.002</fieldResampling>
-<imageDelay>0</imageDelay>
+<imageDelay>11</imageDelay>
 <nbParticlesBF>1000</nbParticlesBF>
 <nbParticlesFF>1000</nbParticlesFF>
 <pipeline>
@@ -80,7 +81,7 @@
   <filter>
     <className>Closure</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingExperimental</dependency>
@@ -105,7 +106,7 @@
   <filter>
     <className>ClippingFromLines</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -121,7 +122,7 @@
   <filter>
     <className>BinaryEdges</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -137,7 +138,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>whiteGoalDetection</dependency>
@@ -151,7 +152,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -180,7 +181,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -197,7 +198,7 @@
   <filter>
     <className>GoalTocard</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -213,7 +214,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -234,7 +235,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -263,7 +264,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>goalMaskTocard</dependency>
@@ -277,7 +278,7 @@
   <filter>
     <className>OpeningWithPitch</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -335,7 +336,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -511,7 +512,7 @@
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -709,7 +710,7 @@
   <filter>
     <className>ClippingRules</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -726,7 +727,7 @@
   <filter>
     <className>BinaryEdges</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -785,7 +786,7 @@
   <filter>
     <className>Slicer</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -810,7 +811,7 @@
   <filter>
     <className>ROIFromBlobs</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -825,7 +826,7 @@
   <filter>
     <className>LinesByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -955,7 +956,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1066,7 +1067,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1344,283 +1345,67 @@
     <paramPairInt/>
   </filter>
 
-  <!-- dev -->
-  <filter>
-    <className>ColorBounding</className>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>srcDownscaled</dependency>
-    </dependencies>
-    <name>tempMarker</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>minY</name>
-	<value>65</value>
-      </paramInt>
-      <paramInt>
-	<name>maxY</name>
-	<value>84</value>
-      </paramInt>
-      <paramInt>
-	<name>minU</name>
-	<value>103</value>
-      </paramInt>
-      <paramInt>
-	<name>maxU</name>
-	<value>123</value>
-      </paramInt>
-      <paramInt>
-	<name>minV</name>
-	<value>125</value>
-      </paramInt>
-      <paramInt>
-	<name>maxV</name>
-	<value>164</value>
-      </paramInt>
-    </paramInts>
-  </filter>
-
-
-  <filter>
-    <className>ColorBounding</className>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>srcDownscaled</dependency>
-    </dependencies>
-    <name>tempMarker</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>minY</name>
-	<value>65</value>
-      </paramInt>
-      <paramInt>
-	<name>maxY</name>
-	<value>84</value>
-      </paramInt>
-      <paramInt>
-	<name>minU</name>
-	<value>103</value>
-      </paramInt>
-      <paramInt>
-	<name>maxU</name>
-	<value>123</value>
-      </paramInt>
-      <paramInt>
-	<name>minV</name>
-	<value>125</value>
-      </paramInt>
-      <paramInt>
-	<name>maxV</name>
-	<value>164</value>
-      </paramInt>
-    </paramInts>
-  </filter>
-
-  <filter>
-    <className>Canny</className>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>Y</dependency>
-    </dependencies>
-    <name>cannyOfHope</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>kernelSize</name>
-	<value>3</value>
-      </paramInt>
-    </paramInts>
-    <paramFloats>
-      <paramFloat>
-	<name>lowThreshold</name>
-	<value>30</value>
-      </paramFloat>
-      <paramFloat>
-	<name>HighThreshold</name>
-	<value>60</value>
-      </paramFloat>
-    </paramFloats>
-    </filter>
-  <filter>
-    <className>ColorConverter</className>
-    <name>RGB</name>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <conversion>YUV2BGR</conversion>
-    <dependencies>
-      <dependency>undistort</dependency>
-    </dependencies>
-  </filter>
-  <filter>
-    <className>ChannelSelector</className>
-    <name>Y</name>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>undistort</dependency>
-    </dependencies>
-    <paramInts>
-      <paramInt>
-	<name>channel</name>
-	<value>0</value>
-      </paramInt>
-    </paramInts>
-  </filter>
-  <filter>
-    <className>ChannelSelector</className>
-    <name>U</name>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>undistort</dependency>
-    </dependencies>
-    <paramInts>
-      <paramInt>
-	<name>channel</name>
-	<value>1</value>
-      </paramInt>
-    </paramInts>
-  </filter>
-  <filter>
-    <className>ChannelSelector</className>
-    <name>V</name>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>undistort</dependency>
-    </dependencies>
-    <paramInts>
-      <paramInt>
-	<name>channel</name>
-	<value>2</value>
-      </paramInt>
-    </paramInts>
-  </filter>
-  <filter>
-    <className>ColorBounding</className>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>undistort</dependency>
-    </dependencies>
-    <name>yModal1</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>minY</name>
-	<value>45</value>
-      </paramInt>
-      <paramInt>
-	<name>maxY</name>
-	<value>111</value>
-      </paramInt>
-      <paramInt>
-	<name>minU</name>
-	<value>0</value>
-      </paramInt>
-      <paramInt>
-	<name>maxU</name>
-	<value>255</value>
-      </paramInt>
-      <paramInt>
-	<name>minV</name>
-	<value>0</value>
-      </paramInt>
-      <paramInt>
-	<name>maxV</name>
-	<value>255</value>
-      </paramInt>
-    </paramInts>
-  </filter>
-  <filter>
-    <className>ColorBounding</className>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>undistort</dependency>
-    </dependencies>
-    <name>yModal2</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>minY</name>
-	<value>143</value>
-      </paramInt>
-      <paramInt>
-	<name>maxY</name>
-	<value>183</value>
-      </paramInt>
-      <paramInt>
-	<name>minU</name>
-	<value>0</value>
-      </paramInt>
-      <paramInt>
-	<name>maxU</name>
-	<value>255</value>
-      </paramInt>
-      <paramInt>
-	<name>minV</name>
-	<value>0</value>
-      </paramInt>
-      <paramInt>
-	<name>maxV</name>
-	<value>255</value>
-      </paramInt>
-    </paramInts>
-  </filter>
-  <filter>
-    <className>Histogram</className>
-    <debugLevel>
-      <graphics>false</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies>
-      <dependency>undistort</dependency>
-    </dependencies>
-    <name>histogram</name>
-    <paramFloats/>
+  
+<filter>
+<captureFrequency>60</captureFrequency>
+<className>SourceV4l2</className>
+<debugLevel>
+    <graphics>false</graphics>
+</debugLevel>
+<dependencies/>
+<device>/dev/video0</device>
+<deviceName>/dev/hidraw0</deviceName>
+<name>source</name>
+<isSeecam>1</isSeecam>
+<wbRed>60</wbRed>
+<wbGreen>77</wbGreen>
+<wbBlue>79</wbBlue>
+<height>480</height>
+<width>640</width>
+<paramFloats/>
+<paramInts>
     <paramInt>
-      <name>bins</name>
-      <value>1</value>
+        <name>brightness</name>
+        <value>48</value>
     </paramInt>
-    <paramPairInt/>
-  </filter>
-
-  <filter>
-    <className>SourceLogs2</className>
-    <debugLevel>
-      <graphics>false</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies/>
-    <imagesFile>Logs/VGA_ApprocheLoin120/images.csv</imagesFile>
-    <name>source</name>
-    <paramFloats/>
-    <paramInts/>
-    <paramPairInt/>
-    <startIndex>1</startIndex>
-  </filter>
-
-    <!-- /dev -->
-</pipeline>
+    <paramInt>
+        <name>contrast</name>
+        <value>54</value>
+    </paramInt>
+    <paramInt>
+        <name>exposure_auto</name>
+        <value>0</value>
+    </paramInt>
+    <paramInt>
+        <name>exposure_(absolute)</name>
+        <value>312</value>
+    </paramInt>
+    <paramInt>
+        <name>gain</name>
+        <value>2</value>
+    </paramInt>
+    <paramInt>
+        <name>power_line_frequency</name>
+        <value>1</value>
+    </paramInt>
+    <paramInt>
+        <name>saturation</name>
+        <value>52</value>
+    </paramInt>
+    <paramInt>
+        <name>sharpness</name>
+        <value>15</value>
+    </paramInt>
+    <paramInt>
+        <name>hue</name>
+        <value>50</value>
+    </paramInt>
+    <paramInt>
+        <name>gamma</name>
+        <value>50</value>
+    </paramInt>
+</paramInts>
+</filter></pipeline>
 <playing>true</playing>
 <showRobotView>false</showRobotView>
 <showTaggedImg>false</showTaggedImg>
