@@ -4,7 +4,7 @@
 <benchmarkDetail>2</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>Logs/VGA_Dribble/lowLevel.log</pathToLog>
+<pathToLog>Logs/VGA_Horizon/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -1352,7 +1352,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>Logs/VGA_Dribble/images.csv</imagesFile>
+    <imagesFile>Logs/VGA_Horizon/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
@@ -1397,13 +1397,49 @@
     </dependencies>
   </filter>  
 
+
+  <filter>
+    <className>TempCenter</className>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>tempMarkerOpening</dependency>
+    </dependencies>
+    <name>tempMarkerLine</name>
+  </filter>
+  <filter>
+    <className>Opening</className>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>tempMarker</dependency>
+    </dependencies>
+    <name>tempMarkerOpening</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>Shape</name>
+	<value>0</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel width</name>
+	<value>3</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel height</name>
+	<value>3</value>
+      </paramInt>
+    </paramInts>
+  </filter>
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
-      <dependency>srcDownscaled</dependency>
+      <dependency>undistort</dependency>
     </dependencies>
     <name>tempMarker</name>
     <paramFloats/>
@@ -1414,23 +1450,23 @@
       </paramInt>
       <paramInt>
 	<name>maxY</name>
-	<value>84</value>
+	<value>95</value>
       </paramInt>
       <paramInt>
 	<name>minU</name>
-	<value>103</value>
+	<value>0</value>
       </paramInt>
       <paramInt>
 	<name>maxU</name>
-	<value>123</value>
+	<value>130</value>
       </paramInt>
       <paramInt>
 	<name>minV</name>
-	<value>125</value>
+	<value>135</value>
       </paramInt>
       <paramInt>
 	<name>maxV</name>
-	<value>164</value>
+	<value>160</value>
       </paramInt>
     </paramInts>
   </filter>
