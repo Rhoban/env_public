@@ -7,14 +7,14 @@
 <pathToLog>Logs/VGA_Approche120deg/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
-<imageDelay>0</imageDelay>
+<imageDelay>11</imageDelay>
 <nbParticlesBF>1000</nbParticlesBF>
 <nbParticlesFF>1000</nbParticlesFF>
 <pipeline>
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -43,7 +43,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -80,7 +80,7 @@
   <filter>
     <className>Closure</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingExperimental</dependency>
@@ -105,7 +105,7 @@
   <filter>
     <className>ClippingFromLines</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -121,7 +121,7 @@
   <filter>
     <className>BinaryEdges</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -137,7 +137,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>whiteGoalDetection</dependency>
@@ -151,7 +151,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -180,7 +180,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -197,7 +197,7 @@
   <filter>
     <className>GoalTocard</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -213,7 +213,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -234,7 +234,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -263,7 +263,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>goalMaskTocard</dependency>
@@ -277,7 +277,7 @@
   <filter>
     <className>OpeningWithPitch</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -314,7 +314,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -335,7 +335,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -372,7 +372,7 @@
   <filter>
     <className>BallROIManager</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -412,7 +412,7 @@
   <filter>
     <className>SparkleOfHope</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -426,7 +426,7 @@
     <paramFloats>
       <ParamFloat>
 	<name>sizeFactor</name>
-	<value>1.2</value>
+	<value>1</value>
       </ParamFloat>
       <ParamFloat>
 	<name>minFillingPerc</name>
@@ -474,7 +474,7 @@
   <filter>
     <className>BallROIDetector</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -511,7 +511,7 @@
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -545,7 +545,7 @@
   <filter>
     <className>BallByROI</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -726,7 +726,7 @@
   <filter>
     <className>BinaryEdges</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -785,7 +785,7 @@
   <filter>
     <className>Slicer</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -810,7 +810,7 @@
   <filter>
     <className>ROIFromBlobs</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -825,7 +825,7 @@
   <filter>
     <className>LinesByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -918,7 +918,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -955,7 +955,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1029,7 +1029,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1066,7 +1066,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1132,7 +1132,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1169,7 +1169,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1343,8 +1343,22 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
-  <!-- dev -->
+  <filter>
+    <className>SourceLogs2</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies/>
+    <imagesFile>Logs/VGA_Approche120deg/images.csv</imagesFile>
+    <name>source</name>
+    <paramFloats/>
+    <paramInts/>
+    <paramPairInt/>
+    <startIndex>1</startIndex>
+  </filter>
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
@@ -1382,46 +1396,6 @@
       </paramInt>
     </paramInts>
   </filter>
-
-
-  <filter>
-    <className>ColorBounding</className>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>srcDownscaled</dependency>
-    </dependencies>
-    <name>tempMarker</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>minY</name>
-	<value>65</value>
-      </paramInt>
-      <paramInt>
-	<name>maxY</name>
-	<value>84</value>
-      </paramInt>
-      <paramInt>
-	<name>minU</name>
-	<value>103</value>
-      </paramInt>
-      <paramInt>
-	<name>maxU</name>
-	<value>123</value>
-      </paramInt>
-      <paramInt>
-	<name>minV</name>
-	<value>125</value>
-      </paramInt>
-      <paramInt>
-	<name>maxV</name>
-	<value>164</value>
-      </paramInt>
-    </paramInts>
-  </filter>
-
   <filter>
     <className>Canny</className>
     <debugLevel>
@@ -1453,7 +1427,7 @@
     <className>ColorConverter</className>
     <name>RGB</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <conversion>YUV2BGR</conversion>
     <dependencies>
@@ -1601,25 +1575,6 @@
     </paramInt>
     <paramPairInt/>
   </filter>
-
-  <filter>
-    <className>SourceLogs2</className>
-    <debugLevel>
-      <graphics>false</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies/>
-    <imagesFile>Logs/VGA_ApprocheLoin120/images.csv</imagesFile>
-    <name>source</name>
-    <paramFloats/>
-    <paramInts/>
-    <paramPairInt/>
-    <startIndex>1</startIndex>
-  </filter>
-
-    <!-- /dev -->
 </pipeline>
 <playing>true</playing>
 <showRobotView>false</showRobotView>
