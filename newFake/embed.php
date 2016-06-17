@@ -38,11 +38,23 @@ foreach ($xml as $child) {
     }
     // 3: In the pipeline, disabling graphics
     if ($name == 'pipeline') {
+        $remove = [];
+        $removing = false;
         foreach ($child as $filter) {
             if ($filter->getName() == 'filter') {
                 $p = &$filter->xpath('debugLevel/graphics');
                 $p[0][0] = 'false';
             }
+            $p = &$filter->xpath('className');
+            if ($p[0][0] == 'SourceLogs2') {
+                $removing = true;
+            }
+            if ($removing) {
+                $remove[] = $filter;
+            }
+        }
+        foreach ($remove as $r) {
+            unset($r[0][0]);
         }
         // 4: Adding the source filter to the document
         sxml_append($child, simplexml_load_file(__DIR__.'/source.xml'));
