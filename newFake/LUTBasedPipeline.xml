@@ -4,7 +4,7 @@
 <benchmarkDetail>2</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>Logs/VGA_Dribble/lowLevel.log</pathToLog>
+<pathToLog>Logs/VGA_ApprocheLoin90deg/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -550,7 +550,7 @@
       </ParamFloat>
       <ParamFloat>
 	<name>clusterFlatTol</name>
-	<value>1</value>
+	<value>0</value>
       </ParamFloat>
       <ParamFloat>
 	<name>reflectionMinRatio</name>
@@ -1246,13 +1246,16 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>Logs/VGA_Dribble/images.csv</imagesFile>
+    <imagesFile>Logs/VGA_ApprocheLoin90deg/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
     <paramPairInt/>
     <startIndex>1</startIndex>
   </filter>
+
+
+
   <filter>
     <className>LUTDependency</className>
     <name>ballByLutFast</name>
