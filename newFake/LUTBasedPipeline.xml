@@ -1359,6 +1359,31 @@
     <paramPairInt/>
     <startIndex>1</startIndex>
   </filter>
+
+  <filter>
+    <className>LUTMultifilter</className>
+    <name>lutMultifilter</name>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+    <_pathToLUT>daddyLUT80.bin</_pathToLUT>
+    <_tagCode1>BALL</_tagCode1>
+    <_tagCode2>FIELD</_tagCode2>
+    <dependencies>
+      <dependency>undistort</dependency>
+    </dependencies>
+  </filter>
+  <filter>
+    <className>LUTDependency</className>
+    <name>ballByLutFast</name>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+    <_tagCode>BALL</_tagCode>
+    <dependencies>
+      <dependency>lutMultifilter</dependency>
+    </dependencies>
+  </filter>
   <filter>
     <className>LUTSelector</className>
     <name>ballByLUT</name>
