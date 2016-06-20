@@ -1,10 +1,10 @@
 <?xml version="1.0" ?><LocalisationTest>
 <ballResampling>0.0</ballResampling>
 <benchmark>true</benchmark>
-<benchmarkDetail>2</benchmarkDetail>
+<benchmarkDetail>5</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>Logs/VGA_Approche60deg/lowLevel.log</pathToLog>
+<pathToLog>Logs/VGA_Dribble/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -356,6 +356,10 @@
     </dependencies>
     <name>ballROIManager</name>
     <paramFloats>
+      <ParamFloat>
+	<name>minROIRatio</name>
+	<value>0.6</value>
+      </ParamFloat>
       <ParamFloat>
 	<name>minRatio</name>
 	<value>0.7</value>
@@ -1254,7 +1258,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>Logs/VGA_Approche60deg/images.csv</imagesFile>
+    <imagesFile>Logs/VGA_Dribble/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
