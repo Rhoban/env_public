@@ -31,14 +31,14 @@
     },
     "Manager": {
         "baudrate": 1000000.0,
-        "enableSyncRead": true,
-        "enableSyncWrite": true,
+        "enableSyncRead": false,
+        "enableSyncWrite": false,
         "port": "/dev/ttyACM0",
         "protocol": "DynamixelV1",
         "scheduleMode": true,
         "throwErrorOnRead": false,
         "throwErrorOnScan": false,
-        "waitWriteCheckResponse": true
+        "waitWriteCheckResponse": false
     },
     "Pins": {
         "devices": [
