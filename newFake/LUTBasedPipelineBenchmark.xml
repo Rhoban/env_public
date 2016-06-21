@@ -1,10 +1,8 @@
 <?xml version="1.0" ?><LocalisationTest>
 <ballResampling>0.0</ballResampling>
-<benchmark>true</benchmark>
+<benchmark>false</benchmark>
 <benchmarkDetail>5</benchmarkDetail>
 <gpuOn>false</gpuOn>
-<readFromLog>true</readFromLog>
-<pathToLog>Logs/VGA_Dribble/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -122,7 +120,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -148,12 +146,10 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
-
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -167,12 +163,10 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
-
   <filter>
     <className>GoalTocard</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -188,7 +182,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -209,7 +203,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -238,7 +232,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>goalMaskTocard</dependency>
@@ -249,14 +243,10 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
-
-
-
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -270,11 +260,10 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -300,11 +289,10 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -335,13 +323,10 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
-
-
   <filter>
     <className>OpeningWithPitch</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -378,7 +363,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -399,7 +384,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -576,11 +561,10 @@
       </paramInt>
     </paramInts>
   </filter>
-
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -611,7 +595,6 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>BallByROI</className>
     <debugLevel>
@@ -752,8 +735,8 @@
     <name>undistortMaskDownscaled</name>
     <paramFloats>
       <ParamFloat>
-	<name>ratio</name>
-	<value>8.0</value>
+	      <name>ratio</name>
+	      <value>8.0</value>
       </ParamFloat>
     </paramFloats>
     <paramInts/>
@@ -786,7 +769,7 @@
   <filter>
     <className>ClippingRules</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -800,7 +783,6 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>BinaryEdges</className>
     <debugLevel>
@@ -940,7 +922,7 @@
   <filter>
     <className>LinesByROI</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1247,7 +1229,7 @@
   <filter>
     <className>Undistort</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1323,22 +1305,6 @@
     <dependencies>
       <dependency>lutMultifilter</dependency>
     </dependencies>
-  </filter>
-  <filter>
-    <className>SourceLogs2</className>
-    <debugLevel>
-      <graphics>false</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies/>
-    <imagesFile>Logs/VGA_Dribble/images.csv</imagesFile>
-    <name>source</name>
-    <paramFloats/>
-    <paramInts/>
-    <paramPairInt/>
-    <startIndex>1</startIndex>
   </filter>
   <filter>
     <className>LUTDependency</className>
