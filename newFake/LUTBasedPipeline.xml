@@ -122,7 +122,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -148,10 +148,12 @@
     </paramInts>
     <paramPairInt/>
   </filter>
+
+
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -165,10 +167,12 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
+
+
   <filter>
     <className>GoalTocard</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -184,7 +188,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -205,7 +209,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -234,7 +238,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>goalMaskTocard</dependency>
@@ -245,10 +249,99 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
+
+
+
+
+  <filter>
+    <className>Mask</className>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>whiteGoalNearField</dependency>
+      <dependency>clipping</dependency>
+    </dependencies>
+    <name>goalMaskStdClipping</name>
+    <paramFloats/>
+    <paramInts/>
+    <paramPairInt/>
+  </filter>
+
+  <filter>
+    <className>Dilate</className>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>goalMaskStdClipping</dependency>
+    </dependencies>
+    <name>goalMaskStdClipping2</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>Shape</name>
+	<value>1</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel height</name>
+	<value>11</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel width</name>
+	<value>5</value>
+      </paramInt>
+    </paramInts>
+    <paramPairInt/>
+  </filter>
+
+  <filter>
+    <className>GoalByROI</className>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>undistort</dependency>
+      <dependency>goalMaskStdClipping2</dependency>
+    </dependencies>
+    <name>goalByROIStdClipping</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>goalMinY</name>
+	<value>110</value>
+      </paramInt>
+      <paramInt>
+	<name>goalMinV</name>
+	<value>0</value>
+      </paramInt>
+      <paramInt>
+	<name>kHeight</name>
+	<value>31</value>
+      </paramInt>
+      <paramInt>
+	<name>kWidth</name>
+	<value>3</value>
+      </paramInt>
+    </paramInts>
+    <paramPairInt/>
+  </filter>
+
+
+
   <filter>
     <className>OpeningWithPitch</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -306,7 +399,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -343,7 +436,7 @@
   <filter>
     <className>BallROIManager</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -387,7 +480,7 @@
   <filter>
     <className>SparkleOfHope</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -449,7 +542,7 @@
   <filter>
     <className>BallROIDetector</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -483,10 +576,11 @@
       </paramInt>
     </paramInts>
   </filter>
+
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -517,10 +611,11 @@
     </paramInts>
     <paramPairInt/>
   </filter>
+
   <filter>
     <className>BallByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1003,7 +1098,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1040,7 +1135,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1151,7 +1246,7 @@
   <filter>
     <className>Undistort</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1168,7 +1263,7 @@
     <className>LUTMultifilter</className>
     <name>lutMultifilter</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <_pathToLUT>daddyLUT80.bin</_pathToLUT>
     <_tagCode1>BALL</_tagCode1>
@@ -1244,9 +1339,6 @@
     <paramPairInt/>
     <startIndex>1</startIndex>
   </filter>
-
-
-
   <filter>
     <className>LUTDependency</className>
     <name>ballByLutFast</name>
@@ -1397,7 +1489,7 @@
     <className>ColorConverter</className>
     <name>RGB</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <conversion>YUV2BGR</conversion>
     <dependencies>
