@@ -4,7 +4,7 @@
 <benchmarkDetail>5</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>Logs/VGA_Dribble/lowLevel.log</pathToLog>
+<pathToLog>Logs/VGA_Approche30deg/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -14,7 +14,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -28,7 +28,7 @@
       </paramInt>
       <paramInt>
 	<name>maxY</name>
-	<value>110</value>
+	<value>90</value>
       </paramInt>
       <paramInt>
 	<name>minU</name>
@@ -122,7 +122,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -148,12 +148,10 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
-
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -167,12 +165,10 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
-
   <filter>
     <className>GoalTocard</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -188,7 +184,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -209,7 +205,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -238,7 +234,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>goalMaskTocard</dependency>
@@ -249,14 +245,10 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
-
-
-
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -270,11 +262,10 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -300,11 +291,10 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -335,13 +325,10 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
-
-
   <filter>
     <className>OpeningWithPitch</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -399,7 +386,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -523,7 +510,7 @@
   <filter>
     <className>ClippingByBlob</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -576,11 +563,10 @@
       </paramInt>
     </paramInts>
   </filter>
-
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -611,7 +597,6 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>BallByROI</className>
     <debugLevel>
@@ -727,7 +712,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingByBlob</dependency>
@@ -761,7 +746,7 @@
   <filter>
     <className>Opening</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingByBlobDownscaled</dependency>
@@ -800,7 +785,6 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>BinaryEdges</className>
     <debugLevel>
@@ -903,7 +887,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -917,7 +901,7 @@
       </paramInt>
       <paramInt>
 	<name>maxY</name>
-	<value>110</value>
+	<value>90</value>
       </paramInt>
       <paramInt>
 	<name>minU</name>
@@ -940,7 +924,7 @@
   <filter>
     <className>LinesByROI</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -955,15 +939,15 @@
     <paramFloats>
       <ParamFloat>
 	<name>eraseThickness</name>
-	<value>10</value>
+	<value>5</value>
       </ParamFloat>
       <ParamFloat>
 	<name>minDist</name>
-	<value>5</value>
+	<value>8</value>
       </ParamFloat>
       <ParamFloat>
 	<name>rhoTol</name>
-	<value>5</value>
+	<value>3</value>
       </ParamFloat>
       <ParamFloat>
 	<name>thetaTol</name>
@@ -973,7 +957,7 @@
     <paramInts>
       <paramInt>
 	<name>roiMargin</name>
-	<value>20</value>
+	<value>7</value>
       </paramInt>
       <paramInt>
 	<name>nbEpochs</name>
@@ -981,7 +965,7 @@
       </paramInt>
       <paramInt>
 	<name>iterationsByEpoch</name>
-	<value>100</value>
+	<value>300</value>
       </paramInt>
       <paramInt>
 	<name>minScore</name>
@@ -996,7 +980,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1070,7 +1054,7 @@
   <filter>
     <className>Closure</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1333,7 +1317,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>Logs/VGA_Dribble/images.csv</imagesFile>
+    <imagesFile>Logs/VGA_Approche30deg/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
@@ -1490,7 +1474,7 @@
     <className>ColorConverter</className>
     <name>RGB</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <conversion>YUV2BGR</conversion>
     <dependencies>
@@ -1622,7 +1606,7 @@
   <filter>
     <className>Histogram</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
