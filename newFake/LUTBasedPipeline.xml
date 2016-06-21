@@ -24,7 +24,7 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>30</value>
+	<value>40</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
@@ -1073,27 +1073,6 @@
 	<value>255</value>
       </paramInt>
     </paramInts>
-  </filter>
-  <filter>
-    <className>Rescale</className>
-    <debugLevel>
-      <graphics>false</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies>
-      <dependency>undistort</dependency>
-    </dependencies>
-    <name>goalSrc</name>
-    <paramFloats>
-      <ParamFloat>
-	<name>ratio</name>
-	<value>4</value>
-      </ParamFloat>
-    </paramFloats>
-    <paramInts/>
-    <paramPairInt/>
   </filter>
   <filter>
     <className>Closure</className>
