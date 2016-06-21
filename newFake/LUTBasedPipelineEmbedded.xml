@@ -5,7 +5,7 @@
 <benchmarkDetail>0</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>false</readFromLog>
-<pathToLog>Logs/VGA_Approche60deg/lowLevel.log</pathToLog>
+<pathToLog>Logs/VGA_Dribble/lowLevel.log</pathToLog>
 <embedded>true</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -149,6 +149,8 @@
     </paramInts>
     <paramPairInt/>
   </filter>
+
+
   <filter>
     <className>Mask</className>
     <debugLevel>
@@ -166,6 +168,8 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
+
+
   <filter>
     <className>GoalTocard</className>
     <debugLevel>
@@ -246,6 +250,95 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
+
+
+
+
+  <filter>
+    <className>Mask</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>whiteGoalNearField</dependency>
+      <dependency>clippingBordersMasked</dependency>
+    </dependencies>
+    <name>goalMaskStdClipping</name>
+    <paramFloats/>
+    <paramInts/>
+    <paramPairInt/>
+  </filter>
+
+  <filter>
+    <className>Dilate</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>goalMaskStdClipping</dependency>
+    </dependencies>
+    <name>goalMaskStdClipping2</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>Shape</name>
+	<value>1</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel height</name>
+	<value>11</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel width</name>
+	<value>5</value>
+      </paramInt>
+    </paramInts>
+    <paramPairInt/>
+  </filter>
+
+  <filter>
+    <className>GoalByROI</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>undistort</dependency>
+      <dependency>goalMaskStdClipping2</dependency>
+    </dependencies>
+    <name>goalByROIStdClipping</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>goalMinY</name>
+	<value>110</value>
+      </paramInt>
+      <paramInt>
+	<name>goalMinV</name>
+	<value>0</value>
+      </paramInt>
+      <paramInt>
+	<name>kHeight</name>
+	<value>31</value>
+      </paramInt>
+      <paramInt>
+	<name>kWidth</name>
+	<value>3</value>
+      </paramInt>
+    </paramInts>
+    <paramPairInt/>
+  </filter>
+
+
+
   <filter>
     <className>OpeningWithPitch</className>
     <debugLevel>
@@ -357,6 +450,10 @@
     </dependencies>
     <name>ballROIManager</name>
     <paramFloats>
+      <ParamFloat>
+	<name>minROIRatio</name>
+	<value>0.6</value>
+      </ParamFloat>
       <ParamFloat>
 	<name>minRatio</name>
 	<value>0.7</value>
@@ -480,6 +577,7 @@
       </paramInt>
     </paramInts>
   </filter>
+
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
@@ -514,6 +612,7 @@
     </paramInts>
     <paramPairInt/>
   </filter>
+
   <filter>
     <className>BallByROI</className>
     <debugLevel>
@@ -702,6 +801,7 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
+
   <filter>
     <className>BinaryEdges</className>
     <debugLevel>
@@ -1072,27 +1172,6 @@
     </paramInts>
   </filter>
   <filter>
-    <className>Rescale</className>
-    <debugLevel>
-      <graphics>false</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies>
-      <dependency>undistort</dependency>
-    </dependencies>
-    <name>goalSrc</name>
-    <paramFloats>
-      <ParamFloat>
-	<name>ratio</name>
-	<value>4</value>
-      </ParamFloat>
-    </paramFloats>
-    <paramInts/>
-    <paramPairInt/>
-  </filter>
-  <filter>
     <className>Closure</className>
     <debugLevel>
       <graphics>false</graphics>
@@ -1247,9 +1326,6 @@
     </dependencies>
   </filter>
   
-
-
-
   
   
   

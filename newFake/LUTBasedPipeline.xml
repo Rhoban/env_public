@@ -263,7 +263,7 @@
     </debugLevel>
     <dependencies>
       <dependency>whiteGoalNearField</dependency>
-      <dependency>clipping</dependency>
+      <dependency>clippingBordersMasked</dependency>
     </dependencies>
     <name>goalMaskStdClipping</name>
     <paramFloats/>
@@ -800,6 +800,7 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
+
   <filter>
     <className>BinaryEdges</className>
     <debugLevel>
