@@ -1,7 +1,7 @@
 <?xml version="1.0" ?><LocalisationTest>
 <ballResampling>0.0</ballResampling>
 <benchmark>true</benchmark>
-<benchmarkDetail>2</benchmarkDetail>
+<benchmarkDetail>5</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
 <pathToLog>Logs/VGA_Dribble/lowLevel.log</pathToLog>
@@ -12,35 +12,6 @@
 <nbParticlesFF>1000</nbParticlesFF>
 <pipeline>
   <filter>
-    <className>Dilate</className>
-    <debugLevel>
-      <graphics>false</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies>
-      <dependency>whiteDetectionSpecial</dependency>
-    </dependencies>
-    <name>whiteDetectionSpecialDilated</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>Shape</name>
-	<value>0</value>
-      </paramInt>
-      <paramInt>
-	<name>kernel height</name>
-	<value>5</value>
-      </paramInt>
-      <paramInt>
-	<name>kernel width</name>
-	<value>5</value>
-      </paramInt>
-    </paramInts>
-    <paramPairInt/>
-  </filter>
-  <filter>
     <className>ColorBounding</className>
     <debugLevel>
       <graphics>false</graphics>
@@ -48,39 +19,39 @@
     <dependencies>
       <dependency>srcDownscaled</dependency>
     </dependencies>
-    <name>whiteDetectionSpecial</name>
+    <name>fieldColor</name>
     <paramFloats/>
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>150</value>
+	<value>40</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
-	<value>255</value>
+	<value>110</value>
       </paramInt>
       <paramInt>
 	<name>minU</name>
-	<value>0</value>
+	<value>100</value>
       </paramInt>
       <paramInt>
 	<name>maxU</name>
-	<value>255</value>
+	<value>132</value>
       </paramInt>
       <paramInt>
 	<name>minV</name>
-	<value>0</value>
+	<value>95</value>
       </paramInt>
       <paramInt>
 	<name>maxV</name>
-	<value>255</value>
+	<value>150</value>
       </paramInt>
     </paramInts>
   </filter>
   <filter>
     <className>Closure</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingExperimental</dependency>
@@ -105,7 +76,7 @@
   <filter>
     <className>ClippingFromLines</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -121,7 +92,7 @@
   <filter>
     <className>BinaryEdges</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -137,7 +108,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>whiteGoalDetection</dependency>
@@ -151,7 +122,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -180,7 +151,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -372,7 +343,7 @@
   <filter>
     <className>BallROIManager</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -385,6 +356,10 @@
     </dependencies>
     <name>ballROIManager</name>
     <paramFloats>
+      <ParamFloat>
+	<name>minROIRatio</name>
+	<value>0.6</value>
+      </ParamFloat>
       <ParamFloat>
 	<name>minRatio</name>
 	<value>0.7</value>
@@ -412,7 +387,7 @@
   <filter>
     <className>SparkleOfHope</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -426,7 +401,7 @@
     <paramFloats>
       <ParamFloat>
 	<name>sizeFactor</name>
-	<value>1</value>
+	<value>1.3</value>
       </ParamFloat>
       <ParamFloat>
 	<name>minFillingPerc</name>
@@ -460,7 +435,7 @@
     <dependencies>
       <dependency>srcDownscaled</dependency>
       <dependency>whiteDetectionClosing</dependency>
-      <dependency>fieldColorOpening</dependency>
+      <dependency>fieldColorClosure</dependency>
     </dependencies>
     <name>clippingByBlob</name>
     <paramFloats/>
@@ -474,7 +449,7 @@
   <filter>
     <className>BallROIDetector</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -482,8 +457,8 @@
     <dependencies>
       <dependency>srcDownscaled</dependency>
       <dependency>clipping</dependency>
-      <dependency>whiteBallDetection</dependency>
-      <dependency>whiteBallDetection</dependency>
+      <dependency>lutBallDetectionEroded</dependency>
+      <dependency>lutBallDetectionEroded</dependency>
       <dependency>sparkleDetection</dependency>
     </dependencies>
     <name>ballROIDetector</name>
@@ -511,7 +486,7 @@
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -545,7 +520,7 @@
   <filter>
     <className>BallByROI</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -553,11 +528,18 @@
     <dependencies>
       <dependency>undistort</dependency>
       <dependency>ballROIManager</dependency>
-      <dependency>fieldColorForBall</dependency>
-      <dependency>whiteDetectionSpecialDilated</dependency>
+      <dependency>lutMultifilter</dependency>
     </dependencies>
     <name>ballByROI</name>
     <paramFloats>
+      <ParamFloat>
+	<name>ballMinSizeTolerance</name>
+	<value>0.22</value>
+      </ParamFloat>
+      <ParamFloat>
+	<name>ballMaxSizeTolerance</name>
+	<value>0.22</value>
+      </ParamFloat>
       <ParamFloat>
 	<name>edgeToMinPointRatio</name>
 	<value>0.1</value>
@@ -580,7 +562,7 @@
       </ParamFloat>
       <ParamFloat>
 	<name>clusterFlatTol</name>
-	<value>1</value>
+	<value>0</value>
       </ParamFloat>
       <ParamFloat>
 	<name>reflectionMinRatio</name>
@@ -726,7 +708,7 @@
   <filter>
     <className>BinaryEdges</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -785,7 +767,7 @@
   <filter>
     <className>Slicer</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -810,7 +792,7 @@
   <filter>
     <className>ROIFromBlobs</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -823,9 +805,46 @@
     <paramInts/>
   </filter>
   <filter>
+    <className>ColorBounding</className>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>srcDownscaled</dependency>
+    </dependencies>
+    <name>fieldColorLarge</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>minY</name>
+	<value>30</value>
+      </paramInt>
+      <paramInt>
+	<name>maxY</name>
+	<value>110</value>
+      </paramInt>
+      <paramInt>
+	<name>minU</name>
+	<value>100</value>
+      </paramInt>
+      <paramInt>
+	<name>maxU</name>
+	<value>132</value>
+      </paramInt>
+      <paramInt>
+	<name>minV</name>
+	<value>95</value>
+      </paramInt>
+      <paramInt>
+	<name>maxV</name>
+	<value>160</value>
+      </paramInt>
+    </paramInts>
+  </filter>
+  <filter>
     <className>LinesByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -886,117 +905,6 @@
     <dependencies>
       <dependency>srcDownscaled</dependency>
     </dependencies>
-    <name>fieldColor</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>minY</name>
-	<value>30</value>
-      </paramInt>
-      <paramInt>
-	<name>maxY</name>
-	<value>110</value>
-      </paramInt>
-      <paramInt>
-	<name>minU</name>
-	<value>100</value>
-      </paramInt>
-      <paramInt>
-	<name>maxU</name>
-	<value>132</value>
-      </paramInt>
-      <paramInt>
-	<name>minV</name>
-	<value>95</value>
-      </paramInt>
-      <paramInt>
-	<name>maxV</name>
-	<value>150</value>
-      </paramInt>
-    </paramInts>
-  </filter>
-  <filter>
-    <className>ColorBounding</className>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>srcDownscaled</dependency>
-    </dependencies>
-    <name>fieldColorForBall</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>minY</name>
-	<value>29</value>
-      </paramInt>
-      <paramInt>
-	<name>maxY</name>
-	<value>110</value>
-      </paramInt>
-      <paramInt>
-	<name>minU</name>
-	<value>100</value>
-      </paramInt>
-      <paramInt>
-	<name>maxU</name>
-	<value>160</value>
-      </paramInt>
-      <paramInt>
-	<name>minV</name>
-	<value>95</value>
-      </paramInt>
-      <paramInt>
-	<name>maxV</name>
-	<value>160</value>
-      </paramInt>
-    </paramInts>
-  </filter>
-  <filter>
-    <className>ColorBounding</className>
-    <debugLevel>
-      <graphics>true</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>srcDownscaled</dependency>
-    </dependencies>
-    <name>fieldColorLarge</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>minY</name>
-	<value>30</value>
-      </paramInt>
-      <paramInt>
-	<name>maxY</name>
-	<value>110</value>
-      </paramInt>
-      <paramInt>
-	<name>minU</name>
-	<value>100</value>
-      </paramInt>
-      <paramInt>
-	<name>maxU</name>
-	<value>132</value>
-      </paramInt>
-      <paramInt>
-	<name>minV</name>
-	<value>95</value>
-      </paramInt>
-      <paramInt>
-	<name>maxV</name>
-	<value>160</value>
-      </paramInt>
-    </paramInts>
-  </filter>
-  <filter>
-    <className>ColorBounding</className>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>srcDownscaled</dependency>
-    </dependencies>
     <name>whiteDetection</name>
     <paramFloats/>
     <paramInts>
@@ -1030,43 +938,6 @@
     <className>ColorBounding</className>
     <debugLevel>
       <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>srcDownscaled</dependency>
-    </dependencies>
-    <name>whiteBallDetection</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>minY</name>
-	<value>185</value>
-      </paramInt>
-      <paramInt>
-	<name>maxY</name>
-	<value>255</value>
-      </paramInt>
-      <paramInt>
-	<name>minU</name>
-	<value>0</value>
-      </paramInt>
-      <paramInt>
-	<name>maxU</name>
-	<value>255</value>
-      </paramInt>
-      <paramInt>
-	<name>minV</name>
-	<value>0</value>
-      </paramInt>
-      <paramInt>
-	<name>maxV</name>
-	<value>255</value>
-      </paramInt>
-    </paramInts>
-  </filter>
-  <filter>
-    <className>ColorBounding</className>
-    <debugLevel>
-      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1132,7 +1003,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1169,7 +1040,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1235,7 +1106,7 @@
     <dependencies>
       <dependency>fieldColor</dependency>
     </dependencies>
-    <name>fieldColorOpening</name>
+    <name>fieldColorClosure</name>
     <paramFloats/>
     <paramInts>
       <paramInt>
@@ -1254,38 +1125,9 @@
     <paramPairInt/>
   </filter>
   <filter>
-    <className>Dilate</className>
-    <debugLevel>
-      <graphics>true</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies>
-      <dependency>fieldColor</dependency>
-    </dependencies>
-    <name>fieldColorDilated</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>Shape</name>
-	<value>2</value>
-      </paramInt>
-      <paramInt>
-	<name>kernel height</name>
-	<value>7</value>
-      </paramInt>
-      <paramInt>
-	<name>kernel width</name>
-	<value>7</value>
-      </paramInt>
-    </paramInts>
-    <paramPairInt/>
-  </filter>
-  <filter>
     <className>Closure</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1330,7 +1172,7 @@
   <filter>
     <className>Undistort</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1342,6 +1184,70 @@
     <paramFloats/>
     <paramInts/>
     <paramPairInt/>
+  </filter>
+  <filter>
+    <className>LUTMultifilter</className>
+    <name>lutMultifilter</name>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+    <_pathToLUT>daddyLUT80.bin</_pathToLUT>
+    <_tagCode1>BALL</_tagCode1>
+    <_tagCode2>FIELD</_tagCode2>
+    <dependencies>
+      <dependency>srcDownscaled</dependency>
+    </dependencies>
+  </filter>
+    <filter>
+    <className>LUTDependency</className>
+    <name>lutBallDetection</name>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <_tagCode>BALL</_tagCode>
+    <dependencies>
+      <dependency>lutMultifilter</dependency>
+    </dependencies>
+  </filter>
+  <filter>
+    <className>Erode</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>lutBallDetection</dependency>
+    </dependencies>
+    <name>lutBallDetectionEroded</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>Shape</name>
+	<value>0</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel height</name>
+	<value>3</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel width</name>
+	<value>3</value>
+      </paramInt>
+    </paramInts>
+    <paramPairInt/>
+  </filter>
+  <filter>
+    <className>LUTDependency</className>
+    <name>lutFieldDetection</name>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <_tagCode>FIELD</_tagCode>
+    <dependencies>
+      <dependency>lutMultifilter</dependency>
+    </dependencies>
   </filter>
   <filter>
     <className>SourceLogs2</className>
@@ -1360,24 +1266,13 @@
     <startIndex>1</startIndex>
   </filter>
 
-  <filter>
-    <className>LUTMultifilter</className>
-    <name>lutMultifilter</name>
-    <debugLevel>
-      <graphics>true</graphics>
-    </debugLevel>
-    <_pathToLUT>daddyLUT80.bin</_pathToLUT>
-    <_tagCode1>BALL</_tagCode1>
-    <_tagCode2>FIELD</_tagCode2>
-    <dependencies>
-      <dependency>undistort</dependency>
-    </dependencies>
-  </filter>
+
+
   <filter>
     <className>LUTDependency</className>
     <name>ballByLutFast</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <_tagCode>BALL</_tagCode>
     <dependencies>
@@ -1388,7 +1283,7 @@
     <className>LUTSelector</className>
     <name>ballByLUT</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <_pathToLUT>daddyLUT80.bin</_pathToLUT>
     <_tagCode>BALL</_tagCode>
@@ -1400,7 +1295,7 @@
     <className>LUTSelector</className>
     <name>fielByLUT</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <_pathToLUT>daddyLUT80.bin</_pathToLUT>
     <_tagCode>FIELD</_tagCode>
@@ -1412,7 +1307,7 @@
     <className>LUTSelector</className>
     <name>noneByLUT</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <_pathToLUT>daddyLUT80.bin</_pathToLUT>
     <_tagCode>NONE</_tagCode>
@@ -1423,7 +1318,7 @@
   <filter>
     <className>TempCenter</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>tempMarkerOpening</dependency>
@@ -1433,7 +1328,7 @@
   <filter>
     <className>Opening</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>tempMarker</dependency>
@@ -1458,7 +1353,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>undistort</dependency>
@@ -1523,7 +1418,7 @@
     <className>ColorConverter</className>
     <name>RGB</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <conversion>YUV2BGR</conversion>
     <dependencies>
