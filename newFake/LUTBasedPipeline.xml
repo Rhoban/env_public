@@ -1,14 +1,15 @@
 <?xml version="1.0" ?><LocalisationTest>
 <ballResampling>0.0</ballResampling>
+<angularPitchTolerance>2.0</angularPitchTolerance>
 <benchmark>true</benchmark>
 <benchmarkDetail>5</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>Logs/VGA_Dribble/lowLevel.log</pathToLog>
+<pathToLog>Logs/Scan_Sync2/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
-<nbParticlesBF>1000</nbParticlesBF>
+<nbParticlesBF>1</nbParticlesBF>
 <nbParticlesFF>1000</nbParticlesFF>
 <pipeline>
   <filter>
@@ -122,7 +123,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -148,12 +149,10 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
-
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -167,12 +166,10 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
-
   <filter>
     <className>GoalTocard</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -188,7 +185,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -209,7 +206,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -238,7 +235,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>goalMaskTocard</dependency>
@@ -249,14 +246,10 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
-
-
-
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -270,11 +263,10 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -300,11 +292,10 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -335,13 +326,10 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
-
-
   <filter>
     <className>OpeningWithPitch</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -399,7 +387,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -436,7 +424,7 @@
   <filter>
     <className>BallROIManager</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -480,7 +468,7 @@
   <filter>
     <className>SparkleOfHope</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -528,7 +516,7 @@
     <dependencies>
       <dependency>srcDownscaled</dependency>
       <dependency>whiteDetectionClosing</dependency>
-      <dependency>fieldColorClosure</dependency>
+      <dependency>fieldColorOpening</dependency>
     </dependencies>
     <name>clippingByBlob</name>
     <paramFloats/>
@@ -542,7 +530,7 @@
   <filter>
     <className>BallROIDetector</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -576,11 +564,10 @@
       </paramInt>
     </paramInts>
   </filter>
-
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -611,11 +598,10 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>BallByROI</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -730,58 +716,16 @@
       <graphics>false</graphics>
     </debugLevel>
     <dependencies>
-      <dependency>clippingByBlob</dependency>
-    </dependencies>
-    <name>clippingByBlobDownscaled</name>
-    <paramFloats>
-      <ParamFloat>
-	<name>ratio</name>
-	<value>2.0</value>
-      </ParamFloat>
-    </paramFloats>
-    <paramInts/>
-  </filter>
-  <filter>
-    <className>Rescale</className>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
       <dependency>undistortMask</dependency>
     </dependencies>
     <name>undistortMaskDownscaled</name>
     <paramFloats>
       <ParamFloat>
 	<name>ratio</name>
-	<value>8.0</value>
+	<value>4.0</value>
       </ParamFloat>
     </paramFloats>
     <paramInts/>
-  </filter>
-  <filter>
-    <className>Opening</className>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>clippingByBlobDownscaled</dependency>
-    </dependencies>
-    <name>clippingByBlobFinal</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>Shape</name>
-	<value>0</value>
-      </paramInt>
-      <paramInt>
-	<name>kernel width</name>
-	<value>5</value>
-      </paramInt>
-      <paramInt>
-	<name>kernel height</name>
-	<value>5</value>
-      </paramInt>
-    </paramInts>
   </filter>
   <filter>
     <className>ClippingRules</className>
@@ -792,7 +736,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>clippingByBlobFinal</dependency>
+      <dependency>clippingByBlob</dependency>
       <dependency>undistortMaskDownscaled</dependency>
     </dependencies>
     <name>clipping</name>
@@ -800,7 +744,6 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>BinaryEdges</className>
     <debugLevel>
@@ -1099,7 +1042,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1136,7 +1079,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1171,7 +1114,7 @@
     </paramInts>
   </filter>
   <filter>
-    <className>Closure</className>
+    <className>Opening</className>
     <debugLevel>
       <graphics>false</graphics>
       <parameters>false</parameters>
@@ -1181,7 +1124,7 @@
     <dependencies>
       <dependency>fieldColor</dependency>
     </dependencies>
-    <name>fieldColorClosure</name>
+    <name>fieldColorOpening</name>
     <paramFloats/>
     <paramInts>
       <paramInt>
@@ -1247,7 +1190,7 @@
   <filter>
     <className>Undistort</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1264,7 +1207,7 @@
     <className>LUTMultifilter</className>
     <name>lutMultifilter</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <_pathToLUT>daddyLUT80.bin</_pathToLUT>
     <_tagCode1>BALL</_tagCode1>
@@ -1333,7 +1276,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>Logs/VGA_Dribble/images.csv</imagesFile>
+    <imagesFile>Logs/Scan_Sync2/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
@@ -1490,7 +1433,7 @@
     <className>ColorConverter</className>
     <name>RGB</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <conversion>YUV2BGR</conversion>
     <dependencies>

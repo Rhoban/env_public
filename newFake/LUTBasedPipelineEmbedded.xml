@@ -1,15 +1,16 @@
 <?xml version="1.0"?>
 <LocalisationTest>
 <ballResampling>0.0</ballResampling>
+<angularPitchTolerance>2.0</angularPitchTolerance>
 <benchmark>false</benchmark>
 <benchmarkDetail>0</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>false</readFromLog>
-<pathToLog>Logs/VGA_Dribble/lowLevel.log</pathToLog>
+<pathToLog>Logs/Scan_Sync2/lowLevel.log</pathToLog>
 <embedded>true</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
-<nbParticlesBF>1000</nbParticlesBF>
+<nbParticlesBF>1</nbParticlesBF>
 <nbParticlesFF>1000</nbParticlesFF>
 <pipeline>
   <filter>
@@ -149,8 +150,6 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
-
   <filter>
     <className>Mask</className>
     <debugLevel>
@@ -168,8 +167,6 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
-
   <filter>
     <className>GoalTocard</className>
     <debugLevel>
@@ -250,10 +247,6 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
-
-
-
   <filter>
     <className>Mask</className>
     <debugLevel>
@@ -271,7 +264,6 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>Dilate</className>
     <debugLevel>
@@ -301,7 +293,6 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
@@ -336,9 +327,6 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
-
-
   <filter>
     <className>OpeningWithPitch</className>
     <debugLevel>
@@ -529,7 +517,7 @@
     <dependencies>
       <dependency>srcDownscaled</dependency>
       <dependency>whiteDetectionClosing</dependency>
-      <dependency>fieldColorClosure</dependency>
+      <dependency>fieldColorOpening</dependency>
     </dependencies>
     <name>clippingByBlob</name>
     <paramFloats/>
@@ -577,7 +565,6 @@
       </paramInt>
     </paramInts>
   </filter>
-
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
@@ -612,7 +599,6 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>BallByROI</className>
     <debugLevel>
@@ -731,58 +717,16 @@
       <graphics>false</graphics>
     </debugLevel>
     <dependencies>
-      <dependency>clippingByBlob</dependency>
-    </dependencies>
-    <name>clippingByBlobDownscaled</name>
-    <paramFloats>
-      <ParamFloat>
-	<name>ratio</name>
-	<value>2.0</value>
-      </ParamFloat>
-    </paramFloats>
-    <paramInts/>
-  </filter>
-  <filter>
-    <className>Rescale</className>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
       <dependency>undistortMask</dependency>
     </dependencies>
     <name>undistortMaskDownscaled</name>
     <paramFloats>
       <ParamFloat>
 	<name>ratio</name>
-	<value>8.0</value>
+	<value>4.0</value>
       </ParamFloat>
     </paramFloats>
     <paramInts/>
-  </filter>
-  <filter>
-    <className>Opening</className>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>clippingByBlobDownscaled</dependency>
-    </dependencies>
-    <name>clippingByBlobFinal</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>Shape</name>
-	<value>0</value>
-      </paramInt>
-      <paramInt>
-	<name>kernel width</name>
-	<value>5</value>
-      </paramInt>
-      <paramInt>
-	<name>kernel height</name>
-	<value>5</value>
-      </paramInt>
-    </paramInts>
   </filter>
   <filter>
     <className>ClippingRules</className>
@@ -793,7 +737,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>clippingByBlobFinal</dependency>
+      <dependency>clippingByBlob</dependency>
       <dependency>undistortMaskDownscaled</dependency>
     </dependencies>
     <name>clipping</name>
@@ -801,7 +745,6 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>BinaryEdges</className>
     <debugLevel>
@@ -1172,7 +1115,7 @@
     </paramInts>
   </filter>
   <filter>
-    <className>Closure</className>
+    <className>Opening</className>
     <debugLevel>
       <graphics>false</graphics>
       <parameters>false</parameters>
@@ -1182,7 +1125,7 @@
     <dependencies>
       <dependency>fieldColor</dependency>
     </dependencies>
-    <name>fieldColorClosure</name>
+    <name>fieldColorOpening</name>
     <paramFloats/>
     <paramInts>
       <paramInt>
