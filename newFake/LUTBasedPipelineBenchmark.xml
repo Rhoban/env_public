@@ -3,8 +3,6 @@
 <benchmark>false</benchmark>
 <benchmarkDetail>5</benchmarkDetail>
 <gpuOn>false</gpuOn>
-<readFromLog>true</readFromLog>
-<pathToLog>Logs/VGA_Approche30deg/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -14,7 +12,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -108,7 +106,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>whiteGoalDetection</dependency>
@@ -348,7 +346,7 @@
       </ParamFloat>
       <ParamFloat>
 	<name>height</name>
-	<value>35</value>
+	<value>20</value>
       </ParamFloat>
       <ParamFloat>
 	<name>width</name>
@@ -510,7 +508,7 @@
   <filter>
     <className>ClippingByBlob</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -712,7 +710,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingByBlob</dependency>
@@ -737,8 +735,8 @@
     <name>undistortMaskDownscaled</name>
     <paramFloats>
       <ParamFloat>
-	<name>ratio</name>
-	<value>8.0</value>
+	      <name>ratio</name>
+	      <value>8.0</value>
       </ParamFloat>
     </paramFloats>
     <paramInts/>
@@ -746,7 +744,7 @@
   <filter>
     <className>Opening</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingByBlobDownscaled</dependency>
@@ -771,7 +769,7 @@
   <filter>
     <className>ClippingRules</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -788,7 +786,7 @@
   <filter>
     <className>BinaryEdges</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -833,7 +831,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -847,7 +845,7 @@
   <filter>
     <className>Slicer</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -872,7 +870,7 @@
   <filter>
     <className>ROIFromBlobs</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -887,7 +885,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -980,7 +978,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1017,7 +1015,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1054,7 +1052,7 @@
   <filter>
     <className>Closure</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1309,22 +1307,6 @@
     </dependencies>
   </filter>
   <filter>
-    <className>SourceLogs2</className>
-    <debugLevel>
-      <graphics>false</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies/>
-    <imagesFile>Logs/VGA_Approche30deg/images.csv</imagesFile>
-    <name>source</name>
-    <paramFloats/>
-    <paramInts/>
-    <paramPairInt/>
-    <startIndex>1</startIndex>
-  </filter>
-  <filter>
     <className>LUTDependency</className>
     <name>ballByLutFast</name>
     <debugLevel>
@@ -1474,7 +1456,7 @@
     <className>ColorConverter</className>
     <name>RGB</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <conversion>YUV2BGR</conversion>
     <dependencies>
@@ -1606,7 +1588,7 @@
   <filter>
     <className>Histogram</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
