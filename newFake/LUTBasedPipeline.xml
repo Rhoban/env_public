@@ -366,7 +366,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -424,7 +424,7 @@
   <filter>
     <className>BallROIManager</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -447,7 +447,7 @@
       </ParamFloat>
       <ParamFloat>
 	<name>maxRatio</name>
-	<value>1.3</value>
+	<value>1.45</value>
       </ParamFloat>
       <ParamFloat>
 	<name>sizeFactor</name>
@@ -468,7 +468,7 @@
   <filter>
     <className>SparkleOfHope</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -530,7 +530,7 @@
   <filter>
     <className>BallROIDetector</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -601,7 +601,7 @@
   <filter>
     <className>BallByROI</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -610,6 +610,8 @@
       <dependency>undistort</dependency>
       <dependency>ballROIManager</dependency>
       <dependency>lutMultifilter</dependency>
+      <dependency>undistortMask</dependency>
+      <dependency>whiteDetectionLarge</dependency>
     </dependencies>
     <name>ballByROI</name>
     <paramFloats>
@@ -730,7 +732,7 @@
   <filter>
     <className>ClippingRules</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -939,7 +941,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -950,6 +952,43 @@
       <paramInt>
 	<name>minY</name>
 	<value>150</value>
+      </paramInt>
+      <paramInt>
+	<name>maxY</name>
+	<value>255</value>
+      </paramInt>
+      <paramInt>
+	<name>minU</name>
+	<value>0</value>
+      </paramInt>
+      <paramInt>
+	<name>maxU</name>
+	<value>255</value>
+      </paramInt>
+      <paramInt>
+	<name>minV</name>
+	<value>0</value>
+      </paramInt>
+      <paramInt>
+	<name>maxV</name>
+	<value>255</value>
+      </paramInt>
+    </paramInts>
+  </filter>
+  <filter>
+    <className>ColorBounding</className>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>srcDownscaled</dependency>
+    </dependencies>
+    <name>whiteDetectionLarge</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>minY</name>
+	<value>119</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
@@ -1042,7 +1081,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1079,7 +1118,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1207,7 +1246,7 @@
     <className>LUTMultifilter</className>
     <name>lutMultifilter</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <_pathToLUT>daddyLUT80.bin</_pathToLUT>
     <_tagCode1>BALL</_tagCode1>
@@ -1433,7 +1472,7 @@
     <className>ColorConverter</className>
     <name>RGB</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <conversion>YUV2BGR</conversion>
     <dependencies>
