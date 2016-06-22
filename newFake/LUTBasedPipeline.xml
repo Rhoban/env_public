@@ -1,6 +1,6 @@
 <?xml version="1.0" ?><LocalisationTest>
 <ballResampling>0.0</ballResampling>
-<benchmark>true</benchmark>
+<benchmark>false</benchmark>
 <benchmarkDetail>5</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
@@ -108,7 +108,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>whiteGoalDetection</dependency>
@@ -148,8 +148,6 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
-
   <filter>
     <className>Mask</className>
     <debugLevel>
@@ -167,8 +165,6 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
-
   <filter>
     <className>GoalTocard</className>
     <debugLevel>
@@ -249,10 +245,6 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
-
-
-
   <filter>
     <className>Mask</className>
     <debugLevel>
@@ -263,14 +255,13 @@
     </debugLevel>
     <dependencies>
       <dependency>whiteGoalNearField</dependency>
-      <dependency>clipping</dependency>
+      <dependency>clippingBordersMasked</dependency>
     </dependencies>
     <name>goalMaskStdClipping</name>
     <paramFloats/>
     <paramInts/>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>Dilate</className>
     <debugLevel>
@@ -300,7 +291,6 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
@@ -335,9 +325,6 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
-
-
   <filter>
     <className>OpeningWithPitch</className>
     <debugLevel>
@@ -361,7 +348,7 @@
       </ParamFloat>
       <ParamFloat>
 	<name>height</name>
-	<value>20</value>
+	<value>35</value>
       </ParamFloat>
       <ParamFloat>
 	<name>width</name>
@@ -378,7 +365,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -576,7 +563,6 @@
       </paramInt>
     </paramInts>
   </filter>
-
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
@@ -611,7 +597,6 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>BallByROI</className>
     <debugLevel>
@@ -803,7 +788,7 @@
   <filter>
     <className>BinaryEdges</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -848,7 +833,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -862,7 +847,7 @@
   <filter>
     <className>Slicer</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -887,7 +872,7 @@
   <filter>
     <className>ROIFromBlobs</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -902,7 +887,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -939,7 +924,7 @@
   <filter>
     <className>LinesByROI</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1032,7 +1017,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1267,7 +1252,7 @@
   <filter>
     <className>Undistort</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
