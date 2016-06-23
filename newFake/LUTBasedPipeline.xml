@@ -1,10 +1,10 @@
 <?xml version="1.0" ?><LocalisationTest>
 <ballResampling>0.0</ballResampling>
-<benchmark>true</benchmark>
+<benchmark>false</benchmark>
 <benchmarkDetail>5</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>Logs/VGA_Approche30deg/lowLevel.log</pathToLog>
+<pathToLog>Logs/VGA_log_corner2/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -897,7 +897,7 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>30</value>
+	<value>40</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
@@ -1317,7 +1317,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>Logs/VGA_Approche30deg/images.csv</imagesFile>
+    <imagesFile>Logs/VGA_log_corner2/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
