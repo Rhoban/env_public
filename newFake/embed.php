@@ -44,6 +44,15 @@ foreach ($xml as $child) {
             if ($filter->getName() == 'filter') {
                 $p = &$filter->xpath('debugLevel/graphics');
                 $p[0][0] = 'false';
+                
+                $p = &$filter->xpath('paramInts/paramInt');
+                foreach ($p as $e) {
+                    $a = $e->xpath('name');
+                    if ($a[0][0] == 'tagLevel') {
+                        $b = $e->xpath('value');
+                        $b[0][0] = 0;
+                    }
+                }
             }
             $p = &$filter->xpath('className');
             if ($p[0][0] == 'SourceLogs2') {
