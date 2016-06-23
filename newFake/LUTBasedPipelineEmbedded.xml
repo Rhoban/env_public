@@ -6,7 +6,7 @@
 <benchmarkDetail>0</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>false</readFromLog>
-<pathToLog>Logs/VGA_Approche30deg/lowLevel.log</pathToLog>
+<pathToLog>Logs/VGA_Dribble/lowLevel.log</pathToLog>
 <embedded>true</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -611,6 +611,7 @@
       <dependency>undistort</dependency>
       <dependency>ballROIManager</dependency>
       <dependency>lutMultifilter</dependency>
+      <dependency>undistortMask</dependency>
     </dependencies>
     <name>ballByROI</name>
     <paramFloats>
@@ -717,58 +718,16 @@
       <graphics>false</graphics>
     </debugLevel>
     <dependencies>
-      <dependency>clippingByBlob</dependency>
-    </dependencies>
-    <name>clippingByBlobDownscaled</name>
-    <paramFloats>
-      <ParamFloat>
-	<name>ratio</name>
-	<value>2.0</value>
-      </ParamFloat>
-    </paramFloats>
-    <paramInts/>
-  </filter>
-  <filter>
-    <className>Rescale</className>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
       <dependency>undistortMask</dependency>
     </dependencies>
     <name>undistortMaskDownscaled</name>
     <paramFloats>
       <ParamFloat>
 	<name>ratio</name>
-	<value>8.0</value>
+	<value>4.0</value>
       </ParamFloat>
     </paramFloats>
     <paramInts/>
-  </filter>
-  <filter>
-    <className>Opening</className>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>clippingByBlobDownscaled</dependency>
-    </dependencies>
-    <name>clippingByBlobFinal</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>Shape</name>
-	<value>0</value>
-      </paramInt>
-      <paramInt>
-	<name>kernel width</name>
-	<value>5</value>
-      </paramInt>
-      <paramInt>
-	<name>kernel height</name>
-	<value>5</value>
-      </paramInt>
-    </paramInts>
   </filter>
   <filter>
     <className>ClippingRules</className>
@@ -779,7 +738,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>clippingByBlobFinal</dependency>
+      <dependency>clippingByBlob</dependency>
       <dependency>undistortMaskDownscaled</dependency>
     </dependencies>
     <name>clipping</name>

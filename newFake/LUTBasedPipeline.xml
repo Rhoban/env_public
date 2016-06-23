@@ -25,7 +25,7 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>40</value>
+	<value>50</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
@@ -366,7 +366,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -424,7 +424,7 @@
   <filter>
     <className>BallROIManager</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -446,10 +446,6 @@
 	<value>0.7</value>
       </ParamFloat>
       <ParamFloat>
-	<name>maxRatio</name>
-	<value>1.45</value>
-      </ParamFloat>
-      <ParamFloat>
 	<name>sizeFactor</name>
 	<value>1.2</value>
       </ParamFloat>
@@ -468,7 +464,7 @@
   <filter>
     <className>SparkleOfHope</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -530,7 +526,7 @@
   <filter>
     <className>BallROIDetector</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -601,7 +597,7 @@
   <filter>
     <className>BallByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -611,7 +607,7 @@
       <dependency>ballROIManager</dependency>
       <dependency>lutMultifilter</dependency>
       <dependency>undistortMask</dependency>
-      <dependency>whiteDetectionLarge</dependency>
+      <dependency>whiteDetectionLargeDilated</dependency>
     </dependencies>
     <name>ballByROI</name>
     <paramFloats>
@@ -732,7 +728,7 @@
   <filter>
     <className>ClippingRules</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -941,7 +937,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -978,7 +974,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1011,6 +1007,35 @@
 	<value>255</value>
       </paramInt>
     </paramInts>
+  </filter>
+  <filter>
+    <className>Dilate</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>whiteDetectionLarge</dependency>
+    </dependencies>
+    <name>whiteDetectionLargeDilated</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>Shape</name>
+	<value>1</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel height</name>
+	<value>3</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel width</name>
+	<value>3</value>
+      </paramInt>
+    </paramInts>
+    <paramPairInt/>
   </filter>
   <filter>
     <className>ColorBounding</className>
@@ -1081,7 +1106,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1118,7 +1143,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1246,7 +1271,7 @@
     <className>LUTMultifilter</className>
     <name>lutMultifilter</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <_pathToLUT>daddyLUT80.bin</_pathToLUT>
     <_tagCode1>BALL</_tagCode1>
@@ -1254,6 +1279,12 @@
     <dependencies>
       <dependency>srcDownscaled</dependency>
     </dependencies>
+    <paramInts>
+      <paramInt>
+	<name>tagLevel</name>
+	<value>1</value>
+      </paramInt>
+    </paramInts>
   </filter>
     <filter>
     <className>LUTDependency</className>
@@ -1472,7 +1503,7 @@
     <className>ColorConverter</className>
     <name>RGB</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <conversion>YUV2BGR</conversion>
     <dependencies>
