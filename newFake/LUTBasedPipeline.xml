@@ -5,7 +5,7 @@
 <benchmarkDetail>5</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>Logs/VGA_Dribble/lowLevel.log</pathToLog>
+<pathToLog>Logs/NB_Dribble/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -854,7 +854,7 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>30</value>
+	<value>40</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
@@ -1273,7 +1273,7 @@
     <debugLevel>
       <graphics>false</graphics>
     </debugLevel>
-    <_pathToLUT>daddyLUT80.bin</_pathToLUT>
+    <_pathToLUT>lutFinale.bin</_pathToLUT>
     <_tagCode1>BALL</_tagCode1>
     <_tagCode2>FIELD</_tagCode2>
     <dependencies>
@@ -1346,7 +1346,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>Logs/VGA_Dribble/images.csv</imagesFile>
+    <imagesFile>Logs/NB_Dribble/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
@@ -1370,7 +1370,7 @@
     <debugLevel>
       <graphics>false</graphics>
     </debugLevel>
-    <_pathToLUT>daddyLUT80.bin</_pathToLUT>
+    <_pathToLUT>lutFinale.bin</_pathToLUT>
     <_tagCode>BALL</_tagCode>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1382,7 +1382,7 @@
     <debugLevel>
       <graphics>false</graphics>
     </debugLevel>
-    <_pathToLUT>daddyLUT80.bin</_pathToLUT>
+    <_pathToLUT>lutFinale.bin</_pathToLUT>
     <_tagCode>FIELD</_tagCode>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1394,7 +1394,7 @@
     <debugLevel>
       <graphics>false</graphics>
     </debugLevel>
-    <_pathToLUT>daddyLUT80.bin</_pathToLUT>
+    <_pathToLUT>lutFinale.bin</_pathToLUT>
     <_tagCode>NONE</_tagCode>
     <dependencies>
       <dependency>undistort</dependency>
