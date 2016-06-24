@@ -524,6 +524,31 @@
     </paramInts>
   </filter>
   <filter>
+    <className>Opening</className>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>clippingByBlob</dependency>
+    </dependencies>
+    <name>clippingByBlobOpened</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>Shape</name>
+	<value>0</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel width</name>
+	<value>3</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel height</name>
+	<value>3</value>
+      </paramInt>
+    </paramInts>
+  </filter>
+  <filter>
     <className>BallROIDetector</className>
     <debugLevel>
       <graphics>false</graphics>
@@ -734,7 +759,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>clippingByBlob</dependency>
+      <dependency>clippingByBlobOpened</dependency>
       <dependency>undistortMaskDownscaled</dependency>
     </dependencies>
     <name>clipping</name>
