@@ -27,7 +27,7 @@ pid = ''
 
 #cmd = ['./test_wd', 'test']
 
-cmd=['/bin/bash','boot.sh']
+cmd=['/bin/bash','boot_simple.sh']
 
 rhioinit = ['rhio',  'localhost',  'init']
 rhiorobocup = ['rhio',  'localhost',  'robocup']
