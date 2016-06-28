@@ -5,7 +5,7 @@
 <benchmarkDetail>5</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>Logs/leipz3/lowLevel.log</pathToLog>
+<pathToLog>Logs/leipz5/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -52,7 +52,7 @@
   <filter>
     <className>Closure</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingExperimental</dependency>
@@ -77,7 +77,7 @@
   <filter>
     <className>ClippingFromLines</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -85,6 +85,7 @@
     <dependencies>
       <dependency>srcDownscaled</dependency>
       <dependency>linesByROI</dependency>
+      <dependency>undistort</dependency>
     </dependencies>
     <name>clippingExperimental</name>
     <paramFloats/>
@@ -93,7 +94,7 @@
   <filter>
     <className>BinaryEdges</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -109,7 +110,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>whiteGoalDetection</dependency>
@@ -123,7 +124,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -152,7 +153,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -266,7 +267,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -295,7 +296,7 @@
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -397,11 +398,11 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>120</value>
+	<value>105</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
-	<value>255</value>
+	<value>120</value>
       </paramInt>
       <paramInt>
 	<name>minU</name>
@@ -515,13 +516,13 @@
       <dependency>fieldColorClosure</dependency>
     </dependencies>
     <name>clippingByBlob</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>pitchLimit</name>
-	<value>35</value>
-      </paramInt>
-    </paramInts>
+    <paramInts/>
+    <paramFloats>
+      <paramFloat>
+	<name>imgMaxY</name>
+	<value>0.4</value>
+      </paramFloat>
+    </paramFloats>
   </filter>
   <filter>
     <className>Opening</className>
@@ -588,7 +589,7 @@
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -753,7 +754,7 @@
   <filter>
     <className>ClippingRules</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -770,7 +771,7 @@
   <filter>
     <className>BinaryEdges</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -829,7 +830,7 @@
   <filter>
     <className>Slicer</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -869,7 +870,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -962,7 +963,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1065,7 +1066,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1075,11 +1076,11 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>120</value>
+	<value>115</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
-	<value>255</value>
+	<value>140</value>
       </paramInt>
       <paramInt>
 	<name>minU</name>
@@ -1211,7 +1212,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>fieldColor</dependency>
+      <dependency>newField</dependency>
     </dependencies>
     <name>fieldColorClosure</name>
     <paramFloats/>
@@ -1234,13 +1235,13 @@
   <filter>
     <className>Closure</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>fieldColor</dependency>
+      <dependency>newField</dependency>
     </dependencies>
     <name>fieldColorOpeningGoal</name>
     <paramFloats/>
@@ -1365,7 +1366,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1399,11 +1400,10 @@
       </paramInt>
     </paramInts>
   </filter>
-
   <filter>
     <className>Erode</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1432,7 +1432,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>newFieldEroded</dependency>
@@ -1457,7 +1457,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>newFieldDilated</dependency>
@@ -1471,7 +1471,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1500,7 +1500,7 @@
   <filter>
     <className>Erode</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1529,7 +1529,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1572,7 +1572,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>Logs/leipz3/images.csv</imagesFile>
+    <imagesFile>Logs/leipz5/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
@@ -1861,7 +1861,7 @@
   <filter>
     <className>Histogram</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
