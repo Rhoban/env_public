@@ -5,7 +5,7 @@
 <benchmarkDetail>5</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>Logs/leipz4/lowLevel.log</pathToLog>
+<pathToLog>Logs/leipz1/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -984,6 +984,43 @@
     </paramInts>
   </filter>
   <filter>
+    <className>ColorBounding</className>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>srcDownscaled</dependency>
+    </dependencies>
+    <name>fieldColor</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>minY</name>
+	<value>40</value>
+      </paramInt>
+      <paramInt>
+	<name>maxY</name>
+	<value>115</value>
+      </paramInt>
+      <paramInt>
+	<name>minU</name>
+	<value>100</value>
+      </paramInt>
+      <paramInt>
+	<name>maxU</name>
+	<value>127</value>
+      </paramInt>
+      <paramInt>
+	<name>minV</name>
+	<value>110</value>
+      </paramInt>
+      <paramInt>
+	<name>maxV</name>
+	<value>137</value>
+      </paramInt>
+    </paramInts>
+  </filter>
+  <filter>
     <className>LinesByROI</className>
     <debugLevel>
       <graphics>false</graphics>
@@ -1291,7 +1328,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>fieldColorLarge</dependency>
+      <dependency>fieldColor</dependency>
     </dependencies>
     <name>fieldColorOpening</name>
     <paramFloats/>
@@ -1671,7 +1708,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>Logs/leipz4/images.csv</imagesFile>
+    <imagesFile>Logs/leipz1/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
