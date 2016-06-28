@@ -1533,8 +1533,6 @@
       </paramInt>
     </paramInts>
   </filter>
-
-
   <filter>
     <className>Mask</className>
     <debugLevel>
@@ -1549,11 +1547,10 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1579,7 +1576,6 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>Erode</className>
     <debugLevel>
@@ -1646,13 +1642,10 @@
       </paramInt>
     </paramInts>
   </filter>
-
-
-
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>whiteGoalDetection</dependency>
@@ -1666,7 +1659,7 @@
   <filter>
     <className>ROIFromBlobs</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1678,12 +1671,10 @@
     <paramFloats/>
     <paramInts/>
   </filter>
-
-
   <filter>
     <className>Erode</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1709,11 +1700,10 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1739,7 +1729,6 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>Mask</className>
     <debugLevel>
@@ -1760,7 +1749,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1789,7 +1778,7 @@
   <filter>
     <className>GoalByROISimple</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1820,12 +1809,6 @@
     </paramInts>
     <paramPairInt/>
   </filter>
-
-
-
-
-
-
   <filter>
     <className>BlobNoBall</className>
     <debugLevel>
@@ -1855,9 +1838,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-
     <imagesFile>Logs/leipz3/images.csv</imagesFile>
-
     <name>source</name>
     <paramFloats/>
     <paramInts/>
