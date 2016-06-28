@@ -179,2246 +179,3022 @@ def
 %%EndSetup
 setupLatin1
 %%Page: 1 1
-%%PageBoundingBox: 36 36 5126 1448
+%%PageBoundingBox: 36 36 5208 1448
 %%PageOrientation: Portrait
-<< /PageSize [5126 1448] >> setpagedevice
+<< /PageSize [5208 1448] >> setpagedevice
 0 0 1 beginpage
 gsave
-36 36 5090 1412 boxprim clip newpath
+36 36 5172 1412 boxprim clip newpath
 1 1 set_scale 0 rotate 40 40 translate
-[ /CropBox [36 36 5126 1448] /PAGES pdfmark
-% whiteDetectionSpecialDilated
+[ /CropBox [36 36 5208 1448] /PAGES pdfmark
+% clippingAndEroded
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-2218 1026 142.01 18 ellipse_path stroke
+245 306 112.16 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-2116.5 1022.3 moveto 203 (Dilate: whiteDetectionSpecialDilated) alignedtext
+166.5 302.3 moveto 157 (Closure: clippingAndEroded) alignedtext
 grestore
-% ballByROI
+% clippingExperimentalBorders
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-2275 594 94.36 18 ellipse_path stroke
+245 234 165.13 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-2210.5 590.3 moveto 129 (BallByROI: ballByROI) alignedtext
+126 230.3 moveto 238 (BinaryEdges: clippingExperimentalBorders) alignedtext
 grestore
-% whiteDetectionSpecialDilated->ballByROI
+% clippingAndEroded->clippingExperimentalBorders
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 2219.19 1007.96 moveto
-2220.93 981.31 2224 928.15 2224 883 curveto
-2224 883 2224 883 2224 737 curveto
-2224 694.59 2244.4 649.02 2259.4 621.26 curveto
+newpath 245 287.7 moveto
+245 279.98 245 270.71 245 262.11 curveto
 stroke
 0 0 0 edgecolor
-newpath 2262.63 622.65 moveto
-2264.43 612.21 lineto
-2256.51 619.25 lineto
+newpath 248.5 262.1 moveto
+245 252.1 lineto
+241.5 262.1 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 2262.63 622.65 moveto
-2264.43 612.21 lineto
-2256.51 619.25 lineto
+newpath 248.5 262.1 moveto
+245 252.1 lineto
+241.5 262.1 lineto
 closepath stroke
 grestore
-% whiteDetectionSpecial
+% clippingOr
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-2215 1098 149.23 18 ellipse_path stroke
+245 378 83.29 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-2108 1094.3 moveto 214 (ColorBounding: whiteDetectionSpecial) alignedtext
+189 374.3 moveto 112 (MaskOr: clippingOr) alignedtext
 grestore
-% whiteDetectionSpecial->whiteDetectionSpecialDilated
+% clippingOr->clippingAndEroded
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 2215.74 1079.7 moveto
-2216.07 1071.98 2216.47 1062.71 2216.84 1054.11 curveto
+newpath 245 359.7 moveto
+245 351.98 245 342.71 245 334.11 curveto
 stroke
 0 0 0 edgecolor
-newpath 2220.34 1054.25 moveto
-2217.27 1044.1 lineto
-2213.34 1053.95 lineto
+newpath 248.5 334.1 moveto
+245 324.1 lineto
+241.5 334.1 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 2220.34 1054.25 moveto
-2217.27 1044.1 lineto
-2213.34 1053.95 lineto
-closepath stroke
-grestore
-% srcDownscaled
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-1924 1242 96.26 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-1857.5 1238.3 moveto 133 (Rescale: srcDownscaled) alignedtext
-grestore
-% srcDownscaled->whiteDetectionSpecial
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1964.27 1225.61 moveto
-1989.72 1215.57 2023.14 1201.8 2052 1188 curveto
-2096.13 1166.89 2145.21 1139.54 2177.87 1120.76 curveto
-stroke
-0 0 0 edgecolor
-newpath 2179.72 1123.73 moveto
-2186.63 1115.7 lineto
-2176.22 1117.67 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 2179.72 1123.73 moveto
-2186.63 1115.7 lineto
-2176.22 1117.67 lineto
+newpath 248.5 334.1 moveto
+245 324.1 lineto
+241.5 334.1 lineto
 closepath stroke
 grestore
 % clippingExperimental
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-2700 378 161.25 18 ellipse_path stroke
+804 666 161.25 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-2583.5 374.3 moveto 233 (ClippingFromLines: clippingExperimental) alignedtext
+687.5 662.3 moveto 233 (ClippingFromLines: clippingExperimental) alignedtext
+grestore
+% clippingExperimental->clippingOr
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 698.65 652.3 moveto
+514.92 627.76 148.11 567.3 72 468 curveto
+40.57 426.99 108.48 403.21 168.23 390.71 curveto
+stroke
+0 0 0 edgecolor
+newpath 169 394.13 moveto
+178.12 388.73 lineto
+167.62 387.27 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 169 394.13 moveto
+178.12 388.73 lineto
+167.62 387.27 lineto
+closepath stroke
+grestore
+% clippingAnd
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+591 378 78.94 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+538 374.3 moveto 106 (Mask: clippingAnd) alignedtext
+grestore
+% clippingExperimental->clippingAnd
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 803.53 647.95 moveto
+801.91 616.77 794.8 549.58 764 504 curveto
+731.37 455.72 673.55 419.59 633.8 398.9 curveto
+stroke
+0 0 0 edgecolor
+newpath 635.36 395.77 moveto
+624.86 394.35 lineto
+632.18 402 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 635.36 395.77 moveto
+624.86 394.35 lineto
+632.18 402 lineto
+closepath stroke
+grestore
+% srcDownscaled
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1909 1242 96.26 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1842.5 1238.3 moveto 133 (Rescale: srcDownscaled) alignedtext
 grestore
 % srcDownscaled->clippingExperimental
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 2010.76 1234.14 moveto
-2213.25 1216.95 2700 1168.42 2700 1099 curveto
-2700 1099 2700 1099 2700 521 curveto
-2700 481 2700 434.65 2700 406.08 curveto
+newpath 1815.63 1237.33 moveto
+1729.82 1232.05 1599.81 1219.2 1491 1188 curveto
+1454.3 1177.48 1449.31 1163.81 1413 1152 curveto
+1335 1126.64 1302.79 1157.42 1232 1116 curveto
+1122.91 1052.16 1109.26 1010 1047 900 curveto
+1005.47 826.61 1047.8 778.43 987 720 curveto
+968.58 702.3 944.61 690.45 920.12 682.54 curveto
 stroke
 0 0 0 edgecolor
-newpath 2703.5 406.05 moveto
-2700 396.05 lineto
-2696.5 406.05 lineto
+newpath 920.94 679.13 moveto
+910.35 679.59 lineto
+918.92 685.83 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 2703.5 406.05 moveto
-2700 396.05 lineto
-2696.5 406.05 lineto
-closepath stroke
-grestore
-% whiteGoalDetection
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-2869 1098 141.06 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-2768.5 1094.3 moveto 201 (ColorBounding: whiteGoalDetection) alignedtext
-grestore
-% srcDownscaled->whiteGoalDetection
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 2019.86 1239.95 moveto
-2201 1237.09 2586.8 1226.53 2714 1188 curveto
-2760.76 1173.84 2808.64 1143.43 2838.57 1122.11 curveto
-stroke
-0 0 0 edgecolor
-newpath 2840.84 1124.79 moveto
-2846.89 1116.09 lineto
-2836.73 1119.12 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 2840.84 1124.79 moveto
-2846.89 1116.09 lineto
-2836.73 1119.12 lineto
-closepath stroke
-grestore
-% smallGoalColorDetection
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-593 1026 161.28 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-477 1022.3 moveto 232 (ColorBounding: smallGoalColorDetection) alignedtext
-grestore
-% srcDownscaled->smallGoalColorDetection
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1827.66 1241.15 moveto
-1508.71 1241.18 504.59 1237.34 457 1188 curveto
-425.43 1155.27 487.92 1089.99 498 1080 curveto
-510.89 1067.22 527.5 1056.56 543.21 1048.24 curveto
-stroke
-0 0 0 edgecolor
-newpath 545 1051.26 moveto
-552.33 1043.61 lineto
-541.83 1045.02 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 545 1051.26 moveto
-552.33 1043.61 lineto
-541.83 1045.02 lineto
-closepath stroke
-grestore
-% ballROIDetector
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-1883 738 133.33 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-1788 734.3 moveto 190 (BallROIDetector: ballROIDetector) alignedtext
-grestore
-% srcDownscaled->ballROIDetector
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1940.12 1224.19 moveto
-1962.43 1199.09 2000 1149.33 2000 1099 curveto
-2000 1099 2000 1099 2000 953 curveto
-2000 912.46 2003.74 896.86 1980 864 curveto
-1961.79 838.79 1940.32 851.54 1920 828 curveto
-1904.59 810.15 1894.94 784.99 1889.37 765.97 curveto
-stroke
-0 0 0 edgecolor
-newpath 1892.69 764.85 moveto
-1886.68 756.12 lineto
-1885.94 766.69 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 1892.69 764.85 moveto
-1886.68 756.12 lineto
-1885.94 766.69 lineto
-closepath stroke
-grestore
-% sparkleOfHope
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-1590 738 124.21 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-1502.5 734.3 moveto 175 (SparkleOfHope: sparkleOfHope) alignedtext
-grestore
-% srcDownscaled->sparkleOfHope
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1921.3 1223.61 moveto
-1915.42 1191.28 1898.6 1121.43 1858 1080 curveto
-1773.57 993.85 1679.23 1070.07 1609 972 curveto
-1564.5 909.86 1575.19 813.05 1583.95 766.21 curveto
-stroke
-0 0 0 edgecolor
-newpath 1587.42 766.7 moveto
-1585.94 756.21 lineto
-1580.56 765.34 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 1587.42 766.7 moveto
-1585.94 756.21 lineto
-1580.56 765.34 lineto
-closepath stroke
-grestore
-% sparkleOfHopeDetection
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-1776 954 157.4 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-1662.5 950.3 moveto 227 (ColorBounding: sparkleOfHopeDetection) alignedtext
-grestore
-% srcDownscaled->sparkleOfHopeDetection
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1924.23 1223.52 moveto
-1923.94 1192.8 1920.22 1127.84 1896 1080 curveto
-1874.85 1038.23 1835.07 1001.04 1807.12 978.31 curveto
-stroke
-0 0 0 edgecolor
-newpath 1809.22 975.51 moveto
-1799.22 972.01 lineto
-1804.86 980.98 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 1809.22 975.51 moveto
-1799.22 972.01 lineto
-1804.86 980.98 lineto
-closepath stroke
-grestore
-% clippingByBlob
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-938 1026 129.48 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-846 1022.3 moveto 184 (ClippingByBlob: clippingByBlob) alignedtext
-grestore
-% srcDownscaled->clippingByBlob
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1827.57 1241.06 moveto
-1513.78 1240.78 539.28 1236.03 493 1188 curveto
-406.17 1097.9 457.14 1140.8 649 1080 curveto
-708.63 1061.1 777.43 1048.15 832.95 1039.78 curveto
-stroke
-0 0 0 edgecolor
-newpath 833.78 1043.2 moveto
-843.16 1038.27 lineto
-832.75 1036.27 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 833.78 1043.2 moveto
-843.16 1038.27 lineto
-832.75 1036.27 lineto
-closepath stroke
-grestore
-% whiteBallDetection
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-2059 810 129.48 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-1967 806.3 moveto 184 (LUTSelector: whiteBallDetection) alignedtext
-grestore
-% srcDownscaled->whiteBallDetection
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1964.33 1225.57 moveto
-1981.92 1216.97 2001.36 1204.59 2014 1188 curveto
-2038.83 1155.41 2038 1139.97 2038 1099 curveto
-2038 1099 2038 1099 2038 953 curveto
-2038 912.78 2046.35 866.84 2052.51 838.37 curveto
-stroke
-0 0 0 edgecolor
-newpath 2055.99 838.89 moveto
-2054.75 828.37 lineto
-2049.15 837.36 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 2055.99 838.89 moveto
-2054.75 828.37 lineto
-2049.15 837.36 lineto
-closepath stroke
-grestore
-% sparkleDetection
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-1842 882 129.48 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-1750 878.3 moveto 184 (ColorBounding: sparkleDetection) alignedtext
-grestore
-% srcDownscaled->sparkleDetection
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1931.69 1223.91 moveto
-1942.79 1197.62 1962 1145.45 1962 1099 curveto
-1962 1099 1962 1099 1962 1025 curveto
-1962 984.46 1966.61 968.22 1942 936 curveto
-1931.23 921.9 1915.62 911.16 1899.93 903.15 curveto
-stroke
-0 0 0 edgecolor
-newpath 1901.24 899.9 moveto
-1890.71 898.75 lineto
-1898.22 906.22 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 1901.24 899.9 moveto
-1890.71 898.75 lineto
-1898.22 906.22 lineto
-closepath stroke
-grestore
-% fieldColorForBall
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-2389 882 133.36 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-2294.5 878.3 moveto 189 (ColorBounding: fieldColorForBall) alignedtext
-grestore
-% srcDownscaled->fieldColorForBall
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 2007.4 1232.95 moveto
-2141.95 1217.62 2392 1178.44 2392 1099 curveto
-2392 1099 2392 1099 2392 1025 curveto
-2392 984.99 2390.79 938.65 2389.91 910.08 curveto
-stroke
-0 0 0 edgecolor
-newpath 2393.41 909.93 moveto
-2389.59 900.05 lineto
-2386.41 910.15 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 2393.41 909.93 moveto
-2389.59 900.05 lineto
-2386.41 910.15 lineto
-closepath stroke
-grestore
-% fieldColorLarge
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-359 522 126.61 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-269.5 518.3 moveto 179 (ColorBounding: fieldColorLarge) alignedtext
-grestore
-% srcDownscaled->fieldColorLarge
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1828.83 1238.87 moveto
-1506.5 1231.48 474.37 1206.43 445 1188 curveto
-407.11 1164.22 398 1143.73 398 1099 curveto
-398 1099 398 1099 398 953 curveto
-398 856.9 367 835.1 367 739 curveto
-367 739 367 739 367 665 curveto
-367 624.93 363.79 578.61 361.43 550.05 curveto
-stroke
-0 0 0 edgecolor
-newpath 364.91 549.7 moveto
-360.58 540.03 lineto
-357.94 550.29 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 364.91 549.7 moveto
-360.58 540.03 lineto
-357.94 550.29 lineto
-closepath stroke
-grestore
-% fieldColor
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-1751 1170 106.39 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-1677 1166.3 moveto 148 (ColorBounding: fieldColor) alignedtext
-grestore
-% srcDownscaled->fieldColor
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1885.61 1225.46 moveto
-1860.23 1215.2 1826.75 1201.65 1799.53 1190.64 curveto
-stroke
-0 0 0 edgecolor
-newpath 1800.77 1187.36 moveto
-1790.19 1186.86 lineto
-1798.14 1193.85 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 1800.77 1187.36 moveto
-1790.19 1186.86 lineto
-1798.14 1193.85 lineto
-closepath stroke
-grestore
-% whiteDetection
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-626 1170 124.21 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-538.5 1166.3 moveto 175 (ColorBounding: whiteDetection) alignedtext
-grestore
-% srcDownscaled->whiteDetection
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1828.39 1239.26 moveto
-1629.3 1235.05 1155.79 1222.06 760 1188 curveto
-747.83 1186.95 735.07 1185.63 722.46 1184.18 curveto
-stroke
-0 0 0 edgecolor
-newpath 722.73 1180.69 moveto
-712.39 1183 lineto
-721.91 1187.64 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 722.73 1180.69 moveto
-712.39 1183 lineto
-721.91 1187.64 lineto
-closepath stroke
-grestore
-% whiteBallDetection______________________________________
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-1074 1170 305.21 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-847 1166.3 moveto 454 (ColorBounding: whiteBallDetection______________________________________) alignedtext
-grestore
-% srcDownscaled->whiteBallDetection______________________________________
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1837.82 1233.9 moveto
-1701.54 1222.68 1433.36 1200.59 1253.85 1185.81 curveto
-stroke
-0 0 0 edgecolor
-newpath 1254.02 1182.31 moveto
-1243.76 1184.98 lineto
-1253.44 1189.29 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 1254.02 1182.31 moveto
-1243.76 1184.98 lineto
-1253.44 1189.29 lineto
-closepath stroke
-grestore
-% tempMarker
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-1512 1170 114.09 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-1432 1166.3 moveto 160 (ColorBounding: tempMarker) alignedtext
-grestore
-% srcDownscaled->tempMarker
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1855.04 1229.28 moveto
-1784.01 1217.22 1673.19 1198.39 1596.84 1185.41 curveto
-stroke
-0 0 0 edgecolor
-newpath 1597.21 1181.93 moveto
-1586.77 1183.7 lineto
-1596.04 1188.83 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 1597.21 1181.93 moveto
-1586.77 1183.7 lineto
-1596.04 1188.83 lineto
-closepath stroke
-grestore
-% clippingExperimentalEroded
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-2727 306 144.41 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-2623.5 302.3 moveto 207 (Closure: clippingExperimentalEroded) alignedtext
-grestore
-% clippingExperimentalBorders
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-2780 234 165.13 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-2661 230.3 moveto 238 (BinaryEdges: clippingExperimentalBorders) alignedtext
-grestore
-% clippingExperimentalEroded->clippingExperimentalBorders
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 2739.83 288.05 moveto
-2746.12 279.75 2753.82 269.58 2760.79 260.38 curveto
-stroke
-0 0 0 edgecolor
-newpath 2763.67 262.36 moveto
-2766.92 252.28 lineto
-2758.09 258.14 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 2763.67 262.36 moveto
-2766.92 252.28 lineto
-2758.09 258.14 lineto
-closepath stroke
-grestore
-% clippingExperimental->clippingExperimentalEroded
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 2706.67 359.7 moveto
-2709.71 351.81 2713.38 342.3 2716.76 333.55 curveto
-stroke
-0 0 0 edgecolor
-newpath 2720.07 334.69 moveto
-2720.4 324.1 lineto
-2713.54 332.17 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 2720.07 334.69 moveto
-2720.4 324.1 lineto
-2713.54 332.17 lineto
+newpath 920.94 679.13 moveto
+910.35 679.59 lineto
+918.92 685.83 lineto
 closepath stroke
 grestore
 % linesByROI
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-359 450 102.54 18 ellipse_path stroke
+876 738 102.54 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-288 446.3 moveto 142 (LinesByROI: linesByROI) alignedtext
+805 734.3 moveto 142 (LinesByROI: linesByROI) alignedtext
+grestore
+% srcDownscaled->linesByROI
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1814.06 1238.61 moveto
+1631.79 1233.34 1246.16 1218.7 1194 1188 curveto
+1171.32 1174.65 951.07 812.03 934 792 curveto
+925.13 781.6 914.32 771.22 904.45 762.43 curveto
+stroke
+0 0 0 edgecolor
+newpath 906.62 759.69 moveto
+896.78 755.77 lineto
+902.03 764.97 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 906.62 759.69 moveto
+896.78 755.77 lineto
+902.03 764.97 lineto
+closepath stroke
+grestore
+% clippingExperimentalPermissive
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+282 450 200.25 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+135.5 446.3 moveto 293 (ClippingFromLines: clippingExperimentalPermissive) alignedtext
+grestore
+% srcDownscaled->clippingExperimentalPermissive
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1813.98 1238.9 moveto
+1561.16 1233.02 875.9 1215.01 651 1188 curveto
+450.31 1163.9 205 1301.13 205 1099 curveto
+205 1099 205 1099 205 593 curveto
+205 547.51 235.92 502.65 258.57 475.89 curveto
+stroke
+0 0 0 edgecolor
+newpath 261.36 478.02 moveto
+265.29 468.19 lineto
+256.08 473.42 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 261.36 478.02 moveto
+265.29 468.19 lineto
+256.08 473.42 lineto
+closepath stroke
+grestore
+% whiteGoalDetection
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1871 810 141.06 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1770.5 806.3 moveto 201 (ColorBounding: whiteGoalDetection) alignedtext
+grestore
+% srcDownscaled->whiteGoalDetection
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1901.31 1223.91 moveto
+1890.21 1197.62 1871 1145.45 1871 1099 curveto
+1871 1099 1871 1099 1871 953 curveto
+1871 913 1871 866.65 1871 838.08 curveto
+stroke
+0 0 0 edgecolor
+newpath 1874.5 838.05 moveto
+1871 828.05 lineto
+1867.5 838.05 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1874.5 838.05 moveto
+1871 828.05 lineto
+1867.5 838.05 lineto
+closepath stroke
+grestore
+% smallGoalColorDetection
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1402 1098 161.28 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1286 1094.3 moveto 232 (ColorBounding: smallGoalColorDetection) alignedtext
+grestore
+% srcDownscaled->smallGoalColorDetection
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1821.76 1234.22 moveto
+1754.46 1227.27 1659.71 1213.68 1580 1188 curveto
+1528.23 1171.32 1472.81 1141.5 1437.82 1121 curveto
+stroke
+0 0 0 edgecolor
+newpath 1439.33 1117.83 moveto
+1428.94 1115.75 lineto
+1435.77 1123.86 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1439.33 1117.83 moveto
+1428.94 1115.75 lineto
+1435.77 1123.86 lineto
+closepath stroke
+grestore
+% ballROIDetector
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2494 810 133.33 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2399 806.3 moveto 190 (BallROIDetector: ballROIDetector) alignedtext
+grestore
+% srcDownscaled->ballROIDetector
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2003.79 1238.57 moveto
+2151.89 1233.79 2424.39 1220.63 2454 1188 curveto
+2552.36 1079.61 2149.78 1049.66 2242 936 curveto
+2290.94 875.69 2345.6 938.59 2413 900 curveto
+2427.43 891.74 2455.25 859.32 2474.21 836 curveto
+stroke
+0 0 0 edgecolor
+newpath 2476.97 838.16 moveto
+2480.52 828.18 lineto
+2471.52 833.77 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2476.97 838.16 moveto
+2480.52 828.18 lineto
+2471.52 833.77 lineto
+closepath stroke
+grestore
+% sparkleOfHope
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2837 810 124.21 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2749.5 806.3 moveto 175 (SparkleOfHope: sparkleOfHope) alignedtext
+grestore
+% srcDownscaled->sparkleOfHope
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2002.42 1237.53 moveto
+2150.86 1231.26 2433.63 1216.03 2530 1188 curveto
+2613.03 1163.85 2792.97 1035.36 2875 1008 curveto
+2921.79 992.4 3062.08 1009.6 3094 972 curveto
+3153.98 901.35 3009.98 851.74 2914.14 827.64 curveto
+stroke
+0 0 0 edgecolor
+newpath 2914.71 824.17 moveto
+2904.16 825.17 lineto
+2913.03 830.97 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2914.71 824.17 moveto
+2904.16 825.17 lineto
+2913.03 830.97 lineto
+closepath stroke
+grestore
+% sparkleOfHopeDetection
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3042 1026 157.4 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2928.5 1022.3 moveto 227 (ColorBounding: sparkleOfHopeDetection) alignedtext
+grestore
+% srcDownscaled->sparkleOfHopeDetection
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2005.35 1240.79 moveto
+2234.32 1239.56 2797.42 1232.05 2870 1188 curveto
+2917.7 1159.05 2893.02 1117.87 2934 1080 curveto
+2948.69 1066.42 2967.52 1055.58 2985.32 1047.33 curveto
+stroke
+0 0 0 edgecolor
+newpath 2986.78 1050.51 moveto
+2994.51 1043.26 lineto
+2983.95 1044.11 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2986.78 1050.51 moveto
+2994.51 1043.26 lineto
+2983.95 1044.11 lineto
+closepath stroke
+grestore
+% clippingByBlob
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2029 1026 129.48 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1937 1022.3 moveto 184 (ClippingByBlob: clippingByBlob) alignedtext
+grestore
+% srcDownscaled->clippingByBlob
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1906.16 1223.7 moveto
+1901.95 1192.11 1897.54 1124.29 1928 1080 curveto
+1937.9 1065.61 1952.96 1054.85 1968.46 1046.92 curveto
+stroke
+0 0 0 edgecolor
+newpath 1970.07 1050.02 moveto
+1977.6 1042.57 lineto
+1967.06 1043.7 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1970.07 1050.02 moveto
+1977.6 1042.57 lineto
+1967.06 1043.7 lineto
+closepath stroke
+grestore
+% sparkleDetection
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2275 882 129.48 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2183 878.3 moveto 184 (ColorBounding: sparkleDetection) alignedtext
+grestore
+% srcDownscaled->sparkleDetection
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2000.09 1236 moveto
+2073.59 1229.9 2168.77 1216.58 2194 1188 curveto
+2268.25 1103.89 2157.5 1035.68 2209 936 curveto
+2215.23 923.93 2225.57 913.67 2236.24 905.48 curveto
+stroke
+0 0 0 edgecolor
+newpath 2238.31 908.3 moveto
+2244.39 899.63 lineto
+2234.23 902.61 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2238.31 908.3 moveto
+2244.39 899.63 lineto
+2234.23 902.61 lineto
+closepath stroke
+grestore
+% lutMultifilter
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2672 1026 116.01 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2590.5 1022.3 moveto 163 (LUTMultifilter: lutMultifilter) alignedtext
+grestore
+% srcDownscaled->lutMultifilter
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2004.54 1239.31 moveto
+2145.76 1235.63 2402.62 1224.05 2487 1188 curveto
+2558.34 1157.52 2621.85 1088.86 2652.54 1051.82 curveto
+stroke
+0 0 0 edgecolor
+newpath 2655.32 1053.94 moveto
+2658.92 1043.98 lineto
+2649.89 1049.52 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2655.32 1053.94 moveto
+2658.92 1043.98 lineto
+2649.89 1049.52 lineto
+closepath stroke
+grestore
+% fieldColorLarge
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1716 1170 126.61 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1626.5 1166.3 moveto 179 (ColorBounding: fieldColorLarge) alignedtext
+grestore
+% srcDownscaled->fieldColorLarge
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1866.65 1225.64 moveto
+1838.11 1215.29 1800.23 1201.55 1769.6 1190.44 curveto
+stroke
+0 0 0 edgecolor
+newpath 1770.52 1187.05 moveto
+1759.93 1186.93 lineto
+1768.14 1193.63 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1770.52 1187.05 moveto
+1759.93 1186.93 lineto
+1768.14 1193.63 lineto
+closepath stroke
+grestore
+% newField
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1006 1098 102.54 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+935 1094.3 moveto 142 (ColorBounding: newField) alignedtext
+grestore
+% srcDownscaled->newField
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1813.18 1239.53 moveto
+1639.64 1235.98 1280.23 1224.36 1161 1188 curveto
+1114 1173.67 1065.83 1143.01 1035.93 1121.71 curveto
+stroke
+0 0 0 edgecolor
+newpath 1037.78 1118.73 moveto
+1027.62 1115.7 lineto
+1033.67 1124.4 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1037.78 1118.73 moveto
+1027.62 1115.7 lineto
+1033.67 1124.4 lineto
+closepath stroke
+grestore
+% whiteDetection
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2061 1170 124.21 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1973.5 1166.3 moveto 175 (ColorBounding: whiteDetection) alignedtext
+grestore
+% srcDownscaled->whiteDetection
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1943.49 1225.12 moveto
+1965.05 1215.19 1993.03 1202.3 2016.28 1191.6 curveto
+stroke
+0 0 0 edgecolor
+newpath 2017.97 1194.67 moveto
+2025.59 1187.31 lineto
+2015.04 1188.31 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2017.97 1194.67 moveto
+2025.59 1187.31 lineto
+2015.04 1188.31 lineto
+closepath stroke
+grestore
+% whiteDetectionLarge
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3087 1098 143.93 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2984 1094.3 moveto 206 (ColorBounding: whiteDetectionLarge) alignedtext
+grestore
+% srcDownscaled->whiteDetectionLarge
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2005.67 1241.09 moveto
+2223.24 1240.44 2745.58 1233.99 2915 1188 curveto
+2966.83 1173.93 3020.94 1142.77 3054.31 1121.32 curveto
+stroke
+0 0 0 edgecolor
+newpath 3056.28 1124.22 moveto
+3062.74 1115.83 lineto
+3052.45 1118.36 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3056.28 1124.22 moveto
+3062.74 1115.83 lineto
+3052.45 1118.36 lineto
+closepath stroke
+grestore
+% ultraWhiteDetection
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+802 1170 142.01 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+700.5 1166.3 moveto 203 (ColorBounding: ultraWhiteDetection) alignedtext
+grestore
+% srcDownscaled->ultraWhiteDetection
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1818.28 1235.73 moveto
+1660.6 1226.5 1325.76 1206.62 1043 1188 curveto
+1007.04 1185.63 968.07 1182.94 932.16 1180.4 curveto
+stroke
+0 0 0 edgecolor
+newpath 932.34 1176.91 moveto
+922.12 1179.69 lineto
+931.85 1183.89 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 932.34 1176.91 moveto
+922.12 1179.69 lineto
+931.85 1183.89 lineto
+closepath stroke
+grestore
+% ballByLUT
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2343 1170 102.06 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2272.5 1166.3 moveto 141 (LUTSelector: ballByLUT) alignedtext
+grestore
+% srcDownscaled->ballByLUT
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1979.7 1229.6 moveto
+2056.51 1217.21 2179.12 1197.43 2260.34 1184.33 curveto
+stroke
+0 0 0 edgecolor
+newpath 2261.21 1187.74 moveto
+2270.53 1182.69 lineto
+2260.1 1180.83 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2261.21 1187.74 moveto
+2270.53 1182.69 lineto
+2260.1 1180.83 lineto
+closepath stroke
+grestore
+% fielByLUT
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1304 1170 100.61 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1234.5 1166.3 moveto 139 (LUTSelector: fielByLUT) alignedtext
+grestore
+% srcDownscaled->fielByLUT
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1825.22 1232.94 moveto
+1727.56 1223.32 1561.38 1206.22 1419 1188 curveto
+1408.84 1186.7 1398.18 1185.25 1387.63 1183.75 curveto
+stroke
+0 0 0 edgecolor
+newpath 1387.95 1180.26 moveto
+1377.56 1182.31 lineto
+1386.96 1187.19 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1387.95 1180.26 moveto
+1377.56 1182.31 lineto
+1386.96 1187.19 lineto
+closepath stroke
 grestore
 % linesByROI->clippingExperimental
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 458.84 446.01 moveto
-823.15 435.12 2083.19 397.44 2536.19 383.9 curveto
+newpath 858.57 720.05 moveto
+849.62 711.35 838.55 700.59 828.73 691.04 curveto
 stroke
 0 0 0 edgecolor
-newpath 2536.52 387.39 moveto
-2546.41 383.59 lineto
-2536.31 380.39 lineto
+newpath 831.13 688.49 moveto
+821.52 684.03 lineto
+826.25 693.51 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 2536.52 387.39 moveto
-2546.41 383.59 lineto
-2536.31 380.39 lineto
-closepath stroke
-grestore
-% goalMask
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-2971 162 70.27 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-2924.5 158.3 moveto 93 (Mask: goalMask) alignedtext
-grestore
-% clippingExperimentalBorders->goalMask
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 2824.78 216.59 moveto
-2854.23 205.79 2892.75 191.68 2922.85 180.64 curveto
-stroke
-0 0 0 edgecolor
-newpath 2924.13 183.91 moveto
-2932.31 177.18 lineto
-2921.72 177.33 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 2924.13 183.91 moveto
-2932.31 177.18 lineto
-2921.72 177.33 lineto
-closepath stroke
-grestore
-% whiteGoalNearField
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-2869 1026 107.36 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-2794.5 1022.3 moveto 149 (Mask: whiteGoalNearField) alignedtext
-grestore
-% whiteGoalNearField->goalMask
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 2900.38 1008.78 moveto
-2939.13 986.24 3000 941.53 3000 883 curveto
-3000 883 3000 883 3000 305 curveto
-3000 264.21 2988.37 218.15 2979.84 189.84 curveto
-stroke
-0 0 0 edgecolor
-newpath 2983.18 188.77 moveto
-2976.87 180.26 lineto
-2976.49 190.84 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 2983.18 188.77 moveto
-2976.87 180.26 lineto
-2976.49 190.84 lineto
-closepath stroke
-grestore
-% whiteGoalDetection->whiteGoalNearField
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 2869 1079.7 moveto
-2869 1071.98 2869 1062.71 2869 1054.11 curveto
-stroke
-0 0 0 edgecolor
-newpath 2872.5 1054.1 moveto
-2869 1044.1 lineto
-2865.5 1054.1 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 2872.5 1054.1 moveto
-2869 1044.1 lineto
-2865.5 1054.1 lineto
-closepath stroke
-grestore
-% fieldColorOpeningGoal
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-2546 1098 126.13 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-2457 1094.3 moveto 178 (Closure: fieldColorOpeningGoal) alignedtext
-grestore
-% fieldColorOpeningGoal->whiteGoalNearField
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 2612.14 1082.67 moveto
-2665.66 1071.07 2740.94 1054.75 2796.17 1042.78 curveto
-stroke
-0 0 0 edgecolor
-newpath 2797.21 1046.14 moveto
-2806.24 1040.6 lineto
-2795.72 1039.3 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 2797.21 1046.14 moveto
-2806.24 1040.6 lineto
-2795.72 1039.3 lineto
-closepath stroke
-grestore
-% goalMask2
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-2971 90 76.54 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-2920 86.3 moveto 102 (Dilate: goalMask2) alignedtext
-grestore
-% goalByROI
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-3023 18 98.19 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-2955 14.3 moveto 136 (GoalByROI: goalByROI) alignedtext
-grestore
-% goalMask2->goalByROI
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 2983.59 72.05 moveto
-2989.76 63.75 2997.31 53.58 3004.15 44.38 curveto
-stroke
-0 0 0 edgecolor
-newpath 3007.01 46.39 moveto
-3010.17 36.28 lineto
-3001.39 42.22 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 3007.01 46.39 moveto
-3010.17 36.28 lineto
-3001.39 42.22 lineto
-closepath stroke
-grestore
-% goalMask->goalMask2
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 2971 143.7 moveto
-2971 135.98 2971 126.71 2971 118.11 curveto
-stroke
-0 0 0 edgecolor
-newpath 2974.5 118.1 moveto
-2971 108.1 lineto
-2967.5 118.1 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 2974.5 118.1 moveto
-2971 108.1 lineto
-2967.5 118.1 lineto
-closepath stroke
-grestore
-% goalTocardDetection
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-636 522 131.41 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-542.5 518.3 moveto 187 (GoalTocard: goalTocardDetection) alignedtext
-grestore
-% goalMaskTocardResized
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-634 594 130.46 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-541.5 590.3 moveto 185 (Rescale: goalMaskTocardResized) alignedtext
-grestore
-% goalMaskTocardResized->goalTocardDetection
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 634.49 575.7 moveto
-634.71 567.98 634.98 558.71 635.23 550.11 curveto
-stroke
-0 0 0 edgecolor
-newpath 638.72 550.2 moveto
-635.51 540.1 lineto
-631.73 550 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 638.72 550.2 moveto
-635.51 540.1 lineto
-631.73 550 lineto
-closepath stroke
-grestore
-% goalMaskTocardFinal
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-634 666 115.06 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-553.5 662.3 moveto 161 (Dilate: goalMaskTocardFinal) alignedtext
-grestore
-% goalMaskTocardFinal->goalMaskTocardResized
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 634 647.7 moveto
-634 639.98 634 630.71 634 622.11 curveto
-stroke
-0 0 0 edgecolor
-newpath 637.5 622.1 moveto
-634 612.1 lineto
-630.5 622.1 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 637.5 622.1 moveto
-634 612.1 lineto
-630.5 622.1 lineto
-closepath stroke
-grestore
-% goalMaskTocardClipped
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-634 738 123.23 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-547 734.3 moveto 174 (Mask: goalMaskTocardClipped) alignedtext
-grestore
-% goalMaskTocardClipped->goalMaskTocardFinal
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 634 719.7 moveto
-634 711.98 634 702.71 634 694.11 curveto
-stroke
-0 0 0 edgecolor
-newpath 637.5 694.1 moveto
-634 684.1 lineto
-630.5 694.1 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 637.5 694.1 moveto
-634 684.1 lineto
-630.5 694.1 lineto
-closepath stroke
-grestore
-% goalMaskTocard
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-605 954 141.53 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-504 950.3 moveto 202 (OpeningWithPitch: goalMaskTocard) alignedtext
-grestore
-% goalMaskTocard->goalMaskTocardClipped
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 607.32 935.85 moveto
-612.34 898.83 624.22 811.18 630.29 766.39 curveto
-stroke
-0 0 0 edgecolor
-newpath 633.79 766.61 moveto
-631.66 756.23 lineto
-626.85 765.67 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 633.79 766.61 moveto
-631.66 756.23 lineto
-626.85 765.67 lineto
-closepath stroke
-grestore
-% clipping
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-1097 810 94.34 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-1032 806.3 moveto 130 (ClippingRules: clipping) alignedtext
-grestore
-% clipping->goalMaskTocardClipped
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1025.42 798.18 moveto
-945.01 786.02 814.25 766.25 726.24 752.95 curveto
-stroke
-0 0 0 edgecolor
-newpath 726.67 749.47 moveto
-716.26 751.44 lineto
-725.63 756.39 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 726.67 749.47 moveto
-716.26 751.44 lineto
-725.63 756.39 lineto
-closepath stroke
-grestore
-% ballROIManager
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-1590 666 137.21 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-1492.5 662.3 moveto 195 (BallROIManager: ballROIManager) alignedtext
-grestore
-% clipping->ballROIManager
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1146.98 794.6 moveto
-1237.13 768.64 1426.76 714.02 1526.15 685.39 curveto
-stroke
-0 0 0 edgecolor
-newpath 1527.13 688.75 moveto
-1535.77 682.62 lineto
-1525.2 682.02 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 1527.13 688.75 moveto
-1535.77 682.62 lineto
-1525.2 682.02 lineto
-closepath stroke
-grestore
-% clipping->ballROIDetector
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1182.61 802.33 moveto
-1303.22 792.81 1530.01 774.42 1723 756 curveto
-1739 754.47 1755.9 752.77 1772.48 751.05 curveto
-stroke
-0 0 0 edgecolor
-newpath 1773.16 754.5 moveto
-1782.75 749.98 lineto
-1772.44 747.54 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 1773.16 754.5 moveto
-1782.75 749.98 lineto
-1772.44 747.54 lineto
-closepath stroke
-grestore
-% clipping->sparkleOfHope
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1170.27 798.6 moveto
-1256.46 786.36 1399.76 766.01 1494.55 752.55 curveto
-stroke
-0 0 0 edgecolor
-newpath 1495.31 755.98 moveto
-1504.72 751.11 lineto
-1494.33 749.05 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 1495.31 755.98 moveto
-1504.72 751.11 lineto
-1494.33 749.05 lineto
-closepath stroke
-grestore
-% clippingBorders
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-1046 738 117.46 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-963.5 734.3 moveto 165 (BinaryEdges: clippingBorders) alignedtext
-grestore
-% clipping->clippingBorders
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1084.65 792.05 moveto
-1078.61 783.75 1071.2 773.58 1064.49 764.38 curveto
-stroke
-0 0 0 edgecolor
-newpath 1067.3 762.3 moveto
-1058.59 756.28 lineto
-1061.65 766.42 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 1067.3 762.3 moveto
-1058.59 756.28 lineto
-1061.65 766.42 lineto
-closepath stroke
-grestore
-% smallGoalColorDetection->goalMaskTocard
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 595.97 1007.7 moveto
-597.29 999.98 598.88 990.71 600.35 982.11 curveto
-stroke
-0 0 0 edgecolor
-newpath 603.83 982.55 moveto
-602.07 972.1 lineto
-596.93 981.37 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 603.83 982.55 moveto
-602.07 972.1 lineto
-596.93 981.37 lineto
+newpath 831.13 688.49 moveto
+821.52 684.03 lineto
+826.25 693.51 lineto
 closepath stroke
 grestore
 % undistort
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-3484 1314 79.41 18 ellipse_path stroke
+3371 1314 79.41 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-3430.5 1310.3 moveto 107 (Undistort: undistort) alignedtext
+3317.5 1310.3 moveto 107 (Undistort: undistort) alignedtext
+grestore
+% undistort->clippingExperimental
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3291.5 1312.67 moveto
+2906.57 1310.87 1233.75 1300.82 714 1260 curveto
+468.45 1240.72 167 1417.31 167 1171 curveto
+167 1171 167 1171 167 1025 curveto
+167 791.28 496.92 708.55 681.89 680.53 curveto
+stroke
+0 0 0 edgecolor
+newpath 682.57 683.96 moveto
+691.95 679.04 lineto
+681.54 677.04 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 682.57 683.96 moveto
+691.95 679.04 lineto
+681.54 677.04 lineto
+closepath stroke
 grestore
 % undistort->srcDownscaled
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 3406.91 1309.54 moveto
-3149.46 1297.99 2319.22 1260.73 2026.96 1247.62 curveto
+newpath 3294.2 1309.32 moveto
+3049.58 1297.61 2288.5 1261.17 2011.3 1247.9 curveto
 stroke
 0 0 0 edgecolor
-newpath 2026.93 1244.12 moveto
-2016.79 1247.16 lineto
-2026.62 1251.11 lineto
+newpath 2011.41 1244.4 moveto
+2001.25 1247.42 lineto
+2011.07 1251.39 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 2026.93 1244.12 moveto
-2016.79 1247.16 lineto
-2026.62 1251.11 lineto
+newpath 2011.41 1244.4 moveto
+2001.25 1247.42 lineto
+2011.07 1251.39 lineto
 closepath stroke
 grestore
-% undistort->linesByROI
+% undistort->clippingExperimentalPermissive
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 3404.48 1313.13 moveto
-2939.87 1313.68 586.24 1313.8 269 1260 curveto
-144.84 1238.94 0 1296.93 0 1171 curveto
-0 1171 0 1171 0 593 curveto
-0 533.02 175.47 487.5 281.06 465.54 curveto
+newpath 3291.61 1312.84 moveto
+2801.18 1311.74 202.62 1303.84 134 1260 curveto
+96.98 1236.35 91 1214.93 91 1171 curveto
+91 1171 91 1171 91 593 curveto
+91 529.85 159.07 491.5 213.93 470.83 curveto
 stroke
 0 0 0 edgecolor
-newpath 281.96 468.93 moveto
-291.05 463.49 lineto
-280.55 462.07 lineto
+newpath 215.45 474.01 moveto
+223.66 467.3 lineto
+213.06 467.43 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 281.96 468.93 moveto
-291.05 463.49 lineto
-280.55 462.07 lineto
+newpath 215.45 474.01 moveto
+223.66 467.3 lineto
+213.06 467.43 lineto
 closepath stroke
+grestore
+% goalByROIStdClipping
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2739 522 141.06 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2638.5 518.3 moveto 201 (GoalByROI: goalByROIStdClipping) alignedtext
+grestore
+% undistort->goalByROIStdClipping
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3351.47 1296.19 moveto
+3341.5 1286.57 3330.01 1273.7 3323 1260 curveto
+3304.57 1224 3304 1211.45 3304 1171 curveto
+3304 1171 3304 1171 3304 665 curveto
+3304 577.22 3044.25 543.19 2876.99 530.38 curveto
+stroke
+0 0 0 edgecolor
+newpath 2877.09 526.88 moveto
+2866.85 529.62 lineto
+2876.56 533.86 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2877.09 526.88 moveto
+2866.85 529.62 lineto
+2876.56 533.86 lineto
+closepath stroke
+grestore
+% ballROIManager
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2494 738 137.21 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2396.5 734.3 moveto 195 (BallROIManager: ballROIManager) alignedtext
 grestore
 % undistort->ballROIManager
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 3405.49 1311.01 moveto
-3166.87 1304.87 2429.17 1285.06 1818 1260 curveto
-1655.83 1253.35 360 1333.3 360 1171 curveto
-360 1171 360 1171 360 953 curveto
-360 831.73 397.74 781.94 502 720 curveto
-522.1 708.06 1160.54 682.93 1449.9 672.12 curveto
+newpath 3291.82 1312.2 moveto
+2894.49 1307.65 1137 1281.3 1137 1171 curveto
+1137 1171 1137 1171 1137 1097 curveto
+1137 944.23 1676.69 1040.97 1813 972 curveto
+1875.56 940.34 1864.23 893.16 1928 864 curveto
+2068.61 799.71 2135.38 896.47 2274 828 curveto
+2293.73 818.25 2289.19 803.42 2308 792 curveto
+2336.36 774.78 2370.53 762.96 2401.81 754.93 curveto
 stroke
 0 0 0 edgecolor
-newpath 1450.18 675.62 moveto
-1460.04 671.75 lineto
-1449.92 668.62 lineto
+newpath 2402.98 758.25 moveto
+2411.85 752.45 lineto
+2401.31 751.45 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 1450.18 675.62 moveto
-1460.04 671.75 lineto
-1449.92 668.62 lineto
+newpath 2402.98 758.25 moveto
+2411.85 752.45 lineto
+2401.31 751.45 lineto
 closepath stroke
+grestore
+% goalByROI
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+98 18 98.19 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+30 14.3 moveto 136 (GoalByROI: goalByROI) alignedtext
 grestore
 % undistort->goalByROI
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 3404.51 1312.61 moveto
-3303.97 1310.41 3138.66 1300.5 3095 1260 curveto
-3065.35 1232.49 3076 1211.45 3076 1171 curveto
-3076 1171 3076 1171 3076 161 curveto
-3076 120.46 3071.38 109.51 3056 72 curveto
-3052.09 62.47 3046.54 52.72 3041.11 44.22 curveto
+newpath 3291.63 1312.58 moveto
+2798.39 1309.88 171.12 1293.94 96 1260 curveto
+47.26 1237.98 15 1224.48 15 1171 curveto
+15 1171 15 1171 15 161 curveto
+15 114.48 48.62 69.66 73.06 43.22 curveto
 stroke
 0 0 0 edgecolor
-newpath 3044.01 42.26 moveto
-3035.55 35.87 lineto
-3038.18 46.14 lineto
+newpath 75.63 45.59 moveto
+79.99 35.94 lineto
+70.56 40.77 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 3044.01 42.26 moveto
-3035.55 35.87 lineto
-3038.18 46.14 lineto
+newpath 75.63 45.59 moveto
+79.99 35.94 lineto
+70.56 40.77 lineto
 closepath stroke
+grestore
+% ballByROI
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2936 666 94.36 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2871.5 662.3 moveto 129 (BallByROI: ballByROI) alignedtext
 grestore
 % undistort->ballByROI
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 3404.15 1313.25 moveto
-3296.23 1311.91 3111.57 1303.14 3062 1260 curveto
-3031.1 1233.1 3038 1211.97 3038 1171 curveto
-3038 1171 3038 1171 3038 809 curveto
-3038 672.27 2578.01 618.85 2372.35 601.8 curveto
+newpath 3336.32 1297.62 moveto
+3320.07 1288.78 3301.74 1276.19 3290 1260 curveto
+3265.95 1226.83 3266 1211.97 3266 1171 curveto
+3266 1171 3266 1171 3266 809 curveto
+3266 768.55 3276.19 748 3247 720 curveto
+3217.29 691.5 3115.24 678.2 3036.05 672.07 curveto
 stroke
 0 0 0 edgecolor
-newpath 2372.41 598.3 moveto
-2362.15 600.97 lineto
-2371.84 605.27 lineto
+newpath 3036.25 668.57 moveto
+3026.02 671.32 lineto
+3035.73 675.56 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 2372.41 598.3 moveto
-2362.15 600.97 lineto
-2371.84 605.27 lineto
+newpath 3036.25 668.57 moveto
+3026.02 671.32 lineto
+3035.73 675.56 lineto
 closepath stroke
 grestore
 % undistortMask
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-180 954 152.13 18 ellipse_path stroke
+881 1026 152.13 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-71 950.3 moveto 218 (CameraCorrectionMask: undistortMask) alignedtext
+772 1022.3 moveto 218 (CameraCorrectionMask: undistortMask) alignedtext
 grestore
 % undistort->undistortMask
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 3404.24 1313.27 moveto
-2929.52 1314.69 491.82 1319.06 346 1260 curveto
-292.38 1238.28 251 1228.86 251 1171 curveto
-251 1171 251 1171 251 1097 curveto
-251 1052.23 222.42 1007.11 201.53 980.1 curveto
+newpath 3291.65 1312.49 moveto
+2944.46 1310.05 1557.22 1298.08 1123 1260 curveto
+911.61 1241.46 827.1 1306.4 651 1188 curveto
+608.12 1159.17 575.13 1119.86 608 1080 curveto
+618.91 1066.77 701.79 1051.9 773.39 1041.29 curveto
 stroke
 0 0 0 edgecolor
-newpath 204.03 977.63 moveto
-195.06 972 lineto
-198.56 982 lineto
+newpath 774.03 1044.73 moveto
+783.42 1039.82 lineto
+773.01 1037.81 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 204.03 977.63 moveto
-195.06 972 lineto
-198.56 982 lineto
+newpath 774.03 1044.73 moveto
+783.42 1039.82 lineto
+773.01 1037.81 lineto
 closepath stroke
 grestore
-% goalSrc
+% linesByROIPermissive
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-3174 1242 69.32 18 ellipse_path stroke
+614 522 141.53 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-3128.5 1238.3 moveto 91 (Rescale: goalSrc) alignedtext
+513 518.3 moveto 202 (LinesByROI: linesByROIPermissive) alignedtext
 grestore
-% undistort->goalSrc
+% undistort->linesByROIPermissive
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 3429.65 1300.73 moveto
-3375.02 1288.39 3291 1269.42 3234.33 1256.62 curveto
+newpath 3291.36 1312.83 moveto
+2803.72 1311.63 239.76 1303.3 172 1260 curveto
+134.98 1236.34 129 1214.93 129 1171 curveto
+129 1171 129 1171 129 665 curveto
+129 589.39 348.86 551.22 492.52 534.35 curveto
 stroke
 0 0 0 edgecolor
-newpath 3234.96 1253.18 moveto
-3224.44 1254.39 lineto
-3233.42 1260.01 lineto
+newpath 493.2 537.8 moveto
+502.73 533.18 lineto
+492.4 530.85 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 3234.96 1253.18 moveto
-3224.44 1254.39 lineto
-3233.42 1260.01 lineto
+newpath 493.2 537.8 moveto
+502.73 533.18 lineto
+492.4 530.85 lineto
 closepath stroke
 grestore
-% FieldByLUT
+% noneByLUT
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-3368 1242 106.39 18 ellipse_path stroke
+3438 1242 105.41 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-3294 1238.3 moveto 148 (LUTSelector: FieldByLUT) alignedtext
+3364.5 1238.3 moveto 147 (LUTSelector: noneByLUT) alignedtext
 grestore
-% undistort->FieldByLUT
+% undistort->noneByLUT
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 3457.39 1296.94 moveto
-3441.55 1287.39 3421.25 1275.13 3404 1264.72 curveto
+newpath 3387.22 1296.05 moveto
+3395.41 1287.5 3405.5 1276.96 3414.52 1267.54 curveto
 stroke
 0 0 0 edgecolor
-newpath 3405.66 1261.64 moveto
-3395.29 1259.47 lineto
-3402.05 1267.63 lineto
+newpath 3417.08 1269.92 moveto
+3421.47 1260.28 lineto
+3412.02 1265.08 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 3405.66 1261.64 moveto
-3395.29 1259.47 lineto
-3402.05 1267.63 lineto
+newpath 3417.08 1269.92 moveto
+3421.47 1260.28 lineto
+3412.02 1265.08 lineto
 closepath stroke
 grestore
-% NoneByLUT
+% tempMarker
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-3600 1242 107.34 18 ellipse_path stroke
+3676 1242 114.09 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-3525 1238.3 moveto 150 (LUTSelector: NoneByLUT) alignedtext
+3596 1238.3 moveto 160 (ColorBounding: tempMarker) alignedtext
 grestore
-% undistort->NoneByLUT
+% undistort->tempMarker
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 3510.61 1296.94 moveto
-3526.45 1287.39 3546.75 1275.13 3564 1264.72 curveto
+newpath 3424.83 1300.65 moveto
+3474.73 1289.19 3549.35 1272.07 3604.3 1259.46 curveto
 stroke
 0 0 0 edgecolor
-newpath 3565.95 1267.63 moveto
-3572.71 1259.47 lineto
-3562.34 1261.64 lineto
+newpath 3605.35 1262.81 moveto
+3614.32 1257.16 lineto
+3603.79 1255.98 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 3565.95 1267.63 moveto
-3572.71 1259.47 lineto
-3562.34 1261.64 lineto
+newpath 3605.35 1262.81 moveto
+3614.32 1257.16 lineto
+3603.79 1255.98 lineto
 closepath stroke
 grestore
 % Y
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-3806 1242 79.41 18 ellipse_path stroke
+3888 1242 79.41 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-3752.5 1238.3 moveto 107 (ChannelSelector: Y) alignedtext
+3834.5 1238.3 moveto 107 (ChannelSelector: Y) alignedtext
 grestore
 % undistort->Y
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 3539.35 1300.97 moveto
-3595.28 1288.81 3681.65 1270.03 3740.84 1257.16 curveto
+newpath 3441.63 1305.69 moveto
+3526.65 1296.56 3673.63 1279.71 3799 1260 curveto
+3806.05 1258.89 3813.4 1257.64 3820.72 1256.34 curveto
 stroke
 0 0 0 edgecolor
-newpath 3741.8 1260.54 moveto
-3750.83 1254.99 lineto
-3740.32 1253.7 lineto
+newpath 3821.43 1259.76 moveto
+3830.65 1254.53 lineto
+3820.18 1252.88 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 3741.8 1260.54 moveto
-3750.83 1254.99 lineto
-3740.32 1253.7 lineto
+newpath 3821.43 1259.76 moveto
+3830.65 1254.53 lineto
+3820.18 1252.88 lineto
 closepath stroke
 grestore
 % RGB
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-3993 1242 89.06 18 ellipse_path stroke
+4075 1242 89.06 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-3932.5 1238.3 moveto 121 (ColorConverter: RGB) alignedtext
+4014.5 1238.3 moveto 121 (ColorConverter: RGB) alignedtext
 grestore
 % undistort->RGB
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 3553.04 1304.96 moveto
-3634.62 1295.26 3774.41 1277.99 3894 1260 curveto
-3901.97 1258.8 3910.29 1257.48 3918.57 1256.12 curveto
+newpath 3446.67 1308.39 moveto
+3561.43 1300.94 3786.22 1284.56 3976 1260 curveto
+3984.27 1258.93 3992.9 1257.67 4001.47 1256.32 curveto
 stroke
 0 0 0 edgecolor
-newpath 3919.33 1259.54 moveto
-3928.63 1254.45 lineto
-3918.19 1252.64 lineto
+newpath 4002.16 1259.75 moveto
+4011.48 1254.71 lineto
+4001.05 1252.84 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 3919.33 1259.54 moveto
-3928.63 1254.45 lineto
-3918.19 1252.64 lineto
+newpath 4002.16 1259.75 moveto
+4011.48 1254.71 lineto
+4001.05 1252.84 lineto
 closepath stroke
 grestore
 % U
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-4180 1242 79.41 18 ellipse_path stroke
+4262 1242 79.41 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-4126.5 1238.3 moveto 107 (ChannelSelector: U) alignedtext
+4208.5 1238.3 moveto 107 (ChannelSelector: U) alignedtext
 grestore
 % undistort->U
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 3560.46 1308.82 moveto
-3675.82 1301.96 3901.09 1286.36 4091 1260 curveto
-4098.18 1259 4105.65 1257.82 4113.09 1256.54 curveto
+newpath 3449.57 1311.01 moveto
+3593.56 1306.64 3909.16 1293.79 4173 1260 curveto
+4180.38 1259.06 4188.07 1257.88 4195.7 1256.59 curveto
 stroke
 0 0 0 edgecolor
-newpath 4113.93 1259.94 moveto
-4123.17 1254.75 lineto
-4112.71 1253.05 lineto
+newpath 4196.42 1260.02 moveto
+4205.67 1254.84 lineto
+4195.21 1253.12 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 4113.93 1259.94 moveto
-4123.17 1254.75 lineto
-4112.71 1253.05 lineto
+newpath 4196.42 1260.02 moveto
+4205.67 1254.84 lineto
+4195.21 1253.12 lineto
 closepath stroke
 grestore
 % V
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-4358 1242 79.41 18 ellipse_path stroke
+4440 1242 79.41 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-4304.5 1238.3 moveto 107 (ChannelSelector: V) alignedtext
+4386.5 1238.3 moveto 107 (ChannelSelector: V) alignedtext
 grestore
 % undistort->V
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 3562.47 1310.79 moveto
-3703.97 1306.12 4011.06 1292.83 4268 1260 curveto
-4275.65 1259.02 4283.64 1257.8 4291.55 1256.47 curveto
+newpath 3450.3 1312.26 moveto
+3617.32 1309.94 4017.32 1300.25 4350 1260 curveto
+4357.66 1259.07 4365.65 1257.89 4373.56 1256.57 curveto
 stroke
 0 0 0 edgecolor
-newpath 4292.26 1259.9 moveto
-4301.51 1254.73 lineto
-4291.06 1253.01 lineto
+newpath 4374.27 1260 moveto
+4383.53 1254.85 lineto
+4373.08 1253.11 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 4292.26 1259.9 moveto
-4301.51 1254.73 lineto
-4291.06 1253.01 lineto
+newpath 4374.27 1260 moveto
+4383.53 1254.85 lineto
+4373.08 1253.11 lineto
 closepath stroke
 grestore
 % yModal1
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-4559 1242 102.54 18 ellipse_path stroke
+4641 1242 102.54 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-4488 1238.3 moveto 142 (ColorBounding: yModal1) alignedtext
+4570 1238.3 moveto 142 (ColorBounding: yModal1) alignedtext
 grestore
 % undistort->yModal1
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 3562.76 1311.17 moveto
-3727.22 1306.81 4119.03 1293.53 4446 1260 curveto
-4456.1 1258.96 4466.67 1257.66 4477.12 1256.25 curveto
+newpath 3450.11 1312.2 moveto
+3637.69 1309.68 4124 1299.54 4528 1260 curveto
+4538.17 1259 4548.83 1257.72 4559.36 1256.31 curveto
 stroke
 0 0 0 edgecolor
-newpath 4477.67 1259.7 moveto
-4487.09 1254.86 lineto
-4476.71 1252.77 lineto
+newpath 4559.98 1259.75 moveto
+4569.41 1254.91 lineto
+4559.02 1252.82 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 4477.67 1259.7 moveto
-4487.09 1254.86 lineto
-4476.71 1252.77 lineto
+newpath 4559.98 1259.75 moveto
+4569.41 1254.91 lineto
+4559.02 1252.82 lineto
 closepath stroke
 grestore
 % yModal2
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-4782 1242 102.54 18 ellipse_path stroke
+4864 1242 102.54 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-4711 1238.3 moveto 142 (ColorBounding: yModal2) alignedtext
+4793 1238.3 moveto 142 (ColorBounding: yModal2) alignedtext
 grestore
 % undistort->yModal2
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 3563.32 1312.35 moveto
-3754.3 1310.17 4254.62 1300.69 4670 1260 curveto
-4679.91 1259.03 4690.28 1257.78 4700.54 1256.39 curveto
+newpath 3450.61 1313.07 moveto
+3662.68 1312.56 4258.75 1306.75 4752 1260 curveto
+4762.09 1259.04 4772.66 1257.78 4783.1 1256.38 curveto
 stroke
 0 0 0 edgecolor
-newpath 4701.32 1259.82 moveto
-4710.74 1254.97 lineto
-4700.36 1252.89 lineto
+newpath 4783.63 1259.84 moveto
+4793.05 1255 lineto
+4782.66 1252.91 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 4701.32 1259.82 moveto
-4710.74 1254.97 lineto
-4700.36 1252.89 lineto
+newpath 4783.63 1259.84 moveto
+4793.05 1255 lineto
+4782.66 1252.91 lineto
 closepath stroke
 grestore
 % histogram
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-4992 1242 89.06 18 ellipse_path stroke
+5074 1242 89.06 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-4931.5 1238.3 moveto 121 (Histogram: histogram) alignedtext
+5013.5 1238.3 moveto 121 (Histogram: histogram) alignedtext
 grestore
 % undistort->histogram
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 3563.71 1313.69 moveto
-3778.83 1314.76 4389.01 1312.52 4893 1260 curveto
-4901.7 1259.09 4910.78 1257.89 4919.77 1256.54 curveto
+newpath 3449.91 1311.83 moveto
+3729.77 1307.44 4674.08 1290.66 4975 1260 curveto
+4983.76 1259.11 4992.92 1257.91 5001.97 1256.55 curveto
 stroke
 0 0 0 edgecolor
-newpath 4920.52 1259.97 moveto
-4929.86 1254.96 lineto
-4919.44 1253.05 lineto
+newpath 5002.79 1259.97 moveto
+5012.13 1254.97 lineto
+5001.71 1253.05 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 4920.52 1259.97 moveto
-4929.86 1254.96 lineto
-4919.44 1253.05 lineto
+newpath 5002.79 1259.97 moveto
+5012.13 1254.97 lineto
+5001.71 1253.05 lineto
 closepath stroke
 grestore
-% ballROIManager->ballByROI
+% clippingExperimentalPermissive->clippingOr
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 1694.41 654.33 moveto
-1828.05 640.67 2057.43 617.23 2184.17 604.28 curveto
+newpath 272.85 431.7 moveto
+268.6 423.64 263.44 413.89 258.73 404.98 curveto
 stroke
 0 0 0 edgecolor
-newpath 2184.65 607.75 moveto
-2194.24 603.25 lineto
-2183.94 600.79 lineto
+newpath 261.81 403.31 moveto
+254.04 396.1 lineto
+255.62 406.58 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 2184.65 607.75 moveto
-2194.24 603.25 lineto
-2183.94 600.79 lineto
+newpath 261.81 403.31 moveto
+254.04 396.1 lineto
+255.62 406.58 lineto
 closepath stroke
 grestore
-% ballROIDetector->ballROIManager
+% clippingExperimentalPermissive->clippingAnd
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 1820.5 722.07 moveto
-1774.28 711.03 1711.19 695.95 1662.71 684.37 curveto
+newpath 352.12 433.12 moveto
+404.7 421.2 476.1 405.03 527.11 393.47 curveto
 stroke
 0 0 0 edgecolor
-newpath 1663.44 680.95 moveto
-1652.91 682.03 lineto
-1661.82 687.76 lineto
+newpath 528.05 396.85 moveto
+537.03 391.23 lineto
+526.5 390.02 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 1663.44 680.95 moveto
-1652.91 682.03 lineto
-1661.82 687.76 lineto
+newpath 528.05 396.85 moveto
+537.03 391.23 lineto
+526.5 390.02 lineto
 closepath stroke
 grestore
-% sparkleOfHope->ballROIManager
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1590 719.7 moveto
-1590 711.98 1590 702.71 1590 694.11 curveto
-stroke
-0 0 0 edgecolor
-newpath 1593.5 694.1 moveto
-1590 684.1 lineto
-1586.5 694.1 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 1593.5 694.1 moveto
-1590 684.1 lineto
-1586.5 694.1 lineto
-closepath stroke
-grestore
-% sparkleOfHopeDetection->sparkleOfHope
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1748.3 936.07 moveto
-1733.89 926.5 1716.51 913.73 1703 900 curveto
-1661.4 857.73 1624.24 798.71 1604.64 765.13 curveto
-stroke
-0 0 0 edgecolor
-newpath 1607.61 763.28 moveto
-1599.58 756.36 lineto
-1601.55 766.78 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 1607.61 763.28 moveto
-1599.58 756.36 lineto
-1601.55 766.78 lineto
-closepath stroke
-grestore
-% clippingByBlobDownscaled
+% goalMask
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-1018 954 142.01 18 ellipse_path stroke
+245 162 70.27 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-916.5 950.3 moveto 203 (Rescale: clippingByBlobDownscaled) alignedtext
+198.5 158.3 moveto 93 (Mask: goalMask) alignedtext
 grestore
-% clippingByBlob->clippingByBlobDownscaled
+% clippingExperimentalBorders->goalMask
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 957.37 1008.05 moveto
-967.41 999.26 979.85 988.38 990.84 978.76 curveto
+newpath 245 215.7 moveto
+245 207.98 245 198.71 245 190.11 curveto
 stroke
 0 0 0 edgecolor
-newpath 993.31 981.25 moveto
-998.54 972.03 lineto
-988.7 975.98 lineto
+newpath 248.5 190.1 moveto
+245 180.1 lineto
+241.5 190.1 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 993.31 981.25 moveto
-998.54 972.03 lineto
-988.7 975.98 lineto
+newpath 248.5 190.1 moveto
+245 180.1 lineto
+241.5 190.1 lineto
 closepath stroke
 grestore
-% whiteDetectionClosing
+% whiteGoalNearField
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-782 1098 124.21 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-694.5 1094.3 moveto 175 (Closure: whiteDetectionClosing) alignedtext
-grestore
-% whiteDetectionClosing->clippingByBlob
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 818.18 1080.76 moveto
-840.27 1070.85 868.71 1058.09 892.34 1047.49 curveto
-stroke
-0 0 0 edgecolor
-newpath 893.78 1050.68 moveto
-901.47 1043.39 lineto
-890.92 1044.29 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 893.78 1050.68 moveto
-901.47 1043.39 lineto
-890.92 1044.29 lineto
-closepath stroke
-grestore
-% fieldColorOpening
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-1336 1098 109.29 18 ellipse_path stroke
+1868 738 107.36 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-1260 1094.3 moveto 152 (Closure: fieldColorOpening) alignedtext
+1793.5 734.3 moveto 149 (Mask: whiteGoalNearField) alignedtext
 grestore
-% fieldColorOpening->clippingByBlob
+% whiteGoalNearField->goalMask
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 1264.39 1084.4 moveto
-1197.16 1072.58 1096.48 1054.87 1024.73 1042.25 curveto
+newpath 1927.14 722.92 moveto
+1948.91 714.91 1971.91 702.62 1987 684 curveto
+2012.47 652.58 2006 635.45 2006 595 curveto
+2006 595 2006 595 2006 305 curveto
+2006 219.46 668.32 175.16 324.69 165.19 curveto
 stroke
 0 0 0 edgecolor
-newpath 1025.26 1038.79 moveto
-1014.81 1040.51 lineto
-1024.05 1045.69 lineto
+newpath 324.67 161.69 moveto
+314.58 164.9 lineto
+324.47 168.69 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 1025.26 1038.79 moveto
-1014.81 1040.51 lineto
-1024.05 1045.69 lineto
+newpath 324.67 161.69 moveto
+314.58 164.9 lineto
+324.47 168.69 lineto
 closepath stroke
 grestore
-% whiteBallDetection->ballROIDetector
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 2013.3 793.12 moveto
-1986.94 783.09 1954.01 770.05 1927.81 759.28 curveto
-stroke
-0 0 0 edgecolor
-newpath 1929.06 756.01 moveto
-1918.49 755.43 lineto
-1926.39 762.48 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 1929.06 756.01 moveto
-1918.49 755.43 lineto
-1926.39 762.48 lineto
-closepath stroke
-grestore
-% whiteBallDetection->ballROIDetector
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 2023.56 792.59 moveto
-1999.14 782.43 1966.31 769.33 1938.48 758.63 curveto
-stroke
-0 0 0 edgecolor
-newpath 1939.45 755.25 moveto
-1928.86 754.95 lineto
-1936.95 761.79 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 1939.45 755.25 moveto
-1928.86 754.95 lineto
-1936.95 761.79 lineto
-closepath stroke
-grestore
-% sparkleDetection->ballROIDetector
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1846.95 863.87 moveto
-1853.96 839.56 1866.88 794.82 1875.2 766.01 curveto
-stroke
-0 0 0 edgecolor
-newpath 1878.63 766.77 moveto
-1878.04 756.19 lineto
-1871.9 764.83 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 1878.63 766.77 moveto
-1878.04 756.19 lineto
-1871.9 764.83 lineto
-closepath stroke
-grestore
-% fieldColorForBall->ballByROI
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 2382.21 863.97 moveto
-2363.13 816.09 2308.9 680.06 2285.72 621.9 curveto
-stroke
-0 0 0 edgecolor
-newpath 2288.85 620.3 moveto
-2281.9 612.31 lineto
-2282.35 622.89 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 2288.85 620.3 moveto
-2281.9 612.31 lineto
-2282.35 622.89 lineto
-closepath stroke
-grestore
-% clippingByBlobFinal
+% goalMaskStdClipping
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-1097 882 120.36 18 ellipse_path stroke
+1865 666 113.13 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-1012.5 878.3 moveto 169 (Opening: clippingByBlobFinal) alignedtext
+1786 662.3 moveto 158 (Mask: goalMaskStdClipping) alignedtext
 grestore
-% clippingByBlobDownscaled->clippingByBlobFinal
+% whiteGoalNearField->goalMaskStdClipping
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 1037.12 936.05 moveto
-1047.12 927.2 1059.51 916.22 1070.42 906.55 curveto
+newpath 1867.26 719.7 moveto
+1866.93 711.98 1866.53 702.71 1866.16 694.11 curveto
 stroke
 0 0 0 edgecolor
-newpath 1072.89 909.04 moveto
-1078.05 899.79 lineto
-1068.25 903.8 lineto
+newpath 1869.66 693.95 moveto
+1865.73 684.1 lineto
+1862.66 694.25 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 1072.89 909.04 moveto
-1078.05 899.79 lineto
-1068.25 903.8 lineto
+newpath 1869.66 693.95 moveto
+1865.73 684.1 lineto
+1862.66 694.25 lineto
 closepath stroke
 grestore
-% undistortMaskDownscaled
-gsave
-1 setlinewidth
-0 0 0 nodecolor
-821 882 137.18 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-723 878.3 moveto 196 (Rescale: undistortMaskDownscaled) alignedtext
-grestore
-% undistortMaskDownscaled->clipping
+% whiteGoalDetection->whiteGoalNearField
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 881.23 865.72 moveto
-926 854.37 987 838.9 1032.71 827.31 curveto
+newpath 1870.26 791.7 moveto
+1869.93 783.98 1869.53 774.71 1869.16 766.11 curveto
 stroke
 0 0 0 edgecolor
-newpath 1033.68 830.67 moveto
-1042.52 824.82 lineto
-1031.96 823.88 lineto
+newpath 1872.66 765.95 moveto
+1868.73 756.1 lineto
+1865.66 766.25 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 1033.68 830.67 moveto
-1042.52 824.82 lineto
-1031.96 823.88 lineto
+newpath 1872.66 765.95 moveto
+1868.73 756.1 lineto
+1865.66 766.25 lineto
 closepath stroke
 grestore
-% undistortMaskeEroded
+% fieldColorOpeningGoal
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-833 810 116.48 18 ellipse_path stroke
+1182 882 126.13 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-751 806.3 moveto 164 (Erode: undistortMaskeEroded) alignedtext
+1093 878.3 moveto 178 (Closure: fieldColorOpeningGoal) alignedtext
 grestore
-% undistortMaskDownscaled->undistortMaskeEroded
+% fieldColorOpeningGoal->whiteGoalNearField
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 823.97 863.7 moveto
-825.29 855.98 826.88 846.71 828.35 838.11 curveto
+newpath 1171.69 863.83 moveto
+1161.21 843.9 1148.86 811.29 1167 792 curveto
+1211.61 744.56 1687.23 762.73 1752 756 curveto
+1762.13 754.95 1772.72 753.66 1783.22 752.26 curveto
 stroke
 0 0 0 edgecolor
-newpath 831.83 838.55 moveto
-830.07 828.1 lineto
-824.93 837.37 lineto
+newpath 1783.8 755.72 moveto
+1793.24 750.9 lineto
+1782.85 748.78 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 831.83 838.55 moveto
-830.07 828.1 lineto
-824.93 837.37 lineto
+newpath 1783.8 755.72 moveto
+1793.24 750.9 lineto
+1782.85 748.78 lineto
 closepath stroke
 grestore
-% undistortMask->linesByROI
+% goalMask2
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+182 90 76.54 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+131 86.3 moveto 102 (Dilate: goalMask2) alignedtext
+grestore
+% goalMask2->goalByROI
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 183.24 935.58 moveto
-187.91 908.87 196 856.15 196 811 curveto
-196 811 196 811 196 593 curveto
-196 551.66 194.92 534.33 223 504 curveto
-238.97 486.75 261.23 475.04 283.11 467.12 curveto
+newpath 162.09 72.41 moveto
+151.29 63.41 137.77 52.14 125.93 42.27 curveto
 stroke
 0 0 0 edgecolor
-newpath 284.43 470.37 moveto
-292.79 463.85 lineto
-282.19 463.74 lineto
+newpath 127.98 39.43 moveto
+118.06 35.71 lineto
+123.5 44.8 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 284.43 470.37 moveto
-292.79 463.85 lineto
-282.19 463.74 lineto
+newpath 127.98 39.43 moveto
+118.06 35.71 lineto
+123.5 44.8 lineto
 closepath stroke
 grestore
-% undistortMask->undistortMaskDownscaled
+% goalMask->goalMask2
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 287.65 941.24 moveto
-404.59 928.47 590.54 908.17 709.12 895.22 curveto
+newpath 229.75 144.05 moveto
+222.01 135.46 212.47 124.86 203.96 115.4 curveto
 stroke
 0 0 0 edgecolor
-newpath 709.75 898.67 moveto
-719.31 894.1 lineto
-708.99 891.71 lineto
+newpath 206.4 112.88 moveto
+197.11 107.79 lineto
+201.2 117.56 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 709.75 898.67 moveto
-719.31 894.1 lineto
-708.99 891.71 lineto
+newpath 206.4 112.88 moveto
+197.11 107.79 lineto
+201.2 117.56 lineto
 closepath stroke
 grestore
-% clippingByBlobFinal->clipping
+% goalTocardDetection
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1171 594 131.41 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1077.5 590.3 moveto 187 (GoalTocard: goalTocardDetection) alignedtext
+grestore
+% goalMaskTocardResized
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1171 666 130.46 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1078.5 662.3 moveto 185 (Rescale: goalMaskTocardResized) alignedtext
+grestore
+% goalMaskTocardResized->goalTocardDetection
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 1097 863.7 moveto
-1097 855.98 1097 846.71 1097 838.11 curveto
+newpath 1171 647.7 moveto
+1171 639.98 1171 630.71 1171 622.11 curveto
 stroke
 0 0 0 edgecolor
-newpath 1100.5 838.1 moveto
-1097 828.1 lineto
-1093.5 838.1 lineto
+newpath 1174.5 622.1 moveto
+1171 612.1 lineto
+1167.5 622.1 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 1100.5 838.1 moveto
-1097 828.1 lineto
-1093.5 838.1 lineto
+newpath 1174.5 622.1 moveto
+1171 612.1 lineto
+1167.5 622.1 lineto
+closepath stroke
+grestore
+% goalMaskTocardFinal
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1171 738 115.06 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1090.5 734.3 moveto 161 (Dilate: goalMaskTocardFinal) alignedtext
+grestore
+% goalMaskTocardFinal->goalMaskTocardResized
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1171 719.7 moveto
+1171 711.98 1171 702.71 1171 694.11 curveto
+stroke
+0 0 0 edgecolor
+newpath 1174.5 694.1 moveto
+1171 684.1 lineto
+1167.5 694.1 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1174.5 694.1 moveto
+1171 684.1 lineto
+1167.5 694.1 lineto
+closepath stroke
+grestore
+% goalMaskTocardClipped
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1299 810 123.23 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1212 806.3 moveto 174 (Mask: goalMaskTocardClipped) alignedtext
+grestore
+% goalMaskTocardClipped->goalMaskTocardFinal
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1268.67 792.41 moveto
+1251.13 782.82 1228.88 770.65 1210.05 760.36 curveto
+stroke
+0 0 0 edgecolor
+newpath 1211.57 757.2 moveto
+1201.12 755.47 lineto
+1208.21 763.34 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1211.57 757.2 moveto
+1201.12 755.47 lineto
+1208.21 763.34 lineto
+closepath stroke
+grestore
+% goalMaskTocard
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1468 882 141.53 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1367 878.3 moveto 202 (OpeningWithPitch: goalMaskTocard) alignedtext
+grestore
+% goalMaskTocard->goalMaskTocardClipped
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1428.38 864.59 moveto
+1404.24 854.59 1373.22 841.74 1347.61 831.13 curveto
+stroke
+0 0 0 edgecolor
+newpath 1348.66 827.78 moveto
+1338.08 827.19 lineto
+1345.98 834.25 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1348.66 827.78 moveto
+1338.08 827.19 lineto
+1345.98 834.25 lineto
+closepath stroke
+grestore
+% clipping
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2032 882 94.34 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1967 878.3 moveto 130 (ClippingRules: clipping) alignedtext
+grestore
+% clipping->goalMaskTocardClipped
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1948.99 873.34 moveto
+1839.16 863.16 1639.51 844.55 1469 828 curveto
+1449.08 826.07 1427.86 823.97 1407.4 821.93 curveto
+stroke
+0 0 0 edgecolor
+newpath 1407.72 818.45 moveto
+1397.42 820.94 lineto
+1407.03 825.42 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1407.72 818.45 moveto
+1397.42 820.94 lineto
+1407.03 825.42 lineto
+closepath stroke
+grestore
+% clipping->ballROIManager
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2100.86 869.63 moveto
+2176.41 856.87 2289.49 836.79 2308 828 curveto
+2330.51 817.31 2329.44 804.51 2351 792 curveto
+2375.26 777.91 2403.94 766.41 2429.22 757.76 curveto
+stroke
+0 0 0 edgecolor
+newpath 2430.35 761.07 moveto
+2438.73 754.59 lineto
+2428.13 754.43 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2430.35 761.07 moveto
+2438.73 754.59 lineto
+2428.13 754.43 lineto
+closepath stroke
+grestore
+% clipping->ballROIDetector
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2100.79 869.61 moveto
+2112.53 867.7 2124.61 865.77 2136 864 curveto
+2224.05 850.29 2324.42 835.5 2396.43 825.04 curveto
+stroke
+0 0 0 edgecolor
+newpath 2397.01 828.49 moveto
+2406.4 823.59 lineto
+2396 821.57 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2397.01 828.49 moveto
+2406.4 823.59 lineto
+2396 821.57 lineto
+closepath stroke
+grestore
+% clipping->sparkleOfHope
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2098.73 869.18 moveto
+2111.09 867.25 2123.92 865.42 2136 864 curveto
+2357.28 838 2413.88 845.39 2636 828 curveto
+2664.42 825.78 2695.09 823.25 2723.7 820.83 curveto
+stroke
+0 0 0 edgecolor
+newpath 2724.06 824.31 moveto
+2733.73 819.98 lineto
+2723.47 817.34 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2724.06 824.31 moveto
+2733.73 819.98 lineto
+2723.47 817.34 lineto
+closepath stroke
+grestore
+% clippingBorders
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2148 810 117.46 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2065.5 806.3 moveto 165 (BinaryEdges: clippingBorders) alignedtext
+grestore
+% clipping->clippingBorders
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2059.2 864.59 moveto
+2074.94 855.09 2094.94 843.02 2111.97 832.74 curveto
+stroke
+0 0 0 edgecolor
+newpath 2113.82 835.71 moveto
+2120.57 827.55 lineto
+2110.2 829.72 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2113.82 835.71 moveto
+2120.57 827.55 lineto
+2110.2 829.72 lineto
+closepath stroke
+grestore
+% goalMaskStdClipping2
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2164 594 118.41 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2080.5 590.3 moveto 167 (Dilate: goalMaskStdClipping2) alignedtext
+grestore
+% goalMaskStdClipping->goalMaskStdClipping2
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1925.87 650.75 moveto
+1974.13 639.45 2041.68 623.64 2092.51 611.74 curveto
+stroke
+0 0 0 edgecolor
+newpath 2093.51 615.1 moveto
+2102.45 609.41 lineto
+2091.91 608.28 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2093.51 615.1 moveto
+2102.45 609.41 lineto
+2091.91 608.28 lineto
 closepath stroke
 grestore
 % clippingBordersMasked
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-897 666 120.36 18 ellipse_path stroke
+1623 738 120.36 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-812.5 662.3 moveto 169 (Mask: clippingBordersMasked) alignedtext
+1538.5 734.3 moveto 169 (Mask: clippingBordersMasked) alignedtext
 grestore
-% clippingBorders->clippingBordersMasked
+% clippingBordersMasked->goalMaskStdClipping
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 1011.44 720.76 moveto
-990.45 710.9 963.46 698.22 940.96 687.65 curveto
+newpath 1675.81 721.72 moveto
+1713.37 710.86 1763.96 696.23 1803.37 684.83 curveto
 stroke
 0 0 0 edgecolor
-newpath 942.17 684.35 moveto
-931.63 683.27 lineto
-939.19 690.69 lineto
+newpath 1804.5 688.14 moveto
+1813.14 682 lineto
+1802.56 681.42 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 942.17 684.35 moveto
-931.63 683.27 lineto
-939.19 690.69 lineto
-closepath stroke
-grestore
-% undistortMaskeEroded->clippingBordersMasked
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 840.72 791.87 moveto
-851.72 767.46 872.02 722.43 885 693.64 curveto
-stroke
-0 0 0 edgecolor
-newpath 888.33 694.74 moveto
-889.25 684.19 lineto
-881.95 691.87 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 888.33 694.74 moveto
-889.25 684.19 lineto
-881.95 691.87 lineto
+newpath 1804.5 688.14 moveto
+1813.14 682 lineto
+1802.56 681.42 lineto
 closepath stroke
 grestore
 % clippingBordersSliced
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-897 594 114.09 18 ellipse_path stroke
+1620 666 114.09 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-817 590.3 moveto 160 (Slicer: clippingBordersSliced) alignedtext
+1540 662.3 moveto 160 (Slicer: clippingBordersSliced) alignedtext
 grestore
 % clippingBordersMasked->clippingBordersSliced
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 897 647.7 moveto
-897 639.98 897 630.71 897 622.11 curveto
+newpath 1622.26 719.7 moveto
+1621.93 711.98 1621.53 702.71 1621.16 694.11 curveto
 stroke
 0 0 0 edgecolor
-newpath 900.5 622.1 moveto
-897 612.1 lineto
-893.5 622.1 lineto
+newpath 1624.66 693.95 moveto
+1620.73 684.1 lineto
+1617.66 694.25 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 900.5 622.1 moveto
-897 612.1 lineto
-893.5 622.1 lineto
+newpath 1624.66 693.95 moveto
+1620.73 684.1 lineto
+1617.66 694.25 lineto
+closepath stroke
+grestore
+% goalMaskStdClipping2->goalByROIStdClipping
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2253.21 582.14 moveto
+2355.08 569.74 2521.69 549.46 2630.85 536.17 curveto
+stroke
+0 0 0 edgecolor
+newpath 2631.4 539.62 moveto
+2640.91 534.94 lineto
+2630.56 532.68 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2631.4 539.62 moveto
+2640.91 534.94 lineto
+2630.56 532.68 lineto
+closepath stroke
+grestore
+% smallGoalColorDetection->goalMaskTocard
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1407.29 1079.85 moveto
+1418.75 1042.68 1445.97 954.44 1459.73 909.82 curveto
+stroke
+0 0 0 edgecolor
+newpath 1463.08 910.82 moveto
+1462.69 900.23 lineto
+1456.39 908.76 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1463.08 910.82 moveto
+1462.69 900.23 lineto
+1456.39 908.76 lineto
+closepath stroke
+grestore
+% ballROIManager->ballByROI
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2577.92 723.71 moveto
+2657.71 711.07 2776.9 692.2 2855.53 679.74 curveto
+stroke
+0 0 0 edgecolor
+newpath 2856.54 683.13 moveto
+2865.87 678.11 lineto
+2855.45 676.21 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2856.54 683.13 moveto
+2865.87 678.11 lineto
+2855.45 676.21 lineto
+closepath stroke
+grestore
+% ballROIDetector->ballROIManager
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2494 791.7 moveto
+2494 783.98 2494 774.71 2494 766.11 curveto
+stroke
+0 0 0 edgecolor
+newpath 2497.5 766.1 moveto
+2494 756.1 lineto
+2490.5 766.1 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2497.5 766.1 moveto
+2494 756.1 lineto
+2490.5 766.1 lineto
+closepath stroke
+grestore
+% sparkleOfHope->ballROIManager
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2768 794.92 moveto
+2712.25 783.54 2633.66 767.5 2574.94 755.52 curveto
+stroke
+0 0 0 edgecolor
+newpath 2575.45 752.05 moveto
+2564.95 753.48 lineto
+2574.05 758.91 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2575.45 752.05 moveto
+2564.95 753.48 lineto
+2574.05 758.91 lineto
+closepath stroke
+grestore
+% sparkleOfHopeDetection->sparkleOfHope
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3086.19 1008.69 moveto
+3102.33 1000.33 3118.85 988.38 3128 972 curveto
+3151.4 930.09 3158.75 900.86 3128 864 curveto
+3106.4 838.12 3030.42 824.84 2961.51 818.05 curveto
+stroke
+0 0 0 edgecolor
+newpath 2961.69 814.55 moveto
+2951.4 817.09 lineto
+2961.03 821.52 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2961.69 814.55 moveto
+2951.4 817.09 lineto
+2961.03 821.52 lineto
+closepath stroke
+grestore
+% clippingByBlobOpened
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2028 954 129.01 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1936.5 950.3 moveto 183 (Opening: clippingByBlobOpened) alignedtext
+grestore
+% clippingByBlob->clippingByBlobOpened
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2028.75 1007.7 moveto
+2028.64 999.98 2028.51 990.71 2028.39 982.11 curveto
+stroke
+0 0 0 edgecolor
+newpath 2031.89 982.05 moveto
+2028.24 972.1 lineto
+2024.89 982.15 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2031.89 982.05 moveto
+2028.24 972.1 lineto
+2024.89 982.15 lineto
+closepath stroke
+grestore
+% whiteDetectionClosing
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2061 1098 124.21 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1973.5 1094.3 moveto 175 (Closure: whiteDetectionClosing) alignedtext
+grestore
+% whiteDetectionClosing->clippingByBlob
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2053.09 1079.7 moveto
+2049.45 1071.73 2045.05 1062.1 2041.01 1053.26 curveto
+stroke
+0 0 0 edgecolor
+newpath 2044.16 1051.74 moveto
+2036.82 1044.1 lineto
+2037.79 1054.65 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2044.16 1051.74 moveto
+2036.82 1044.1 lineto
+2037.79 1054.65 lineto
+closepath stroke
+grestore
+% fieldColorOpening
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1731 1098 112.16 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1652.5 1094.3 moveto 157 (Opening: fieldColorOpening) alignedtext
+grestore
+% fieldColorOpening->clippingByBlob
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1791.66 1082.75 moveto
+1839.29 1071.56 1905.75 1055.95 1956.24 1044.09 curveto
+stroke
+0 0 0 edgecolor
+newpath 1957.18 1047.47 moveto
+1966.11 1041.77 lineto
+1955.57 1040.65 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1957.18 1047.47 moveto
+1966.11 1041.77 lineto
+1955.57 1040.65 lineto
+closepath stroke
+grestore
+% clippingByBlobOpened->clipping
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2028.99 935.7 moveto
+2029.43 927.98 2029.96 918.71 2030.45 910.11 curveto
+stroke
+0 0 0 edgecolor
+newpath 2033.95 910.29 moveto
+2031.02 900.1 lineto
+2026.96 909.89 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2033.95 910.29 moveto
+2031.02 900.1 lineto
+2026.96 909.89 lineto
+closepath stroke
+grestore
+% lutBallDetectionEroded
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2581 882 120.36 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2496.5 878.3 moveto 169 (Erode: lutBallDetectionEroded) alignedtext
+grestore
+% lutBallDetectionEroded->ballROIDetector
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2554.54 864.41 moveto
+2542.46 855.48 2528.38 844.3 2516.78 834.49 curveto
+stroke
+0 0 0 edgecolor
+newpath 2519.06 831.83 moveto
+2509.19 827.96 lineto
+2514.49 837.13 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2519.06 831.83 moveto
+2509.19 827.96 lineto
+2514.49 837.13 lineto
+closepath stroke
+grestore
+% lutBallDetectionEroded->ballROIDetector
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2565.82 864.05 moveto
+2555.56 855.03 2541.76 843.79 2528.95 833.99 curveto
+stroke
+0 0 0 edgecolor
+newpath 2530.82 831.01 moveto
+2520.73 827.79 lineto
+2526.61 836.6 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2530.82 831.01 moveto
+2520.73 827.79 lineto
+2526.61 836.6 lineto
+closepath stroke
+grestore
+% sparkleDetection->ballROIDetector
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2324.15 865.29 moveto
+2357 854.79 2400.39 840.92 2435.1 829.83 curveto
+stroke
+0 0 0 edgecolor
+newpath 2436.18 833.16 moveto
+2444.64 826.78 lineto
+2434.05 826.49 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2436.18 833.16 moveto
+2444.64 826.78 lineto
+2434.05 826.49 lineto
+closepath stroke
+grestore
+% lutMultifilter->ballByROI
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2769.06 1016.05 moveto
+2890.31 1004.4 3083.32 984.1 3094 972 curveto
+3104.59 960 3099.17 951.14 3094 936 curveto
+3061.36 840.34 2997.5 847.71 2955 756 curveto
+2945.89 736.35 2941.09 712.22 2938.59 694.05 curveto
+stroke
+0 0 0 edgecolor
+newpath 2942.07 693.61 moveto
+2937.38 684.11 lineto
+2935.12 694.46 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2942.07 693.61 moveto
+2937.38 684.11 lineto
+2935.12 694.46 lineto
+closepath stroke
+grestore
+% lutBallDetection
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2951 954 134.31 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2855.5 950.3 moveto 191 (LUTDependency: lutBallDetection) alignedtext
+grestore
+% lutMultifilter->lutBallDetection
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2730.15 1010.41 moveto
+2773.98 999.41 2834.29 984.28 2880.81 972.61 curveto
+stroke
+0 0 0 edgecolor
+newpath 2881.67 976 moveto
+2890.52 970.18 lineto
+2879.97 969.21 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2881.67 976 moveto
+2890.52 970.18 lineto
+2879.97 969.21 lineto
+closepath stroke
+grestore
+% lutFieldDetection
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2389 954 137.18 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2291 950.3 moveto 196 (LUTDependency: lutFieldDetection) alignedtext
+grestore
+% lutMultifilter->lutFieldDetection
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2613.02 1010.41 moveto
+2568.56 999.41 2507.38 984.28 2460.2 972.61 curveto
+stroke
+0 0 0 edgecolor
+newpath 2460.9 969.18 moveto
+2450.35 970.18 lineto
+2459.22 975.97 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2460.9 969.18 moveto
+2450.35 970.18 lineto
+2459.22 975.97 lineto
+closepath stroke
+grestore
+% ballByLutFast
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2672 954 126.61 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2582.5 950.3 moveto 179 (LUTDependency: ballByLutFast) alignedtext
+grestore
+% lutMultifilter->ballByLutFast
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2672 1007.7 moveto
+2672 999.98 2672 990.71 2672 982.11 curveto
+stroke
+0 0 0 edgecolor
+newpath 2675.5 982.1 moveto
+2672 972.1 lineto
+2668.5 982.1 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2675.5 982.1 moveto
+2672 972.1 lineto
+2668.5 982.1 lineto
+closepath stroke
+grestore
+% undistortMask->linesByROI
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 880.7 1007.97 moveto
+879.87 960.29 877.51 825.18 876.48 766.63 curveto
+stroke
+0 0 0 edgecolor
+newpath 879.98 766.24 moveto
+876.3 756.31 lineto
+872.98 766.37 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 879.98 766.24 moveto
+876.3 756.31 lineto
+872.98 766.37 lineto
+closepath stroke
+grestore
+% undistortMask->ballByROI
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 894.38 1007.86 moveto
+930.54 963.01 1035.51 842.17 1154 792 curveto
+1189.56 776.94 1455.67 724.73 1494 720 curveto
+1753.11 688.04 2546.14 672.99 2831.95 668.5 curveto
+stroke
+0 0 0 edgecolor
+newpath 2832.37 671.99 moveto
+2842.31 668.34 lineto
+2832.26 664.99 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2832.37 671.99 moveto
+2842.31 668.34 lineto
+2832.26 664.99 lineto
+closepath stroke
+grestore
+% undistortMaskDownscaled
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1667 954 137.18 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1569 950.3 moveto 196 (Rescale: undistortMaskDownscaled) alignedtext
+grestore
+% undistortMask->undistortMaskDownscaled
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 998.67 1014.52 moveto
+1146.24 1001.38 1397.9 978.97 1546.69 965.71 curveto
+stroke
+0 0 0 edgecolor
+newpath 1547.13 969.19 moveto
+1556.78 964.82 lineto
+1546.51 962.22 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1547.13 969.19 moveto
+1556.78 964.82 lineto
+1546.51 962.22 lineto
+closepath stroke
+grestore
+% undistortMask->linesByROIPermissive
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 871.84 1007.85 moveto
+853.4 974.98 808.62 902.9 751 864 curveto
+705.56 833.32 670.07 868.4 633 828 curveto
+605.65 798.2 614 779.45 614 739 curveto
+614 739 614 739 614 665 curveto
+614 625 614 578.65 614 550.08 curveto
+stroke
+0 0 0 edgecolor
+newpath 617.5 550.05 moveto
+614 540.05 lineto
+610.5 550.05 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 617.5 550.05 moveto
+614 540.05 lineto
+610.5 550.05 lineto
+closepath stroke
+grestore
+% whiteDetectionLargeDilated
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3101 738 137.21 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3003.5 734.3 moveto 195 (Dilate: whiteDetectionLargeDilated) alignedtext
+grestore
+% whiteDetectionLargeDilated->ballByROI
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3062.31 720.59 moveto
+3038.33 710.41 3007.38 697.28 2982.12 686.57 curveto
+stroke
+0 0 0 edgecolor
+newpath 2983.32 683.27 moveto
+2972.74 682.59 lineto
+2980.58 689.72 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2983.32 683.27 moveto
+2972.74 682.59 lineto
+2980.58 689.72 lineto
+closepath stroke
+grestore
+% undistortMaskDownscaled->clipping
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1741.3 938.75 moveto
+1804.52 926.63 1894.84 909.31 1957.97 897.2 curveto
+stroke
+0 0 0 edgecolor
+newpath 1958.7 900.62 moveto
+1967.86 895.3 lineto
+1957.38 893.75 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1958.7 900.62 moveto
+1967.86 895.3 lineto
+1957.38 893.75 lineto
+closepath stroke
+grestore
+% undistortMaskeEroded
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1595 810 116.48 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1513 806.3 moveto 164 (Erode: undistortMaskeEroded) alignedtext
+grestore
+% undistortMaskDownscaled->undistortMaskeEroded
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1667.31 935.88 moveto
+1666.95 917.15 1664.27 886.76 1652 864 curveto
+1645.94 852.76 1636.58 842.59 1627.19 834.24 curveto
+stroke
+0 0 0 edgecolor
+newpath 1629.27 831.41 moveto
+1619.36 827.66 lineto
+1624.77 836.78 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1629.27 831.41 moveto
+1619.36 827.66 lineto
+1624.77 836.78 lineto
+closepath stroke
+grestore
+% clippingBorders->clippingBordersMasked
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2062.61 797.56 moveto
+2048.7 795.7 2034.45 793.8 2021 792 curveto
+1918.13 778.27 1800.3 762.58 1719.7 751.86 curveto
+stroke
+0 0 0 edgecolor
+newpath 1719.94 748.36 moveto
+1709.57 750.51 lineto
+1719.02 755.3 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1719.94 748.36 moveto
+1709.57 750.51 lineto
+1719.02 755.3 lineto
+closepath stroke
+grestore
+% undistortMaskeEroded->clippingBordersMasked
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1601.92 791.7 moveto
+1605.07 783.81 1608.88 774.3 1612.38 765.55 curveto
+stroke
+0 0 0 edgecolor
+newpath 1615.69 766.69 moveto
+1616.16 756.1 lineto
+1609.19 764.09 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1615.69 766.69 moveto
+1616.16 756.1 lineto
+1609.19 764.09 lineto
+closepath stroke
+grestore
+% linesROIPermissive
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1620 594 141.53 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1519 590.3 moveto 202 (ROIFromBlobs: linesROIPermissive) alignedtext
+grestore
+% clippingBordersSliced->linesROIPermissive
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1620 647.7 moveto
+1620 639.98 1620 630.71 1620 622.11 curveto
+stroke
+0 0 0 edgecolor
+newpath 1623.5 622.1 moveto
+1620 612.1 lineto
+1616.5 622.1 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1623.5 622.1 moveto
+1620 612.1 lineto
+1616.5 622.1 lineto
+closepath stroke
+grestore
+% linesROIPermissive->linesByROIPermissive
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1519.37 581.34 moveto
+1500.96 579.41 1481.92 577.53 1464 576 curveto
+1214.24 554.62 922.5 538.31 753.92 529.74 curveto
+stroke
+0 0 0 edgecolor
+newpath 753.91 526.23 moveto
+743.74 529.22 lineto
+753.55 533.22 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 753.91 526.23 moveto
+743.74 529.22 lineto
+753.55 533.22 lineto
+closepath stroke
+grestore
+% linesByROIPermissive->clippingExperimentalPermissive
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 544.4 506.33 moveto
+492.67 495.42 421.82 480.48 366.78 468.88 curveto
+stroke
+0 0 0 edgecolor
+newpath 367.21 465.39 moveto
+356.7 466.75 lineto
+365.76 472.24 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 367.21 465.39 moveto
+356.7 466.75 lineto
+365.76 472.24 lineto
+closepath stroke
+grestore
+% fieldColorLarge->fieldColorOpening
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1719.71 1151.7 moveto
+1721.36 1143.98 1723.35 1134.71 1725.19 1126.11 curveto
+stroke
+0 0 0 edgecolor
+newpath 1728.66 1126.62 moveto
+1727.33 1116.1 lineto
+1721.82 1125.15 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1728.66 1126.62 moveto
+1727.33 1116.1 lineto
+1721.82 1125.15 lineto
+closepath stroke
+grestore
+% fieldColorLarge->linesByROIPermissive
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1671.15 1153.08 moveto
+1650.88 1144.34 1627.58 1131.99 1610 1116 curveto
+1554.16 1065.23 1540.81 1044.55 1520 972 curveto
+1515.59 956.62 1510.84 949.12 1520 936 curveto
+1546.56 897.95 1591.44 938.05 1618 900 curveto
+1627.16 886.88 1627.9 876.57 1618 864 curveto
+1575.86 810.47 1516.53 876.81 1469 828 curveto
+1440.78 799.02 1450 779.45 1450 739 curveto
+1450 739 1450 739 1450 665 curveto
+1450 591.64 1380.57 599.26 1311 576 curveto
+1212.92 543.2 936.48 530.58 762.66 525.81 curveto
+stroke
+0 0 0 edgecolor
+newpath 762.74 522.31 moveto
+752.65 525.54 lineto
+762.55 529.31 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 762.74 522.31 moveto
+752.65 525.54 lineto
+762.55 529.31 lineto
 closepath stroke
 grestore
 % linesROI
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-893 522 102.54 18 ellipse_path stroke
+745 810 102.54 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-822 518.3 moveto 142 (ROIFromBlobs: linesROI) alignedtext
-grestore
-% clippingBordersSliced->linesROI
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 896.01 575.7 moveto
-895.57 567.98 895.04 558.71 894.55 550.11 curveto
-stroke
-0 0 0 edgecolor
-newpath 898.04 549.89 moveto
-893.98 540.1 lineto
-891.05 550.29 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 898.04 549.89 moveto
-893.98 540.1 lineto
-891.05 550.29 lineto
-closepath stroke
+674 806.3 moveto 142 (ROIFromBlobs: linesROI) alignedtext
 grestore
 % linesROI->linesByROI
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 817.5 509.83 moveto
-803.7 507.84 789.42 505.83 776 504 curveto
-664.13 488.76 535.17 472.59 450.64 462.17 curveto
+newpath 775.38 792.76 moveto
+793.52 783.07 816.76 770.65 836.34 760.19 curveto
 stroke
 0 0 0 edgecolor
-newpath 450.91 458.68 moveto
-440.56 460.93 lineto
-450.06 465.62 lineto
+newpath 838.16 763.19 moveto
+845.33 755.39 lineto
+834.86 757.02 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 450.91 458.68 moveto
-440.56 460.93 lineto
-450.06 465.62 lineto
+newpath 838.16 763.19 moveto
+845.33 755.39 lineto
+834.86 757.02 lineto
 closepath stroke
 grestore
-% fieldColorLarge->linesByROI
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 359 503.7 moveto
-359 495.98 359 486.71 359 478.11 curveto
-stroke
-0 0 0 edgecolor
-newpath 362.5 478.1 moveto
-359 468.1 lineto
-355.5 478.1 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 362.5 478.1 moveto
-359 468.1 lineto
-355.5 478.1 lineto
-closepath stroke
-grestore
-% fieldColor->fieldColorOpeningGoal
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1844.56 1161.41 moveto
-1966.3 1151.44 2185.62 1133.19 2373 1116 curveto
-2393.4 1114.13 2415.15 1112.05 2436.1 1110.02 curveto
-stroke
-0 0 0 edgecolor
-newpath 2436.69 1113.47 moveto
-2446.31 1109.02 lineto
-2436.01 1106.51 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 2436.69 1113.47 moveto
-2446.31 1109.02 lineto
-2436.01 1106.51 lineto
-closepath stroke
-grestore
-% fieldColor->fieldColorOpening
-gsave
-1 setlinewidth
-0 0 0 edgecolor
-newpath 1678.24 1156.73 moveto
-1605.93 1144.53 1495.18 1125.85 1419.37 1113.06 curveto
-stroke
-0 0 0 edgecolor
-newpath 1419.82 1109.59 moveto
-1409.38 1111.38 lineto
-1418.66 1116.49 lineto
-closepath fill
-1 setlinewidth
-solid
-0 0 0 edgecolor
-newpath 1419.82 1109.59 moveto
-1409.38 1111.38 lineto
-1418.66 1116.49 lineto
-closepath stroke
-grestore
-% fieldColorDilated
+% clippingBlobs
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-1751 1098 98.19 18 ellipse_path stroke
+657 882 85.21 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-1683 1094.3 moveto 136 (Dilate: fieldColorDilated) alignedtext
+599.5 878.3 moveto 115 (Mask: clippingBlobs) alignedtext
 grestore
-% fieldColor->fieldColorDilated
+% clippingBlobs->linesROI
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 1751 1151.7 moveto
-1751 1143.98 1751 1134.71 1751 1126.11 curveto
+newpath 677.85 864.41 moveto
+689.28 855.32 703.61 843.92 716.1 833.99 curveto
 stroke
 0 0 0 edgecolor
-newpath 1754.5 1126.1 moveto
-1751 1116.1 lineto
-1747.5 1126.1 lineto
+newpath 718.34 836.68 moveto
+723.99 827.71 lineto
+713.99 831.2 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 1754.5 1126.1 moveto
-1751 1116.1 lineto
-1747.5 1126.1 lineto
+newpath 718.34 836.68 moveto
+723.99 827.71 lineto
+713.99 831.2 lineto
+closepath stroke
+grestore
+% newField->linesByROI
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1021.61 1079.77 moveto
+1029.37 1070.03 1037.95 1057.18 1042 1044 curveto
+1046.7 1028.71 1046.37 1023.39 1042 1008 curveto
+1041.03 1004.59 933.33 831.19 891.95 764.63 curveto
+stroke
+0 0 0 edgecolor
+newpath 894.82 762.62 moveto
+886.56 755.98 lineto
+888.87 766.32 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 894.82 762.62 moveto
+886.56 755.98 lineto
+888.87 766.32 lineto
+closepath stroke
+grestore
+% newField->fieldColorOpeningGoal
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1031.59 1080.41 moveto
+1045.36 1070.76 1062.11 1057.8 1075 1044 curveto
+1114.61 1001.58 1149.53 943.01 1168.02 909.46 curveto
+stroke
+0 0 0 edgecolor
+newpath 1171.31 910.75 moveto
+1173.01 900.29 lineto
+1165.16 907.4 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1171.31 910.75 moveto
+1173.01 900.29 lineto
+1165.16 907.4 lineto
+closepath stroke
+grestore
+% newFieldEroded
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+616 1026 94.34 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+551 1022.3 moveto 130 (Erode: newFieldEroded) alignedtext
+grestore
+% newField->newFieldEroded
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 937.17 1084.65 moveto
+868.6 1072.34 763.55 1053.48 692.43 1040.72 curveto
+stroke
+0 0 0 edgecolor
+newpath 692.65 1037.2 moveto
+682.19 1038.88 lineto
+691.41 1044.09 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 692.65 1037.2 moveto
+682.19 1038.88 lineto
+691.41 1044.09 lineto
 closepath stroke
 grestore
 % whiteDetection->whiteDetectionClosing
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 662.18 1152.76 moveto
-684.35 1142.82 712.92 1130 736.6 1119.37 curveto
+newpath 2061 1151.7 moveto
+2061 1143.98 2061 1134.71 2061 1126.11 curveto
 stroke
 0 0 0 edgecolor
-newpath 738.05 1122.56 moveto
-745.74 1115.27 lineto
-735.19 1116.17 lineto
+newpath 2064.5 1126.1 moveto
+2061 1116.1 lineto
+2057.5 1126.1 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 738.05 1122.56 moveto
-745.74 1115.27 lineto
-735.19 1116.17 lineto
+newpath 2064.5 1126.1 moveto
+2061 1116.1 lineto
+2057.5 1126.1 lineto
+closepath stroke
+grestore
+% whiteDetectionLarge->whiteDetectionLargeDilated
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3150.47 1081.78 moveto
+3171.54 1073.77 3193.34 1061.78 3208 1044 curveto
+3233.79 1012.72 3228 995.54 3228 955 curveto
+3228 955 3228 955 3228 881 curveto
+3228 827.72 3177.71 785.27 3140.43 761.11 curveto
+stroke
+0 0 0 edgecolor
+newpath 3142.07 758.01 moveto
+3131.74 755.66 lineto
+3138.35 763.94 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3142.07 758.01 moveto
+3131.74 755.66 lineto
+3138.35 763.94 lineto
 closepath stroke
 grestore
 % source
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-3484 1386 85.21 18 ellipse_path stroke
+3371 1386 85.21 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-3426.5 1382.3 moveto 115 (SourceLogs2: source) alignedtext
+3313.5 1382.3 moveto 115 (SourceLogs2: source) alignedtext
 grestore
 % source->undistort
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 3484 1367.7 moveto
-3484 1359.98 3484 1350.71 3484 1342.11 curveto
+newpath 3371 1367.7 moveto
+3371 1359.98 3371 1350.71 3371 1342.11 curveto
 stroke
 0 0 0 edgecolor
-newpath 3487.5 1342.1 moveto
-3484 1332.1 lineto
-3480.5 1342.1 lineto
+newpath 3374.5 1342.1 moveto
+3371 1332.1 lineto
+3367.5 1342.1 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 3487.5 1342.1 moveto
-3484 1332.1 lineto
-3480.5 1342.1 lineto
+newpath 3374.5 1342.1 moveto
+3371 1332.1 lineto
+3367.5 1342.1 lineto
+closepath stroke
+grestore
+% lutBallDetection->lutBallDetectionEroded
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2876.57 938.92 moveto
+2814.57 927.19 2726.41 910.51 2662.52 898.42 curveto
+stroke
+0 0 0 edgecolor
+newpath 2662.96 894.94 moveto
+2652.48 896.52 lineto
+2661.66 901.82 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2662.96 894.94 moveto
+2652.48 896.52 lineto
+2661.66 901.82 lineto
+closepath stroke
+grestore
+% newFieldDilated
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+657 954 95.31 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+591.5 950.3 moveto 131 (Dilate: newFieldDilated) alignedtext
+grestore
+% newFieldEroded->newFieldDilated
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 625.92 1008.05 moveto
+630.69 999.92 636.5 990 641.81 980.94 curveto
+stroke
+0 0 0 edgecolor
+newpath 644.85 982.67 moveto
+646.88 972.28 lineto
+638.81 979.14 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 644.85 982.67 moveto
+646.88 972.28 lineto
+638.81 979.14 lineto
+closepath stroke
+grestore
+% newFieldDilated->clippingBlobs
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 657 935.7 moveto
+657 927.98 657 918.71 657 910.11 curveto
+stroke
+0 0 0 edgecolor
+newpath 660.5 910.1 moveto
+657 900.1 lineto
+653.5 910.1 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 660.5 910.1 moveto
+657 900.1 lineto
+653.5 910.1 lineto
+closepath stroke
+grestore
+% ultraWhiteDetectionNoBall
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+388 954 155 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+276.5 950.3 moveto 223 (BlobNoBall: ultraWhiteDetectionNoBall) alignedtext
+grestore
+% ultraWhiteDetectionNoBall->clippingBlobs
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 448.03 937.38 moveto
+491.94 925.95 551.31 910.5 595.54 898.99 curveto
+stroke
+0 0 0 edgecolor
+newpath 596.51 902.36 moveto
+605.31 896.45 lineto
+594.75 895.58 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 596.51 902.36 moveto
+605.31 896.45 lineto
+594.75 895.58 lineto
+closepath stroke
+grestore
+% ultraWhiteDetectionDilated
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+368 1026 135.28 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+272 1022.3 moveto 192 (Dilate: ultraWhiteDetectionDilated) alignedtext
+grestore
+% ultraWhiteDetectionDilated->ultraWhiteDetectionNoBall
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 372.94 1007.7 moveto
+375.17 999.9 377.85 990.51 380.33 981.83 curveto
+stroke
+0 0 0 edgecolor
+newpath 383.73 982.68 moveto
+383.11 972.1 lineto
+377 980.76 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 383.73 982.68 moveto
+383.11 972.1 lineto
+377 980.76 lineto
+closepath stroke
+grestore
+% ultraWhiteDetectionEroded
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+751 1098 133.33 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+656 1094.3 moveto 190 (Erode: ultraWhiteDetectionEroded) alignedtext
+grestore
+% ultraWhiteDetectionEroded->ultraWhiteDetectionDilated
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 675.33 1083.17 moveto
+611.67 1071.54 520.66 1054.9 454.2 1042.75 curveto
+stroke
+0 0 0 edgecolor
+newpath 454.63 1039.28 moveto
+444.17 1040.92 lineto
+453.37 1046.16 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 454.63 1039.28 moveto
+444.17 1040.92 lineto
+453.37 1046.16 lineto
+closepath stroke
+grestore
+% ultraWhiteDetection->ultraWhiteDetectionEroded
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 789.65 1152.05 moveto
+783.61 1143.75 776.2 1133.58 769.49 1124.38 curveto
+stroke
+0 0 0 edgecolor
+newpath 772.3 1122.3 moveto
+763.59 1116.28 lineto
+766.65 1126.42 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 772.3 1122.3 moveto
+763.59 1116.28 lineto
+766.65 1126.42 lineto
+closepath stroke
+grestore
+% tempMarkerLine
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3669 1098 120.36 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3584.5 1094.3 moveto 169 (TempCenter: tempMarkerLine) alignedtext
+grestore
+% tempMarkerOpening
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3669 1170 120.36 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3584.5 1166.3 moveto 169 (Opening: tempMarkerOpening) alignedtext
+grestore
+% tempMarkerOpening->tempMarkerLine
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3669 1151.7 moveto
+3669 1143.98 3669 1134.71 3669 1126.11 curveto
+stroke
+0 0 0 edgecolor
+newpath 3672.5 1126.1 moveto
+3669 1116.1 lineto
+3665.5 1126.1 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3672.5 1126.1 moveto
+3669 1116.1 lineto
+3665.5 1126.1 lineto
+closepath stroke
+grestore
+% tempMarker->tempMarkerOpening
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3674.27 1223.7 moveto
+3673.5 1215.98 3672.57 1206.71 3671.71 1198.11 curveto
+stroke
+0 0 0 edgecolor
+newpath 3675.19 1197.71 moveto
+3670.71 1188.1 lineto
+3668.22 1198.4 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3675.19 1197.71 moveto
+3670.71 1188.1 lineto
+3668.22 1198.4 lineto
 closepath stroke
 grestore
 % cannyOfHope
 gsave
 1 setlinewidth
 0 0 0 nodecolor
-3806 1170 87.61 18 ellipse_path stroke
+3895 1170 87.61 18 ellipse_path stroke
 0 0 0 nodecolor
 14 /Times-Roman set_font
-3746.5 1166.3 moveto 119 (Canny: cannyOfHope) alignedtext
+3835.5 1166.3 moveto 119 (Canny: cannyOfHope) alignedtext
 grestore
 % Y->cannyOfHope
 gsave
 1 setlinewidth
 0 0 0 edgecolor
-newpath 3806 1223.7 moveto
-3806 1215.98 3806 1206.71 3806 1198.11 curveto
+newpath 3889.73 1223.7 moveto
+3890.5 1215.98 3891.43 1206.71 3892.29 1198.11 curveto
 stroke
 0 0 0 edgecolor
-newpath 3809.5 1198.1 moveto
-3806 1188.1 lineto
-3802.5 1198.1 lineto
+newpath 3895.78 1198.4 moveto
+3893.29 1188.1 lineto
+3888.81 1197.71 lineto
 closepath fill
 1 setlinewidth
 solid
 0 0 0 edgecolor
-newpath 3809.5 1198.1 moveto
-3806 1188.1 lineto
-3802.5 1198.1 lineto
+newpath 3895.78 1198.4 moveto
+3893.29 1188.1 lineto
+3888.81 1197.71 lineto
 closepath stroke
 grestore
 endpage
@@ -2428,7 +3204,7 @@ grestore
 %%EndPage: 1
 %%Trailer
 %%Pages: 1
-%%BoundingBox: 36 36 5126 1448
+%%BoundingBox: 36 36 5208 1448
 end
 restore
 %%EOF
