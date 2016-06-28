@@ -2,8 +2,28 @@
     "Dynaban64": {
         "devices": [
             {
-                "id": 6,
-                "name": "right_knee",
+                "id": 38,
+                "name": "left_ankle_roll",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "inverse": true,
+                    "zero": 0.0
+                }
+            },
+            {
+                "id": 15,
+                "name": "left_knee",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "inverse": true,
+                    "zero": 0.0
+                }
+            },
+            {
+                "id": 103,
+                "name": "right_hip_yaw",
                 "parameters": {
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
@@ -22,8 +42,8 @@
                 }
             },
             {
-                "id": 36,
-                "name": "right_hip_pitch",
+                "id": 6,
+                "name": "right_knee",
                 "parameters": {
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
@@ -38,6 +58,16 @@
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
                     "inverse": true,
+                    "zero": 0.0
+                }
+            },
+            {
+                "id": 36,
+                "name": "right_hip_pitch",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "inverse": false,
                     "zero": 0.0
                 }
             },
@@ -89,36 +119,6 @@
                     "angleLimitCWParameter": 0.0,
                     "inverse": true,
                     "zero": 2.5
-                }
-            },
-            {
-                "id": 38,
-                "name": "left_ankle_roll",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": true,
-                    "zero": 0.0
-                }
-            },
-            {
-                "id": 15,
-                "name": "left_knee",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": true,
-                    "zero": 0.0
-                }
-            },
-            {
-                "id": 103,
-                "name": "right_hip_yaw",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": false,
-                    "zero": 0.0
                 }
             }
         ],
@@ -266,8 +266,8 @@
                 "id": 124,
                 "name": "right_pressure",
                 "parameters": {
-                    "gain_0": 1.0,
-                    "gain_1": -1.0,
+                    "gain_0": -1.0,
+                    "gain_1": 1.0,
                     "gain_2": 1.0,
                     "gain_3": -1.0,
                     "x_0": 0.0,
@@ -278,10 +278,10 @@
                     "y_1": 0.0,
                     "y_2": 0.0,
                     "y_3": 0.0,
-                    "zero_0": 1127011.75,
-                    "zero_1": 1379253.75,
-                    "zero_2": -177020.40625,
-                    "zero_3": 366001.96875
+                    "zero_0": 497599.8125,
+                    "zero_1": 2033047.875,
+                    "zero_2": -142864.390625,
+                    "zero_3": 342374.5
                 }
             },
             {
@@ -300,10 +300,10 @@
                     "y_1": 0.0,
                     "y_2": 0.0,
                     "y_3": 0.0,
-                    "zero_0": 824859.875,
-                    "zero_1": 430045.59375,
-                    "zero_2": 703131.25,
-                    "zero_3": 1242489.0
+                    "zero_0": 974859.625,
+                    "zero_1": 156425.53125,
+                    "zero_2": 706625.0625,
+                    "zero_3": 1192610.0
                 }
             }
         ],

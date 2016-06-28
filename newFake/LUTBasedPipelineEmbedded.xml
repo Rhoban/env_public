@@ -6,7 +6,7 @@
 <benchmarkDetail>0</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>false</readFromLog>
-<pathToLog>Logs/VGA_Dribble/lowLevel.log</pathToLog>
+<pathToLog>Logs/leipz1/lowLevel.log</pathToLog>
 <embedded>true</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -454,7 +454,7 @@
     <paramInts>
       <paramInt>
 	<name>tagLevel</name>
-	<value>1</value>
+	<value>0</value>
       </paramInt>
       <paramInt>
 	<name>whiteMinY</name>
@@ -493,7 +493,7 @@
     <paramInts>
       <paramInt>
 	<name>tagLevel</name>
-	<value>1</value>
+	<value>0</value>
       </paramInt>
       <paramInt>
 	<name>whiteMinY</name>
@@ -521,6 +521,31 @@
       <paramInt>
 	<name>pitchLimit</name>
 	<value>35</value>
+      </paramInt>
+    </paramInts>
+  </filter>
+  <filter>
+    <className>Opening</className>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>clippingByBlob</dependency>
+    </dependencies>
+    <name>clippingByBlobOpened</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>Shape</name>
+	<value>0</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel width</name>
+	<value>3</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel height</name>
+	<value>3</value>
       </paramInt>
     </paramInts>
   </filter>
@@ -557,7 +582,7 @@
     <paramInts>
       <paramInt>
 	<name>tagLevel</name>
-	<value>1</value>
+	<value>0</value>
       </paramInt>
     </paramInts>
   </filter>
@@ -660,7 +685,7 @@
     <paramInts>
       <paramInt>
 	<name>tagLevel</name>
-	<value>1</value>
+	<value>0</value>
       </paramInt>
       <paramInt>
 	<name>Epochs</name>
@@ -735,7 +760,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>clippingByBlob</dependency>
+      <dependency>clippingByBlobOpened</dependency>
       <dependency>undistortMaskDownscaled</dependency>
     </dependencies>
     <name>clipping</name>
@@ -855,7 +880,7 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>30</value>
+	<value>40</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
@@ -1283,7 +1308,7 @@
     <paramInts>
       <paramInt>
 	<name>tagLevel</name>
-	<value>1</value>
+	<value>0</value>
       </paramInt>
     </paramInts>
   </filter>
@@ -1361,8 +1386,8 @@
     <graphics>false</graphics>
 </debugLevel>
 <dependencies/>
-<device>/dev/video0</device>
-<deviceName>/dev/hidraw0</deviceName>
+<device>/dev/camera</device>
+<deviceName>/dev/cameraraw</deviceName>
 <name>source</name>
 <isSeecam>1</isSeecam>
 <wbRed>60</wbRed>
