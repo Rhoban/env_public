@@ -5,7 +5,7 @@
 <benchmarkDetail>5</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>Logs/leipz1/lowLevel.log</pathToLog>
+<pathToLog>Logs/leipz3/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -1680,6 +1680,173 @@
     </paramInts>
   </filter>
   <filter>
+    <className>Mask</className>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>whiteGoalDetection</dependency>
+      <dependency>ultraWhiteDetectionDilated</dependency>
+    </dependencies>
+    <name>clippingBlobsGoals</name>
+    <paramFloats/>
+    <paramInts/>
+    <paramPairInt/>
+  </filter>
+  <filter>
+    <className>ROIFromBlobs</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>clippingBlobsGoals</dependency>
+    </dependencies>
+    <name>linesROIGoals</name>
+    <paramFloats/>
+    <paramInts/>
+  </filter>
+  <filter>
+    <className>Erode</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>linesROIGoals</dependency>
+    </dependencies>
+    <name>linesROIGoalsEroded</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>Shape</name>
+	<value>0</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel height</name>
+	<value>2</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel width</name>
+	<value>2</value>
+      </paramInt>
+    </paramInts>
+    <paramPairInt/>
+  </filter>
+  <filter>
+    <className>Dilate</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>linesROIGoalsEroded</dependency>
+    </dependencies>
+    <name>linesROIGoalsDilated</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>Shape</name>
+	<value>0</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel height</name>
+	<value>5</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel width</name>
+	<value>5</value>
+      </paramInt>
+    </paramInts>
+    <paramPairInt/>
+  </filter>
+  <filter>
+    <className>Mask</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>linesROIGoalsDilated</dependency>
+      <dependency>clippingBordersMasked</dependency>
+    </dependencies>
+    <name>goalMaskByROI</name>
+    <paramFloats/>
+    <paramInts/>
+    <paramPairInt/>
+  </filter>
+  <filter>
+    <className>Dilate</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>goalMaskByROI</dependency>
+    </dependencies>
+    <name>goalMaskByROIClipping2</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>Shape</name>
+	<value>1</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel height</name>
+	<value>11</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel width</name>
+	<value>5</value>
+      </paramInt>
+    </paramInts>
+    <paramPairInt/>
+  </filter>
+  <filter>
+    <className>GoalByROISimple</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>undistort</dependency>
+      <dependency>linesROIGoalsDilated</dependency>
+    </dependencies>
+    <name>goalByROIStdClipping2</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>goalMinY</name>
+	<value>90</value>
+      </paramInt>
+      <paramInt>
+	<name>goalMinV</name>
+	<value>0</value>
+      </paramInt>
+      <paramInt>
+	<name>kHeight</name>
+	<value>20</value>
+      </paramInt>
+      <paramInt>
+	<name>kWidth</name>
+	<value>3</value>
+      </paramInt>
+    </paramInts>
+    <paramPairInt/>
+  </filter>
+  <filter>
     <className>BlobNoBall</className>
     <debugLevel>
       <graphics>false</graphics>
@@ -1708,7 +1875,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>Logs/leipz1/images.csv</imagesFile>
+    <imagesFile>Logs/leipz3/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
