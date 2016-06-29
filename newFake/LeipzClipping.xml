@@ -1,11 +1,11 @@
 <?xml version="1.0" ?><LocalisationTest>
 <ballResampling>0.0</ballResampling>
-<angularPitchTolerance>4.5</angularPitchTolerance>
+<angularPitchTolerance>2</angularPitchTolerance>
 <benchmark>false</benchmark>
 <benchmarkDetail>5</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>Logs/leipz1/lowLevel.log</pathToLog>
+<pathToLog>Logs/alphaBanDeplacement/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -692,7 +692,7 @@
       </paramInt>
       <paramInt>
 	<name>minScore</name>
-	<value>30</value>
+	<value>50</value>
       </paramInt>
       <paramInt>
 	<name>reflectionMinY</name>
@@ -1415,9 +1415,10 @@
     <debugLevel>
       <graphics>true</graphics>
     </debugLevel>
-    <_pathToLUT>lutk2.bin</_pathToLUT>
+    <_pathToLUT>lutk1_new.bin</_pathToLUT>
     <_tagCode1>BALL</_tagCode1>
     <_tagCode2>FIELD</_tagCode2>
+    <_tagCode3>GOAL</_tagCode3>
     <dependencies>
       <dependency>srcDownscaled</dependency>
     </dependencies>
@@ -1435,6 +1436,28 @@
       <graphics>true</graphics>
     </debugLevel>
     <_tagCode>BALL</_tagCode>
+    <dependencies>
+      <dependency>lutMultifilter</dependency>
+    </dependencies>
+  </filter>
+    <filter>
+    <className>LUTDependency</className>
+    <name>lutGoalDetection</name>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <_tagCode>GOAL</_tagCode>
+    <dependencies>
+      <dependency>lutMultifilter</dependency>
+    </dependencies>
+  </filter>
+  <filter>
+    <className>LUTDependency</className>
+    <name>lutFieldDetection</name>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <_tagCode>FIELD</_tagCode>
     <dependencies>
       <dependency>lutMultifilter</dependency>
     </dependencies>
@@ -1467,17 +1490,6 @@
       </paramInt>
     </paramInts>
     <paramPairInt/>
-  </filter>
-  <filter>
-    <className>LUTDependency</className>
-    <name>lutFieldDetection</name>
-    <debugLevel>
-      <graphics>false</graphics>
-    </debugLevel>
-    <_tagCode>FIELD</_tagCode>
-    <dependencies>
-      <dependency>lutMultifilter</dependency>
-    </dependencies>
   </filter>
   <filter>
     <className>ColorBounding</className>
@@ -1875,7 +1887,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>Logs/leipz1/images.csv</imagesFile>
+    <imagesFile>Logs/alphaBanDeplacement/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
