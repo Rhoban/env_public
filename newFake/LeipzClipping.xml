@@ -1,6 +1,6 @@
 <?xml version="1.0" ?><LocalisationTest>
 <ballResampling>0.0</ballResampling>
-<angularPitchTolerance>5.0</angularPitchTolerance>
+<angularPitchTolerance>4.5</angularPitchTolerance>
 <benchmark>false</benchmark>
 <benchmarkDetail>5</benchmarkDetail>
 <gpuOn>false</gpuOn>
@@ -57,7 +57,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingExperimental</dependency>
@@ -71,7 +71,7 @@
   <filter>
     <className>MaskOr</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingExperimental</dependency>
@@ -550,7 +550,7 @@
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
-      <dependency>clippingOr</dependency>
+      <dependency>clippingAnd</dependency>
       <dependency>lutBallDetectionEroded</dependency>
       <dependency>lutBallDetectionEroded</dependency>
       <dependency>sparkleDetection</dependency>
