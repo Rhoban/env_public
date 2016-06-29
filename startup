@@ -1,0 +1,88 @@
+#!/usr/bin/php
+<?php
+
+function msg($phase, $msg) {
+    echo "\n\e[1m$phase: $msg\e[m\n";
+}
+function question($phase, $msg) {
+    while (true) {
+        echo "\n\e[1m$phase: $msg\e[m (y/n) > ";
+        flush();
+        $m = trim(readline());
+        if ($m == 'y') return true;
+        if ($m == 'n') return false;
+        echo "You should answer 'y' or 'n'\n";
+    }
+}
+function cmd($cmd) {
+    $result = trim(`rhio localhost $cmd`);
+    echo "$result\n";
+    return $result;
+}
+
+while (true) {
+    msg('CHECK', 'Checking that all devices are present');
+    $r = cmd('rhalCheck');
+    if (strpos($r, 'All devices are present') === false) {
+        if (question("\e[31mERROR", 'There was errors in the check, continue anyway?')) {
+            break;
+        }
+    } else {
+        break;
+    }
+}
+
+while (true) {
+    msg('CHECK', 'Checking that there is info from the referee');
+    $r = cmd('playing');
+    if (strpos($r, 'Referee time: -1') !== false) {
+        if (question("\e[31mERROR", 'No info from the referee (Did you wifi.sh?), continue anyway?')) {
+            break;
+        }
+    } else {
+        break;
+    }
+}
+
+msg('INIT', 'Press enter to run init');
+readline();
+cmd('init');
+
+msg('INIT', 'Press enter to run the walk');
+readline();
+cmd('walk');
+
+msg('ATTACKHERE', 'Put me on the field, facing the opponent goals and press enter');
+readline();
+cmd('attackHere');
+
+if (question('CONFIG', 'Am I a goal keeper?')) {
+    cmd('/moves/robocup/goalKeeper=1');
+    cmd('/moves/robocup/freeKicker=0');
+} else {
+    cmd('/moves/robocup/goalKeeper=0');
+    
+    if (question('CONFIG', 'Am I the free kicker?')) {
+        cmd('/moves/robocup/freeKicker=1');
+    } else {
+        cmd('/moves/robocup/freeKicker=0');
+    }
+}
+
+if (question('CONFIG', 'Am I auto placing?')) {
+    cmd('/moves/robocup/autoKickOff=1');
+} else {
+    cmd('/moves/robocup/autoKickOff=0');
+}
+
+msg("\e[31mCONFIG", 'TODO: Commands to choose where I should be placed!');
+
+msg('INFO', 'Checking team radius');
+cmd('/moves/approach/teamRadius');
+
+msg('GO', 'Press enter to run robocup');
+readline();
+cmd('robocup');
+
+msg("\e[32mYODA", 'May the force be with you');
+echo "\n";
