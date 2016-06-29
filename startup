@@ -2,20 +2,22 @@
 <?php
 
 function msg($phase, $msg) {
-    echo "\e[1m$phase: $msg\e[m\n";
+    echo "\n\e[1m$phase: $msg\e[m\n";
+}
+function question($phase, $msg) {
+    while (true) {
+        echo "\n\e[1m$phase: $msg\e[m > ";
+        flush();
+        $m = trim(readline());
+        if ($m == 'y') return true;
+        if ($m == 'n') return false;
+        echo "You should answer 'y' or 'n'\n";
+    }
 }
 function cmd($cmd) {
     $result = trim(`rhio localhost $cmd`);
     echo "$result\n";
-}
-function yesno()
-{
-    while (true) {
-        $m = trim(readline());
-        if ($m == 'y') return true;
-        if ($m == 'n') return false;
-        echo "> You should answer 'y' or 'n'\n";
-    }
+    return $result;
 }
 
 msg('CHECK', 'Running a check');
@@ -25,27 +27,24 @@ msg('INIT', 'Press enter to run the walk');
 readline();
 cmd('walk');
 
-msg('ATTACKHERE', 'Put me on the field, facing the opponent goals');
+msg('ATTACKHERE', 'Put me on the field, facing the opponent goals and press enter');
 readline();
 cmd('attackHere');
 
-msg('CONFIG', 'Am I a goal keeper?');
-if (yesno()) {
+if (question('CONFIG', 'Am I a goal keeper?')) {
     cmd('/moves/robocup/goalKeeper=1');
     cmd('/moves/robocup/freeKicker=0');
 } else {
     cmd('/moves/robocup/goalKeeper=0');
     
-    msg('CONFIG', 'Am I the free kicker?');
-    if (yesno()) {
+    if (question('CONFIG', 'Am I the free kicker?')) {
         cmd('/moves/robocup/freeKicker=1');
     } else {
         cmd('/moves/robocup/freeKicker=0');
     }
 }
 
-msg('CONFIG', 'Am I auto placing?');
-if (yesno()) {
+if (question('CONFIG', 'Am I auto placing?')) {
     cmd('/moves/robocup/autoKickOff=1');
 } else {
     cmd('/moves/robocup/autoKickOff=0');
@@ -56,8 +55,16 @@ msg('CONFIG', 'TODO: Commands to choose where I should be placed!');
 msg('INFO', 'Checking team radius');
 cmd('/moves/approach/teamRadius');
 
-msg('INFO', 'Checking that there is info from the referee');
-$r = cmd('playing');
-if (strpos($r, 'Referee time: -1') !== false) {
-
+while (true) {
+    msg('INFO', 'Checking that there is info from the referee, false');
+    $r = cmd('playing');
+    if (strpos($r, 'Referee time: -1') !== false) {
+        if (!question("\e[31mERROR", 'No info from the referee (Did you wifi.sh?)! Try again?')) {
+            break;
+        }
+    } else {
+        break;
+    }
 }
+
+msg("\e[34m", 'May the force be with you');
