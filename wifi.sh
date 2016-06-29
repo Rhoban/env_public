@@ -24,7 +24,6 @@ fi
 echo "Connecting to $ESSID with $IP..."
 sudo killall wpa_supplicant ;
 sudo ifconfig wlan0 down ; 
-sleep 1 ; 
 sudo ifconfig wlan0 up ; 
 sudo iwlist wlan0 scan|grep $ESSID ;
 sudo iwconfig wlan0 mode managed essid $ESSID;

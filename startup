@@ -35,7 +35,8 @@ while (true) {
 while (true) {
     msg('CHECK', 'Checking that there is info from the referee');
     $r = cmd('playing');
-    if (strpos($r, 'Referee time: -1') !== false) {
+    preg_match('#Referee last update: (.+)\.$#mUsi', $r, $match);
+    if ($match && (float)($match[1]) > 5) {
         if (question("\e[31mERROR", 'No info from the referee (Did you wifi.sh?), continue anyway?')) {
             break;
         }
@@ -59,20 +60,54 @@ cmd('attackHere');
 if (question('CONFIG', 'Am I a goal keeper?')) {
     cmd('/moves/robocup/goalKeeper=1');
     cmd('/moves/robocup/freeKicker=0');
+    cmd('/moves/robocup/autoKickOff=0');
 } else {
     cmd('/moves/robocup/goalKeeper=0');
     
+    $position = '';
     if (question('CONFIG', 'Am I the free kicker?')) {
         cmd('/moves/robocup/freeKicker=1');
+        $position = 'B';
     } else {
         cmd('/moves/robocup/freeKicker=0');
     }
-}
 
-if (question('CONFIG', 'Am I auto placing?')) {
-    cmd('/moves/robocup/autoKickOff=1');
-} else {
-    cmd('/moves/robocup/autoKickOff=0');
+    $positions = array(
+        'A' => [
+            -150, 300, -90,
+            -150, 100
+        ],
+        'B' => [
+            -100, -300, 90,
+            -100, -100
+        ],
+        'C' => [
+            -200, -300, 90,
+            -300, -100
+        ],
+    );
+    if (question('CONFIG', 'Am I auto placing?')) {
+        cmd('/moves/robocup/autoKickOff=1');
+
+        while (!$position) {
+            msg('PLACEMENT', 'Where should I be placed (A or C)?');
+            $position = trim(readline());
+            if ($position != 'A' && $position != 'C') {
+                $position='';
+                echo "You should type 'A' or 'C'\n";
+            }
+        }
+    } else {
+        cmd('/moves/robocup/autoKickOff=0');
+    }
+
+    msg('INFO', 'I am the '.$position.' player');
+    $c = $positions[$position];
+    cmd('/moves/robocup/autoStartX='.$c[0]);
+    cmd('/moves/robocup/autoStartY='.$c[1]);
+    cmd('/moves/robocup/autoStartAzimuth='.$c[2]);
+    cmd('/moves/robocup/autoTargetX='.$c[3]);
+    cmd('/moves/robocup/autoTargetY='.$c[4]);
 }
 
 msg("\e[31mCONFIG", 'TODO: Commands to choose where I should be placed!');
