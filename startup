@@ -6,7 +6,7 @@ function msg($phase, $msg) {
 }
 function question($phase, $msg) {
     while (true) {
-        echo "\n\e[1m$phase: $msg\e[m > ";
+        echo "\n\e[1m$phase: $msg\e[m (y/n) > ";
         flush();
         $m = trim(readline());
         if ($m == 'y') return true;
@@ -20,8 +20,29 @@ function cmd($cmd) {
     return $result;
 }
 
-msg('CHECK', 'Running a check');
-cmd('rhalCheck');
+while (true) {
+    msg('CHECK', 'Checking that all devices are present');
+    $r = cmd('rhalCheck');
+    if (strpos($r, 'All devices are present') === false) {
+        if (question("\e[31mERROR", 'There was errors in the check, continue anyway?')) {
+            break;
+        }
+    } else {
+        break;
+    }
+}
+
+while (true) {
+    msg('CHECK', 'Checking that there is info from the referee');
+    $r = cmd('playing');
+    if (strpos($r, 'Referee time: -1') !== false) {
+        if (question("\e[31mERROR", 'No info from the referee (Did you wifi.sh?), continue anyway?')) {
+            break;
+        }
+    } else {
+        break;
+    }
+}
 
 msg('INIT', 'Press enter to run the walk');
 readline();
@@ -50,21 +71,13 @@ if (question('CONFIG', 'Am I auto placing?')) {
     cmd('/moves/robocup/autoKickOff=0');
 }
 
-msg('CONFIG', 'TODO: Commands to choose where I should be placed!');
+msg("\e[31mCONFIG", 'TODO: Commands to choose where I should be placed!');
 
 msg('INFO', 'Checking team radius');
 cmd('/moves/approach/teamRadius');
 
-while (true) {
-    msg('INFO', 'Checking that there is info from the referee, false');
-    $r = cmd('playing');
-    if (strpos($r, 'Referee time: -1') !== false) {
-        if (!question("\e[31mERROR", 'No info from the referee (Did you wifi.sh?)! Try again?')) {
-            break;
-        }
-    } else {
-        break;
-    }
-}
+msg('GO', 'Running robocup');
+cmd('robocup');
 
-msg("\e[34m", 'May the force be with you');
+msg("\e[32mYODA", 'May the force be with you');
+echo "\n";
