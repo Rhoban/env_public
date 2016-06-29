@@ -1,11 +1,11 @@
 <?xml version="1.0" ?><LocalisationTest>
 <ballResampling>0.0</ballResampling>
-<angularPitchTolerance>2.0</angularPitchTolerance>
+<angularPitchTolerance>4.5</angularPitchTolerance>
 <benchmark>false</benchmark>
 <benchmarkDetail>5</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>Logs/leipz3/lowLevel.log</pathToLog>
+<pathToLog>Logs/leipz1/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -57,7 +57,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingExperimental</dependency>
@@ -71,7 +71,7 @@
   <filter>
     <className>MaskOr</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingExperimental</dependency>
@@ -231,7 +231,7 @@
     </debugLevel>
     <dependencies>
       <dependency>goalMaskTocard</dependency>
-      <dependency>clipping</dependency>
+      <dependency>clippingAnd</dependency>
     </dependencies>
     <name>goalMaskTocardClipped</name>
     <paramFloats/>
@@ -358,7 +358,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -416,7 +416,7 @@
   <filter>
     <className>BallROIManager</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -425,7 +425,7 @@
       <dependency>undistort</dependency>
       <dependency>ballROIDetector</dependency>
       <dependency>sparkleOfHope</dependency>
-      <dependency>clipping</dependency>
+      <dependency>clippingOr</dependency>
     </dependencies>
     <name>ballROIManager</name>
     <paramFloats>
@@ -456,14 +456,14 @@
   <filter>
     <className>SparkleOfHope</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
-      <dependency>clipping</dependency>
+      <dependency>clippingOr</dependency>
       <dependency>sparkleOfHopeDetection</dependency>
     </dependencies>
     <name>sparkleOfHope</name>
@@ -543,14 +543,14 @@
   <filter>
     <className>BallROIDetector</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
-      <dependency>clipping</dependency>
+      <dependency>clippingAnd</dependency>
       <dependency>lutBallDetectionEroded</dependency>
       <dependency>lutBallDetectionEroded</dependency>
       <dependency>sparkleDetection</dependency>
@@ -614,7 +614,7 @@
   <filter>
     <className>BallByROI</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -745,7 +745,7 @@
   <filter>
     <className>ClippingRules</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -984,6 +984,43 @@
     </paramInts>
   </filter>
   <filter>
+    <className>ColorBounding</className>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>srcDownscaled</dependency>
+    </dependencies>
+    <name>fieldColor</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>minY</name>
+	<value>40</value>
+      </paramInt>
+      <paramInt>
+	<name>maxY</name>
+	<value>115</value>
+      </paramInt>
+      <paramInt>
+	<name>minU</name>
+	<value>100</value>
+      </paramInt>
+      <paramInt>
+	<name>maxU</name>
+	<value>127</value>
+      </paramInt>
+      <paramInt>
+	<name>minV</name>
+	<value>110</value>
+      </paramInt>
+      <paramInt>
+	<name>maxV</name>
+	<value>137</value>
+      </paramInt>
+    </paramInts>
+  </filter>
+  <filter>
     <className>LinesByROI</className>
     <debugLevel>
       <graphics>false</graphics>
@@ -1079,7 +1116,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1211,7 +1248,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1248,7 +1285,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1291,7 +1328,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>fieldColorLarge</dependency>
+      <dependency>fieldColor</dependency>
     </dependencies>
     <name>fieldColorOpening</name>
     <paramFloats/>
@@ -1376,9 +1413,9 @@
     <className>LUTMultifilter</className>
     <name>lutMultifilter</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
-    <_pathToLUT>daddyLUT80.bin</_pathToLUT>
+    <_pathToLUT>lutk2.bin</_pathToLUT>
     <_tagCode1>BALL</_tagCode1>
     <_tagCode2>FIELD</_tagCode2>
     <dependencies>
@@ -1395,7 +1432,7 @@
     <className>LUTDependency</className>
     <name>lutBallDetection</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <_tagCode>BALL</_tagCode>
     <dependencies>
@@ -1405,7 +1442,7 @@
   <filter>
     <className>Erode</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1838,7 +1875,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>Logs/leipz3/images.csv</imagesFile>
+    <imagesFile>Logs/leipz1/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
@@ -1995,7 +2032,7 @@
     <className>ColorConverter</className>
     <name>RGB</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <conversion>YUV2BGR</conversion>
     <dependencies>
