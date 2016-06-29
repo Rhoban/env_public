@@ -44,6 +44,10 @@ while (true) {
     }
 }
 
+msg('INIT', 'Press enter to run init');
+readline();
+cmd('init');
+
 msg('INIT', 'Press enter to run the walk');
 readline();
 cmd('walk');
@@ -76,7 +80,8 @@ msg("\e[31mCONFIG", 'TODO: Commands to choose where I should be placed!');
 msg('INFO', 'Checking team radius');
 cmd('/moves/approach/teamRadius');
 
-msg('GO', 'Running robocup');
+msg('GO', 'Press enter to run robocup');
+readline();
 cmd('robocup');
 
 msg("\e[32mYODA", 'May the force be with you');
