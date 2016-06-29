@@ -6,7 +6,8 @@ function msg($phase, $msg) {
 }
 function question($phase, $msg) {
     while (true) {
-        echo "\n\e[1m$phase: $msg\e[m (y/n) > ";
+        echo "\n\e[1m$phase: $msg\e[m (y/n)\n";
+        echo "> ";
         flush();
         $m = trim(readline());
         if ($m == 'y') return true;
