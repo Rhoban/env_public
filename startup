@@ -35,7 +35,8 @@ while (true) {
 while (true) {
     msg('CHECK', 'Checking that there is info from the referee');
     $r = cmd('playing');
-    if (strpos($r, 'Referee time: -1') !== false) {
+    preg_match('#Referee last update: (.+)\.$#mUsi', $r, $match);
+    if ($match && (float)($match[1]) > 5) {
         if (question("\e[31mERROR", 'No info from the referee (Did you wifi.sh?), continue anyway?')) {
             break;
         }
