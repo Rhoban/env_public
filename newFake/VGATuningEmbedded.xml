@@ -2,7 +2,7 @@
 <LocalisationTest>
 <ballResampling>0.0</ballResampling>
 <benchmark>false</benchmark>
-<benchmarkDetail>0</benchmarkDetail>
+<benchmarkDetail>6</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>false</readFromLog>
 <pathToLog>Logs/VGA_ApprocheLoin120/lowLevel.log</pathToLog>
@@ -290,7 +290,7 @@
     <paramFloats>
       <ParamFloat>
 	<name>pitch3DB</name>
-	<value>15</value>
+	<value>90</value>
       </ParamFloat>
       <ParamFloat>
 	<name>ratioDegToHeight</name>
@@ -298,7 +298,7 @@
       </ParamFloat>
       <ParamFloat>
 	<name>height</name>
-	<value>25</value>
+	<value>20</value>
       </ParamFloat>
       <ParamFloat>
 	<name>width</name>
@@ -346,7 +346,7 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>135</value>
+	<value>120</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
@@ -792,6 +792,7 @@
       <dependency>undistort</dependency>
       <dependency>linesROI</dependency>
       <dependency>fieldColorLarge</dependency>
+      <dependency>fieldColorLarge</dependency>
     </dependencies>
     <name>linesByROI</name>
     <paramFloats>
@@ -1033,7 +1034,7 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>140</value>
+	<value>120</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
