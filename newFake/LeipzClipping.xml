@@ -1,63 +1,26 @@
 <?xml version="1.0" ?><LocalisationTest>
 <ballResampling>0.0</ballResampling>
-<angularPitchTolerance>2.0</angularPitchTolerance>
+<angularPitchTolerance>4.5</angularPitchTolerance>
 <benchmark>false</benchmark>
 <benchmarkDetail>5</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>Logs/leipz4/lowLevel.log</pathToLog>
+<pathToLog>Logs/leipz1/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
-<nbParticlesBF>1000</nbParticlesBF>
+<nbParticlesBF>1</nbParticlesBF>
 <nbParticlesFF>1000</nbParticlesFF>
 <pipeline>
   <filter>
-    <className>ColorBounding</className>
+    <className>Closure</className>
     <debugLevel>
       <graphics>false</graphics>
     </debugLevel>
     <dependencies>
-      <dependency>srcDownscaled</dependency>
+      <dependency>clippingAnd</dependency>
     </dependencies>
-    <name>fieldColor</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>minY</name>
-	<value>40</value>
-      </paramInt>
-      <paramInt>
-	<name>maxY</name>
-	<value>115</value>
-      </paramInt>
-      <paramInt>
-	<name>minU</name>
-	<value>100</value>
-      </paramInt>
-      <paramInt>
-	<name>maxU</name>
-	<value>127</value>
-      </paramInt>
-      <paramInt>
-	<name>minV</name>
-	<value>110</value>
-      </paramInt>
-      <paramInt>
-	<name>maxV</name>
-	<value>137</value>
-      </paramInt>
-    </paramInts>
-  </filter>
-  <filter>
-    <className>Closure</className>
-    <debugLevel>
-      <graphics>true</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>clippingOr</dependency>
-    </dependencies>
-    <name>clippingExperimentalEroded</name>
+    <name>clippingAndEroded</name>
     <paramFloats/>
     <paramInts>
       <paramInt>
@@ -77,7 +40,7 @@
   <filter>
     <className>ClippingFromLines</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -91,7 +54,6 @@
     <paramFloats/>
     <paramInts/>
   </filter>
-
   <filter>
     <className>Mask</className>
     <debugLevel>
@@ -106,7 +68,6 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>MaskOr</className>
     <debugLevel>
@@ -121,17 +82,16 @@
     <paramInts/>
     <paramPairInt/>
   </filter>
-
   <filter>
     <className>BinaryEdges</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>clippingOrEroded</dependency>
+      <dependency>clippingAndEroded</dependency>
     </dependencies>
     <name>clippingExperimentalBorders</name>
     <paramFloats/>
@@ -141,7 +101,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>whiteGoalDetection</dependency>
@@ -155,7 +115,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -184,7 +144,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -271,7 +231,7 @@
     </debugLevel>
     <dependencies>
       <dependency>goalMaskTocard</dependency>
-      <dependency>clipping</dependency>
+      <dependency>clippingAnd</dependency>
     </dependencies>
     <name>goalMaskTocardClipped</name>
     <paramFloats/>
@@ -298,7 +258,7 @@
   <filter>
     <className>Dilate</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -327,7 +287,7 @@
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -456,7 +416,7 @@
   <filter>
     <className>BallROIManager</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -465,7 +425,7 @@
       <dependency>undistort</dependency>
       <dependency>ballROIDetector</dependency>
       <dependency>sparkleOfHope</dependency>
-      <dependency>clipping</dependency>
+      <dependency>clippingOr</dependency>
     </dependencies>
     <name>ballROIManager</name>
     <paramFloats>
@@ -496,14 +456,14 @@
   <filter>
     <className>SparkleOfHope</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
-      <dependency>clipping</dependency>
+      <dependency>clippingOr</dependency>
       <dependency>sparkleOfHopeDetection</dependency>
     </dependencies>
     <name>sparkleOfHope</name>
@@ -583,14 +543,14 @@
   <filter>
     <className>BallROIDetector</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
-      <dependency>clipping</dependency>
+      <dependency>clippingAnd</dependency>
       <dependency>lutBallDetectionEroded</dependency>
       <dependency>lutBallDetectionEroded</dependency>
       <dependency>sparkleDetection</dependency>
@@ -620,7 +580,7 @@
   <filter>
     <className>GoalByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -654,7 +614,7 @@
   <filter>
     <className>BallByROI</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -802,7 +762,7 @@
   <filter>
     <className>BinaryEdges</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -861,7 +821,7 @@
   <filter>
     <className>Slicer</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -886,7 +846,7 @@
   <filter>
     <className>ROIFromBlobs</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -901,7 +861,7 @@
   <filter>
     <className>LinesByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -916,15 +876,15 @@
     <paramFloats>
       <ParamFloat>
 	<name>eraseThickness</name>
-	<value>5</value>
+	<value>10</value>
       </ParamFloat>
       <ParamFloat>
 	<name>minDist</name>
-	<value>8</value>
+	<value>16</value>
       </ParamFloat>
       <ParamFloat>
 	<name>rhoTol</name>
-	<value>3</value>
+	<value>6</value>
       </ParamFloat>
       <ParamFloat>
 	<name>thetaTol</name>
@@ -934,11 +894,11 @@
     <paramInts>
       <paramInt>
 	<name>roiMargin</name>
-	<value>7</value>
+	<value>10</value>
       </paramInt>
       <paramInt>
 	<name>nbEpochs</name>
-	<value>3</value>
+	<value>2</value>
       </paramInt>
       <paramInt>
 	<name>iterationsByEpoch</name>
@@ -957,7 +917,7 @@
   <filter>
     <className>ClippingFromLines</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -971,12 +931,10 @@
     <paramFloats/>
     <paramInts/>
   </filter>
-
-
   <filter>
     <className>ROIFromBlobs</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -991,7 +949,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1005,7 +963,7 @@
       </paramInt>
       <paramInt>
 	<name>maxY</name>
-	<value>117</value>
+	<value>115</value>
       </paramInt>
       <paramInt>
 	<name>minU</name>
@@ -1013,7 +971,44 @@
       </paramInt>
       <paramInt>
 	<name>maxU</name>
-	<value>125</value>
+	<value>127</value>
+      </paramInt>
+      <paramInt>
+	<name>minV</name>
+	<value>110</value>
+      </paramInt>
+      <paramInt>
+	<name>maxV</name>
+	<value>137</value>
+      </paramInt>
+    </paramInts>
+  </filter>
+  <filter>
+    <className>ColorBounding</className>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>srcDownscaled</dependency>
+    </dependencies>
+    <name>fieldColor</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>minY</name>
+	<value>40</value>
+      </paramInt>
+      <paramInt>
+	<name>maxY</name>
+	<value>115</value>
+      </paramInt>
+      <paramInt>
+	<name>minU</name>
+	<value>100</value>
+      </paramInt>
+      <paramInt>
+	<name>maxU</name>
+	<value>127</value>
       </paramInt>
       <paramInt>
 	<name>minV</name>
@@ -1028,7 +1023,7 @@
   <filter>
     <className>LinesByROI</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1094,7 +1089,7 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>160</value>
+	<value>125</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
@@ -1121,7 +1116,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1187,7 +1182,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1197,7 +1192,7 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>115</value>
+	<value>105</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
@@ -1253,7 +1248,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1290,7 +1285,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1333,7 +1328,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>newField</dependency>
+      <dependency>fieldColor</dependency>
     </dependencies>
     <name>fieldColorOpening</name>
     <paramFloats/>
@@ -1356,7 +1351,7 @@
   <filter>
     <className>Closure</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1401,7 +1396,7 @@
   <filter>
     <className>Undistort</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1418,9 +1413,9 @@
     <className>LUTMultifilter</className>
     <name>lutMultifilter</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
-    <_pathToLUT>daddyLUT80.bin</_pathToLUT>
+    <_pathToLUT>lutk2.bin</_pathToLUT>
     <_tagCode1>BALL</_tagCode1>
     <_tagCode2>FIELD</_tagCode2>
     <dependencies>
@@ -1437,7 +1432,7 @@
     <className>LUTDependency</className>
     <name>lutBallDetection</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <_tagCode>BALL</_tagCode>
     <dependencies>
@@ -1447,7 +1442,7 @@
   <filter>
     <className>Erode</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1684,11 +1679,177 @@
       </paramInt>
     </paramInts>
   </filter>
-
+  <filter>
+    <className>Mask</className>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>whiteGoalDetection</dependency>
+      <dependency>ultraWhiteDetectionDilated</dependency>
+    </dependencies>
+    <name>clippingBlobsGoals</name>
+    <paramFloats/>
+    <paramInts/>
+    <paramPairInt/>
+  </filter>
+  <filter>
+    <className>ROIFromBlobs</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>clippingBlobsGoals</dependency>
+    </dependencies>
+    <name>linesROIGoals</name>
+    <paramFloats/>
+    <paramInts/>
+  </filter>
+  <filter>
+    <className>Erode</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>linesROIGoals</dependency>
+    </dependencies>
+    <name>linesROIGoalsEroded</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>Shape</name>
+	<value>0</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel height</name>
+	<value>2</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel width</name>
+	<value>2</value>
+      </paramInt>
+    </paramInts>
+    <paramPairInt/>
+  </filter>
+  <filter>
+    <className>Dilate</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>linesROIGoalsEroded</dependency>
+    </dependencies>
+    <name>linesROIGoalsDilated</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>Shape</name>
+	<value>0</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel height</name>
+	<value>5</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel width</name>
+	<value>5</value>
+      </paramInt>
+    </paramInts>
+    <paramPairInt/>
+  </filter>
+  <filter>
+    <className>Mask</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>linesROIGoalsDilated</dependency>
+      <dependency>clippingBordersMasked</dependency>
+    </dependencies>
+    <name>goalMaskByROI</name>
+    <paramFloats/>
+    <paramInts/>
+    <paramPairInt/>
+  </filter>
+  <filter>
+    <className>Dilate</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>goalMaskByROI</dependency>
+    </dependencies>
+    <name>goalMaskByROIClipping2</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>Shape</name>
+	<value>1</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel height</name>
+	<value>11</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel width</name>
+	<value>5</value>
+      </paramInt>
+    </paramInts>
+    <paramPairInt/>
+  </filter>
+  <filter>
+    <className>GoalByROISimple</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>undistort</dependency>
+      <dependency>linesROIGoalsDilated</dependency>
+    </dependencies>
+    <name>goalByROIStdClipping2</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>goalMinY</name>
+	<value>90</value>
+      </paramInt>
+      <paramInt>
+	<name>goalMinV</name>
+	<value>0</value>
+      </paramInt>
+      <paramInt>
+	<name>kHeight</name>
+	<value>20</value>
+      </paramInt>
+      <paramInt>
+	<name>kWidth</name>
+	<value>3</value>
+      </paramInt>
+    </paramInts>
+    <paramPairInt/>
+  </filter>
   <filter>
     <className>BlobNoBall</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1705,7 +1866,6 @@
     </paramFloats>
     <paramInts/>
   </filter>
-
   <filter>
     <className>SourceLogs2</className>
     <debugLevel>
@@ -1715,7 +1875,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>Logs/leipz4/images.csv</imagesFile>
+    <imagesFile>Logs/leipz1/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
