@@ -5,13 +5,50 @@
 <benchmarkDetail>5</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>Logs/alphaBanDeplacement/lowLevel.log</pathToLog>
+<pathToLog>Logs/leipz1/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
 <nbParticlesBF>1</nbParticlesBF>
 <nbParticlesFF>1000</nbParticlesFF>
 <pipeline>
+  <filter>
+    <className>ColorBounding</className>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>srcDownscaled</dependency>
+    </dependencies>
+    <name>whiteBallDetection</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>minY</name>
+	<value>200</value>
+      </paramInt>
+      <paramInt>
+	<name>maxY</name>
+	<value>255</value>
+      </paramInt>
+      <paramInt>
+	<name>minU</name>
+	<value>0</value>
+      </paramInt>
+      <paramInt>
+	<name>maxU</name>
+	<value>255</value>
+      </paramInt>
+      <paramInt>
+	<name>minV</name>
+	<value>0</value>
+      </paramInt>
+      <paramInt>
+	<name>maxV</name>
+	<value>255</value>
+      </paramInt>
+    </paramInts>
+  </filter>
   <filter>
     <className>Closure</className>
     <debugLevel>
@@ -463,7 +500,7 @@
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
-      <dependency>clippingOr</dependency>
+      <dependency>clippingAnd</dependency>
       <dependency>sparkleOfHopeDetection</dependency>
     </dependencies>
     <name>sparkleOfHope</name>
@@ -511,7 +548,7 @@
     <paramFloats>
       <paramFloat>
 	<name>imgMaxY</name>
-	<value>0.4</value>
+	<value>0.0</value>
       </paramFloat>
     </paramFloats>
   </filter>
@@ -551,8 +588,8 @@
     <dependencies>
       <dependency>srcDownscaled</dependency>
       <dependency>clippingAnd</dependency>
-      <dependency>lutBallDetectionEroded</dependency>
-      <dependency>lutBallDetectionEroded</dependency>
+      <dependency>whiteBallDetectionEroded</dependency>
+      <dependency>whiteBallDetectionEroded</dependency>
       <dependency>sparkleDetection</dependency>
     </dependencies>
     <name>ballROIDetector</name>
@@ -692,7 +729,7 @@
       </paramInt>
       <paramInt>
 	<name>minScore</name>
-	<value>50</value>
+	<value>65</value>
       </paramInt>
       <paramInt>
 	<name>reflectionMinY</name>
@@ -996,7 +1033,7 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>40</value>
+	<value>39</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
@@ -1008,7 +1045,7 @@
       </paramInt>
       <paramInt>
 	<name>maxU</name>
-	<value>127</value>
+	<value>131</value>
       </paramInt>
       <paramInt>
 	<name>minV</name>
@@ -1016,7 +1053,7 @@
       </paramInt>
       <paramInt>
 	<name>maxV</name>
-	<value>137</value>
+	<value>140</value>
       </paramInt>
     </paramInts>
   </filter>
@@ -1295,7 +1332,7 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>200</value>
+	<value>235</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
@@ -1471,9 +1508,9 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>lutBallDetection</dependency>
+      <dependency>whiteBallDetection</dependency>
     </dependencies>
-    <name>lutBallDetectionEroded</name>
+    <name>whiteBallDetectionEroded</name>
     <paramFloats/>
     <paramInts>
       <paramInt>
@@ -1887,7 +1924,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>Logs/alphaBanDeplacement/images.csv</imagesFile>
+    <imagesFile>Logs/leipz1/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
