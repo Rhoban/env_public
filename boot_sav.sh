@@ -163,6 +163,10 @@ EOF
 		then
 		    echo "using the last environment"
 		    ENV_DIR=$(ls -1rtd $BACKUP_DIR/$2/env_* | tail -1)
+		    if [ ! -d "$ENV_DIR" ]
+		    then
+			ENV_DIR=$HOME/Environments/$ROBOT
+		    fi
 		else
 		    if [ -d "$BACKUP_DIR/$2/$3" ]
 		    then
