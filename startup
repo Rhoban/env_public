@@ -159,6 +159,9 @@ if ($position == 'D') {
     cmd('/moves/search/P2X='.$c[8]);
     cmd('/moves/search/P2Y='.$c[9]);
     cmd('/moves/search/P2Azimuth='.$c[10]);
+    // Begin Y target
+    if ($position == 'A') cmd('/moves/beginY=150');
+    if ($position == 'C') cmd('/moves/beginY=-150');
 }
 cmd('/moves/approach/teamRadius='.$c[11]);
 cmd('/moves/robocup/freeKickX=-50');
