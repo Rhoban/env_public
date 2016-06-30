@@ -21,6 +21,7 @@ if [ "$HOSTNAME" == "tom" ]; then
     IP="192.168.11.104"
 fi
 
+killall -2 ping
 echo "Connecting to $ESSID with $IP..."
 sudo killall wpa_supplicant ;
 sudo ifconfig wlan0 down ; 
@@ -29,4 +30,4 @@ sudo iwlist wlan0 scan|grep $ESSID ;
 sudo iwconfig wlan0 mode managed essid $ESSID;
 sudo ifconfig wlan0 $IP netmask 255.255.0.0 ;
 echo "done, pinging field router to check it's ok"
-ping -c 5 192.168.0.1
+nohup ping 192.168.0.2 > ping.out &
