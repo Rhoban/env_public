@@ -146,12 +146,20 @@ cmd('/moves/robocup/autoStartY='.$c[1]);
 cmd('/moves/robocup/autoStartAzimuth='.$c[2]);
 cmd('/moves/robocup/autoTargetX='.$c[3]);
 cmd('/moves/robocup/autoTargetY='.$c[4]);
-cmd('/moves/search/P1X='.$c[5]);
-cmd('/moves/search/P1Y='.$c[6]);
-cmd('/moves/search/P1Azimuth='.$c[7]);
-cmd('/moves/search/P2X='.$c[8]);
-cmd('/moves/search/P2Y='.$c[9]);
-cmd('/moves/search/P2Azimuth='.$c[10]);
+if ($position == 'D') {
+    // Margins for placer
+    cmd('/moves/placer/marginX=15');
+    cmd('/moves/placer/marginY=15');
+    cmd('/moves/placer/hysteresis=2');
+} else {
+    // Patrol
+    cmd('/moves/search/P1X='.$c[5]);
+    cmd('/moves/search/P1Y='.$c[6]);
+    cmd('/moves/search/P1Azimuth='.$c[7]);
+    cmd('/moves/search/P2X='.$c[8]);
+    cmd('/moves/search/P2Y='.$c[9]);
+    cmd('/moves/search/P2Azimuth='.$c[10]);
+}
 cmd('/moves/approach/teamRadius='.$c[11]);
 cmd('/moves/robocup/freeKickX=-50');
 cmd('/moves/robocup/freeKickY=0');
