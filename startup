@@ -58,6 +58,18 @@ msg('ATTACKHERE', 'Put me on the field, facing the opponent goals and press ente
 readline();
 cmd('attackHere');
 
+while (true) {
+    msg('CHECK', 'Checking the pressure');
+    $r = cmd('checkPressure');
+    if ($r != 'OK') {
+        if (question("\e[31mERROR", 'The pressure seems not normal, continue anyway?')) {
+            break;
+        }
+    } else {
+        break;
+    }
+}
+
 msg('CONFIG', 'What player am I ? (B: free kicker, D: goal, A & C: others)');
 echo "
     .------A-------------.-------------------.
