@@ -18,12 +18,12 @@
                     "invertOrientation": true,
                     "ki_rollpitch": 5e-06,
                     "kp_rollpitch": 0.005,
-                    "magnXMax": -44.0,
-                    "magnXMin": -190.0,
+                    "magnXMax": -86.0,
+                    "magnXMin": -222.0,
                     "magnYMax": 100.0,
                     "magnYMin": -100.0,
-                    "magnZMax": -63.0,
-                    "magnZMin": -227.0
+                    "magnZMax": -50.0,
+                    "magnZMin": -214.0
                 }
             }
         ],
@@ -68,10 +68,10 @@
                     "y_1": 0.0,
                     "y_2": 0.0,
                     "y_3": 0.0,
-                    "zero_0": 3310151.75,
-                    "zero_1": 1664717.25,
-                    "zero_2": -2148053.75,
-                    "zero_3": 3221872.25
+                    "zero_0": 3504101.25,
+                    "zero_1": 1499155.125,
+                    "zero_2": -200104.25,
+                    "zero_3": 1498756.125
                 }
             },
             {
@@ -90,10 +90,10 @@
                     "y_1": 0.0,
                     "y_2": 0.0,
                     "y_3": 0.0,
-                    "zero_0": -2172277.0,
-                    "zero_1": 998311.625,
-                    "zero_2": -5109715.0,
-                    "zero_3": 1328445.25
+                    "zero_0": -1007259.375,
+                    "zero_1": -360696.25,
+                    "zero_2": -4602388.0,
+                    "zero_3": -244301.546875
                 }
             }
         ],
@@ -196,26 +196,6 @@
     "RX64": {
         "devices": [
             {
-                "id": 12,
-                "name": "left_hip_pitch",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": false,
-                    "zero": 0.0
-                }
-            },
-            {
-                "id": 35,
-                "name": "right_hip_roll",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": true,
-                    "zero": 22.5
-                }
-            },
-            {
                 "id": 38,
                 "name": "left_ankle_roll",
                 "parameters": {
@@ -313,6 +293,26 @@
                     "angleLimitCWParameter": 0.0,
                     "inverse": false,
                     "zero": 0.0
+                }
+            },
+            {
+                "id": 12,
+                "name": "left_hip_pitch",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "inverse": false,
+                    "zero": 0.0
+                }
+            },
+            {
+                "id": 35,
+                "name": "right_hip_roll",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "inverse": true,
+                    "zero": 22.5
                 }
             }
         ],
