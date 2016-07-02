@@ -2,7 +2,10 @@
 #cd $HOME/Environments/$ROBOT/
 #tail -f out.log
 
-RPID=$(ps -o pid,command | grep -v grep | grep RhobanServer | cut -d ' ' -f 2)
+RPID=$(ps -a -o pid,command | grep -v grep | grep RhobanServer | cut -d ' ' -f 2)
+
+
+echo $RPID
 
 if [ "$RPID" == "" ]
 then
