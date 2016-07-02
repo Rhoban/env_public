@@ -58,6 +58,18 @@ msg('ATTACKHERE', 'Put me on the field, facing the opponent goals and press ente
 readline();
 cmd('attackHere');
 
+while (true) {
+    msg('CHECK', 'Checking the pressure');
+    $r = cmd('checkPressure');
+    if ($r != 'OK') {
+        if (question("\e[31mERROR", 'The pressure seems not normal, continue anyway?')) {
+            break;
+        }
+    } else {
+        break;
+    }
+}
+
 msg('CONFIG', 'What player am I ? (B: free kicker, D: goal, A & C: others)');
 echo "
     .------A-------------.-------------------.
@@ -70,26 +82,38 @@ echo "
     |                    |                   |
     |      C'            |                   |
     |                    |                   |
-    .------C--------B----.-------------------.
+    .------C---------B---.-------------------.
 
 ";
 
 $positions = array(
     'A' => [
-        -270, 300, -90,
-        -270, 100
+        -250, 300, -90,  // Start pos
+        -250, 100,       // Init pos
+        250, 100, 0,     // Patrol1
+        -150, 100, 180,  // Patrol2
+        150
     ],
     'B' => [
-        -100, -300, 90,
-        -100, -100
+        -75, -300, 90,
+        -125, 0,
+        250, -100, 0,
+        -150, -100, 180,
+        100
     ],
     'C' => [
-        -270, -300, 90,
-        -270, -100
+        -250, -300, 90,
+        -250, -100,
+        -250, 150, 90,
+        -250, -150, -90,
+        200
     ],
     'D' => [
         -400, 300, 90,
-        -400, 0
+        -400, 0,
+        0, 0, 0,
+        0, 0, 0,
+        250
     ],
 );
 
@@ -122,7 +146,25 @@ cmd('/moves/robocup/autoStartY='.$c[1]);
 cmd('/moves/robocup/autoStartAzimuth='.$c[2]);
 cmd('/moves/robocup/autoTargetX='.$c[3]);
 cmd('/moves/robocup/autoTargetY='.$c[4]);
-cmd('/moves/robocup/freeKickX=-125');
+if ($position == 'D') {
+    // Margins for placer
+    cmd('/moves/placer/marginX=15');
+    cmd('/moves/placer/marginY=15');
+    cmd('/moves/placer/hysteresis=2');
+} else {
+    // Patrol
+    cmd('/moves/search/P1X='.$c[5]);
+    cmd('/moves/search/P1Y='.$c[6]);
+    cmd('/moves/search/P1Azimuth='.$c[7]);
+    cmd('/moves/search/P2X='.$c[8]);
+    cmd('/moves/search/P2Y='.$c[9]);
+    cmd('/moves/search/P2Azimuth='.$c[10]);
+    // Begin Y target
+    if ($position == 'A') cmd('/moves/search/beginY=150');
+    if ($position == 'C') cmd('/moves/search/beginY=-150');
+}
+cmd('/moves/approach/teamRadius='.$c[11]);
+cmd('/moves/robocup/freeKickX=-100');
 cmd('/moves/robocup/freeKickY=0');
 
 msg('INFO', 'Checking team radius');
