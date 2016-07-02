@@ -1,13 +1,12 @@
-<?xml version="1.0"?>
-<LocalisationTest>
+<?xml version="1.0" ?><LocalisationTest>
 <ballResampling>0.0</ballResampling>
-<angularPitchTolerance>4</angularPitchTolerance>
+<angularPitchTolerance>2</angularPitchTolerance>
 <benchmark>false</benchmark>
 <benchmarkDetail>0</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>false</readFromLog>
-<pathToLog>Logs/leipz1/lowLevel.log</pathToLog>
-<embedded>true</embedded>
+<pathToLog>Logs/cataBlue/lowLevel.log</pathToLog>
+<embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
 <nbParticlesBF>1</nbParticlesBF>
@@ -16,7 +15,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -26,7 +25,7 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>180</value>
+	<value>200</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
@@ -95,7 +94,7 @@
   <filter>
     <className>Mask</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingExperimental</dependency>
@@ -109,7 +108,7 @@
   <filter>
     <className>MaskOr</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>clippingExperimental</dependency>
@@ -294,69 +293,6 @@
     <paramPairInt/>
   </filter>
   <filter>
-    <className>Dilate</className>
-    <debugLevel>
-      <graphics>false</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies>
-      <dependency>goalMaskStdClipping</dependency>
-    </dependencies>
-    <name>goalMaskStdClipping2</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>Shape</name>
-	<value>1</value>
-      </paramInt>
-      <paramInt>
-	<name>kernel height</name>
-	<value>11</value>
-      </paramInt>
-      <paramInt>
-	<name>kernel width</name>
-	<value>5</value>
-      </paramInt>
-    </paramInts>
-    <paramPairInt/>
-  </filter>
-  <filter>
-    <className>GoalByROI</className>
-    <debugLevel>
-      <graphics>false</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies>
-      <dependency>undistort</dependency>
-      <dependency>goalMaskStdClipping2</dependency>
-    </dependencies>
-    <name>goalByROIStdClipping</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>goalMinY</name>
-	<value>110</value>
-      </paramInt>
-      <paramInt>
-	<name>goalMinV</name>
-	<value>0</value>
-      </paramInt>
-      <paramInt>
-	<name>kHeight</name>
-	<value>31</value>
-      </paramInt>
-      <paramInt>
-	<name>kWidth</name>
-	<value>3</value>
-      </paramInt>
-    </paramInts>
-    <paramPairInt/>
-  </filter>
-  <filter>
     <className>OpeningWithPitch</className>
     <debugLevel>
       <graphics>false</graphics>
@@ -396,7 +332,7 @@
   <filter>
     <className>Rescale</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -454,7 +390,7 @@
   <filter>
     <className>BallROIManager</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -483,7 +419,7 @@
     <paramInts>
       <paramInt>
 	<name>tagLevel</name>
-	<value>0</value>
+	<value>1</value>
       </paramInt>
       <paramInt>
 	<name>whiteMinY</name>
@@ -494,7 +430,7 @@
   <filter>
     <className>SparkleOfHope</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -522,7 +458,7 @@
     <paramInts>
       <paramInt>
 	<name>tagLevel</name>
-	<value>0</value>
+	<value>1</value>
       </paramInt>
       <paramInt>
 	<name>whiteMinY</name>
@@ -581,7 +517,7 @@
   <filter>
     <className>BallROIDetector</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -611,7 +547,7 @@
     <paramInts>
       <paramInt>
 	<name>tagLevel</name>
-	<value>0</value>
+	<value>1</value>
       </paramInt>
     </paramInts>
   </filter>
@@ -652,7 +588,7 @@
   <filter>
     <className>BallByROI</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -714,7 +650,7 @@
     <paramInts>
       <paramInt>
 	<name>tagLevel</name>
-	<value>0</value>
+	<value>1</value>
       </paramInt>
       <paramInt>
 	<name>Epochs</name>
@@ -730,7 +666,7 @@
       </paramInt>
       <paramInt>
 	<name>minScore</name>
-	<value>50</value>
+	<value>65</value>
       </paramInt>
       <paramInt>
 	<name>reflectionMinY</name>
@@ -783,7 +719,7 @@
   <filter>
     <className>ClippingRules</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -1154,7 +1090,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1286,7 +1222,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1323,7 +1259,7 @@
   <filter>
     <className>ColorBounding</className>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>srcDownscaled</dependency>
@@ -1333,7 +1269,7 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>220</value>
+	<value>235</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
@@ -1451,7 +1387,7 @@
     <className>LUTMultifilter</className>
     <name>lutMultifilter</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <_pathToLUT>lutk1_new.bin</_pathToLUT>
     <_tagCode1>BALL</_tagCode1>
@@ -1463,7 +1399,7 @@
     <paramInts>
       <paramInt>
 	<name>tagLevel</name>
-	<value>0</value>
+	<value>1</value>
       </paramInt>
     </paramInts>
   </filter>
@@ -1471,7 +1407,7 @@
     <className>LUTDependency</className>
     <name>lutBallDetection</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <_tagCode>BALL</_tagCode>
     <dependencies>
@@ -1916,82 +1852,23 @@
     </paramFloats>
     <paramInts/>
   </filter>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-<filter>
-<captureFrequency>60</captureFrequency>
-<className>SourceV4l2</className>
-<debugLevel>
-    <graphics>false</graphics>
-</debugLevel>
-<dependencies/>
-<device>/dev/camera</device>
-<deviceName>/dev/cameraraw</deviceName>
-<name>source</name>
-<isSeecam>1</isSeecam>
-<wbRed>60</wbRed>
-<wbGreen>77</wbGreen>
-<wbBlue>79</wbBlue>
-<height>480</height>
-<width>640</width>
-<paramFloats/>
-<paramInts>
-    <paramInt>
-        <name>brightness</name>
-        <value>48</value>
-    </paramInt>
-    <paramInt>
-        <name>contrast</name>
-        <value>54</value>
-    </paramInt>
-    <paramInt>
-        <name>exposure_auto</name>
-        <value>0</value>
-    </paramInt>
-    <paramInt>
-        <name>exposure_(absolute)</name>
-        <value>312</value>
-    </paramInt>
-    <paramInt>
-        <name>gain</name>
-        <value>2</value>
-    </paramInt>
-    <paramInt>
-        <name>power_line_frequency</name>
-        <value>1</value>
-    </paramInt>
-    <paramInt>
-        <name>saturation</name>
-        <value>52</value>
-    </paramInt>
-    <paramInt>
-        <name>sharpness</name>
-        <value>15</value>
-    </paramInt>
-    <paramInt>
-        <name>hue</name>
-        <value>50</value>
-    </paramInt>
-    <paramInt>
-        <name>gamma</name>
-        <value>50</value>
-    </paramInt>
-</paramInts>
-</filter></pipeline>
+  <filter>
+    <className>SourceLogs2</className>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies/>
+    <imagesFile>Logs/cataBlue/images.csv</imagesFile>
+    <name>source</name>
+    <paramFloats/>
+    <paramInts/>
+    <paramPairInt/>
+    <startIndex>1</startIndex>
+  </filter>
+</pipeline>
 <playing>true</playing>
 <showRobotView>false</showRobotView>
 <showTaggedImg>false</showTaggedImg>

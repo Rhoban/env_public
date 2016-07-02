@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <LocalisationTest>
 <ballResampling>0.0</ballResampling>
-<angularPitchTolerance>4</angularPitchTolerance>
+<angularPitchTolerance>2</angularPitchTolerance>
 <benchmark>false</benchmark>
 <benchmarkDetail>0</benchmarkDetail>
 <gpuOn>false</gpuOn>
@@ -26,7 +26,7 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>180</value>
+	<value>200</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
@@ -291,69 +291,6 @@
     <name>goalMaskStdClipping</name>
     <paramFloats/>
     <paramInts/>
-    <paramPairInt/>
-  </filter>
-  <filter>
-    <className>Dilate</className>
-    <debugLevel>
-      <graphics>false</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies>
-      <dependency>goalMaskStdClipping</dependency>
-    </dependencies>
-    <name>goalMaskStdClipping2</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>Shape</name>
-	<value>1</value>
-      </paramInt>
-      <paramInt>
-	<name>kernel height</name>
-	<value>11</value>
-      </paramInt>
-      <paramInt>
-	<name>kernel width</name>
-	<value>5</value>
-      </paramInt>
-    </paramInts>
-    <paramPairInt/>
-  </filter>
-  <filter>
-    <className>GoalByROI</className>
-    <debugLevel>
-      <graphics>false</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies>
-      <dependency>undistort</dependency>
-      <dependency>goalMaskStdClipping2</dependency>
-    </dependencies>
-    <name>goalByROIStdClipping</name>
-    <paramFloats/>
-    <paramInts>
-      <paramInt>
-	<name>goalMinY</name>
-	<value>110</value>
-      </paramInt>
-      <paramInt>
-	<name>goalMinV</name>
-	<value>0</value>
-      </paramInt>
-      <paramInt>
-	<name>kHeight</name>
-	<value>31</value>
-      </paramInt>
-      <paramInt>
-	<name>kWidth</name>
-	<value>3</value>
-      </paramInt>
-    </paramInts>
     <paramPairInt/>
   </filter>
   <filter>
@@ -730,7 +667,7 @@
       </paramInt>
       <paramInt>
 	<name>minScore</name>
-	<value>50</value>
+	<value>65</value>
       </paramInt>
       <paramInt>
 	<name>reflectionMinY</name>
@@ -1333,7 +1270,7 @@
     <paramInts>
       <paramInt>
 	<name>minY</name>
-	<value>220</value>
+	<value>235</value>
       </paramInt>
       <paramInt>
 	<name>maxY</name>
