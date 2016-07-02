@@ -164,7 +164,7 @@ if ($position == 'D') {
     if ($position == 'C') cmd('/moves/search/beginY=-150');
 }
 cmd('/moves/approach/teamRadius='.$c[11]);
-cmd('/moves/robocup/freeKickX=-50');
+cmd('/moves/robocup/freeKickX=-100');
 cmd('/moves/robocup/freeKickY=0');
 
 msg('INFO', 'Checking team radius');
