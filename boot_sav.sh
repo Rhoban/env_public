@@ -52,6 +52,22 @@ function copy_env {
 }
 
 
+function check_backup {
+    if [ !  -d "$1" ]
+    then
+	echo -e "\e[101m$1:no such backup...\e[0m"
+	exit 2
+    fi
+}
+
+function check_backup_env {
+    check_backup $1
+    if [ !  -d "$1/$2" ]
+    then
+	echo -e "\e[101m$1/$2: no such env...\e[0m"
+	exit 2
+    fi
+}
 
 case "$1" in
     "help")
@@ -69,25 +85,32 @@ commands
   * alias backup_name env_name backup_alias_name env_alias_name 
   * run backup_name: run using backup binary and last env of this binary
   * run backup_name env_name: run using backup binary and specific env 
+  * send backup_name hostname: send binaries over ssh
 
 without any option:
 * 
 EOF
+	;;
+    "send")
+	check_backup $BACKUP_DIR/$2
+	a=$(mktemp -p /tmp -d ${ROBOT}_SSH_XXX)
+	d=$a/$2
+	mkdir -p $d
+	echo $d
+	cp $BACKUP_DIR/$2/*so $BACKUP_DIR/$2/RhobanServer $d
+	scp -r $d $3:BACKUP/$3/
+	rm -rf $a
+	exit
 	;;
     "ignore")	
 	;;
     "list")
 	if [ "$2" != "" ]
 	then
-	    if [ -d "$BACKUP_DIR/$2" ]
-	    then
-		echo "environments available for $2:"
-		#ls -1rt $BACKUP_DIR/$2 | grep env_
-		ls -lrt $BACKUP_DIR/$2/ | grep ^[dl] | tr -s [:blank:] | cut -d " " -f 9- 
-	    else
-		echo -e "\e[101mno such backup...\e[0m"
-		exit 2		
-	    fi
+	    check_backup "$BACKUP_DIR/$2"
+	    echo "environments available for $2:"
+	    #ls -1rt $BACKUP_DIR/$2 | grep env_
+	    ls -lrt $BACKUP_DIR/$2/ | grep ^[dl] | tr -s [:blank:] | cut -d " " -f 9- 
 	else
 	    echo "backups available:"
 	    ls -lrt $BACKUP_DIR | tr -s [:blank:] | cut -d " " -f 9-
@@ -146,7 +169,7 @@ EOF
 	    read resp
 	    if [ "$resp" == "Y" ]
 	    then
-		d=$(mktemp -d $ROBOT_XXXXXXX)
+		d=$(mktemp -p /tmp -d ${ROBOT}_BACK_XXX)
 		echo "move Environments/$ROBOT in $d"
 		mv $HOME/Environments/$ROBOT $d
 	    fi
@@ -214,6 +237,7 @@ EOF
 			ENV_COPY=$d/env_$(date "+%Y_%m_%d_%H-%M")
 			copy_env $ENV_COPY
 		    fi
+		    rm -f $envmd5
 		    #ENV_DIR=$d/env
 		    #RS_BINDIR=$d
 		    found=1
@@ -237,6 +261,7 @@ EOF
 	    #ENV_DIR=$ENV_COPY
 	    #RS_BINDIR=$DEST_DIR
 	fi
+	rm -f $md5
 	;;
 
 esac

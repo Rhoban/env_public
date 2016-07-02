@@ -30,4 +30,4 @@ sudo iwlist wlan0 scan|grep $ESSID ;
 sudo iwconfig wlan0 mode managed essid $ESSID;
 sudo ifconfig wlan0 $IP netmask 255.255.0.0 ;
 echo "done, pinging field router to check it's ok"
-nohup ping 192.168.0.2 > ping.out &
+nohup ping 192.168.0.1 > ping.log &
