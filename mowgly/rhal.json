@@ -2,6 +2,76 @@
     "Dynaban64": {
         "devices": [
             {
+                "id": 6,
+                "name": "right_knee",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "inverse": false,
+                    "zero": 0.0
+                }
+            },
+            {
+                "id": 37,
+                "name": "left_ankle_pitch",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "inverse": false,
+                    "zero": 0.0
+                }
+            },
+            {
+                "id": 36,
+                "name": "right_hip_pitch",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "inverse": false,
+                    "zero": 0.0
+                }
+            },
+            {
+                "id": 17,
+                "name": "right_ankle_roll",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "inverse": true,
+                    "zero": 0.0
+                }
+            },
+            {
+                "id": 102,
+                "name": "left_hip_yaw",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "inverse": false,
+                    "zero": 0.0
+                }
+            },
+            {
+                "id": 10,
+                "name": "left_hip_roll",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "inverse": false,
+                    "zero": -22.5
+                }
+            },
+            {
+                "id": 32,
+                "name": "right_ankle_pitch",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "inverse": true,
+                    "zero": 0.0
+                }
+            },
+            {
                 "id": 12,
                 "name": "left_hip_pitch",
                 "parameters": {
@@ -50,76 +120,6 @@
                     "inverse": false,
                     "zero": 0.0
                 }
-            },
-            {
-                "id": 37,
-                "name": "left_ankle_pitch",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": false,
-                    "zero": 0.0
-                }
-            },
-            {
-                "id": 6,
-                "name": "right_knee",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": false,
-                    "zero": 0.0
-                }
-            },
-            {
-                "id": 17,
-                "name": "right_ankle_roll",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": true,
-                    "zero": 0.0
-                }
-            },
-            {
-                "id": 36,
-                "name": "right_hip_pitch",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": false,
-                    "zero": 0.0
-                }
-            },
-            {
-                "id": 102,
-                "name": "left_hip_yaw",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": false,
-                    "zero": 0.0
-                }
-            },
-            {
-                "id": 10,
-                "name": "left_hip_roll",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": false,
-                    "zero": -22.5
-                }
-            },
-            {
-                "id": 32,
-                "name": "right_ankle_pitch",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": true,
-                    "zero": 0.0
-                }
             }
         ],
         "parameters": null
@@ -143,12 +143,12 @@
                     "invertOrientation": true,
                     "ki_rollpitch": 5e-06,
                     "kp_rollpitch": 0.005,
-                    "magnXMax": 197.0,
-                    "magnXMin": -12.0,
+                    "magnXMax": 160.0,
+                    "magnXMin": -28.0,
                     "magnYMax": 100.0,
                     "magnYMin": -100.0,
-                    "magnZMax": -23.0,
-                    "magnZMin": -241.0
+                    "magnZMax": -8.0,
+                    "magnZMin": -212.0
                 }
             }
         ],
@@ -278,17 +278,17 @@
                     "y_1": 0.0,
                     "y_2": 0.0,
                     "y_3": 0.0,
-                    "zero_0": 991618.6875,
-                    "zero_1": 152095.96875,
-                    "zero_2": 671147.875,
-                    "zero_3": 1174404.25
+                    "zero_0": -66991.8984375,
+                    "zero_1": 1747179.625,
+                    "zero_2": -299381.15625,
+                    "zero_3": 1140824.125
                 }
             },
             {
                 "id": 124,
                 "name": "right_pressure",
                 "parameters": {
-                    "gain_0": -1.0,
+                    "gain_0": 1.0,
                     "gain_1": 1.0,
                     "gain_2": 1.0,
                     "gain_3": -1.0,
@@ -300,10 +300,10 @@
                     "y_1": 0.0,
                     "y_2": 0.0,
                     "y_3": 0.0,
-                    "zero_0": 492596.4375,
-                    "zero_1": 2022291.25,
-                    "zero_2": -172047.875,
-                    "zero_3": -184646.796875
+                    "zero_0": -1899713.625,
+                    "zero_1": 330770.78125,
+                    "zero_2": -701671.375,
+                    "zero_3": 350115.59375
                 }
             }
         ],
