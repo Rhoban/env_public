@@ -1,6 +1,7 @@
-#ROBOT=`hostname`
-#cd $HOME/Environments/$ROBOT/
-#tail -f out.log
+ROBOT=`hostname`
+cd $HOME/Environments/$ROBOT/
+tail -f out.log
+exit
 
 (ps -a -o pid,command | grep -v grep | grep RhobanServer) |
     (
