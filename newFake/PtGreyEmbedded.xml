@@ -14,7 +14,22 @@
 <nbParticlesFF>1000</nbParticlesFF>
 <pipeline>
   <filter>
+    <className>ColorConverter</className>
+    <name>human</name>
+    <conversion>YUV2BGR</conversion>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>source</dependency>
+    </dependencies>
+    <paramInts/>
+    <paramFloats/>
+    <paramPairInt/>
+  </filter>
+  <filter>
     <className>SourcePtGrey</className>
+    <name>source</name>
     <debugLevel>
       <graphics>false</graphics>
     </debugLevel>
