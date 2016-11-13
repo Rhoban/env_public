@@ -28,6 +28,42 @@
     <paramPairInt/>
   </filter>
   <filter>
+    <className>ColorBounding</className>
+    <name>ballColor</name>
+    <dependencies>
+      <dependency>source</dependency>
+    </dependencies>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <ParamInts>
+      <ParamInt>
+        <name>minY</name>
+        <val>100</val>
+      </ParamInt>
+      <ParamInt>
+        <name>maxY</name>
+        <val>150</val>
+      </ParamInt>
+      <ParamInt>
+        <name>minU</name>
+        <val>100</val>
+      </ParamInt>
+      <ParamInt>
+        <name>maxU</name>
+        <val>150</val>
+      </ParamInt>
+      <ParamInt>
+        <name>minV</name>
+        <val>100</val>
+      </ParamInt>
+      <ParamInt>
+        <name>maxV</name>
+        <val>150</val>
+      </ParamInt>
+    </ParamInts>
+  </filter>
+  <filter>
     <className>SourcePtGrey</className>
     <name>source</name>
     <debugLevel>
