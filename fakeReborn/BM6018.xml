@@ -1,0 +1,194 @@
+<?xml version="1.0" ?><LocalisationTest>
+<ballResampling>0.0</ballResampling>
+<angularPitchTolerance>10</angularPitchTolerance>
+<benchmark>false</benchmark>
+<benchmarkDetail>0</benchmarkDetail>
+<gpuOn>false</gpuOn>
+<readFromLog>true</readFromLog>
+<pathToLog>../../rohow_logs/rohow_BM6018_1/lowLevel.log</pathToLog>
+<embedded>false</embedded>
+<fieldResampling>0.002</fieldResampling>
+<imageDelay>11</imageDelay>
+<nbParticlesBF>1</nbParticlesBF>
+<nbParticlesFF>1000</nbParticlesFF>
+<pipeline>
+  <filter>
+    <className>BallTagger</className>
+    <name>ballsHuman</name>
+    <dependencies>
+      <dependency>human</dependency>
+      <dependency>balls</dependency>
+    </dependencies>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+  </filter>
+  <filter>
+    <className>ROIToBalls</className>
+    <name>balls</name>
+    <dependencies>
+      <dependency>ballROIValidator</dependency>
+    </dependencies>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+  </filter>
+  <filter>
+    <className>BallROIValidator</className>
+    <name>ballROIValidator</name>
+    <dependencies>
+      <dependency>whiteROI</dependency>
+    </dependencies>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+  </filter>
+  <filter>
+    <className>ROIFromBlobs</className>
+    <name>whiteROI</name>
+    <dependencies>
+      <dependency>openedWhite</dependency>
+    </dependencies>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+  </filter>
+  <filter>
+    <className>Opening</className>
+    <name>openedWhite</name>
+    <dependencies>
+      <dependency>white</dependency>
+    </dependencies>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+  </filter>
+  <filter>
+    <className>ColorBounding</className>
+    <name>white</name>
+    <dependencies>
+      <dependency>smallSource</dependency>
+    </dependencies>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+    <paramInts>
+      <ParamInt>
+        <name>minY</name>
+        <value>220</value>
+      </ParamInt>
+      <ParamInt>
+        <name>maxY</name>
+        <value>255</value>
+      </ParamInt>
+      <ParamInt>
+        <name>minU</name>
+        <value>100</value>
+      </ParamInt>
+      <ParamInt>
+        <name>maxU</name>
+        <value>255</value>
+      </ParamInt>
+      <ParamInt>
+        <name>minV</name>
+        <value>0</value>
+      </ParamInt>
+      <ParamInt>
+        <name>maxV</name>
+        <value>255</value>
+      </ParamInt>
+    </paramInts>
+  </filter>
+  <filter>
+    <className>ColorBounding</className>
+    <name>fieldColor</name>
+    <dependencies>
+      <dependency>smallSource</dependency>
+    </dependencies>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+    <paramInts>
+      <ParamInt>
+        <name>minY</name>
+        <value>44</value>
+      </ParamInt>
+      <ParamInt>
+        <name>maxY</name>
+        <value>128</value>
+      </ParamInt>
+      <ParamInt>
+        <name>minU</name>
+        <value>110</value>
+      </ParamInt>
+      <ParamInt>
+        <name>maxU</name>
+        <value>132</value>
+      </ParamInt>
+      <ParamInt>
+        <name>minV</name>
+        <value>86</value>
+      </ParamInt>
+      <ParamInt>
+        <name>maxV</name>
+        <value>152</value>
+      </ParamInt>
+    </paramInts>
+  </filter>
+  <filter>
+    <className>Rescale</className>
+    <name>smallSource</name>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>source</dependency>
+    </dependencies>
+    <paramInts/>
+    <paramFloats>
+      <ParamFloat>
+	      <name>ratio</name>
+	      <value>4</value>
+      </ParamFloat>
+    </paramFloats>
+    <paramPairInt/>
+  </filter>
+  <filter>
+    <className>ColorConverter</className>
+    <name>human</name>
+    <conversion>YUV2BGR</conversion>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>source</dependency>
+    </dependencies>
+    <paramFloats/>
+    <paramInts/>
+    <paramPairInt/>
+  </filter>
+  <filter>
+    <className>SourceLogs2</className>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies/>
+    <imagesFile>../../rohow_logs/rohow_BM6018_1/images.csv</imagesFile>
+    <name>source</name>
+    <paramFloats/>
+    <paramInts/>
+    <paramPairInt/>
+    <startIndex>1</startIndex>
+  </filter>
+</pipeline>
+<playing>false</playing>
+<showRobotView>false</showRobotView>
+<showTaggedImg>false</showTaggedImg>
+<showTopView>false</showTopView>
+</LocalisationTest>

@@ -1,0 +1,36 @@
+<?xml version="1.0" ?><LocalisationTest>
+<ballResampling>0.0</ballResampling>
+<angularPitchTolerance>2</angularPitchTolerance>
+<benchmark>false</benchmark>
+<benchmarkDetail>0</benchmarkDetail>
+<gpuOn>false</gpuOn>
+<readFromLog>false</readFromLog>
+<pathToLog>../../rohow_logs/rohow_BM6018_1/lowLevel.log</pathToLog>
+<embedded>false</embedded>
+<fieldResampling>0.002</fieldResampling>
+<imageDelay>11</imageDelay>
+<nbParticlesBF>1</nbParticlesBF>
+<nbParticlesFF>1000</nbParticlesFF>
+<pipeline>
+  <filter>
+    <className>SourceLogs2</className>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies/>
+    <imagesFile>../../rohow_logs/rohow_BM6018_1/images.csv</imagesFile>
+    <name>source</name>
+    <paramFloats/>
+    <paramInts/>
+    <paramPairInt/>
+    <startIndex>1</startIndex>
+  </filter>
+</pipeline>
+<playing>false</playing>
+<showRobotView>false</showRobotView>
+<showTaggedImg>false</showTaggedImg>
+<showTopView>false</showTopView>
+</LocalisationTest>
