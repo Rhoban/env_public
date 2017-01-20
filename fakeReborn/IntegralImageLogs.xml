@@ -1,0 +1,137 @@
+<?xml version="1.0" ?><LocalisationTest>
+<ballResampling>0.0</ballResampling>
+<angularPitchTolerance>2</angularPitchTolerance>
+<benchmark>false</benchmark>
+<benchmarkDetail>0</benchmarkDetail>
+<gpuOn>false</gpuOn>
+<readFromLog>true</readFromLog>
+<pathToLog>rohow_logs/BM3516NDC_360/lowLevel.log</pathToLog>
+<embedded>false</embedded>
+<fieldResampling>0.002</fieldResampling>
+<imageDelay>11</imageDelay>
+<nbParticlesBF>1</nbParticlesBF>
+<nbParticlesFF>1000</nbParticlesFF>
+<pipeline>
+  <filter>
+    <className>PatchRecorder</className>
+    <name>patchRecorder</name>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>patchProvider</dependency>
+    </dependencies>
+  </filter>
+  <filter>
+    <className>RoiToPatches</className>
+    <name>patchProvider</name>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>human</dependency>
+      <dependency>berlinROIProvider</dependency>
+    </dependencies>
+    <paramInts>
+      <paramInt>
+	      <name>patchHeight</name>
+	      <value>64</value>
+      </paramInt>
+      <paramInt>
+	      <name>patchWidth</name>
+	      <value>64</value>
+      </paramInt>
+    </paramInts>
+  </filter>
+  <filter>
+    <className>BerlinROIProvider</className>
+    <name>berlinROIProvider</name>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>integralY</dependency>
+    </dependencies>
+    <paramFloats>
+      <paramFloat>
+	      <name>boundaryFactor</name>
+	      <value>2.0</value>
+      </paramFloat>
+    </paramFloats>
+  </filter>
+  <filter>
+    <className>Integral</className>
+    <name>integralY</name>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>Y</dependency>
+    </dependencies>
+  </filter>
+  <filter>
+    <className>ChannelSelector</className>
+    <name>Y</name>
+    <debugLevel>
+      <graphics>false</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>source</dependency>
+    </dependencies>
+    <paramInts>
+      <paramInt>
+	      <name>channel</name>
+	      <value>0</value>
+      </paramInt>
+    </paramInts>
+    <paramFloats/>
+    <paramPairInt/>
+  </filter>
+  <filter>
+    <className>ColorConverter</className>
+    <name>human</name>
+    <conversion>YUV2BGR</conversion>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>source</dependency>
+    </dependencies>
+  </filter>
+  <filter>
+    <className>SourceLogs2</className>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies/>
+    <imagesFile>rohow_logs/BM3516NDC_360/images.csv</imagesFile>
+    <name>source</name>
+    <paramFloats/>
+    <paramInts/>
+    <paramPairInt/>
+    <startIndex>50</startIndex>
+  </filter>
+</pipeline>
+<playing>false</playing>
+<showRobotView>false</showRobotView>
+<showTaggedImg>false</showTaggedImg>
+<showTopView>false</showTopView>
+</LocalisationTest>
