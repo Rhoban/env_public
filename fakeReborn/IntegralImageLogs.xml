@@ -1,8 +1,8 @@
 <?xml version="1.0" ?><LocalisationTest>
 <ballResampling>0.0</ballResampling>
 <angularPitchTolerance>2</angularPitchTolerance>
-<benchmark>false</benchmark>
-<benchmarkDetail>0</benchmarkDetail>
+<benchmark>true</benchmark>
+<benchmarkDetail>4</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
 <pathToLog>rohow_logs/BM3516NDC_360/lowLevel.log</pathToLog>
@@ -16,7 +16,7 @@
     <className>PatchRecorder</className>
     <name>patchRecorder</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -29,7 +29,7 @@
     <className>RoiToPatches</className>
     <name>patchProvider</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -60,6 +60,7 @@
     </debugLevel>
     <dependencies>
       <dependency>integralY</dependency>
+      <dependency>ballRadiusProvider</dependency>
     </dependencies>
     <paramFloats>
       <paramFloat>
@@ -72,7 +73,7 @@
     <className>Integral</className>
     <name>integralY</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -88,7 +89,7 @@
       <graphics>false</graphics>
     </debugLevel>
     <dependencies>
-      <dependency>source</dependency>
+      <dependency>sourceSmall</dependency>
     </dependencies>
     <paramInts>
       <paramInt>
@@ -114,9 +115,35 @@
     </dependencies>
   </filter>
   <filter>
+    <className>BallRadiusProvider</className>
+    <name>ballRadiusProvider</name>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>sourceSmall</dependency>
+    </dependencies>
+  </filter>
+  <filter>
+    <className>Rescale</className>
+    <name>sourceSmall</name>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>source</dependency>
+    </dependencies>
+  </filter>
+  <filter>
     <className>SourceLogs2</className>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
