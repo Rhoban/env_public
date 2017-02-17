@@ -14,7 +14,7 @@
 <pipeline>
   <filter>
     <className>PatchRecorder</className>
-    <name>patchRecorder</name>
+    <name>ballPatchRecorder</name>
     <debugLevel>
       <graphics>false</graphics>
       <parameters>false</parameters>
@@ -22,12 +22,27 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>patchProvider</dependency>
+      <dependency>ballPatchProvider</dependency>
     </dependencies>
+    <prefix>ball</prefix>
+  </filter>
+  <filter>
+    <className>PatchRecorder</className>
+    <name>goalPatchRecorder</name>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>goalPatchProvider</dependency>
+    </dependencies>
+    <prefix>goal</prefix>
   </filter>
   <filter>
     <className>RoiToPatches</className>
-    <name>patchProvider</name>
+    <name>ballPatchProvider</name>
     <debugLevel>
       <graphics>false</graphics>
       <parameters>false</parameters>
@@ -38,16 +53,50 @@
       <dependency>human</dependency>
       <dependency>berlinROIProvider</dependency>
     </dependencies>
-    <paramInts>
-      <paramInt>
-	      <name>patchHeight</name>
-	      <value>64</value>
-      </paramInt>
-      <paramInt>
-	      <name>patchWidth</name>
-	      <value>64</value>
-      </paramInt>
-    </paramInts>
+	  <resizePatches>false</resizePatches>
+  </filter>
+  <filter>
+    <className>RoiToPatches</className>
+    <name>goalPatchProvider</name>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>human</dependency>
+      <dependency>goalROIProvider</dependency>
+    </dependencies>
+	  <resizePatches>false</resizePatches>
+  </filter>
+  <filter>
+    <className>GoalByII</className>
+    <name>goalROIProvider</name>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>integralY</dependency>
+      <dependency>ballRadiusProvider</dependency>
+    </dependencies>
+    <paramFloats>
+      <paramFloat>
+	      <name>aboveRatio</name>
+	      <value>3.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>belowRatio</name>
+	      <value>3.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>widthScale</name>
+	      <value>2.0</value>
+      </paramFloat>
+    </paramFloats>
   </filter>
   <filter>
     <className>BerlinROIProvider</className>
@@ -160,7 +209,7 @@
     <paramFloats/>
     <paramInts/>
     <paramPairInt/>
-    <startIndex>50</startIndex>
+    <startIndex>112</startIndex>
   </filter>
 </pipeline>
 <playing>false</playing>
