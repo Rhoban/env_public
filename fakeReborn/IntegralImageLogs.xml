@@ -1,11 +1,11 @@
 <?xml version="1.0" ?><LocalisationTest>
 <ballResampling>0.0</ballResampling>
 <angularPitchTolerance>2</angularPitchTolerance>
-<benchmark>true</benchmark>
+<benchmark>false</benchmark>
 <benchmarkDetail>4</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>rohow_logs/BM3516NDC_360/lowLevel.log</pathToLog>
+<pathToLog>/tmp/Log/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -24,7 +24,13 @@
     <dependencies>
       <dependency>ballPatchProvider</dependency>
     </dependencies>
-    <prefix>ball</prefix>
+    <prefix>patches/ball</prefix>
+    <paramInts>
+      <paramInt>
+        <name>period</name>
+        <value>0</value>
+      </paramInt>
+    </paramInts>
   </filter>
   <filter>
     <className>PatchRecorder</className>
@@ -38,7 +44,13 @@
     <dependencies>
       <dependency>goalPatchProvider</dependency>
     </dependencies>
-    <prefix>goal</prefix>
+    <prefix>patches/goal</prefix>
+    <paramInts>
+      <paramInt>
+        <name>period</name>
+        <value>0</value>
+      </paramInt>
+    </paramInts>
   </filter>
   <filter>
     <className>RoiToPatches</className>
@@ -204,12 +216,12 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>rohow_logs/BM3516NDC_360/images.csv</imagesFile>
+    <imagesFile>/tmp/Log/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
     <paramPairInt/>
-    <startIndex>112</startIndex>
+    <startIndex>0</startIndex>
   </filter>
 </pipeline>
 <playing>false</playing>
