@@ -10,7 +10,7 @@
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
 <nbParticlesBF>1</nbParticlesBF>
-<nbParticlesFF>1000</nbParticlesFF>
+<nbParticlesFF>1</nbParticlesFF>
 <pipeline>
   <filter>
     <className>PatchRecorder</className>
@@ -65,7 +65,16 @@
       <dependency>human</dependency>
       <dependency>berlinROIProvider</dependency>
     </dependencies>
-	  <resizePatches>false</resizePatches>
+    <paramInts>
+      <paramInt>
+        <name>patchHeight</name>
+        <value>64</value>
+      </paramInt>
+      <paramInt>
+        <name>patchWidth</name>
+        <value>64</value>
+      </paramInt>
+    </paramInts>
   </filter>
   <filter>
     <className>RoiToPatches</className>
@@ -80,7 +89,16 @@
       <dependency>human</dependency>
       <dependency>goalROIProvider</dependency>
     </dependencies>
-	  <resizePatches>false</resizePatches>
+    <paramInts>
+      <paramInt>
+        <name>patchHeight</name>
+        <value>64</value>
+      </paramInt>
+      <paramInt>
+        <name>patchWidth</name>
+        <value>32</value>
+      </paramInt>
+    </paramInts>
   </filter>
   <filter>
     <className>GoalByII</className>
