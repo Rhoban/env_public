@@ -5,7 +5,7 @@
 <benchmarkDetail>4</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>/tmp/Log/lowLevel.log</pathToLog>
+<pathToLog>workingLog/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -24,7 +24,7 @@
     <dependencies>
       <dependency>ballPatchProvider</dependency>
     </dependencies>
-    <prefix>patches/ball</prefix>
+    <prefix>patches/ball/</prefix>
     <paramInts>
       <paramInt>
         <name>period</name>
@@ -44,7 +44,7 @@
     <dependencies>
       <dependency>goalPatchProvider</dependency>
     </dependencies>
-    <prefix>patches/goal</prefix>
+    <prefix>patches/goal/</prefix>
     <paramInts>
       <paramInt>
         <name>period</name>
@@ -56,7 +56,7 @@
     <className>RoiToPatches</className>
     <name>ballPatchProvider</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -71,7 +71,7 @@
     <className>RoiToPatches</className>
     <name>goalPatchProvider</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -98,15 +98,23 @@
     <paramFloats>
       <paramFloat>
 	      <name>aboveRatio</name>
-	      <value>3.0</value>
+	      <value>2.0</value>
       </paramFloat>
       <paramFloat>
 	      <name>belowRatio</name>
-	      <value>3.0</value>
+	      <value>2.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>boundaryWidthRatio</name>
+	      <value>2</value>
       </paramFloat>
       <paramFloat>
 	      <name>widthScale</name>
-	      <value>2.0</value>
+	      <value>1.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>belowCoeff</name>
+	      <value>4.0</value>
       </paramFloat>
     </paramFloats>
   </filter>
@@ -114,7 +122,7 @@
     <className>BerlinROIProvider</className>
     <name>berlinROIProvider</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -147,7 +155,7 @@
     <className>ChannelSelector</className>
     <name>Y</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>sourceSmall</dependency>
@@ -166,7 +174,7 @@
     <name>human</name>
     <conversion>YUV2BGR</conversion>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -216,7 +224,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>/tmp/Log/images.csv</imagesFile>
+    <imagesFile>workingLog/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
