@@ -101,7 +101,7 @@
     </paramInts>
   </filter>
   <filter>
-    <className>GoalByII</className>
+    <className>GoalByII2</className>
     <name>goalROIProvider</name>
     <debugLevel>
       <graphics>true</graphics>
@@ -110,7 +110,8 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>integralY</dependency>
+      <dependency>whiteII</dependency>
+      <dependency>greenII</dependency>
       <dependency>ballRadiusProvider</dependency>
     </dependencies>
     <paramFloats>
@@ -132,7 +133,11 @@
       </paramFloat>
       <paramFloat>
 	      <name>belowCoeff</name>
-	      <value>4.0</value>
+	      <value>1.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>minScore</name>
+	      <value>310</value>
       </paramFloat>
     </paramFloats>
   </filter>
@@ -158,6 +163,32 @@
   </filter>
   <filter>
     <className>Integral</className>
+    <name>whiteII</name>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>white</dependency>
+    </dependencies>
+  </filter> 
+  <filter>
+    <className>Integral</className>
+    <name>greenII</name>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>green</dependency>
+    </dependencies>
+  </filter> 
+  <filter>
+    <className>Integral</className>
     <name>integralY</name>
     <debugLevel>
       <graphics>false</graphics>
@@ -168,7 +199,7 @@
     <dependencies>
       <dependency>Y</dependency>
     </dependencies>
-  </filter>
+  </filter> 
   <filter>
     <className>ChannelSelector</className>
     <name>Y</name>
@@ -243,7 +274,7 @@
     <paramInts>
       <paramInt>
 	      <name>minY</name>
-	      <value>80</value>
+	      <value>70</value>
       </paramInt>
       <paramInt>
 	      <name>minU</name>
