@@ -5,7 +5,7 @@
 <benchmarkDetail>4</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>workingLog/lowLevel.log</pathToLog>
+<pathToLog>/tmp/Logs/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -15,30 +15,6 @@
   <filter>
     <className>BallByDNN</className>
     <name>ballByDNN3</name>
-    <debugLevel>
-      <graphics>true</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>ballPatchProvider3</dependency>
-    </dependencies>
-    <arch_path>ball_cifar.json</arch_path>
-    <weights_path>ball_cifar_weights.data</weights_path>
-  </filter>
-  <filter>
-    <className>BallByDNN</className>
-    <name>ballByDNN2</name>
-    <debugLevel>
-      <graphics>true</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>ballPatchProvider2</dependency>
-    </dependencies>
-    <arch_path>ball_cifar.json</arch_path>
-    <weights_path>ball_cifar_weights.data</weights_path>
-  </filter>
-  <filter>
-    <className>BallByDNN</className>
-    <name>ballByDNN</name>
     <debugLevel>
       <graphics>true</graphics>
     </debugLevel>
@@ -99,55 +75,7 @@
     </debugLevel>
     <dependencies>
       <dependency>human</dependency>
-      <dependency>berlinROIProvider</dependency>
-    </dependencies>
-    <paramInts>
-      <paramInt>
-        <name>patchHeight</name>
-        <value>64</value>
-      </paramInt>
-      <paramInt>
-        <name>patchWidth</name>
-        <value>64</value>
-      </paramInt>
-    </paramInts>
-  </filter>
-  <filter>
-    <className>RoiToPatches</className>
-    <name>ballPatchProvider2</name>
-    <debugLevel>
-      <graphics>false</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies>
-      <dependency>human</dependency>
       <dependency>ballByII</dependency>
-    </dependencies>
-    <paramInts>
-      <paramInt>
-        <name>patchHeight</name>
-        <value>64</value>
-      </paramInt>
-      <paramInt>
-        <name>patchWidth</name>
-        <value>64</value>
-      </paramInt>
-    </paramInts>
-  </filter>
-  <filter>
-    <className>RoiToPatches</className>
-    <name>ballPatchProvider3</name>
-    <debugLevel>
-      <graphics>false</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies>
-      <dependency>human</dependency>
-      <dependency>ballByII2</dependency>
     </dependencies>
     <paramInts>
       <paramInt>
@@ -230,61 +158,8 @@
     </paramFloats>
   </filter>
   <filter>
-    <className>BerlinROIProvider</className>
-    <name>berlinROIProvider</name>
-    <debugLevel>
-      <graphics>true</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies>
-      <dependency>integralY</dependency>
-      <dependency>ballRadiusProvider</dependency>
-    </dependencies>
-    <paramFloats>
-      <paramFloat>
-	      <name>boundaryFactor</name>
-	      <value>2.0</value>
-      </paramFloat>
-    </paramFloats>
-  </filter>
-  <filter>
-    <className>BallByII</className>
-    <name>ballByII</name>
-    <debugLevel>
-      <graphics>true</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies>
-      <dependency>integralY</dependency>
-      <dependency>greenII</dependency>
-      <dependency>ballRadiusProvider</dependency>
-    </dependencies>
-    <paramFloats>
-      <paramFloat>
-	      <name>boundaryFactor</name>
-	      <value>2.0</value>
-      </paramFloat>
-      <paramFloat>
-	      <name>yWeight</name>
-	      <value>5.0</value>
-      </paramFloat>
-      <paramFloat>
-	      <name>greenWeight</name>
-	      <value>1.0</value>
-      </paramFloat>
-      <paramFloat>
-	      <name>minScore</name>
-	      <value>25</value>
-      </paramFloat>
-    </paramFloats>
-  </filter>
-  <filter>
     <className>BallByII2</className>
-    <name>ballByII2</name>
+    <name>ballByII</name>
     <debugLevel>
       <graphics>true</graphics>
       <parameters>false</parameters>
@@ -546,7 +421,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>workingLog/images.csv</imagesFile>
+    <imagesFile>/tmp/Logs/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
