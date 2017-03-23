@@ -14,6 +14,18 @@
 <pipeline>
   <filter>
     <className>BallByDNN</className>
+    <name>ballByDNN3</name>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>ballPatchProvider3</dependency>
+    </dependencies>
+    <arch_path>ball_cifar.json</arch_path>
+    <weights_path>ball_cifar_weights.data</weights_path>
+  </filter>
+  <filter>
+    <className>BallByDNN</className>
     <name>ballByDNN2</name>
     <debugLevel>
       <graphics>true</graphics>
@@ -112,6 +124,30 @@
     <dependencies>
       <dependency>human</dependency>
       <dependency>ballByII</dependency>
+    </dependencies>
+    <paramInts>
+      <paramInt>
+        <name>patchHeight</name>
+        <value>64</value>
+      </paramInt>
+      <paramInt>
+        <name>patchWidth</name>
+        <value>64</value>
+      </paramInt>
+    </paramInts>
+  </filter>
+  <filter>
+    <className>RoiToPatches</className>
+    <name>ballPatchProvider3</name>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>human</dependency>
+      <dependency>ballByII2</dependency>
     </dependencies>
     <paramInts>
       <paramInt>
@@ -243,6 +279,39 @@
       <paramFloat>
 	      <name>minScore</name>
 	      <value>25</value>
+      </paramFloat>
+    </paramFloats>
+  </filter>
+  <filter>
+    <className>BallByII2</className>
+    <name>ballByII2</name>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>integralY</dependency>
+      <dependency>greenII</dependency>
+      <dependency>ballRadiusProvider</dependency>
+    </dependencies>
+    <paramFloats>
+      <paramFloat>
+	      <name>boundaryFactor</name>
+	      <value>2.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>yWeight</name>
+	      <value>5.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>greenWeight</name>
+	      <value>2.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>minScore</name>
+	      <value>50</value>
       </paramFloat>
     </paramFloats>
   </filter>
@@ -482,7 +551,7 @@
     <paramFloats/>
     <paramInts/>
     <paramPairInt/>
-    <startIndex>1000</startIndex>
+    <startIndex>0</startIndex>
   </filter>
 </pipeline>
 <playing>false</playing>
