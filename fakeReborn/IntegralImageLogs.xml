@@ -13,6 +13,30 @@
 <nbParticlesFF>1</nbParticlesFF>
 <pipeline>
   <filter>
+    <className>BallByDNN</className>
+    <name>ballByDNN2</name>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>ballPatchProvider2</dependency>
+    </dependencies>
+    <arch_path>ball_cifar.json</arch_path>
+    <weights_path>ball_cifar_weights.data</weights_path>
+  </filter>
+  <filter>
+    <className>BallByDNN</className>
+    <name>ballByDNN</name>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>ballPatchProvider</dependency>
+    </dependencies>
+    <arch_path>ball_cifar.json</arch_path>
+    <weights_path>ball_cifar_weights.data</weights_path>
+  </filter>
+  <filter>
     <className>PatchRecorder</className>
     <name>ballPatchRecorder</name>
     <debugLevel>
@@ -56,7 +80,7 @@
     <className>RoiToPatches</className>
     <name>ballPatchProvider</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -78,9 +102,33 @@
   </filter>
   <filter>
     <className>RoiToPatches</className>
+    <name>ballPatchProvider2</name>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>human</dependency>
+      <dependency>ballByII</dependency>
+    </dependencies>
+    <paramInts>
+      <paramInt>
+        <name>patchHeight</name>
+        <value>64</value>
+      </paramInt>
+      <paramInt>
+        <name>patchWidth</name>
+        <value>64</value>
+      </paramInt>
+    </paramInts>
+  </filter>
+  <filter>
+    <className>RoiToPatches</className>
     <name>goalPatchProvider</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -104,7 +152,7 @@
     <className>GoalByII2</className>
     <name>goalROIProvider</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -149,7 +197,7 @@
     <className>BerlinROIProvider</className>
     <name>berlinROIProvider</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -162,6 +210,39 @@
       <paramFloat>
 	      <name>boundaryFactor</name>
 	      <value>2.0</value>
+      </paramFloat>
+    </paramFloats>
+  </filter>
+  <filter>
+    <className>BallByII</className>
+    <name>ballByII</name>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>integralY</dependency>
+      <dependency>greenII</dependency>
+      <dependency>ballRadiusProvider</dependency>
+    </dependencies>
+    <paramFloats>
+      <paramFloat>
+	      <name>boundaryFactor</name>
+	      <value>2.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>yWeight</name>
+	      <value>5.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>greenWeight</name>
+	      <value>1.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>minScore</name>
+	      <value>25</value>
       </paramFloat>
     </paramFloats>
   </filter>
@@ -188,7 +269,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>green</dependency>
+      <dependency>greenFiltered</dependency>
     </dependencies>
   </filter> 
   <filter>
@@ -234,6 +315,20 @@
     </debugLevel>
     <dependencies>
       <dependency>source</dependency>
+    </dependencies>
+  </filter>
+  <filter>
+    <className>ColorConverter</className>
+    <name>smallHuman</name>
+    <conversion>YUV2BGR</conversion>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>sourceSmall</dependency>
     </dependencies>
   </filter>
   <filter>
@@ -329,7 +424,7 @@
       </paramInt>
       <paramInt>
 	      <name>maxY</name>
-	      <value>60</value>
+	      <value>70</value>
       </paramInt>
       <paramInt>
 	      <name>maxU</name>
@@ -387,7 +482,7 @@
     <paramFloats/>
     <paramInts/>
     <paramPairInt/>
-    <startIndex>0</startIndex>
+    <startIndex>1000</startIndex>
   </filter>
 </pipeline>
 <playing>false</playing>
