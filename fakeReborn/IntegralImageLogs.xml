@@ -5,7 +5,7 @@
 <benchmarkDetail>4</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>/tmp/Logs/lowLevel.log</pathToLog>
+<pathToLog>workingLog/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
@@ -171,6 +171,12 @@
       <dependency>greenII</dependency>
       <dependency>ballRadiusProvider</dependency>
     </dependencies>
+    <paramInts>
+      <paramInt>
+	      <name>decimationRate</name>
+	      <value>5</value>
+      </paramInt>
+    </paramInts>
     <paramFloats>
       <paramFloat>
 	      <name>boundaryFactor</name>
@@ -186,7 +192,11 @@
       </paramFloat>
       <paramFloat>
 	      <name>minScore</name>
-	      <value>50</value>
+	      <value>30</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>minRadius</name>
+	      <value>8</value>
       </paramFloat>
     </paramFloats>
   </filter>
@@ -408,7 +418,7 @@
     <paramFloats>
       <paramFloat>
 	      <name>ratio</name>
-	      <value>4.0</value>
+	      <value>1.0</value>
       </paramFloat>
     </paramFloats>
   </filter>
@@ -421,7 +431,7 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>/tmp/Logs/images.csv</imagesFile>
+    <imagesFile>workingLog/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
