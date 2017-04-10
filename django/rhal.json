@@ -53,7 +53,7 @@
     "PressureSensor4": {
         "devices": [
             {
-                "id": 124,
+                "id": 123,
                 "name": "right_pressure",
                 "parameters": {
                     "gain_0": -1.0,
@@ -75,7 +75,7 @@
                 }
             },
             {
-                "id": 123,
+                "id": 124,
                 "name": "left_pressure",
                 "parameters": {
                     "gain_0": -1.0,
@@ -103,22 +103,7 @@
         "timeout": 0.012,
         "waitAfterWrite": 0.001
     },
-    "RX24": {
-        "devices": [
-            {
-                "id": 140,
-                "name": "head_yaw",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": false,
-                    "zero": -22.5
-                }
-            }
-        ],
-        "parameters": null
-    },
-    "RX28": {
+    "MX28": {
         "devices": [
             {
                 "id": 141,
@@ -137,7 +122,7 @@
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
                     "inverse": true,
-                    "zero": 22.5
+                    "zero": 0
                 }
             },
             {
@@ -187,13 +172,23 @@
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
                     "inverse": false,
-                    "zero": 22.5
+                    "zero": 0
+                }
+            },
+            {
+                "id": 140,
+                "name": "head_yaw",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "inverse": false,
+                    "zero": -22.5
                 }
             }
         ],
         "parameters": null
     },
-    "RX64": {
+    "MX64": {
         "devices": [
             {
                 "id": 35,
@@ -212,7 +207,7 @@
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
                     "inverse": false,
-                    "zero": 0.0
+                    "zero": 22.5
                 }
             },
             {
@@ -222,7 +217,7 @@
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
                     "inverse": false,
-                    "zero": 0.0
+                    "zero": 22.5
                 }
             },
             {
@@ -272,7 +267,7 @@
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
                     "inverse": false,
-                    "zero": 0.0
+                    "zero": -35
                 }
             },
             {
@@ -282,7 +277,7 @@
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
                     "inverse": true,
-                    "zero": 0.0
+                    "zero": -22.5
                 }
             },
             {
