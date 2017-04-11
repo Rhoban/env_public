@@ -13,34 +13,6 @@
   <nbParticlesFF>1</nbParticlesFF>
   <pipeline>
     <filter>
-      <className>PatchRecorder</className>
-      <name>ballPatchRecorder</name>
-      <debugLevel>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-        <threads>false</threads>
-      </debugLevel>
-      <dependencies>
-        <dependency>ballPatchProvider</dependency>
-      </dependencies>
-      <prefix>ball</prefix>
-    </filter>
-    <filter>
-      <className>PatchRecorder</className>
-      <name>goalPatchRecorder</name>
-      <debugLevel>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-        <threads>false</threads>
-      </debugLevel>
-      <dependencies>
-        <dependency>goalPatchProvider</dependency>
-      </dependencies>
-      <prefix>goal</prefix>
-    </filter>
-    <filter>
       <className>RoiToPatches</className>
       <name>ballPatchProvider</name>
       <debugLevel>
@@ -74,7 +46,7 @@
       <className>GoalByII</className>
       <name>goalROIProvider</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -102,7 +74,7 @@
       <className>BerlinROIProvider</className>
       <name>berlinROIProvider</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -154,7 +126,7 @@
       <name>human</name>
       <conversion>YUV2BGR</conversion>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -204,15 +176,15 @@
       <wished_properties>
         <Shutter>
           <autoManualMode>false</autoManualMode>
-          <absValue>1.5</absValue>
+          <absValue>3</absValue>
         </Shutter>
         <Gain>
           <autoManualMode>false</autoManualMode>
-          <absValue>10</absValue>
+          <absValue>9</absValue>
         </Gain>
         <FrameRate>
           <autoManualMode>false</autoManualMode>
-          <absValue>25</absValue>
+          <absValue>10</absValue>
         </FrameRate>
       </wished_properties>
       <dependencies/>
