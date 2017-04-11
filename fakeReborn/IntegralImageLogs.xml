@@ -14,19 +14,7 @@
 <pipeline>
   <filter>
     <className>BallByDNN</className>
-    <name>ballByDNN2</name>
-    <debugLevel>
-      <graphics>true</graphics>
-    </debugLevel>
-    <dependencies>
-      <dependency>ballPatchProvider2</dependency>
-    </dependencies>
-    <arch_path>ball_cifar.json</arch_path>
-    <weights_path>ball_cifar_weights.data</weights_path>
-  </filter>
-  <filter>
-    <className>BallByDNN</className>
-    <name>ballByDNN</name>
+    <name>ballByDNN3</name>
     <debugLevel>
       <graphics>true</graphics>
     </debugLevel>
@@ -79,30 +67,6 @@
   <filter>
     <className>RoiToPatches</className>
     <name>ballPatchProvider</name>
-    <debugLevel>
-      <graphics>false</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies>
-      <dependency>human</dependency>
-      <dependency>berlinROIProvider</dependency>
-    </dependencies>
-    <paramInts>
-      <paramInt>
-        <name>patchHeight</name>
-        <value>64</value>
-      </paramInt>
-      <paramInt>
-        <name>patchWidth</name>
-        <value>64</value>
-      </paramInt>
-    </paramInts>
-  </filter>
-  <filter>
-    <className>RoiToPatches</className>
-    <name>ballPatchProvider2</name>
     <debugLevel>
       <graphics>false</graphics>
       <parameters>false</parameters>
@@ -194,27 +158,7 @@
     </paramFloats>
   </filter>
   <filter>
-    <className>BerlinROIProvider</className>
-    <name>berlinROIProvider</name>
-    <debugLevel>
-      <graphics>true</graphics>
-      <parameters>false</parameters>
-      <perfs>false</perfs>
-      <threads>false</threads>
-    </debugLevel>
-    <dependencies>
-      <dependency>integralY</dependency>
-      <dependency>ballRadiusProvider</dependency>
-    </dependencies>
-    <paramFloats>
-      <paramFloat>
-	      <name>boundaryFactor</name>
-	      <value>2.0</value>
-      </paramFloat>
-    </paramFloats>
-  </filter>
-  <filter>
-    <className>BallByII</className>
+    <className>BallByII2</className>
     <name>ballByII</name>
     <debugLevel>
       <graphics>true</graphics>
@@ -227,6 +171,12 @@
       <dependency>greenII</dependency>
       <dependency>ballRadiusProvider</dependency>
     </dependencies>
+    <paramInts>
+      <paramInt>
+	      <name>decimationRate</name>
+	      <value>5</value>
+      </paramInt>
+    </paramInts>
     <paramFloats>
       <paramFloat>
 	      <name>boundaryFactor</name>
@@ -238,11 +188,15 @@
       </paramFloat>
       <paramFloat>
 	      <name>greenWeight</name>
-	      <value>1.0</value>
+	      <value>2.0</value>
       </paramFloat>
       <paramFloat>
 	      <name>minScore</name>
-	      <value>25</value>
+	      <value>30</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>minRadius</name>
+	      <value>8</value>
       </paramFloat>
     </paramFloats>
   </filter>
@@ -464,7 +418,7 @@
     <paramFloats>
       <paramFloat>
 	      <name>ratio</name>
-	      <value>4.0</value>
+	      <value>1.0</value>
       </paramFloat>
     </paramFloats>
   </filter>
@@ -482,7 +436,7 @@
     <paramFloats/>
     <paramInts/>
     <paramPairInt/>
-    <startIndex>1000</startIndex>
+    <startIndex>0</startIndex>
   </filter>
 </pipeline>
 <playing>false</playing>
