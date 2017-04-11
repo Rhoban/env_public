@@ -5,13 +5,37 @@
 <benchmarkDetail>4</benchmarkDetail>
 <gpuOn>false</gpuOn>
 <readFromLog>true</readFromLog>
-<pathToLog>/tmp/Log/lowLevel.log</pathToLog>
+<pathToLog>workingLog/lowLevel.log</pathToLog>
 <embedded>false</embedded>
 <fieldResampling>0.002</fieldResampling>
 <imageDelay>11</imageDelay>
 <nbParticlesBF>1</nbParticlesBF>
-<nbParticlesFF>1000</nbParticlesFF>
+<nbParticlesFF>1</nbParticlesFF>
 <pipeline>
+  <filter>
+    <className>BallByDNN</className>
+    <name>ballByDNN2</name>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>ballPatchProvider2</dependency>
+    </dependencies>
+    <arch_path>ball_cifar.json</arch_path>
+    <weights_path>ball_cifar_weights.data</weights_path>
+  </filter>
+  <filter>
+    <className>BallByDNN</className>
+    <name>ballByDNN</name>
+    <debugLevel>
+      <graphics>true</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>ballPatchProvider</dependency>
+    </dependencies>
+    <arch_path>ball_cifar.json</arch_path>
+    <weights_path>ball_cifar_weights.data</weights_path>
+  </filter>
   <filter>
     <className>PatchRecorder</className>
     <name>ballPatchRecorder</name>
@@ -24,7 +48,7 @@
     <dependencies>
       <dependency>ballPatchProvider</dependency>
     </dependencies>
-    <prefix>patches/ball</prefix>
+    <prefix>patches/ball/</prefix>
     <paramInts>
       <paramInt>
         <name>period</name>
@@ -44,7 +68,7 @@
     <dependencies>
       <dependency>goalPatchProvider</dependency>
     </dependencies>
-    <prefix>patches/goal</prefix>
+    <prefix>patches/goal/</prefix>
     <paramInts>
       <paramInt>
         <name>period</name>
@@ -65,7 +89,40 @@
       <dependency>human</dependency>
       <dependency>berlinROIProvider</dependency>
     </dependencies>
-	  <resizePatches>false</resizePatches>
+    <paramInts>
+      <paramInt>
+        <name>patchHeight</name>
+        <value>64</value>
+      </paramInt>
+      <paramInt>
+        <name>patchWidth</name>
+        <value>64</value>
+      </paramInt>
+    </paramInts>
+  </filter>
+  <filter>
+    <className>RoiToPatches</className>
+    <name>ballPatchProvider2</name>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>human</dependency>
+      <dependency>ballByII</dependency>
+    </dependencies>
+    <paramInts>
+      <paramInt>
+        <name>patchHeight</name>
+        <value>64</value>
+      </paramInt>
+      <paramInt>
+        <name>patchWidth</name>
+        <value>64</value>
+      </paramInt>
+    </paramInts>
   </filter>
   <filter>
     <className>RoiToPatches</className>
@@ -80,33 +137,59 @@
       <dependency>human</dependency>
       <dependency>goalROIProvider</dependency>
     </dependencies>
-	  <resizePatches>false</resizePatches>
+    <paramInts>
+      <paramInt>
+        <name>patchHeight</name>
+        <value>64</value>
+      </paramInt>
+      <paramInt>
+        <name>patchWidth</name>
+        <value>64</value>
+      </paramInt>
+    </paramInts>
   </filter>
   <filter>
-    <className>GoalByII</className>
+    <className>GoalByII2</className>
     <name>goalROIProvider</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
     </debugLevel>
     <dependencies>
-      <dependency>integralY</dependency>
+      <dependency>whiteII</dependency>
+      <dependency>greenII</dependency>
       <dependency>ballRadiusProvider</dependency>
     </dependencies>
     <paramFloats>
       <paramFloat>
 	      <name>aboveRatio</name>
-	      <value>3.0</value>
+	      <value>2.0</value>
       </paramFloat>
       <paramFloat>
 	      <name>belowRatio</name>
-	      <value>3.0</value>
+	      <value>2.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>boundaryWidthRatio</name>
+	      <value>2</value>
       </paramFloat>
       <paramFloat>
 	      <name>widthScale</name>
-	      <value>2.0</value>
+	      <value>1.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>belowCoeff</name>
+	      <value>1.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>minScore</name>
+	      <value>310</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>roiRatio</name>
+	      <value>4</value>
       </paramFloat>
     </paramFloats>
   </filter>
@@ -131,6 +214,65 @@
     </paramFloats>
   </filter>
   <filter>
+    <className>BallByII</className>
+    <name>ballByII</name>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>integralY</dependency>
+      <dependency>greenII</dependency>
+      <dependency>ballRadiusProvider</dependency>
+    </dependencies>
+    <paramFloats>
+      <paramFloat>
+	      <name>boundaryFactor</name>
+	      <value>2.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>yWeight</name>
+	      <value>5.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>greenWeight</name>
+	      <value>1.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>minScore</name>
+	      <value>25</value>
+      </paramFloat>
+    </paramFloats>
+  </filter>
+  <filter>
+    <className>Integral</className>
+    <name>whiteII</name>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>white</dependency>
+    </dependencies>
+  </filter> 
+  <filter>
+    <className>Integral</className>
+    <name>greenII</name>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>greenFiltered</dependency>
+    </dependencies>
+  </filter> 
+  <filter>
     <className>Integral</className>
     <name>integralY</name>
     <debugLevel>
@@ -142,12 +284,12 @@
     <dependencies>
       <dependency>Y</dependency>
     </dependencies>
-  </filter>
+  </filter> 
   <filter>
     <className>ChannelSelector</className>
     <name>Y</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
     </debugLevel>
     <dependencies>
       <dependency>sourceSmall</dependency>
@@ -166,7 +308,7 @@
     <name>human</name>
     <conversion>YUV2BGR</conversion>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -174,6 +316,125 @@
     <dependencies>
       <dependency>source</dependency>
     </dependencies>
+  </filter>
+  <filter>
+    <className>ColorConverter</className>
+    <name>smallHuman</name>
+    <conversion>YUV2BGR</conversion>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>sourceSmall</dependency>
+    </dependencies>
+  </filter>
+  <filter>
+    <className>Closure</className>
+    <name>greenFiltered</name>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>green</dependency>
+    </dependencies>
+    <paramInts>
+      <paramInt>
+	      <name>kernel width</name>
+	      <value>3</value>
+      </paramInt>
+      <paramInt>
+	      <name>kernel height</name>
+	      <value>3</value>
+      </paramInt>
+      <paramInt>
+	      <name>Shape</name>
+	      <value>2</value>
+      </paramInt>
+    </paramInts>
+  </filter>
+  <filter>
+    <className>ColorBounding</className>
+    <name>white</name>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>sourceSmall</dependency>
+    </dependencies>
+    <paramInts>
+      <paramInt>
+	      <name>minY</name>
+	      <value>70</value>
+      </paramInt>
+      <paramInt>
+	      <name>minU</name>
+	      <value>0</value>
+      </paramInt>
+      <paramInt>
+	      <name>minV</name>
+	      <value>0</value>
+      </paramInt>
+      <paramInt>
+	      <name>maxY</name>
+	      <value>255</value>
+      </paramInt>
+      <paramInt>
+	      <name>maxU</name>
+	      <value>255</value>
+      </paramInt>
+      <paramInt>
+	      <name>maxV</name>
+	      <value>255</value>
+      </paramInt>
+    </paramInts>
+  </filter>
+  <filter>
+    <className>ColorBounding</className>
+    <name>green</name>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>sourceSmall</dependency>
+    </dependencies>
+    <paramInts>
+      <paramInt>
+	      <name>minY</name>
+	      <value>20</value>
+      </paramInt>
+      <paramInt>
+	      <name>minU</name>
+	      <value>110</value>
+      </paramInt>
+      <paramInt>
+	      <name>minV</name>
+	      <value>110</value>
+      </paramInt>
+      <paramInt>
+	      <name>maxY</name>
+	      <value>70</value>
+      </paramInt>
+      <paramInt>
+	      <name>maxU</name>
+	      <value>127</value>
+      </paramInt>
+      <paramInt>
+	      <name>maxV</name>
+	      <value>133</value>
+      </paramInt>
+    </paramInts>
   </filter>
   <filter>
     <className>BallRadiusProvider</className>
@@ -216,12 +477,12 @@
       <threads>false</threads>
     </debugLevel>
     <dependencies/>
-    <imagesFile>/tmp/Log/images.csv</imagesFile>
+    <imagesFile>workingLog/images.csv</imagesFile>
     <name>source</name>
     <paramFloats/>
     <paramInts/>
     <paramPairInt/>
-    <startIndex>0</startIndex>
+    <startIndex>1000</startIndex>
   </filter>
 </pipeline>
 <playing>false</playing>
