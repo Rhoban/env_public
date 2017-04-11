@@ -14,9 +14,21 @@
 <pipeline>
   <filter>
     <className>BallByDNN</className>
-    <name>ballByDNN3</name>
+    <name>goalByDNN</name>
     <debugLevel>
       <graphics>true</graphics>
+    </debugLevel>
+    <dependencies>
+      <dependency>goalPatchProvider</dependency>
+    </dependencies>
+    <arch_path>ball_cifar.json</arch_path>
+    <weights_path>ball_cifar_weights.data</weights_path>
+  </filter>
+  <filter>
+    <className>BallByDNN</className>
+    <name>ballByDNN</name>
+    <debugLevel>
+      <graphics>false</graphics>
     </debugLevel>
     <dependencies>
       <dependency>ballPatchProvider</dependency>
@@ -60,7 +72,7 @@
     <paramInts>
       <paramInt>
         <name>period</name>
-        <value>0</value>
+        <value>1</value>
       </paramInt>
     </paramInts>
   </filter>
@@ -116,7 +128,7 @@
     <className>GoalByII2</className>
     <name>goalROIProvider</name>
     <debugLevel>
-      <graphics>false</graphics>
+      <graphics>true</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -149,7 +161,7 @@
       </paramFloat>
       <paramFloat>
 	      <name>minScore</name>
-	      <value>310</value>
+	      <value>220</value>
       </paramFloat>
       <paramFloat>
 	      <name>roiRatio</name>
@@ -161,7 +173,7 @@
     <className>BallByII2</className>
     <name>ballByII</name>
     <debugLevel>
-      <graphics>true</graphics>
+      <graphics>false</graphics>
       <parameters>false</parameters>
       <perfs>false</perfs>
       <threads>false</threads>
@@ -327,7 +339,7 @@
     <paramInts>
       <paramInt>
 	      <name>minY</name>
-	      <value>70</value>
+	      <value>140</value>
       </paramInt>
       <paramInt>
 	      <name>minU</name>
@@ -378,11 +390,11 @@
       </paramInt>
       <paramInt>
 	      <name>maxY</name>
-	      <value>70</value>
+	      <value>127</value>
       </paramInt>
       <paramInt>
 	      <name>maxU</name>
-	      <value>127</value>
+	      <value>130</value>
       </paramInt>
       <paramInt>
 	      <name>maxV</name>
