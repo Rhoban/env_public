@@ -191,6 +191,45 @@
       </paramInt>
     </paramInts>
   </filter>
+  <filter>
+    <className>ColorBounding</className>
+    <name>green</name>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>sourceSmall</dependency>
+    </dependencies>
+    <paramInts>
+      <paramInt>
+	      <name>minY</name>
+	      <value>20</value>
+      </paramInt>
+      <paramInt>
+	      <name>minU</name>
+	      <value>110</value>
+      </paramInt>
+      <paramInt>
+	      <name>minV</name>
+	      <value>110</value>
+      </paramInt>
+      <paramInt>
+	      <name>maxY</name>
+	      <value>127</value>
+      </paramInt>
+      <paramInt>
+	      <name>maxU</name>
+	      <value>130</value>
+      </paramInt>
+      <paramInt>
+	      <name>maxV</name>
+	      <value>133</value>
+      </paramInt>
+    </paramInts>
+  </filter>
     <filter>
       <className>ChannelSelector</className>
       <name>Y</name>
