@@ -35,7 +35,7 @@
       </debugLevel>
       <dependencies>
         <dependency>human</dependency>
-        <dependency>berlinROIProvider</dependency>
+        <dependency>ballByII</dependency>
       </dependencies>
 	    <resizePatches>false</resizePatches>
     </filter>
@@ -82,26 +82,49 @@
         </paramFloat>
       </paramFloats>
     </filter>
-    <filter>
-      <className>BerlinROIProvider</className>
-      <name>berlinROIProvider</name>
-      <debugLevel>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-        <threads>false</threads>
-      </debugLevel>
-      <dependencies>
-        <dependency>integralY</dependency>
-        <dependency>ballRadiusProvider</dependency>
-      </dependencies>
-      <paramFloats>
-        <paramFloat>
-	        <name>boundaryFactor</name>
-	        <value>2.0</value>
-        </paramFloat>
-      </paramFloats>
-    </filter>
+  <filter>
+    <className>BallByII2</className>
+    <name>ballByII</name>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>integralY</dependency>
+      <dependency>greenII</dependency>
+      <dependency>ballRadiusProvider</dependency>
+    </dependencies>
+    <paramInts>
+      <paramInt>
+	      <name>decimationRate</name>
+	      <value>5</value>
+      </paramInt>
+    </paramInts>
+    <paramFloats>
+      <paramFloat>
+	      <name>boundaryFactor</name>
+	      <value>2.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>yWeight</name>
+	      <value>5.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>greenWeight</name>
+	      <value>2.0</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>minScore</name>
+	      <value>30</value>
+      </paramFloat>
+      <paramFloat>
+	      <name>minRadius</name>
+	      <value>8</value>
+      </paramFloat>
+    </paramFloats>
+  </filter>
     <filter>
       <className>Integral</className>
       <name>integralY</name>
@@ -115,6 +138,32 @@
         <dependency>Y</dependency>
       </dependencies>
     </filter>
+  <filter>
+    <className>Integral</className>
+    <name>whiteII</name>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>white</dependency>
+    </dependencies>
+  </filter> 
+  <filter>
+    <className>Integral</className>
+    <name>greenII</name>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>greenFiltered</dependency>
+    </dependencies>
+  </filter>
     <filter>
       <className>ChannelSelector</className>
       <name>Y</name>
@@ -122,7 +171,7 @@
         <graphics>false</graphics>
       </debugLevel>
       <dependencies>
-        <dependency>sourceSmall</dependency>
+        <dependency>source</dependency>
       </dependencies>
       <paramInts>
         <paramInt>
@@ -159,25 +208,6 @@
       <dependencies>
         <dependency>sourceSmall</dependency>
       </dependencies>
-    </filter>
-    <filter>
-      <className>Rescale</className>
-      <name>sourceSmall</name>
-      <debugLevel>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-        <threads>false</threads>
-      </debugLevel>
-      <dependencies>
-        <dependency>source</dependency>
-      </dependencies>
-      <paramFloats>
-        <paramFloat>
-	        <name>ratio</name>
-	        <value>4.0</value>
-        </paramFloat>
-      </paramFloats>
     </filter>
     <filter>
       <className>SourcePtGrey</className>
