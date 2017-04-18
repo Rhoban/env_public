@@ -13,6 +13,18 @@
   <nbParticlesFF>1</nbParticlesFF>
   <pipeline>
     <filter>
+      <className>BallByDNN</className>
+      <name>ballByDNN</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>ballPatchProvider</dependency>
+      </dependencies>
+      <arch_path>ball_dnn_structure.json</arch_path>
+      <weights_path>ball_dnn_weights.data</weights_path>
+    </filter>
+    <filter>
       <className>RoiToPatches</className>
       <name>ballPatchProvider</name>
       <debugLevel>
