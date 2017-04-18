@@ -150,7 +150,46 @@
     <dependencies>
       <dependency>white</dependency>
     </dependencies>
-  </filter> 
+  </filter>
+  <filter>
+    <className>ColorBounding</className>
+    <name>white</name>
+    <debugLevel>
+      <graphics>false</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>sourceSmall</dependency>
+    </dependencies>
+    <paramInts>
+      <paramInt>
+	      <name>minY</name>
+	      <value>140</value>
+      </paramInt>
+      <paramInt>
+	      <name>minU</name>
+	      <value>0</value>
+      </paramInt>
+      <paramInt>
+	      <name>minV</name>
+	      <value>0</value>
+      </paramInt>
+      <paramInt>
+	      <name>maxY</name>
+	      <value>255</value>
+      </paramInt>
+      <paramInt>
+	      <name>maxU</name>
+	      <value>255</value>
+      </paramInt>
+      <paramInt>
+	      <name>maxV</name>
+	      <value>255</value>
+      </paramInt>
+    </paramInts>
+  </filter>
   <filter>
     <className>Integral</className>
     <name>greenII</name>
