@@ -13,6 +13,14 @@
   <nbParticlesFF>1</nbParticlesFF>
   <pipeline>
     <filter>
+      <className>ColorConverter</className>
+      <name>human</name>
+      <conversion>YUV2BGR</conversion>
+      <dependencies>
+	<dependency>source</dependency>
+      </dependencies>
+    </filter>
+    <filter>
       <className>SourcePtGrey</className>
       <name>source</name>
       <debugLevel>
