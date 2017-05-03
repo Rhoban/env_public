@@ -321,33 +321,6 @@
       </dependencies>
     </filter>
     <filter>
-      <className>Closure</className>
-      <name>greenFiltered</name>
-      <debugLevel>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-        <threads>false</threads>
-      </debugLevel>
-      <dependencies>
-        <dependency>green</dependency>
-      </dependencies>
-      <paramInts>
-        <paramInt>
-	        <name>kernel width</name>
-	        <value>3</value>
-        </paramInt>
-        <paramInt>
-	        <name>kernel height</name>
-	        <value>3</value>
-        </paramInt>
-        <paramInt>
-	        <name>Shape</name>
-	        <value>2</value>
-        </paramInt>
-      </paramInts>
-    </filter>
-    <filter>
       <className>Threshold</className>
       <name>white</name>
       <debugLevel>
