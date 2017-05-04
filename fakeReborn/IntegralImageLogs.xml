@@ -9,7 +9,7 @@
   <pathToLog>workingLog/lowLevel.log</pathToLog>
   <embedded>false</embedded>
   <fieldResampling>0.0</fieldResampling>
-  <imageDelay>11</imageDelay>
+  <imageDelay>-5</imageDelay>
   <nbParticlesBF>1</nbParticlesBF>
   <nbParticlesFF>500</nbParticlesFF>
   <pipeline>
@@ -22,12 +22,12 @@
       <dependencies>
         <dependency>goalPatchProvider</dependency>
       </dependencies>
-      <arch_path>goal_dnn_structure.json</arch_path>
-      <weights_path>goal_dnn_weights.data</weights_path>
+      <arch_path>../common/dnn/posts/structure.json</arch_path>
+      <weights_path>../common/dnn/posts/weights.bin</weights_path>
       <paramFloats>
         <paramFloat>
 	        <name>scoreThreshold</name>
-	        <value>0.9</value>
+	        <value>0.75</value>
         </paramFloat>
       </paramFloats>
     </filter>
@@ -40,12 +40,12 @@
       <dependencies>
         <dependency>ballPatchProvider</dependency>
       </dependencies>
-      <arch_path>ball_dnn_structure.json</arch_path>
-      <weights_path>ball_dnn_weights.data</weights_path>
+      <arch_path>../common/dnn/balls/structure.json</arch_path>
+      <weights_path>../common/dnn/balls/weights.bin</weights_path>
       <paramFloats>
         <paramFloat>
 	        <name>scoreThreshold</name>
-	        <value>0.9</value>
+	        <value>0.85</value>
         </paramFloat>
       </paramFloats>
     </filter>
@@ -227,7 +227,7 @@
         </paramFloat>
         <paramFloat>
 	        <name>minScore</name>
-	        <value>30</value>
+	        <value>60</value>
         </paramFloat>
         <paramFloat>
 	        <name>minRadius</name>
@@ -321,37 +321,10 @@
       </dependencies>
     </filter>
     <filter>
-      <className>Closure</className>
-      <name>greenFiltered</name>
-      <debugLevel>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-        <threads>false</threads>
-      </debugLevel>
-      <dependencies>
-        <dependency>green</dependency>
-      </dependencies>
-      <paramInts>
-        <paramInt>
-	        <name>kernel width</name>
-	        <value>3</value>
-        </paramInt>
-        <paramInt>
-	        <name>kernel height</name>
-	        <value>3</value>
-        </paramInt>
-        <paramInt>
-	        <name>Shape</name>
-	        <value>2</value>
-        </paramInt>
-      </paramInts>
-    </filter>
-    <filter>
       <className>Threshold</className>
       <name>white</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -362,7 +335,7 @@
       <paramInts>
         <paramInt>
 	        <name>threshold</name>
-	        <value>140</value>
+	        <value>120</value>
         </paramInt>
       </paramInts>
     </filter>
@@ -381,27 +354,27 @@
       <paramInts>
         <paramInt>
 	        <name>minY</name>
-	        <value>20</value>
+	        <value>40</value>
         </paramInt>
         <paramInt>
 	        <name>minU</name>
-	        <value>110</value>
+	        <value>112</value>
         </paramInt>
         <paramInt>
 	        <name>minV</name>
-	        <value>110</value>
+	        <value>117</value>
         </paramInt>
         <paramInt>
 	        <name>maxY</name>
-	        <value>127</value>
+	        <value>110</value>
         </paramInt>
         <paramInt>
 	        <name>maxU</name>
-	        <value>130</value>
+	        <value>131</value>
         </paramInt>
         <paramInt>
 	        <name>maxV</name>
-	        <value>133</value>
+	        <value>131</value>
         </paramInt>
       </paramInts>
     </filter>
