@@ -5,20 +5,20 @@ if [ $# -ne 1 ]; then
     exit
 fi
 
-ESSID="HL-$1"
+ESSID="HL_KID_$1"
 HOSTNAME=`hostname`
 
 if [ "$HOSTNAME" == "chewbacca" ]; then
-    IP="192.168.11.101"
+    IP="192.168.100.101"
 fi
 if [ "$HOSTNAME" == "mowgly" ]; then
-    IP="192.168.11.102"
+    IP="192.168.100.102"
 fi
 if [ "$HOSTNAME" == "django" ]; then
-    IP="192.168.11.103"
+    IP="192.168.100.103"
 fi
 if [ "$HOSTNAME" == "tom" ]; then
-    IP="192.168.11.104"
+    IP="192.168.100.104"
 fi
 
 killall -2 ping
@@ -31,3 +31,4 @@ sudo iwconfig wlan0 mode managed essid $ESSID;
 sudo ifconfig wlan0 $IP netmask 255.255.0.0 ;
 echo "done, pinging field router to check it's ok"
 nohup ping 192.168.0.1 > ping.log &
+
