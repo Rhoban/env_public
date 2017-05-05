@@ -104,6 +104,10 @@
       </dependencies>
       <paramInts>
         <paramInt>
+          <name>tagLevel</name>
+          <value>1</value>
+        </paramInt>
+        <paramInt>
           <name>patchHeight</name>
           <value>64</value>
         </paramInt>
@@ -196,7 +200,7 @@
       <className>BallByII2</className>
       <name>ballByII</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -223,7 +227,7 @@
         </paramFloat>
         <paramFloat>
 	        <name>greenWeight</name>
-	        <value>2.0</value>
+	        <value>6.0</value>
         </paramFloat>
         <paramFloat>
 	        <name>minScore</name>
@@ -231,7 +235,7 @@
         </paramFloat>
         <paramFloat>
 	        <name>minRadius</name>
-	        <value>8</value>
+	        <value>10</value>
         </paramFloat>
       </paramFloats>
     </filter>
