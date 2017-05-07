@@ -2251,7 +2251,7 @@
     </inertial>
 </link>
 <joint name="camera" type="fixed">
-<origin xyz="0.01 1.59872e-17 0.062" rpy="0 -0 -0.083"/>
+    <origin xyz="0.01 0 0.062" rpy="0 0 0"/>
     <parent link="head_pitch" />
     <child link="camera" />
     <axis xyz="0 0 0" />
