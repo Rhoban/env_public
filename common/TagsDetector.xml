@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<LocalisationTest>
+  <ballResampling>0.0</ballResampling>
+  <angularPitchTolerance>5</angularPitchTolerance>
+  <benchmark>true</benchmark>
+  <benchmarkDetail>4</benchmarkDetail>
+  <gpuOn>false</gpuOn>
+  <readFromLog>false</readFromLog>
+  <embedded>true</embedded>
+  <fieldResampling>0.0</fieldResampling>
+  <imageDelay>-5</imageDelay>
+  <nbParticlesBF>1</nbParticlesBF>
+  <nbParticlesFF>500</nbParticlesFF>
+  <pipeline>
+    <filter>
+      <className>SourcePtGrey</className>
+      <name>source</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <wished_properties>
+        <Shutter>
+          <autoManualMode>false</autoManualMode>
+          <absValue>2</absValue>
+        </Shutter>
+        <Gain>
+          <autoManualMode>false</autoManualMode>
+          <absValue>7</absValue>
+        </Gain>
+        <FrameRate>
+          <autoManualMode>false</autoManualMode>
+          <absValue>10</absValue>
+        </FrameRate>
+      </wished_properties>
+      <dependencies/>
+      <paramInts/>
+      <paramFloats/>
+      <paramPairInt/>
+    </filter>
+
+    <filter>
+      <className>TagsDetector</className>
+      <name>Tags</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <dependencies>
+	<dependency>source</dependency>
+      </dependencies>
+
+      <paramInts/>
+      <paramFloats/>
+      <paramPairInt/>
+    </filter>
+
+  </pipeline>
+  <playing>true</playing>
+  <showRobotView>false</showRobotView>
+  <showTaggedImg>false</showTaggedImg>
+  <showTopView>false</showTopView>
+</LocalisationTest>
