@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <LocalisationTest>
   <angularPitchTolerance>5</angularPitchTolerance>
+  <useTags>true</useTags>
   <benchmark>false</benchmark>
   <benchmarkDetail>4</benchmarkDetail>
   <gpuOn>false</gpuOn>
@@ -17,6 +18,12 @@
       <dependencies>
         <dependency>Y</dependency>
       </dependencies>
+      <paramFloats>
+        <paramFloat>
+          <name>markerSize</name>
+          <value>0.2</value>
+        </paramFloat>
+      </paramFloats>
     </filter> 
     <filter>
       <className>ChannelSelector</className>
