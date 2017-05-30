@@ -12,6 +12,8 @@
   <nbParticlesBF>1</nbParticlesBF>
   <nbParticlesFF>500</nbParticlesFF>
   <pipeline>
+
+
     <filter>
       <className>SourcePtGrey</className>
       <name>source</name>
@@ -39,13 +41,48 @@
     </filter>
 
     <filter>
+      <className>ChannelSelector</className>
+      <name>Y</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>source</dependency>
+      </dependencies>
+      <paramInts>
+        <paramInt>
+            <name>channel</name>
+            <value>0</value>
+        </paramInt>
+      </paramInts>
+      <paramFloats/>
+      <paramPairInt/>
+    </filter>
+
+    <filter>
       <className>TagsDetector</className>
       <name>Tags</name>
       <debugLevel>
         <graphics>true</graphics>
       </debugLevel>
       <dependencies>
-	<dependency>source</dependency>
+	<dependency>Y</dependency>
+      </dependencies>
+
+      <paramInts/>
+      <paramFloats/>
+      <paramPairInt/>
+    </filter>
+
+
+    <filter>
+      <className>BRISK</className>
+      <name>Brisk</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <dependencies>
+	<dependency>Y</dependency>
       </dependencies>
 
       <paramInts/>
