@@ -21,7 +21,7 @@
      * set to 1 on the first push, then 0 and so.
      */
     {
-        "param": "/moves/walk/var/enabled",
+        "param": "/moves/walk/walkEnable",
         "type": "toggle",
         "number": 3
     },
@@ -30,22 +30,22 @@
      * The axis 1 will set step in the range 38 to -38
      */
     {
-        "param": "/moves/walk/var/step",
+        "param": "/moves/walk/walkStep",
         "type": "axis",
         "number": 1,
-        "range": [38, -38]
+        "range": [50, -20]
     },
     {
-        "param": "/moves/walk/var/lateral",
+        "param": "/moves/walk/walkLateral",
         "type": "axis",
         "number": 0,
         "range": [20, -20]
     },
     {
-        "param": "/moves/walk/var/turn",
+        "param": "/moves/walk/walkTurn",
         "type": "axis",
         "number": 2,
-        "range": [20, -20]
+        "range": [15, -15]
     },
 
     /**
@@ -64,31 +64,38 @@
         "number": 6,
         "step": 0.1
     },
-
+    
     /**
-     * When the button 10 will be pressed, the kickLeft will be set to 1, and
-     * to 0 when it will be released
+     * Standup
      */
     {
-        "param": "/moves/walk/var/kickLeft",
+        "command": "standup",
         "type": "button",
+        "number": 12
+    },
+    {
+        "command": "start walk",
+        "type": "button",
+        "number": 15
+    },
+    {
+        "command": "stop walk",
+        "type": "button",
+        "number": 13
+    },
+
+    /**
+     * Kick
+     */
+    {
+        "param": "/moves/walk/walkKickLeft",
+        "type": "toggle",
         "number": 10
     },
+
     {
-        "param": "/moves/walk/var/kickRight",
-        "type": "button",
+        "param": "/moves/walk/walkKickRight",
+        "type": "toggle",
         "number": 11
-    },
-    {
-        "param": "/moves/walk/riseGain",
-        "type": "increment",
-        "number": 5,
-        "step": 0.002
-    },
-    {
-        "param": "/moves/walk/riseGain",
-        "type": "decrement",
-        "number": 7,
-        "step": 0.002
     }
 ]

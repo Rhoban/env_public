@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<LocalisationTest>
+  <ballResampling>0.0</ballResampling>
+  <angularPitchTolerance>2</angularPitchTolerance>
+  <benchmark>true</benchmark>
+  <benchmarkDetail>4</benchmarkDetail>
+  <gpuOn>false</gpuOn>
+  <readFromLog>true</readFromLog>
+  <pathToLog>workingLog/lowLevel.log</pathToLog>
+  <embedded>false</embedded>
+  <fieldResampling>0.0</fieldResampling>
+  <imageDelay>-5</imageDelay>
+  <nbParticlesBF>1</nbParticlesBF>
+  <nbParticlesFF>500</nbParticlesFF>
+  <pipeline>
+    <filter>
+      <className>TagsDetector</className>
+      <name>tagsDetector</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>source</dependency>
+      </dependencies>
+    </filter>
+    <filter>
+      <className>SourceLogs2</className>
+      <debugLevel>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+        <threads>false</threads>
+      </debugLevel>
+      <dependencies/>
+      <imagesFile>workingLog/images.csv</imagesFile>
+      <name>source</name>
+      <paramFloats/>
+      <paramInts/>
+      <paramPairInt/>
+      <startIndex>0</startIndex>
+    </filter>
+  </pipeline>
+  <playing>false</playing>
+  <showRobotView>false</showRobotView>
+  <showTaggedImg>false</showTaggedImg>
+  <showTopView>false</showTopView>
+</LocalisationTest>
