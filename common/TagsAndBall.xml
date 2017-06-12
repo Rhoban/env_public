@@ -198,6 +198,20 @@
       </paramFloats>
     </filter> 
     <filter>
+      <className>ColorConverter</className>
+      <name>human</name>
+      <conversion>YUV2BGR</conversion>
+      <debugLevel>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+        <threads>false</threads>
+      </debugLevel>
+      <dependencies>
+        <dependency>source</dependency>
+      </dependencies>
+    </filter>
+    <filter>
       <className>ChannelSelector</className>
       <name>Y</name>
       <debugLevel>
