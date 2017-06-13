@@ -8,12 +8,17 @@
   <readFromLog>false</readFromLog>
   <embedded>true</embedded>
   <imageDelay>-5</imageDelay>
+  <arenaProviders/>
+  <goalProviders/>
+  <ballProviders>
+    <val>ballByDNN</val>
+  </ballProviders>
   <pipeline>
     <filter>
       <className>BallByDNN</className>
       <name>ballByDNN</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>ballPatchProvider</dependency>
@@ -59,7 +64,7 @@
       <className>BallByII2</className>
       <name>ballByII</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -112,24 +117,6 @@
       </dependencies>
     </filter> 
     <filter>
-      <className>ChannelSelector</className>
-      <name>Y</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>source</dependency>
-      </dependencies>
-      <paramInts>
-        <paramInt>
-	        <name>channel</name>
-	        <value>0</value>
-        </paramInt>
-      </paramInts>
-      <paramFloats/>
-      <paramPairInt/>
-    </filter> 
-    <filter>
       <className>Integral</className>
       <name>greenII</name>
       <debugLevel>
@@ -146,7 +133,7 @@
       <className>ColorBounding</className>
       <name>green</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -185,10 +172,10 @@
       <className>TagsDetector</className>
       <name>tagsDetector</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
-        <dependency>Y</dependency>
+        <dependency>smallY</dependency>
       </dependencies>
       <paramFloats>
         <paramFloat>
@@ -196,7 +183,26 @@
           <value>0.2</value>
         </paramFloat>
       </paramFloats>
-    </filter> 
+      <paramInts>
+        <paramInt>
+          <name>debugLevel</name>
+          <value>1</value>
+        </paramInt>
+      </paramInts>
+    </filter>
+    <filter>
+      <className>Rescale</className>
+      <name>smallY</name>
+      <dependencies>
+	<dependency>Y</dependency>
+      </dependencies>
+      <paramFloats>
+        <paramFloat>
+          <name>ratio</name>
+          <value>2</value>
+        </paramFloat>
+      </paramFloats>
+    </filter>
     <filter>
       <className>ChannelSelector</className>
       <name>Y</name>
@@ -204,7 +210,7 @@
         <graphics>false</graphics>
       </debugLevel>
       <dependencies>
-        <dependency>source</dependency>
+	<dependency>source</dependency>
       </dependencies>
       <paramInts>
         <paramInt>
@@ -214,6 +220,33 @@
       </paramInts>
       <paramFloats/>
       <paramPairInt/>
+    </filter>
+    <filter>
+      <className>ColorConverter</className>
+      <name>human</name>
+      <conversion>YUV2BGR</conversion>
+      <debugLevel>
+	<graphics>false</graphics>
+	<parameters>false</parameters>
+	<perfs>false</perfs>
+	<threads>false</threads>
+      </debugLevel>
+      <dependencies>
+	<dependency>source</dependency>
+      </dependencies>
+    </filter>
+    <filter>
+      <className>BallRadiusProvider</className>
+      <name>ballRadiusProvider</name>
+      <debugLevel>
+	<graphics>false</graphics>
+	<parameters>false</parameters>
+	<perfs>false</perfs>
+	<threads>false</threads>
+      </debugLevel>
+      <dependencies>
+	<dependency>source</dependency>
+      </dependencies>
     </filter>
     <filter>
       <className>SourcePtGrey</className>
