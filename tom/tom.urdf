@@ -5,7 +5,7 @@
   <link name="trunk">
     <visual>
       <geometry>
-        <mesh filename="package://urdf/c7bb45d0c3ed57b9a28d81e2a20c425345619d17.stl"/>
+        <mesh filename="package://urdf/1eb9a5a5dedcfc5b4983c431992cb663aa33356f.stl"/>
       </geometry>
       <material name="body_body_1_0_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -23,21 +23,21 @@
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://urdf/ec48c503b08df80db4b69bdca79c3c4abd9a9f79.stl"/>
+        <mesh filename="package://urdf/1fb1200d4eecf508ae39178f782dc19c9f95171f.stl"/>
       </geometry>
-      <material name="body_mx64_1_2_material">
-        <color rgba="0.15 0.2 0.15 1.0"/>
+      <material name="body_lipo_1_2_material">
+        <color rgba="0.2 0.2 1 1.0"/>
       </material>
-    <origin xyz="0 -0.0465 0.0205" rpy="-1.22465e-16 3.14159 -1.22465e-16"/>
+    <origin xyz="0.02 0 0.044" rpy="0 -0 1.5708"/>
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://urdf/25b260d037c322d47acdc54ca73d53b468bfe2d1.stl"/>
+        <mesh filename="package://urdf/ec48c503b08df80db4b69bdca79c3c4abd9a9f79.stl"/>
       </geometry>
-      <material name="body_mx64_arm_1_3_material">
-        <color rgba="0.5 0.5 0.5 1.0"/>
+      <material name="body_mx64_1_3_material">
+        <color rgba="0.15 0.2 0.15 1.0"/>
       </material>
-    <origin xyz="3.07451e-34 -0.0465 0" rpy="-1.22465e-16 3.14159 -1.22465e-16"/>
+    <origin xyz="0 -0.046375 0.0205" rpy="-1.22465e-16 3.14159 -1.22465e-16"/>
     </visual>
     <visual>
       <geometry>
@@ -46,34 +46,34 @@
       <material name="body_mx64_arm_1_4_material">
         <color rgba="0.5 0.5 0.5 1.0"/>
       </material>
-    <origin xyz="-3.52444e-34 -0.0465 0.044" rpy="-1.22465e-16 3.14159 -1.22465e-16"/>
+    <origin xyz="3.07451e-34 -0.046375 0" rpy="-1.22465e-16 3.14159 -1.22465e-16"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://urdf/25b260d037c322d47acdc54ca73d53b468bfe2d1.stl"/>
+      </geometry>
+      <material name="body_mx64_arm_1_5_material">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    <origin xyz="-3.52444e-34 -0.046375 0.044" rpy="-1.22465e-16 3.14159 -1.22465e-16"/>
     </visual>
     <visual>
       <geometry>
         <mesh filename="package://urdf/f14dd39e029f8996e3026773ee23983bf9c6aaf9.stl"/>
       </geometry>
-      <material name="body_tag_1_5_material">
+      <material name="body_tag_1_6_material">
         <color rgba="0.9 0.9 0.9 1.0"/>
       </material>
-    <origin xyz="0.035 -0.0465 0" rpy="3.14159 -1.22465e-16 1.5708"/>
+    <origin xyz="0.035 -0.046375 0" rpy="3.14159 -1.22465e-16 1.5708"/>
     </visual>
     <visual>
       <geometry>
         <mesh filename="package://urdf/e9f087865029fcd254bd6913f6f702b6f701e249.stl"/>
       </geometry>
-      <material name="body_mx28_1_6_material">
+      <material name="body_mx28_1_7_material">
         <color rgba="0.15 0.2 0.15 1.0"/>
       </material>
-    <origin xyz="0 -0.0465 0.1985" rpy="1.5708 -1.5708 0"/>
-    </visual>
-    <visual>
-      <geometry>
-        <mesh filename="package://urdf/f3516f363c4dfdeb49895426ad64acab9d85cee8.stl"/>
-      </geometry>
-      <material name="body_mx28_arm_1_7_material">
-        <color rgba="0.5 0.5 0.5 1.0"/>
-      </material>
-    <origin xyz="-3.9413e-18 -0.06425 0.1985" rpy="1.5708 -1.5708 0"/>
+    <origin xyz="0 -0.046375 0.159" rpy="1.5708 -1.5708 0"/>
     </visual>
     <visual>
       <geometry>
@@ -82,34 +82,34 @@
       <material name="body_mx28_arm_1_8_material">
         <color rgba="0.5 0.5 0.5 1.0"/>
       </material>
-    <origin xyz="4.60743e-18 -0.02575 0.1985" rpy="1.5708 -1.5708 0"/>
+    <origin xyz="-3.9413e-18 -0.064125 0.159" rpy="1.5708 -1.5708 0"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://urdf/f3516f363c4dfdeb49895426ad64acab9d85cee8.stl"/>
+      </geometry>
+      <material name="body_mx28_arm_1_9_material">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    <origin xyz="4.60743e-18 -0.025625 0.159" rpy="1.5708 -1.5708 0"/>
     </visual>
     <visual>
       <geometry>
         <mesh filename="package://urdf/f14dd39e029f8996e3026773ee23983bf9c6aaf9.stl"/>
       </geometry>
-      <material name="body_tag_1_9_material">
+      <material name="body_tag_1_10_material">
         <color rgba="0.9 0.9 0.9 1.0"/>
       </material>
-    <origin xyz="-3.9413e-18 -0.06425 0.1735" rpy="-1.5708 -2.22045e-16 3.14159"/>
+    <origin xyz="-3.9413e-18 -0.064125 0.134" rpy="-1.5708 -2.22045e-16 3.14159"/>
     </visual>
     <visual>
       <geometry>
         <mesh filename="package://urdf/ec48c503b08df80db4b69bdca79c3c4abd9a9f79.stl"/>
       </geometry>
-      <material name="body_mx64_1_10_material">
+      <material name="body_mx64_1_11_material">
         <color rgba="0.15 0.2 0.15 1.0"/>
       </material>
-    <origin xyz="0 0.0465 0.0205" rpy="-1.22465e-16 3.14159 -1.22465e-16"/>
-    </visual>
-    <visual>
-      <geometry>
-        <mesh filename="package://urdf/25b260d037c322d47acdc54ca73d53b468bfe2d1.stl"/>
-      </geometry>
-      <material name="body_mx64_arm_1_11_material">
-        <color rgba="0.5 0.5 0.5 1.0"/>
-      </material>
-    <origin xyz="3.07451e-34 0.0465 0" rpy="-1.22465e-16 3.14159 -1.22465e-16"/>
+    <origin xyz="0 0.046375 0.0205" rpy="-1.22465e-16 3.14159 -1.22465e-16"/>
     </visual>
     <visual>
       <geometry>
@@ -118,34 +118,34 @@
       <material name="body_mx64_arm_1_12_material">
         <color rgba="0.5 0.5 0.5 1.0"/>
       </material>
-    <origin xyz="-3.52444e-34 0.0465 0.044" rpy="-1.22465e-16 3.14159 -1.22465e-16"/>
+    <origin xyz="3.07451e-34 0.046375 0" rpy="-1.22465e-16 3.14159 -1.22465e-16"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://urdf/25b260d037c322d47acdc54ca73d53b468bfe2d1.stl"/>
+      </geometry>
+      <material name="body_mx64_arm_1_13_material">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    <origin xyz="-3.52444e-34 0.046375 0.044" rpy="-1.22465e-16 3.14159 -1.22465e-16"/>
     </visual>
     <visual>
       <geometry>
         <mesh filename="package://urdf/f14dd39e029f8996e3026773ee23983bf9c6aaf9.stl"/>
       </geometry>
-      <material name="body_tag_1_13_material">
+      <material name="body_tag_1_14_material">
         <color rgba="0.9 0.9 0.9 1.0"/>
       </material>
-    <origin xyz="0.035 0.0465 0" rpy="3.14159 -1.22465e-16 1.5708"/>
+    <origin xyz="0.035 0.046375 0" rpy="3.14159 -1.22465e-16 1.5708"/>
     </visual>
     <visual>
       <geometry>
         <mesh filename="package://urdf/e9f087865029fcd254bd6913f6f702b6f701e249.stl"/>
       </geometry>
-      <material name="body_mx28_1_14_material">
+      <material name="body_mx28_1_15_material">
         <color rgba="0.15 0.2 0.15 1.0"/>
       </material>
-    <origin xyz="0 0.0465 0.1985" rpy="-1.5708 -1.5708 0"/>
-    </visual>
-    <visual>
-      <geometry>
-        <mesh filename="package://urdf/f3516f363c4dfdeb49895426ad64acab9d85cee8.stl"/>
-      </geometry>
-      <material name="body_mx28_arm_1_15_material">
-        <color rgba="0.5 0.5 0.5 1.0"/>
-      </material>
-    <origin xyz="6.11505e-18 0.06425 0.1985" rpy="-1.5708 -1.5708 0"/>
+    <origin xyz="0 0.046375 0.159" rpy="-1.5708 -1.5708 0"/>
     </visual>
     <visual>
       <geometry>
@@ -154,34 +154,34 @@
       <material name="body_mx28_arm_1_16_material">
         <color rgba="0.5 0.5 0.5 1.0"/>
       </material>
-    <origin xyz="-7.14858e-18 0.02575 0.1985" rpy="-1.5708 -1.5708 0"/>
-    </visual>
-    <visual>
-      <geometry>
-        <mesh filename="package://urdf/f14dd39e029f8996e3026773ee23983bf9c6aaf9.stl"/>
-      </geometry>
-      <material name="body_tag_1_17_material">
-        <color rgba="0.9 0.9 0.9 1.0"/>
-      </material>
-    <origin xyz="6.11505e-18 0.06425 0.1735" rpy="-1.5708 -2.22045e-16 -3.4451e-16"/>
-    </visual>
-    <visual>
-      <geometry>
-        <mesh filename="package://urdf/e9f087865029fcd254bd6913f6f702b6f701e249.stl"/>
-      </geometry>
-      <material name="body_mx28_1_18_material">
-        <color rgba="0.15 0.2 0.15 1.0"/>
-      </material>
-    <origin xyz="0.018 0 0.19225" rpy="0 -0 0"/>
+    <origin xyz="6.11505e-18 0.064125 0.159" rpy="-1.5708 -1.5708 0"/>
     </visual>
     <visual>
       <geometry>
         <mesh filename="package://urdf/f3516f363c4dfdeb49895426ad64acab9d85cee8.stl"/>
       </geometry>
-      <material name="body_mx28_arm_1_19_material">
+      <material name="body_mx28_arm_1_17_material">
         <color rgba="0.5 0.5 0.5 1.0"/>
       </material>
-    <origin xyz="0.018 0 0.21" rpy="0 -0 0"/>
+    <origin xyz="-7.14858e-18 0.025625 0.159" rpy="-1.5708 -1.5708 0"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://urdf/f14dd39e029f8996e3026773ee23983bf9c6aaf9.stl"/>
+      </geometry>
+      <material name="body_tag_1_18_material">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
+    <origin xyz="6.11505e-18 0.064125 0.134" rpy="-1.5708 -2.22045e-16 -3.4451e-16"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://urdf/e9f087865029fcd254bd6913f6f702b6f701e249.stl"/>
+      </geometry>
+      <material name="body_mx28_1_19_material">
+        <color rgba="0.15 0.2 0.15 1.0"/>
+      </material>
+    <origin xyz="0.025873 0 0.16193" rpy="0 -0 0"/>
     </visual>
     <visual>
       <geometry>
@@ -190,71 +190,80 @@
       <material name="body_mx28_arm_1_20_material">
         <color rgba="0.5 0.5 0.5 1.0"/>
       </material>
-    <origin xyz="0.018 0 0.1715" rpy="0 -0 0"/>
+    <origin xyz="0.025873 0 0.17968" rpy="0 -0 0"/>
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://urdf/f3516f363c4dfdeb49895426ad64acab9d85cee8.stl"/>
+      </geometry>
+      <material name="body_mx28_arm_1_21_material">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    <origin xyz="0.025873 0 0.14118" rpy="0 -0 0"/>
     </visual>
     <visual>
       <geometry>
         <mesh filename="package://urdf/f14dd39e029f8996e3026773ee23983bf9c6aaf9.stl"/>
       </geometry>
-      <material name="body_tag_1_21_material">
+      <material name="body_tag_1_22_material">
         <color rgba="0.9 0.9 0.9 1.0"/>
       </material>
-    <origin xyz="-0.007 0 0.21" rpy="0 -0 1.5708"/>
+    <origin xyz="0.000872999 0 0.17968" rpy="0 -0 1.5708"/>
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://urdf/b9ab7eb0d54fc908d9afa86542a33373f9efdc6b.stl"/>
+        <mesh filename="package://urdf/739804ae964e7755d0eecbc6e23b0a02954531ff.stl"/>
       </geometry>
-      <material name="body_body_block_1_22_material">
+      <material name="body_body_block_1_23_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
       </material>
     <origin xyz="0 0 0" rpy="0 -0 3.14159"/>
     </visual>
   <inertial>
-    <origin xyz="-0.0029508 -7.6673e-05 0.093116" rpy="0 0 0"/>
-    <mass value="1.50583"/>
-    <inertia ixx="0.00922278"  ixy="-3.98891e-06"  ixz="-0.000162062" iyy="0.00726715" iyz="5.06155e-07" izz="0.00412329" />
+    <origin xyz="-0.0020209 -7.24982e-05 0.0765677" rpy="0 0 0"/>
+    <mass value="1.59255"/>
+    <inertia ixx="0.00665265"  ixy="-4.09628e-06"  ixz="1.79248e-06" iyy="0.00485314" iyz="2.41676e-06" izz="0.00387166" />
   </inertial>
   <collision>
     <origin xyz="-0.03505 0 0.0015" rpy="0 -0 3.14159"/>
     <geometry>
-      <box size="0.0448 0.1338 0.0028"/>
+      <box size="0.0448 0.13355 0.0028"/>
     </geometry>
   </collision>
   <collision>
     <origin xyz="-0.01 0 0.0425" rpy="0 -0 3.14159"/>
     <geometry>
-      <box size="0.0998 0.1338 0.0028"/>
+      <box size="0.0998 0.13355 0.0028"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="0.0075 0 0.1622" rpy="0 -0 3.14159"/>
+    <origin xyz="0.0075 0 0.1227" rpy="0 -0 3.14159"/>
     <geometry>
-      <box size="0.0648 0.1338 0.0028"/>
+      <box size="0.0648 0.13355 0.0028"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="0.033 0.0585 0.10085" rpy="0 -0 3.14159"/>
+    <origin xyz="0.033 0.058375 0.0811" rpy="0 -0 3.14159"/>
     <geometry>
-      <cylinder radius="0.0078" length="0.1195"/>
+      <cylinder radius="0.0078" length="0.08"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="0.033 -0.0585 0.10085" rpy="0 -0 3.14159"/>
+    <origin xyz="0.033 -0.058375 0.0811" rpy="0 -0 3.14159"/>
     <geometry>
-      <cylinder radius="0.0078" length="0.1195"/>
+      <cylinder radius="0.0078" length="0.08"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="-0.017 0.0585 0.10085" rpy="0 -0 3.14159"/>
+    <origin xyz="-0.017 0.058375 0.0811" rpy="0 -0 3.14159"/>
     <geometry>
-      <cylinder radius="0.0078" length="0.1195"/>
+      <cylinder radius="0.0078" length="0.08"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="-0.017 -0.0585 0.10085" rpy="0 -0 3.14159"/>
+    <origin xyz="-0.017 -0.058375 0.0811" rpy="0 -0 3.14159"/>
     <geometry>
-      <cylinder radius="0.0078" length="0.1195"/>
+      <cylinder radius="0.0078" length="0.08"/>
     </geometry>
   </collision>
   <collision>
@@ -264,31 +273,37 @@
     </geometry>
   </collision>
   <collision>
-    <origin xyz="0.018 -0.0465 0.0205" rpy="3.14159 -1.22465e-16 1.5708"/>
+    <origin xyz="0.0075 0 0.063" rpy="0 -0 1.5708"/>
+    <geometry>
+      <box size="0.1198 0.0248 0.0378"/>
+    </geometry>
+  </collision>
+  <collision>
+    <origin xyz="0.018 -0.046375 0.0205" rpy="3.14159 -1.22465e-16 1.5708"/>
     <geometry>
       <box size="0.04 0.0609 0.0408"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="-2.77556e-18 -0.0465 0.186" rpy="-1.5708 -2.22045e-16 3.14159"/>
+    <origin xyz="-2.77556e-18 -0.046375 0.1465" rpy="-1.5708 -2.22045e-16 3.14159"/>
     <geometry>
       <box size="0.0354 0.0504 0.0353"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="0.018 0.0465 0.0205" rpy="3.14159 -1.22465e-16 1.5708"/>
+    <origin xyz="0.018 0.046375 0.0205" rpy="3.14159 -1.22465e-16 1.5708"/>
     <geometry>
       <box size="0.04 0.0609 0.0408"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="2.77556e-18 0.0465 0.186" rpy="-1.5708 -2.22045e-16 -3.4451e-16"/>
+    <origin xyz="2.77556e-18 0.046375 0.1465" rpy="-1.5708 -2.22045e-16 -3.4451e-16"/>
     <geometry>
       <box size="0.0354 0.0504 0.0353"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="0.0055 2.77556e-18 0.19225" rpy="0 -0 1.5708"/>
+    <origin xyz="0.013373 2.77556e-18 0.16193" rpy="0 -0 1.5708"/>
     <geometry>
       <box size="0.0354 0.0504 0.0353"/>
     </geometry>
@@ -356,7 +371,7 @@
     <parent link="trunk"/>
     <child link="right_hip_yaw"/>
     <axis xyz="0 0 1"/>
-<origin xyz="0 -0.0465 0.0205" rpy="0 -0 0"/>
+<origin xyz="0 -0.046375 0.0205" rpy="0 -0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -484,12 +499,12 @@
   <link name="right_hip_pitch">
     <visual>
       <geometry>
-        <mesh filename="package://urdf/ab41c849784d4df85990fa8c2b25e0247f22bfc7.stl"/>
+        <mesh filename="package://urdf/e2b6cfe73e1fd2427ccfcbdf9c5c458af0d985e7.stl"/>
       </geometry>
       <material name="mx64_u_arm_to_side_mx64_u_arm_to_side_4_0_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
       </material>
-    <origin xyz="5.72919e-16 -1.39154e-08 -0.159174" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
+    <origin xyz="4.2796e-16 -1.03946e-08 -0.1189" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
     </visual>
     <visual>
       <geometry>
@@ -498,7 +513,7 @@
       <material name="mx64_u_arm_to_side_mx64_4_1_material">
         <color rgba="0.15 0.2 0.15 1.0"/>
       </material>
-    <origin xyz="6.48865e-16 -1.57601e-08 -0.180274" rpy="1.5708 2.22045e-16 4.37114e-08"/>
+    <origin xyz="5.03906e-16 -1.22392e-08 -0.14" rpy="1.5708 2.22045e-16 4.37114e-08"/>
     </visual>
     <visual>
       <geometry>
@@ -507,7 +522,7 @@
       <material name="mx64_u_arm_to_side_mx64_arm_4_2_material">
         <color rgba="0.5 0.5 0.5 1.0"/>
       </material>
-    <origin xyz="8.96084e-10 -0.0205 -0.180274" rpy="1.5708 2.22045e-16 4.37114e-08"/>
+    <origin xyz="8.96084e-10 -0.0205 -0.14" rpy="1.5708 2.22045e-16 4.37114e-08"/>
     </visual>
     <visual>
       <geometry>
@@ -516,7 +531,7 @@
       <material name="mx64_u_arm_to_side_mx64_arm_4_3_material">
         <color rgba="0.5 0.5 0.5 1.0"/>
       </material>
-    <origin xyz="-1.02722e-09 0.0235 -0.180274" rpy="1.5708 2.22045e-16 4.37114e-08"/>
+    <origin xyz="-1.02722e-09 0.0235 -0.14" rpy="1.5708 2.22045e-16 4.37114e-08"/>
     </visual>
     <visual>
       <geometry>
@@ -525,26 +540,26 @@
       <material name="mx64_u_arm_to_side_tag_4_4_material">
         <color rgba="0.9 0.9 0.9 1.0"/>
       </material>
-    <origin xyz="-0.035 -0.0205 -0.180274" rpy="1.5708 -1.5708 0"/>
+    <origin xyz="-0.035 -0.0205 -0.14" rpy="1.5708 -1.5708 0"/>
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://urdf/6b6170713e6bd66229d02c1dac00c715453dbd37.stl"/>
+        <mesh filename="package://urdf/6be08d8e010e5839886db14da5a6263c941ff1bc.stl"/>
       </geometry>
       <material name="mx64_u_arm_to_side_mx64_u_4_5_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
       </material>
-    <origin xyz="5.72919e-16 -1.39154e-08 -0.159174" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
+    <origin xyz="4.2796e-16 -1.03946e-08 -0.1189" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
     </visual>
   <inertial>
-    <origin xyz="-0.00838419 0.000389736 -0.141165" rpy="0 0 0"/>
-    <mass value="0.239475"/>
-    <inertia ixx="0.000883034"  ixy="5.13302e-07"  ixz="1.03259e-06" iyy="0.000905093" iyz="-7.85238e-05" izz="0.000136928" />
+    <origin xyz="-0.00917061 0.000379397 -0.113155" rpy="0 0 0"/>
+    <mass value="0.218939"/>
+    <inertia ixx="0.000492068"  ixy="4.92539e-07"  ixz="7.08778e-07" iyy="0.000504914" iyz="-5.38995e-05" izz="0.000121477" />
   </inertial>
   <collision>
-    <origin xyz="-1.07093e-09 0.0245 -0.079587" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
+    <origin xyz="-1.07093e-09 0.0245 -0.05945" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
     <geometry>
-      <box size="0.0018 0.0298 0.158974"/>
+      <box size="0.0018 0.0298 0.1187"/>
     </geometry>
   </collision>
   <collision>
@@ -554,9 +569,9 @@
     </geometry>
   </collision>
   <collision>
-    <origin xyz="1.07093e-09 -0.0245 -0.079587" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
+    <origin xyz="1.07093e-09 -0.0245 -0.05945" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
     <geometry>
-      <box size="0.0018 0.0298 0.158974"/>
+      <box size="0.0018 0.0298 0.1187"/>
     </geometry>
   </collision>
   <collision>
@@ -566,13 +581,13 @@
     </geometry>
   </collision>
   <collision>
-    <origin xyz="5.72919e-16 -1.39154e-08 -0.159174" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
+    <origin xyz="4.2796e-16 -1.03946e-08 -0.1189" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
     <geometry>
       <box size="0.0508 0.0298 0.0018"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="-0.018 -1.65469e-08 -0.180274" rpy="1.5708 -1.5708 0"/>
+    <origin xyz="-0.018 -1.3026e-08 -0.14" rpy="1.5708 -1.5708 0"/>
     <geometry>
       <box size="0.04 0.0609 0.0408"/>
     </geometry>
@@ -591,46 +606,46 @@
   <link name="right_knee">
     <visual>
       <geometry>
-        <mesh filename="package://urdf/92e56699c7062ded8b079a435f83a2e66e651f0b.stl"/>
+        <mesh filename="package://urdf/5495ce21c8f75def8d90084449f801701d8a1dc9.stl"/>
       </geometry>
       <material name="mx64_arms_mx64_arms_5_0_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
       </material>
-    <origin xyz="-3.93402e-09 -7.86805e-09 -0.09" rpy="1.5708 -1.5708 0"/>
+    <origin xyz="-3.0598e-09 -6.11959e-09 -0.07" rpy="1.5708 -1.5708 0"/>
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://urdf/21faa49c018cc7074e64f4325f29e73d846a17e9.stl"/>
+        <mesh filename="package://urdf/c8cae62de47e73927ee995fa8e8e73b00b45320a.stl"/>
       </geometry>
       <material name="mx64_arms_mx64_arms_plate_5_1_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
       </material>
-    <origin xyz="-2.90681e-09 -0.0235 -0.09" rpy="1.5708 -1.5708 0"/>
+    <origin xyz="-2.03258e-09 -0.0235 -0.07" rpy="1.5708 -1.5708 0"/>
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://urdf/21faa49c018cc7074e64f4325f29e73d846a17e9.stl"/>
+        <mesh filename="package://urdf/c8cae62de47e73927ee995fa8e8e73b00b45320a.stl"/>
       </geometry>
       <material name="mx64_arms_mx64_arms_plate_5_2_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
       </material>
-    <origin xyz="-5.09238e-09 0.0265 -0.09" rpy="1.5708 -1.5708 0"/>
+    <origin xyz="-4.21815e-09 0.0265 -0.07" rpy="1.5708 -1.5708 0"/>
     </visual>
   <inertial>
-    <origin xyz="-3.95913e-09 0.000499992 -0.0900743" rpy="0 0 0"/>
-    <mass value="0.097444"/>
-    <inertia ixx="6.71786e-05"  ixy="1.84031e-21"  ixz="-7.10543e-23" iyy="0.000406314" iyz="0" izz="0.000351639" />
+    <origin xyz="-3.08493e-09 0.000499994 -0.070075" rpy="0 0 0"/>
+    <mass value="0.078404"/>
+    <inertia ixx="5.40315e-05"  ixy="-9.09495e-22"  ixz="1.06581e-23" iyy="0.000230305" iyz="0" izz="0.000186293" />
   </inertial>
   <collision>
-    <origin xyz="-2.8631e-09 -0.0245 -0.09" rpy="1.5708 -1.5708 0"/>
+    <origin xyz="-1.98887e-09 -0.0245 -0.07" rpy="1.5708 -1.5708 0"/>
     <geometry>
-      <box size="0.2128 0.0278 0.0018"/>
+      <box size="0.1728 0.0278 0.0018"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="-5.04866e-09 0.0255 -0.09" rpy="1.5708 -1.5708 0"/>
+    <origin xyz="-4.17444e-09 0.0255 -0.07" rpy="1.5708 -1.5708 0"/>
     <geometry>
-      <box size="0.2128 0.0278 0.0018"/>
+      <box size="0.1728 0.0278 0.0018"/>
     </geometry>
   </collision>
   </link>
@@ -638,7 +653,7 @@
     <parent link="right_hip_pitch"/>
     <child link="right_knee"/>
     <axis xyz="0 1 0"/>
-<origin xyz="6.48865e-16 -1.57601e-08 -0.180274" rpy="0 -0 -6.61744e-24"/>
+<origin xyz="5.03906e-16 -1.22392e-08 -0.14" rpy="0 -0 -6.61744e-24"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -757,7 +772,7 @@
     <parent link="right_knee"/>
     <child link="right_ankle_pitch"/>
     <axis xyz="0 1 0"/>
-<origin xyz="-7.86805e-09 -1.57361e-08 -0.18" rpy="0 -7.57953e-26 -6.61744e-24"/>
+<origin xyz="-6.11959e-09 -1.22392e-08 -0.14" rpy="0 -7.57953e-26 -6.61744e-24"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -963,7 +978,7 @@
     <parent link="trunk"/>
     <child link="right_shoulder_pitch"/>
     <axis xyz="0 1 0"/>
-<origin xyz="0 -0.0465 0.1985" rpy="0 -0 0"/>
+<origin xyz="0 -0.046375 0.159" rpy="0 -0 0"/>
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -972,7 +987,7 @@
   <link name="right_shoulder_roll">
     <visual>
       <geometry>
-        <mesh filename="package://urdf/15ef88aa685431bc222fd40382e1cd23112e35a1.stl"/>
+        <mesh filename="package://urdf/5cd934a01ca249c0e5600e30ff006441d57cb7a3.stl"/>
       </geometry>
       <material name="mx28_u_l_mx28_u_l_9_0_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -1017,7 +1032,7 @@
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://urdf/27cae6a65ba826903f5dd8a633ec36cdc5e3c280.stl"/>
+        <mesh filename="package://urdf/a0a3e3041c2350bb54d06f6cc9aaf2cf28ae6be3.stl"/>
       </geometry>
       <material name="mx28_u_l_mx28_l_9_5_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -1031,12 +1046,12 @@
       <material name="mx28_u_l_mx28_u_9_6_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
       </material>
-    <origin xyz="-0.0178 6.32504e-09 -0.1447" rpy="1.5708 -4.37114e-08 1.5708"/>
+    <origin xyz="-0.0178 3.4838e-09 -0.0797" rpy="1.5708 -4.37114e-08 1.5708"/>
     </visual>
   <inertial>
-    <origin xyz="-0.00549037 2.56339e-09 -0.0586436" rpy="0 0 0"/>
-    <mass value="0.161624"/>
-    <inertia ixx="0.000587552"  ixy="-8.08242e-23"  ixz="1.32871e-21" iyy="0.000583113" iyz="4.19523e-05" izz="5.46155e-05" />
+    <origin xyz="-0.00345419 1.50736e-09 -0.0344843" rpy="0 0 0"/>
+    <mass value="0.141734"/>
+    <inertia ixx="0.00017908"  ixy="1.77636e-24"  ixz="1.06901e-20" iyy="0.000177275" iyz="1.74732e-05" izz="4.7689e-05" />
   </inertial>
   <collision>
     <origin xyz="-0.002 1.67415e-09 -0.0383" rpy="-2.22045e-16 -4.37114e-08 1.5708"/>
@@ -1045,37 +1060,37 @@
     </geometry>
   </collision>
   <collision>
-    <origin xyz="-0.0198 4.32743e-09 -0.099" rpy="-2.22045e-16 -4.37114e-08 1.5708"/>
+    <origin xyz="-0.0198 2.90681e-09 -0.0665" rpy="-2.22045e-16 -4.37114e-08 1.5708"/>
     <geometry>
-      <box size="0.0354 0.0018 0.1212"/>
+      <box size="0.0354 0.0018 0.0562"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="-0.0028 -0.02175 -0.1447" rpy="1.5708 -4.37114e-08 1.5708"/>
-    <geometry>
-      <box size="0.0018 0.0298 0.0298"/>
-    </geometry>
-  </collision>
-  <collision>
-    <origin xyz="0.0122 -0.02175 -0.1447" rpy="1.5708 4.4409e-16 3.14159"/>
-    <geometry>
-      <cylinder radius="0.0148" length="0.0018"/>
-    </geometry>
-  </collision>
-  <collision>
-    <origin xyz="-0.0028 0.02175 -0.1447" rpy="1.5708 -4.37114e-08 1.5708"/>
+    <origin xyz="-0.0028 -0.02175 -0.0797" rpy="1.5708 -4.37114e-08 1.5708"/>
     <geometry>
       <box size="0.0018 0.0298 0.0298"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="0.0122 0.02175 -0.1447" rpy="1.5708 4.4409e-16 3.14159"/>
+    <origin xyz="0.0122 -0.02175 -0.0797" rpy="1.5708 4.4409e-16 3.14159"/>
     <geometry>
       <cylinder radius="0.0148" length="0.0018"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="-0.0178 6.32504e-09 -0.1447" rpy="1.5708 -4.37114e-08 1.5708"/>
+    <origin xyz="-0.0028 0.02175 -0.0797" rpy="1.5708 -4.37114e-08 1.5708"/>
+    <geometry>
+      <box size="0.0018 0.0298 0.0298"/>
+    </geometry>
+  </collision>
+  <collision>
+    <origin xyz="0.0122 0.02175 -0.0797" rpy="1.5708 4.4409e-16 3.14159"/>
+    <geometry>
+      <cylinder radius="0.0148" length="0.0018"/>
+    </geometry>
+  </collision>
+  <collision>
+    <origin xyz="-0.0178 3.4838e-09 -0.0797" rpy="1.5708 -4.37114e-08 1.5708"/>
     <geometry>
       <box size="0.0453 0.0298 0.0018"/>
     </geometry>
@@ -1100,7 +1115,7 @@
   <link name="right_elbow">
     <visual>
       <geometry>
-        <mesh filename="package://urdf/e0eb6ae09f98f473c25a16bdbe34cdefbcb049ad.stl"/>
+        <mesh filename="package://urdf/329dbba1976866b0cd7b0f2bdf9a6c14725749b6.stl"/>
       </geometry>
       <material name="mx28_elbow_mx28_elbow_10_0_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -1145,7 +1160,7 @@
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://urdf/af5b9ac687f395604dae07a51f47786f8f377454.stl"/>
+        <mesh filename="package://urdf/88369675ab7813e9f9ce85ac3aa8fb33e50350f8.stl"/>
       </geometry>
       <material name="mx28_elbow_mx28_l_10_5_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -1153,9 +1168,9 @@
     <origin xyz="1.67415e-09 1.67415e-09 -0.0383" rpy="-4.37114e-08 -4.37114e-08 1.5708"/>
     </visual>
   <inertial>
-    <origin xyz="-0.00739497 -7.40457e-05 -0.0652842" rpy="0 0 0"/>
-    <mass value="0.158411"/>
-    <inertia ixx="0.000840319"  ixy="8.67431e-08"  ixz="-7.50432e-05" iyy="0.000843399" iyz="4.72535e-07" izz="4.25612e-05" />
+    <origin xyz="-0.00359143 -9.63909e-05 -0.0268066" rpy="0 0 0"/>
+    <mass value="0.121691"/>
+    <inertia ixx="0.000117491"  ixy="4.21275e-08"  ixz="-1.72238e-05" iyy="0.00011693" iyz="2.11919e-08" izz="3.09942e-05" />
   </inertial>
   <collision>
     <origin xyz="-0.002 1.4993e-09 -0.0383" rpy="-4.37114e-08 -4.37114e-08 1.5708"/>
@@ -1164,13 +1179,13 @@
     </geometry>
   </collision>
   <collision>
-    <origin xyz="-0.0198 3.47068e-09 -0.119" rpy="-4.37114e-08 -4.37114e-08 1.5708"/>
+    <origin xyz="-0.0198 8.48001e-10 -0.059" rpy="-4.37114e-08 -4.37114e-08 1.5708"/>
     <geometry>
-      <box size="0.0354 0.0018 0.1612"/>
+      <box size="0.0354 0.0018 0.0412"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="-0.0108 7.785e-09 -0.1997" rpy="-1.5708 1.5708 0"/>
+    <origin xyz="-0.0108 2.53963e-09 -0.0797" rpy="-1.5708 1.5708 0"/>
     <geometry>
       <cylinder radius="0.0098" length="0.0354"/>
     </geometry>
@@ -1186,7 +1201,7 @@
     <parent link="right_shoulder_roll"/>
     <child link="right_elbow"/>
     <axis xyz="0 1 0"/>
-<origin xyz="0.0122 6.32504e-09 -0.1447" rpy="0 -5.47945e-24 1.32349e-23"/>
+<origin xyz="0.0122 3.4838e-09 -0.0797" rpy="0 -5.47945e-24 1.32349e-23"/>
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
 <link name="right_arm_tip">
@@ -1197,7 +1212,7 @@
     </inertial>
 </link>
 <joint name="right_arm_tip" type="fixed">
-<origin xyz="-0.0108 7.785e-09 -0.1997" rpy="4.37114e-08 -4.37114e-08 8.74228e-08"/>
+<origin xyz="-0.0108 2.53963e-09 -0.0797" rpy="4.37114e-08 -4.37114e-08 8.74228e-08"/>
     <parent link="right_elbow" />
     <child link="right_arm_tip" />
     <axis xyz="0 0 0" />
@@ -1264,7 +1279,7 @@
     <parent link="trunk"/>
     <child link="left_hip_yaw"/>
     <axis xyz="0 0 1"/>
-<origin xyz="0 0.0465 0.0205" rpy="0 -0 0"/>
+<origin xyz="0 0.046375 0.0205" rpy="0 -0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -1392,12 +1407,12 @@
   <link name="left_hip_pitch">
     <visual>
       <geometry>
-        <mesh filename="package://urdf/ab41c849784d4df85990fa8c2b25e0247f22bfc7.stl"/>
+        <mesh filename="package://urdf/e2b6cfe73e1fd2427ccfcbdf9c5c458af0d985e7.stl"/>
       </geometry>
       <material name="mx64_u_arm_to_side_mx64_u_arm_to_side_13_0_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
       </material>
-    <origin xyz="5.72919e-16 -1.39154e-08 -0.159174" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
+    <origin xyz="4.2796e-16 -1.03946e-08 -0.1189" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
     </visual>
     <visual>
       <geometry>
@@ -1406,7 +1421,7 @@
       <material name="mx64_u_arm_to_side_mx64_13_1_material">
         <color rgba="0.15 0.2 0.15 1.0"/>
       </material>
-    <origin xyz="6.48865e-16 -1.57601e-08 -0.180274" rpy="1.5708 2.22045e-16 4.37114e-08"/>
+    <origin xyz="5.03906e-16 -1.22392e-08 -0.14" rpy="1.5708 2.22045e-16 4.37114e-08"/>
     </visual>
     <visual>
       <geometry>
@@ -1415,7 +1430,7 @@
       <material name="mx64_u_arm_to_side_mx64_arm_13_2_material">
         <color rgba="0.5 0.5 0.5 1.0"/>
       </material>
-    <origin xyz="8.96084e-10 -0.0205 -0.180274" rpy="1.5708 2.22045e-16 4.37114e-08"/>
+    <origin xyz="8.96084e-10 -0.0205 -0.14" rpy="1.5708 2.22045e-16 4.37114e-08"/>
     </visual>
     <visual>
       <geometry>
@@ -1424,7 +1439,7 @@
       <material name="mx64_u_arm_to_side_mx64_arm_13_3_material">
         <color rgba="0.5 0.5 0.5 1.0"/>
       </material>
-    <origin xyz="-1.02722e-09 0.0235 -0.180274" rpy="1.5708 2.22045e-16 4.37114e-08"/>
+    <origin xyz="-1.02722e-09 0.0235 -0.14" rpy="1.5708 2.22045e-16 4.37114e-08"/>
     </visual>
     <visual>
       <geometry>
@@ -1433,26 +1448,26 @@
       <material name="mx64_u_arm_to_side_tag_13_4_material">
         <color rgba="0.9 0.9 0.9 1.0"/>
       </material>
-    <origin xyz="-0.035 -0.0205 -0.180274" rpy="1.5708 -1.5708 0"/>
+    <origin xyz="-0.035 -0.0205 -0.14" rpy="1.5708 -1.5708 0"/>
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://urdf/6b6170713e6bd66229d02c1dac00c715453dbd37.stl"/>
+        <mesh filename="package://urdf/6be08d8e010e5839886db14da5a6263c941ff1bc.stl"/>
       </geometry>
       <material name="mx64_u_arm_to_side_mx64_u_13_5_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
       </material>
-    <origin xyz="5.72919e-16 -1.39154e-08 -0.159174" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
+    <origin xyz="4.2796e-16 -1.03946e-08 -0.1189" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
     </visual>
   <inertial>
-    <origin xyz="-0.00838419 0.000389736 -0.141165" rpy="0 0 0"/>
-    <mass value="0.239475"/>
-    <inertia ixx="0.000883034"  ixy="5.13302e-07"  ixz="1.03259e-06" iyy="0.000905093" iyz="-7.85238e-05" izz="0.000136928" />
+    <origin xyz="-0.00917061 0.000379397 -0.113155" rpy="0 0 0"/>
+    <mass value="0.218939"/>
+    <inertia ixx="0.000492068"  ixy="4.92539e-07"  ixz="7.08778e-07" iyy="0.000504914" iyz="-5.38995e-05" izz="0.000121477" />
   </inertial>
   <collision>
-    <origin xyz="-1.07093e-09 0.0245 -0.079587" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
+    <origin xyz="-1.07093e-09 0.0245 -0.05945" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
     <geometry>
-      <box size="0.0018 0.0298 0.158974"/>
+      <box size="0.0018 0.0298 0.1187"/>
     </geometry>
   </collision>
   <collision>
@@ -1462,9 +1477,9 @@
     </geometry>
   </collision>
   <collision>
-    <origin xyz="1.07093e-09 -0.0245 -0.079587" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
+    <origin xyz="1.07093e-09 -0.0245 -0.05945" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
     <geometry>
-      <box size="0.0018 0.0298 0.158974"/>
+      <box size="0.0018 0.0298 0.1187"/>
     </geometry>
   </collision>
   <collision>
@@ -1474,13 +1489,13 @@
     </geometry>
   </collision>
   <collision>
-    <origin xyz="5.72919e-16 -1.39154e-08 -0.159174" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
+    <origin xyz="4.2796e-16 -1.03946e-08 -0.1189" rpy="-2.22045e-16 -8.74228e-08 -1.5708"/>
     <geometry>
       <box size="0.0508 0.0298 0.0018"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="-0.018 -1.65469e-08 -0.180274" rpy="1.5708 -1.5708 0"/>
+    <origin xyz="-0.018 -1.3026e-08 -0.14" rpy="1.5708 -1.5708 0"/>
     <geometry>
       <box size="0.04 0.0609 0.0408"/>
     </geometry>
@@ -1499,46 +1514,46 @@
   <link name="left_knee">
     <visual>
       <geometry>
-        <mesh filename="package://urdf/92e56699c7062ded8b079a435f83a2e66e651f0b.stl"/>
+        <mesh filename="package://urdf/5495ce21c8f75def8d90084449f801701d8a1dc9.stl"/>
       </geometry>
       <material name="mx64_arms_mx64_arms_14_0_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
       </material>
-    <origin xyz="-3.93402e-09 -7.86805e-09 -0.09" rpy="1.5708 -1.5708 0"/>
+    <origin xyz="-3.0598e-09 -6.11959e-09 -0.07" rpy="1.5708 -1.5708 0"/>
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://urdf/21faa49c018cc7074e64f4325f29e73d846a17e9.stl"/>
+        <mesh filename="package://urdf/c8cae62de47e73927ee995fa8e8e73b00b45320a.stl"/>
       </geometry>
       <material name="mx64_arms_mx64_arms_plate_14_1_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
       </material>
-    <origin xyz="-2.90681e-09 -0.0235 -0.09" rpy="1.5708 -1.5708 0"/>
+    <origin xyz="-2.03258e-09 -0.0235 -0.07" rpy="1.5708 -1.5708 0"/>
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://urdf/21faa49c018cc7074e64f4325f29e73d846a17e9.stl"/>
+        <mesh filename="package://urdf/c8cae62de47e73927ee995fa8e8e73b00b45320a.stl"/>
       </geometry>
       <material name="mx64_arms_mx64_arms_plate_14_2_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
       </material>
-    <origin xyz="-5.09238e-09 0.0265 -0.09" rpy="1.5708 -1.5708 0"/>
+    <origin xyz="-4.21815e-09 0.0265 -0.07" rpy="1.5708 -1.5708 0"/>
     </visual>
   <inertial>
-    <origin xyz="-3.95913e-09 0.000499992 -0.0900743" rpy="0 0 0"/>
-    <mass value="0.097444"/>
-    <inertia ixx="6.71786e-05"  ixy="1.84031e-21"  ixz="-7.10543e-23" iyy="0.000406314" iyz="0" izz="0.000351639" />
+    <origin xyz="-3.08493e-09 0.000499994 -0.070075" rpy="0 0 0"/>
+    <mass value="0.078404"/>
+    <inertia ixx="5.40315e-05"  ixy="-9.09495e-22"  ixz="1.06581e-23" iyy="0.000230305" iyz="0" izz="0.000186293" />
   </inertial>
   <collision>
-    <origin xyz="-2.8631e-09 -0.0245 -0.09" rpy="1.5708 -1.5708 0"/>
+    <origin xyz="-1.98887e-09 -0.0245 -0.07" rpy="1.5708 -1.5708 0"/>
     <geometry>
-      <box size="0.2128 0.0278 0.0018"/>
+      <box size="0.1728 0.0278 0.0018"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="-5.04866e-09 0.0255 -0.09" rpy="1.5708 -1.5708 0"/>
+    <origin xyz="-4.17444e-09 0.0255 -0.07" rpy="1.5708 -1.5708 0"/>
     <geometry>
-      <box size="0.2128 0.0278 0.0018"/>
+      <box size="0.1728 0.0278 0.0018"/>
     </geometry>
   </collision>
   </link>
@@ -1546,7 +1561,7 @@
     <parent link="left_hip_pitch"/>
     <child link="left_knee"/>
     <axis xyz="0 1 0"/>
-<origin xyz="6.48865e-16 -1.57601e-08 -0.180274" rpy="0 -0 -6.61744e-24"/>
+<origin xyz="5.03906e-16 -1.22392e-08 -0.14" rpy="0 -0 -6.61744e-24"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -1665,7 +1680,7 @@
     <parent link="left_knee"/>
     <child link="left_ankle_pitch"/>
     <axis xyz="0 1 0"/>
-<origin xyz="-7.86805e-09 -1.57361e-08 -0.18" rpy="0 -7.57953e-26 -6.61744e-24"/>
+<origin xyz="-6.11959e-09 -1.22392e-08 -0.14" rpy="0 -7.57953e-26 -6.61744e-24"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -1871,7 +1886,7 @@
     <parent link="trunk"/>
     <child link="left_shoulder_pitch"/>
     <axis xyz="0 1 0"/>
-<origin xyz="0 0.0465 0.1985" rpy="0 -0 0"/>
+<origin xyz="0 0.046375 0.159" rpy="0 -0 0"/>
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -1880,7 +1895,7 @@
   <link name="left_shoulder_roll">
     <visual>
       <geometry>
-        <mesh filename="package://urdf/15ef88aa685431bc222fd40382e1cd23112e35a1.stl"/>
+        <mesh filename="package://urdf/5cd934a01ca249c0e5600e30ff006441d57cb7a3.stl"/>
       </geometry>
       <material name="mx28_u_l_mx28_u_l_18_0_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -1925,7 +1940,7 @@
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://urdf/27cae6a65ba826903f5dd8a633ec36cdc5e3c280.stl"/>
+        <mesh filename="package://urdf/a0a3e3041c2350bb54d06f6cc9aaf2cf28ae6be3.stl"/>
       </geometry>
       <material name="mx28_u_l_mx28_l_18_5_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -1939,12 +1954,12 @@
       <material name="mx28_u_l_mx28_u_18_6_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
       </material>
-    <origin xyz="-0.0178 4.76891e-09 -0.1447" rpy="1.5708 -4.37114e-08 1.5708"/>
+    <origin xyz="-0.0178 1.92767e-09 -0.0797" rpy="1.5708 -4.37114e-08 1.5708"/>
     </visual>
   <inertial>
-    <origin xyz="-0.00549037 2.08341e-09 -0.0586436" rpy="0 0 0"/>
-    <mass value="0.161624"/>
-    <inertia ixx="0.000587552"  ixy="-8.08242e-23"  ixz="1.32871e-21" iyy="0.000583113" iyz="4.19523e-05" izz="5.46155e-05" />
+    <origin xyz="-0.00345419 1.20538e-09 -0.0344843" rpy="0 0 0"/>
+    <mass value="0.141734"/>
+    <inertia ixx="0.00017908"  ixy="1.77636e-24"  ixz="1.06901e-20" iyy="0.000177275" iyz="1.74732e-05" izz="4.7689e-05" />
   </inertial>
   <collision>
     <origin xyz="-0.002 1.4993e-09 -0.0383" rpy="2.22045e-16 -4.37114e-08 1.5708"/>
@@ -1953,37 +1968,37 @@
     </geometry>
   </collision>
   <collision>
-    <origin xyz="-0.0198 2.59646e-09 -0.099" rpy="2.22045e-16 -4.37114e-08 1.5708"/>
+    <origin xyz="-0.0198 1.17584e-09 -0.0665" rpy="2.22045e-16 -4.37114e-08 1.5708"/>
     <geometry>
-      <box size="0.0354 0.0018 0.1212"/>
+      <box size="0.0354 0.0018 0.0562"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="-0.0028 -0.02175 -0.1447" rpy="1.5708 -4.37114e-08 1.5708"/>
-    <geometry>
-      <box size="0.0018 0.0298 0.0298"/>
-    </geometry>
-  </collision>
-  <collision>
-    <origin xyz="0.0122 -0.02175 -0.1447" rpy="1.5708 -1.94118e-23 -3.14159"/>
-    <geometry>
-      <cylinder radius="0.0148" length="0.0018"/>
-    </geometry>
-  </collision>
-  <collision>
-    <origin xyz="-0.0028 0.02175 -0.1447" rpy="1.5708 -4.37114e-08 1.5708"/>
+    <origin xyz="-0.0028 -0.02175 -0.0797" rpy="1.5708 -4.37114e-08 1.5708"/>
     <geometry>
       <box size="0.0018 0.0298 0.0298"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="0.0122 0.02175 -0.1447" rpy="1.5708 -1.94118e-23 -3.14159"/>
+    <origin xyz="0.0122 -0.02175 -0.0797" rpy="1.5708 -1.94118e-23 -3.14159"/>
     <geometry>
       <cylinder radius="0.0148" length="0.0018"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="-0.0178 4.76891e-09 -0.1447" rpy="1.5708 -4.37114e-08 1.5708"/>
+    <origin xyz="-0.0028 0.02175 -0.0797" rpy="1.5708 -4.37114e-08 1.5708"/>
+    <geometry>
+      <box size="0.0018 0.0298 0.0298"/>
+    </geometry>
+  </collision>
+  <collision>
+    <origin xyz="0.0122 0.02175 -0.0797" rpy="1.5708 -1.94118e-23 -3.14159"/>
+    <geometry>
+      <cylinder radius="0.0148" length="0.0018"/>
+    </geometry>
+  </collision>
+  <collision>
+    <origin xyz="-0.0178 1.92767e-09 -0.0797" rpy="1.5708 -4.37114e-08 1.5708"/>
     <geometry>
       <box size="0.0453 0.0298 0.0018"/>
     </geometry>
@@ -2008,7 +2023,7 @@
   <link name="left_elbow">
     <visual>
       <geometry>
-        <mesh filename="package://urdf/e0eb6ae09f98f473c25a16bdbe34cdefbcb049ad.stl"/>
+        <mesh filename="package://urdf/329dbba1976866b0cd7b0f2bdf9a6c14725749b6.stl"/>
       </geometry>
       <material name="mx28_elbow_mx28_elbow_19_0_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -2053,7 +2068,7 @@
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://urdf/af5b9ac687f395604dae07a51f47786f8f377454.stl"/>
+        <mesh filename="package://urdf/88369675ab7813e9f9ce85ac3aa8fb33e50350f8.stl"/>
       </geometry>
       <material name="mx28_elbow_mx28_l_19_5_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -2061,9 +2076,9 @@
     <origin xyz="1.67415e-09 1.67415e-09 -0.0383" rpy="-4.37114e-08 -4.37114e-08 1.5708"/>
     </visual>
   <inertial>
-    <origin xyz="-0.00739497 -7.40464e-05 -0.0652842" rpy="0 0 0"/>
-    <mass value="0.158411"/>
-    <inertia ixx="0.000840319"  ixy="8.67431e-08"  ixz="-7.50432e-05" iyy="0.000843399" iyz="4.72535e-07" izz="4.25612e-05" />
+    <origin xyz="-0.00359143 -9.63912e-05 -0.0268066" rpy="0 0 0"/>
+    <mass value="0.121691"/>
+    <inertia ixx="0.000117491"  ixy="4.21275e-08"  ixz="-1.72238e-05" iyy="0.00011693" iyz="2.11919e-08" izz="3.09942e-05" />
   </inertial>
   <collision>
     <origin xyz="-0.002 1.32446e-09 -0.0383" rpy="-4.37114e-08 -4.37114e-08 1.5708"/>
@@ -2072,13 +2087,13 @@
     </geometry>
   </collision>
   <collision>
-    <origin xyz="-0.0198 1.73971e-09 -0.119" rpy="-4.37114e-08 -4.37114e-08 1.5708"/>
+    <origin xyz="-0.0198 -8.82969e-10 -0.059" rpy="-4.37114e-08 -4.37114e-08 1.5708"/>
     <geometry>
-      <box size="0.0354 0.0018 0.1612"/>
+      <box size="0.0354 0.0018 0.0412"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="-0.0108 6.84083e-09 -0.1997" rpy="-1.5708 1.5708 0"/>
+    <origin xyz="-0.0108 1.59547e-09 -0.0797" rpy="-1.5708 1.5708 0"/>
     <geometry>
       <cylinder radius="0.0098" length="0.0354"/>
     </geometry>
@@ -2094,7 +2109,7 @@
     <parent link="left_shoulder_roll"/>
     <child link="left_elbow"/>
     <axis xyz="0 1 0"/>
-<origin xyz="0.0122 7.3916e-09 -0.1447" rpy="0 -1.75549e-24 0"/>
+<origin xyz="0.0122 4.55036e-09 -0.0797" rpy="0 -1.75549e-24 0"/>
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
 <link name="left_arm_tip">
@@ -2105,7 +2120,7 @@
     </inertial>
 </link>
 <joint name="left_arm_tip" type="fixed">
-<origin xyz="-0.0108 6.84083e-09 -0.1997" rpy="4.37114e-08 -4.37114e-08 1.74846e-07"/>
+<origin xyz="-0.0108 1.59547e-09 -0.0797" rpy="4.37114e-08 -4.37114e-08 1.74846e-07"/>
     <parent link="left_elbow" />
     <child link="left_arm_tip" />
     <axis xyz="0 0 0" />
@@ -2116,7 +2131,7 @@
   <link name="head_yaw">
     <visual>
       <geometry>
-        <mesh filename="package://urdf/95e9f2b94e4a3a1e9da3e3ae19d9f23021f1e9c5.stl"/>
+        <mesh filename="package://urdf/6b923c5c4f6b3d3e8c161e3b6897c1aa18a3a292.stl"/>
       </geometry>
       <material name="mx28_u_arm_mx28_u_arm_20_0_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -2125,7 +2140,7 @@
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://urdf/cbcf6f038559d298dddeb5cf952e1f713ba87e6d.stl"/>
+        <mesh filename="package://urdf/86c411ad966dc4d9045f9be113747b7417addb9d.stl"/>
       </geometry>
       <material name="mx28_u_arm_mx28_u_20_1_material">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -2133,30 +2148,30 @@
     <origin xyz="0 0 0.02175" rpy="0 -0 -1.5708"/>
     </visual>
   <inertial>
-    <origin xyz="0 0 0.0326504" rpy="0 0 0"/>
-    <mass value="0.028492"/>
-    <inertia ixx="6.1393e-06"  ixy="0"  ixz="8.88178e-25" iyy="1.43935e-05" iyz="-1.24345e-23" izz="1.23623e-05" />
+    <origin xyz="0 0 0.0352204" rpy="0 0 0"/>
+    <mass value="0.031552"/>
+    <inertia ixx="8.42675e-06"  ixy="0"  ixz="0" iyy="1.79335e-05" iyz="2.84217e-23" izz="1.40733e-05" />
   </inertial>
   <collision>
-    <origin xyz="-4.82948e-18 0.02175 0.03375" rpy="0 -0 -1.5708"/>
+    <origin xyz="-4.82948e-18 0.02175 0.03675" rpy="0 -0 -1.5708"/>
     <geometry>
-      <box size="0.0018 0.0298 0.0238"/>
+      <box size="0.0018 0.0298 0.0298"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="-4.82948e-18 0.02175 0.04575" rpy="1.5708 1.5708 0"/>
+    <origin xyz="-4.82948e-18 0.02175 0.05175" rpy="1.5708 1.5708 0"/>
     <geometry>
       <cylinder radius="0.0148" length="0.0018"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="4.82948e-18 -0.02175 0.03375" rpy="0 -0 -1.5708"/>
+    <origin xyz="4.82948e-18 -0.02175 0.03675" rpy="0 -0 -1.5708"/>
     <geometry>
-      <box size="0.0018 0.0298 0.0238"/>
+      <box size="0.0018 0.0298 0.0298"/>
     </geometry>
   </collision>
   <collision>
-    <origin xyz="4.82948e-18 -0.02175 0.04575" rpy="1.5708 1.5708 0"/>
+    <origin xyz="4.82948e-18 -0.02175 0.05175" rpy="1.5708 1.5708 0"/>
     <geometry>
       <cylinder radius="0.0148" length="0.0018"/>
     </geometry>
@@ -2172,7 +2187,7 @@
     <parent link="trunk"/>
     <child link="head_yaw"/>
     <axis xyz="0 0 1"/>
-<origin xyz="0.018 0 0.19225" rpy="0 -0 0"/>
+<origin xyz="0.025873 0 0.16193" rpy="0 -0 0"/>
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -2240,7 +2255,7 @@
     <parent link="head_yaw"/>
     <child link="head_pitch"/>
     <axis xyz="0 1 0"/>
-<origin xyz="0 0 0.04575" rpy="0 -0 0"/>
+<origin xyz="0 0 0.05175" rpy="0 -0 0"/>
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
 <link name="camera">
@@ -2251,7 +2266,7 @@
     </inertial>
 </link>
 <joint name="camera" type="fixed">
-<origin xyz="0.01 1.59872e-17 0.062" rpy="0 -0.07 0.0"/>
+<origin xyz="0.01 1.59872e-17 0.062" rpy="0 -0 0"/>
     <parent link="head_pitch" />
     <child link="camera" />
     <axis xyz="0 0 0" />
