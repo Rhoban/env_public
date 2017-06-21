@@ -7,6 +7,13 @@
   <readFromLog>false</readFromLog>
   <embedded>true</embedded>
   <imageDelay>-5</imageDelay>
+  <arenaProviders/>
+  <goalProviders>
+    <val>goalByDNN</val>
+  </goalProviders>
+  <ballProviders>
+    <val>ballByDNN</val>
+  </ballProviders>
   <pipeline>
     <filter>
       <className>GoalByDNN</className>
