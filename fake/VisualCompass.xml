@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<LocalisationTest>
+  <angularPitchTolerance>5</angularPitchTolerance>
+  <useTags>true</useTags>
+  <benchmark>true</benchmark>
+  <benchmarkDetail>4</benchmarkDetail>
+  <gpuOn>false</gpuOn>
+  <readFromLog>false</readFromLog>
+  <embedded>false</embedded>
+  <imageDelay>-5</imageDelay>
+  <pipeline>
+
+
+    <filter>
+      <className>VisualCompass</className>
+      <name>VisualCompass</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <paramInts>
+        <paramInt>
+	        <name>debugLevel</name>
+	        <value>2</value>
+        </paramInt>
+        <paramInt>
+	        <name>mode</name>
+	        <value>0</value>
+        </paramInt>
+      </paramInts>
+      <paramFloats>
+	     <paramFloat>
+              <name>threshold</name>
+	        <value>70</value>
+	     </paramFloat>
+	     </paramFloats>
+      <dependencies>
+        <dependency>Y</dependency>
+      </dependencies>
+    </filter>
+
+
+    <filter>
+      <className>ChannelSelector</className>
+      <name>Y</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>source</dependency>
+      </dependencies>
+      <paramInts>
+        <paramInt>
+	        <name>channel</name>
+	        <value>0</value>
+        </paramInt>
+      </paramInts>
+      <paramFloats/>
+      <paramPairInt/>
+    </filter>
+
+    <filter>
+      <className>SourceLogs2</className>
+      <debugLevel>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+        <threads>false</threads>
+      </debugLevel>
+      <dependencies/>
+      <imagesFile>Logs/test_vision/images.csv</imagesFile>
+      <name>source</name>
+      <paramFloats/>
+      <paramInts/>
+      <paramPairInt/>
+      <startIndex>0</startIndex>
+    </filter>
+
+
+  </pipeline>
+  <playing>false</playing>
+  <showRobotView>false</showRobotView>
+  <showTaggedImg>false</showTaggedImg>
+  <showTopView>false</showTopView>
+</LocalisationTest>
