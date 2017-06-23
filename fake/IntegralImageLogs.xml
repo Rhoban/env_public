@@ -12,6 +12,13 @@
   <imageDelay>-5</imageDelay>
   <nbParticlesBF>1</nbParticlesBF>
   <nbParticlesFF>500</nbParticlesFF>
+  <arenaProviders/>
+  <goalProviders>
+    <val>goalByDNN</val>
+  </goalProviders>
+  <ballProviders>
+    <val>ballByDNN</val>
+  </ballProviders>
   <pipeline>
     <filter>
       <className>GoalByDNN</className>
