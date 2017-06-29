@@ -4,12 +4,19 @@
   <benchmark>true</benchmark>
   <benchmarkDetail>4</benchmarkDetail>
   <gpuOn>false</gpuOn>
-  <readFromLog>false</readFromLog>
+  <readFromLog>true</readFromLog>
+  <pathToLog>Logs/test_vision/lowLevel.log</pathToLog>
   <embedded>false</embedded>
   <imageDelay>-5</imageDelay>
   <arenaProviders/>
   <goalProviders/>
   <ballProviders/>
+
+  <compassProviders>
+    <val>VisualCompass</val>
+  </compassProviders>
+
+  <useVisualCompass>true</useVisualCompass>
 
   <pipeline>
 
