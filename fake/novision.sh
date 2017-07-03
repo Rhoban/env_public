@@ -1,1 +1,1 @@
-~/workspace/devel_novision/lib/RhobanServer/RhobanServer
+../../../../devel_novision/lib/RhobanServer/RhobanServer $*
