@@ -15,8 +15,6 @@
     <val>VisualCompass</val>
   </compassProviders>
 
-  <useVisualCompass>true</useVisualCompass>
-
   <pipeline>
 
 
@@ -43,10 +41,26 @@
 	     </paramFloat>
 	     </paramFloats>
       <dependencies>
-        <dependency>Y</dependency>
+        <dependency>smallY</dependency>
       </dependencies>
     </filter>
 
+    <filter>
+      <className>Rescale</className>
+      <name>smallY</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>Y</dependency>
+      </dependencies>
+      <paramFloats>
+        <paramFloat>
+	        <name>ratio</name>
+	        <value>2</value>
+        </paramFloat>
+      </paramFloats>
+    </filter>
 
     <filter>
       <className>ChannelSelector</className>
