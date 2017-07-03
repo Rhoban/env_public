@@ -2,7 +2,7 @@
     {
         "time": 0 ,
         "shoot_hip_roll" : 0 ,
-        "remap" : 3 ,
+        "remap" : 0.5,
         "support_ankle_roll" : 0 ,
         "support_hip_roll" : 0 ,
         "support_hip_pitch" : 0 ,
@@ -13,63 +13,56 @@
         "support_ankle_pitch" : 0 ,
         "support_knee" : 0 ,
         "shoot_hip_pitch" : 0 
-    },  
-    {
-        "time": 0.5,
+    },
+    { // to be removed, used in live mode to deal with  json generation time
+        "time": 0.5 ,
+	"keep": 0.0
+    },
+    { // first fold knees 
+        "time": 1,
+	"shoot_z" : 0.06,
+	"support_z": 0.06,
+	"support_hip_pitch": -4, // bend slightly forward
+	"shoot_hip_pitch":-4,
+	"keep" : 0.0
+    },
+    { // then push the shoot leg to tip over the support leg
+	"time": 2,
 	"shoot_z" : 0.0,
-	"support_z": 0.0
-//	"support_ankle_pitch": 10,
-//	"shoot_ankle_pitch": 10,
-//	"support_hip_pitch" : -30,
-//	"shoot_hip_pitch": -30
-//	"support_hip_roll": 30
+	"support_z": 0.06,
+	"shoot_ankle_roll": 22, // ankles must follow the movement
+	"support_ankle_roll": 20,
+	"support_hip_roll" : 10 // slightly exterior bend
     },
-    {
-        "time": 2,
-	"shoot_z" : 0.04,
-	"support_z": 0.04
-//	"support_ankle_pitch": 10,
-//	"shoot_ankle_pitch": 10,
-//	"support_hip_pitch" : -30,
-//	"shoot_hip_pitch": -30
-//	"support_hip_roll": 30
-    },
-    /*
-    {
-	"time": 1.8,
-	"shoot_z" : 0.04,
-	"shoot_ankle_rool": 40,
-	"support_ankle_roll": 25,
-	"support_hip_roll" :  20,
-	"support_hip_picth": -10
-    },*/
-    {
-	"time": 3,
-	"shoot_z" : 0.04,
-	"support_z": 0.04
-//	"support_ankle_pitch": 10,
-	//"shoot_ankle_pitch": 10,
-//	"support_hip_pitch" : -30,
-//	"shoot_hip_pitch": -30
-    },
-    
-/*    
-    {
+    { // stabelize the motions
+	"time": 2.2,
+	"keep": 0.0
+    },    
+    { // move the shoot legs exterior
 	"time": 2.5,
-	"support_z": 0.07,
-	"shoot_hip_roll" : -30,
-	"support_hip_roll": 10
+	"keep": 0.0,
+	"shoot_z" : 0.06,
+	"shoot_hip_roll": -35,
+	"shoot_ankle_roll" : 30
+    },
+    { // tip over the shoot leg
+	"time": 2.9,
+	"keep": 0.0,
+	"shoot_ankle_roll" : 0,
+	"support_z" : 0.01,
+	"support_hip_roll": -10,
+	"support_ankle_roll":0
     },
     {
-	"time": 3,
-	"support_z" : 0.03,
-	"support_ankle_rool":-25
+	"time": 3.2,
+	"keep": 0.0,
+	"shoot_hip_roll": -10,
+	"support_z" : 0.06,
+	"support_hip_roll" : 0
     },
-*/
     {
         "time": 4 ,
         "shoot_hip_roll" : 0 ,
-        //"remap" : 4 ,
         "support_ankle_roll" : 0 ,
         "support_hip_roll" : 0 ,
         "support_hip_pitch" : 0 ,
