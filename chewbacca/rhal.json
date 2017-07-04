@@ -11,11 +11,14 @@
                     "accYMin": -1.0,
                     "accZMax": 1.0,
                     "accZMin": -1.0,
+                    "dontRead": false,
                     "filterDelay": 0.02,
                     "gyroXOffset": 0.0298638474196196,
                     "gyroYOffset": 0.0574774853885174,
                     "gyroZOffset": -0.0237809959799051,
                     "invertOrientation": true,
+                    "invertOrientationX": false,
+                    "invertOrientationY": false,
                     "ki_rollpitch": 5e-06,
                     "kp_rollpitch": 0.005,
                     "magnXMax": 32.0,
@@ -45,7 +48,9 @@
             {
                 "id": 242,
                 "name": "pins",
-                "parameters": null
+                "parameters": {
+                    "dontRead": false
+                }
             }
         ],
         "parameters": null
@@ -53,31 +58,10 @@
     "PressureSensor4": {
         "devices": [
             {
-                "id": 123,
-                "name": "right_pressure",
-                "parameters": {
-                    "gain_0": 1.0,
-                    "gain_1": -1.0,
-                    "gain_2": 1.0,
-                    "gain_3": -1.0,
-                    "x_0": 0.0,
-                    "x_1": 0.0,
-                    "x_2": 0.0,
-                    "x_3": 0.0,
-                    "y_0": 0.0,
-                    "y_1": 0.0,
-                    "y_2": 0.0,
-                    "y_3": 0.0,
-                    "zero_0": 1309653.044,
-                    "zero_1": -1340172.484,
-                    "zero_2": 3174868.256,
-                    "zero_3": -285960.036
-                }
-            },
-            {
                 "id": 124,
                 "name": "left_pressure",
                 "parameters": {
+                    "dontRead": false,
                     "gain_0": 1.0,
                     "gain_1": -1.0,
                     "gain_2": 1.0,
@@ -90,10 +74,33 @@
                     "y_1": 0.0,
                     "y_2": 0.0,
                     "y_3": 0.0,
-                    "zero_0": -3706060.38,
-                    "zero_1": 3008412.548,
-                    "zero_2": 4181321.572,
-                    "zero_3": 4543460.396
+                    "zero_0": 4650124.936,
+                    "zero_1": 1456827.16,
+                    "zero_2": 4167080.912,
+                    "zero_3": 4536325.952
+                }
+            },
+            {
+                "id": 123,
+                "name": "right_pressure",
+                "parameters": {
+                    "dontRead": false,
+                    "gain_0": 1.0,
+                    "gain_1": -1.0,
+                    "gain_2": 1.0,
+                    "gain_3": -1.0,
+                    "x_0": 0.0,
+                    "x_1": 0.0,
+                    "x_2": 0.0,
+                    "x_3": 0.0,
+                    "y_0": 0.0,
+                    "y_1": 0.0,
+                    "y_2": 0.0,
+                    "y_3": 0.0,
+                    "zero_0": 1297421.28,
+                    "zero_1": -1333566.212,
+                    "zero_2": 3172861.856,
+                    "zero_3": 3365631.584
                 }
             }
         ],
@@ -106,11 +113,56 @@
     "RX28": {
         "devices": [
             {
+                "id": 140,
+                "name": "head_pitch",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
+                    "inverse": true,
+                    "zero": -12.0
+                }
+            },
+            {
+                "id": 130,
+                "name": "right_shoulder_pitch",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
+                    "inverse": true,
+                    "zero": 22.5
+                }
+            },
+            {
+                "id": 141,
+                "name": "head_yaw",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
+                    "inverse": false,
+                    "zero": -22.5
+                }
+            },
+            {
+                "id": 122,
+                "name": "left_elbow",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
+                    "inverse": true,
+                    "zero": 0.0
+                }
+            },
+            {
                 "id": 120,
                 "name": "left_shoulder_pitch",
                 "parameters": {
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
                     "inverse": false,
                     "zero": 22.5
                 }
@@ -121,6 +173,7 @@
                 "parameters": {
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
                     "inverse": true,
                     "zero": 75.0
                 }
@@ -131,6 +184,7 @@
                 "parameters": {
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
                     "inverse": true,
                     "zero": -75.0
                 }
@@ -141,48 +195,9 @@
                 "parameters": {
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
                     "inverse": false,
                     "zero": 0.0
-                }
-            },
-            {
-                "id": 122,
-                "name": "left_elbow",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": true,
-                    "zero": 0.0
-                }
-            },
-            {
-                "id": 141,
-                "name": "head_yaw",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": false,
-                    "zero": -22.5
-                }
-            },
-            {
-                "id": 130,
-                "name": "right_shoulder_pitch",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": true,
-                    "zero": 22.5
-                }
-            },
-            {
-                "id": 140,
-                "name": "head_pitch",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": true,
-                    "zero": -12.0
                 }
             }
         ],
@@ -191,11 +206,34 @@
     "RX64": {
         "devices": [
             {
+                "id": 103,
+                "name": "right_hip_yaw",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
+                    "inverse": true,
+                    "zero": 0.0
+                }
+            },
+            {
+                "id": 37,
+                "name": "right_ankle_pitch",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
+                    "inverse": false,
+                    "zero": 0.0
+                }
+            },
+            {
                 "id": 32,
                 "name": "left_ankle_pitch",
                 "parameters": {
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
                     "inverse": true,
                     "zero": 0.0
                 }
@@ -206,6 +244,7 @@
                 "parameters": {
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
                     "inverse": true,
                     "zero": -22.5
                 }
@@ -216,6 +255,7 @@
                 "parameters": {
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
                     "inverse": true,
                     "zero": -22.5
                 }
@@ -226,6 +266,7 @@
                 "parameters": {
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
                     "inverse": true,
                     "zero": 0.0
                 }
@@ -236,6 +277,7 @@
                 "parameters": {
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
                     "inverse": true,
                     "zero": 22.5
                 }
@@ -246,6 +288,7 @@
                 "parameters": {
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
                     "inverse": false,
                     "zero": -22.5
                 }
@@ -256,6 +299,7 @@
                 "parameters": {
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
                     "inverse": false,
                     "zero": 22.5
                 }
@@ -266,6 +310,7 @@
                 "parameters": {
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
                     "inverse": true,
                     "zero": 0.0
                 }
@@ -276,6 +321,7 @@
                 "parameters": {
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
                     "inverse": false,
                     "zero": -22.5
                 }
@@ -286,27 +332,8 @@
                 "parameters": {
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
                     "inverse": false,
-                    "zero": 0.0
-                }
-            },
-            {
-                "id": 37,
-                "name": "right_ankle_pitch",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": false,
-                    "zero": 0.0
-                }
-            },
-            {
-                "id": 103,
-                "name": "right_hip_yaw",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "inverse": true,
                     "zero": 0.0
                 }
             }
