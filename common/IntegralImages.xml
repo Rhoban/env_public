@@ -14,6 +14,7 @@
   <ballProviders>
     <val>ballByDNN</val>
   </ballProviders>
+  <compassProviders/>
   <pipeline>
     <filter>
       <className>GoalByDNN</className>
@@ -29,7 +30,7 @@
       <paramFloats>
         <paramFloat>
 	        <name>scoreThreshold</name>
-	        <value>0.65</value>
+	        <value>0.98</value>
         </paramFloat>
       </paramFloats>
     </filter>
@@ -47,7 +48,7 @@
       <paramFloats>
         <paramFloat>
 	        <name>scoreThreshold</name>
-	        <value>0.85</value>
+	        <value>0.95</value>
         </paramFloat>
       </paramFloats>
     </filter>

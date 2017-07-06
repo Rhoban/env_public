@@ -12,7 +12,7 @@
         <expert_approach>
           <type>polar</type>
         </expert_approach>
-      </policy>          
+      </policy>
       <approach_model>
         <kick_zones>
           <v>
@@ -25,59 +25,16 @@
       </approach_model>
       <kick_options>
         <v>
-          <kick_model>
+          <kick_decision_model>
             <FinalKick>
-              <kick_pow_rel_stddev>0.1</kick_pow_rel_stddev>
-              <kick_direction_stddev>0.175</kick_direction_stddev>
-              <kick_reward>-10</kick_reward>
-              <kick_power>3.75</kick_power>
               <max_y>1.3</max_y>
               <goal_x>4</goal_x>
             </FinalKick>
-          </kick_model>
-          <approach_model>
-            <kick_zones>
-              <v>
-                <kick_y_offset>0.08</kick_y_offset>
-                <kick_y_tol>0.04</kick_y_tol>
-                <kick_x_min>0.1</kick_x_min>
-                <kick_x_max>0.24</kick_x_max>
-              </v>
-            </kick_zones>
-          </approach_model>
-          <policy>
-            <expert_approach>
-              <type>polar</type>
-              <kick_zones>
-                <v>
-                  <kick_y_offset>0.08</kick_y_offset>
-                  <kick_y_tol>0.04</kick_y_tol>
-                  <kick_x_min>0.1</kick_x_min>
-                  <kick_x_max>0.24</kick_x_max>
-                </v>
-              </kick_zones>
-            </expert_approach>
-          </policy>
-        </v>
-        <v>
-          <kick_model>
-            <FullPowerKick>
-              <kick_pow_rel_stddev>0.25</kick_pow_rel_stddev>
-              <kick_direction_stddev>0.175</kick_direction_stddev>
-              <kick_reward>-10</kick_reward>
-              <kick_power>1.1</kick_power>
-            </FullPowerKick>
-          </kick_model>
-          <approach_model>
-            <kick_zones>
-              <v>
-                <kick_y_offset>0.08</kick_y_offset>
-                <kick_y_tol>0.04</kick_y_tol>
-                <kick_x_min>0.1</kick_x_min>
-                <kick_x_max>0.24</kick_x_max>
-              </v>
-            </kick_zones>
-          </approach_model>
+          </kick_decision_model>
+          <kick_model_names>
+            <v>forward</v>
+          </kick_model_names>
+          <approach_model/>
           <policy>
             <expert_approach>
               <type>polar</type>
@@ -85,24 +42,27 @@
           </policy>
         </v>
         <v>
-          <kick_model>
-            <FullPowerKick>
-              <kick_pow_rel_stddev>0.1</kick_pow_rel_stddev>
-              <kick_direction_stddev>0.175</kick_direction_stddev>
-              <kick_reward>-10</kick_reward>
-              <kick_power>3.75</kick_power>
-            </FullPowerKick>
-          </kick_model>
-          <approach_model>
-            <kick_zones>
-              <v>
-                <kick_y_offset>0.08</kick_y_offset>
-                <kick_y_tol>0.04</kick_y_tol>
-                <kick_x_min>0.1</kick_x_min>
-                <kick_x_max>0.24</kick_x_max>
-              </v>
-            </kick_zones>
-          </approach_model>
+          <kick_decision_model>
+            <DirectedKick/>
+          </kick_decision_model>
+          <kick_model_names>
+            <v>small</v>
+          </kick_model_names>
+          <approach_model/>
+          <policy>
+            <expert_approach>
+              <type>polar</type>
+            </expert_approach>
+          </policy>
+        </v>
+        <v>
+          <kick_decision_model>
+            <DirectedKick/>
+          </kick_decision_model>
+          <kick_model_names>
+            <v>forward</v>
+          </kick_model_names>
+          <approach_model/>
           <policy>
             <expert_approach>
               <type>polar</type>
