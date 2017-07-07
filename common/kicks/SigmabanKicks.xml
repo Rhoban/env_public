@@ -1,41 +1,7 @@
 <KickModelCollection>
   <map>
     <entry>
-      <key>forward_cartesian</key>
-      <val>
-        <ClassicKick>
-          <kick_power>2.0</kick_power>
-          <right_kick_dir>0</right_kick_dir>
-          <rel_dist_stddev>0.1</rel_dist_stddev>
-          <dir_stddev>10</dir_stddev>
-          <kick_zone>
-            <kick_y_offset>0.08</kick_y_offset>
-            <kick_y_tol>0.04</kick_y_tol>
-            <kick_x_min>0.1</kick_x_min>
-            <kick_x_max>0.24</kick_x_max>
-          </kick_zone>
-        </ClassicKick>
-      </val>
-    </entry>
-    <entry>
-      <key>lateral_cartesian</key>
-      <val>
-        <ClassicKick>
-          <kick_power>2.0</kick_power>
-          <right_kick_dir>70</right_kick_dir>
-          <rel_dist_stddev>0.1</rel_dist_stddev>
-          <dir_stddev>10</dir_stddev>
-          <kick_zone>
-            <kick_y_offset>-0.13</kick_y_offset>
-            <kick_y_tol>0.07</kick_y_tol>
-            <kick_x_min>0.12</kick_x_min>
-            <kick_x_max>0.19</kick_x_max>
-          </kick_zone>
-        </ClassicKick>
-      </val>
-    </entry>
-    <entry>
-      <key>forward</key>
+      <key>classic</key>
       <val>
         <ClassicKick>
           <kick_power>2.5</kick_power>
@@ -47,6 +13,8 @@
             <kick_y_tol>0.04</kick_y_tol>
             <kick_x_min>0.1</kick_x_min>
             <kick_x_max>0.2</kick_x_max>
+            <kick_theta_tol>10</kick_theta_tol>
+            <kick_theta_offset>0</kick_theta_offset>
           </kick_zone>
         </ClassicKick>
       </val>
@@ -56,7 +24,7 @@
       <val>
         <ClassicKick>
           <kick_power>2.0</kick_power>
-          <right_kick_dir>70</right_kick_dir>
+          <right_kick_dir>75</right_kick_dir>
           <rel_dist_stddev>0.1</rel_dist_stddev>
           <dir_stddev>10</dir_stddev>
           <kick_zone>
@@ -64,6 +32,8 @@
             <kick_y_tol>0.05</kick_y_tol>
             <kick_x_min>0.12</kick_x_min>
             <kick_x_max>0.18</kick_x_max>
+            <kick_theta_tol>10</kick_theta_tol>
+            <kick_theta_offset>75</kick_theta_offset>
           </kick_zone>
         </ClassicKick>
       </val>
@@ -81,6 +51,8 @@
             <kick_y_tol>0.04</kick_y_tol>
             <kick_x_min>0.12</kick_x_min>
             <kick_x_max>0.18</kick_x_max>
+            <kick_theta_tol>10</kick_theta_tol>
+            <kick_theta_offset>0</kick_theta_offset>
           </kick_zone>
         </ClassicKick>
       </val>
