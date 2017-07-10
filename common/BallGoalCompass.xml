@@ -1,17 +1,12 @@
 <?xml version="1.0" ?>
 <LocalisationTest>
-  <ballResampling>0.0</ballResampling>
-  <angularPitchTolerance>2</angularPitchTolerance>
+  <angularPitchTolerance>5</angularPitchTolerance>
   <benchmark>false</benchmark>
   <benchmarkDetail>4</benchmarkDetail>
   <gpuOn>false</gpuOn>
-  <readFromLog>true</readFromLog>
-  <pathToLog>workingLog/lowLevel.log</pathToLog>
-  <embedded>false</embedded>
-  <fieldResampling>0.0</fieldResampling>
+  <readFromLog>false</readFromLog>
+  <embedded>true</embedded>
   <imageDelay>-5</imageDelay>
-  <nbParticlesBF>1</nbParticlesBF>
-  <nbParticlesFF>500</nbParticlesFF>
   <arenaProviders/>
   <goalProviders>
     <val>goalByDNN</val>
@@ -19,13 +14,45 @@
   <ballProviders>
     <val>ballByDNN</val>
   </ballProviders>
-  <compassProviders/>
+  <compassProviders>
+    <val>visualCompass</val>
+  </compassProviders>
   <pipeline>
+    <filter>
+      <className>VisualCompass</className>
+      <name>visualCompass</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>smallY</dependency>
+      </dependencies>
+      <paramInts>
+        <paramInt>
+	        <name>debugLevel</name>
+	        <value>0</value>
+        </paramInt>
+        <paramInt>
+	        <name>mode</name>
+	        <value>0</value>
+        </paramInt>
+        <paramInt>
+	        <name>enabled</name>
+	        <value>0</value>
+        </paramInt>
+      </paramInts>
+      <paramFloats>
+	      <paramFloat>
+          <name>threshold</name>
+	        <value>70</value>
+	      </paramFloat>
+	    </paramFloats>
+    </filter>
     <filter>
       <className>GoalByDNN</className>
       <name>goalByDNN</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>goalPatchProvider</dependency>
@@ -35,7 +62,7 @@
       <paramFloats>
         <paramFloat>
 	        <name>scoreThreshold</name>
-	        <value>0.75</value>
+	        <value>0.98</value>
         </paramFloat>
       </paramFloats>
     </filter>
@@ -43,7 +70,7 @@
       <className>BallByDNN</className>
       <name>ballByDNN</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>ballPatchProvider</dependency>
@@ -53,7 +80,7 @@
       <paramFloats>
         <paramFloat>
 	        <name>scoreThreshold</name>
-	        <value>0.85</value>
+	        <value>0.95</value>
         </paramFloat>
       </paramFloats>
     </filter>
@@ -73,7 +100,7 @@
       <paramInts>
         <paramInt>
           <name>period</name>
-          <value>1</value>
+          <value>0</value>
         </paramInt>
       </paramInts>
     </filter>
@@ -93,7 +120,7 @@
       <paramInts>
         <paramInt>
           <name>period</name>
-          <value>1</value>
+          <value>0</value>
         </paramInt>
       </paramInts>
     </filter>
@@ -111,10 +138,6 @@
         <dependency>ballByII</dependency>
       </dependencies>
       <paramInts>
-        <paramInt>
-          <name>tagLevel</name>
-          <value>1</value>
-        </paramInt>
         <paramInt>
           <name>patchHeight</name>
           <value>64</value>
@@ -208,7 +231,7 @@
       <className>BallByII2</className>
       <name>ballByII</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -319,24 +342,26 @@
       </dependencies>
     </filter>
     <filter>
-      <className>ColorConverter</className>
-      <name>smallHuman</name>
-      <conversion>YUV2BGR</conversion>
+      <className>Rescale</className>
+      <name>smallY</name>
       <debugLevel>
         <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-        <threads>false</threads>
       </debugLevel>
       <dependencies>
-        <dependency>source</dependency>
+        <dependency>Y</dependency>
       </dependencies>
+      <paramFloats>
+        <paramFloat>
+	        <name>ratio</name>
+	        <value>2</value>
+        </paramFloat>
+      </paramFloats>
     </filter>
     <filter>
       <className>Threshold</className>
       <name>white</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -355,7 +380,7 @@
       <className>ColorBounding</className>
       <name>green</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -404,23 +429,32 @@
       </dependencies>
     </filter>
     <filter>
-      <className>SourceLogs2</className>
+      <className>SourcePtGrey</className>
+      <name>source</name>
       <debugLevel>
         <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-        <threads>false</threads>
       </debugLevel>
+      <wished_properties>
+        <Shutter>
+          <autoManualMode>false</autoManualMode>
+          <absValue>3</absValue>
+        </Shutter>
+        <Gain>
+          <autoManualMode>false</autoManualMode>
+          <absValue>8</absValue>
+        </Gain>
+        <FrameRate>
+          <autoManualMode>false</autoManualMode>
+          <absValue>10</absValue>
+        </FrameRate>
+      </wished_properties>
       <dependencies/>
-      <imagesFile>workingLog/images.csv</imagesFile>
-      <name>source</name>
-      <paramFloats/>
       <paramInts/>
+      <paramFloats/>
       <paramPairInt/>
-      <startIndex>0</startIndex>
     </filter>
   </pipeline>
-  <playing>false</playing>
+  <playing>true</playing>
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
   <showTopView>false</showTopView>
