@@ -5,7 +5,7 @@
   <benchmarkDetail>4</benchmarkDetail>
   <gpuOn>false</gpuOn>
   <readFromLog>true</readFromLog>
-  <pathToLog>Logs/test_vision/lowLevel.log</pathToLog>
+  <pathToLog>Logs/lowLevel.log</pathToLog>
   <embedded>false</embedded>
   <imageDelay>-5</imageDelay>
   <arenaProviders/>
@@ -13,7 +13,7 @@
   <ballProviders/>
 
   <compassProviders>
-    <val>VisualCompass</val>
+    <val>visualCompass</val>
   </compassProviders>
 
   <pipeline>
@@ -21,7 +21,7 @@
 
     <filter>
       <className>VisualCompass</className>
-      <name>VisualCompass</name>
+      <name>visualCompass</name>
       <debugLevel>
         <graphics>true</graphics>
       </debugLevel>
@@ -39,6 +39,10 @@
 	     <paramFloat>
               <name>threshold</name>
 	        <value>70</value>
+	     </paramFloat>
+	     <paramFloat>
+              <name>panoScale</name>
+	        <value>1</value>
 	     </paramFloat>
 	     </paramFloats>
       <dependencies>
@@ -67,6 +71,20 @@
     </filter>
 
     <filter>
+      <className>BallRadiusProvider</className>
+      <name>ballRadiusProvider</name>
+      <debugLevel>
+        <graphics>true</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+        <threads>false</threads>
+      </debugLevel>
+      <dependencies>
+        <dependency>source</dependency>
+      </dependencies>
+    </filter>
+
+    <filter>
       <className>SourceLogs2</className>
       <debugLevel>
         <graphics>false</graphics>
@@ -75,7 +93,7 @@
         <threads>false</threads>
       </debugLevel>
       <dependencies/>
-      <imagesFile>Logs/test_vision/images.csv</imagesFile>
+      <imagesFile>Logs/images.csv</imagesFile>
       <name>source</name>
       <paramFloats/>
       <paramInts/>
