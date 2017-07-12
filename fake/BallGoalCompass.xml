@@ -4,12 +4,11 @@
   <benchmark>false</benchmark>
   <benchmarkDetail>4</benchmarkDetail>
   <gpuOn>false</gpuOn>
-  <readFromLog>false</readFromLog>
-  <embedded>true</embedded>
+  <readFromLog>true</readFromLog>
+  <pathToLog>workingLog/lowLevel.log</pathToLog>
+  <embedded>false</embedded>
   <imageDelay>-5</imageDelay>
-  <useTags>true</useTags>
   <arenaProviders/>
-  <compassProviders/>
   <goalProviders>
     <val>goalByDNN</val>
   </goalProviders>
@@ -19,10 +18,41 @@
   <compassProviders>
     <val>visualCompass</val>
   </compassProviders>
-  <fieldBorderProviders>
-    <val>fieldBorderCompass</val>
-  </fieldBorderProviders>
   <pipeline>
+    <filter>
+      <className>VisualCompass</className>
+      <name>visualCompass</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>smallY</dependency>
+      </dependencies>
+      <paramInts>
+        <paramInt>
+	        <name>debugLevel</name>
+	        <value>2</value>
+        </paramInt>
+        <paramInt>
+	        <name>mode</name>
+	        <value>0</value>
+        </paramInt>
+        <paramInt>
+	        <name>enabled</name>
+	        <value>1</value>
+        </paramInt>
+      </paramInts>
+      <paramFloats>
+	      <paramFloat>
+          <name>threshold</name>
+	        <value>70</value>
+	      </paramFloat>
+	      <paramFloat>
+          <name>panoScale</name>
+	        <value>0.5</value>
+	      </paramFloat>
+	    </paramFloats>
+    </filter>
     <filter>
       <className>GoalByDNN</className>
       <name>goalByDNN</name>
@@ -37,7 +67,7 @@
       <paramFloats>
         <paramFloat>
 	        <name>scoreThreshold</name>
-	        <value>0.65</value>
+	        <value>0.98</value>
         </paramFloat>
       </paramFloats>
     </filter>
@@ -55,7 +85,7 @@
       <paramFloats>
         <paramFloat>
 	        <name>scoreThreshold</name>
-	        <value>0.85</value>
+	        <value>0.95</value>
         </paramFloat>
       </paramFloats>
     </filter>
@@ -307,7 +337,7 @@
       <name>human</name>
       <conversion>YUV2BGR</conversion>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -317,18 +347,20 @@
       </dependencies>
     </filter>
     <filter>
-      <className>ColorConverter</className>
-      <name>smallHuman</name>
-      <conversion>YUV2BGR</conversion>
+      <className>Rescale</className>
+      <name>smallY</name>
       <debugLevel>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-        <threads>false</threads>
+        <graphics>true</graphics>
       </debugLevel>
       <dependencies>
-        <dependency>source</dependency>
+        <dependency>Y</dependency>
       </dependencies>
+      <paramFloats>
+        <paramFloat>
+	        <name>ratio</name>
+	        <value>2</value>
+        </paramFloat>
+      </paramFloats>
     </filter>
     <filter>
       <className>Threshold</className>
@@ -402,54 +434,23 @@
       </dependencies>
     </filter>
     <filter>
-      <className>TagsDetector</className>
-      <name>tagsDetector</name>
+      <className>SourceLogs2</className>
       <debugLevel>
         <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+        <threads>false</threads>
       </debugLevel>
-      <dependencies>
-        <dependency>Y</dependency>
-      </dependencies>
-      <paramFloats>
-        <paramFloat>
-          <name>markerSize</name>
-          <value>0.09</value>
-        </paramFloat>
-      </paramFloats>
-      <paramInts>
-        <paramInt>
-          <name>debugLevel</name>
-          <value>1</value>
-        </paramInt>
-      </paramInts>
-    </filter>
-    <filter>
-      <className>SourcePtGrey</className>
-      <name>source</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <wished_properties>
-        <Shutter>
-          <autoManualMode>false</autoManualMode>
-          <absValue>3</absValue>
-        </Shutter>
-        <Gain>
-          <autoManualMode>false</autoManualMode>
-          <absValue>8</absValue>
-        </Gain>
-        <FrameRate>
-          <autoManualMode>false</autoManualMode>
-          <absValue>10</absValue>
-        </FrameRate>
-      </wished_properties>
       <dependencies/>
-      <paramInts/>
+      <imagesFile>workingLog/images.csv</imagesFile>
+      <name>source</name>
       <paramFloats/>
+      <paramInts/>
       <paramPairInt/>
+      <startIndex>0</startIndex>
     </filter>
   </pipeline>
-  <playing>true</playing>
+  <playing>false</playing>
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
   <showTopView>false</showTopView>
