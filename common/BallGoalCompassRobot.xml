@@ -477,6 +477,29 @@
       </paramInts>
     </filter>
     <filter>
+      <className>Threshold</className>
+      <name>dark</name>
+      <debugLevel>
+        <graphics>true</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+        <threads>false</threads>
+      </debugLevel>
+      <dependencies>
+        <dependency>Y</dependency>
+      </dependencies>
+      <paramInts>
+        <paramInt>
+	        <name>threshold</name>
+	        <value>50</value>
+        </paramInt>
+        <paramInt>
+	        <name>thresholdType</name>
+	        <value>1</value>
+        </paramInt>
+      </paramInts>
+    </filter>
+    <filter>
       <className>ColorBounding</className>
       <name>green</name>
       <debugLevel>
