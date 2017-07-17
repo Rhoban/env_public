@@ -241,7 +241,6 @@
         <dependency>greenII</dependency>
         <dependency>darkII</dependency>
         <dependency>ballRadiusProvider</dependency>
-        <dependency>clipping_by_border</dependency>
         <dependency>greenDensity</dependency>
         <dependency>whiteDensity</dependency>
       </dependencies>
@@ -290,7 +289,7 @@
         </paramFloat>
         <paramFloat>
 	        <name>minScore</name>
-	        <value>70</value>
+	        <value>60</value>
         </paramFloat>
         <paramFloat>
 	        <name>minWidth</name>
@@ -302,7 +301,7 @@
         </paramFloat>
         <paramFloat>
 	  <name>greenThreshold</name>
-	  <value>165</value>
+	  <value>120</value>
         </paramFloat>
         <paramFloat>
 	  <name>whiteThreshold</name>
@@ -310,7 +309,7 @@
         </paramFloat>
         <paramFloat>
 	  <name>tooCloseToBeTrue</name>
-	  <value>40.0</value>
+	  <value>60.0</value>
         </paramFloat>
       </paramFloats>
     </filter>
@@ -480,7 +479,7 @@
       <className>Threshold</className>
       <name>dark</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -565,47 +564,6 @@
 	  <name>ratio</name>
 	  <value>4</value>
         </paramFloat>
-      </paramFloats>
-    </filter>
-    <filter>
-      <className>ClippingByBorder</className>
-      <name>clipping_by_border</name>
-      <debugLevel>
-        <graphics>false</graphics>
-      </debugLevel>
-      <dependencies>
-        <dependency>fieldBorder</dependency>
-      </dependencies>
-      <paramInts/>
-      <paramFloats/>
-    </filter>
-    <filter>
-      <className>FieldBorder</className>
-      <name>fieldBorder</name>
-      <debugLevel>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-        <threads>false</threads>
-      </debugLevel>
-      <dependencies>
-        <dependency>green</dependency>
-        <dependency>greenII</dependency>
-	<dependency>human</dependency>
-      </dependencies>
-      <paramInts>
-        <paramInt>
-          <name>density_kernel_size</name>
-          <value>30</value>
-          <name>comb_size</name>
-          <value>100</value>
-        </paramInt>
-      </paramInts>
-      <paramFloats>
-	<paramFloat>
-	 <name>max_obs_score</name>
-	 <value>1000.0</value>
-	</paramFloat>
       </paramFloats>
     </filter>
         <filter>
