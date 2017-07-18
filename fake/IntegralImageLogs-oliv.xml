@@ -47,7 +47,24 @@
         </paramFloat>
       </paramFloats>
     </filter>
-    
+
+    <filter>
+      <className>WhiteLines</className>
+      <name>white_lines</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>source</dependency>
+        <dependency>clipping_by_border</dependency>
+        <dependency>white_line_color</dependency>
+      </dependencies>
+      <paramInts>
+      </paramInts>
+      <paramFloats>
+      </paramFloats>
+    </filter>
+
     <filter>
       <className>ClippingByBorder</className>
       <name>clipping_by_border</name>
@@ -92,14 +109,59 @@
           <name>loc_active</name>
           <value>1</value>
         </paramInt>
+        <paramInt>
+          <name>debug_output</name>
+          <value>1</value>
+        </paramInt>
       </paramInts>
       <paramFloats>
 	<paramFloat>
 	  <name>max_obs_score</name>
-	  <value>0.50</value>
+	  <value>10.0</value>
 	</paramFloat>
       </paramFloats>
     </filter>
+
+
+    <filter>
+      <className>ColorBounding</className>
+      <debugLevel>
+	<graphics>true</graphics>
+      </debugLevel>
+      <dependencies>
+	<dependency>source</dependency>
+      </dependencies>
+      <name>white_line_color</name>
+      <paramFloats/>
+      <paramInts>
+	<paramInt>
+	  <name>minY</name>
+	  <value>125</value>
+	</paramInt>
+	<paramInt>
+	  <name>maxY</name>
+	  <value>255</value>
+	</paramInt>
+	<paramInt>
+	  <name>minU</name>
+	  <value>0</value>
+	</paramInt>
+	<paramInt>
+	  <name>maxU</name>
+	  <value>255</value>
+	</paramInt>
+	<paramInt>
+	  <name>minV</name>
+	  <value>0</value>
+	</paramInt>
+	<paramInt>
+	  <name>maxV</name>
+	  <value>255</value>
+	</paramInt>
+      </paramInts>
+    </filter>
+
+
     
     <filter>
       <className>Histogram</className>
