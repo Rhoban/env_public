@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <LocalisationTest>
   <angularPitchTolerance>5</angularPitchTolerance>
-  <benchmark>false</benchmark>
+  <benchmark>true</benchmark>
   <benchmarkDetail>4</benchmarkDetail>
   <gpuOn>false</gpuOn>
   <readFromLog>false</readFromLog>
@@ -18,6 +18,66 @@
     <val>visualCompass</val>
   </compassProviders>
   <pipeline>
+
+    <filter>
+      <className>ClippingByBorder</className>
+      <name>clipping_by_border</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>fieldBorder</dependency>
+      </dependencies>
+      <paramInts/>
+      <paramFloats/>
+    </filter>
+
+    <filter>
+      <className>FieldBorder</className>
+      <name>fieldBorder</name>
+      <debugLevel>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+        <threads>false</threads>
+      </debugLevel>
+      <dependencies>
+        <dependency>green</dependency>
+        <dependency>greenDensity</dependency>
+	<dependency>human</dependency>
+      </dependencies>
+      <paramInts>
+        <paramInt>
+          <name>density_kernel_size</name>
+          <value>30</value>
+        </paramInt>
+        <paramInt>
+          <name>comb_size</name>
+          <value>100</value>
+        </paramInt>
+        <paramInt>
+          <name>scale_factor</name>
+          <value>4</value>
+        </paramInt>
+        <paramInt>
+          <name>loc_active</name>
+          <value>1</value>
+        </paramInt>
+        <paramInt>
+          <name>debug_output</name>
+          <value>1</value>
+        </paramInt>
+      </paramInts>
+      <paramFloats>
+	<paramFloat>
+	  <name>max_obs_score</name>
+	  <value>10.0</value>
+	</paramFloat>
+      </paramFloats>
+    </filter>
+
+
+
     <filter>
       <className>VisualCompass</className>
       <name>visualCompass</name>
@@ -525,15 +585,15 @@
         </paramInt>
         <paramInt>
 	        <name>maxY</name>
-	        <value>110</value>
+	        <value>85</value>
         </paramInt>
         <paramInt>
 	        <name>maxU</name>
-	        <value>131</value>
+	        <value>129</value>
         </paramInt>
         <paramInt>
 	        <name>maxV</name>
-	        <value>131</value>
+	        <value>137</value>
         </paramInt>
       </paramInts>
     </filter>
