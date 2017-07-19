@@ -2,24 +2,24 @@
     "Dynaban64": {
         "devices": [
             {
-                "id": 17,
-                "name": "right_ankle_roll",
+                "id": 38,
+                "name": "left_ankle_roll",
                 "parameters": {
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
                     "dontRead": false,
                     "inverse": false,
-                    "zero": -34.5
+                    "zero": 22.5
                 }
             },
             {
-                "id": 6,
-                "name": "right_knee",
+                "id": 15,
+                "name": "left_knee",
                 "parameters": {
                     "angleLimitCCWParameter": 0.0,
                     "angleLimitCWParameter": 0.0,
                     "dontRead": false,
-                    "inverse": true,
+                    "inverse": false,
                     "zero": 0.0
                 }
             },
@@ -43,6 +43,28 @@
                     "dontRead": false,
                     "inverse": true,
                     "zero": 0.0
+                }
+            },
+            {
+                "id": 6,
+                "name": "right_knee",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
+                    "inverse": true,
+                    "zero": 0.0
+                }
+            },
+            {
+                "id": 17,
+                "name": "right_ankle_roll",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
+                    "inverse": false,
+                    "zero": -34.5
                 }
             },
             {
@@ -110,28 +132,6 @@
                     "inverse": true,
                     "zero": -22.5
                 }
-            },
-            {
-                "id": 15,
-                "name": "left_knee",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "dontRead": false,
-                    "inverse": false,
-                    "zero": 0.0
-                }
-            },
-            {
-                "id": 38,
-                "name": "left_ankle_roll",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "dontRead": false,
-                    "inverse": false,
-                    "zero": 22.5
-                }
             }
         ],
         "parameters": null
@@ -150,9 +150,9 @@
                     "accZMin": -1.0,
                     "dontRead": false,
                     "filterDelay": 0.02,
-                    "gyroXOffset": -0.0526128262281418,
-                    "gyroYOffset": -0.00807809177786112,
-                    "gyroZOffset": 0.00588858919218183,
+                    "gyroXOffset": -0.0530458688735962,
+                    "gyroYOffset": -0.00143268774263561,
+                    "gyroZOffset": 0.00386097189038992,
                     "invertOrientation": true,
                     "invertOrientationX": false,
                     "invertOrientationY": false,
@@ -171,6 +171,50 @@
     },
     "MX28": {
         "devices": [
+            {
+                "id": 122,
+                "name": "left_elbow",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
+                    "inverse": true,
+                    "zero": 0.0
+                }
+            },
+            {
+                "id": 132,
+                "name": "right_elbow",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
+                    "inverse": false,
+                    "zero": 0.0
+                }
+            },
+            {
+                "id": 121,
+                "name": "left_shoulder_roll",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
+                    "inverse": true,
+                    "zero": 5.0
+                }
+            },
+            {
+                "id": 140,
+                "name": "head_yaw",
+                "parameters": {
+                    "angleLimitCCWParameter": 0.0,
+                    "angleLimitCWParameter": 0.0,
+                    "dontRead": false,
+                    "inverse": false,
+                    "zero": 0.0
+                }
+            },
             {
                 "id": 141,
                 "name": "head_pitch",
@@ -214,50 +258,6 @@
                     "inverse": false,
                     "zero": 0.0
                 }
-            },
-            {
-                "id": 140,
-                "name": "head_yaw",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "dontRead": false,
-                    "inverse": false,
-                    "zero": 0.0
-                }
-            },
-            {
-                "id": 121,
-                "name": "left_shoulder_roll",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "dontRead": false,
-                    "inverse": true,
-                    "zero": 5.0
-                }
-            },
-            {
-                "id": 132,
-                "name": "right_elbow",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "dontRead": false,
-                    "inverse": false,
-                    "zero": 0.0
-                }
-            },
-            {
-                "id": 122,
-                "name": "left_elbow",
-                "parameters": {
-                    "angleLimitCCWParameter": 0.0,
-                    "angleLimitCWParameter": 0.0,
-                    "dontRead": false,
-                    "inverse": true,
-                    "zero": 0.0
-                }
             }
         ],
         "parameters": null
@@ -277,7 +277,7 @@
         "devices": [
             {
                 "id": 242,
-                "name": "pins",
+                "name": "Pins_1",
                 "parameters": {
                     "dontRead": false
                 }
@@ -287,29 +287,6 @@
     },
     "PressureSensor4": {
         "devices": [
-            {
-                "id": 124,
-                "name": "left_pressure",
-                "parameters": {
-                    "dontRead": false,
-                    "gain_0": -1.0,
-                    "gain_1": 1.0,
-                    "gain_2": -1.0,
-                    "gain_3": 1.0,
-                    "x_0": 0.0,
-                    "x_1": 0.0,
-                    "x_2": 0.0,
-                    "x_3": 0.0,
-                    "y_0": 0.0,
-                    "y_1": 0.0,
-                    "y_2": 0.0,
-                    "y_3": 0.0,
-                    "zero_0": 8198120.276,
-                    "zero_1": 7517188.7,
-                    "zero_2": 2400370.112,
-                    "zero_3": -4035335.212
-                }
-            },
             {
                 "id": 123,
                 "name": "right_pressure",
@@ -327,10 +304,33 @@
                     "y_1": 0.0,
                     "y_2": 0.0,
                     "y_3": 0.0,
-                    "zero_0": 4140793.784,
-                    "zero_1": 6220244.176,
-                    "zero_2": 2815838.628,
-                    "zero_3": 971461.332
+                    "zero_0": 4131723.956,
+                    "zero_1": 6215773.712,
+                    "zero_2": 2803312.424,
+                    "zero_3": 970885.82
+                }
+            },
+            {
+                "id": 124,
+                "name": "left_pressure",
+                "parameters": {
+                    "dontRead": false,
+                    "gain_0": -1.0,
+                    "gain_1": 1.0,
+                    "gain_2": -1.0,
+                    "gain_3": 1.0,
+                    "x_0": 0.0,
+                    "x_1": 0.0,
+                    "x_2": 0.0,
+                    "x_3": 0.0,
+                    "y_0": 0.0,
+                    "y_1": 0.0,
+                    "y_2": 0.0,
+                    "y_3": 0.0,
+                    "zero_0": 8222292.88,
+                    "zero_1": 7509669.316,
+                    "zero_2": 2396371.312,
+                    "zero_3": -4038622.596
                 }
             }
         ],

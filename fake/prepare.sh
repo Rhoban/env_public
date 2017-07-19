@@ -1,11 +1,13 @@
-if [ "$#" -ne 1 && "$#" -ne 2]; then
+#!/bin/bash
+
+if [ "$#" -ne 1 ] && [ "$#" -ne 2 ]; then
     echo "Usage: prepare.sh robotName"
     echo "Or"
-    echo "Usage: prepare.sh robotName pathToLogs"    
+    echo "Usage: prepare.sh robotName pathToLogs"
     exit
 fi
 robot=$1
-echo "Preparing the fake env for the robot 'robot'"
+echo "Preparing the fake env for the robot '$robot'"
 env=$(dirname `pwd`)
 echo "env path is $env"
 
@@ -22,7 +24,7 @@ do
         echo "Warning : $i cp failed !!!!!!!!!!!!"
         exit
     fi
-    
+
 done
 
 if [ "$#" -eq 2 ]; then

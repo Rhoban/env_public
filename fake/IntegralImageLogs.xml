@@ -365,28 +365,28 @@
       </dependencies>
       <paramInts>
         <paramInt>
-	        <name>minY</name>
-	        <value>40</value>
+	       <name>minY</name>
+	       <value>40</value>
         </paramInt>
         <paramInt>
-	        <name>minU</name>
-	        <value>112</value>
+	       <name>minU</name>
+	       <value>112</value>
         </paramInt>
         <paramInt>
-	        <name>minV</name>
-	        <value>117</value>
+	       <name>minV</name>
+	       <value>117</value>
         </paramInt>
         <paramInt>
-	        <name>maxY</name>
-	        <value>110</value>
+	       <name>maxY</name>
+	       <value>148</value>
         </paramInt>
         <paramInt>
-	        <name>maxU</name>
-	        <value>131</value>
+	       <name>maxU</name>
+	       <value>130</value>
         </paramInt>
         <paramInt>
-	        <name>maxV</name>
-	        <value>131</value>
+	       <name>maxV</name>
+	       <value>136</value>
         </paramInt>
       </paramInts>
     </filter>
@@ -394,7 +394,7 @@
       <className>BallRadiusProvider</className>
       <name>ballRadiusProvider</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -402,6 +402,204 @@
       <dependencies>
         <dependency>source</dependency>
       </dependencies>
+    </filter>
+    <filter>
+      <className>ColorDensity</className>
+      <name>greenDensity</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>greenII</dependency>
+      </dependencies>
+      <paramInts>
+        <paramInt>
+          <name>kernel_size</name>
+          <value>30</value>
+        </paramInt>
+      </paramInts>
+      <paramFloats>
+        <paramFloat>
+          <name>resize_factor</name>
+          <value>0.1</value>
+        </paramFloat>
+      </paramFloats>
+    </filter>
+    <filter>
+      <className>ColorDensity</className>
+      <name>whiteDensity</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>whiteII</dependency>
+      </dependencies>
+      <paramInts>
+        <paramInt>
+          <name>kernel_size</name>
+          <value>30</value>
+        </paramInt>
+      </paramInts>
+      <paramFloats>
+        <paramFloat>
+          <name>resize_factor</name>
+          <value>0.1</value>
+        </paramFloat>
+      </paramFloats>
+    </filter>
+    <filter>
+      <className>ColorBounding</className>
+      <name>magenta</name>
+      <debugLevel>
+        <graphics>true</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+        <threads>false</threads>
+      </debugLevel>
+      <dependencies>
+        <dependency>smallSource</dependency>
+      </dependencies>
+      <paramInts>
+        <paramInt>
+	        <name>minY</name>
+	        <value>90</value>
+        </paramInt>
+        <paramInt>
+	        <name>minU</name>
+	        <value>140</value>
+        </paramInt>
+        <paramInt>
+	        <name>minV</name>
+	        <value>120</value>
+        </paramInt>
+        <paramInt>
+	        <name>maxY</name>
+	        <value>130</value>
+        </paramInt>
+        <paramInt>
+	        <name>maxU</name>
+	        <value>160</value>
+        </paramInt>
+        <paramInt>
+	        <name>maxV</name>
+	        <value>140</value>
+        </paramInt>
+      </paramInts>
+    </filter>
+    <filter>
+    <className>Erode</className>
+    <debugLevel>
+      <graphics>true</graphics>
+      <parameters>false</parameters>
+      <perfs>false</perfs>
+      <threads>false</threads>
+    </debugLevel>
+    <dependencies>
+      <dependency>magenta</dependency>
+    </dependencies>
+    <name>magentaEroded</name>
+    <paramFloats/>
+    <paramInts>
+      <paramInt>
+	<name>Shape</name>
+	<value>0</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel height</name>
+	<value>2</value>
+      </paramInt>
+      <paramInt>
+	<name>kernel width</name>
+	<value>1</value>
+      </paramInt>
+    </paramInts>
+    <paramPairInt/>
+  </filter>
+  <filter>
+      <className>Rescale</className>
+      <name>smallSource</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>source</dependency>
+      </dependencies>
+      <paramFloats>
+        <paramFloat>
+	  <name>ratio</name>
+	  <value>4</value>
+        </paramFloat>
+      </paramFloats>
+    </filter>
+    <filter>
+      <className>SimpleRobotDetector</className>
+      <name>robotDetector</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>greenDensity</dependency>
+        <dependency>whiteDensity</dependency>
+        <dependency>magentaEroded</dependency>
+        <dependency>clipping_by_border</dependency>
+      </dependencies>
+      <paramFloats>
+        <paramFloat>
+	  <name>greenThreshold</name>
+	  <value>165</value>
+        </paramFloat>
+        <paramFloat>
+	  <name>whiteThreshold</name>
+	  <value>50</value>
+        </paramFloat>
+      </paramFloats>
+      <paramInts>
+        <paramInt>
+          <name>tagLevel</name>
+	  <value>1</value>
+        </paramInt>
+      </paramInts>
+    </filter>
+    <filter>
+      <className>ClippingByBorder</className>
+      <name>clipping_by_border</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>fieldBorder</dependency>
+      </dependencies>
+      <paramInts/>
+      <paramFloats/>
+    </filter>
+    <filter>
+      <className>FieldBorder</className>
+      <name>fieldBorder</name>
+      <debugLevel>
+        <graphics>true</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+        <threads>false</threads>
+      </debugLevel>
+      <dependencies>
+        <dependency>green</dependency>
+        <dependency>greenII</dependency>
+	<dependency>human</dependency>
+      </dependencies>
+      <paramInts>
+        <paramInt>
+          <name>density_kernel_size</name>
+          <value>30</value>
+          <name>comb_size</name>
+          <value>100</value>
+        </paramInt>
+      </paramInts>
+      <paramFloats>
+	<paramFloat>
+	 <name>max_obs_score</name>
+	 <value>1000.0</value>
+	</paramFloat>
+      </paramFloats>
     </filter>
     <filter>
       <className>SourceLogs2</className>
