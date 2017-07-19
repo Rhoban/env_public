@@ -43,7 +43,7 @@
       <paramFloats>
         <paramFloat>
 	  <name>resize_factor</name>
-	  <value>0.1</value>
+	  <value>0.2</value>
         </paramFloat>
       </paramFloats>
     </filter>
@@ -89,7 +89,7 @@
       </debugLevel>
       <dependencies>
         <dependency>green</dependency>
-        <dependency>greenII</dependency>
+        <dependency>greenDensity</dependency>
 	<dependency>human</dependency>
       </dependencies>
       <paramInts>
@@ -417,7 +417,7 @@
       <className>GoalByDNN</className>
       <name>goalByDNN</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>goalPatchProvider</dependency>
@@ -435,7 +435,7 @@
       <className>BallByDNN</className>
       <name>ballByDNN</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>ballPatchProvider</dependency>
@@ -735,7 +735,7 @@
       <dependencies>
         <dependency>source</dependency>
       </dependencies>
-      <paramInts>
+            <paramInts>
         <paramInt>
 	        <name>minY</name>
 	        <value>40</value>
@@ -750,15 +750,15 @@
         </paramInt>
         <paramInt>
 	        <name>maxY</name>
-	        <value>148</value>
+	        <value>98</value>
         </paramInt>
         <paramInt>
 	        <name>maxU</name>
-	        <value>130</value>
+	        <value>128</value>
         </paramInt>
         <paramInt>
 	        <name>maxV</name>
-	        <value>136</value>
+	        <value>134</value>
         </paramInt>
       </paramInts>
     </filter>
