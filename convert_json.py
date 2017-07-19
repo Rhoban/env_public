@@ -22,17 +22,12 @@ if type(datas)==dict:
     k=times.keys()
     k.sort()
     print "["
-    for o in range(len(k)):
-        x=k[o]
+    for x in k:
         print "    {"
         print '        "time":',x,
         for m in times[x]:
             print ',\n        "%s"'%(m.strip()),':',times[x][m],
-        print '\n    }',
-        if o!=len(k)-1:
-            print ","
-        else:
-            print ""
+        print '\n    },'
     print "]"
         
 else:
