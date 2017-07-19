@@ -1,1 +1,1 @@
-../../../../devel_novision/lib/RhobanServer/RhobanServer
+../../../../devel_nv_release/lib/RhobanServer/RhobanServer

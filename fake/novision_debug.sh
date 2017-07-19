@@ -1,1 +1,1 @@
-gdb ~/workspace/devel_novision_debug/lib/RhobanServer/RhobanServer
+gdb ../../../../devel_nv_debug/lib/RhobanServer/RhobanServer
