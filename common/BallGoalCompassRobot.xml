@@ -145,46 +145,6 @@
       </paramFloats>
     </filter>
     <filter>
-      <className>PatchRecorder</className>
-      <name>ballPatchRecorder</name>
-      <debugLevel>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-        <threads>false</threads>
-      </debugLevel>
-      <dependencies>
-        <dependency>ballPatchProvider</dependency>
-      </dependencies>
-      <prefix>patches/ball/</prefix>
-      <paramInts>
-        <paramInt>
-          <name>period</name>
-          <value>0</value>
-        </paramInt>
-      </paramInts>
-    </filter>
-    <filter>
-      <className>PatchRecorder</className>
-      <name>goalPatchRecorder</name>
-      <debugLevel>
-        <graphics>false</graphics>
-        <parameters>false</parameters>
-        <perfs>false</perfs>
-        <threads>false</threads>
-      </debugLevel>
-      <dependencies>
-        <dependency>goalPatchProvider</dependency>
-      </dependencies>
-      <prefix>patches/goal/</prefix>
-      <paramInts>
-        <paramInt>
-          <name>period</name>
-          <value>0</value>
-        </paramInt>
-      </paramInts>
-    </filter>
-    <filter>
       <className>RoiToPatches</className>
       <name>ballPatchProvider</name>
       <debugLevel>
