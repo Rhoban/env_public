@@ -23,9 +23,9 @@ def main(path, dofName, zero) :
         print("Couldn't find the string '" + str(dofName) + "'")
         sys.exit()
     #Erasing between "zero" and the breakline
-    print("index = " + str(index))
-    print("indexOfChange = " + str(indexOfChange))
-    print("indexOfEnd = " + str(indexOfEnd))
+    #print("index = " + str(index))
+    #print("indexOfChange = " + str(indexOfChange))
+    #print("indexOfEnd = " + str(indexOfEnd))
     begin = content[:indexOfChange]
     end = content[indexOfEnd: ]
     middle = zeroString + ":" + str(zero)
@@ -35,11 +35,14 @@ def main(path, dofName, zero) :
     f.write(content)
 
 if ( __name__ == "__main__"):
-    if(len(sys.argv) != 4) :
-        print("Usage setOffset.py path2file DOFName zeroValue")
+    if(len(sys.argv) != 5) :
+        print("Usage setOffset.py path2file DOFName currentValue expectedValue")
         sys.exit()
     path = sys.argv[1]
     dofName = sys.argv[2]
-    zero = sys.argv[3]
+    current = sys.argv[3]
+    expected = sys.argv[4]
+    zero = float(expected) - float(current)
+    print("Setting a zero of " + str(zero) + ", in dof : '" + str(dofName) + "'")
     main(path, dofName, zero)
     print("Done !")
