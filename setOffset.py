@@ -27,11 +27,16 @@ def main(path, dofName, zero) :
     #print("indexOfChange = " + str(indexOfChange))
     #print("indexOfEnd = " + str(indexOfEnd))
     begin = content[:indexOfChange]
-    end = content[indexOfEnd: ]
-    middle = zeroString + ":" + str(zero)
+    end = content[indexOfEnd:]
+    # The - because the motor is inverted
+    middle = zeroString + ":" + str(-zero)
+    #print("begin :\n" + str(begin))
+    #print("middle :\n" + str(middle))
+    #print("end :\n" + str(end))
     # Rewritting the whole thing
     content = begin + middle + end
     f.seek(0)
+    f.truncate()
     f.write(content)
 
 if ( __name__ == "__main__"):
