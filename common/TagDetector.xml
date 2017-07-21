@@ -8,7 +8,10 @@
   <readFromLog>false</readFromLog>
   <embedded>true</embedded>
   <imageDelay>-5</imageDelay>
+  <ballProviders/>
+  <goalProviders/>
   <compassProviders/>
+  <arenaProviders/>
   <pipeline>
     <filter>
       <className>TagsDetector</className>
@@ -17,7 +20,7 @@
         <graphics>false</graphics>
       </debugLevel>
       <dependencies>
-        <dependency>Y</dependency>
+        <dependency>smallY</dependency>
       </dependencies>
       <paramFloats>
         <paramFloat>
@@ -25,6 +28,24 @@
           <value>0.2</value>
         </paramFloat>
       </paramFloats>
+    </filter> 
+    <filter>
+      <className>Rescale</className>
+      <name>smallY</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>Y</dependency>
+      </dependencies>
+      <paramInts/>
+      <paramFloats>
+        <paramFloat>
+          <name>ratio</name>
+          <value>4</value>
+        </paramFloat>
+      </paramFloats>
+      <paramPairInt/>
     </filter> 
     <filter>
       <className>ChannelSelector</className>
