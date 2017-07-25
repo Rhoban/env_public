@@ -117,7 +117,7 @@
       <paramFloats>
 	<paramFloat>
 	  <name>max_obs_score</name>
-	  <value>10.0</value>
+	  <value>5.0</value>
 	</paramFloat>
       </paramFloats>
     </filter>
@@ -126,7 +126,7 @@
     <filter>
       <className>ColorBounding</className>
       <debugLevel>
-	<graphics>true</graphics>
+	<graphics>false</graphics>
       </debugLevel>
       <dependencies>
 	<dependency>source</dependency>
@@ -161,7 +161,64 @@
       </paramInts>
     </filter>
 
+    <filter>
+      <className>ColorBounding</className>
+      <debugLevel>
+	<graphics>true</graphics>
+      </debugLevel>
+      <dependencies>
+	<dependency>source</dependency>
+      </dependencies>
+      <name>ground_color</name>
+      <paramFloats/>
+      <paramInts>
+	<paramInt>
+	  <name>minY</name>
+	  <value>0</value>
+	</paramInt>
+	<paramInt>
+	  <name>maxY</name>
+	  <value>70</value>
+	</paramInt>
+	<paramInt>
+	  <name>minU</name>
+	  <value>128</value>
+	</paramInt>
+	<paramInt>
+	  <name>maxU</name>
+	  <value>255</value>
+	</paramInt>
+	<paramInt>
+	  <name>minV</name>
+	  <value>135</value>
+	</paramInt>
+	<paramInt>
+	  <name>maxV</name>
+	  <value>144</value>
+	</paramInt>
+      </paramInts>
+    </filter>
 
+
+
+    <filter>
+      <className>Diff</className>
+      <debugLevel>
+	<graphics>true</graphics>
+      </debugLevel>
+      <dependencies>
+	<dependency>green</dependency>
+        <dependency>ground_color</dependency>
+      </dependencies>
+      <name>green_minus_ground</name>
+      <paramFloats/>
+      <paramInts/>
+    </filter>
+
+
+
+
+    
     
     <filter>
       <className>Histogram</className>
@@ -750,7 +807,7 @@
         </paramInt>
         <paramInt>
 	        <name>maxY</name>
-	        <value>98</value>
+	        <value>124</value>
         </paramInt>
         <paramInt>
 	        <name>maxU</name>
@@ -758,7 +815,7 @@
         </paramInt>
         <paramInt>
 	        <name>maxV</name>
-	        <value>134</value>
+	        <value>130</value>
         </paramInt>
       </paramInts>
     </filter>
