@@ -19,11 +19,91 @@
     <val>visualCompass</val>
   </compassProviders>
   <pipeline>
+
+    <filter>
+      <className>ClippingByBorder</className>
+      <name>clipping_by_border</name>
+      <debugLevel>
+        <graphics>true</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>fieldBorder</dependency>
+      </dependencies>
+      <paramInts/>
+      <paramFloats/>
+    </filter>
+
+    <filter>
+      <className>FieldBorder</className>
+      <name>fieldBorder</name>
+      <debugLevel>
+        <graphics>true</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+        <threads>false</threads>
+      </debugLevel>
+      <dependencies>
+        <dependency>green</dependency>
+        <dependency>greenDensity</dependency>
+	      <dependency>human</dependency>
+      </dependencies>
+      <paramInts>
+        <paramInt>
+          <name>density_kernel_size</name>
+          <value>30</value>
+        </paramInt>
+        <paramInt>
+          <name>comb_size</name>
+          <value>100</value>
+        </paramInt>
+        <paramInt>
+          <name>scale_factor</name>
+          <value>4</value>
+        </paramInt>
+        <paramInt>
+          <name>loc_active</name>
+          <value>1</value>
+        </paramInt>
+        <paramInt>
+          <name>debug_output</name>
+          <value>0</value>
+        </paramInt>
+      </paramInts>
+      <paramFloats>
+	      <paramFloat>
+	        <name>max_obs_score</name>
+	        <value>5.0</value>
+	      </paramFloat>
+      </paramFloats>
+    </filter>
+
+    <filter>
+      <className>ColorDensity</className>
+      <name>greenDensity</name>
+      <debugLevel>
+        <graphics>false</graphics>
+      </debugLevel>
+      <dependencies>
+        <dependency>greenII</dependency>
+      </dependencies>
+      <paramInts>
+        <paramInt>
+          <name>kernel_size</name>
+          <value>30</value>
+        </paramInt>
+      </paramInts>
+      <paramFloats>
+        <paramFloat>
+          <name>resize_factor</name>
+          <value>0.2</value>
+        </paramFloat>
+      </paramFloats>
+    </filter>
     <filter>
       <className>VisualCompass</className>
       <name>visualCompass</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>smallY</dependency>
@@ -39,7 +119,7 @@
         </paramInt>
         <paramInt>
 	        <name>enabled</name>
-	        <value>1</value>
+	        <value>0</value>
         </paramInt>
       </paramInts>
       <paramFloats>
@@ -57,7 +137,7 @@
       <className>GoalByDNN</className>
       <name>goalByDNN</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
       </debugLevel>
       <dependencies>
         <dependency>goalPatchProvider</dependency>
@@ -105,7 +185,7 @@
       <paramInts>
         <paramInt>
           <name>period</name>
-          <value>0</value>
+          <value>1</value>
         </paramInt>
       </paramInts>
     </filter>
@@ -125,7 +205,7 @@
       <paramInts>
         <paramInt>
           <name>period</name>
-          <value>0</value>
+          <value>1</value>
         </paramInt>
       </paramInts>
     </filter>
@@ -181,7 +261,7 @@
       <className>GoalByII2</className>
       <name>goalROIProvider</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -196,6 +276,14 @@
         <paramInt>
 	        <name>decimationRate</name>
 	        <value>5</value>
+        </paramInt>
+        <paramInt>
+	        <name>tagLevel</name>
+	        <value>1</value>
+        </paramInt>
+        <paramInt>
+	        <name>useMask</name>
+	        <value>1</value>
         </paramInt>
       </paramInts>
       <paramFloats>
@@ -226,6 +314,10 @@
         <paramFloat>
 	        <name>minWidth</name>
 	        <value>5.0</value>
+        </paramFloat>
+        <paramFloat>
+	        <name>filledMaskMinWidth</name>
+	        <value>15.0</value>
         </paramFloat>
         <paramFloat>
 	        <name>roiRatio</name>
@@ -351,7 +443,7 @@
       <className>Rescale</className>
       <name>smallY</name>
       <debugLevel>
-        <graphics>true</graphics>
+        <graphics>false</graphics>
       </debugLevel>
       <dependencies>
         <dependency>Y</dependency>
@@ -367,7 +459,7 @@
       <className>Threshold</className>
       <name>white</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -378,7 +470,7 @@
       <paramInts>
         <paramInt>
 	        <name>threshold</name>
-	        <value>120</value>
+	        <value>150</value>
         </paramInt>
       </paramInts>
     </filter>
@@ -409,15 +501,15 @@
         </paramInt>
         <paramInt>
 	        <name>maxY</name>
-	        <value>110</value>
+	        <value>124</value>
         </paramInt>
         <paramInt>
 	        <name>maxU</name>
-	        <value>131</value>
+	        <value>128</value>
         </paramInt>
         <paramInt>
 	        <name>maxV</name>
-	        <value>131</value>
+	        <value>130</value>
         </paramInt>
       </paramInts>
     </filter>

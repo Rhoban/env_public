@@ -205,11 +205,16 @@
         <dependency>whiteII</dependency>
         <dependency>greenII</dependency>
         <dependency>ballRadiusProvider</dependency>
+        <dependency>clipping_by_border</dependency>
       </dependencies>
       <paramInts>
         <paramInt>
 	        <name>decimationRate</name>
 	        <value>5</value>
+        </paramInt>
+        <paramInt>
+	        <name>useMask</name>
+	        <value>1</value>
         </paramInt>
       </paramInts>
       <paramFloats>
@@ -239,6 +244,10 @@
         </paramFloat>
         <paramFloat>
 	        <name>minWidth</name>
+	        <value>5.0</value>
+        </paramFloat>
+        <paramFloat>
+	        <name>filledMaskMinWidth</name>
 	        <value>5.0</value>
         </paramFloat>
         <paramFloat>
