@@ -4,8 +4,9 @@
   <benchmark>false</benchmark>
   <benchmarkDetail>4</benchmarkDetail>
   <gpuOn>false</gpuOn>
-  <readFromLog>false</readFromLog>
-  <embedded>true</embedded>
+  <readFromLog>true</readFromLog>
+  <pathToLog>workingLog/lowLevel.log</pathToLog>
+  <embedded>false</embedded>
   <imageDelay>-5</imageDelay>
   <arenaProviders/>
   <goalProviders>
@@ -18,7 +19,6 @@
     <val>visualCompass</val>
   </compassProviders>
   <pipeline>
-
     <filter>
       <className>ClippingByBorder</className>
       <name>clipping_by_border</name>
@@ -31,7 +31,6 @@
       <paramInts/>
       <paramFloats/>
     </filter>
-
     <filter>
       <className>FieldBorder</className>
       <name>fieldBorder</name>
@@ -112,7 +111,7 @@
       <className>GoalByDNN</className>
       <name>goalByDNN</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
       </debugLevel>
       <dependencies>
         <dependency>goalPatchProvider</dependency>
@@ -130,7 +129,7 @@
       <className>BallByDNN</className>
       <name>ballByDNN</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
       </debugLevel>
       <dependencies>
         <dependency>ballPatchProvider</dependency>
@@ -260,7 +259,7 @@
       <className>RobotByII2</className>
       <name>robotByII</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -292,7 +291,7 @@
         </paramInt>
         <paramInt>
 	        <name>tagLevel</name>
-	        <value>0</value>
+	        <value>2</value>
         </paramInt>
       </paramInts>
       <paramFloats>
@@ -402,7 +401,7 @@
       <className>Integral</className>
       <name>darkII</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -415,7 +414,7 @@
       <className>Integral</className>
       <name>greenII</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -460,7 +459,7 @@
       <name>human</name>
       <conversion>YUV2BGR</conversion>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -508,7 +507,7 @@
       <className>Threshold</className>
       <name>dark</name>
       <debugLevel>
-        <graphics>false</graphics>
+        <graphics>true</graphics>
         <parameters>false</parameters>
         <perfs>false</perfs>
         <threads>false</threads>
@@ -639,34 +638,66 @@
         </paramFloat>
       </paramFloats>
     </filter>
-    <filter>
-      <className>SourcePtGrey</className>
-      <name>source</name>
+        <filter>
+      <className>PatchRecorder</className>
+      <name>ballPatchRecorder</name>
       <debugLevel>
         <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+        <threads>false</threads>
       </debugLevel>
-      <wished_properties>
-        <Shutter>
-          <autoManualMode>false</autoManualMode>
-          <absValue>4</absValue>
-        </Shutter>
-        <Gain>
-          <autoManualMode>false</autoManualMode>
-          <absValue>10</absValue>
-        </Gain>
-        <FrameRate>
-          <autoManualMode>false</autoManualMode>
-          <absValue>10</absValue>
-        </FrameRate>
-      </wished_properties>
+      <dependencies>
+        <dependency>ballPatchProvider</dependency>
+      </dependencies>
+      <prefix>patches/ball/</prefix>
+      <paramInts>
+        <paramInt>
+          <name>period</name>
+          <value>1</value>
+        </paramInt>
+      </paramInts>
+    </filter>
+    <filter>
+      <className>PatchRecorder</className>
+      <name>goalPatchRecorder</name>
+      <debugLevel>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+        <threads>false</threads>
+      </debugLevel>
+      <dependencies>
+        <dependency>goalPatchProvider</dependency>
+      </dependencies>
+      <prefix>patches/goal/</prefix>
+      <paramInts>
+        <paramInt>
+          <name>period</name>
+          <value>1</value>
+        </paramInt>
+      </paramInts>
+    </filter>
+    <filter>
+      <className>SourceLogs2</className>
+      <debugLevel>
+        <graphics>false</graphics>
+        <parameters>false</parameters>
+        <perfs>false</perfs>
+        <threads>false</threads>
+      </debugLevel>
       <dependencies/>
-      <paramInts/>
+      <imagesFile>workingLog/images.csv</imagesFile>
+      <name>source</name>
       <paramFloats/>
+      <paramInts/>
       <paramPairInt/>
+      <startIndex>0</startIndex>
     </filter>
   </pipeline>
-  <playing>true</playing>
+  <playing>false</playing>
   <showRobotView>false</showRobotView>
   <showTaggedImg>false</showTaggedImg>
   <showTopView>false</showTopView>
 </LocalisationTest>
+
