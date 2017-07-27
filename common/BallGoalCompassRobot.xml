@@ -140,7 +140,7 @@
       <paramFloats>
         <paramFloat>
 	        <name>scoreThreshold</name>
-	        <value>0.9</value>
+	        <value>0.96</value>
         </paramFloat>
       </paramFloats>
     </filter>
@@ -205,11 +205,16 @@
         <dependency>whiteII</dependency>
         <dependency>greenII</dependency>
         <dependency>ballRadiusProvider</dependency>
+        <dependency>clipping_by_border</dependency>
       </dependencies>
       <paramInts>
         <paramInt>
 	        <name>decimationRate</name>
 	        <value>5</value>
+        </paramInt>
+        <paramInt>
+	        <name>useMask</name>
+	        <value>1</value>
         </paramInt>
       </paramInts>
       <paramFloats>
@@ -239,6 +244,10 @@
         </paramFloat>
         <paramFloat>
 	        <name>minWidth</name>
+	        <value>5.0</value>
+        </paramFloat>
+        <paramFloat>
+	        <name>filledMaskMinWidth</name>
 	        <value>5.0</value>
         </paramFloat>
         <paramFloat>
@@ -309,7 +318,7 @@
         </paramFloat>
         <paramFloat>
 	        <name>minScore</name>
-	        <value>60</value>
+	        <value>55</value>
         </paramFloat>
         <paramFloat>
 	        <name>minWidth</name>
@@ -321,7 +330,7 @@
         </paramFloat>
         <paramFloat>
 	  <name>greenThreshold</name>
-	  <value>120</value>
+	  <value>100</value>
         </paramFloat>
         <paramFloat>
 	  <name>whiteThreshold</name>
@@ -510,7 +519,7 @@
       <paramInts>
         <paramInt>
 	        <name>threshold</name>
-	        <value>50</value>
+	        <value>45</value>
         </paramInt>
         <paramInt>
 	        <name>thresholdType</name>
