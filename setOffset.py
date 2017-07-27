@@ -22,14 +22,28 @@ def main(path, dofName, zero) :
     except:
         print("Couldn't find the string '" + str(dofName) + "'")
         sys.exit()
+    try:
+        indexOfDots = content.index(":", indexOfChange)
+    except:
+        print("Couldn't find the string '" + str(dofName) + "'")
+        sys.exit()
+    try:
+        previousValue = float(content[indexOfDots+1:indexOfEnd])
+    except:
+        print("Couldn't convert to float '" + content[indexOfDots+1:indexOfEnd] + "'")
+        sys.exit()
     #Erasing between "zero" and the breakline
     #print("index = " + str(index))
     #print("indexOfChange = " + str(indexOfChange))
     #print("indexOfEnd = " + str(indexOfEnd))
+    print("Previous zero was " + str(previousValue))
+    newZero = previousValue - zero
+    print("New zero is " + str(newZero))
     begin = content[:indexOfChange]
     end = content[indexOfEnd:]
     # The - because the motor is inverted
-    middle = zeroString + ":" + str(-zero)
+    print("Setting a zero of " + str(newZero) + ", in dof : '" + str(dofName) + "'")
+    middle = zeroString + ":" + str(newZero)
     #print("begin :\n" + str(begin))
     #print("middle :\n" + str(middle))
     #print("end :\n" + str(end))
@@ -48,6 +62,5 @@ if ( __name__ == "__main__"):
     current = sys.argv[3]
     expected = sys.argv[4]
     zero = float(expected) - float(current)
-    print("Setting a zero of " + str(zero) + ", in dof : '" + str(dofName) + "'")
     main(path, dofName, zero)
     print("Done !")
