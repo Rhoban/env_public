@@ -3,17 +3,18 @@
     "benchmark" : false,
     "benchmarkDetail" : 4,
     "gpuOn" : false,
-    "readFromLog" : false,
-    "embedded" : true,
+    "readFromLog" : true,
+    "embedded" : false,
     "imageDelay" : -5,
     "arenaProviders" : [],
     "goalProviders" : [],
     "ballProviders" : ["ballByDNN"],
     "compassProviders" : [],
-    "playing" : true,
+    "playing" : false,
     "showRobotView" : false,
     "showTaggedImg" : false,
     "showTopView" : false,
+    "pathToLog" : "workingLog/lowLevel.log",
     "pipeline" :
     [
         {
@@ -25,6 +26,9 @@
                 "weights_path" : "../common/dnn/balls/weights.bin",
                 "paramFloats" : {
                     "scoreThreshold" : 0.96
+                },
+                "debugLevel" : {
+                    "graphics" : true
                 }
             }
         },
@@ -116,23 +120,11 @@
             }
         },
         {
-            "class name" : "SourcePtGrey",
+            "class name" : "SourceLogs",
             "content" : {
                 "name" : "source",
-                "wished_properties" : {
-                    "Shutter" : {
-                        "autoManualMode" : false,
-                        "absValue" : 3
-                    },
-                    "Gain" : {
-                        "autoManualMode" : false,
-                        "absValue" : 10
-                    },
-                    "FrameRate" : {
-                        "autoManualMode" : false,
-                        "absValue" : 10
-                    }
-                }
+                "imagesFile" : "workingLog/images.csv",
+                "startIndex" : 0
             }
         }
     ]
