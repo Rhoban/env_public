@@ -1,1 +1,1 @@
-../../../../devel_release/lib/RhobanServer/RhobanServer
+../../../../devel_release/lib/kid_size/KidSize
