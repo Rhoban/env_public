@@ -20,7 +20,8 @@
                 "name" : "tagsDetector",
                 "dependencies" : ["Y"],
                 "paramInts" : {
-                    "debugLevel" : 1
+                    "debugLevel" : 1,
+                    "thresRange" : 4
                 },
                 "paramFloats" : {
                     "markerSize" : 0.09
@@ -48,11 +49,12 @@
                     },
                     "Gain" : {
                         "autoManualMode" : false,
-                        "absValue" : 10
+                        "absValue" : 5
                     },
+                    // For aruco Calib a 10Hz frequency is enough
                     "FrameRate" : {
                         "autoManualMode" : false,
-                        "absValue" : 20
+                        "absValue" : 10
                     }
                 }
             }
