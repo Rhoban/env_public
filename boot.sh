@@ -1,4 +1,4 @@
-killall -9 RhobanServer
+killall -9 KidSize
 ulimit -c unlimited
 ROBOT=`hostname`
 cd $HOME/env/$ROBOT/
