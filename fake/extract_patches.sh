@@ -1,7 +1,13 @@
 #TODO check number of parameters
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 robotName pathToLogs"
+    exit
+fi
 
 robotName=$1
 logFolder=$2
+
+logName=$(basename $logFolder)
 
 # Prepare environment
 ./prepare.sh ${robotName} ${logFolder}
@@ -13,11 +19,13 @@ mkdir -p patches/ball patches/goal
 # Get logs
 ./run.sh
 
-# Zip the patches to logFolder
+# Zip the patches to a folder with the log name in patches
+rm -rf patches/${logName}
+mkdir patches/${logName}
 cd patches/ball
-zip ${logFolder}/balls.zip *.png
+zip ../${logName}/balls.zip *.png
 cd ../..
 cd patches/goal
-zip ${logFolder}/goals.zip *.png
+zip ../${logName}/goals.zip *.png
 cd ../..
 

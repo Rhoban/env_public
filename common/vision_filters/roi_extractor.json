@@ -28,7 +28,7 @@
             "content" : {
                 "name" : "ballPatchRecorder",
                 "dependencies" : ["ballPatchProvider"],
-                "prefix" : "ball/"
+                "prefix" : "patches/ball/"
             }
         },
         {
@@ -159,8 +159,7 @@
                 "weights_path" : "../common/dnn/balls/weights.bin",
                 "paramFloats" : {
                     "scoreThreshold" : 0.96
-                },
-                "display" : true
+                }
             }
         },
         {
