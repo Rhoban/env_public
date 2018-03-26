@@ -30,13 +30,13 @@ if [ "$robot" == "django" -o "$robot" == "mowgly" -o "$robot" == "chewbacca" ]; 
     echo "Linking to Sigmaban strategies"
     ln -sf ../common/kickStrategy_v1_with_grass.json kickStrategy_with_grass.json
     ln -sf ../common/kickStrategy_v1_counter_grass.json kickStrategy_counter_grass.json
-    ln -sf ../common/kicks/SigmabanKicks.xml KickModelCollection.xml
+#    ln -sf ../common/kicks/SigmabanKicks.xml KickModelCollection.xml #DEPRECATED
 fi
 if [ "$robot" == "tom" -o "$robot" == "olive" -o "$robot" == "arya" ]; then
     echo "Linking to Sigmaban V2 strategies"
     ln -sf ../common/kickStrategy_v2_with_grass.json kickStrategy_with_grass.json
     ln -sf ../common/kickStrategy_v2_counter_grass.json kickStrategy_counter_grass.json
-    ln -sf ../common/kicks/SigmabanV2Kicks.xml KickModelCollection.xml
+    ln -sf ../common/kicks/sigmaban_plus_kicks.json KickModelCollection.json
 fi
 
 if [ "$#" -eq 2 ]; then
