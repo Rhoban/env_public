@@ -11,7 +11,7 @@ tmpFile="test.tmp"
 binary="../../../../devel_release/lib/kid_size/KidSize"
 
 # Adding header to output file
-echo "log,time,xWorld,yWorld,vxWorld,vyWorld,xSelf,ySelf,vxSelf,vySelf"
+echo "log,time,xWorld,yWorld,vxWorld,vyWorld,xSelf,ySelf,vxSelf,vySelf" > ${outputFile}
 
 for ((idx = 2; idx < $#; ++idx)); do
     logDir=${!idx}
