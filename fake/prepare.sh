@@ -11,17 +11,15 @@ echo "Preparing the fake env for the robot '$robot'"
 env=$(dirname `pwd`)
 echo "env path is $env"
 
-declare -a elements=("cameraModel.params" "sigmaban.urdf" "camera_calib.yml")
+declare -a elements=("VCM.json" "sigmaban.urdf" "camera_calib.yml")
 
 for i in "${elements[@]}"
 do
-    echo "Deleting $i from fake and replacing it by $robot's..."
-    rm $i
-    if cp "$env/$robot/$i" .
+    if ln -sf "$env/$robot/$i" .
     then
         echo "Success."
     else
-        echo "Warning : $i cp failed !!!!!!!!!!!!"
+        echo "Warning : $i ln -sf failed !!!!!!!!!!!!"
         exit
     fi
 done
