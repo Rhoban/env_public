@@ -32,11 +32,12 @@
                     "comb_size" : 100,
                     "scale_factor" :  4,
                     "loc_active" : 1,
-                    "debug_output" : 0
+                    "debug_output" : 1
                 },
                 "paramFloats" : {
-                    "max_obs_score" : 5.0
-                }
+                    "max_obs_score" : 14.0
+                },
+                "display" : true
             }
         },
         {
@@ -144,7 +145,7 @@
                 "paramFloats" : {
                     "scoreThreshold" : 0.96
                 },
-                "display" : true
+                "display" : false
             }
         },
         {
@@ -180,7 +181,8 @@
                 "name" : "greenDensity",
                 "dependencies" : ["greenII"],
                 "paramInts" : { "kernel_size" : 30},
-                "paramFloats" : {"resize_factor" : 0.2}
+                "paramFloats" : {"resize_factor" : 0.2},
+                "display" : true
             }
         },
         {
@@ -260,7 +262,8 @@
             "content" : {
                 "name" : "human",
                 "conversion" : "YUV2BGR",
-                "dependencies" : ["source"]
+                "dependencies" : ["source"],
+                "display" : true
             }
         },
         {
@@ -269,13 +272,14 @@
                 "name" : "green",
                 "dependencies" : ["source"],
                 "paramInts" : {
-                    "minY" : 40,
-                    "maxY" : 124,
-                    "minU" : 112,
-                    "maxU" : 128,
-                    "minV" : 117,
-                    "maxV" : 130
-                }
+                    "minY" : 52,
+                    "maxY" : 106,
+                    "minU" : 92,
+                    "maxU" : 133,
+                    "minV" : 96,
+                    "maxV" : 133
+                },
+                "display" : true
             }
         },
         {
