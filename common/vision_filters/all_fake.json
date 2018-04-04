@@ -26,13 +26,14 @@
             "class name" : "FieldBorder",
             "content" : {
                 "name" : "fieldBorder",
-                "dependencies" : ["green","greenDensity","human"],
+                "dependencies" : ["green", "greenDensity", "human", "green_density_without_black"],
                 "paramInts" : {
                     "density_kernel_size" : 30,
                     "comb_size" : 100,
                     "scale_factor" :  4,
                     "loc_active" : 1,
-                    "debug_output" : 1
+                    "debug_output" : 0,
+		    "with_black"  : 1
                 },
                 "paramFloats" : {
                     "max_obs_score" : 14.0
@@ -188,6 +189,15 @@
         {
             "class name" : "ColorDensity",
             "content" : {
+                "name" : "blackDensity",
+                "dependencies" : ["blackII"],
+                "paramInts" : { "kernel_size" : 30},
+                "paramFloats" : {"resize_factor" : 0.2}
+            }
+        },
+        {
+            "class name" : "ColorDensity",
+            "content" : {
                 "name" : "whiteDensity",
                 "dependencies" : ["greenII"],
                 "paramInts" : { "kernel_size" : 30},
@@ -206,6 +216,20 @@
             "content" : {
                 "name" : "greenII",
                 "dependencies" : ["green"]
+            }
+        },
+        {
+            "class name" : "Diff",
+            "content" : {
+                "name" : "green_density_without_black",
+                "dependencies" : ["greenDensity", "blackDensity"]
+            }
+        },
+        {
+            "class name" : "Integral",
+            "content" : {
+                "name" : "blackII",
+                "dependencies" : ["black_erode_dilate"]
             }
         },
         {
@@ -280,6 +304,43 @@
                     "maxV" : 133
                 },
                 "display" : true
+            }
+        },
+        {
+            "class name" : "ColorBounding",
+            "content" : {
+                "name" : "black",
+                "dependencies" : ["source"],
+                "paramInts" : {
+                    "minY" : 39,
+                    "maxY" : 47,
+                    "minU" : 84,
+                    "maxU" : 162,
+                    "minV" : 129,
+                    "maxV" : 153
+                }
+            }
+        },
+        {
+            "class name" : "Dilate",
+            "content" : {
+                "name" : "black_erode_dilate",
+                "dependencies" : ["black_erode"],
+                "paramInts" : {
+                    "kernel width" : 2,
+                    "kernel height" : 2
+                }
+            }
+        },
+        {
+            "class name" : "Erode",
+            "content" : {
+                "name" : "black_erode",
+                "dependencies" : ["black"],
+                "paramInts" : {
+                    "kernel width" : 2,
+                    "kernel height" : 2
+                }
             }
         },
         {
