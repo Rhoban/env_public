@@ -13,6 +13,7 @@
     "compassProviders" : ["visualCompass"],
     "playing" : false,
     "pathToLog" : "workingLog/lowLevel.log",
+    "RadarImg" : true,
     "pipeline" :
     [
         {
@@ -64,7 +65,7 @@
                 "arch_path" : "../common/dnn/posts/structure.json",
                 "weights_path" : "../common/dnn/posts/weights.bin",
                 "paramFloats" : {
-                    "scoreThreshold" : 0.85
+                    "scoreThreshold" : 0.75
                 }
             }
         },
