@@ -13,7 +13,7 @@
     "compassProviders" : ["visualCompass"],
     "playing" : false,
     "pathToLog" : "workingLog/lowLevel.log",
-    "RadarImg" : true,
+    "RadarImg" : false,
     "pipeline" :
     [
         {
@@ -34,12 +34,12 @@
                     "scale_factor" :  4,
                     "loc_active" : 1,
                     "debug_output" : 0,
-		    "with_black"  : 1
+		                "with_black"  : 1
                 },
                 "paramFloats" : {
                     "max_obs_score" : 14.0
                 },
-                "display" : true
+                "display" : false
             }
         },
         {
@@ -147,7 +147,7 @@
                 "paramFloats" : {
                     "scoreThreshold" : 0.96
                 },
-                "display" : false
+                "display" : true
             }
         },
         {
@@ -184,7 +184,7 @@
                 "dependencies" : ["greenII"],
                 "paramInts" : { "kernel_size" : 30},
                 "paramFloats" : {"resize_factor" : 0.2},
-                "display" : true
+                "display" : false
             }
         },
         {
@@ -288,7 +288,7 @@
                 "name" : "human",
                 "conversion" : "YUV2BGR",
                 "dependencies" : ["source"],
-                "display" : true
+                "display" : false
             }
         },
         {
@@ -304,7 +304,7 @@
                     "minV" : 96,
                     "maxV" : 130
                 },
-                "display" : true
+                "display" : false
             }
         },
         {
