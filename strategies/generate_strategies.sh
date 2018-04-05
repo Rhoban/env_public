@@ -14,7 +14,7 @@ FLAGS="${FLAGS} -t 5"
 FLAGS="${FLAGS} -e"
 
 #Running learning with grass
-${BIN} ${FLAGS} -c with_grass.csv >with_grass.json
+${BIN} ${FLAGS} -c tmp_with_grass.csv > tmp_with_grass.json
 
 #Running learning against grass
-${BIN} ${FLAGS} -c against_grass.csv -o 0 -w >against_grass.json
+${BIN} ${FLAGS} -c tmp_against_grass.csv -o 0 -w > tmp_against_grass.json
