@@ -1,6 +1,6 @@
 {
     "grassModel" : {
-        "ratio" : 0.54,
+        "ratio" : 1.0,
         "coneWidth" : 90,
         "coneOffset" : 0
     },
@@ -8,10 +8,10 @@
         "classic" : {
             "class name" : "ClassicKick",
             "content" : {
-                "kick_power" : 4.38,//[m]
+                "kick_power" : 6,//[m]
                 "right_kick_dir" : 0,//[deg]
                 "rel_dist_stddev" : 0.1,
-                "dir_stddev" : 10,//[deg]
+                "dir_stddev" : 15,//[deg]
                 "kick_zone" : {
                     "kick_y_offset" : 0.07,//[m]
                     "kick_y_tol" : 0.06,//[m]
@@ -42,10 +42,10 @@
         "small" : {
             "class name" : "ClassicKick",
             "content" : {
-                "kick_power" : 2.35,//[m]
+                "kick_power" : 4,//[m]
                 "right_kick_dir" : 0,//[deg]
                 "rel_dist_stddev" : 0.08,
-                "dir_stddev" : 10,//[deg]
+                "dir_stddev" : 25,//[deg]
                 "kick_zone" : {
                     "kick_y_offset" : 0.07,//[m]
                     "kick_y_tol" : 0.06,//[m]
