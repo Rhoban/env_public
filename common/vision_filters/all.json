@@ -61,7 +61,7 @@
                 "arch_path" : "../common/dnn/posts/structure.json",
                 "weights_path" : "../common/dnn/posts/weights.bin",
                 "paramFloats" : {
-                    "scoreThreshold" : 0.85
+                    "scoreThreshold" : 0.6
                 }
             }
         },
@@ -82,14 +82,14 @@
                 "name" : "goalROIProvider",
                 "dependencies" : ["whiteII","greenII","ballRadiusProvider","clipping_by_border"],
                 "paramInts" : {
-                    "decimationRate" : 5,
-                    "useMask" : 1
+                    "decimationRate" : 3,
+                    "useMask" : 0
                 },
                 "paramFloats" : {
                     "aboveRatio" : 2.0,
                     "belowRatio" : 2.0,
                     "boundaryWidthRatio" : 2.0,
-                    "widthScale" : 1.15,
+                    "widthScale" : 1.7,
                     "belowCoeff" : 1.0,
                     "minScore" : 220,
                     "minWidth" : 5.0,
@@ -141,7 +141,7 @@
                 "arch_path" : "../common/dnn/balls/structure.json",
                 "weights_path" : "../common/dnn/balls/weights.bin",
                 "paramFloats" : {
-                    "scoreThreshold" : 0.96
+                    "scoreThreshold" : 0.9
                 }
             }
         },
@@ -161,14 +161,14 @@
             "content" : {
                 "name" : "ballByII",
                 "dependencies" : ["integralY","greenII","ballRadiusProvider"],
-                "paramInts" : {"decimationRate" : 5},
+                "paramInts" : {"decimationRate" : 2},
                 "paramFloats" :
                 {
                     "boundaryFactor" : 2.0,
                     "yWeight" : 5.0,
-                    "greenWeight" : 6.0,
-                    "minScore" : 60,
-                    "minRadius" : 10
+                    "greenWeight" : 2.0,
+                    "minScore" : 30,
+                    "minRadius" : 6
                 }
             }
         },
@@ -246,7 +246,7 @@
             "content" : {
                 "name" : "white",
                 "dependencies" : ["Y"],
-                "paramInts" : {"threshold" : 120}
+                "paramInts" : {"threshold" : 190}
             }
         },
         {
@@ -290,12 +290,12 @@
                 "name" : "green",
                 "dependencies" : ["source"],
                 "paramInts" : {
-                    "minY" : 49,
-                    "maxY" : 94,
-                    "minU" : 92,
-                    "maxU" : 130,
-                    "minV" : 96,
-                    "maxV" : 130
+                    "minY" : 43,
+                    "maxY" : 99,
+                    "minU" : 103,
+                    "maxU" : 122,
+                    "minV" : 123,
+                    "maxV" : 165
                 }
             }
         },
@@ -358,7 +358,7 @@
                 "wished_properties" : {
                     "Shutter" : {
                         "autoManualMode" : false,
-                        "absValue" : 5
+                        "absValue" : 3
                     },
                     "Gain" : {
                         "autoManualMode" : false,
