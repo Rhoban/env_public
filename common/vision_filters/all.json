@@ -141,7 +141,7 @@
                 "arch_path" : "../common/dnn/balls/structure.json",
                 "weights_path" : "../common/dnn/balls/weights.bin",
                 "paramFloats" : {
-                    "scoreThreshold" : 0.9
+                    "scoreThreshold" : 0.0
                 }
             }
         },
@@ -160,10 +160,10 @@
             "class name" : "BallByII",
             "content" : {
                 "name" : "ballByII",
-                "dependencies" : ["integralY","greenII","ballRadiusProvider"],
+                "dependencies" : ["orangeII","greenII","ballRadiusProvider"],
                 "paramInts" : {
                     "decimationRate" : 1,
-                    "maxRois" : 8
+                    "maxRois" : 4
                 },
                 "paramFloats" :
                 {
@@ -221,6 +221,13 @@
             "content" : {
                 "name" : "green_density_without_black",
                 "dependencies" : ["greenDensity", "blackDensity"]
+            }
+        },
+        {
+            "class name" : "Integral",
+            "content" : {
+                "name" : "orangeII",
+                "dependencies" : ["orange"]
             }
         },
         {
@@ -285,6 +292,21 @@
                 "name" : "human",
                 "conversion" : "YUV2BGR",
                 "dependencies" : ["source"]
+            }
+        },
+        {
+            "class name" : "ColorBounding",
+            "content" : {
+                "name" : "orange",
+                "dependencies" : ["source"],
+                "paramInts" : {
+                    "minY" : 98,
+                    "maxY" : 170,
+                    "minU" : 151,
+                    "maxU" : 214,
+                    "minV" :  75,
+                    "maxV" : 110
+                }
             }
         },
         {
@@ -361,7 +383,7 @@
                 "wished_properties" : {
                     "Shutter" : {
                         "autoManualMode" : false,
-                        "absValue" : 2
+                        "absValue" : 3
                     },
                     "Gain" : {
                         "autoManualMode" : false,
@@ -373,8 +395,8 @@
                     },
                     "WhiteBalance" : {
                         "autoManualMode" : false,
-                        "valueA" : 850,
-                        "valueB" : 850
+                        "valueA" : 528,
+                        "valueB" : 735
                     }
                 }
             }
