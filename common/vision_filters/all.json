@@ -31,7 +31,7 @@
                     "scale_factor" :  4,
                     "loc_active" : 1,
                     "debug_output" : 0,
-		    "with_black"  : 1
+		                "with_black"  : 1
                 },
                 "paramFloats" : {
                     "max_obs_score" : 5.0
@@ -167,9 +167,9 @@
                 },
                 "paramFloats" :
                 {
-                    "boundaryFactor" : 2.0,
+                    "boundaryFactor" : 1.5,
                     "yWeight" : 5.0,
-                    "greenWeight" : 2.0,
+                    "greenWeight" : 0.0,
                     "minScore" : 100,
                     "minRadius" : 6
                 }
@@ -305,7 +305,7 @@
                     "minU" : 151,
                     "maxU" : 214,
                     "minV" :  75,
-                    "maxV" : 115
+                    "maxV" : 130
                 }
             }
         },
