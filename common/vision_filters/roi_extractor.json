@@ -23,14 +23,14 @@
                 "prefix" : "patches/goal/"
             }
         },
-        {
-            "class name" : "PatchRecorder",
-            "content" : {
-                "name" : "ballPatchRecorder",
-                "dependencies" : ["ballPatchProvider"],
-                "prefix" : "patches/ball/"
-            }
-        },
+//        {
+//            "class name" : "PatchRecorder",
+//            "content" : {
+//                "name" : "ballPatchRecorder",
+//                "dependencies" : ["ballPatchProvider"],
+//                "prefix" : "patches/ball/"
+//            }
+//        },
         {
             "class name" : "ClippingByBorder",
             "content" : {
@@ -79,8 +79,9 @@
                 "arch_path" : "../common/dnn/posts/structure.json",
                 "weights_path" : "../common/dnn/posts/weights.bin",
                 "paramFloats" : {
-                    "scoreThreshold" : 0.85
-                }
+                    "scoreThreshold" : 0.6
+                },
+                "display" : true
             }
         },
         {
@@ -100,16 +101,17 @@
                 "name" : "goalROIProvider",
                 "dependencies" : ["whiteII","greenII","ballRadiusProvider","clipping_by_border"],
                 "paramInts" : {
-                    "decimationRate" : 5,
-                    "useMask" : 1
+                    "decimationRate" : 2,
+                    "useMask" : 0,
+                    "maxRois" : 6
                 },
                 "paramFloats" : {
                     "aboveRatio" : 2.0,
                     "belowRatio" : 2.0,
                     "boundaryWidthRatio" : 2.0,
-                    "widthScale" : 1.15,
+                    "widthScale" : 1.6,
                     "belowCoeff" : 1.0,
-                    "minScore" : 220,
+                    "minScore" : 150,
                     "minWidth" : 5.0,
                     "filledMaskMinWidth" : 5.0,
                     "roiRatio" : 4.0
@@ -265,7 +267,7 @@
             "content" : {
                 "name" : "white",
                 "dependencies" : ["Y"],
-                "paramInts" : {"threshold" : 120}
+                "paramInts" : {"threshold" : 170}
             }
         },
         {
@@ -309,12 +311,12 @@
                 "name" : "green",
                 "dependencies" : ["source"],
                 "paramInts" : {
-                    "minY" : 49,
-                    "maxY" : 94,
-                    "minU" : 92,
-                    "maxU" : 130,
-                    "minV" : 96,
-                    "maxV" : 130
+                    "minY" : 43,
+                    "maxY" : 130,
+                    "minU" : 103,
+                    "maxU" : 122,
+                    "minV" : 123,
+                    "maxV" : 165
                 }
             }
         },

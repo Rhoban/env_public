@@ -39,5 +39,6 @@ fi
 
 if [ "$#" -eq 2 ]; then
     echo "Setting the log path to '$2'"
+    rm -rf workingLog
     ln -sf $2 workingLog
 fi

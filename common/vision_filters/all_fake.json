@@ -165,14 +165,14 @@
             "class name" : "BallByII",
             "content" : {
                 "name" : "ballByII",
-                "dependencies" : ["integralY","greenII","ballRadiusProvider"],
+                "dependencies" : ["orangeII","greenII","ballRadiusProvider"],
                 "paramInts" : {"decimationRate" : 2},
                 "paramFloats" :
                 {
-                    "boundaryFactor" : 2.0,
+                    "boundaryFactor" : 1.5,
                     "yWeight" : 5.0,
-                    "greenWeight" : 2.0,
-                    "minScore" : 30,
+                    "greenWeight" : 0.0,
+                    "minScore" : 150,
                     "minRadius" : 6
                 }
             }
@@ -224,6 +224,13 @@
             "content" : {
                 "name" : "green_density_without_black",
                 "dependencies" : ["greenDensity", "blackDensity"]
+            }
+        },
+        {
+            "class name" : "Integral",
+            "content" : {
+                "name" : "orangeII",
+                "dependencies" : ["orange"]
             }
         },
         {
@@ -289,6 +296,22 @@
                 "conversion" : "YUV2BGR",
                 "dependencies" : ["source"],
                 "display" : false
+            }
+        },
+        {
+            "class name" : "ColorBounding",
+            "content" : {
+                "name" : "orange",
+                "dependencies" : ["source"],
+                "paramInts" : {
+                    "minY" : 126,
+                    "maxY" : 170,
+                    "minU" : 151,
+                    "maxU" : 214,
+                    "minV" :  75,
+                    "maxV" : 110
+                },
+                "display" : true
             }
         },
         {
