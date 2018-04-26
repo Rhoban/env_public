@@ -1,32 +1,53 @@
 #TODO check number of parameters
-if [ "$#" -lt 2 ]; then
-    echo "Usage: $0 robotName <log1> <log2> ..."
+if [ "$#" -lt 1 ]; then
+    echo "Usage: $0 folderName"
     exit
 fi
 
-robotName=$1
+objTypes[0]="ball"
+objTypes[1]="goal"
+objTypes[2]="robots"
 
-for ((idx = 2; idx <= $#; ++idx)); do
-    logFolder=${!idx}
-    logName=$(basename $logFolder)
+dstFolder="patches/results"
 
-    # Prepare environment
-    ./prepare.sh ${robotName} ${logFolder}
-    
-    # Ensure patches folder are created and empty
-    rm -rf patches/ball patches/goal
-    mkdir -p patches/ball patches/goal
-    
-    # Get logs
-    ./run.sh
-    
-    # Zip the patches to a folder with the log name in patches
-    rm -rf patches/${logName}
-    mkdir patches/${logName}
-    cd patches/ball
-    zip ../${logName}/balls.zip *.png
-    cd ../..
-    cd patches/goal
-    zip ../${logName}/goals.zip *.png
-    cd ../..
+
+folderName=$1
+
+robots=$(ls ${folderName})
+
+# Cleaning existing results
+rm -rf $dstFolder
+mkdir -p $dstFolder
+
+for robot in ${robots[@]}; do
+    echo ${robot}
+    robotPath=${folderName}/${robot}
+    seqNames=$(ls ${robotPath})
+    for seqName in ${seqNames[@]}; do
+        echo "-> ${seqName}"
+        seqFolder=${robotPath}/${seqName}
+
+
+        # Prepare environment
+        ./prepare.sh ${robot} ${seqFolder}
+        
+        # Ensure patches folder are created and empty
+        for objType in ${objTypes[@]}; do
+            rm -rf patches/${objType}
+            mkdir -p patches/${objType}
+        done
+        # Get logs
+        ./run.sh
+
+        # Move objTypes inside folder
+        seqDst=${dstFolder}/${robot}/${seqName}
+        mkdir -p ${seqDst}
+        for objType in ${objTypes[@]}; do
+            mv patches/${objType} ${seqDst}
+        done
+    done
 done
+
+# Zip the logs to an archive
+cd ${dstFolder}
+tar -czf patches.tar.gz *

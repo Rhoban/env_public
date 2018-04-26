@@ -23,14 +23,14 @@
                 "prefix" : "patches/goal/"
             }
         },
-//        {
-//            "class name" : "PatchRecorder",
-//            "content" : {
-//                "name" : "ballPatchRecorder",
-//                "dependencies" : ["ballPatchProvider"],
-//                "prefix" : "patches/ball/"
-//            }
-//        },
+        {
+            "class name" : "PatchRecorder",
+            "content" : {
+                "name" : "ballPatchRecorder",
+                "dependencies" : ["ballPatchProvider"],
+                "prefix" : "patches/ball/"
+            }
+        },
         {
             "class name" : "ClippingByBorder",
             "content" : {
@@ -301,7 +301,7 @@
             "class name" : "ColorConverter",
             "content" : {
                 "name" : "human",
-                "conversion" : "YUV2BGR",
+                "conversion" : "YCrCb2BGR",
                 "dependencies" : ["source"]
             }
         },
