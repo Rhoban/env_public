@@ -1,9 +1,11 @@
 <robot name="metabot">
 
+  <!-- WARNING: inertia values have not been validated with the new model -->
+
   <!-- Component body#1 -->
   <link name="trunk">
     <inertial>
-      <origin xyz="-0.0020209 -7.24982e-05 0.0765677" rpy="0 0 0"/>
+      <origin xyz="0 0 0.0765677" rpy="0 0 0"/>
       <mass value="1.59255"/>
       <inertia ixx="0.00665265"  ixy="-4.09628e-06"  ixz="1.79248e-06" iyy="0.00485314" iyz="2.41676e-06" izz="0.00387166" />
     </inertial>
@@ -21,7 +23,7 @@
     <parent link="trunk"/>
     <child link="right_hip_yaw"/>
     <axis xyz="0 0 1"/>
-    <origin xyz="0 -0.046375 0.0205" rpy="0 -0 0"/>
+    <origin xyz="0 -0.046375 0" rpy="0 0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -38,7 +40,7 @@
     <parent link="right_hip_yaw"/>
     <child link="right_hip_roll"/>
     <axis xyz="1 0 0"/>
-    <origin xyz="8.17369e-34 6.67434e-18 -0.0545" rpy="-1.05083e-32 -0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -55,7 +57,7 @@
     <parent link="right_hip_roll"/>
     <child link="right_hip_pitch"/>
     <axis xyz="0 1 0"/>
-    <origin xyz="0 0 0" rpy="0 -1.85711e-32 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -72,7 +74,7 @@
     <parent link="right_hip_pitch"/>
     <child link="right_knee"/>
     <axis xyz="0 1 0"/>
-    <origin xyz="5.03906e-16 -1.22392e-08 -0.14" rpy="0 -0 -6.61744e-24"/>
+    <origin xyz="0 0 -0.14" rpy="0 0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -89,7 +91,7 @@
     <parent link="right_knee"/>
     <child link="right_ankle_pitch"/>
     <axis xyz="0 1 0"/>
-    <origin xyz="-6.11959e-09 -1.22392e-08 -0.14" rpy="0 -7.57953e-26 -6.61744e-24"/>
+    <origin xyz="0 0 -0.14" rpy="0 0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -106,7 +108,7 @@
     <parent link="right_ankle_pitch"/>
     <child link="right_ankle_roll"/>
     <axis xyz="1 0 0"/>
-    <origin xyz="0 0 0" rpy="1.83244e-25 6.61744e-24 -6.61744e-24"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
   <link name="right_foot_tip">
@@ -117,7 +119,7 @@
     </inertial>
   </link>
   <joint name="right_foot_tip" type="fixed">
-    <origin xyz="2.66639e-09 -5.33279e-09 -0.061" rpy="-8.74228e-08 -4.37114e-08 4.37114e-08"/>
+    <origin xyz="0.01515 -0.0055 -0.005765" rpy="0 0 0"/>
     <parent link="right_ankle_roll" />
     <child link="right_foot_tip" />
     <axis xyz="0 0 0" />
@@ -136,7 +138,7 @@
     <parent link="trunk"/>
     <child link="right_shoulder_pitch"/>
     <axis xyz="0 1 0"/>
-    <origin xyz="0 -0.046375 0.159" rpy="0 -0 0"/>
+    <origin xyz="0.0209 -0.05 0.20043" rpy="0 0 0"/>
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -153,7 +155,7 @@
     <parent link="right_shoulder_pitch"/>
     <child link="right_shoulder_roll"/>
     <axis xyz="1 0 0"/>
-    <origin xyz="-1.03806e-17 -0.04675 -1.03806e-17" rpy="-9.8608e-32 -0 -9.86076e-32"/>
+    <origin xyz="0 -0.0585 -0.045" rpy="0 0 0"/>
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -170,7 +172,7 @@
     <parent link="right_shoulder_roll"/>
     <child link="right_elbow"/>
     <axis xyz="0 1 0"/>
-    <origin xyz="0.0122 3.4838e-09 -0.0797" rpy="0 -5.47945e-24 1.32349e-23"/>
+    <origin xyz="0.0218 0.007 -0.114678" rpy="0 0 0"/>
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
   <link name="right_arm_tip">
@@ -181,7 +183,7 @@
     </inertial>
   </link>
   <joint name="right_arm_tip" type="fixed">
-    <origin xyz="-0.0108 2.53963e-09 -0.0797" rpy="4.37114e-08 -4.37114e-08 8.74228e-08"/>
+    <origin xyz="-0.01 0 -0.15" rpy"0 0 0"/>
     <parent link="right_elbow" />
     <child link="right_arm_tip" />
     <axis xyz="0 0 0" />
@@ -200,7 +202,7 @@
     <parent link="trunk"/>
     <child link="left_hip_yaw"/>
     <axis xyz="0 0 1"/>
-    <origin xyz="0 0.046375 0.0205" rpy="0 -0 0"/>
+    <origin xyz="0 0.046375 0" rpy="0 -0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -217,7 +219,7 @@
     <parent link="left_hip_yaw"/>
     <child link="left_hip_roll"/>
     <axis xyz="1 0 0"/>
-    <origin xyz="8.17369e-34 6.67434e-18 -0.0545" rpy="-1.05083e-32 -0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -234,7 +236,7 @@
     <parent link="left_hip_roll"/>
     <child link="left_hip_pitch"/>
     <axis xyz="0 1 0"/>
-    <origin xyz="0 0 0" rpy="0 -1.85711e-32 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -251,7 +253,7 @@
     <parent link="left_hip_pitch"/>
     <child link="left_knee"/>
     <axis xyz="0 1 0"/>
-    <origin xyz="5.03906e-16 -1.22392e-08 -0.14" rpy="0 -0 -6.61744e-24"/>
+    <origin xyz="0 0 -0.14" rpy="0 0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -268,7 +270,7 @@
     <parent link="left_knee"/>
     <child link="left_ankle_pitch"/>
     <axis xyz="0 1 0"/>
-    <origin xyz="-6.11959e-09 -1.22392e-08 -0.14" rpy="0 -7.57953e-26 -6.61744e-24"/>
+    <origin xyz="0 0 -0.14" rpy="0 0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -285,7 +287,7 @@
     <parent link="left_ankle_pitch"/>
     <child link="left_ankle_roll"/>
     <axis xyz="1 0 0"/>
-    <origin xyz="0 0 0" rpy="1.83244e-25 6.61744e-24 -6.61744e-24"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
   <link name="left_foot_tip">
@@ -296,7 +298,7 @@
     </inertial>
   </link>
   <joint name="left_foot_tip" type="fixed">
-    <origin xyz="2.66639e-09 -5.33279e-09 -0.061" rpy="-8.74228e-08 -4.37114e-08 4.37114e-08"/>
+    <origin xyz="0.01515 0.005 -0.05765" rpy="0 0 0"/>
     <parent link="left_ankle_roll" />
     <child link="left_foot_tip" />
     <axis xyz="0 0 0" />
@@ -315,7 +317,7 @@
     <parent link="trunk"/>
     <child link="left_shoulder_pitch"/>
     <axis xyz="0 1 0"/>
-    <origin xyz="0 0.046375 0.159" rpy="0 -0 0"/>
+    <origin xyz="0.0209 0.05 0.20043" rpy="0 0 0"/>
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -332,7 +334,7 @@
     <parent link="left_shoulder_pitch"/>
     <child link="left_shoulder_roll"/>
     <axis xyz="1 0 0"/>
-    <origin xyz="1.61058e-17 0.04675 -1.03806e-17" rpy="4.40543e-25 -3.9443e-31 1.32349e-23"/>
+    <origin xyz="0 0.0585 -0.045" rpy="4.40543e-25 -3.9443e-31 1.32349e-23"/>
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -349,7 +351,7 @@
     <parent link="left_shoulder_roll"/>
     <child link="left_elbow"/>
     <axis xyz="0 1 0"/>
-    <origin xyz="0.0122 4.55036e-09 -0.0797" rpy="0 -1.75549e-24 0"/>
+    <origin xyz="0.0218 -0.007 -0.114678" rpy="0 -1.75549e-24 0"/>
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
   <link name="left_arm_tip">
@@ -360,7 +362,7 @@
     </inertial>
   </link>
   <joint name="left_arm_tip" type="fixed">
-    <origin xyz="-0.0108 1.59547e-09 -0.0797" rpy="4.37114e-08 -4.37114e-08 1.74846e-07"/>
+    <origin xyz="-0.01 0 -0.15" rpy="0 0 0"/>
     <parent link="left_elbow" />
     <child link="left_arm_tip" />
     <axis xyz="0 0 0" />
@@ -379,7 +381,7 @@
     <parent link="trunk"/>
     <child link="head_yaw"/>
     <axis xyz="0 0 1"/>
-    <origin xyz="0.025873 0 0.16193" rpy="0 -0 0"/>
+    <origin xyz="0.0259 0 0.19943" rpy="0 0 0"/>
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
 
@@ -387,7 +389,7 @@
 
   <link name="head_pitch">
     <inertial>
-      <origin xyz="3.1977e-20 -0.000144011 0.00959621" rpy="0 0 0"/>
+      <origin xyz="0 0 0.06243" rpy="0 0 0"/>
       <mass value="0.081452"/>
       <inertia ixx="1.95072e-05"  ixy="-2.52243e-22"  ixz="1.80686e-07" iyy="2.59718e-05" iyz="3.64153e-23" izz="2.26105e-05" />
     </inertial>
@@ -407,7 +409,7 @@
     </inertial>
   </link>
   <joint name="camera" type="fixed">
-    <origin xyz="0.01 1.53988e-17 0.05935" rpy="0 -0 0"/>
+    <origin xyz="0.02277 0 0.068925" rpy="0 0 0"/>
     <parent link="head_pitch" />
     <child link="camera" />
     <axis xyz="0 0 0" />
