@@ -89,7 +89,7 @@
                     "aboveRatio" : 2.0,
                     "belowRatio" : 2.0,
                     "boundaryWidthRatio" : 2.0,
-                    "widthScale" : 1.7,
+                    "widthScale" : 1.15,
                     "belowCoeff" : 1.0,
                     "minScore" : 220,
                     "minWidth" : 5.0,
@@ -141,7 +141,7 @@
                 "arch_path" : "../common/dnn/balls/structure.json",
                 "weights_path" : "../common/dnn/balls/weights.bin",
                 "paramFloats" : {
-                    "scoreThreshold" : 0.0
+                    "scoreThreshold" : 0.9
                 }
             }
         },
@@ -160,17 +160,17 @@
             "class name" : "BallByII",
             "content" : {
                 "name" : "ballByII",
-                "dependencies" : ["orangeII","greenII","ballRadiusProvider"],
+                "dependencies" : ["integralY","greenII","ballRadiusProvider"],
                 "paramInts" : {
                     "decimationRate" : 1,
                     "maxRois" : 4
                 },
                 "paramFloats" :
                 {
-                    "boundaryFactor" : 1.5,
+                    "boundaryFactor" : 2.0,
                     "yWeight" : 5.0,
-                    "greenWeight" : 0.0,
-                    "minScore" : 100,
+                    "greenWeight" : 2.0,
+                    "minScore" : 30,
                     "minRadius" : 6
                 }
             }
@@ -226,13 +226,6 @@
         {
             "class name" : "Integral",
             "content" : {
-                "name" : "orangeII",
-                "dependencies" : ["orange"]
-            }
-        },
-        {
-            "class name" : "Integral",
-            "content" : {
                 "name" : "blackII",
                 "dependencies" : ["black_erode_dilate"]
             }
@@ -256,7 +249,7 @@
             "content" : {
                 "name" : "white",
                 "dependencies" : ["Y"],
-                "paramInts" : {"threshold" : 160}
+                "paramInts" : {"threshold" : 120}
             }
         },
         {
@@ -292,21 +285,6 @@
                 "name" : "human",
                 "conversion" : "YCrCb2BGR",
                 "dependencies" : ["source"]
-            }
-        },
-        {
-            "class name" : "ColorBounding",
-            "content" : {
-                "name" : "orange",
-                "dependencies" : ["source"],
-                "paramInts" : {
-                    "minY" : 98,
-                    "maxY" : 170,
-                    "minU" : 151,
-                    "maxU" : 214,
-                    "minV" :  75,
-                    "maxV" : 130
-                }
             }
         },
         {
