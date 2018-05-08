@@ -162,7 +162,7 @@
                 "name" : "ballByII",
                 "dependencies" : ["integralY","greenII","ballRadiusProvider"],
                 "paramInts" : {
-                    "decimationRate" : 1,
+                    "decimationRate" : 2,
                     "maxRois" : 4
                 },
                 "paramFloats" :
@@ -293,12 +293,12 @@
                 "name" : "green",
                 "dependencies" : ["source"],
                 "paramInts" : {
-                    "minY" : 43,
-                    "maxY" : 110,
-                    "minU" : 90,
-                    "maxU" : 122,
-                    "minV" : 123,
-                    "maxV" : 160
+                    "minY" : 60,
+                    "maxY" : 120,
+                    "minU" : 100,
+                    "maxU" : 120,
+                    "minV" : 110,
+                    "maxV" : 130
                 }
             }
         },
@@ -361,7 +361,7 @@
                 "wished_properties" : {
                     "Shutter" : {
                         "autoManualMode" : false,
-                        "absValue" : 3
+                        "absValue" : 2.5
                     },
                     "Gain" : {
                         "autoManualMode" : false,
@@ -369,7 +369,7 @@
                     },
                     "FrameRate" : {
                         "autoManualMode" : false,
-                        "absValue" : 25
+                        "absValue" : 40
                     },
                     "WhiteBalance" : {
                         "autoManualMode" : false,
