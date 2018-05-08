@@ -24,7 +24,7 @@
                 "arch_path" : "../common/dnn/balls/structure.json",
                 "weights_path" : "../common/dnn/balls/weights.bin",
                 "paramFloats" : {
-                    "scoreThreshold" : 0.96
+                    "scoreThreshold" : 0.9
                 },
                 "display" : true
             }
@@ -45,14 +45,14 @@
             "content" : {
                 "name" : "ballByII",
                 "dependencies" : ["integralY","greenII","ballRadiusProvider"],
-                "paramInts" : {"decimationRate" : 1},
+                "paramInts" : {"decimationRate" : 2},
                 "paramFloats" :
                 {
                     "boundaryFactor" : 2.0,
                     "yWeight" : 5.0,
-                    "greenWeight" : 6.0,
+                    "greenWeight" : 2.0,
                     "minScore" : 60,
-                    "minRadius" : 10
+                    "minRadius" : 6
                 }
             }
         },
@@ -82,7 +82,7 @@
             "class name" : "ColorConverter",
             "content" : {
                 "name" : "human",
-                "conversion" : "YUV2BGR",
+                "conversion" : "YCrCb2BGR",
                 "dependencies" : ["source"]
             }
         },
@@ -92,11 +92,11 @@
                 "name" : "green",
                 "dependencies" : ["source"],
                 "paramInts" : {
-                    "minY" : 40,
-                    "maxY" : 124,
-                    "minU" : 112,
-                    "maxU" : 128,
-                    "minV" : 117,
+                    "minY" : 60,
+                    "maxY" : 120,
+                    "minU" : 100,
+                    "maxU" : 120,
+                    "minV" : 110,
                     "maxV" : 130
                 }
             }
