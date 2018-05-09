@@ -14,115 +14,20 @@
     "compassProviders" : [],
     "playing" : true,
     "pathToLog" : "workingLog/lowLevel.log",
-    "pipeline" :
-    [
-        {
-            "class name" : "BallByDNN",
-            "content" : {
-                "name" : "ballByDNN",
-                "dependencies" : ["ballPatchProvider"],
-                "arch_path" : "../common/dnn/balls/structure.json",
-                "weights_path" : "../common/dnn/balls/weights.bin",
-                "paramFloats" : {
-                    "scoreThreshold" : 0.9
-                },
-                "display" : true
-            }
-        },
-        {
-            "class name" : "RoiToPatches",
-            "content" : {
-                "name" : "ballPatchProvider",
-                "dependencies" : ["human", "ballByII"],
-                "paramInts" : {
-                    "patchHeight" : 32,
-                    "patchWidth" : 32
+    "pipeline" : {
+        "paths" : [
+            "../common/vision_filters/colors.json",
+            "../common/vision_filters/ball_detection.json"
+        ],
+        "filters" : [
+            {
+                "class name" : "SourceLogs",
+                "content" : {
+                    "name" : "source",
+                    "imagesFile" : "workingLog/images.csv",
+                    "startIndex" : 0
                 }
             }
-        },
-        {
-            "class name" : "BallByII",
-            "content" : {
-                "name" : "ballByII",
-                "dependencies" : ["integralY","greenII","ballRadiusProvider"],
-                "paramInts" : {"decimationRate" : 2},
-                "paramFloats" :
-                {
-                    "boundaryFactor" : 2.0,
-                    "yWeight" : 5.0,
-                    "greenWeight" : 2.0,
-                    "minScore" : 60,
-                    "minRadius" : 6
-                }
-            }
-        },
-        {
-            "class name" : "Integral",
-            "content" : {
-                "name" : "greenII",
-                "dependencies" : ["green"]
-            }
-        },
-        {
-            "class name" : "Integral",
-            "content" : {
-                "name" : "integralY",
-                "dependencies" : ["Y"]
-            }
-        },
-        {
-            "class name" : "ChannelSelector",
-            "content" : {
-                "name" : "Y",
-                "dependencies" : ["source"],
-                "paramInts" : {"channel" : 0}
-            }
-        },
-        {
-            "class name" : "ColorConverter",
-            "content" : {
-                "name" : "human",
-                "conversion" : "YCrCb2BGR",
-                "dependencies" : ["source"]
-            }
-        },
-        {
-            "class name" : "ColorBounding",
-            "content" : {
-                "name" : "green",
-                "dependencies" : ["source"],
-                "paramInts" : {
-                    "minY" : 60,
-                    "maxY" : 120,
-                    "minU" : 100,
-                    "maxU" : 120,
-                    "minV" : 110,
-                    "maxV" : 130
-                }
-            }
-        },
-        {
-            "class name" : "BallRadiusProvider",
-            "content" : {
-                "name" : "ballRadiusProvider",
-                "dependencies" : ["source"]
-            }
-        },
-        {
-            "class name" : "Rescale",
-            "content" : {
-                "name" : "smallSource",
-                "dependencies" : ["source"],
-                "paramFloats" : {"ratio" : 4}
-            }
-        },
-        {
-            "class name" : "SourceLogs",
-            "content" : {
-                "name" : "source",
-                "imagesFile" : "workingLog/images.csv",
-                "startIndex" : 0
-            }
-        }
-    ]
+        ]
+    }
 }
