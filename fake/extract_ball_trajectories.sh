@@ -21,7 +21,7 @@ binary="../../../../devel_release/lib/kid_size/KidSize"
 # Adding header to output file (and reset output file at the same time)
 echo "log,time,xWorld,yWorld,vxWorld,vyWorld,xSelf,ySelf,vxSelf,vySelf" > ${outputFile}
 
-for ((idx = 2; idx < $#; ++idx)); do
+for ((idx = 2; idx <= $#; ++idx)); do
     logDir=${!idx}
     logName=$(basename ${logDir})
     echo "extractin ball status from '${logName}'"
