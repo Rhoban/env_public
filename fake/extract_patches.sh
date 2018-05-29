@@ -6,7 +6,7 @@ fi
 
 objTypes[0]="ball"
 objTypes[1]="goal"
-objTypes[2]="robots"
+objTypes[2]="obstacle"
 
 dstFolder="patches/results"
 
@@ -48,6 +48,8 @@ for robot in ${robots[@]}; do
     done
 done
 
+# TODO print recap of what has been seen
+
 # Zip the logs to an archive
 cd ${dstFolder}
-tar -czf patches.tar.gz *
+zip -r patches.zip *

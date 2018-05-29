@@ -18,25 +18,34 @@
             "../common/vision_filters/colors.json",
             "../common/vision_filters/ball_detection.json",
             "../common/vision_filters/clipping.json",
-            "../common/vision_filters/goals.json"
+            "../common/vision_filters/goals.json",
+            "../common/vision_filters/robots.json"
         ],
         "filters" : [
             {
                 "class name" : "PatchRecorder",
                 "content" : {
-                    "name" : "goalPatchRecorder",
-                    "dependencies" : ["goalPatchProvider"],
-                    "prefix" : "patches/goal/"
+                    "name" : "obstaclePatchRecorder",
+                    "dependencies" : ["obstaclePatchProvider"],
+                    "prefix" : "patches/obstacle/"
                 }
             },
-            {
-                "class name" : "PatchRecorder",
-                "content" : {
-                    "name" : "ballPatchRecorder",
-                    "dependencies" : ["ballPatchProvider"],
-                    "prefix" : "patches/ball/"
-                }
-            },
+//            {
+//                "class name" : "PatchRecorder",
+//                "content" : {
+//                    "name" : "goalPatchRecorder",
+//                    "dependencies" : ["goalPatchProvider"],
+//                    "prefix" : "patches/goal/"
+//                }
+//            },
+//            {
+//                "class name" : "PatchRecorder",
+//                "content" : {
+//                    "name" : "ballPatchRecorder",
+//                    "dependencies" : ["ballPatchProvider"],
+//                    "prefix" : "patches/ball/"
+//                }
+//            },
             {
                 "class name" : "SourceLogs",
                 "content" : {
