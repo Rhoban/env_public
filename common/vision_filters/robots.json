@@ -1,44 +1,54 @@
 // Require the following filters
-// whiteII (Integral Image)
 // greenII (Integral Image)
-// darkII (Integral Image
 // ballRadiusProvider (Mono-channel)
-// clipping_by_border (Mask)
-// greenDensity (ColorDensity)
-// whiteDensity (ColorDensity)
+// Y
 [
     {
-        "class name" : "RobotByII",
+        "class name" : "ObstacleByDNN",
         "content" : {
-            "name" : "robotByII",
+            "name" : "obstacleByDNN",
+            "display" : true,
+            "dependencies" : ["obstaclePatchProvider"],
+            "arch_path" : "../common/dnn/obstacles/structure.json",
+            "weights_path" : "../common/dnn/obstacles/weights.bin",
+            "paramFloats" : {
+                "scoreThreshold" : 0.9
+            }
+        }
+    },
+    {
+        "class name" : "RoiToPatches",
+        "content" : {
+            "name" : "obstaclePatchProvider",
+            "dependencies" : ["Y", "obstacleROIProvider"],
+            "paramInts" : {
+                "patchHeight" : 64,
+                "patchWidth" : 32
+            }
+        }
+    },
+    {
+        "class name" : "ObstacleByII",
+        "content" : {
+            "name" : "obstacleROIProvider",
+            "display" : true,
             "dependencies" : [
-                "whiteII",
                 "greenII",
-                "darkII",
-                "ballRadiusProvider",
-                "clipping_by_border",
-                "greenDensity",
-                "whiteDensity"
+                "ballRadiusProvider"
             ],
             "paramInts" : {
-                "decimationRate" : 7,
-                "tagLevel" : 0
+                "decimationRate" : 4,
+                "tagLevel" : 1
             },
             "paramFloats" : {
-                "robotWidth" : 0.07,
-                "actualRobotWidth" : 0.3,
-                "actualRobotHeight" : 0.7,
-                "aboveRatio" : 2.0,
-                "belowRatio" : 0.5,
-                "boundaryWidthRatio" : 2.0,
-                "widthScale" : 1.0,
+                "aboveRatio" : 1.5,
+                "belowRatio" : 1.5,
+                "boundaryWidthRatio" : 1.5,
+                "widthScale" : 4.0,
                 "belowCoeff" : 1.0,
-                "minScore" : 55,
-                "minWidth" : 12.0,
-                "roiRatio" : 1.0,
-                "greenThreshold" : 60,
-                "whiteThreshold" : 50,
-                "tooCloseToBeTrue" : 60
+                "minScore" : 140,
+                "minWidth" : 15.0,
+                "roiRatio" : 1.5
             }
         }
     }
