@@ -7,7 +7,6 @@
         "class name" : "ObstacleByDNN",
         "content" : {
             "name" : "obstacleByDNN",
-            "display" : true,
             "dependencies" : ["obstaclePatchProvider"],
             "arch_path" : "../common/dnn/obstacles/structure.json",
             "weights_path" : "../common/dnn/obstacles/weights.bin",
@@ -31,7 +30,6 @@
         "class name" : "ObstacleByII",
         "content" : {
             "name" : "obstacleROIProvider",
-            "display" : true,
             "dependencies" : [
                 "greenII",
                 "ballRadiusProvider"
