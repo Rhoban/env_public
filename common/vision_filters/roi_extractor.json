@@ -30,22 +30,22 @@
                     "prefix" : "patches/obstacle/"
                 }
             },
-//            {
-//                "class name" : "PatchRecorder",
-//                "content" : {
-//                    "name" : "goalPatchRecorder",
-//                    "dependencies" : ["goalPatchProvider"],
-//                    "prefix" : "patches/goal/"
-//                }
-//            },
-//            {
-//                "class name" : "PatchRecorder",
-//                "content" : {
-//                    "name" : "ballPatchRecorder",
-//                    "dependencies" : ["ballPatchProvider"],
-//                    "prefix" : "patches/ball/"
-//                }
-//            },
+            {
+                "class name" : "PatchRecorder",
+                "content" : {
+                    "name" : "goalPatchRecorder",
+                    "dependencies" : ["goalPatchProvider"],
+                    "prefix" : "patches/goal/"
+                }
+            },
+            {
+                "class name" : "PatchRecorder",
+                "content" : {
+                    "name" : "ballPatchRecorder",
+                    "dependencies" : ["ballPatchProvider"],
+                    "prefix" : "patches/ball/"
+                }
+            },
             {
                 "class name" : "SourceLogs",
                 "content" : {
