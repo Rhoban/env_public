@@ -1,5 +1,6 @@
 // Require the following filters
-// greenII (Integral Image)
+// green (Mask)
+// white (Mask)
 // ballRadiusProvider (Mono-channel)
 // Y
 [
@@ -21,8 +22,8 @@
             "name" : "obstaclePatchProvider",
             "dependencies" : ["Y", "obstacleROIProvider"],
             "paramInts" : {
-                "patchHeight" : 64,
-                "patchWidth" : 32
+                "patchHeight" : 32,
+                "patchWidth" : 16
             }
         }
     },
@@ -31,23 +32,39 @@
         "content" : {
             "name" : "obstacleROIProvider",
             "dependencies" : [
-                "greenII",
+                "whiteAndGreenII",
                 "ballRadiusProvider"
             ],
             "paramInts" : {
-                "decimationRate" : 4,
-                "tagLevel" : 1
+                "decimationRate" : 2,
+                "tagLevel" : 1,
+                "maxRois" : 10
             },
             "paramFloats" : {
                 "aboveRatio" : 1.5,
                 "belowRatio" : 1.5,
+                "boundaryHeightRatio" : 0.5,//Goal: allowing to have both, basis and middle of the robot
                 "boundaryWidthRatio" : 1.5,
                 "widthScale" : 4.0,
                 "belowCoeff" : 1.0,
-                "minScore" : 140,
-                "minWidth" : 15.0,
+                "minScore" : 100,
+                "minWidth" : 25.0,
                 "roiRatio" : 1.5
             }
+        }
+    },
+    {
+        "class name" : "Integral",
+        "content" : {
+            "name" : "whiteAndGreenII",
+            "dependencies" : ["whiteAndGreen"]
+        }
+    },
+    {
+        "class name" : "MaskOr",
+        "content" : {
+            "name" : "whiteAndGreen",
+            "dependencies" : ["green","white"]
         }
     }
 ]
