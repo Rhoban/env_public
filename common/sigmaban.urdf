@@ -1,8 +1,6 @@
 <robot name="metabot">
 
   <!-- WARNING: inertia values have not been validated with the new model -->
-
-  <!-- Component body#1 -->
   <link name="trunk">
     <inertial>
       <origin xyz="0 0 0.0765677" rpy="0 0 0"/>
@@ -11,7 +9,6 @@
     </inertial>
   </link>
 
-  <!-- Component mx64_u_arm#2 -->
   <link name="right_hip_yaw">
     <inertial>
       <origin xyz="-0.000506838 -2.21546e-11 -0.0373359" rpy="0 0 0"/>
@@ -26,9 +23,6 @@
     <origin xyz="0 -0.046375 0" rpy="0 0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
-
-  <!-- Component mx64_block#3 -->
-
   <link name="right_hip_roll">
     <inertial>
       <origin xyz="-0.0225454 -0.000152445 -0.0139042" rpy="0 0 0"/>
@@ -43,8 +37,6 @@
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
-
-  <!-- Component mx64_u_arm_to_side#4 -->
 
   <link name="right_hip_pitch">
     <inertial>
@@ -61,8 +53,6 @@
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
-  <!-- Component mx64_arms#5 -->
-
   <link name="right_knee">
     <inertial>
       <origin xyz="-3.08493e-09 0.000499994 -0.070075" rpy="0 0 0"/>
@@ -78,8 +68,6 @@
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
-  <!-- Component mx64_block#6 -->
-
   <link name="right_ankle_pitch">
     <inertial>
       <origin xyz="-0.0225454 0.000152444 0.0139042" rpy="0 0 0"/>
@@ -94,8 +82,6 @@
     <origin xyz="0 0 -0.14" rpy="0 0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
-
-  <!-- Component mx64_foot#7 -->
 
   <link name="right_ankle_roll">
     <inertial>
@@ -119,13 +105,11 @@
     </inertial>
   </link>
   <joint name="right_foot_tip" type="fixed">
-    <origin xyz="0.01515 -0.0055 -0.005765" rpy="0 0 0"/>
+    <origin xyz="0 0 -0.05765" rpy="0 0 0"/>
     <parent link="right_ankle_roll" />
     <child link="right_foot_tip" />
     <axis xyz="0 0 0" />
   </joint>
-
-  <!-- Component mx28_u_arm#8 -->
 
   <link name="right_shoulder_pitch">
     <inertial>
@@ -142,8 +126,6 @@
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
 
-  <!-- Component mx28_u_l#9 -->
-
   <link name="right_shoulder_roll">
     <inertial>
       <origin xyz="-0.00345419 1.50736e-09 -0.0344843" rpy="0 0 0"/>
@@ -158,9 +140,6 @@
     <origin xyz="0 -0.0585 -0.045" rpy="0 0 0"/>
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
-
-  <!-- Component mx28_elbow#10 -->
-
   <link name="right_elbow">
     <inertial>
       <origin xyz="-0.00359143 -9.63909e-05 -0.0268066" rpy="0 0 0"/>
@@ -183,13 +162,11 @@
     </inertial>
   </link>
   <joint name="right_arm_tip" type="fixed">
-    <origin xyz="-0.01 0 -0.15" rpy"0 0 0"/>
+    <origin xyz="-0.01 0 -0.15" rpy="0 0 0"/>
     <parent link="right_elbow" />
     <child link="right_arm_tip" />
     <axis xyz="0 0 0" />
   </joint>
-
-  <!-- Component mx64_u_arm#11 -->
 
   <link name="left_hip_yaw">
     <inertial>
@@ -206,8 +183,6 @@
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
-  <!-- Component mx64_block#12 -->
-
   <link name="left_hip_roll">
     <inertial>
       <origin xyz="-0.0225454 -0.000152445 -0.0139042" rpy="0 0 0"/>
@@ -222,8 +197,6 @@
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
-
-  <!-- Component mx64_u_arm_to_side#13 -->
 
   <link name="left_hip_pitch">
     <inertial>
@@ -240,8 +213,6 @@
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
-  <!-- Component mx64_arms#14 -->
-
   <link name="left_knee">
     <inertial>
       <origin xyz="-3.08493e-09 0.000499994 -0.070075" rpy="0 0 0"/>
@@ -257,8 +228,6 @@
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
 
-  <!-- Component mx64_block#15 -->
-
   <link name="left_ankle_pitch">
     <inertial>
       <origin xyz="-0.0225454 0.000152444 0.0139042" rpy="0 0 0"/>
@@ -273,8 +242,6 @@
     <origin xyz="0 0 -0.14" rpy="0 0 0"/>
     <limit effort="6.4" velocity="14" lower="-3.14159" upper="3.14159"/>
   </joint>
-
-  <!-- Component mx64_foot#16 -->
 
   <link name="left_ankle_roll">
     <inertial>
@@ -298,13 +265,11 @@
     </inertial>
   </link>
   <joint name="left_foot_tip" type="fixed">
-    <origin xyz="0.01515 0.005 -0.05765" rpy="0 0 0"/>
+    <origin xyz="0 0 -0.05765" rpy="0 0 0"/>
     <parent link="left_ankle_roll" />
     <child link="left_foot_tip" />
     <axis xyz="0 0 0" />
   </joint>
-
-  <!-- Component mx28_u_arm#17 -->
 
   <link name="left_shoulder_pitch">
     <inertial>
@@ -321,8 +286,6 @@
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
 
-  <!-- Component mx28_u_l#18 -->
-
   <link name="left_shoulder_roll">
     <inertial>
       <origin xyz="-0.00345419 1.20538e-09 -0.0344843" rpy="0 0 0"/>
@@ -337,8 +300,6 @@
     <origin xyz="0 0.0585 -0.045" rpy="4.40543e-25 -3.9443e-31 1.32349e-23"/>
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
-
-  <!-- Component mx28_elbow#19 -->
 
   <link name="left_elbow">
     <inertial>
@@ -368,8 +329,6 @@
     <axis xyz="0 0 0" />
   </joint>
 
-  <!-- Component mx28_u_arm#20 -->
-
   <link name="head_yaw">
     <inertial>
       <origin xyz="0 0 0.0352204" rpy="0 0 0"/>
@@ -384,8 +343,6 @@
     <origin xyz="0.0259 0 0.19943" rpy="0 0 0"/>
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
-
-  <!-- Component mx28_head#21 -->
 
   <link name="head_pitch">
     <inertial>

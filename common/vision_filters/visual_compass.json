@@ -1,0 +1,27 @@
+// Require existence of the following external filters
+// Y (mono-channel image)
+[
+    {
+        "class name" : "VisualCompass",
+        "content" : {
+            "name" : "visualCompass",
+            "dependencies" : ["smallY"],
+            "paramInts" : {
+                "debugLevel" : 0,
+                    "mode" : 0,
+                "enabled" : 0
+            },
+            "paramFloats" : {
+                "threshold" : 70.0
+            }
+        }
+    },
+    {
+        "class name" : "Rescale",
+        "content" : {
+            "name" : "smallY",
+            "dependencies" : ["Y"],
+            "paramFloats" : {"ratio" : 2}
+        }
+    }
+]
