@@ -2,28 +2,6 @@
    "Dynaban64" : {
       "devices" : [
          {
-            "id" : 141,
-            "name" : "head_yaw",
-            "parameters" : {
-               "angleLimitCCWParameter" : 0,
-               "angleLimitCWParameter" : 0,
-               "dontRead" : false,
-               "inverse" : false,
-               "zero" : 0
-            }
-         },
-         {
-            "id" : 140,
-            "name" : "head_pitch",
-            "parameters" : {
-               "angleLimitCCWParameter" : 0,
-               "angleLimitCWParameter" : 0,
-               "dontRead" : false,
-               "inverse" : true,
-               "zero" : 22.5
-            }
-         },
-         {
             "id" : 16,
             "name" : "right_hip_yaw",
             "parameters" : {
@@ -110,6 +88,28 @@
                "inverse" : true,
                "zero" : 0
             }
+         },
+         {
+            "id" : 140,
+            "name" : "head_pitch",
+            "parameters" : {
+               "angleLimitCCWParameter" : 0,
+               "angleLimitCWParameter" : 0,
+               "dontRead" : false,
+               "inverse" : true,
+               "zero" : 22.5
+            }
+         },
+         {
+            "id" : 141,
+            "name" : "head_yaw",
+            "parameters" : {
+               "angleLimitCCWParameter" : 0,
+               "angleLimitCWParameter" : 0,
+               "dontRead" : false,
+               "inverse" : false,
+               "zero" : 0
+            }
          }
       ],
       "parameters" : null
@@ -128,9 +128,9 @@
                "accZMin" : -1,
                "dontRead" : false,
                "filterDelay" : 0.02,
-               "gyroXOffset" : -0.017661720514297485,
-               "gyroYOffset" : 0.076288595795631409,
-               "gyroZOffset" : 0.026334742084145546,
+               "gyroXOffset" : -0.0084180515259504318,
+               "gyroYOffset" : 0.069064445793628693,
+               "gyroZOffset" : 0.019033702090382576,
                "invertOrientation" : false,
                "invertOrientationX" : false,
                "invertOrientationY" : true,
@@ -292,8 +292,8 @@
             "name" : "right_pressure",
             "parameters" : {
                "dontRead" : false,
-               "gain_0" : 1,
-               "gain_1" : -1,
+               "gain_0" : -1,
+               "gain_1" : 1,
                "gain_2" : 1,
                "gain_3" : -1,
                "x_0" : -0.070000000000000007,
@@ -304,10 +304,10 @@
                "y_1" : -0.035999999999999997,
                "y_2" : 0.035999999999999997,
                "y_3" : 0.035999999999999997,
-               "zero_0" : 1429172.932,
-               "zero_1" : 4970522.3039999995,
-               "zero_2" : -2439512.804,
-               "zero_3" : 5976437.0039999997
+               "zero_0" : 4623460.9519999996,
+               "zero_1" : 103092.59600000001,
+               "zero_2" : -2466414.6880000001,
+               "zero_3" : 5976593.96
             }
          },
          {
@@ -327,10 +327,10 @@
                "y_1" : -0.035999999999999997,
                "y_2" : 0.035999999999999997,
                "y_3" : 0.035999999999999997,
-               "zero_0" : 3702414.2400000002,
-               "zero_1" : -750214.152,
-               "zero_2" : 6513461.2319999998,
-               "zero_3" : 362007.06400000001
+               "zero_0" : 3649493.2400000002,
+               "zero_1" : 189978.29199999999,
+               "zero_2" : 6508123.3679999998,
+               "zero_3" : 360806.56800000003
             }
          }
       ],
