@@ -2,6 +2,28 @@
    "Dynaban64" : {
       "devices" : [
          {
+            "id" : 141,
+            "name" : "head_yaw",
+            "parameters" : {
+               "angleLimitCCWParameter" : 0,
+               "angleLimitCWParameter" : 0,
+               "dontRead" : false,
+               "inverse" : false,
+               "zero" : -4
+            }
+         },
+         {
+            "id" : 140,
+            "name" : "head_pitch",
+            "parameters" : {
+               "angleLimitCCWParameter" : 0,
+               "angleLimitCWParameter" : 0,
+               "dontRead" : false,
+               "inverse" : true,
+               "zero" : 11
+            }
+         },
+         {
             "id" : 15,
             "name" : "right_hip_yaw",
             "parameters" : {
@@ -235,33 +257,6 @@
                "dontRead" : false,
                "inverse" : true,
                "zero" : 0
-            }
-         }
-      ],
-      "parameters" : null
-   },
-   "MX28" : {
-      "devices" : [
-         {
-            "id" : 50,
-            "name" : "head_yaw",
-            "parameters" : {
-               "angleLimitCCWParameter" : 0,
-               "angleLimitCWParameter" : 0,
-               "dontRead" : false,
-               "inverse" : false,
-               "zero" : -4
-            }
-         },
-         {
-            "id" : 51,
-            "name" : "head_pitch",
-            "parameters" : {
-               "angleLimitCCWParameter" : 0,
-               "angleLimitCWParameter" : 0,
-               "dontRead" : false,
-               "inverse" : true,
-               "zero" : 11
             }
          }
       ],
