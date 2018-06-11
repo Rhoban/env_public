@@ -7,12 +7,12 @@ FLAGS=""
 # Specifiying kick model collection file
 FLAGS="${FLAGS} -j sigmaban_plus_kicks.json"
 # Specifiying resolution
-FLAGS="${FLAGS} -d 2 -a 0.3"
+FLAGS="${FLAGS} -d 5 -a 0.2"
 # Adding time tolerance
-FLAGS="${FLAGS} -t 3"
+FLAGS="${FLAGS} -t 5"
 # Adding excentric strategy
 #FLAGS="${FLAGS} -e"
-FLAGS="${FLAGS} -f right_corridor.json"
+FLAGS="${FLAGS} -f lateral_corridor.json"
 
 #Running learning with grass
 ${BIN} ${FLAGS} -c tmp_with_grass.csv -w > tmp_with_grass.json
