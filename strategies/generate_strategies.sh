@@ -12,7 +12,7 @@ FLAGS="${FLAGS} -d 5 -a 0.2"
 FLAGS="${FLAGS} -t 5"
 # Adding excentric strategy
 #FLAGS="${FLAGS} -e"
-FLAGS="${FLAGS} -f lateral_corridor.json"
+#FLAGS="${FLAGS} -f lateral_corridor.json"
 
 #Running learning with grass
 ${BIN} ${FLAGS} -c tmp_with_grass.csv -w > tmp_with_grass.json
