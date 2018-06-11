@@ -27,7 +27,10 @@
                 "content" : {
                     "name" : "obstaclePatchRecorder",
                     "dependencies" : ["obstaclePatchProvider"],
-                    "prefix" : "patches/obstacle/"
+                    "prefix" : "patches/obstacle/",
+                    "paramInts" : {
+                        "period" : 10
+                    }
                 }
             },
             {
@@ -35,7 +38,10 @@
                 "content" : {
                     "name" : "goalPatchRecorder",
                     "dependencies" : ["goalPatchProvider"],
-                    "prefix" : "patches/goal/"
+                    "prefix" : "patches/goal/",
+                    "paramInts" : {
+                        "period" : 10
+                    }
                 }
             },
             {
@@ -43,7 +49,10 @@
                 "content" : {
                     "name" : "ballPatchRecorder",
                     "dependencies" : ["ballPatchProvider"],
-                    "prefix" : "patches/ball/"
+                    "prefix" : "patches/ball/",
+                    "paramInts" : {
+                        "period" : 10
+                    }
                 }
             },
             {
