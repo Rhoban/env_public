@@ -12,22 +12,6 @@
         }
     },
     {
-        "class name" : "WhiteLines",
-        "content" : {
-            "name" : "white_lines",
-            "dependencies" : ["human", "clipping_rescale", "white_line_color_rescale" ]
-        }
-    },
-    {
-        "class name" : "Rescale",
-        "content" : {
-            "name" : "white_line_color_rescale",
-            "dependencies" : ["white_line_color"],
-            "paramFloats" : {"ratio" : 12}
-        }
-    },
-
-    {
         "class name" : "Rescale",
         "content" : {
             "name" : "clipping_rescale",
@@ -120,7 +104,6 @@
             "name" : "white_line_color",
             "dependencies" : ["Y"],
             "paramInts" : {"threshold" : 120}
-            
         }
     }
 ]
