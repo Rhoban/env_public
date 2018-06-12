@@ -12,6 +12,31 @@
         }
     },
     {
+        "class name" : "WhiteLines",
+        "content" : {
+            "name" : "white_lines",
+            "dependencies" : ["human", "clipping_rescale", "white_line_color_rescale" ]
+        }
+    },
+    {
+        "class name" : "Rescale",
+        "content" : {
+            "name" : "white_line_color_rescale",
+            "dependencies" : ["white_line_color"],
+            "paramFloats" : {"ratio" : 12}
+        }
+    },
+
+    {
+        "class name" : "Rescale",
+        "content" : {
+            "name" : "clipping_rescale",
+            "dependencies" : ["clipping_by_border"],
+            "paramFloats" : {"ratio" : 4}
+        }
+    },
+
+    {
         "class name" : "FieldBorder",
         "content" : {
             "name" : "fieldBorder",
@@ -22,10 +47,10 @@
                 "scale_factor" :  4,
                 "loc_active" : 1,
                 "debug_output" : 0,
-		            "with_black"  : 0
+                "with_black"  : 0
             },
             "paramFloats" : {
-                "max_obs_score" : 5.0
+                "max_obs_score" : 10.0
             }
         }
     },
@@ -87,6 +112,15 @@
                 "minV" : 129,
                 "maxV" : 153
             }
+        }
+    },
+    {
+        "class name" : "Threshold",
+        "content" : {
+            "name" : "white_line_color",
+            "dependencies" : ["Y"],
+            "paramInts" : {"threshold" : 120}
+            
         }
     }
 ]
