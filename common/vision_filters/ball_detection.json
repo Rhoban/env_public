@@ -11,7 +11,7 @@
             "arch_path" : "../common/dnn/balls/structure.json",
             "weights_path" : "../common/dnn/balls/weights.bin",
             "paramFloats" : {
-                "scoreThreshold" : 0.8
+                "scoreThreshold" : 0.9
             }
         }
     },
@@ -33,11 +33,11 @@
             "dependencies" : ["integralY","greenII","ballRadiusProvider"],
             "paramInts" : {
                 "decimationRate" : 3,
-                "maxRois" : 4
+                "maxRois" : 12
             },
             "paramFloats" :
             {
-                "boundaryFactor" : 2.0,
+                "boundaryFactor" : 1.7,
                 "yWeight" : 5.0,
                 "greenWeight" : 2.0,
                 "minScore" : 30,

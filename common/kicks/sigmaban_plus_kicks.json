@@ -1,6 +1,6 @@
 {
     "grassModel" : {
-        "ratio" : 1.0,
+        "ratio" : 0.5,
         "coneWidth" : 90,
         "coneOffset" : 0
     },
@@ -8,14 +8,14 @@
         "classic" : {
             "class name" : "ClassicKick",
             "content" : {
-                "kick_power" : 3,//[m]
+                "kick_power" : 2.75,//[m]
                 "right_kick_dir" : 0,//[deg]
                 "rel_dist_stddev" : 0.1,
                 "dir_stddev" : 15,//[deg]
                 "kick_zone" : {
-                    "kick_y_offset" : 0.05,//[m]
+                    "kick_y_offset" : 0.06,//[m]
                     "kick_y_tol" : 0.035,//[m]
-                    "kick_x_min" : 0.12,//[m]
+                    "kick_x_min" : 0.16,//[m]
                     "kick_x_max" : 0.24,//[m]
                     "kick_theta_tol" : 10,//[deg]
                     "kick_theta_offset" : 0
@@ -32,7 +32,7 @@
                 "kick_zone" : {
                     "kick_y_offset" : -0.05,//[m]
                     "kick_y_tol" : 0.05,//[m]
-                    "kick_x_min" : 0.15,//[m]
+                    "kick_x_min" : 0.16,//[m]
                     "kick_x_max" : 0.28,//[m]
                     "kick_theta_tol" : 10,//[deg]
                     "kick_theta_offset" : 75
@@ -49,7 +49,7 @@
                 "kick_zone" : {
                     "kick_y_offset" : 0.05,//[m]
                     "kick_y_tol" : 0.035,//[m]
-                    "kick_x_min" : 0.12,//[m]
+                    "kick_x_min" : 0.16,//[m]
                     "kick_x_max" : 0.22,//[m]
                     "kick_theta_tol" : 10,//[deg]
                     "kick_theta_offset" : 0
