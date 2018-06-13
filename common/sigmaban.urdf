@@ -105,7 +105,7 @@
     </inertial>
   </link>
   <joint name="right_foot_tip" type="fixed">
-    <origin xyz="0 0 -0.05765" rpy="0 0 0"/>
+    <origin xyz="0 0 -0.066" rpy="0 0 0"/>
     <parent link="right_ankle_roll" />
     <child link="right_foot_tip" />
     <axis xyz="0 0 0" />
@@ -265,7 +265,7 @@
     </inertial>
   </link>
   <joint name="left_foot_tip" type="fixed">
-    <origin xyz="0 0 -0.05765" rpy="0 0 0"/>
+    <origin xyz="0 0 -0.066" rpy="0 0 0"/>
     <parent link="left_ankle_roll" />
     <child link="left_foot_tip" />
     <axis xyz="0 0 0" />
@@ -331,7 +331,7 @@
 
   <link name="head_yaw">
     <inertial>
-      <origin xyz="0 0 0.0352204" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="0.031552"/>
       <inertia ixx="8.42675e-06"  ixy="0"  ixz="0" iyy="1.79335e-05" iyz="2.84217e-23" izz="1.40733e-05" />
     </inertial>
@@ -340,13 +340,13 @@
     <parent link="trunk"/>
     <child link="head_yaw"/>
     <axis xyz="0 0 1"/>
-    <origin xyz="0.0259 0 0.19943" rpy="0 0 0"/>
+    <origin xyz="0.0259 0 0.268" rpy="0 0 0"/>
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
 
   <link name="head_pitch">
     <inertial>
-      <origin xyz="0 0 0.06243" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="0.081452"/>
       <inertia ixx="1.95072e-05"  ixy="-2.52243e-22"  ixz="1.80686e-07" iyy="2.59718e-05" iyz="3.64153e-23" izz="2.26105e-05" />
     </inertial>
@@ -355,7 +355,7 @@
     <parent link="head_yaw"/>
     <child link="head_pitch"/>
     <axis xyz="0 1 0"/>
-    <origin xyz="0 0 0.05175" rpy="0 -0 0"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <limit effort="2.8" velocity="12" lower="-3.14159" upper="3.14159"/>
   </joint>
   <link name="camera">
