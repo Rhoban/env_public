@@ -7,6 +7,7 @@
         "class name" : "BallByDNN",
         "content" : {
             "name" : "ballByDNN",
+//            "display" : true,
             "dependencies" : ["ballPatchProvider"],
             "arch_path" : "../common/dnn/balls/structure.json",
             "weights_path" : "../common/dnn/balls/weights.bin",
@@ -33,14 +34,14 @@
             "dependencies" : ["integralY","greenII","ballRadiusProvider"],
             "paramInts" : {
                 "decimationRate" : 3,
-                "maxRois" : 12
+                "maxRois" : 8
             },
             "paramFloats" :
             {
                 "boundaryFactor" : 1.7,
                 "yWeight" : 5.0,
                 "greenWeight" : 2.0,
-                "minScore" : 30,
+                "minScore" : 80,
                 "minRadius" : 6
             }
         }
