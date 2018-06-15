@@ -8,24 +8,27 @@ objTypes[0]="ball"
 objTypes[1]="goal"
 objTypes[2]="obstacle"
 
+ROBOTS=(olive nova arya tom rush)
+
 dstFolder="patches/results"
 
 
 folderName=$1
 
-robots=$(ls ${folderName})
-
 # Cleaning existing results
 rm -rf $dstFolder
 mkdir -p $dstFolder
 
-for robot in ${robots[@]}; do
-    echo ${robot}
+for robot in ${ROBOTS[@]}; do
     robotPath=${folderName}/${robot}
-    seqNames=$(ls ${robotPath})
-    for seqName in ${seqNames[@]}; do
-        echo "-> ${seqName}"
-        seqFolder=${robotPath}/${seqName}
+    if [ ! -d "$robotPath" ]; then
+        continue
+    fi
+    echo ${robot}
+    seqPaths=$(ls -d ${robotPath}/*/)
+    echo $seqPaths
+    for seqFolder in ${seqPaths[@]}; do
+        echo "-> ${seqFolder}"
 
 
         # Prepare environment
