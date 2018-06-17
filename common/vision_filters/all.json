@@ -6,6 +6,7 @@
     "readFromLog" : false,
     "embedded" : true,
     "imageDelay" : -5,
+    "writeBallStatus" : true,
     "arenaProviders" : [],//Currently, the method used to import FieldBorderData is different
     "ballProviders" : ["ballByDNN"],
     "goalProviders" : ["goalByDNN"],
@@ -18,7 +19,7 @@
             "../common/vision_filters/clipping.json",
             "../common/vision_filters/goals.json",
             "../common/vision_filters/robots.json",
-	    "../common/vision_filters/visual_compass.json"
+            "../common/vision_filters/visual_compass.json"
         ],
         "filters" : [
             {
@@ -28,11 +29,11 @@
                     "wished_properties" : {
                         "Shutter" : {
                             "autoManualMode" : false,
-                            "absValue" : 2.5
+                            "absValue" : 1.5
                         },
                         "Gain" : {
                             "autoManualMode" : false,
-                            "absValue" : 10
+                            "absValue" : 20
                         },
                         "FrameRate" : {
                             "autoManualMode" : false,
@@ -40,8 +41,8 @@
                         },
                         "WhiteBalance" : {
                             "autoManualMode" : false,
-                            "valueA" : 528,
-                            "valueB" : 735
+                            "valueA" : 500,
+                            "valueB" : 1000
                         }
                     }
                 }
