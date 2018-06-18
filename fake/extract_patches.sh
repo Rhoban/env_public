@@ -43,6 +43,7 @@ for robot in ${ROBOTS[@]}; do
         ./run.sh
 
         # Move objTypes inside folder
+	seqName=$(basename $seqFolder)
         seqDst=${dstFolder}/${robot}/${seqName}
         mkdir -p ${seqDst}
         for objType in ${objTypes[@]}; do
