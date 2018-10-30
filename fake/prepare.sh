@@ -11,7 +11,7 @@ echo "Preparing the fake env for the robot '$robot'"
 env=$(dirname `pwd`)
 echo "env path is $env"
 
-declare -a elements=("VCM.json" "sigmaban.urdf" "camera_calib.yml")
+declare -a elements=("calibration.json" "sigmaban.urdf" "camera_calib.yml")
 
 for i in "${elements[@]}"
 do
