@@ -1,0 +1,50 @@
+// Simply convert replay log to a video
+{
+    "angularPitchTolerance" : 5,
+    "benchmark" : false,
+    "benchmarkDetail" : 4,
+    "gpuOn" : false,
+    "readFromLog" : true,
+    "embedded" : false,
+    "imageDelay" : -5,
+    "writeBallStatus" : false,
+    "exitOnStreamEnd" : false,
+    "arenaProviders" : [],//Currently, the method used to import FieldBorderData is different
+    "goalProviders" : [],
+    "ballProviders" : [],
+    "compassProviders" : [],// Disabled currently "visualCompass"],
+    "playing" : true,
+    "pathToLog" : "workingLog/lowLevel.log",
+    "RadarImg" : false,
+    "TaggedImg" : true,
+    "pipeline" : {
+        "filters" : [
+            {
+                "class name" : "SourceLogs",
+                "content" : {
+                    "name" : "source",
+                    "imagesFile" : "workingLog/images.csv",
+        //            "display" : true,
+                    "startIndex" : 0
+                }
+            },
+            {
+                "class name" : "ColorConverter",
+                "content" : {
+                    "name" : "human",
+                    "conversion" : "YCrCb2BGR",
+                    "dependencies" : ["source"]
+                }
+            },
+            {
+                "class name" : "MovieRecorder",
+                "content" : {
+                    "name" : "recorder",
+                    "dependencies" : ["human"],
+                    "paramInts" : { "enabled" : 1 },
+                    "paramFloats" : { "framerate" : 30 }
+                }
+            }
+        ]
+    }
+}

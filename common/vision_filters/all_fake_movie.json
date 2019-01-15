@@ -1,0 +1,50 @@
+{
+    "angularPitchTolerance" : 5,
+    "benchmark" : false,
+    "benchmarkDetail" : 4,
+    "gpuOn" : false,
+    "readFromLog" : true,
+    "embedded" : false,
+    "imageDelay" : -5,
+    "writeBallStatus" : true,
+    "exitOnStreamEnd" : false,
+    "arenaProviders" : [],//Currently, the method used to import FieldBorderData is different
+    "goalProviders" : ["goalByDNN"],
+    "ballProviders" : ["ballByDNN"],
+    "compassProviders" : [],// Disabled currently "visualCompass"],
+    "playing" : true,
+    "pathToLog" : "workingLog/lowLevel.log",
+    "RadarImg" : false,
+    "TaggedImg" : true,
+    "pipeline" : {
+        "paths" : [
+            "../common/vision_filters/colors.json",
+            "../common/vision_filters/ball_detection.json",
+            "../common/vision_filters/clipping.json",
+            "../common/vision_filters/goals.json",
+            "../common/vision_filters/robots.json"
+            //"visual_compass.json"//Currently disabled
+        ],
+        "filters" : [
+            {
+                "class name" : "SourceVideoProtobuf",
+                "content" : {
+                    "name" : "sourceBGR",
+                    "videoPath" : "movie.avi",
+                    "metaInformationPath" : "movie_metadata.bin",
+                    "display" : true,
+                    "startIndex" : 0
+                }
+            },
+            // Switching back to YCrCb to enable default pipeline
+            {
+                "class name" : "ColorConverter",
+                "content" : {
+                    "name" : "source",
+                    "conversion" : "BGR2YCrCb",
+                    "dependencies" : ["sourceBGR"]
+                }
+            }
+        ]
+    }
+}
