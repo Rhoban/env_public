@@ -1,0 +1,28 @@
+{
+    "angularPitchTolerance" : 5,
+    "benchmark" : false,
+    "benchmarkDetail" : 4,
+    "gpuOn" : false,
+    "readFromLog" : false,
+    "embedded" : false,
+    "imageDelay" : -5,
+    "writeBallStatus" : true,
+    "arenaProviders" : [],//Currently, the method used to import FieldBorderData is different
+    "ballProviders" : [],
+    "goalProviders" : [],
+    "compassProviders" : [],//"visualCompass"],
+    "playing" : true,
+    "pipeline" : {
+        "filters" : [
+            {
+                "class name" : "SourceIDS",
+                "content" : {
+                    "name" : "source",
+                    "paramInts" : { "formatId" : 13},
+                    "paramFloats" : { "exposure" : 15.0, "frameRate" : 3.0},
+                    "display": true
+                }
+            }
+        ]
+    }
+}
