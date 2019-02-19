@@ -45,7 +45,7 @@
         "content" : {
             "name" : "white",
             "dependencies" : ["Y"],
-            "paramInts" : {"threshold" : 100}
+            "paramInts" : {"threshold" : 110}
         }
     },
     {
@@ -71,13 +71,12 @@
             "dependencies" : ["source"],
             // "display" : true,
             "paramInts" : {
-                "maxU" : 132,
-                "maxV" : 129,
-                "maxY" : 93,
-                "minU" : 0,
-                "minV" : 0,
+                "maxU" : 130,
+                "maxV" : 131,
+                "maxY" : 110,
+                "minU" : 100,
+                "minV" : 100,
                 "minY" : 40
-
             }
         }
     }
