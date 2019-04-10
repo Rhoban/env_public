@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #Path to binary
-BIN="${HOME}/rhoban/workspace/devel_release/lib/kid_size/KickStrategy"
+BIN="KickStrategy"
 
 FLAGS=""
 # Specifiying kick model collection file
