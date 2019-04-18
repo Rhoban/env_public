@@ -1,0 +1,48 @@
+{
+    "angularPitchTolerance" : 5,
+    "viveLogPath" : "workingLog/vive.bin",
+    "benchmark" : false,
+    "benchmarkDetail" : 4,
+    "gpuOn" : false,
+    "readFromLog" : true,
+    "embedded" : false,
+    "imageDelay" : -5,
+    "writeBallStatus" : true,
+    "exitOnStreamEnd" : true,
+    "arenaProviders" : [],
+    "goalProviders" : [],
+    "ballProviders" : ["ballByDNN"],
+    "compassProviders" : [],
+    "playing" : false,//TODO: change once it is ready
+    "pathToLog" : "workingLog/lowLevel.log",
+    "RadarImg" : false,
+    "TaggedImg" : true,//TODO: false once ready
+    "pipeline" : {
+        "paths" : [
+            "../common/vision_filters/colors.json",
+            "../common/vision_filters/ball_detection.json"
+        ],
+        "filters" : [
+            {
+                "class name" : "ROIBasedGTP",
+                "content" : {
+                    "name" : "roi_based_gtp",
+                    "display" : true,
+                    "dependencies" : ["human", "ballByII"],
+                    "outputPrefix" : "ground_truth/",
+                    "paramInts" : {
+                        "writeEnabled" : 1
+                    }
+                }
+            },
+            {
+                "class name" : "SourceLogs",
+                "content" : {
+                    "name" : "source",
+                    "imagesFile" : "workingLog/images.csv",
+                    "startIndex" : 0
+                }
+            }
+        ]
+    }
+}
