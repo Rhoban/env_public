@@ -3,6 +3,7 @@ import rhoban
 import time
 import math
 import sys
+import pybullet as p
 from simulation import Simulation
 
 h = rhoban.execute()
@@ -12,6 +13,8 @@ sim.setRobotPos(0, 0, 0)
 sim.setBallPos(0.25, -0.05)
 rhio = rhoban.PyRhio()
 lastUpdate = -1
+
+line = None
 
 while True:
   h.setSchedulerClock(sim.t)
@@ -52,6 +55,12 @@ while True:
       pressure = sim.footSensorState()
       h.setFakePressure(pressure['left']['x'], pressure['left']['y'], pressure['left']['weight']*100000,
         pressure['right']['x'], pressure['right']['y'], pressure['right']['weight']*100000)
+
+      frames = sim.getFrames()
+      pos = frames['right_foot_frame'][0]
+      # if line is not None:
+      #     p.addUserDebugLine(pos, line, [1, 0.5, 0], 2, 20)
+      # line = pos
 
   # Reading goal angles
   h.lockScheduler()
