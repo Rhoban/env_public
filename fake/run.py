@@ -31,6 +31,8 @@ while True:
 
   if time.time()-lastUpdate > 0.01:
       lastUpdate = time.time()
+
+      # Setting the IMU
       pose = sim.getRobotPose()
       yaw = pose[1][2]+math.pi/2
       pitch = -(pose[1][0]-math.pi)
@@ -40,19 +42,25 @@ while True:
       if roll > math.pi:
         roll -= 2*math.pi
       h.setFakeIMU(yaw, pitch, roll)
+
+      # Setting the position of the robot and the ball
       h.setFakePosition(pose[0][0], pose[0][1], yaw)
       ballPos = sim.getBallPos()
       h.setFakeBallPosition(ballPos[0], ballPos[1])
 
-      # h.setFakePressure(0, 0, 1, 1, 0, 0, 1, 1)
+      # Setting the pressure
+      pressure = sim.footSensorState()
+      h.setFakePressure(pressure['left']['x'], pressure['left']['y'], pressure['left']['weight']*100000,
+        pressure['right']['x'], pressure['right']['y'], pressure['right']['weight']*100000)
 
-  targets = {}
-
+  # Reading goal angles
   h.lockScheduler()
+  targets = {}
   # Getting joints goal angles
   for name in sim.joints:
     targets[name] = h.getAngle(name)
   h.unlockScheduler()
-
   sim.setJoints(targets)
+
+  # Updating the simulation
   sim.tick()
