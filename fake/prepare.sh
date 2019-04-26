@@ -24,18 +24,10 @@ do
     fi
 done
 
-if [ "$robot" == "django" -o "$robot" == "mowgly" -o "$robot" == "chewbacca" ]; then
-    echo "Linking to Sigmaban strategies"
-    ln -sf ../common/kickStrategy_v1_with_grass.json kickStrategy_with_grass.json
-    ln -sf ../common/kickStrategy_v1_counter_grass.json kickStrategy_counter_grass.json
-#    ln -sf ../common/kicks/SigmabanKicks.xml KickModelCollection.xml #DEPRECATED
-fi
-if [ "$robot" == "tom" -o "$robot" == "olive" -o "$robot" == "arya" ]; then
-    echo "Linking to Sigmaban V2 strategies"
-    ln -sf ../common/kickStrategy_v2_with_grass.json kickStrategy_with_grass.json
-    ln -sf ../common/kickStrategy_v2_counter_grass.json kickStrategy_counter_grass.json
-    ln -sf ../common/kicks/sigmaban_plus_kicks.json KickModelCollection.json
-fi
+echo "Linking to Sigmaban V2 strategies"
+ln -sf ../strategies/with_grass.json kickStrategy_with_grass.json
+ln -sf ../strategies/against_grass.json kickStrategy_counter_grass.json
+ln -sf ../common/kicks/sigmaban_plus_kicks.json KickModelCollection.json
 
 if [ "$#" -eq 2 ]; then
     echo "Setting the log path to '$2'"
