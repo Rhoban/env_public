@@ -35,19 +35,12 @@ while True:
   if time.time()-lastUpdate > 0.01:
       lastUpdate = time.time()
 
-      # Setting the IMU
+      # Setting the position and pose of robot
       pose = sim.getRobotPose()
-      yaw = pose[1][2]+math.pi/2
-      pitch = -(pose[1][0]-math.pi)
-      if pitch > math.pi:
-        pitch -= 2*math.pi
-      roll = pose[1][0]+math.pi
-      if roll > math.pi:
-        roll -= 2*math.pi
-      h.setFakeIMU(yaw, pitch, roll)
-
-      # Setting the position of the robot and the ball
+      h.setFakeIMU(pose[1][0], pose[1][1], pose[1][2])
       h.setFakePosition(pose[0][0], pose[0][1], yaw)
+
+      # Setting position of the ball
       ballPos = sim.getBallPos()
       h.setFakeBallPosition(ballPos[0], ballPos[1])
 
@@ -71,8 +64,7 @@ while True:
         p.addUserDebugLine([pos[0], pos[1]-0.02, pos[2]], [pos[0], pos[1]+0.02, pos[2]], [1, 0.5, 0], 2, 20)
       
       # Targeting robot
-      # params = p.getDebugVisualizerCamera()
-      # p.resetDebugVisualizerCamera(params[10], params[8], params[9], pose[0])
+      # sim.lookAt(pose[0])
 
   # Reading goal angles
   h.lockScheduler()
