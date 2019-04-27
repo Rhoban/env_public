@@ -14,7 +14,7 @@ sim.setBallPos(0.25, -0.05)
 rhio = rhoban.PyRhio()
 lastUpdate = -1
 
-line = None
+supportFoot = 'left'
 
 while True:
   h.setSchedulerClock(sim.t)
@@ -53,14 +53,22 @@ while True:
 
       # Setting the pressure
       pressure = sim.footSensorState()
-      h.setFakePressure(pressure['left']['x'], pressure['left']['y'], pressure['left']['weight']*100000,
-        pressure['right']['x'], pressure['right']['y'], pressure['right']['weight']*100000)
+      leftWeight = pressure['left']['weight']*100000
+      rightWeight = pressure['right']['weight']*100000
+      h.setFakePressure(pressure['left']['x'], pressure['left']['y'], leftWeight,
+        pressure['right']['x'], pressure['right']['y'], rightWeight)
 
-      frames = sim.getFrames()
-      pos = frames['right_foot_frame'][0]
-      # if line is not None:
-      #     p.addUserDebugLine(pos, line, [1, 0.5, 0], 2, 20)
-      # line = pos
+      # FootStep drawing
+      # if leftWeight > rightWeight:
+      #   s = 'left'
+      # else:
+      #   s = 'right'
+      # if s != supportFoot:
+      #   supportFoot=s
+      #   frames = sim.getFrames()
+      #   pos = frames[supportFoot+'_foot_frame'][0]
+      #   p.addUserDebugLine([pos[0]-0.02, pos[1], pos[2]], [pos[0]+0.02, pos[1], pos[2]], [1, 0.5, 0], 2, 20)
+      #   p.addUserDebugLine([pos[0], pos[1]-0.02, pos[2]], [pos[0], pos[1]+0.02, pos[2]], [1, 0.5, 0], 2, 20)
 
   # Reading goal angles
   h.lockScheduler()
