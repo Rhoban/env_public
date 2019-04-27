@@ -59,16 +59,20 @@ while True:
         pressure['right']['x'], pressure['right']['y'], rightWeight)
 
       # FootStep drawing
-      # if leftWeight > rightWeight:
-      #   s = 'left'
-      # else:
-      #   s = 'right'
-      # if s != supportFoot:
-      #   supportFoot=s
-      #   frames = sim.getFrames()
-      #   pos = frames[supportFoot+'_foot_frame'][0]
-      #   p.addUserDebugLine([pos[0]-0.02, pos[1], pos[2]], [pos[0]+0.02, pos[1], pos[2]], [1, 0.5, 0], 2, 20)
-      #   p.addUserDebugLine([pos[0], pos[1]-0.02, pos[2]], [pos[0], pos[1]+0.02, pos[2]], [1, 0.5, 0], 2, 20)
+      if leftWeight > rightWeight:
+        s = 'left'
+      else:
+        s = 'right'
+      if s != supportFoot:
+        supportFoot=s
+        frames = sim.getFrames()
+        pos = frames[supportFoot+'_foot_frame'][0]
+        p.addUserDebugLine([pos[0]-0.02, pos[1], pos[2]], [pos[0]+0.02, pos[1], pos[2]], [1, 0.5, 0], 2, 20)
+        p.addUserDebugLine([pos[0], pos[1]-0.02, pos[2]], [pos[0], pos[1]+0.02, pos[2]], [1, 0.5, 0], 2, 20)
+      
+      # Targeting robot
+      # params = p.getDebugVisualizerCamera()
+      # p.resetDebugVisualizerCamera(params[10], params[8], params[9], pose[0])
 
   # Reading goal angles
   h.lockScheduler()
@@ -81,3 +85,4 @@ while True:
 
   # Updating the simulation
   sim.tick()
+
