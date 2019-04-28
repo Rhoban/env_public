@@ -1,7 +1,7 @@
 {
     "angularPitchTolerance" : 5,
     "viveLogPath" : "workingLog/vive.bin",
-    "benchmark" : false,
+    "benchmark" : true,
     "benchmarkDetail" : 4,
     "gpuOn" : false,
     "readFromLog" : true,
@@ -10,8 +10,8 @@
     "writeBallStatus" : true,
     "exitOnStreamEnd" : false,
     "arenaProviders" : [],//Currently, the method used to import FieldBorderData is different
-    "goalProviders" : ["goalByDNN"],
-    "ballProviders" : ["ballByDNN"],
+    // "goalProviders" : ["goalByDNN"],
+    // "ballProviders" : ["ballByDNN"],
     "compassProviders" : [],// Disabled currently "visualCompass"],
     "playing" : false,
     "pathToLog" : "workingLog/lowLevel.log",
@@ -23,7 +23,8 @@
             "../common/vision_filters/ball_detection.json",
             "../common/vision_filters/clipping.json",
             "../common/vision_filters/goals.json",
-            "../common/vision_filters/robots.json"
+            "../common/vision_filters/robots.json",
+            "../common/vision_filters/everything_by_dnn.json"
             //"visual_compass.json"//Currently disabled
         ],
         "filters" : [
