@@ -7,12 +7,19 @@ import numpy as np
 import pybullet as p
 from simulation import Simulation
 
+crystal = len(sys.argv) > 1
+
 h = rhoban.execute()
-sim = Simulation(field=True)
-# sim = Simulation(field=True, fixed=True, transparent=True)
+
+if crystal:
+  sim = Simulation(field=True, fixed=True, transparent=True)
+else:
+  sim = Simulation(field=True)
 sim.spawnBall('right')
 sim.setRobotPos(0, 0, 0)
 sim.setBallPos(0.25, -0.05)
+if crystal:
+  sim.setBallPos(3, -0.05)
 rhio = rhoban.PyRhio()
 lastUpdate = -1
 lastLeft = None
