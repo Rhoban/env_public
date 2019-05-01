@@ -9,6 +9,7 @@ from simulation import Simulation
 
 h = rhoban.execute()
 sim = Simulation(field=True)
+# sim = Simulation(field=True, fixed=True, transparent=True)
 sim.spawnBall('right')
 sim.setRobotPos(0, 0, 0)
 sim.setBallPos(0.25, -0.05)
@@ -16,6 +17,7 @@ rhio = rhoban.PyRhio()
 lastUpdate = -1
 lastLeft = None
 lastLeftOrn = 0
+lines = [None, None]
 
 supportFoot = 'left'
 
@@ -77,6 +79,17 @@ while True:
             sys.stdout.flush()
           lastLeft = np.array(pos)
           lastLeftOrn = orn[2]
+
+      frames = sim.getFrames()
+      posLeft = frames['left_foot_frame'][0]
+      posRight = frames['right_foot_frame'][0]
+      # maxZDraw = 0.071
+      maxZDraw = 1
+      if lines[0] is not None and posLeft[2] < maxZDraw:
+        p.addUserDebugLine(lines[0], posLeft, [0.5, 0.25, 0], 2, 5)
+      if lines[0] is not None and posRight[2] < maxZDraw:
+        p.addUserDebugLine(lines[1], posRight, [0, 0.5, 0.25], 2, 5)
+      lines = [posLeft, posRight]
       
       # Targeting robot
       # sim.lookAt(pose[0])
