@@ -1,18 +1,16 @@
 // Require existence of the following external filters
-// ballPatchProvider
+// roiPatchProvider
 [
     {
         "class name" : "EverythingByDNN",
         "content" : {
             "name" : "everythingByDNN",
            "display" : true,
-            "dependencies" : ["ballPatchProvider"],
+            "dependencies" : ["roiPatchProvider"],
             "paramFloats" : {
                 "scoreThreshold" : 0.9
             },
-	    "model_path" : "../common/dnn/everything/model.pb"
-            // "arch_path" : "../common/dnn/balls/structure.json",
-            // "weights_path" : "../common/dnn/balls/weights.bin",
+	          "model_path" : "../common/dnn/everything/model.pb"
         }
     }
 ]

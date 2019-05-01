@@ -4,22 +4,9 @@
 // integralY (Integral Image)
 [
     {
-        "class name" : "BallByDNN",
-        "content" : {
-            "name" : "ballByDNN",
-//            "display" : true,
-            "dependencies" : ["ballPatchProvider"],
-            "arch_path" : "../common/dnn/balls/structure.json",
-            "weights_path" : "../common/dnn/balls/weights.bin",
-            "paramFloats" : {
-                "scoreThreshold" : 0.9
-            }
-        }
-    },
-    {
         "class name" : "RoiToPatches",
         "content" : {
-            "name" : "ballPatchProvider",
+            "name" : "roiPatchProvider",
             "dependencies" : ["human", "ballByII"],
             "paramInts" : {
                 "patchHeight" : 32,
