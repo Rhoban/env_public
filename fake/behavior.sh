@@ -1,2 +1,2 @@
-./KidSize -p 9998 &
+./KidSize -p 9998 -n &
 BehaviorViewer
