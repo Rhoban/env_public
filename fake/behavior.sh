@@ -1,2 +1,3 @@
 ./KidSize -p 9998 -n &
-BehaviorViewer
+BehaviorViewer &&
+killall -9 KidSize
