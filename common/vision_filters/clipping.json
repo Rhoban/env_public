@@ -24,6 +24,7 @@
         "class name" : "FieldBorder",
         "content" : {
             "name" : "fieldBorder",
+//            "display" : true,
             "dependencies" : ["green", "greenDensity", "human", "green_density_without_black"],
             "paramInts" : {
                 "density_kernel_size" : 30,
@@ -34,7 +35,7 @@
                 "with_black"  : 0
             },
             "paramFloats" : {
-                "max_obs_score" : 5.0
+                "max_obs_score" : 2.0
             }
         }
     },
