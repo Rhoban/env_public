@@ -5,7 +5,7 @@ BIN="KickStrategy"
 
 FLAGS=""
 # Specifiying kick model collection file
-FLAGS="${FLAGS} -j sigmaban_plus_kicks.json"
+FLAGS="${FLAGS} -j ../common/kicks/sigmaban_plus_kicks.json"
 # Specifiying resolution
 FLAGS="${FLAGS} -d 5 -a 0.2"
 # Adding time tolerance
