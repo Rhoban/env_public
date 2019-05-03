@@ -11,7 +11,7 @@ FLAGS="${FLAGS} -d 5 -a 0.2"
 # Adding time tolerance
 FLAGS="${FLAGS} -t 5"
 # Adding penalty
-FLAGS="${FLAGS} -p 2"
+# FLAGS="${FLAGS} -p 2"
 # Adding excentric strategy
 #FLAGS="${FLAGS} -e"
 #FLAGS="${FLAGS} -f lateral_corridor.json"
