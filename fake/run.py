@@ -12,6 +12,7 @@ from simulation import Simulation
 parser = argparse.ArgumentParser(prog="Rhoban pyBullet simulation")
 parser.add_argument('-x', action='store_true', help='Crystal mode')
 parser.add_argument('-f', action='store_true', help='Draw footsteps')
+parser.add_argument('-s', action='store_true', help='Slow down everything')
 args = parser.parse_args()
 
 h = rhoban.execute()
@@ -120,5 +121,6 @@ while True:
   sim.tick()
    
   # Slow down
-  # time.sleep(0.005)
+  if args.s:
+    time.sleep(0.01)
 
