@@ -5,15 +5,16 @@
         "class name" : "EverythingByDNN",
         "content" : {
             "name" : "everythingByDNN",
-           "display" : true,
+            "display" : false,
             "dependencies" : ["roiPatchProvider"],
 	    "paramInts" : {
 		"usesBall" : 1,
+		"usesPostBase" : 1,
+		"usesPenaltyMark" : 1,
 		"debugLevel" : 1,
-		"imSize" : 32,
+		"imSize" : 16
 		//"usesX" : 1,
 		//"usesT" : 1,
-		"usesPostBase" : 1
 	    },
             "paramFloats" : {
                 "scoreThreshold" : 0.9
