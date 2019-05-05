@@ -1,1 +1,1 @@
-model_3_classes_3layers_unknown.pb
+SARCOPHAGE_PAS_MAL_4classes_penalty.pb
