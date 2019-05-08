@@ -1,1 +1,34 @@
-../common/default_calibration.json
+{
+  "class name" : "CalibrationModel",
+  "models" : {
+    "camera" : {
+      "class name" : "CameraModel",
+      "content" : {
+        "img_width"  : 644,
+        "img_height" : 482,
+        "focal_x"    : 482,
+        "focal_y"    : 482,
+        "center_x"   : 322,
+        "center_y"   : 241
+      }
+    },
+    "noise" : {
+      "class name" : "VisionNoiseModel",
+      "content" : {}
+    },
+    "imuOffset" : {
+      "class name" : "RotationModel",
+      "content" : {}
+    },
+    "camOffset" : {
+      "class name" : "RotationModel",
+      "content" : {}
+    },
+    "neckOffset" : {
+      "class name" : "RotationModel",
+        "content" : {
+            "pitch" : -1
+        }
+    }
+  }
+}
