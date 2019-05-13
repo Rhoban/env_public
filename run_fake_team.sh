@@ -1,6 +1,6 @@
 #!/bin/bash
 
-killall -9 KidSizeNoVision behavior_viewer
+killall -9 KidSize BehaviorViewer
 sleep 1
 
 ports[0]=9998
@@ -17,7 +17,7 @@ do
     cp -r fake/* $dst
     cd $dst
     sed -i "s/id.value = [0-9]/id.value = ${robot_id}/g" rhio/referee/values.conf
-    ./KidSizeNoVision -p ${port} > out.log 2>&1 &
+    ./KidSize -n -p ${port} > out.log 2>&1 &
     robot_id=$((robot_id + 1))
     BehaviorViewer 127.0.0.1 ${port} &
     cd ..
