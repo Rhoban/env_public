@@ -7,18 +7,20 @@
     "embedded" : true,
     "imageDelay" : -5,
     "writeBallStatus" : true,
-    "arenaProviders" : [],//Currently, the method used to import FieldBorderData is different
-    "ballProviders" : ["ballByDNN"],
-    "goalProviders" : ["goalByDNN"],
-    "compassProviders" : [],//"visualCompass"],
+    "featureProviders" : ["everythingByDNN"],
+    // "arenaProviders" : [],//Currently, the method used to import FieldBorderData is different
+    // "ballProviders" : ["ballByDNN"],
+    // "goalProviders" : ["goalByDNN"],
+    // "compassProviders" : [],//"visualCompass"],
     "playing" : true,
     "pipeline" : {
         "paths" : [
             "../common/vision_filters/colors.json",
             "../common/vision_filters/ball_detection.json",
-            "../common/vision_filters/clipping.json",
-            "../common/vision_filters/goals.json",
-            "../common/vision_filters/robots.json"
+            // "../common/vision_filters/clipping.json",
+            // "../common/vision_filters/goals.json",
+            // "../common/vision_filters/robots.json",
+            "../common/vision_filters/everything_by_dnn.json"
 //            "../common/vision_filters/visual_compass.json"
         ],
         "filters" : [
