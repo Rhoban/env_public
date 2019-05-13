@@ -9,22 +9,16 @@
     "imageDelay" : -5,
     "writeBallStatus" : true,
     "exitOnStreamEnd" : false,
-    "arenaProviders" : [],//Currently, the method used to import FieldBorderData is different
-    "goalProviders" : ["goalByDNN"],
-    "ballProviders" : ["ballByDNN"],
-    "compassProviders" : [],// Disabled currently "visualCompass"],
+    "featureProviders" : ["everythingByDNN"],
     "playing" : false,
     "pathToLog" : "workingLog/lowLevel.log",
-    "RadarImg" : false,
+    "RadarImg" : true,
     "TaggedImg" : true,
     "pipeline" : {
         "paths" : [
             "../common/vision_filters/colors.json",
             "../common/vision_filters/ball_detection.json",
-            "../common/vision_filters/clipping.json",
-            "../common/vision_filters/goals.json",
-            "../common/vision_filters/robots.json"
-            //"visual_compass.json"//Currently disabled
+            "../common/vision_filters/everything_by_dnn.json"
         ],
         "filters" : [
             {
