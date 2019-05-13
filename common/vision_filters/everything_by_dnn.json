@@ -5,21 +5,21 @@
         "class name" : "EverythingByDNN",
         "content" : {
             "name" : "everythingByDNN",
-            "display" : false,
+            "display" : true,
             "dependencies" : ["roiPatchProvider"],
-	    "paramInts" : {
-		"usesBall" : 1,
-		"usesPostBase" : 1,
-		"usesPenaltyMark" : 1,
-		"debugLevel" : 1,
-		"imSize" : 16
-		//"usesX" : 1
-		//"usesT" : 1,
-	    },
+            "paramInts" : {
+                "usesBall" : 1,
+                "usesPostBase" : 1,
+                "usesPenaltyMark" : 1,
+                "debugLevel" : 1,
+                "imSize" : 16
+                //"usesX" : 1
+                //"usesT" : 1,
+            },
             "paramFloats" : {
                 "scoreThreshold" : 0.9
             },
-	          "model_path" : "../common/dnn/everything/model.pb"
+            "model_path" : "../common/dnn/everything/model.pb"
         }
     }
 ]
