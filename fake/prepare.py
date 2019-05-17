@@ -4,7 +4,7 @@ import os
 import sys
 import json
 
-def prepareEnv(log_path):
+def prepareEnv(log_path, require_tracker = False):
     """
     Prepare the environment for rhoban kid_size binary. Update symbolic links
     and analyze metadata from log.

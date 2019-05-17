@@ -37,5 +37,5 @@ if __name__ == "__main__":
         exit(-1)
     for path in sys.argv[1:]:
         print("Treating '{:}'".format(path))
-        prepareEnv(path)
+        prepareEnv(path, True)
         gatherLogs()
