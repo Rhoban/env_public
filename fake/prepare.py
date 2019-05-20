@@ -21,7 +21,7 @@ def prepareEnv(log_path, require_tracker = False):
 
     robot = metadata["robot"]
 
-    robot_elements = { "calibration.json", "sigmaban.urdf" }
+    robot_elements = { "calibration.json" }
 
     for e in robot_elements:
         os.system("ln -sf ../{:}/{:}".format(robot, e))
