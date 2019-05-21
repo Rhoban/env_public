@@ -1,8 +1,27 @@
 #!/usr/bin/python3
 
 import os
-import sys
 import json
+import subprocess
+import sys
+
+def systemOrRaise(args):
+    """
+    Execute a system command and raise a RuntimeError on failure.
+    Input/output is captured and output is returned.
+    """
+    result = subprocess.run(args, stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
+    out_str = result.stdout.decode("ascii").strip()
+    if result.returncode == 0:
+        return out_str
+    else:
+        raise RuntimeError("Failed to execute system '" + str(args) + "' output: " + out_str)
+
+def getWorkingLogName():
+    return systemOrRaise(["basename","$(readlink -f workingLog)"])
+
+def updatePipeline(pipeline_file):
+    return systemOrRaise(["ln", "-sf", "../common/vision_filters/" + pipeline_file, "vision_config.json"])
 
 def prepareEnv(log_path, require_tracker = False):
     """
