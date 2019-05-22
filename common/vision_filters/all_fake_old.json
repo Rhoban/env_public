@@ -22,20 +22,11 @@
         ],
         "filters" : [
             {
-                "class name" : "ColorConverter",
+                "class name" : "SourceLogs",
                 "content" : {
                     "name" : "source",
-                    "conversion" : "BGR2YCrCb",
-                    "dependencies" : ["source_human"]
-                }
-            },
-            {
-                "class name" : "SourceVideoProtobuf",
-                "content" : {
-                    "name" : "source_human",
-                    "videoPath" : "workingLog/video.avi",
-                    "metaInformationPath" : "workingLog/camera_from_world.pb",
-                    //            "display" : true,
+                    "imagesFile" : "workingLog/images.csv",
+        //            "display" : true,
                     "startIndex" : 0
                 }
             }
