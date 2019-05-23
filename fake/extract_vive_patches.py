@@ -11,10 +11,8 @@ def gatherLogs():
     and analyze metadata from log.
     """
     vision_config = subprocess.check_output("basename $(readlink -f vision_config.json)", shell = True).decode("ascii").strip()
-    if (vision_config != "vive_roi_extractor.json"):
-        print("Unexpected link for vision_config.json: '{:}'".format(vision_config))
-        exit(-1)
-    log_name = subprocess.check_output("basename $(readlink -f workingLog)", shell = True).decode("ascii").strip()
+    updatePipeline("vive_roi_extractor.json")
+    log_name = getWorkingLogName()
     output_folder = "vive_data/" + log_name
     tmp_folder = "ground_truth"
     forbidden_folders = [output_folder, tmp_folder]
