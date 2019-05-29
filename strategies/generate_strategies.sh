@@ -7,9 +7,9 @@ FLAGS=""
 # Specifiying kick model collection file
 FLAGS="${FLAGS} -j ../common/kicks/sigmaban_plus_kicks.json"
 # Specifiying resolution
-FLAGS="${FLAGS} -d 5 -a 0.2"
+#FLAGS="${FLAGS} -d 5 -a 0.2"
 # Adding time tolerance
-FLAGS="${FLAGS} -t 5"
+#FLAGS="${FLAGS} -t 10"
 # Adding penalty
 # FLAGS="${FLAGS} -p 2"
 # Adding excentric strategy
