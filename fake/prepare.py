@@ -34,20 +34,15 @@ def prepareEnv(log_path, require_tracker = False):
 
     os.system("rm -rf workingLog && ln -sf {:} workingLog".format(log_path))
 
+    calibration_path = log_path + "/calibration.json"
+    if os.path.isdir(calibration_path):
+        os.system("ln -sf " + calibration_path + " workingLog/calibration.json");
+    else:
+        print("No calibration.json found")
+
     metadata = {}
     with open("workingLog/metadata.json") as json_file:
         metadata = json.load(json_file)
-
-    robot = metadata["robot"]
-
-    robot_elements = { "calibration.json" }
-
-    for e in robot_elements:
-        os.system("ln -sf ../{:}/{:}".format(robot, e))
-
-    os.system("ln -sf ../strategies/with_grass.json kickStrategy_with_grass.json")
-    os.system("ln -sf ../strategies/against_grass.json kickStrategy_counter_grass.json")
-    os.system("ln -sf ../common/kicks/sigmaban_plus_kicks.json KickModelCollection.json")
 
     if "tracker_serial" in metadata:
         tracker_serial = metadata["tracker_serial"]
