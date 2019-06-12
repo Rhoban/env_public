@@ -1,6 +1,5 @@
 {
     "angularPitchTolerance" : 5,
-//    "viveLogPath" : "workingLog/vive.bin",
     "benchmark" : false,
     "benchmarkDetail" : 4,
     "gpuOn" : false,
@@ -8,19 +7,36 @@
     "embedded" : false,
     "imageDelay" : -5,
     "writeBallStatus" : true,
-    "exitOnStreamEnd" : false,
-    "featureProviders" : ["everythingByDNN"],
+    "exitOnStreamEnd" : true,
+    "arenaProviders" : [],
+    "goalProviders" : [],
+    "ballProviders" : ["ballByDNN"],
+    "compassProviders" : [],
     "playing" : false,
     "pathToLog" : "workingLog/lowLevel.log",
-    "RadarImg" : true,
+    "RadarImg" : false,
     "TaggedImg" : true,
     "pipeline" : {
         "paths" : [
             "../common/vision_filters/colors.json",
-            "../common/vision_filters/ball_detection.json",
-            "../common/vision_filters/everything_by_dnn.json"
+            "../common/vision_filters/ball_detection.json"
         ],
         "filters" : [
+            {
+                "class name" : "ROIBasedGTP",
+                "content" : {
+                    "name" : "roi_based_gtp",
+                    "display" : true,
+                    "extractionMode" : "labels",
+                    "relativePosePath": "workingLog/camera_from_world.pb",
+                    "labellingPath" : "workingLog/labels.pb",
+                    "dependencies" : ["human", "ballByII"],
+                    "outputPrefix" : "ground_truth/",
+                    "paramInts" : {
+                        "writeEnabled" : 1
+                    }
+                }
+            },
             {
                 "class name" : "ColorConverter",
                 "content" : {
@@ -34,9 +50,9 @@
                 "content" : {
                     "name" : "source_human",
                     "videoPath" : "workingLog/video.avi",
+                    "keepOnlyMovingFrames" : true,
                     "cameraFromWorldPath" : "workingLog/camera_from_world.pb",
                     "cameraFromSelfPath" : "workingLog/camera_from_self.pb",
-                    //            "display" : true,
                     "startIndex" : 0
                 }
             }

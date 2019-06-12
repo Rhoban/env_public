@@ -1,1 +1,35 @@
-../common/default_calibration.json
+{
+  "class name" : "CalibrationModel",
+  "models" : {
+    "camera" : {
+      "class name" : "CameraModel",
+        "content" : {
+          "center_x" : 333.72417695707725,
+          "center_y" : 244.58612902973721,
+          "focal_x" : 496.40060208794438,
+          "focal_y" : 496.40060208794438,
+          "img_height" : 482,
+          "img_width" : 644,
+          "radial_coeffs" : [ -0.11392429385802891, 0.11282560688482993, 0 ],
+          "tangential_coeffs" : [ 0.0016792860027530297, 0.0027420892665737957 ]
+        }
+      }
+    },
+    "noise" : {
+      "class name" : "VisionNoiseModel",
+      "content" : {}
+    },
+    "imuOffset" : {
+      "class name" : "RotationModel",
+      "content" : {}
+    },
+    "camOffset" : {
+      "class name" : "RotationModel",
+      "content" : {}
+    },
+    "neckOffset" : {
+      "class name" : "RotationModel",
+      "content" : {}
+    }
+  }
+}

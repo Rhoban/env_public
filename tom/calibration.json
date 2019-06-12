@@ -4,12 +4,14 @@
     "camera" : {
       "class name" : "CameraModel",
       "content" : {
-        "img_width"  : 644,
+        "center_x" : 317.65238323979804,
+        "center_y" : 243.64257344675363,
+        "focal_x" : 495.61364525956566,
+        "focal_y" : 495.61364525956566,
         "img_height" : 482,
-        "focal_x"    : 482,
-        "focal_y"    : 482,
-        "center_x"   : 322,
-        "center_y"   : 241
+        "img_width" : 644,
+        "radial_coeffs" : [ -0.11737684520659393, 0.11758528123754747, 0 ],
+        "tangential_coeffs" : [ -3.9355077380556036e-05, 0.00039318529919666316 ]
       }
     },
     "noise" : {
@@ -26,9 +28,7 @@
     },
     "neckOffset" : {
       "class name" : "RotationModel",
-        "content" : {
-            "pitch" : -1
-        }
+      "content" : {}
     }
   }
 }

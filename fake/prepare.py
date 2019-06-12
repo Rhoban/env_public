@@ -34,20 +34,15 @@ def prepareEnv(log_path, require_tracker = False):
 
     os.system("rm -rf workingLog && ln -sf {:} workingLog".format(log_path))
 
+    calibration_path = log_path + "/calibration.json"
+    if os.path.isfile(calibration_path):
+        os.system("ln -sf " + calibration_path + " calibration.json");
+    else:
+        print("No calibration.json found")
+
     metadata = {}
     with open("workingLog/metadata.json") as json_file:
         metadata = json.load(json_file)
-
-    robot = metadata["robot"]
-
-    robot_elements = { "calibration.json" }
-
-    for e in robot_elements:
-        os.system("ln -sf ../{:}/{:}".format(robot, e))
-
-    os.system("ln -sf ../strategies/with_grass.json kickStrategy_with_grass.json")
-    os.system("ln -sf ../strategies/against_grass.json kickStrategy_counter_grass.json")
-    os.system("ln -sf ../common/kicks/sigmaban_plus_kicks.json KickModelCollection.json")
 
     if "tracker_serial" in metadata:
         tracker_serial = metadata["tracker_serial"]
@@ -58,9 +53,18 @@ def prepareEnv(log_path, require_tracker = False):
         print("Tracker is not available while required for log '{:}'".format(log_path))
         exit(-1)
 
+def prepareNoVisionEnv():
+    os.system("rm -rf workingLog")
+    os.system("ln -sf default_calibration.json calibration.json")
+
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: " + sys.argv[0] + " <pathToLog>")
+    if len(sys.argv) > 2:
+        print("Usage: " + sys.argv[0] + " <opt: pathToLog>")
         exit(-1)
-    prepareEnv(sys.argv[1])
+    elif len(sys.argv) == 2:
+        print("Preparing environment for log '" + sys.argv[1] + "'")
+        prepareEnv(sys.argv[1])
+    else:
+        print("Preparing no vision environment")
+        prepareNoVisionEnv()
 
