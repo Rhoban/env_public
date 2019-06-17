@@ -1,34 +1,38 @@
 {
-  "class name" : "CalibrationModel",
-  "models" : {
-    "camera" : {
-      "class name" : "CameraModel",
-      "content" : {
-        "center_x" : 304.07527127973964,
-        "center_y" : 240.74516725613188,
-        "focal_x" : 491.58263892560211,
-        "focal_y" : 491.58263892560211,
-        "img_height" : 482,
-        "img_width" : 644,
-        "radial_coeffs" : [ -0.11273949744933122, 0.12858828256013483, 0 ],
-        "tangential_coeffs" : [ 0.0015121904264802236, 0.00064273639350634218 ]
-      }
-    },
-    "noise" : {
-      "class name" : "VisionNoiseModel",
-      "content" : {}
-    },
-    "imuOffset" : {
-      "class name" : "RotationModel",
-      "content" : {}
-    },
-    "camOffset" : {
-      "class name" : "RotationModel",
-      "content" : {}
-    },
-    "neckOffset" : {
-      "class name" : "RotationModel",
-      "content" : {}
+    "class name" : "CalibrationModel",
+    "models" : {
+        "camera" : {
+            "class name" : "CameraModel",
+            "content" : {
+                  "center_x" : 306.27658309380411,
+                  "center_y" : 243.51181613871029,
+                  "focal_x" : 485.37561622392576,
+                  "focal_y" : 485.37561622392576,
+                  "img_height" : 482,
+                  "img_width" : 644,
+                  "radial_coeffs" : [ -0.056879469114537125, 0, 0 ],
+                  "tangential_coeffs" : [ 0, 0 ]
+            }
+        },
+        "camera_corrected_from_camera" : {
+            "class name" : "PoseModel",
+            "content" : {
+                  "pos" : [ 0, 0, -0.008090858351593155 ],
+                  "rpy" : [ 0.74790927015487085, 0.14378434202890134, 0.17245086420944844 ]
+            }
+        },
+        "head_base_corrected_from_head_base" : {
+            "class name" : "PoseModel",
+            "content" : {
+                  "pos" : [ 0, 0, 0 ],
+                  "rpy" : [ -2.2594686458386093, 0.61674174731077969, 0 ]
+            }
+        },
+        "noise" : {
+            "class name" : "VisionNoiseModel",
+            "content" : {
+                  "px_stddev" : 1.388459648120218
+            }
+        }
     }
-  }
 }
