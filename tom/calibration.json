@@ -1,34 +1,39 @@
 {
-  "class name" : "CalibrationModel",
-  "models" : {
-    "camera" : {
-      "class name" : "CameraModel",
-      "content" : {
-        "center_x" : 317.65238323979804,
-        "center_y" : 243.64257344675363,
-        "focal_x" : 495.61364525956566,
-        "focal_y" : 495.61364525956566,
-        "img_height" : 482,
-        "img_width" : 644,
-        "radial_coeffs" : [ -0.11737684520659393, 0.11758528123754747, 0 ],
-        "tangential_coeffs" : [ -3.9355077380556036e-05, 0.00039318529919666316 ]
-      }
-    },
-    "noise" : {
-      "class name" : "VisionNoiseModel",
-      "content" : {}
-    },
-    "imuOffset" : {
-      "class name" : "RotationModel",
-      "content" : {}
-    },
-    "camOffset" : {
-      "class name" : "RotationModel",
-      "content" : {}
-    },
-    "neckOffset" : {
-      "class name" : "RotationModel",
-      "content" : {}
+    "class name" : "CalibrationModel",
+    "models" : {
+        "camera" : {
+            "class name" : "CameraModel",
+            "content" : {
+                  "center_x" : 320.84865489558518,
+                  "center_y" : 243.28808325094039,
+                  "focal_x" : 481.73783375434897,
+                  "focal_y" : 481.73783375434897,
+                  "img_height" : 482,
+                  "img_width" : 644,
+                  "radial_coeffs" : [ 0, 0, 0 ],
+                  //"radial_coeffs" : [ -0.050544610128091506, 0, 0 ],
+                  "tangential_coeffs" : [ 0, 0 ]
+            }
+        },
+        "camera_corrected_from_camera" : {
+            "class name" : "PoseModel",
+            "content" : {
+                  "pos" : [ 0, 0, -0.016745782489612324 ],
+                  "rpy" : [ 1.0111532732781114, -0.61901099294672335, 0.75059944099136544 ]
+            }
+        },
+        "head_base_corrected_from_head_base" : {
+            "class name" : "PoseModel",
+            "content" : {
+                  "pos" : [ 0, 0, 0 ],
+                  "rpy" : [ 2.2573330429160774, -0.56367907102148607, 0 ]
+            }
+        },
+        "noise" : {
+            "class name" : "VisionNoiseModel",
+            "content" : {
+                  "px_stddev" : 1.3525669850050737
+            }
+        }
     }
-  }
 }
