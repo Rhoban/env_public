@@ -55,7 +55,7 @@ def prepareEnv(log_path, require_tracker = False):
 
 def prepareNoVisionEnv():
     os.system("rm -rf workingLog")
-    os.system("ln -sf default_calibration.json calibration.json")
+    os.system("ln -sf ../common/default_calibration.json calibration.json")
 
 if __name__ == "__main__":
     if len(sys.argv) > 2:
