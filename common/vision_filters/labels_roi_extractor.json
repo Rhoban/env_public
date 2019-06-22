@@ -12,10 +12,10 @@
     "goalProviders" : [],
     "ballProviders" : ["ballByDNN"],
     "compassProviders" : [],
-    "playing" : false,
+    "playing" : true,
     "pathToLog" : "workingLog/lowLevel.log",
     "RadarImg" : false,
-    "TaggedImg" : true,
+    "TaggedImg" : false,
     "pipeline" : {
         "paths" : [
             "../common/vision_filters/colors.json",
@@ -29,7 +29,7 @@
                     "display" : true,
                     "extractionMode" : "labels",
                     "relativePosePath": "workingLog/camera_from_world.pb",
-                    "labellingPath" : "workingLog/labels.pb",
+                    "labellingPath" : "workingLog/mixed_labels.pb",
                     "dependencies" : ["human", "ballByII"],
                     "outputPrefix" : "ground_truth/",
                     "paramInts" : {

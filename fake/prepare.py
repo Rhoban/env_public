@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 import os
 import json
@@ -18,7 +18,7 @@ def systemOrRaise(args):
         raise RuntimeError("Failed to execute system '" + str(args) + "' output: " + out_str)
 
 def getWorkingLogName():
-    return systemOrRaise(["basename","$(readlink -f workingLog)"])
+    return systemOrRaise(["readlink","-f","workingLog"])
 
 def updatePipeline(pipeline_file):
     return systemOrRaise(["ln", "-sf", "../common/vision_filters/" + pipeline_file, "vision_config.json"])
