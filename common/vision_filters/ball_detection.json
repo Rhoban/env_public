@@ -20,14 +20,15 @@
             "name" : "roiRandomizer",
             "dependencies" : ["ballByII"],
             "paramInts" : {
-                "maxROI" : 32,
-                "maxROIPerInput" : 8
+                "maxROI" : 16,
+                "maxROIPerInput" : 4
             }
         }
     },
     {
         "class name" : "BallByII",
         "content" : {
+//            "display" : true,
             "name" : "ballByII",
             "dependencies" : ["integralY","greenII","ballRadiusProvider"],
             "paramInts" : {
