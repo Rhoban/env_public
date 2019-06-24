@@ -42,13 +42,13 @@
                 "content" : {
                     "name" : "source",
                     "conversion" : "BGR2YCrCb",
-                    "dependencies" : ["source_human"]
+                    "dependencies" : ["human"]
                 }
             },
             {
                 "class name" : "SourceVideoProtobuf",
                 "content" : {
-                    "name" : "source_human",
+                    "name" : "human",
                     "videoPath" : "workingLog/video.avi",
                     "keepOnlyMovingFrames" : true,
                     "cameraFromWorldPath" : "workingLog/camera_from_world.pb",
