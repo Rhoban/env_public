@@ -1,33 +1,38 @@
 {
-    "class name" : "CalibrationModel",
-    "content" :{
-	    "models" : {
-		"camera" : {
-		    "class name" : "CameraModel",
-		    "content" : {
-		"img_width"  : 644,
-		"img_height" : 482,
-		"focal_x"    : 482,
-		"focal_y"    : 482,
-		"center_x"   : 322,
-		"center_y"   : 241
-		    }
-		},
-		"camera_corrected_from_camera" : {
-		    "class name" : "PoseModel",
-		    "content" : {
-		    }
-		},
-		"head_base_corrected_from_head_base" : {
-		    "class name" : "PoseModel",
-		    "content" : {
-		    }
-		},
-		"noise" : {
-		    "class name" : "VisionNoiseModel",
-		    "content" : {
-		    }
-		}
-	    }
+    "class name": "CalibrationModel",
+    "content":{
+        "models":{
+            "noise" : {
+                "class name" : "VisionNoiseModel",
+                "content" : {}
+            },
+            "camera" : {
+                "class name" : "CameraModel",
+                "content" : {
+                    "center_x" : 322,
+                    "center_y" : 241,
+                    "focal_x" : 482,
+                    "focal_y" : 482,
+                    "img_width" : 644,
+                    "img_height" : 482,
+                    "radial_coeffs" : [ 0, 0, 0 ],
+                    "tangential_coeffs" : [ 0, 0]
+                }
+            },
+            "camera_corrected_from_camera" : {
+                "class name" : "PoseModel",
+                "content" : {
+                    "pos" : [0,0,0],
+                    "rpy" : [0,0,0]
+                }
+            },
+            "head_base_corrected_from_head_base" : {
+                "class name" : "PoseModel",
+                "content" : {
+                    "pos" : [0,0,0],
+                    "rpy" : [0,0,0]
+                }
+            }
+        }
     }
 }
