@@ -1,1 +1,34 @@
-../common/default_calibration.json
+{
+    "class name" : "CalibrationModel",
+    "content" :{
+    "models" : {
+        "camera" : {
+            "class name" : "CameraModel",
+            "content" : {
+        "img_width"  : 644,
+        "img_height" : 482,
+        "focal_x"    : 482,
+        "focal_y"    : 482,
+        "center_x"   : 322,
+        "center_y"   : 241
+            }
+        },
+        "camera_corrected_from_camera" : {
+            "class name" : "PoseModel",
+            "content" : {
+            }
+        },
+        "head_base_corrected_from_head_base" : {
+            "class name" : "PoseModel",
+            "content" : {
+            }
+        },
+        "noise" : {
+            "class name" : "VisionNoiseModel",
+            "content" : {
+            }
+        }
+    }
+    }
+
+}
