@@ -20,8 +20,25 @@
             "name" : "roiRandomizer",
             "dependencies" : ["ballByII"],
             "paramInts" : {
+                "verbose" : 0,
+                // Patch extraction
+                // "maxROI" : 16,
+                // "maxROIPerInput" : 4
+                // Online version
                 "maxROI" : 8,
-                "maxROIPerInput" : 1
+                "maxROIPerInput" : 2
+            },
+            "paramFloats" : {
+                // Patch extraction
+                // "sizeFixedNoiseMax" : 5,
+                // "sizePropNoiseMax" : 0.3,
+                // "posFixedNoiseMax": 5,
+                // "posPropNoiseMax" : 0.02
+                // Online version
+                "sizeFixedNoiseMax" : 5,
+                "sizePropNoiseMax" : 0.3,
+                "posFixedNoiseMax": 0,
+                "posPropNoiseMax" : 0.01
             }
         }
     },
@@ -34,15 +51,16 @@
             "paramInts" : {
                 "decimationRate" : 4,
                 "maxRois" : 8,
-                "useLocalSearch" : 1
+                "useLocalSearch" : 1,
+                "tagLevel" : 0
             },
             "paramFloats" :
             {
                 "boundaryFactor" : 2.2,
-                "yWeight" : 1.0,
-                "greenWeight" : 2.0,
+                "yWeight" : 0.0,
+                "greenWeight" : 1.0,
                 "minScore" : 30,
-                "minRadius" : 10
+                "minRadius" : 6
             }
         }
     },
