@@ -1,40 +1,40 @@
-{
-    "class name" : "CalibrationModel",
-    "content" : {
-        "models" : {
-            "camera" : {
-                "class name" : "CameraModel",
-                "content" : {
-                    "center_x" : 322.78216741267437,
-                    "center_y" : 244.14757349562638,
-                    "focal_x" : 482.05893417033417,
-                    "focal_y" : 482.05893417033417,
-                    "img_height" : 482,
-                    "img_width" : 644,
-                    "radial_coeffs" : [ 0.0095842058886727345, 0, 0 ],
-                    "tangential_coeffs" : [ 0, 0 ]
-                }
-            },
-            "camera_corrected_from_camera" : {
-                "class name" : "PoseModel",
-                "content" : {
-                    "pos" : [ 0, 0, 0.004120678831870137 ],
-                    "rpy" : [ -0.19711959636603993, 1.0127015526261616, 0.78034922715615807 ]
-                }
-            },
-            "head_base_corrected_from_head_base" : {
-                "class name" : "PoseModel",
-                "content" : {
-                    "pos" : [ 0, 0, 0 ],
-                    "rpy" : [ 0.76856915806751047, 0.8295368405408361, 0 ]
-                }
-            },
-            "noise" : {
-                "class name" : "VisionNoiseModel",
-                "content" : {
-                    "px_stddev" : 2.4994592886310385
-                }
+         {
+            "class name" : "CalibrationModel",
+            "content" : {
+               "models" : {
+                  "camera" : {
+                     "class name" : "CameraModel",
+                     "content" : {
+                        "center_x" : 325.73136400566284,
+                        "center_y" : 240.73281074495625,
+                        "focal_x" : 482.43083001104981,
+                        "focal_y" : 482.43083001104981,
+                        "img_height" : 482,
+                        "img_width" : 644,
+                        "radial_coeffs" : [ 0.031051438951650391, 0, 0 ],
+                        "tangential_coeffs" : [ 0, 0 ]
+                     }
+                  },
+                  "camera_corrected_from_camera" : {
+                     "class name" : "PoseModel",
+                     "content" : {
+                        "pos" : [ 0, 0, 0.0039698462280546567 ],
+                        "rpy" : [ -0.30809210784035557, 0.75192260602814898, 0.57671214271642768 ]
+                     }
+                  },
+                  "head_base_corrected_from_head_base" : {
+                     "class name" : "PoseModel",
+                     "content" : {
+                        "pos" : [ 0, 0, 0 ],
+                        "rpy" : [ -0.75282965368883481, 1.0817997475313881, 0 ]
+                     }
+                  },
+                  "noise" : {
+                     "class name" : "VisionNoiseModel",
+                     "content" : {
+                        "px_stddev" : 1.8347670275079959
+                     }
+                  }
+               }
             }
-        }
-    }
-}
+         }
