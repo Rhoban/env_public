@@ -45,21 +45,21 @@
     {
         "class name" : "BallByII",
         "content" : {
-//            "display" : true,
+            "display" : true,
             "name" : "ballByII",
             "dependencies" : ["integralY","greenII","ballRadiusProvider"],
             "paramInts" : {
                 "decimationRate" : 4,
-                "maxRois" : 8,
+                "maxRois" : 4,
                 "useLocalSearch" : 1,
-                "tagLevel" : 0
+                "tagLevel" : 1
             },
             "paramFloats" :
             {
                 "boundaryFactor" : 2.2,
-                "yWeight" : 0.0,
+                "yWeight" : 1.0,
                 "greenWeight" : 1.0,
-                "minScore" : 30,
+                "minScore" : 60,
                 "minRadius" : 6
             }
         }
@@ -68,7 +68,8 @@
         "class name" : "BallRadiusProvider",
         "content" : {
             "name" : "ballRadiusProvider",
-            "dependencies" : ["source"]
+            "dependencies" : ["source"],
+            "paramInts" : { "nbCols" : 8, "nbRows" : 8}
         }
     }
 ]
