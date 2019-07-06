@@ -6,7 +6,7 @@
         "content" : {
             "name" : "ballByDNN",
             "warningExecutionTime" : 0.015,
-            "display" : false,
+            "display" : true,
             "dependencies" : ["roiPatchProvider"],
             "paramInts" : {
                 "usesBall" : 1,
@@ -44,8 +44,8 @@
             "paramFloats" : {
                 "scoreThreshold" : 0.9
             },
-            // "model_path" : "../common/dnn/everything/LATEST_SARCOPHAGE_SYDNEY_posts_only.pb"
-            "model_path" : "../common/dnn/everything/model.pb"
+            "model_path" : "../common/dnn/everything/LATEST_SARCOPHAGE_SYDNEY_posts_only.pb"
+            // "model_path" : "../common/dnn/everything/model.pb"
         }
     }
     
