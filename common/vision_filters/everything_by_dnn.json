@@ -6,17 +6,17 @@
         "content" : {
             "name" : "everythingByDNN",
             "warningExecutionTime" : 0.015,
-//            "display" : true,
+           "display" : true,
             "dependencies" : ["roiPatchProvider"],
             "paramInts" : {
-                "usesBall" : 1,
+                // "usesBall" : 1,
                 "usesPostBase" : 1,
-//                "usesRobot" : 1,
+		// "usesRobot" : 1,
 //                "usesPenaltyMark" : 1,
-                "debugLevel" : 0,
+                "debugLevel" : 2,
                 "imSize" : 16
                 //"usesX" : 1
-                //"usesT" : 1,
+                // "usesT" : 1
             },
             "paramFloats" : {
                 "scoreThreshold" : 0.9

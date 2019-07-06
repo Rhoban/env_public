@@ -1,0 +1,50 @@
+// Require existence of the following external filters
+// roiPatchProvider
+[
+    {
+        "class name" : "EverythingByDNN",
+        "content" : {
+            "name" : "ballByDNN",
+            "warningExecutionTime" : 0.015,
+            "display" : false,
+            "dependencies" : ["roiPatchProvider"],
+            "paramInts" : {
+                "usesBall" : 1,
+                // "usesPostBase" : 1,
+		// "usesRobot" : 1,
+		//                "usesPenaltyMark" : 1,
+                "debugLevel" : 2,
+                "imSize" : 16
+                //"usesX" : 1
+                // "usesT" : 1
+            },
+            "paramFloats" : {
+                "scoreThreshold" : 0.9
+            },
+            "model_path" : "../common/dnn/everything/LATEST_SARCOPHAGE_SYDNEY_ball_only.pb"
+        }
+    },
+    {
+        "class name" : "EverythingByDNN",
+        "content" : {
+            "name" : "goalByDNN",
+            "warningExecutionTime" : 0.015,
+            "display" : false,
+            "dependencies" : ["roiPatchProvider"],
+            "paramInts" : {
+                // "usesBall" : 1,
+                "usesPostBase" : 1,
+		// "usesRobot" : 1,
+		//                "usesPenaltyMark" : 1,
+                "debugLevel" : 2,
+                "imSize" : 16
+                //"usesX" : 1
+                // "usesT" : 1
+            },
+            "paramFloats" : {
+                "scoreThreshold" : 0.9
+            },
+            "model_path" : "../common/dnn/everything/LATEST_SARCOPHAGE_SYDNEY_posts_only.pb"
+        }
+    }
+]
