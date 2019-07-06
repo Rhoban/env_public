@@ -6,13 +6,14 @@
     "readFromLog" : false,
     "embedded" : true,
     "writeBallStatus" : true,
-    "featureProviders" : ["everythingByDNN"],
+    "featureProviders" : ["ballByDNN", "goalByDNN"],
+    // "featureProviders" : ["everythingByDNN"],
     "playing" : true,
     "pipeline" : {
         "paths" : [
             "../common/vision_filters/colors.json",
             "../common/vision_filters/ball_detection.json",
-            "../common/vision_filters/everything_by_dnn.json"
+            "../common/vision_filters/monoclass_dnn.json"
         ],
         "filters" : [
             {

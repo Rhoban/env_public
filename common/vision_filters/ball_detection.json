@@ -52,11 +52,12 @@
                 "decimationRate" : 4,
                 "maxRois" : 4,
                 "useLocalSearch" : 1,
-                "tagLevel" : 1
+                "tagLevel" : 0
             },
             "paramFloats" :
             {
                 "boundaryFactor" : 2.2,
+                "outputSizeFactor" : 2.2,
                 "yWeight" : 1.0,
                 "greenWeight" : 1.0,
                 "minScore" : 60,
@@ -69,7 +70,7 @@
         "content" : {
             "name" : "ballRadiusProvider",
             "dependencies" : ["source"],
-            "paramInts" : { "nbCols" : 8, "nbRows" : 8}
+            "paramInts" : { "nbCols" : 16, "nbRows" : 16}
         }
     }
 ]

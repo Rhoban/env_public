@@ -37,7 +37,7 @@
         "class name" : "Integral",
         "content" : {
             "name" : "integralY",
-            "dependencies" : ["Y"]
+            "dependencies" : ["yNoRobot"]
         }
     },
     {
@@ -57,6 +57,7 @@
         }
     },
     {
+        // Approximates the red of the robots
         "class name" : "ColorBounding",
         "content" : {
             "name" : "green",
@@ -69,6 +70,62 @@
                 "minU" : 116,
                 "minV" : 103,
                 "minY" : 34
+            }
+        }
+    },
+    {
+        "class name" : "Mask",
+        "content" : {
+            "name" : "yNoRobot",
+            "dependencies" : ["Y", "notRobot"]
+        }
+    },
+    {
+        "class name" : "Invert",
+        "content" : {
+            "name" : "notRobot",
+            "dependencies" : ["robotColor"]
+        }
+    },
+    {
+        "class name" : "MaskOr",
+        "content" : {
+            "name" : "robotColor",
+            "dependencies" : ["red", "blue"],
+            "display" : true
+        }
+    },
+    {
+        // Approximates the blue of the robots
+        "class name" : "ColorBounding",
+        "content" : {
+            "name" : "blue",
+            "dependencies" : ["source"],
+            "display" : true,
+            "paramInts" : {
+                "maxU" : 118,
+                "maxV" : 255,
+                "maxY" : 255,
+                "minU" : 0,
+                "minV" : 0,
+                "minY" : 0
+            }
+        }
+    },
+    {
+        // Approximates the red of the robots
+        "class name" : "ColorBounding",
+        "content" : {
+            "name" : "red",
+            "dependencies" : ["source"],
+            "display" : true,
+            "paramInts" : {
+                "maxU" : 180,
+                "maxV" : 255,
+                "maxY" : 255,
+                "minU" : 140,
+                "minV" : 0,
+                "minY" : 0
             }
         }
     }
