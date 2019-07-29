@@ -91,8 +91,8 @@
         "class name" : "MaskOr",
         "content" : {
             "name" : "robotColor",
-            "dependencies" : ["red", "blue"],
-            "display" : true
+            //            "display" : true,
+            "dependencies" : ["red", "blue"]
         }
     },
     {
@@ -101,7 +101,7 @@
         "content" : {
             "name" : "blue",
             "dependencies" : ["source"],
-            "display" : true,
+//            "display" : true,
             "paramInts" : {
                 "maxU" : 118,
                 "maxV" : 255,
@@ -118,7 +118,7 @@
         "content" : {
             "name" : "red",
             "dependencies" : ["source"],
-            "display" : true,
+//            "display" : true,
             "paramInts" : {
                 "maxU" : 180,
                 "maxV" : 255,

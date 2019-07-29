@@ -8,8 +8,8 @@
     "embedded" : false,
     "writeBallStatus" : true,
     "exitOnStreamEnd" : false,
-    "featureProviders" : ["ballByDNN", "goalByDNN"],
-    // "featureProviders" : ["everythingByDNN"],
+    //"featureProviders" : ["ballByDNN", "goalByDNN"],
+    "featureProviders" : ["everythingByDNN"],
     "playing" : false,
     "pathToLog" : "workingLog/lowLevel.log",
     "RadarImg" : true,
@@ -18,7 +18,7 @@
         "paths" : [
             "../common/vision_filters/colors.json",
             "../common/vision_filters/ball_detection.json",
-            "../common/vision_filters/monoclass_dnn.json"
+            "../common/vision_filters/everything_by_dnn.json"
         ],
         "filters" : [
             {

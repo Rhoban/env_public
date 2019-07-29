@@ -42,9 +42,36 @@
             }
         }
     },
+//   {
+//       "class name" : "BallByII",
+//       "content" : {
+//           "display" : true,
+//           "name" : "goalByII",
+//           "dependencies" : ["integralY","greenII","ballRadiusProvider"],
+//           "paramInts" : {
+//               "decimationRate" : 4,
+//               "maxRois" : 4,
+//               "useLocalSearch" : 1,
+//               "tagLevel" : 1,
+//               "mode" : 1,
+//               "minOutputSize" : 64
+//           },
+//           "paramFloats" :
+//           {
+//               "boundaryFactor" : 1.5,
+//               "inputSizeFactor" : 0.5,
+//               "outputSizeFactor" : 3,
+//               "yWeight" : 2.0,
+//               "greenWeight" : 1.0,
+//               "minScore" : 30,
+//               "minRadius" : 3
+//           }
+//       }
+//   },
     {
         "class name" : "BallByII",
         "content" : {
+            "display" : true,
 //            "display" : true,
             "name" : "ballByII",
             "dependencies" : ["integralY","greenII","ballRadiusProvider"],
@@ -52,7 +79,9 @@
                 "decimationRate" : 4,
                 "maxRois" : 4,
                 "useLocalSearch" : 1,
-                "tagLevel" : 0
+                "tagLevel" : 0,
+                "mode" : 0,
+                "minOutputSize" : 32
             },
             "paramFloats" :
             {
@@ -61,7 +90,7 @@
                 "yWeight" : 1.0,
                 "greenWeight" : 1.0,
                 "minScore" : 60,
-                "minRadius" : 6
+                "minRadius" : 4
             }
         }
     },
